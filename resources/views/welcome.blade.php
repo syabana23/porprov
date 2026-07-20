@@ -192,74 +192,108 @@
         position: absolute;
         top: 20px;
         right: 20px;
-        width: 260px;
+        width: 300px;
         background: #fff;
-        border-radius: 10px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
         z-index: 99;
         overflow: hidden;
         display: none;
     }
 
     .gor-card-header {
-        background: #013469;
-        color: #fff;
-        padding: 10px 12px;
+        background: #f8fafc;
+        color: #374151;
+        padding: 14px 16px;
         display: flex;
         align-items: center;
+        gap: 8px;
+        font-size: 15px;
+        font-weight: 800;
+        border-bottom: 1px solid #e5e7eb;
+    }
+
+    .gor-card-body {
+        padding: 16px;
+    }
+
+    .gor-card-body .addr {
+        font-size: 13px;
+        color: #6b7280;
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        margin-bottom: 16px;
+        line-height: 1.5;
+    }
+
+    .gor-card-body .cabang-title {
+        font-size: 12px;
+        font-weight: 800;
+        color: #013469;
+        margin-bottom: 12px;
+        text-transform: uppercase;
+    }
+
+    .cabor-grid {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+    }
+
+    .cabor-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         gap: 6px;
+        width: 52px;
+    }
+
+    .cabor-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #f4f5f7;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #4b5563;
+    }
+
+    .cabor-item span {
+        font-size: 11px;
+        color: #4b5563;
+        text-align: center;
+        line-height: 1.2;
+    }
+
+    .tags-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 16px;
+    }
+
+    .tag-pill {
+        background: #f4f6f9;
+        color: #113264;
+        padding: 6px 12px;
+        border-radius: 16px;
         font-size: 12px;
         font-weight: 700;
     }
 
-    .gor-card-img {
-        height: 120px;
-        overflow: hidden;
-    }
-
-    .gor-card-img img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .gor-card-body {
-        padding: 12px;
-    }
-
-    .gor-card-body .addr {
-        font-size: 11px;
-        color: #6b7280;
-        display: flex;
-        align-items: flex-start;
-        gap: 4px;
-        margin-bottom: 8px;
-        line-height: 1.4;
-    }
-
-    .gor-card-body .cabang-title {
-        font-size: 10px;
-        font-weight: 700;
-        color: #013469;
-        margin-bottom: 6px;
-        letter-spacing: 0.05em;
-    }
-
-    .cabang-list-text {
-        font-size: 11px;
-        color: #374151;
-        font-weight: 600;
-        margin-bottom: 12px;
-    }
-
     .home-gor-card .map-btn {
-        display: block;
-        background: #013469;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        background: #163f7a;
         color: #fff;
-        text-align: center;
-        font-size: 11px;
+        font-size: 14px;
         font-weight: 700;
-        padding: 8px;
+        padding: 10px;
         text-decoration: none;
         border-radius: 6px;
         transition: background 0.2s;
@@ -380,24 +414,34 @@
 
         <div class="home-gor-card" id="floating-gor-card">
             <div class="gor-card-header">
-                <svg width="14" height="14" fill="none" stroke="#fff" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="color: #374151;">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/>
                 </svg>
                 <span id="card-gor-name">-</span>
             </div>
-            <div class="gor-card-img">
-                <img id="card-gor-img" src="" alt="Venue Image">
-            </div>
             <div class="gor-card-body">
                 <div class="addr">
-                    <svg width="13" height="13" fill="none" stroke="#9ca3af" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="color: #6b7280; flex-shrink: 0; margin-top: -2px;">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/>
                     </svg>
                     <span id="card-gor-addr">-</span>
                 </div>
                 <div class="cabang-title">CABANG OLAHRAGA</div>
-                <div class="cabang-list-text" id="card-gor-cabor">-</div>
-                <a href="#" id="card-gor-gmaps" target="_blank" class="map-btn">Buka di Google Maps</a>
+                <div class="cabor-grid" id="card-gor-cabor-grid"></div>
+
+                <div class="tags-container">
+                    <span class="tag-pill">Hotel</span>
+                    <span class="tag-pill">Restoran</span>
+                    <span class="tag-pill">Kesehatan</span>
+                    <span class="tag-pill">Toko Obat</span>
+                </div>
+
+                <a href="#" id="card-gor-gmaps" target="_blank" class="map-btn">
+                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
+                    </svg>
+                    Buka di Google Maps
+                </a>
             </div>
         </div>
     </div>
@@ -600,10 +644,27 @@
     function showVenueDetails(venue) {
         document.getElementById('floating-gor-card').style.display = 'block';
         document.getElementById('card-gor-name').innerText = venue.name;
-        document.getElementById('card-gor-img').src = venue.image;
         document.getElementById('card-gor-addr').innerText = venue.address;
-        document.getElementById('card-gor-cabor').innerText = venue.cabor;
         document.getElementById('card-gor-gmaps').href = venue.gmaps_url;
+        
+        const caborArr = venue.cabor.split(',').map(c => c.trim());
+        const caborContainer = document.getElementById('card-gor-cabor-grid');
+        caborContainer.innerHTML = '';
+        caborArr.forEach(c => {
+            let shortName = c;
+            if (c.length > 10) {
+                const words = c.split(' ');
+                shortName = words[words.length - 1];
+            }
+            caborContainer.innerHTML += `
+                <div class="cabor-item">
+                    <div class="cabor-icon">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg>
+                    </div>
+                    <span>${shortName}</span>
+                </div>
+            `;
+        });
     }
 </script>
 @endpush
