@@ -170,6 +170,31 @@
         font-weight: 600;
         color: #374151;
     }
+
+    @media (max-width: 768px) {
+        .berita-body {
+            flex-direction: column;
+            padding: 20px 16px 32px;
+            gap: 20px;
+        }
+        .news-grid {
+            grid-template-columns: 1fr;
+            gap: 14px;
+        }
+        .news-card .thumb {
+            height: 140px;
+        }
+        .quick-info {
+            width: 100%;
+        }
+        .qi-grid {
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        .section-title {
+            font-size: 17px;
+        }
+    }
 </style>
 @endpush
 

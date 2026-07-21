@@ -328,6 +328,27 @@
         .map-section {
             height: 350px;
         }
+
+        .venue-banner {
+            height: auto;
+            min-height: 80px;
+            padding: 16px;
+        }
+        .venue-banner h1 {
+            font-size: 14px;
+        }
+        .venue-banner p {
+            font-size: 10px;
+        }
+        #map-canvas {
+            height: 350px !important;
+        }
+        .venue-body {
+            padding: 20px 16px 32px;
+        }
+        .section-title {
+            font-size: 15px;
+        }
     }
 </style>
 @endpush

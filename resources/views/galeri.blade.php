@@ -82,6 +82,22 @@
     transition: all 0.2s;
 }
 .btn-load-more:hover { background: #013469; color: #fff; }
+
+@media (max-width: 768px) {
+    .galeri-page {
+        padding: 16px 16px 32px;
+    }
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    .gallery-item {
+        height: 180px;
+    }
+    .gallery-item .info .item-name {
+        font-size: 14px;
+    }
+}
 </style>
 @endpush
 

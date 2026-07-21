@@ -347,6 +347,49 @@
     .download-btn:hover {
         background: #012050;
     }
+
+    @media (max-width: 768px) {
+        .jadwal-page {
+            padding: 16px 16px 32px;
+        }
+        .jadwal-bottom {
+            flex-direction: column;
+            gap: 16px;
+        }
+        .legend-box {
+            min-width: auto;
+            width: 100%;
+        }
+        .day-picker-wrap {
+            width: 100%;
+        }
+        .day-btn {
+            width: 44px;
+            height: 52px;
+        }
+        .day-btn .num {
+            font-size: 15px;
+        }
+        .download-btn {
+            width: 100%;
+            justify-content: center;
+            font-size: 14px;
+            padding: 12px 24px;
+        }
+        .jadwal-banner {
+            height: auto;
+            min-height: 100px;
+        }
+        .jadwal-banner .deco-right {
+            display: none;
+        }
+        .jadwal-banner .deco-wave {
+            width: 50%;
+        }
+        .jadwal-banner h1 {
+            font-size: 16px;
+        }
+    }
 </style>
 @endpush
 

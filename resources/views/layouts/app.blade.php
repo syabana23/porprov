@@ -147,6 +147,105 @@
             text-decoration: none;
         }
 
+        /* Hamburger */
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            z-index: 200;
+        }
+        .hamburger svg {
+            width: 24px;
+            height: 24px;
+            stroke: #013469;
+        }
+        .hamburger .close-icon { display: none; }
+        .hamburger.open .menu-icon { display: none; }
+        .hamburger.open .close-icon { display: block; }
+
+        /* Mobile Nav Overlay */
+        .mobile-nav-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.4);
+            z-index: 150;
+        }
+        .mobile-nav-overlay.show { display: block; }
+
+        .mobile-nav {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger { display: flex; }
+
+            .header-nav {
+                display: none;
+            }
+
+            .header-search {
+                display: none;
+            }
+
+            .mobile-nav {
+                display: flex;
+                flex-direction: column;
+                position: fixed;
+                top: 0;
+                right: -280px;
+                width: 280px;
+                height: 100%;
+                background: #fff;
+                z-index: 160;
+                padding: 70px 20px 24px;
+                box-shadow: -4px 0 20px rgba(0,0,0,0.15);
+                transition: right 0.3s ease;
+                overflow-y: auto;
+            }
+            .mobile-nav.open {
+                right: 0;
+            }
+
+            .mobile-nav a {
+                font-size: 14px;
+                font-weight: 600;
+                color: #374151;
+                text-decoration: none;
+                padding: 12px 0;
+                border-bottom: 1px solid #f3f4f6;
+                text-transform: uppercase;
+                letter-spacing: 0.02em;
+            }
+            .mobile-nav a:hover,
+            .mobile-nav a.active {
+                color: #013469;
+            }
+
+            .header-inner {
+                height: 56px;
+                gap: 12px;
+            }
+
+            .header-logo img {
+                height: 36px;
+            }
+
+            .header-logo-text .top {
+                font-size: 12px;
+            }
+
+            .header-logo-text .bottom {
+                font-size: 9px;
+            }
+
+            .header-actions {
+                display: none;
+            }
+        }
+
         /* Footer */
         .site-footer {
             background: #013469;
@@ -301,8 +400,22 @@
             <div class="header-actions">
                 <!-- <a href="#" class="btn-login">Login</a> -->
             </div>
+            <button class="hamburger" id="hamburger-btn" aria-label="Menu">
+                <svg class="menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                <svg class="close-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
         </div>
     </header>
+
+    <!-- Mobile Nav -->
+    <div class="mobile-nav-overlay" id="mobile-overlay"></div>
+    <nav class="mobile-nav" id="mobile-nav">
+        <a href="{{ url('/') }}" class="{{ request()->is('/') ? 'active' : '' }}">BERANDA</a>
+        <a href="{{ url('/jadwal') }}" class="{{ request()->is('jadwal') ? 'active' : '' }}">JADWAL</a>
+        <a href="{{ url('/peta-venue') }}" class="{{ request()->is('peta-venue') ? 'active' : '' }}">PETA VENUE</a>
+        <a href="{{ url('/kesehatan') }}" class="{{ request()->is('kesehatan') ? 'active' : '' }}">KESEHATAN</a>
+        <a href="{{ url('/galeri') }}" class="{{ request()->is('galeri') ? 'active' : '' }}">GALERI</a>
+    </nav>
 
     <main>
         @yield('content')
@@ -313,6 +426,22 @@
     </footer>
 
     @stack('scripts')
+
+    <script>
+        const hamburger = document.getElementById('hamburger-btn');
+        const mobileNav = document.getElementById('mobile-nav');
+        const mobileOverlay = document.getElementById('mobile-overlay');
+
+        function toggleMobileNav() {
+            hamburger.classList.toggle('open');
+            mobileNav.classList.toggle('open');
+            mobileOverlay.classList.toggle('show');
+            document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+        }
+
+        if (hamburger) hamburger.addEventListener('click', toggleMobileNav);
+        if (mobileOverlay) mobileOverlay.addEventListener('click', toggleMobileNav);
+    </script>
 </body>
 
 </html>

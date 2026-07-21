@@ -544,6 +544,73 @@
         color: #fff;
         border-color: #013469;
     }
+
+    @media (max-width: 768px) {
+        .kesehatan-body {
+            flex-direction: column;
+            padding: 16px 16px 32px;
+            gap: 16px;
+        }
+        .filter-sidebar {
+            width: 100%;
+        }
+        .filter-group {
+            display: flex;
+            gap: 10px;
+            align-items: flex-end;
+        }
+        .filter-group .filter-label {
+            margin-bottom: 0;
+            white-space: nowrap;
+        }
+        .filter-group .filter-select-wrap {
+            flex: 1;
+        }
+        .facility-item {
+            flex-direction: column;
+            gap: 12px;
+        }
+        .fi-thumb {
+            width: 100%;
+            height: 140px;
+        }
+        .fi-top {
+            flex-direction: column;
+            gap: 10px;
+        }
+        .fi-right {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .flw-header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+        }
+        .pagination {
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+        }
+        .kesehatan-banner {
+            height: auto;
+            min-height: 100px;
+        }
+        .kesehatan-banner .bg-img {
+            display: none;
+        }
+        .kesehatan-banner::after {
+            width: 100%;
+        }
+        .kesehatan-banner h1 {
+            font-size: 18px;
+        }
+        .stats-strip-inner {
+            gap: 10px;
+            padding: 0 16px;
+        }
+    }
 </style>
 @endpush
 
