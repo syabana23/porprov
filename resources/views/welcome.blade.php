@@ -112,6 +112,61 @@
         font-family: 'Poppins', sans-serif;
     }
 
+    /* ───────── Filter ───────── */
+.filter-section{
+    max-width:1200px;
+    margin:10px auto 10px;
+    padding:0 20px;
+}
+
+.filter-box {
+    background: #fff;
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: 0 8px 25px rgba(0,0,0,.12);
+}
+
+.filter-form {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr auto;
+    gap: 15px;
+    align-items: center;
+}
+
+.filter-input,
+.filter-select {
+    width: 100%;
+    height: 48px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 0 15px;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    transition: .2s;
+}
+
+.filter-input:focus,
+.filter-select:focus {
+    border-color: #013469;
+}
+
+.reset-btn {
+    height: 48px;
+    padding: 0 20px;
+    border: none;
+    background: #ef4444;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: .2s;
+}
+
+.reset-btn:hover {
+    background: #dc2626;
+}
+
     /* ── Stats ── */
     .stats {
         max-width: 1200px;
@@ -318,6 +373,15 @@
             height: 350px;
         }
 
+        .filter-section{
+    margin:20px 16px;
+    padding:0;
+}
+
+.filter-form{
+    grid-template-columns:1fr;
+}
+
         /* Hero mobile */
         .hero {
             height: auto;
@@ -414,6 +478,7 @@
     </div>
 </section>
 
+
 <!-- Statistics Cards -->
 <section class="stats">
     <div class="stat-card">
@@ -465,6 +530,58 @@
         </div>
     </div>
 </section>
+
+<!-- Filter -->
+<section class="filter-section">
+    <div class="filter-box">
+
+        <form class="filter-form">
+
+            <!-- Fasilitas -->
+            <select class="filter-select" id="fasilitas">
+                <option value="">🔍 Cari Fasilitas</option>
+                <option value="hotel">🏨 Hotel</option>
+                <option value="rumah-sakit">🏥 Rumah Sakit</option>
+                <option value="apotek">💊 Apotek</option>
+                <option value="rumah-makan">🍽️ Rumah Makan</option>
+            </select>
+
+            <!-- Cabang Olahraga -->
+            <select class="filter-select" id="cabor">
+                <option value="">🏃 Cabang Olahraga</option>
+                <option>Drumband</option>
+                <option>Pencak Silat</option>
+                <option>Taekwondo</option>
+                <option>Judo</option>
+                <option>Kurash</option>
+                <option>Sambo</option>
+                <option>Tenis Meja</option>
+            </select>
+
+            <!-- Venue -->
+            <select class="filter-select" id="venue">
+                <option value="">📍 Venue</option>
+                <option>GOR Pajajaran Indoor A</option>
+                <option>GOR Pajajaran Indoor B</option>
+                <option>GOR Yasmin</option>
+                <option>Stadion Pajajaran</option>
+                <option>GOR Vokasi IPB</option>
+            </select>
+
+
+            <button type="submit" class="btn-yellow">
+                Cari
+            </button>
+
+            <button type="reset" class="reset-btn">
+                Reset
+            </button>
+
+        </form>
+
+    </div>
+</section>
+
 
 <!-- Map Section -->
 <section class="map-home-section">

@@ -88,9 +88,8 @@
     /* ── Table ── */
     .jadwal-table-wrap {
         background: #fff;
-        border-radius: 12px;
-        border: 1px solid #f1f5f9;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+        border-radius: 10px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.09);
         overflow: auto;
         margin-bottom: 28px;
     }
@@ -98,40 +97,39 @@
     .jadwal-tbl {
         width: 100%;
         border-collapse: collapse;
-        font-size: 13px;
-        min-width: 1000px;
+        font-size: 12px;
+        min-width: 850px;
     }
 
     .jadwal-tbl thead {
-        background: #fff;
-        color: #475569;
-        border-bottom: 2px solid #e2e8f0;
+        background: #013469;
+        color: #fff;
     }
 
     .jadwal-tbl thead th {
-        padding: 14px 12px;
+        padding: 10px 12px;
         text-align: left;
         font-weight: 600;
-        font-size: 12px;
+        font-size: 11.5px;
+        border-right: 1px solid rgba(255, 255, 255, 0.15);
         white-space: nowrap;
     }
 
     .jadwal-tbl thead th.date-col {
         text-align: center;
-        font-size: 11px;
-        padding: 8px 4px;
-        color: #64748b;
-        font-weight: 500;
+        font-size: 10px;
+        padding: 6px 8px;
     }
 
     .jadwal-tbl thead .month-header th {
-        background: #f8fafc;
-        border-bottom: 1px solid #e2e8f0;
+        background: #014590;
+        font-size: 10px;
+        text-align: center;
+        letter-spacing: 0.04em;
     }
 
     .jadwal-tbl tbody tr {
-        border-bottom: 1px solid #f1f5f9;
-        transition: background 0.2s;
+        border-bottom: 1px solid #e5e7eb;
     }
 
     .jadwal-tbl tbody tr:hover {
@@ -139,51 +137,62 @@
     }
 
     .jadwal-tbl tbody td {
-        padding: 12px;
-        color: #334155;
-        font-size: 13px;
+        padding: 9px 12px;
+        color: #374151;
+        font-size: 12px;
+        border-right: 1px solid #e5e7eb;
     }
 
     .jadwal-tbl tbody td.no {
         text-align: center;
-        font-weight: 600;
-        color: #94a3b8;
+        font-weight: 700;
+        color: #013469;
     }
 
     .jadwal-tbl tbody td.sport,
     .jadwal-tbl tbody td.venue {
-        font-weight: 500;
-        color: #1e293b;
+        font-weight: 600;
+        color: #013469;
         cursor: pointer;
         transition: all 0.2s;
     }
 
     .jadwal-tbl tbody td.sport:hover,
     .jadwal-tbl tbody td.venue:hover {
-        color: #0ea5e9;
+        text-decoration: underline;
+        color: #FDB813;
     }
 
     .jadwal-tbl tbody td.durasi {
         text-align: center;
         font-weight: 600;
-        color: #64748b;
     }
 
     .jadwal-tbl tbody td.day-cell {
         padding: 0;
-        height: 44px;
-        vertical-align: middle;
+        height: 36px;
     }
 
-    .day-prep, .day-exec, .day-final {
+    .day-prep {
+        background: #60a5fa;
         width: 100%;
-        height: 12px;
+        height: 100%;
         display: block;
     }
 
-    .day-prep { background: #93c5fd; }
-    .day-exec { background: #fdba74; }
-    .day-final { background: #d8b4fe; }
+    .day-exec {
+        background: #fb923c;
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+
+    .day-final {
+        background: #c084fc;
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
 
     .day-empty {
         width: 100%;
@@ -201,18 +210,17 @@
     /* ── Legend ── */
     .legend-box {
         background: #fff;
-        border-radius: 12px;
-        border: 1px solid #f1f5f9;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-        padding: 24px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+        padding: 20px;
         min-width: 240px;
         flex: 0 0 auto;
     }
 
     .legend-box h3 {
         font-size: 14px;
-        font-weight: 700;
-        color: #1e293b;
+        font-weight: 800;
+        color: #013469;
         margin: 0 0 16px;
     }
 
@@ -224,15 +232,23 @@
     }
 
     .legend-dot {
-        width: 24px;
-        height: 8px;
-        border-radius: 4px;
+        width: 42px;
+        height: 22px;
+        border-radius: 50px;
         flex-shrink: 0;
     }
 
-    .legend-dot.prep { background: #93c5fd; }
-    .legend-dot.exec { background: #fdba74; }
-    .legend-dot.final { background: #d8b4fe; }
+    .legend-dot.prep {
+        background: #60a5fa;
+    }
+
+    .legend-dot.exec {
+        background: #fb923c;
+    }
+
+    .legend-dot.final {
+        background: #c084fc;
+    }
 
     .legend-item span {
         font-size: 11.5px;
@@ -340,40 +356,50 @@
         .jadwal-page {
             padding: 16px 16px 32px;
         }
+
         .jadwal-bottom {
             flex-direction: column;
             gap: 16px;
         }
+
         .legend-box {
             min-width: auto;
             width: 100%;
         }
+
         .day-picker-wrap {
             width: 100%;
         }
+
         .day-btn {
             width: 44px;
             height: 52px;
         }
+
         .day-btn .num {
             font-size: 15px;
         }
+
         .download-btn {
             width: 100%;
             justify-content: center;
             font-size: 14px;
             padding: 12px 24px;
         }
+
         .jadwal-banner {
             height: auto;
             min-height: 100px;
         }
+
         .jadwal-banner .deco-right {
             display: none;
         }
+
         .jadwal-banner .deco-wave {
             width: 50%;
         }
+
         .jadwal-banner h1 {
             font-size: 16px;
         }
@@ -402,7 +428,7 @@
         padding: 0 16px;
         transition: all 0.2s;
     }
-    
+
     .filter-box:focus-within {
         border-color: #013469;
         box-shadow: 0 0 0 3px rgba(1, 52, 105, 0.1);
@@ -645,7 +671,6 @@
         align-items: center;
         justify-content: center;
     }
-
 </style>
 @endpush
 
@@ -673,11 +698,15 @@
     <!-- Filter Section -->
     <div class="jadwal-filter">
         <div class="filter-box">
-            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
             <input type="text" id="searchFilter" placeholder="Cari cabang olahraga atau venue...">
         </div>
         <div class="filter-box">
-            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
             <select id="monthFilter">
                 <option value="all">Semua Bulan</option>
                 <option value="oktober">Oktober 2026</option>
@@ -685,7 +714,9 @@
             </select>
         </div>
         <div class="filter-box">
-            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
             <select id="dateFilter">
                 <option value="all">Semua Tanggal</option>
                 <option value="4" data-month="oktober">31 Oktober</option>
@@ -723,8 +754,8 @@
                     <th rowspan="2">Cabang Olahraga</th>
                     <th rowspan="2">Venue</th>
                     <th rowspan="2" style="width:54px;text-align:center">Durasi</th>
-                    <th colspan="1" style="text-align:center">Oktober</th>
-                    <th colspan="20" style="text-align:center">November 2026</th>
+                    <th colspan="1" style="background:#014590;text-align:center">Oktober</th>
+                    <th colspan="20" style="background:#014590;text-align:center">November 2026</th>
                 </tr>
                 <tr class="month-header">
                     <th class="date-col">31<br>Sabtu</th>
@@ -1575,17 +1606,21 @@
         <div class="venue-modal-body">
             <div class="venue-section">
                 <h3>
-                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                    </svg>
                     Hotel & Penginapan Terdekat
                 </h3>
                 <div class="cards-grid" id="modalHotels">
                     <!-- Hotels will be injected here -->
                 </div>
             </div>
-            
+
             <div class="venue-section">
                 <h3>
-                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
                     Fasilitas Pendukung
                 </h3>
                 <ul class="facilities-list" id="modalFacilities">
@@ -1593,178 +1628,249 @@
                 </ul>
             </div>
         </div>
-</div>
+    </div>
 
-@push('scripts')
-<script>
-    // Filtering Logic
-    const searchFilter = document.getElementById('searchFilter');
-    const monthFilter = document.getElementById('monthFilter');
-    const dateFilter = document.getElementById('dateFilter');
-    const resetFilterBtn = document.getElementById('resetFilterBtn');
-    const tableRows = document.querySelectorAll('.jadwal-tbl tbody tr');
-    const dayBtns = document.querySelectorAll('.day-btn');
+    @push('scripts')
+    <script>
+        // Filtering Logic
+        const searchFilter = document.getElementById('searchFilter');
+        const monthFilter = document.getElementById('monthFilter');
+        const dateFilter = document.getElementById('dateFilter');
+        const resetFilterBtn = document.getElementById('resetFilterBtn');
+        const tableRows = document.querySelectorAll('.jadwal-tbl tbody tr');
+        const dayBtns = document.querySelectorAll('.day-btn');
 
-    function filterTable() {
-        const searchTerm = searchFilter.value.toLowerCase();
-        const selectedMonth = monthFilter.value;
-        const selectedDateIndex = dateFilter.value;
+        function filterTable() {
+            const searchTerm = searchFilter.value.toLowerCase();
+            const selectedMonth = monthFilter.value;
+            const selectedDateIndex = dateFilter.value;
 
-        Array.from(dateFilter.options).forEach(opt => {
-            if (opt.value === 'all') return;
-            if (selectedMonth === 'all' || opt.getAttribute('data-month') === selectedMonth) {
-                opt.style.display = '';
-            } else {
-                opt.style.display = 'none';
-                if (dateFilter.value === opt.value) {
-                    dateFilter.value = 'all';
-                }
-            }
-        });
-        
-        const finalDateIndex = dateFilter.value;
-
-        tableRows.forEach(row => {
-            const sport = row.querySelector('.sport').textContent.toLowerCase();
-            const venue = row.querySelector('.venue').textContent.toLowerCase();
-            const textMatch = sport.includes(searchTerm) || venue.includes(searchTerm);
-            
-            let dateMatch = true;
-
-            if (finalDateIndex !== 'all') {
-                const td = row.children[parseInt(finalDateIndex)];
-                if (td && td.querySelector('.day-empty')) {
-                    dateMatch = false;
-                }
-            } else if (selectedMonth !== 'all') {
-                const monthIndices = selectedMonth === 'oktober' ? [4] : [5, 6, 7, 8, 9, 10, 11, 12];
-                let hasActivityInMonth = false;
-                monthIndices.forEach(idx => {
-                    const td = row.children[idx];
-                    if (td && !td.querySelector('.day-empty')) {
-                        hasActivityInMonth = true;
-                    }
-                });
-                dateMatch = hasActivityInMonth;
-            }
-
-            if (textMatch && dateMatch) {
-                row.style.display = '';
-            } else {
-                row.style.display = 'none';
-            }
-        });
-
-        // Sync day-btn active state
-        dayBtns.forEach(btn => btn.classList.remove('active'));
-        if (finalDateIndex !== 'all') {
-            const selectedOpt = dateFilter.querySelector(`option[value="${finalDateIndex}"]`);
-            if (selectedOpt) {
-                const optText = selectedOpt.textContent.toLowerCase();
-                dayBtns.forEach(btn => {
-                    const btnText = btn.textContent.toLowerCase().replace(/\s+/g, '');
-                    const compareText = optText.replace(/\s+/g, '');
-                    if (compareText.includes(btnText) || btnText.includes(compareText.replace('oktober','okt').replace('november','nov'))) {
-                        btn.classList.add('active');
-                    }
-                });
-            }
-        }
-    }
-
-    searchFilter.addEventListener('input', filterTable);
-    monthFilter.addEventListener('change', filterTable);
-    dateFilter.addEventListener('change', filterTable);
-    
-    resetFilterBtn.addEventListener('click', () => {
-        searchFilter.value = '';
-        monthFilter.value = 'all';
-        dateFilter.value = 'all';
-        filterTable();
-    });
-
-    dayBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            dayBtns.forEach(b => b.classList.remove('active'));
-            this.classList.add('active');
-            
-            const num = this.querySelector('.num').textContent.trim();
-            const mon = this.querySelector('.mon').textContent.trim().toLowerCase();
-            
             Array.from(dateFilter.options).forEach(opt => {
-                const optText = opt.textContent.toLowerCase();
-                if (optText.includes(num) && (optText.includes(mon) || (mon === 'okt' && optText.includes('oktober')) || (mon === 'nov' && optText.includes('november')))) {
-                    dateFilter.value = opt.value;
-                    monthFilter.value = opt.getAttribute('data-month');
-                    filterTable();
+                if (opt.value === 'all') return;
+                if (selectedMonth === 'all' || opt.getAttribute('data-month') === selectedMonth) {
+                    opt.style.display = '';
+                } else {
+                    opt.style.display = 'none';
+                    if (dateFilter.value === opt.value) {
+                        dateFilter.value = 'all';
+                    }
                 }
             });
-        });
-    });
 
-    // Modal Data
-    const venueData = {
-        'Green Forest Hotel': {
-            hotels: [
-                { name: 'Hotel Aston Bogor', distance: '1.2 km', rating: '4.5' },
-                { name: 'The Highland Park Resort', distance: '2.5 km', rating: '4.3' },
-                { name: 'Leuweung Geledegan Ecolodge', distance: '3.0 km', rating: '4.4' }
-            ],
-            facilities: [
-                { name: 'Minimarket', type: 'shopping', icon: 'M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z' },
-                { name: 'Klinik 24 Jam', type: 'health', icon: 'M19 14l-7 7m0 0l-7-7m7 7V3' }, /* using generic plus-like or simple shape */
-                { name: 'ATM Center', type: 'finance', icon: 'M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z' },
-                { name: 'Cafe & Resto', type: 'food', icon: 'M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z' }
-            ]
-        },
-        'Majalengka': {
-            hotels: [
-                { name: 'Fitra Hotel', distance: '3.0 km', rating: '4.1' },
-                { name: 'Hotel Fieris', distance: '4.5 km', rating: '4.4' }
-            ],
-            facilities: [
-                { name: 'Puskesmas Terdekat', type: 'health', icon: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z' },
-                { name: 'Warung Makan Lokal', type: 'food', icon: 'M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z' }
-            ]
-        },
-        'Gunung Mas': {
-            hotels: [
-                { name: 'Pesona Alam Resort', distance: '5.0 km', rating: '4.7' },
-                { name: 'Royal Safari Garden', distance: '7.2 km', rating: '4.5' }
-            ],
-            facilities: [
-                { name: 'Klinik P3K Gunung Mas', type: 'health', icon: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z' },
-                { name: 'Pusat Oleh-oleh', type: 'shopping', icon: 'M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z' }
-            ]
-        },
-        'PPSDMAP Kemenhub Kemang': {
-            hotels: [
-                { name: 'Pendopo 45 Hotel', distance: '2.1 km', rating: '4.0' },
-                { name: 'Lorin Sentul Hotel', distance: '6.5 km', rating: '4.3' }
-            ],
-            facilities: [
-                { name: 'Kantin Kemenhub', type: 'food', icon: 'M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z' },
-                { name: 'Minimarket', type: 'shopping', icon: 'M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z' }
-            ]
+            const finalDateIndex = dateFilter.value;
+
+            tableRows.forEach(row => {
+                const sport = row.querySelector('.sport').textContent.toLowerCase();
+                const venue = row.querySelector('.venue').textContent.toLowerCase();
+                const textMatch = sport.includes(searchTerm) || venue.includes(searchTerm);
+
+                let dateMatch = true;
+
+                if (finalDateIndex !== 'all') {
+                    const td = row.children[parseInt(finalDateIndex)];
+                    if (td && td.querySelector('.day-empty')) {
+                        dateMatch = false;
+                    }
+                } else if (selectedMonth !== 'all') {
+                    const monthIndices = selectedMonth === 'oktober' ? [4] : [5, 6, 7, 8, 9, 10, 11, 12];
+                    let hasActivityInMonth = false;
+                    monthIndices.forEach(idx => {
+                        const td = row.children[idx];
+                        if (td && !td.querySelector('.day-empty')) {
+                            hasActivityInMonth = true;
+                        }
+                    });
+                    dateMatch = hasActivityInMonth;
+                }
+
+                if (textMatch && dateMatch) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+
+            // Sync day-btn active state
+            dayBtns.forEach(btn => btn.classList.remove('active'));
+            if (finalDateIndex !== 'all') {
+                const selectedOpt = dateFilter.querySelector(`option[value="${finalDateIndex}"]`);
+                if (selectedOpt) {
+                    const optText = selectedOpt.textContent.toLowerCase();
+                    dayBtns.forEach(btn => {
+                        const btnText = btn.textContent.toLowerCase().replace(/\s+/g, '');
+                        const compareText = optText.replace(/\s+/g, '');
+                        if (compareText.includes(btnText) || btnText.includes(compareText.replace('oktober', 'okt').replace('november', 'nov'))) {
+                            btn.classList.add('active');
+                        }
+                    });
+                }
+            }
         }
-    };
 
-    const modal = document.getElementById('venueModal');
-    const closeBtn = document.getElementById('closeModalBtn');
-    const modalVenueName = document.getElementById('modalVenueName');
-    const modalSportName = document.getElementById('modalSportName');
-    const modalHotels = document.getElementById('modalHotels');
-    const modalFacilities = document.getElementById('modalFacilities');
+        searchFilter.addEventListener('input', filterTable);
+        monthFilter.addEventListener('change', filterTable);
+        dateFilter.addEventListener('change', filterTable);
 
-    function openModal(venue, sport) {
-        modalVenueName.textContent = venue;
-        modalSportName.textContent = 'Cabang Olahraga: ' + sport;
-        
-        const data = venueData[venue] || { hotels: [], facilities: [] };
-        
-        // Render Hotels
-        if (data.hotels.length > 0) {
-            modalHotels.innerHTML = data.hotels.map(h => `
+        resetFilterBtn.addEventListener('click', () => {
+            searchFilter.value = '';
+            monthFilter.value = 'all';
+            dateFilter.value = 'all';
+            filterTable();
+        });
+
+        dayBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                dayBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                const num = this.querySelector('.num').textContent.trim();
+                const mon = this.querySelector('.mon').textContent.trim().toLowerCase();
+
+                Array.from(dateFilter.options).forEach(opt => {
+                    const optText = opt.textContent.toLowerCase();
+                    if (optText.includes(num) && (optText.includes(mon) || (mon === 'okt' && optText.includes('oktober')) || (mon === 'nov' && optText.includes('november')))) {
+                        dateFilter.value = opt.value;
+                        monthFilter.value = opt.getAttribute('data-month');
+                        filterTable();
+                    }
+                });
+            });
+        });
+
+        // Modal Data
+        const venueData = {
+            'Green Forest Hotel': {
+                hotels: [{
+                        name: 'Hotel Aston Bogor',
+                        distance: '1.2 km',
+                        rating: '4.5'
+                    },
+                    {
+                        name: 'The Highland Park Resort',
+                        distance: '2.5 km',
+                        rating: '4.3'
+                    },
+                    {
+                        name: 'Leuweung Geledegan Ecolodge',
+                        distance: '3.0 km',
+                        rating: '4.4'
+                    }
+                ],
+                facilities: [{
+                        name: 'Minimarket',
+                        type: 'shopping',
+                        icon: 'M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z'
+                    },
+                    {
+                        name: 'Klinik 24 Jam',
+                        type: 'health',
+                        icon: 'M19 14l-7 7m0 0l-7-7m7 7V3'
+                    }, /* using generic plus-like or simple shape */
+                    {
+                        name: 'ATM Center',
+                        type: 'finance',
+                        icon: 'M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z'
+                    },
+                    {
+                        name: 'Cafe & Resto',
+                        type: 'food',
+                        icon: 'M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z'
+                    }
+                ]
+            },
+            'Majalengka': {
+                hotels: [{
+                        name: 'Fitra Hotel',
+                        distance: '3.0 km',
+                        rating: '4.1'
+                    },
+                    {
+                        name: 'Hotel Fieris',
+                        distance: '4.5 km',
+                        rating: '4.4'
+                    }
+                ],
+                facilities: [{
+                        name: 'Puskesmas Terdekat',
+                        type: 'health',
+                        icon: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z'
+                    },
+                    {
+                        name: 'Warung Makan Lokal',
+                        type: 'food',
+                        icon: 'M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z'
+                    }
+                ]
+            },
+            'Gunung Mas': {
+                hotels: [{
+                        name: 'Pesona Alam Resort',
+                        distance: '5.0 km',
+                        rating: '4.7'
+                    },
+                    {
+                        name: 'Royal Safari Garden',
+                        distance: '7.2 km',
+                        rating: '4.5'
+                    }
+                ],
+                facilities: [{
+                        name: 'Klinik P3K Gunung Mas',
+                        type: 'health',
+                        icon: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z'
+                    },
+                    {
+                        name: 'Pusat Oleh-oleh',
+                        type: 'shopping',
+                        icon: 'M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z'
+                    }
+                ]
+            },
+            'PPSDMAP Kemenhub Kemang': {
+                hotels: [{
+                        name: 'Pendopo 45 Hotel',
+                        distance: '2.1 km',
+                        rating: '4.0'
+                    },
+                    {
+                        name: 'Lorin Sentul Hotel',
+                        distance: '6.5 km',
+                        rating: '4.3'
+                    }
+                ],
+                facilities: [{
+                        name: 'Kantin Kemenhub',
+                        type: 'food',
+                        icon: 'M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z'
+                    },
+                    {
+                        name: 'Minimarket',
+                        type: 'shopping',
+                        icon: 'M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z'
+                    }
+                ]
+            }
+        };
+
+        const modal = document.getElementById('venueModal');
+        const closeBtn = document.getElementById('closeModalBtn');
+        const modalVenueName = document.getElementById('modalVenueName');
+        const modalSportName = document.getElementById('modalSportName');
+        const modalHotels = document.getElementById('modalHotels');
+        const modalFacilities = document.getElementById('modalFacilities');
+
+        function openModal(venue, sport) {
+            modalVenueName.textContent = venue;
+            modalSportName.textContent = 'Cabang Olahraga: ' + sport;
+
+            const data = venueData[venue] || {
+                hotels: [],
+                facilities: []
+            };
+
+            // Render Hotels
+            if (data.hotels.length > 0) {
+                modalHotels.innerHTML = data.hotels.map(h => `
                 <div class="hotel-card">
                     <h4>${h.name}</h4>
                     <div class="hotel-meta">
@@ -1776,13 +1882,13 @@
                     </div>
                 </div>
             `).join('');
-        } else {
-            modalHotels.innerHTML = '<p style="color:#64748b;font-size:13px;">Informasi hotel belum tersedia untuk venue ini.</p>';
-        }
+            } else {
+                modalHotels.innerHTML = '<p style="color:#64748b;font-size:13px;">Informasi hotel belum tersedia untuk venue ini.</p>';
+            }
 
-        // Render Facilities
-        if (data.facilities.length > 0) {
-            modalFacilities.innerHTML = data.facilities.map(f => `
+            // Render Facilities
+            if (data.facilities.length > 0) {
+                modalFacilities.innerHTML = data.facilities.map(f => `
                 <li class="facility-item">
                     <div class="facility-icon">
                         <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -1792,37 +1898,36 @@
                     ${f.name}
                 </li>
             `).join('');
-        } else {
-            modalFacilities.innerHTML = '<p style="color:#64748b;font-size:13px;">Informasi fasilitas belum tersedia untuk venue ini.</p>';
+            } else {
+                modalFacilities.innerHTML = '<p style="color:#64748b;font-size:13px;">Informasi fasilitas belum tersedia untuk venue ini.</p>';
+            }
+
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
         }
 
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
 
-    function closeModal() {
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
-    }
+        // Attach Event Listeners to table cells
+        document.querySelectorAll('.sport, .venue').forEach(cell => {
+            cell.addEventListener('click', function() {
+                const venue = this.getAttribute('data-venue');
+                const sport = this.getAttribute('data-sport');
+                if (venue && sport) {
+                    openModal(venue, sport);
+                }
+            });
+        });
 
-    // Attach Event Listeners to table cells
-    document.querySelectorAll('.sport, .venue').forEach(cell => {
-        cell.addEventListener('click', function() {
-            const venue = this.getAttribute('data-venue');
-            const sport = this.getAttribute('data-sport');
-            if (venue && sport) {
-                openModal(venue, sport);
+        closeBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeModal();
             }
         });
-    });
-
-    closeBtn.addEventListener('click', closeModal);
-    modal.addEventListener('click', function(e) {
-        if (e.target === modal) {
-            closeModal();
-        }
-    });
-
-</script>
-@endpush
-@endsection
+    </script>
+    @endpush
+    @endsection
