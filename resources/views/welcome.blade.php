@@ -445,13 +445,196 @@
 
         /* Map section mobile */
         .map-home-section {
-            margin: 20px 16px 40px;
-            padding: 0;
+            padding: 20px 5%;
+        }
+    }
+
+    /* Facilities Cards CSS */
+    .venue-body {
+        margin-top: 50px;
+        padding: 0 5%;
+        margin-bottom: 80px;
+    }
+
+    .facility-category {
+        margin-bottom: 40px;
+        background: #fff;
+        padding: 24px;
+        border-radius: 20px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+        border: 1px solid #f9fafb;
+    }
+
+    .facilities-header {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 24px;
+        padding-bottom: 16px;
+        border-bottom: 2px solid #f3f4f6;
+    }
+
+    .facilities-header h2 {
+        font-size: 1.25rem;
+        font-weight: 800;
+        color: #111827;
+        margin: 0;
+    }
+
+    .facilities-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .place-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 20px;
+    }
+
+    .place-card {
+        background: #fff;
+        border-radius: 16px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid #f3f4f6;
+    }
+
+    .place-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .place-card .pc-img {
+        height: 160px;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .place-card .pc-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .place-card:hover .pc-img img {
+        transform: scale(1.08);
+    }
+
+    .place-card .pc-badge {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(4px);
+        padding: 4px 10px;
+        border-radius: 20px;
+        font-size: 11px;
+        font-weight: 800;
+        color: #013469;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .place-card .pc-body {
+        padding: 18px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .place-card .pc-name {
+        font-size: 16px;
+        font-weight: 800;
+        color: #1f2937;
+        margin: 0 0 6px;
+        line-height: 1.3;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .place-card .pc-addr {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        font-size: 12px;
+        color: #6b7280;
+        margin-bottom: 20px;
+        line-height: 1.5;
+    }
+
+    .place-card .pc-addr svg {
+        color: #9ca3af;
+        margin-top: 2px;
+    }
+
+    .place-card .map-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        background: #f3f4f6;
+        color: #374151;
+        font-size: 13px;
+        font-weight: 700;
+        padding: 12px 16px;
+        border-radius: 10px;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        margin-top: auto;
+    }
+
+    .place-card .map-btn:hover {
+        background: #2563eb;
+        color: #ffffff;
+    }
+
+    .section-title {
+        font-size: 18px;
+        margin-bottom: 14px;
+    }
+
+    @media (max-width: 768px) {
+        .facility-category {
+            padding: 16px;
+            border-radius: 16px;
         }
 
-        .section-title {
-            font-size: 18px;
-            margin-bottom: 14px;
+        .place-grid {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding-bottom: 12px;
+            gap: 16px;
+        }
+
+        .place-card {
+            min-width: 260px;
+            max-width: 280px;
+            scroll-snap-align: start;
+            flex-shrink: 0;
+            margin-bottom: 0;
+        }
+
+        /* Sembunyikan scrollbar untuk tampilan yang lebih bersih */
+        .place-grid::-webkit-scrollbar {
+            display: none;
+        }
+
+        .place-grid {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
         }
     }
 </style>
@@ -613,6 +796,73 @@
         </div>
     </div>
 </section>
+
+<div class="venue-body" id="facilities-section">
+    <!-- Hotel Section -->
+    <div class="facility-category" id="cat-hotel" style="display:none;">
+        <div class="facilities-header">
+            <div class="facilities-icon" style="background:#fef3c7; color:#d97706;">
+                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z" />
+                </svg>
+            </div>
+            <h2>Hotel & Penginapan Terdekat</h2>
+        </div>
+        <div id="hotel-container" class="place-grid"></div>
+    </div>
+
+    <!-- RS / Puskesmas Section -->
+    <div class="facility-category" id="cat-rs" style="display:none;">
+        <div class="facilities-header">
+            <div class="facilities-icon" style="background:#fee2e2; color:#dc2626;">
+                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M19 3H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z" />
+                </svg>
+            </div>
+            <h2>Fasilitas Kesehatan Terdekat</h2>
+        </div>
+        <div id="rs-container" class="place-grid"></div>
+    </div>
+
+    <!-- Restoran Section -->
+    <div class="facility-category" id="cat-resto" style="display:none;">
+        <div class="facilities-header">
+            <div class="facilities-icon" style="background:#dcfce7; color:#16a34a;">
+                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-7v8h2.5v8H21V2h-5z" />
+                </svg>
+            </div>
+            <h2>Restoran Terdekat</h2>
+        </div>
+        <div id="resto-container" class="place-grid"></div>
+    </div>
+
+    <!-- Polisi Section -->
+    <div class="facility-category" id="cat-police" style="display:none;">
+        <div class="facilities-header">
+            <div class="facilities-icon" style="background:#e0e7ff; color:#4f46e5;">
+                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z" />
+                </svg>
+            </div>
+            <h2>Kantor Polisi Terdekat</h2>
+        </div>
+        <div id="police-container" class="place-grid"></div>
+    </div>
+
+    <!-- Apotek Section -->
+    <div class="facility-category" id="cat-apotek" style="display:none;">
+        <div class="facilities-header">
+            <div class="facilities-icon" style="background:#f3e8ff; color:#9333ea;">
+                <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M19 3H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z" />
+                </svg>
+            </div>
+            <h2>Apotek Terdekat</h2>
+        </div>
+        <div id="apotek-container" class="place-grid"></div>
+    </div>
+</div>
 @endsection
 
 @push('scripts')
@@ -750,6 +1000,65 @@
     let map;
     let markers = []; // Marker untuk Venue (Merah)
     let fasilitasMarkers = []; // Marker untuk Fasilitas dari Places API (Biru)
+
+    function fetchPlaces(latLng, type, containerId, title, categoryId) {
+        const container = document.getElementById(containerId);
+        const categoryBlock = document.getElementById(categoryId);
+        if (!container || !categoryBlock) return;
+
+        categoryBlock.style.display = 'block';
+        container.innerHTML = '<p style="color:#9ca3af; font-style:italic; padding: 12px 0;">Sedang mencari data...</p>';
+
+        const service = new google.maps.places.PlacesService(map);
+        const request = {
+            location: latLng,
+            radius: '3000',
+            type: [type]
+        };
+
+        service.nearbySearch(request, (results, status) => {
+            if (status === google.maps.places.PlacesServiceStatus.OK && results.length > 0) {
+                container.innerHTML = '';
+                const topResults = results.slice(0, 4); // Ambil 4 teratas
+                topResults.forEach(place => {
+                    const placeImg = place.photos && place.photos.length > 0 ?
+                        place.photos[0].getUrl({
+                            maxWidth: 400
+                        }) :
+                        'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=400&q=80';
+                    const name = place.name;
+                    const address = place.vicinity || '';
+                    const mapUrl = `https://www.google.com/maps/search/?api=1&query=${place.geometry.location.lat()},${place.geometry.location.lng()}&query_place_id=${place.place_id}`;
+
+                    container.innerHTML += `
+                        <div class="place-card">
+                            <div class="pc-img">
+                                <span class="pc-badge">&lt; 3 km</span>
+                                <img src="${placeImg}" alt="${name}" loading="lazy">
+                            </div>
+                            <div class="pc-body">
+                                <div>
+                                    <p class="pc-name">${name}</p>
+                                    <div class="pc-addr">
+                                        <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="flex-shrink:0;">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                        </svg>
+                                        <span>${address}</span>
+                                    </div>
+                                </div>
+                                <a href="${mapUrl}" target="_blank" class="map-btn">
+                                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /></svg>
+                                    Lihat Rute
+                                </a>
+                            </div>
+                        </div>
+                    `;
+                });
+            } else {
+                container.innerHTML = `<p style="color:#9ca3af; font-style:italic; padding: 12px 0;">Tidak ada ${title} terdekat ditemukan.</p>`;
+            }
+        });
+    }
 
     function initMap() {
         const bogorCenter = {
@@ -935,9 +1244,6 @@
         const matchOption = Array.from(venueSelect.options).find(opt => opt.text.trim() === venue.name);
         venueSelect.selectedIndex = matchOption ? matchOption.index : 0;
 
-        ===
-        === = >>>
-        >>> > f32312dbcaeb43c67f8f524c28d2a175f515a1e6
         const caborArr = venue.cabor.split(',').map(c => c.trim());
         const caborContainer = document.getElementById('card-gor-cabor-grid');
         caborContainer.innerHTML = '';
@@ -956,6 +1262,27 @@
                 </div>
             `;
         });
+
+        // Tampilkan fasilitas terdekat (Hotel, RS, Restoran, Polisi)
+        if (map && google && google.maps && google.maps.places) {
+            const latLng = new google.maps.LatLng(Number(venue.lat), Number(venue.lng));
+            fetchPlaces(latLng, 'lodging', 'hotel-container', 'Hotel', 'cat-hotel');
+            fetchPlaces(latLng, 'hospital', 'rs-container', 'Fasilitas Kesehatan', 'cat-rs');
+            fetchPlaces(latLng, 'restaurant', 'resto-container', 'Restoran', 'cat-resto');
+            fetchPlaces(latLng, 'police', 'police-container', 'Kantor Polisi', 'cat-police');
+            fetchPlaces(latLng, 'pharmacy', 'apotek-container', 'Apotek', 'cat-apotek');
+
+            // Scroll ke bagian fasilitas secara halus
+            setTimeout(() => {
+                const facilitiesSection = document.getElementById('facilities-section');
+                if (facilitiesSection) {
+                    facilitiesSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }, 300); // Sedikit delay agar view ter-update
+        }
     }
 
     window.onload = function() {
