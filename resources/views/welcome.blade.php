@@ -113,59 +113,59 @@
     }
 
     /* ───────── Filter ───────── */
-.filter-section{
-    max-width:1200px;
-    margin:10px auto 10px;
-    padding:0 20px;
-}
+    .filter-section {
+        max-width: 1200px;
+        margin: 10px auto 10px;
+        padding: 0 20px;
+    }
 
-.filter-box {
-    background: #fff;
-    border-radius: 12px;
-    padding: 18px;
-    box-shadow: 0 8px 25px rgba(0,0,0,.12);
-}
+    .filter-box {
+        background: #fff;
+        border-radius: 12px;
+        padding: 18px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, .12);
+    }
 
-.filter-form {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr auto;
-    gap: 15px;
-    align-items: center;
-}
+    .filter-form {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr auto;
+        gap: 15px;
+        align-items: center;
+    }
 
-.filter-input,
-.filter-select {
-    width: 100%;
-    height: 48px;
-    border: 1px solid #d1d5db;
-    border-radius: 8px;
-    padding: 0 15px;
-    font-size: 14px;
-    font-family: 'Poppins', sans-serif;
-    outline: none;
-    transition: .2s;
-}
+    .filter-input,
+    .filter-select {
+        width: 100%;
+        height: 48px;
+        border: 1px solid #d1d5db;
+        border-radius: 8px;
+        padding: 0 15px;
+        font-size: 14px;
+        font-family: 'Poppins', sans-serif;
+        outline: none;
+        transition: .2s;
+    }
 
-.filter-input:focus,
-.filter-select:focus {
-    border-color: #013469;
-}
+    .filter-input:focus,
+    .filter-select:focus {
+        border-color: #013469;
+    }
 
-.reset-btn {
-    height: 48px;
-    padding: 0 20px;
-    border: none;
-    background: #ef4444;
-    color: white;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: .2s;
-}
+    .reset-btn {
+        height: 48px;
+        padding: 0 20px;
+        border: none;
+        background: #ef4444;
+        color: white;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: .2s;
+    }
 
-.reset-btn:hover {
-    background: #dc2626;
-}
+    .reset-btn:hover {
+        background: #dc2626;
+    }
 
     /* ── Stats ── */
     .stats {
@@ -373,14 +373,14 @@
             height: 350px;
         }
 
-        .filter-section{
-    margin:20px 16px;
-    padding:0;
-}
+        .filter-section {
+            margin: 20px 16px;
+            padding: 0;
+        }
 
-.filter-form{
-    grid-template-columns:1fr;
-}
+        .filter-form {
+            grid-template-columns: 1fr;
+        }
 
         /* Hero mobile */
         .hero {
@@ -388,27 +388,33 @@
             min-height: 320px;
             flex-direction: column;
         }
+
         .hero-left {
             width: 100%;
             clip-path: none;
             padding: 28px 20px 24px;
             min-height: 280px;
         }
+
         .hero-right {
             position: relative;
             width: 100%;
             height: 180px;
         }
+
         .hero-left h2 {
             font-size: 26px;
         }
+
         .hero-left h2 span {
             font-size: 30px;
         }
+
         .hero-left p.desc {
             max-width: 100%;
             font-size: 12px;
         }
+
         .hero-right .mascot {
             height: 160px;
             right: 16px;
@@ -420,13 +426,16 @@
             gap: 12px;
             padding: 20px 16px 30px;
         }
+
         .stat-card {
             padding: 16px 14px;
             gap: 12px;
         }
+
         .stat-num {
             font-size: 26px;
         }
+
         .stat-icon svg {
             width: 32px;
             height: 32px;
@@ -437,6 +446,7 @@
             margin: 20px 16px 40px;
             padding: 0;
         }
+
         .section-title {
             font-size: 18px;
             margin-bottom: 14px;
@@ -592,14 +602,14 @@
         <div class="home-gor-card" id="floating-gor-card">
             <div class="gor-card-header">
                 <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="color: #374151;">
-                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/>
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z" />
                 </svg>
                 <span id="card-gor-name">-</span>
             </div>
             <div class="gor-card-body">
                 <div class="addr">
                     <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="color: #6b7280; flex-shrink: 0; margin-top: -2px;">
-                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/>
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z" />
                     </svg>
                     <span id="card-gor-addr">-</span>
                 </div>
@@ -615,7 +625,7 @@
 
                 <a href="#" id="card-gor-gmaps" target="_blank" class="map-btn">
                     <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
+                        <path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z" />
                     </svg>
                     Buka di Google Maps
                 </a>
@@ -823,7 +833,7 @@
         document.getElementById('card-gor-name').innerText = venue.name;
         document.getElementById('card-gor-addr').innerText = venue.address;
         document.getElementById('card-gor-gmaps').href = venue.gmaps_url;
-        
+
         const caborArr = venue.cabor.split(',').map(c => c.trim());
         const caborContainer = document.getElementById('card-gor-cabor-grid');
         caborContainer.innerHTML = '';
