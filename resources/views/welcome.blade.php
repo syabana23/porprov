@@ -95,6 +95,8 @@
         border-radius: 6px;
         text-decoration: none;
         font-family: 'Poppins', sans-serif;
+        border: none;
+        cursor: pointer;
     }
 
     .btn-outline-white {
@@ -113,59 +115,59 @@
     }
 
     /* ───────── Filter ───────── */
-.filter-section{
-    max-width:1200px;
-    margin:10px auto 10px;
-    padding:0 20px;
-}
+    .filter-section {
+        max-width: 1200px;
+        margin: 10px auto 10px;
+        padding: 0 20px;
+    }
 
-.filter-box {
-    background: #fff;
-    border-radius: 12px;
-    padding: 18px;
-    box-shadow: 0 8px 25px rgba(0,0,0,.12);
-}
+    .filter-box {
+        background: #fff;
+        border-radius: 12px;
+        padding: 18px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, .12);
+    }
 
-.filter-form {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr auto;
-    gap: 15px;
-    align-items: center;
-}
+    .filter-form {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr auto;
+        gap: 15px;
+        align-items: center;
+    }
 
-.filter-input,
-.filter-select {
-    width: 100%;
-    height: 48px;
-    border: 1px solid #d1d5db;
-    border-radius: 8px;
-    padding: 0 15px;
-    font-size: 14px;
-    font-family: 'Poppins', sans-serif;
-    outline: none;
-    transition: .2s;
-}
+    .filter-input,
+    .filter-select {
+        width: 100%;
+        height: 48px;
+        border: 1px solid #d1d5db;
+        border-radius: 8px;
+        padding: 0 15px;
+        font-size: 14px;
+        font-family: 'Poppins', sans-serif;
+        outline: none;
+        transition: .2s;
+    }
 
-.filter-input:focus,
-.filter-select:focus {
-    border-color: #013469;
-}
+    .filter-input:focus,
+    .filter-select:focus {
+        border-color: #013469;
+    }
 
-.reset-btn {
-    height: 48px;
-    padding: 0 20px;
-    border: none;
-    background: #ef4444;
-    color: white;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: .2s;
-}
+    .reset-btn {
+        height: 48px;
+        padding: 0 20px;
+        border: none;
+        background: #ef4444;
+        color: white;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: .2s;
+    }
 
-.reset-btn:hover {
-    background: #dc2626;
-}
+    .reset-btn:hover {
+        background: #dc2626;
+    }
 
     /* ── Stats ── */
     .stats {
@@ -373,14 +375,14 @@
             height: 350px;
         }
 
-        .filter-section{
-    margin:20px 16px;
-    padding:0;
-}
+        .filter-section {
+            margin: 20px 16px;
+            padding: 0;
+        }
 
-.filter-form{
-    grid-template-columns:1fr;
-}
+        .filter-form {
+            grid-template-columns: 1fr;
+        }
 
         /* Hero mobile */
         .hero {
@@ -388,27 +390,33 @@
             min-height: 320px;
             flex-direction: column;
         }
+
         .hero-left {
             width: 100%;
             clip-path: none;
             padding: 28px 20px 24px;
             min-height: 280px;
         }
+
         .hero-right {
             position: relative;
             width: 100%;
             height: 180px;
         }
+
         .hero-left h2 {
             font-size: 26px;
         }
+
         .hero-left h2 span {
             font-size: 30px;
         }
+
         .hero-left p.desc {
             max-width: 100%;
             font-size: 12px;
         }
+
         .hero-right .mascot {
             height: 160px;
             right: 16px;
@@ -420,13 +428,16 @@
             gap: 12px;
             padding: 20px 16px 30px;
         }
+
         .stat-card {
             padding: 16px 14px;
             gap: 12px;
         }
+
         .stat-num {
             font-size: 26px;
         }
+
         .stat-icon svg {
             width: 32px;
             height: 32px;
@@ -437,6 +448,7 @@
             margin: 20px 16px 40px;
             padding: 0;
         }
+
         .section-title {
             font-size: 18px;
             margin-bottom: 14px;
@@ -448,6 +460,7 @@
 @section('content')
 <!-- Hero Section -->
 <section class="hero">
+    <!-- ... (Bagian Hero tetap sama seperti kode asli) ... -->
     <div class="hero-left">
         <div>
             <h2>PORPROV <span>KOTA BOGOR 2026</span></h2>
@@ -471,16 +484,14 @@
         </div>
     </div>
     <div class="hero-right">
-        {{-- Note for user: Change hero background image at public/images/hero-bg.png --}}
         <img class="bg" src="{{ asset('images/hero-bg.png') }}" alt="Kota Bogor">
-        {{-- Note for user: Change mascot image at public/images/maskot.png --}}
         <img class="mascot" src="{{ asset('images/maskot.png') }}" alt="Maskot PORPROV">
     </div>
 </section>
 
-
 <!-- Statistics Cards -->
 <section class="stats">
+    <!-- ... (Bagian Stats tetap sama) ... -->
     <div class="stat-card">
         <div class="stat-icon">
             <svg width="40" height="40" fill="none" stroke="#013469" viewBox="0 0 24 24" stroke-width="1.5">
@@ -492,7 +503,6 @@
             <div class="stat-label">Hotel</div>
         </div>
     </div>
-
     <div class="stat-card">
         <div class="stat-icon">
             <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#013469" stroke-width="1.5">
@@ -505,7 +515,6 @@
             <div class="stat-label">Cabang Olahraga</div>
         </div>
     </div>
-
     <div class="stat-card">
         <div class="stat-icon">
             <svg width="40" height="40" fill="none" stroke="#013469" viewBox="0 0 24 24" stroke-width="1.5">
@@ -517,7 +526,6 @@
             <div class="stat-label">Apotek</div>
         </div>
     </div>
-
     <div class="stat-card">
         <div class="stat-icon">
             <svg width="40" height="40" fill="none" stroke="#2BB673" viewBox="0 0 24 24" stroke-width="1.5">
@@ -534,9 +542,7 @@
 <!-- Filter -->
 <section class="filter-section">
     <div class="filter-box">
-
-        <form class="filter-form">
-
+        <form class="filter-form" id="map-filter-form">
             <!-- Fasilitas -->
             <select class="filter-select" id="fasilitas">
                 <option value="">🔍 Cari Fasilitas</option>
@@ -549,39 +555,30 @@
             <!-- Cabang Olahraga -->
             <select class="filter-select" id="cabor">
                 <option value="">🏃 Cabang Olahraga</option>
-                <option>Drumband</option>
-                <option>Pencak Silat</option>
-                <option>Taekwondo</option>
-                <option>Judo</option>
-                <option>Kurash</option>
-                <option>Sambo</option>
-                <option>Tenis Meja</option>
+                <option value="drumband">Drumband</option>
+                <option value="pencak silat">Pencak Silat</option>
+                <option value="taekwondo">Taekwondo</option>
+                <option value="judo">Judo</option>
+                <option value="kurash">Kurash</option>
+                <option value="sambo">Sambo</option>
+                <option value="tenis meja">Tenis Meja</option>
             </select>
 
             <!-- Venue -->
             <select class="filter-select" id="venue">
                 <option value="">📍 Venue</option>
-                <option>GOR Pajajaran Indoor A</option>
-                <option>GOR Pajajaran Indoor B</option>
-                <option>GOR Yasmin</option>
-                <option>Stadion Pajajaran</option>
-                <option>GOR Vokasi IPB</option>
+                <option value="gor pajajaran indoor a">GOR Pajajaran Indoor A</option>
+                <option value="gor pajajaran indoor b">GOR Pajajaran Indoor B</option>
+                <option value="gor yasmin">GOR Yasmin</option>
+                <option value="stadion pajajaran">Stadion Pajajaran</option>
+                <option value="gor vokasi ipb">GOR Vokasi IPB</option>
             </select>
 
-
-            <button type="submit" class="btn-yellow">
-                Cari
-            </button>
-
-            <button type="reset" class="reset-btn">
-                Reset
-            </button>
-
+            <button type="submit" class="btn-yellow">Cari</button>
+            <button type="reset" class="reset-btn">Reset</button>
         </form>
-
     </div>
 </section>
-
 
 <!-- Map Section -->
 <section class="map-home-section">
@@ -592,30 +589,23 @@
         <div class="home-gor-card" id="floating-gor-card">
             <div class="gor-card-header">
                 <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="color: #374151;">
-                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/>
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z" />
                 </svg>
                 <span id="card-gor-name">-</span>
             </div>
             <div class="gor-card-body">
                 <div class="addr">
                     <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="color: #6b7280; flex-shrink: 0; margin-top: -2px;">
-                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/>
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z" />
                     </svg>
                     <span id="card-gor-addr">-</span>
                 </div>
                 <div class="cabang-title">CABANG OLAHRAGA</div>
                 <div class="cabor-grid" id="card-gor-cabor-grid"></div>
 
-                <div class="tags-container">
-                    <span class="tag-pill">Hotel</span>
-                    <span class="tag-pill">Restoran</span>
-                    <span class="tag-pill">Kesehatan</span>
-                    <span class="tag-pill">Toko Obat</span>
-                </div>
-
                 <a href="#" id="card-gor-gmaps" target="_blank" class="map-btn">
                     <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
+                        <path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z" />
                     </svg>
                     Buka di Google Maps
                 </a>
@@ -626,7 +616,8 @@
 @endsection
 
 @push('scripts')
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAF8W19WIUtkrIWIXb22YbAOxxdtsZKugU"></script>
+<!-- PENTING: Tambahkan &libraries=places untuk mengaktifkan API pencarian fasilitas sekitar -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAF8W19WIUtkrIWIXb22YbAOxxdtsZKugU&libraries=places"></script>
 <script>
     const venueData = [{
             id: 1,
@@ -635,7 +626,6 @@
             lng: 106.800532,
             address: "Jl. Pemuda No.4, Tanah Sareal, Kec. Tanah Sereal, Kota Bogor, Jawa Barat 16161",
             cabor: "Drumband, Pencak Silat, Taekwondo",
-            image: "https://images.unsplash.com/photo-1574629810360-7efbb4d6cc12?auto=format&fit=crop&w=400&h=150&q=80",
             gmaps_url: "https://maps.google.com/?q=GOR+Pajajaran+Bogor",
         },
         {
@@ -645,7 +635,6 @@
             lng: 106.801200,
             address: "Kompleks Olahraga GOR Pajajaran, Jl. Pemuda, Kota Bogor",
             cabor: "Judo, Kurash, Sambo",
-            image: "https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=400&h=150&q=80",
             gmaps_url: "https://maps.google.com/?q=-6.584100,106.801200",
         },
         {
@@ -655,7 +644,6 @@
             lng: 106.806324,
             address: "Kampus IPB Cilibende, Jl. Kumbang No.14, Babakan, Kota Bogor",
             cabor: "Shorinji Kempo, Tarung Derajat",
-            image: "https://images.unsplash.com/photo-1546519638-68e109498ffc?auto=format&fit=crop&w=400&h=150&q=80",
             gmaps_url: "https://maps.google.com/?q=Sekolah+Vokasi+IPB+Bogor",
         },
         {
@@ -665,7 +653,6 @@
             lng: 108.216000,
             address: "Majalengka, Jawa Barat",
             cabor: "Aerosport - Gantolle",
-            image: "https://images.unsplash.com/photo-1504280741564-f21aeac8ae69?auto=format&fit=crop&w=400&h=150&q=80",
             gmaps_url: "https://maps.google.com/?q=Majalengka"
         },
         {
@@ -675,7 +662,6 @@
             lng: 106.993000,
             address: "Puncak, Bogor, Jawa Barat",
             cabor: "Aerosport - Paralayang",
-            image: "https://images.unsplash.com/photo-1524850301259-7729d41d11d9?auto=format&fit=crop&w=400&h=150&q=80",
             gmaps_url: "https://maps.google.com/?q=Gunung+Mas+Puncak"
         },
         {
@@ -685,7 +671,6 @@
             lng: 106.809000,
             address: "Bogor, Jawa Barat",
             cabor: "Anggar, Angkat Besi, Angkat Berat, Arung Jeram, Binaraga, Petanque",
-            image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=400&h=150&q=80",
             gmaps_url: "https://maps.google.com/?q=Green+Forest+Hotel+Bogor"
         },
         {
@@ -695,7 +680,6 @@
             lng: 106.756000,
             address: "Kemang, Bogor, Jawa Barat",
             cabor: "Bola Tangan Indoor",
-            image: "https://images.unsplash.com/photo-1526232761682-d26e03ac148e?auto=format&fit=crop&w=400&h=150&q=80",
             gmaps_url: "https://maps.google.com/?q=PPSDMAP+Kemenhub+Kemang"
         },
         {
@@ -705,7 +689,6 @@
             lng: 106.857000,
             address: "Sentul, Bogor, Jawa Barat",
             cabor: "Bola Tangan Pasir",
-            image: "https://images.unsplash.com/photo-1593786481142-8c9096726f59?auto=format&fit=crop&w=400&h=150&q=80",
             gmaps_url: "https://maps.google.com/?q=Padepokan+Voli+Sentul"
         },
         {
@@ -715,7 +698,6 @@
             lng: 106.772000,
             address: "Bogor, Jawa Barat",
             cabor: "Dansa",
-            image: "https://images.unsplash.com/photo-1542314831-c5a42a404f78?auto=format&fit=crop&w=400&h=150&q=80",
             gmaps_url: "https://maps.google.com/?q=Brajamustika+Hotel+Bogor"
         },
         {
@@ -725,7 +707,6 @@
             lng: 107.674000,
             address: "Sport Jabar Arcamanik, Bandung, Jawa Barat",
             cabor: "Gimnastik Aerobik, Gimnastic Artistik, Gimnastic Ritmik",
-            image: "https://images.unsplash.com/photo-1552674605-15f373c9ceaa?auto=format&fit=crop&w=400&h=150&q=80",
             gmaps_url: "https://maps.google.com/?q=Sport+Jabar+Arcamanik"
         },
         {
@@ -735,7 +716,6 @@
             lng: 107.531000,
             address: "Lapang Tembak Cisangkan, Cimahi, Jawa Barat",
             cabor: "Menembak",
-            image: "https://images.unsplash.com/photo-1576425114165-27a98fc304ed?auto=format&fit=crop&w=400&h=150&q=80",
             gmaps_url: "https://maps.google.com/?q=Lapang+Tembak+Cisangkan"
         },
         {
@@ -745,7 +725,6 @@
             lng: 106.800000,
             address: "Jl. Pemuda, Kota Bogor",
             cabor: "Modern Pentathion, Panahan, Panjat Tebing",
-            image: "https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=400&h=150&q=80",
             gmaps_url: "https://maps.google.com/?q=Stadion+Pajajaran+Bogor"
         },
         {
@@ -755,7 +734,6 @@
             lng: 107.481000,
             address: "Padalarang, Kabupaten Bandung Barat, Jawa Barat",
             cabor: "Ski Air",
-            image: "https://images.unsplash.com/photo-1520201163981-8cc95007dd2a?auto=format&fit=crop&w=400&h=150&q=80",
             gmaps_url: "https://maps.google.com/?q=Kota+Baru+Parahyangan"
         },
         {
@@ -765,13 +743,13 @@
             lng: 106.774000,
             address: "Bogor, Jawa Barat",
             cabor: "Tenis Meja",
-            image: "https://images.unsplash.com/photo-1534158914592-062992fbe900?auto=format&fit=crop&w=400&h=150&q=80",
             gmaps_url: "https://maps.google.com/?q=GOR+Yasmin+Bogor"
         }
     ];
 
     let map;
-    let markers = [];
+    let markers = []; // Marker untuk Venue (Merah)
+    let fasilitasMarkers = []; // Marker untuk Fasilitas dari Places API (Biru)
 
     function initMap() {
         const bogorCenter = {
@@ -795,7 +773,14 @@
             }]
         });
 
-        venueData.forEach(venue => {
+        // Tampilkan semua venue pertama kali di load
+        renderVenues(venueData);
+        setupFilter();
+    }
+
+    // Fungsi Render Marker Venue
+    function renderVenues(venuesData) {
+        venuesData.forEach(venue => {
             const marker = new google.maps.Marker({
                 position: {
                     lat: venue.lat,
@@ -803,7 +788,8 @@
                 },
                 map: map,
                 title: venue.name,
-                animation: google.maps.Animation.DROP
+                animation: google.maps.Animation.DROP,
+                icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png' // Icon venue
             });
 
             marker.addListener("click", () => {
@@ -814,9 +800,129 @@
         });
     }
 
-    window.onload = function() {
-        initMap();
-    };
+    // Fungsi Hapus Semua Marker di Peta
+    function clearMarkers() {
+        markers.forEach(m => m.setMap(null));
+        markers = [];
+        fasilitasMarkers.forEach(m => m.setMap(null));
+        fasilitasMarkers = [];
+    }
+
+    // Fungsi Menangani Filter Maps
+    function setupFilter() {
+        const filterForm = document.getElementById('map-filter-form');
+
+        // Saat form di-submit
+        filterForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const fasilitasVal = document.getElementById('fasilitas').value;
+            const caborVal = document.getElementById('cabor').value.toLowerCase();
+            const venueVal = document.getElementById('venue').value.toLowerCase();
+
+            clearMarkers(); // Bersihkan peta
+            document.getElementById('floating-gor-card').style.display = 'none';
+
+            let isVenueFound = false;
+            const bounds = new google.maps.LatLngBounds();
+
+            // 1. Proses Filter Cabor & Venue
+            const filteredVenues = venueData.filter(v => {
+                let matchCabor = true;
+                let matchVenue = true;
+
+                if (caborVal) matchCabor = v.cabor.toLowerCase().includes(caborVal);
+                if (venueVal) matchVenue = v.name.toLowerCase().includes(venueVal);
+
+                return matchCabor && matchVenue;
+            });
+
+            if (filteredVenues.length > 0) {
+                renderVenues(filteredVenues);
+                filteredVenues.forEach(v => bounds.extend(new google.maps.LatLng(v.lat, v.lng)));
+                isVenueFound = true;
+            }
+
+            // 2. Proses Cari Fasilitas dengan Google Places API (Hotel, Rumah Sakit, dll)
+            if (fasilitasVal) {
+                let placeType = '';
+                if (fasilitasVal === 'hotel') placeType = 'lodging';
+                else if (fasilitasVal === 'rumah-sakit') placeType = 'hospital';
+                else if (fasilitasVal === 'apotek') placeType = 'pharmacy';
+                else if (fasilitasVal === 'rumah-makan') placeType = 'restaurant';
+
+                // Tentukan lokasi pencarian: di Venue terpilih, atau tengah kota Bogor jika tidak ada Venue
+                const searchCenter = isVenueFound ?
+                    new google.maps.LatLng(filteredVenues[0].lat, filteredVenues[0].lng) :
+                    map.getCenter();
+
+                const service = new google.maps.places.PlacesService(map);
+                const request = {
+                    location: searchCenter,
+                    radius: '3000', // Cari dalam radius 3 KM
+                    type: [placeType]
+                };
+
+                service.nearbySearch(request, (results, status) => {
+                    if (status === google.maps.places.PlacesServiceStatus.OK && results) {
+                        results.forEach(place => {
+                            const pMarker = new google.maps.Marker({
+                                position: place.geometry.location,
+                                map: map,
+                                title: place.name,
+                                icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png' // Icon fasilitas
+                            });
+
+                            const infoWindow = new google.maps.InfoWindow({
+                                content: `<div style="font-family:'Poppins',sans-serif; font-size:12px;"><strong>${place.name}</strong><br>${place.vicinity}</div>`
+                            });
+
+                            pMarker.addListener("click", () => infoWindow.open(map, pMarker));
+                            fasilitasMarkers.push(pMarker);
+                            bounds.extend(place.geometry.location);
+                        });
+                        map.fitBounds(bounds);
+                    } else if (!isVenueFound) {
+                        alert('Fasilitas tidak ditemukan di area sekitar.');
+                    }
+                });
+            } else {
+                // Adjust peta jika hanya filter Venue & Cabor
+                if (isVenueFound) {
+                    if (filteredVenues.length === 1) {
+                        map.setCenter({
+                            lat: filteredVenues[0].lat,
+                            lng: filteredVenues[0].lng
+                        });
+                        map.setZoom(15);
+                    } else {
+                        map.fitBounds(bounds);
+                    }
+                } else {
+                    alert('Venue tidak ditemukan dengan kriteria tersebut.');
+                    map.setCenter({
+                        lat: -6.587,
+                        lng: 106.803
+                    });
+                    map.setZoom(14);
+                }
+            }
+        });
+
+        // Saat form di-reset
+        filterForm.addEventListener('reset', function() {
+            setTimeout(() => {
+                clearMarkers();
+                renderVenues(venueData);
+                map.setCenter({
+                    lat: -6.587,
+                    lng: 106.803
+                });
+                map.setZoom(14);
+                document.getElementById('floating-gor-card').style.display = 'none';
+            }, 100);
+        });
+    }
 
     function showVenueDetails(venue) {
         document.getElementById('floating-gor-card').style.display = 'block';
@@ -824,11 +930,14 @@
         document.getElementById('card-gor-addr').innerText = venue.address;
         document.getElementById('card-gor-gmaps').href = venue.gmaps_url;
 
+<<<<<<< HEAD
         // Sync dropdown #venue dengan marker yang diklik
         const venueSelect = document.getElementById('venue');
         const matchOption = Array.from(venueSelect.options).find(opt => opt.text.trim() === venue.name);
         venueSelect.selectedIndex = matchOption ? matchOption.index : 0;
         
+=======
+>>>>>>> f32312dbcaeb43c67f8f524c28d2a175f515a1e6
         const caborArr = venue.cabor.split(',').map(c => c.trim());
         const caborContainer = document.getElementById('card-gor-cabor-grid');
         caborContainer.innerHTML = '';
@@ -848,5 +957,9 @@
             `;
         });
     }
+
+    window.onload = function() {
+        initMap();
+    };
 </script>
 @endpush
