@@ -823,6 +823,11 @@
         document.getElementById('card-gor-name').innerText = venue.name;
         document.getElementById('card-gor-addr').innerText = venue.address;
         document.getElementById('card-gor-gmaps').href = venue.gmaps_url;
+
+        // Sync dropdown #venue dengan marker yang diklik
+        const venueSelect = document.getElementById('venue');
+        const matchOption = Array.from(venueSelect.options).find(opt => opt.text.trim() === venue.name);
+        venueSelect.selectedIndex = matchOption ? matchOption.index : 0;
         
         const caborArr = venue.cabor.split(',').map(c => c.trim());
         const caborContainer = document.getElementById('card-gor-cabor-grid');

@@ -409,7 +409,7 @@
 
     <!-- Mobile Nav -->
     <div class="mobile-nav-overlay" id="mobile-overlay"></div>
-    <nav class="mobile-nav" id="mobile-nav">
+    <nav class="mobile-nav" id="mobile-nav"> 
         <a href="{{ url('/') }}" class="{{ request()->is('/') ? 'active' : '' }}">BERANDA</a>
         <a href="{{ url('/jadwal') }}" class="{{ request()->is('jadwal') ? 'active' : '' }}">JADWAL</a>
         <a href="{{ url('/peta-venue') }}" class="{{ request()->is('peta-venue') ? 'active' : '' }}">PETA VENUE</a>
