@@ -934,6 +934,10 @@
         const venueSelect = document.getElementById('venue');
         const matchOption = Array.from(venueSelect.options).find(opt => opt.text.trim() === venue.name);
         venueSelect.selectedIndex = matchOption ? matchOption.index : 0;
+
+        ===
+        === = >>>
+        >>> > f32312dbcaeb43c67f8f524c28d2a175f515a1e6
         const caborArr = venue.cabor.split(',').map(c => c.trim());
         const caborContainer = document.getElementById('card-gor-cabor-grid');
         caborContainer.innerHTML = '';
