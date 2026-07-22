@@ -2,9 +2,16 @@
 
 @section('title', 'Jadwal - PORPROV XV KOTA BOGOR 2026')
 
+{{-- ═══════════════════════════════════════════════════════════════════ --}}
+{{-- ║  JADWAL & VENUE PERTANDINGAN — PORPROV XV KOTA BOGOR 2026      ║ --}}
+{{-- ║  File : resources/views/jadwal.blade.php                       ║ --}}
+{{-- ═══════════════════════════════════════════════════════════════════ --}}
+
 @push('styles')
 <style>
-    /* ── Banner ── */
+    /* ================================================================
+       BANNER
+       ================================================================ */
     .jadwal-banner {
         background: #013469;
         position: relative;
@@ -78,32 +85,64 @@
         opacity: 0.9;
     }
 
-    /* ── Page Layout ── */
+    /* ================================================================
+       PAGE LAYOUT
+       ================================================================ */
     .jadwal-page {
         max-width: 1200px;
         margin: 0 auto;
         padding: 24px 20px 40px;
     }
 
-    /* ── Table ── */
+    /* ================================================================
+       TABLE — Sticky Header + Sticky Columns + Zebra Striping
+       ================================================================ */
     .jadwal-table-wrap {
         background: #fff;
         border-radius: 10px;
         box-shadow: 0 2px 12px rgba(0, 0, 0, 0.09);
         overflow: auto;
         margin-bottom: 28px;
+        position: relative;
+        max-height: 75vh;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Scroll shadow indicator on right edge */
+    .jadwal-table-wrap::after {
+        content: '';
+        position: sticky;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 24px;
+        pointer-events: none;
+        background: linear-gradient(to left, rgba(0, 0, 0, 0.06), transparent);
+        z-index: 3;
+        display: block;
+        float: right;
+        height: 100%;
+    }
+
+    .jadwal-table-wrap.scrolled-right::after {
+        display: none;
     }
 
     .jadwal-tbl {
         width: 100%;
-        border-collapse: collapse;
+        border-collapse: separate;
+        border-spacing: 0;
         font-size: 12px;
         min-width: 850px;
     }
 
+    /* ── Sticky Header ── */
     .jadwal-tbl thead {
         background: #013469;
         color: #fff;
+        position: sticky;
+        top: 0;
+        z-index: 12;
     }
 
     .jadwal-tbl thead th {
@@ -112,13 +151,16 @@
         font-weight: 600;
         font-size: 11.5px;
         border-right: 1px solid rgba(255, 255, 255, 0.15);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
         white-space: nowrap;
+        background: #013469;
     }
 
     .jadwal-tbl thead th.date-col {
         text-align: center;
         font-size: 10px;
-        padding: 6px 8px;
+        padding: 6px 6px;
+        min-width: 44px;
     }
 
     .jadwal-tbl thead .month-header th {
@@ -128,12 +170,79 @@
         letter-spacing: 0.04em;
     }
 
-    .jadwal-tbl tbody tr {
-        border-bottom: 1px solid #e5e7eb;
+    /* ── Sticky Columns (No + Cabang Olahraga) ── */
+    .jadwal-tbl thead tr:first-child th:nth-child(1) {
+        position: sticky;
+        left: 0;
+        z-index: 14;
+        background: #013469;
     }
 
-    .jadwal-tbl tbody tr:hover {
-        background: #f8fafc;
+    .jadwal-tbl thead tr:first-child th:nth-child(2) {
+        position: sticky;
+        left: 36px;
+        z-index: 14;
+        background: #013469;
+    }
+
+    .jadwal-tbl tbody td.no {
+        position: sticky;
+        left: 0;
+        z-index: 5;
+        background: #fff;
+        text-align: center;
+        font-weight: 700;
+        color: #013469;
+    }
+
+    .jadwal-tbl tbody td.sport {
+        position: sticky;
+        left: 36px;
+        z-index: 5;
+        background: #fff;
+        min-width: 160px;
+    }
+
+    /* Shadow on sticky column edge */
+    .jadwal-tbl tbody td.sport::after {
+        content: '';
+        position: absolute;
+        right: -6px;
+        top: 0;
+        bottom: 0;
+        width: 6px;
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.04), transparent);
+        pointer-events: none;
+    }
+
+    .jadwal-tbl thead tr:first-child th:nth-child(2)::after {
+        content: '';
+        position: absolute;
+        right: -6px;
+        top: 0;
+        bottom: 0;
+        width: 6px;
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.08), transparent);
+        pointer-events: none;
+    }
+
+    /* ── Zebra Striping ── */
+    .jadwal-tbl tbody tr:nth-child(even) td {
+        background-color: #f8fafc;
+    }
+
+    .jadwal-tbl tbody tr:nth-child(even) td.no,
+    .jadwal-tbl tbody tr:nth-child(even) td.sport {
+        background-color: #f8fafc;
+    }
+
+    .jadwal-tbl tbody tr {
+        border-bottom: 1px solid #e5e7eb;
+        transition: background 0.15s;
+    }
+
+    .jadwal-tbl tbody tr:hover td {
+        background-color: #eff6ff !important;
     }
 
     .jadwal-tbl tbody td {
@@ -141,12 +250,7 @@
         color: #374151;
         font-size: 12px;
         border-right: 1px solid #e5e7eb;
-    }
-
-    .jadwal-tbl tbody td.no {
-        text-align: center;
-        font-weight: 700;
-        color: #013469;
+        border-bottom: 1px solid #e5e7eb;
     }
 
     .jadwal-tbl tbody td.sport,
@@ -154,7 +258,7 @@
         font-weight: 600;
         color: #013469;
         cursor: pointer;
-        transition: all 0.2s;
+        transition: color 0.2s;
     }
 
     .jadwal-tbl tbody td.sport:hover,
@@ -163,14 +267,23 @@
         color: #FDB813;
     }
 
+    .jadwal-tbl tbody td.venue {
+        max-width: 180px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
     .jadwal-tbl tbody td.durasi {
         text-align: center;
         font-weight: 600;
+        white-space: nowrap;
     }
 
     .jadwal-tbl tbody td.day-cell {
         padding: 0;
         height: 36px;
+        min-width: 38px;
     }
 
     .day-prep {
@@ -200,14 +313,160 @@
         display: block;
     }
 
-    /* ── Bottom Layout ── */
+    /* ================================================================
+       MOBILE TABLE COMPACT (≤640px) — Tabel tetap utuh, lebih kecil
+       ================================================================ */
+    @media (max-width: 640px) {
+        .jadwal-table-wrap {
+            max-height: none;
+            border-radius: 8px;
+        }
+
+        .jadwal-tbl {
+            min-width: 900px;
+            font-size: 10px;
+        }
+
+        .jadwal-tbl thead th {
+            padding: 6px 6px;
+            font-size: 10px;
+        }
+
+        .jadwal-tbl thead th.date-col {
+            padding: 4px 3px;
+            font-size: 8px;
+            min-width: 28px;
+        }
+
+        .jadwal-tbl tbody td {
+            padding: 6px 6px;
+            font-size: 10px;
+        }
+
+        .jadwal-tbl tbody td.sport {
+            left: 32px;
+            min-width: 110px;
+            font-size: 10px;
+        }
+
+        .jadwal-tbl tbody td.sport::after {
+            display: none;
+        }
+
+        .jadwal-tbl thead tr:first-child th:nth-child(2)::after {
+            display: none;
+        }
+
+        .jadwal-tbl tbody td.venue {
+            max-width: 100px;
+            font-size: 10px;
+        }
+
+        .jadwal-tbl tbody td.durasi {
+            font-size: 10px;
+        }
+
+        .jadwal-tbl tbody td.day-cell {
+            height: 28px;
+            min-width: 26px;
+        }
+
+        .table-info-bar {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 4px;
+        }
+
+        .scroll-hint {
+            display: none;
+        }
+    }
+
+    /* ================================================================
+       TABLET COMPACT VIEW (641px – 1024px)
+       ================================================================ */
+    @media (min-width: 641px) and (max-width: 1024px) {
+        .jadwal-table-wrap {
+            max-height: 70vh;
+        }
+
+        .jadwal-tbl {
+            min-width: 1100px;
+        }
+
+        .jadwal-tbl thead th.date-col {
+            padding: 5px 4px;
+            font-size: 9px;
+            min-width: 38px;
+        }
+
+        .jadwal-tbl tbody td {
+            padding: 7px 8px;
+            font-size: 11px;
+        }
+    }
+
+    /* ================================================================
+       TABLE INFO BAR — Row Count + Scroll Hint
+       ================================================================ */
+    .table-info-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        padding: 0 4px;
+    }
+
+    .table-count {
+        font-size: 12px;
+        color: #64748b;
+    }
+
+    .table-count strong {
+        color: #013469;
+        font-weight: 700;
+    }
+
+    .scroll-hint {
+        display: none;
+        align-items: center;
+        gap: 4px;
+        font-size: 11px;
+        color: #94a3b8;
+        animation: pulseHint 2s ease-in-out infinite;
+    }
+
+    @keyframes pulseHint {
+        0%, 100% { opacity: 0.5; }
+        50% { opacity: 1; }
+    }
+
+    @media (max-width: 1024px) {
+        .scroll-hint { display: flex; }
+    }
+
+    @media (max-width: 640px) {
+        .table-info-bar {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 4px;
+            margin-bottom: 12px;
+        }
+        .scroll-hint { display: none; }
+    }
+
+    /* ================================================================
+       BOTTOM LAYOUT — Legend + Day Picker + Download
+       ================================================================ */
     .jadwal-bottom {
         display: flex;
         gap: 24px;
         flex-wrap: wrap;
     }
 
-    /* ── Legend ── */
+    /* ================================================================
+       LEGEND
+       ================================================================ */
     .legend-box {
         background: #fff;
         border-radius: 10px;
@@ -278,7 +537,9 @@
         line-height: 1.5;
     }
 
-    /* ── Day Picker + Download ── */
+    /* ================================================================
+       DAY PICKER + DOWNLOAD
+       ================================================================ */
     .day-picker-wrap {
         flex: 1;
     }
@@ -405,7 +666,9 @@
         }
     }
 
-    /* ── Filter ── */
+    /* ================================================================
+       FILTER
+       ================================================================ */
     .jadwal-filter {
         display: flex;
         flex-wrap: wrap;
@@ -474,7 +737,34 @@
         color: #0f172a;
     }
 
-    /* ── Modal Venue & Fasilitas ── */
+    .filter-box input::placeholder {
+        color: #94a3b8;
+    }
+
+    /* ── Filter Mobile (≤640px) ── */
+    @media (max-width: 640px) {
+        .jadwal-filter {
+            flex-direction: column;
+            gap: 10px;
+            padding: 14px;
+        }
+
+        .filter-box {
+            min-width: 0;
+            width: 100%;
+            flex: none;
+        }
+
+        .reset-filter-btn {
+            width: 100%;
+            padding: 11px 0;
+            text-align: center;
+        }
+    }
+
+    /* ================================================================
+       MODAL VENUE & FASILITAS
+       ================================================================ */
     .venue-modal-overlay {
         position: fixed;
         top: 0;
@@ -745,8 +1035,17 @@
         <button class="reset-filter-btn" id="resetFilterBtn">Reset</button>
     </div>
 
-    <!-- Table -->
-    <div class="jadwal-table-wrap">
+    <!-- ── Table Info Bar ── -->
+    <div class="table-info-bar">
+        <span class="table-count" id="tableCount">Menampilkan <strong>28</strong> dari 28 cabang olahraga</span>
+        <span class="scroll-hint" id="scrollHint">
+            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            Geser tabel ke kanan untuk melihat tanggal
+        </span>
+    </div>
+
+    <!-- ── Table ── -->
+    <div class="jadwal-table-wrap" id="jadwalTableWrap">
         <table class="jadwal-tbl">
             <thead>
                 <tr>
@@ -1629,21 +1928,33 @@
             </div>
         </div>
     </div>
+</div>
 
     @push('scripts')
     <script>
-        // Filtering Logic
+        /* ================================================================
+           FILTERING LOGIC — Filter by search, month, and date
+           ================================================================ */
         const searchFilter = document.getElementById('searchFilter');
         const monthFilter = document.getElementById('monthFilter');
         const dateFilter = document.getElementById('dateFilter');
         const resetFilterBtn = document.getElementById('resetFilterBtn');
         const tableRows = document.querySelectorAll('.jadwal-tbl tbody tr');
         const dayBtns = document.querySelectorAll('.day-btn');
+        const tableCount = document.getElementById('tableCount');
+        const totalCount = tableRows.length;
+
+        function updateCount(visible) {
+            tableCount.innerHTML = visible === totalCount
+                ? 'Menampilkan <strong>' + totalCount + '</strong> dari ' + totalCount + ' cabang olahraga'
+                : 'Menampilkan <strong>' + visible + '</strong> dari ' + totalCount + ' cabang olahraga';
+        }
 
         function filterTable() {
             const searchTerm = searchFilter.value.toLowerCase();
             const selectedMonth = monthFilter.value;
             const selectedDateIndex = dateFilter.value;
+            let visibleCount = 0;
 
             Array.from(dateFilter.options).forEach(opt => {
                 if (opt.value === 'all') return;
@@ -1685,10 +1996,13 @@
 
                 if (textMatch && dateMatch) {
                     row.style.display = '';
+                    visibleCount++;
                 } else {
                     row.style.display = 'none';
                 }
             });
+
+            updateCount(visibleCount);
 
             // Sync day-btn active state
             dayBtns.forEach(btn => btn.classList.remove('active'));
@@ -1928,6 +2242,22 @@
                 closeModal();
             }
         });
+
+        /* ================================================================
+           SCROLL HINT — Auto-hide when user scrolls table right
+           ================================================================ */
+        const tableWrap = document.getElementById('jadwalTableWrap');
+        const scrollHint = document.getElementById('scrollHint');
+        if (tableWrap && scrollHint) {
+            tableWrap.addEventListener('scroll', function() {
+                if (this.scrollLeft > 100) {
+                    scrollHint.style.display = 'none';
+                    tableWrap.classList.add('scrolled-right');
+                } else {
+                    tableWrap.classList.remove('scrolled-right');
+                }
+            });
+        }
     </script>
     @endpush
     @endsection
