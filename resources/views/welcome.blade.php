@@ -264,86 +264,6 @@
         transform: translateY(-2px);
     }
 
-    /* Hero Right Side Mascot & Talk Bubble */
-    .hero-media {
-        position: relative;
-        display: flex;
-        align-items: flex-end;
-        justify-content: center;
-    }
-
-    .mascot-wrapper {
-        position: relative;
-        display: inline-block;
-    }
-
-    .mascot-img {
-        height: 340px;
-        width: auto;
-        object-fit: contain;
-        filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.35));
-    }
-
-    .speech-bubble {
-        position: absolute;
-        top: -15px;
-        left: -85px;
-        background: #ffffff;
-        color: #013469;
-        font-weight: 800;
-        font-size: 13px;
-        padding: 11px 20px;
-        border-radius: 22px;
-        border-bottom-right-radius: 2px;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-        line-height: 1.35;
-        text-align: center;
-        animation: floatBubble 3.5s ease-in-out infinite;
-        z-index: 5;
-    }
-
-    .speech-bubble::after {
-        content: '';
-        position: absolute;
-        bottom: -8px;
-        right: 12px;
-        width: 0;
-        height: 0;
-        border-left: 10px solid transparent;
-        border-right: 2px solid transparent;
-        border-top: 10px solid #ffffff;
-    }
-
-    @media (max-width: 768px) {
-        .speech-bubble {
-            position: absolute;
-            top: -35px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 11px;
-            padding: 8px 14px;
-            white-space: nowrap;
-            border-bottom-right-radius: 22px;
-        }
-
-        .speech-bubble::after {
-            right: 50%;
-            transform: translateX(50%);
-        }
-    }
-
-    @keyframes floatBubble {
-
-        0%,
-        100% {
-            transform: translateY(0);
-        }
-
-        50% {
-            transform: translateY(-7px);
-        }
-    }
-
     /* Bottom Curve Overlay */
     .hero-bottom-curve {
         position: absolute;
@@ -1071,14 +991,6 @@
             justify-content: center;
         }
 
-        .hero-media {
-            margin-top: 20px;
-        }
-
-        .mascot-img {
-            height: 220px;
-        }
-
         .stats-grid {
             grid-template-columns: repeat(2, 1fr);
             gap: 12px;
@@ -1311,15 +1223,6 @@
             </div>
         </div>
 
-        <!-- Hero Mascot & Speech Bubble -->
-        <div class="hero-media">
-            <div class="mascot-wrapper">
-                <div class="speech-bubble">
-                    Bogor Siap Jadi Tuan Rumah Terbaik!
-                </div>
-                <img class="mascot-img" src="{{ asset('images/maskot.png') }}" alt="Maskot PORPROV XV Kota Bogor">
-            </div>
-        </div>
     </div>
 
     <!-- Bottom Curve Wave -->
