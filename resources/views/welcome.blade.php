@@ -1986,6 +1986,9 @@
             marker.bindTooltip(venue.name);
             marker.on("click", () => {
                 showVenueDetails(venue);
+                const vs = document.getElementById('venue');
+                const v = venue.name.toLowerCase();
+                if (Array.from(vs.options).some(o => o.value === v)) vs.value = v;
             });
             markers.push(marker);
         });
