@@ -18,6 +18,7 @@
             font-family: 'Poppins', sans-serif;
             background: #f4f5f7;
             margin: 0;
+            transition: background-color 0.3s, color 0.3s, filter 0.3s;
         }
 
         html {
@@ -31,6 +32,7 @@
             position: sticky;
             top: 0;
             z-index: 9999;
+            transition: background-color 0.3s, border-color 0.3s;
         }
 
         .header-inner {
@@ -202,7 +204,7 @@
                 z-index: 160;
                 padding: 70px 20px 24px;
                 box-shadow: -4px 0 20px rgba(0,0,0,0.15);
-                transition: right 0.3s ease;
+                transition: right 0.3s ease, background-color 0.3s;
                 overflow-y: auto;
             }
             .mobile-nav.open {
@@ -373,12 +375,187 @@
                 display: none;
             }
         }
+
+        /* ================================================================
+           WIDGET AKSESIBILITAS KOTA BOGOR STYLE
+           ================================================================ */
+        .a11y-widget {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 10000;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .a11y-btn {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background-color: #013469;
+            color: #FDB813;
+            border: 2px solid #FDB813;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .a11y-btn:hover {
+            transform: scale(1.1);
+            background-color: #012050;
+        }
+
+        .a11y-menu {
+            position: absolute;
+            bottom: 64px;
+            right: 0;
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 6px 28px rgba(0,0,0,0.2);
+            width: 275px;
+            max-height: 80vh;
+            overflow-y: auto;
+            padding: 16px;
+            display: none;
+            flex-direction: column;
+            gap: 12px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .a11y-menu.show {
+            display: flex;
+        }
+
+        .a11y-menu h4 {
+            margin: 0;
+            font-size: 14px;
+            color: #013469;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 8px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .a11y-section-title {
+            font-size: 11px;
+            font-weight: 700;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 4px;
+            margin-bottom: -4px;
+        }
+
+        .a11y-group {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 6px;
+        }
+
+        .a11y-group.full {
+            grid-template-columns: 1fr;
+        }
+
+        .a11y-option {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 8px 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 11.5px;
+            font-weight: 600;
+            color: #334155;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            transition: all 0.2s;
+            text-align: center;
+        }
+
+        .a11y-option:hover, .a11y-option.active {
+            background: #013469;
+            color: #fff;
+            border-color: #013469;
+        }
+
+        .a11y-option svg {
+            flex-shrink: 0;
+        }
+
+        /* ── EFEK-EFEK AKSESIBILITAS (A11Y) ── */
+        
+        /* 1. Ukuran Font */
+        body.font-sm * { font-size: 90% !important; }
+        body.font-lg * { font-size: 115% !important; }
+        body.font-xl * { font-size: 130% !important; }
+
+        /* 2. Kontras Tinggi */
+        body.high-contrast {
+            background-color: #000 !important;
+            color: #ffff00 !important;
+        }
+        body.high-contrast .site-header, 
+        body.high-contrast .mobile-nav,
+        body.high-contrast .a11y-menu {
+            background-color: #000 !important;
+            border-color: #ffff00 !important;
+            color: #ffff00 !important;
+        }
+        body.high-contrast a, body.high-contrast p, body.high-contrast span, body.high-contrast h1, body.high-contrast h2, body.high-contrast h3, body.high-contrast h4 {
+            color: #ffff00 !important;
+        }
+
+        /* 3. Hitam Putih (Grayscale) */
+        body.grayscale-mode {
+            filter: grayscale(100%) !important;
+        }
+
+        /* 4. Kontras Negatif (Invert) */
+        body.negative-contrast {
+            filter: invert(100%) hue-rotate(180deg) !important;
+        }
+
+        /* 5. Sorot Tautan */
+        body.highlight-links a {
+            background-color: #ffeb3b !important;
+            color: #000 !important;
+            outline: 2px solid #ef4444 !important;
+            text-decoration: underline !important;
+        }
+
+        /* 6. Font Mudah Baca (Dyslexia Friendly Font) */
+        body.readable-font, body.readable-font * {
+            font-family: Arial, Helvetica, sans-serif !important;
+            letter-spacing: 0.05em !important;
+        }
+
+        /* 7. Mode Buta Warna (Simulasi Filter) */
+        body.filter-protanopia { filter: url('#protanopia-filter') !important; }
+        body.filter-deuteranopia { filter: url('#deuteranopia-filter') !important; }
+        body.filter-tritanopia { filter: url('#tritanopia-filter') !important; }
+
     </style>
 
     @stack('styles')
 </head>
 
 <body>
+    <!-- SVG Filters untuk Mode Buta Warna -->
+    <svg style="display:none">
+        <filter id="protanopia-filter">
+            <feColorMatrix type="matrix" values="0.567, 0.433, 0, 0, 0  0.558, 0.442, 0, 0, 0  0, 0.242, 0.758, 0, 0  0, 0, 0, 1, 0"/>
+        </filter>
+        <filter id="deuteranopia-filter">
+            <feColorMatrix type="matrix" values="0.625, 0.375, 0, 0, 0  0.7, 0.3, 0, 0, 0  0, 0.3, 0.7, 0, 0  0, 0, 0, 1, 0"/>
+        </filter>
+        <filter id="tritanopia-filter">
+            <feColorMatrix type="matrix" values="0.95, 0.05, 0, 0, 0  0, 0.433, 0.567, 0, 0  0, 0.475, 0.525, 0, 0  0, 0, 0, 1, 0"/>
+        </filter>
+    </svg>
+
     <!-- Header -->
     <header class="site-header">
         <div class="header-inner">
@@ -391,7 +568,6 @@
             </a>
             <nav class="header-nav">
                 <a href="{{ url('/') }}" class="{{ request()->is('/') ? 'active' : '' }}">BERANDA</a>
-                <!-- <a href="{{ url('/berita') }}" class="{{ request()->is('berita') ? 'active' : '' }}">BERITA</a> -->
                 <a href="{{ url('/jadwal') }}" class="{{ request()->is('jadwal') ? 'active' : '' }}">JADWAL</a>
                 <a href="{{ url('/peta-venue') }}" class="{{ request()->is('peta-venue') ? 'active' : '' }}">PETA VENUE</a>
                 <a href="{{ url('/fasilitas') }}" class="{{ request()->is('fasilitas') ? 'active' : '' }}">FASILITAS</a>
@@ -421,6 +597,63 @@
         @yield('content')
     </main>
 
+    <!-- Widget Aksesibilitas Lengkap Ala Kota Bogor -->
+    <div class="a11y-widget">
+        <div class="a11y-menu" id="a11yMenu">
+            <h4>Aksesibilitas</h4>
+
+            <!-- Ukuran Teks -->
+            <div class="a11y-section-title">Ukuran Teks</div>
+            <div class="a11y-group">
+                <button class="a11y-option" id="btnFontSm">A- (Kecil)</button>
+                <button class="a11y-option" id="btnFontNormal">A (Normal)</button>
+                <button class="a11y-option" id="btnFontLg">A+ (Besar)</button>
+                <button class="a11y-option" id="btnFontXl">A++ (Ekstra)</button>
+            </div>
+
+            <!-- Tampilan & Kontras -->
+            <div class="a11y-section-title">Tampilan</div>
+            <div class="a11y-group">
+                <button class="a11y-option" id="btnHighContrast">Kontras Tinggi</button>
+                <button class="a11y-option" id="btnGrayscale">Hitam Putih</button>
+                <button class="a11y-option" id="btnNegative">Kontras Negatif</button>
+                <button class="a11y-option" id="btnHighlightLinks">Sorot Tautan</button>
+            </div>
+
+            <!-- Font & Keterbacaan -->
+            <div class="a11y-section-title">Keterbacaan & Navigasi</div>
+            <div class="a11y-group full">
+                <button class="a11y-option" id="btnReadableFont">Font Mudah Baca</button>
+                <button class="a11y-option" id="btnVoiceMode">Mode Suara (TTS)</button>
+            </div>
+
+            <!-- Mode Buta Warna -->
+            <div class="a11y-section-title">Mode Buta Warna</div>
+            <div class="a11y-group">
+                <button class="a11y-option" id="btnProtanopia">Protanopia</button>
+                <button class="a11y-option" id="btnDeuteranopia">Deuteranop</button>
+                <button class="a11y-option" id="btnTritanopia">Tritanopia</button>
+                <button class="a11y-option" id="btnNormalColor">Normal</button>
+            </div>
+
+            <!-- Reset -->
+            <div class="a11y-group full" style="margin-top: 4px;">
+                <button class="a11y-option" id="btnResetA11y" style="background:#fef2f2; color:#b91c1c; border-color:#fca5a5;">
+                    Reset Semua Pengaturan
+                </button>
+            </div>
+        </div>
+        
+        <!-- Toggle Tombol Utama -->
+        <button class="a11y-btn" id="a11yToggle" title="Menu Aksesibilitas">
+            <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <circle cx="12" cy="4" r="2"></circle>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 13v-2a3 3 0 00-3-3H8a3 3 0 00-3 3v2m6 2v4m-3-2h6"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 19a7 7 0 1014 0"></path>
+            </svg>
+        </button>
+    </div>
+
     <footer class="site-footer">
         &copy; 2026 Pemerintah Kota Bogor
     </footer>
@@ -428,6 +661,7 @@
     @stack('scripts')
 
     <script>
+        // Logika Hamburger Menu Mobile
         const hamburger = document.getElementById('hamburger-btn');
         const mobileNav = document.getElementById('mobile-nav');
         const mobileOverlay = document.getElementById('mobile-overlay');
@@ -441,6 +675,225 @@
 
         if (hamburger) hamburger.addEventListener('click', toggleMobileNav);
         if (mobileOverlay) mobileOverlay.addEventListener('click', toggleMobileNav);
+
+        // ==========================================
+        // Logika Aksesibilitas Lengkap (A11y)
+        // ==========================================
+        const a11yToggle = document.getElementById('a11yToggle');
+        const a11yMenu = document.getElementById('a11yMenu');
+
+        // Buka tutup menu widget
+        a11yToggle.addEventListener('click', (e) => {
+            e.stopPropagation(); 
+            a11yMenu.classList.toggle('show');
+        });
+
+        // 1. Ukuran Teks
+        const btnFontSm = document.getElementById('btnFontSm');
+        const btnFontNormal = document.getElementById('btnFontNormal');
+        const btnFontLg = document.getElementById('btnFontLg');
+        const btnFontXl = document.getElementById('btnFontXl');
+
+        function setFontSize(size) {
+            document.body.classList.remove('font-sm', 'font-lg', 'font-xl');
+            btnFontSm.classList.remove('active');
+            btnFontNormal.classList.remove('active');
+            btnFontLg.classList.remove('active');
+            btnFontXl.classList.remove('active');
+
+            if (size !== 'normal') {
+                document.body.classList.add(`font-${size}`);
+                document.getElementById(`btnFont${size.charAt(0).toUpperCase() + size.slice(1)}`).classList.add('active');
+                localStorage.setItem('a11y_fontsize', size);
+            } else {
+                btnFontNormal.classList.add('active');
+                localStorage.removeItem('a11y_fontsize');
+            }
+        }
+
+        btnFontSm.addEventListener('click', () => setFontSize('sm'));
+        btnFontNormal.addEventListener('click', () => setFontSize('normal'));
+        btnFontLg.addEventListener('click', () => setFontSize('lg'));
+        btnFontXl.addEventListener('click', () => setFontSize('xl'));
+
+        // 2. Kontras Tinggi, Hitam Putih, Kontras Negatif, Sorot Tautan, Font Mudah Baca
+        const btnHighContrast = document.getElementById('btnHighContrast');
+        const btnGrayscale = document.getElementById('btnGrayscale');
+        const btnNegative = document.getElementById('btnNegative');
+        const btnHighlightLinks = document.getElementById('btnHighlightLinks');
+        const btnReadableFont = document.getElementById('btnReadableFont');
+
+        btnHighContrast.addEventListener('click', () => {
+            document.body.classList.toggle('high-contrast');
+            btnHighContrast.classList.toggle('active');
+            localStorage.setItem('a11y_highContrast', document.body.classList.contains('high-contrast'));
+        });
+
+        btnGrayscale.addEventListener('click', () => {
+            document.body.classList.toggle('grayscale-mode');
+            btnGrayscale.classList.toggle('active');
+            localStorage.setItem('a11y_grayscale', document.body.classList.contains('grayscale-mode'));
+        });
+
+        btnNegative.addEventListener('click', () => {
+            document.body.classList.toggle('negative-contrast');
+            btnNegative.classList.toggle('active');
+            localStorage.setItem('a11y_negative', document.body.classList.contains('negative-contrast'));
+        });
+
+        btnHighlightLinks.addEventListener('click', () => {
+            document.body.classList.toggle('highlight-links');
+            btnHighlightLinks.classList.toggle('active');
+            localStorage.setItem('a11y_highlightLinks', document.body.classList.contains('highlight-links'));
+        });
+
+        btnReadableFont.addEventListener('click', () => {
+            document.body.classList.toggle('readable-font');
+            btnReadableFont.classList.toggle('active');
+            localStorage.setItem('a11y_readableFont', document.body.classList.contains('readable-font'));
+        });
+
+        // 3. Mode Buta Warna
+        const btnProtanopia = document.getElementById('btnProtanopia');
+        const btnDeuteranopia = document.getElementById('btnDeuteranopia');
+        const btnTritanopia = document.getElementById('btnTritanopia');
+        const btnNormalColor = document.getElementById('btnNormalColor');
+
+        function setBlindnessFilter(filterType) {
+            document.body.classList.remove('filter-protanopia', 'filter-deuteranopia', 'filter-tritanopia');
+            btnProtanopia.classList.remove('active');
+            btnDeuteranopia.classList.remove('active');
+            btnTritanopia.classList.remove('active');
+            btnNormalColor.classList.add('active');
+
+            if (filterType !== 'normal') {
+                document.body.classList.add(`filter-${filterType}`);
+                document.getElementById(`btn${filterType.charAt(0).toUpperCase() + filterType.slice(1)}`).classList.add('active');
+                btnNormalColor.classList.remove('active');
+                localStorage.setItem('a11y_colorBlind', filterType);
+            } else {
+                localStorage.removeItem('a11y_colorBlind');
+            }
+        }
+
+        btnProtanopia.addEventListener('click', () => setBlindnessFilter('protanopia'));
+        btnDeuteranopia.addEventListener('click', () => setBlindnessFilter('deuteranopia'));
+        btnTritanopia.addEventListener('click', () => setBlindnessFilter('tritanopia'));
+        btnNormalColor.addEventListener('click', () => setBlindnessFilter('normal'));
+
+        // 4. Mode Suara (Text-to-Speech)
+        const btnVoiceMode = document.getElementById('btnVoiceMode');
+        let isVoiceModeActive = false;
+
+        function speakText(text) {
+            if (!text || !isVoiceModeActive) return;
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'id-ID'; 
+            utterance.rate = 1;       
+            window.speechSynthesis.speak(utterance);
+        }
+
+        btnVoiceMode.addEventListener('click', (e) => {
+            e.stopPropagation();
+            isVoiceModeActive = !isVoiceModeActive;
+            btnVoiceMode.classList.toggle('active', isVoiceModeActive);
+            
+            if (isVoiceModeActive) {
+                localStorage.setItem('a11y_voiceMode', 'true');
+                speakText("Mode suara diaktifkan");
+            } else {
+                localStorage.removeItem('a11y_voiceMode');
+                window.speechSynthesis.cancel();
+            }
+        });
+
+        // Navigasi Instan & Pembaca Suara Global
+        document.body.addEventListener('click', (e) => {
+            let link = e.target.closest('a');
+
+            if (link && isVoiceModeActive) {
+                let linkText = link.getAttribute('aria-label') || link.innerText || link.textContent || "halaman baru";
+                linkText = linkText.trim().replace(/\s+/g, ' ');
+                localStorage.setItem('a11y_pending_speech', "Membuka " + linkText);
+                return; 
+            }
+
+            if (!isVoiceModeActive) return;
+            if (e.target.closest('.a11y-widget')) return;
+
+            let target = e.target;
+            let textToRead = "";
+
+            if (target.tagName.toLowerCase() === 'img') {
+                textToRead = target.getAttribute('alt') || "Gambar tanpa keterangan";
+            } else if (target.tagName.toLowerCase() === 'input' || target.tagName.toLowerCase() === 'textarea') {
+                textToRead = target.getAttribute('placeholder') || target.value || target.name || "Kolom masukan data";
+            } else {
+                textToRead = target.getAttribute('aria-label') || target.innerText || target.textContent;
+            }
+
+            if (textToRead) {
+                textToRead = textToRead.trim().replace(/\s+/g, ' ');
+            }
+            if (textToRead && textToRead.length > 150) {
+                textToRead = textToRead.substring(0, 100) + "..."; 
+            }
+            if (textToRead) {
+                speakText(textToRead);
+            }
+        });
+
+        // 5. Reset Semua Pengaturan
+        const btnResetA11y = document.getElementById('btnResetA11y');
+        btnResetA11y.addEventListener('click', () => {
+            document.body.className = '';
+            localStorage.clear();
+            
+            // Reset status tombol
+            btnFontNormal.classList.add('active');
+            btnNormalColor.classList.add('active');
+            [btnFontSm, btnFontLg, btnFontXl, btnHighContrast, btnGrayscale, btnNegative, btnHighlightLinks, btnReadableFont, btnVoiceMode, btnProtanopia, btnDeuteranopia, btnTritanopia].forEach(btn => btn.classList.remove('active'));
+
+            isVoiceModeActive = false;
+            window.speechSynthesis.cancel();
+            a11yMenu.classList.remove('show');
+        });
+
+        // Tutup menu jika mengklik luar widget
+        document.addEventListener('click', (e) => {
+            if (a11yMenu.classList.contains('show') && !e.target.closest('.a11y-widget')) {
+                a11yMenu.classList.remove('show');
+            }
+        });
+
+        // Load Preferensi Saat Halaman Dimuat
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedFont = localStorage.getItem('a11y_fontsize');
+            if (savedFont) setFontSize(savedFont); else btnFontNormal.classList.add('active');
+
+            if (localStorage.getItem('a11y_highContrast') === 'true') { document.body.classList.add('high-contrast'); btnHighContrast.classList.add('active'); }
+            if (localStorage.getItem('a11y_grayscale') === 'true') { document.body.classList.add('grayscale-mode'); btnGrayscale.classList.add('active'); }
+            if (localStorage.getItem('a11y_negative') === 'true') { document.body.classList.add('negative-contrast'); btnNegative.classList.add('active'); }
+            if (localStorage.getItem('a11y_highlightLinks') === 'true') { document.body.classList.add('highlight-links'); btnHighlightLinks.classList.add('active'); }
+            if (localStorage.getItem('a11y_readableFont') === 'true') { document.body.classList.add('readable-font'); btnReadableFont.classList.add('active'); }
+            
+            const savedColorBlind = localStorage.getItem('a11y_colorBlind');
+            if (savedColorBlind) setBlindnessFilter(savedColorBlind); else btnNormalColor.classList.add('active');
+
+            if (localStorage.getItem('a11y_voiceMode') === 'true') {
+                isVoiceModeActive = true;
+                btnVoiceMode.classList.add('active');
+            }
+
+            const pendingSpeech = localStorage.getItem('a11y_pending_speech');
+            if (pendingSpeech) {
+                localStorage.removeItem('a11y_pending_speech');
+                setTimeout(() => {
+                    speakText(pendingSpeech);
+                }, 300);
+            }
+        });
     </script>
 </body>
 
