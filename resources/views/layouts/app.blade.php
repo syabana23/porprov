@@ -204,7 +204,7 @@
                 z-index: 160;
                 padding: 70px 20px 24px;
                 box-shadow: -4px 0 20px rgba(0,0,0,0.15);
-                transition: right 0.3s ease, background-color 0.3s;
+                transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s;
                 overflow-y: auto;
             }
             .mobile-nav.open {
@@ -216,13 +216,19 @@
                 font-weight: 600;
                 color: #374151;
                 text-decoration: none;
-                padding: 12px 0;
+                padding: 14px 0;
                 border-bottom: 1px solid #f3f4f6;
                 text-transform: uppercase;
                 letter-spacing: 0.02em;
+                transition: color 0.2s, padding-left 0.2s;
             }
             .mobile-nav a:hover,
             .mobile-nav a.active {
+                color: #013469;
+            }
+
+            .mobile-nav a.active {
+                border-bottom: 2px solid #FDB813;
                 color: #013469;
             }
 

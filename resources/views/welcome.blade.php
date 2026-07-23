@@ -4,1158 +4,1401 @@
 
 @push('styles')
 <style>
-    /* ── Hero ── */
-    .hero {
-        position: relative;
-        overflow: hidden;
-        height: 400px;
-        display: flex;
+    /* ═══════════════════════════════════════════════════════════════════
+       GLOBAL LAYOUT & RESETS
+       ═══════════════════════════════════════════════════════════════════ */
+    body {
+        -webkit-overflow-scrolling: touch;
     }
 
-    .hero-left {
+    /* ═══════════════════════════════════════════════════════════════════
+       1. HERO SECTION WITH BACKGROUND IMAGE & CURVED BLEND
+       ═══════════════════════════════════════════════════════════════════ */
+    .hero-wrapper {
         position: relative;
-        z-index: 2;
-        width: 60%;
-        background: #013469;
-        clip-path: polygon(0 0, 100% 0, 85% 100%, 0 100%);
-        display: flex;
-        align-items: center;
-        padding: 40px 60px 40px 40px;
+        background: linear-gradient(135deg, #001a33 0%, #013469 40%, #0a4fa8 75%, #0d63cc 100%);
+        padding: 55px 20px 100px;
+        color: #fff;
+        overflow-x: hidden;
+        overflow-y: visible;
     }
 
-    .hero-right {
+    /* Floating Particle Dots */
+    .hero-particles {
         position: absolute;
-        right: 0;
-        top: 0;
-        width: 55%;
-        height: 100%;
+        inset: 0;
+        pointer-events: none;
+        z-index: 1;
+        overflow: hidden;
     }
 
-    .hero-right img.bg {
-        width: 100%;
+    .hero-particles span {
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 50%;
+        animation: particleFloat 8s ease-in-out infinite;
+    }
+
+    .hero-particles span:nth-child(1) { top: 10%; left: 15%; animation-delay: 0s; width: 8px; height: 8px; }
+    .hero-particles span:nth-child(2) { top: 30%; left: 85%; animation-delay: 1.5s; width: 5px; height: 5px; }
+    .hero-particles span:nth-child(3) { top: 60%; left: 10%; animation-delay: 3s; width: 7px; height: 7px; }
+    .hero-particles span:nth-child(4) { top: 80%; left: 75%; animation-delay: 4.5s; width: 4px; height: 4px; }
+    .hero-particles span:nth-child(5) { top: 45%; left: 50%; animation-delay: 2s; width: 6px; height: 6px; }
+    .hero-particles span:nth-child(6) { top: 15%; left: 55%; animation-delay: 5.5s; width: 5px; height: 5px; }
+    .hero-particles span:nth-child(7) { top: 70%; left: 30%; animation-delay: 0.8s; width: 9px; height: 9px; opacity: 0.08; }
+    .hero-particles span:nth-child(8) { top: 90%; left: 90%; animation-delay: 3.8s; width: 4px; height: 4px; }
+
+    @keyframes particleFloat {
+        0%, 100% { transform: translateY(0) scale(1); opacity: 0.15; }
+        50% { transform: translateY(-30px) scale(1.3); opacity: 0.3; }
+    }
+
+    /* Background Image overlay from previous template */
+    .hero-bg-img-overlay {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 60%;
         height: 100%;
         object-fit: cover;
+        object-position: center;
+        opacity: 0.35;
+        z-index: 1;
+        pointer-events: none;
+        -webkit-mask-image: linear-gradient(to right, transparent 0%, black 45%);
+        mask-image: linear-gradient(to right, transparent 0%, black 45%);
     }
 
-    .hero-right .mascot {
+    /* Dynamic SVG Overlay Wave */
+    .hero-bg-wave-svg {
         position: absolute;
         bottom: 0;
-        right: 30px;
-        height: 280px;
-        width: auto;
-        object-fit: contain;
-        z-index: 5;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 2;
+        opacity: 0.12;
     }
 
-    .hero-left h2 {
-        color: #fff;
-        font-size: 44px;
+    .hero-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        z-index: 3;
+        gap: 30px;
+    }
+
+    .hero-content {
+        flex: 1;
+        max-width: 640px;
+    }
+
+    .hero-pill-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(253, 184, 19, 0.15);
+        border: 1px solid rgba(253, 184, 19, 0.4);
+        padding: 6px 18px;
+        border-radius: 30px;
+        font-size: 13px;
+        font-weight: 700;
+        color: #FDB813;
+        margin-bottom: 22px;
+        backdrop-filter: blur(6px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .hero-title {
+        font-size: 46px;
         font-weight: 900;
+        line-height: 1.12;
+        margin: 0 0 12px;
+        letter-spacing: -0.5px;
+        color: #ffffff;
         text-transform: uppercase;
-        line-height: 1;
-        margin: 0;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     }
 
-    .hero-left h2 span {
+    .hero-title .yellow-accent {
         color: #FDB813;
         display: block;
         font-size: 52px;
+        letter-spacing: 0px;
     }
 
-    .hero-left p.tagline {
-        color: #fff;
-        font-size: 13px;
-        font-weight: 700;
-        margin: 12px 0 8px;
+    .hero-tagline-bubble {
+        display: inline-block;
+        font-size: 20px;
+        font-weight: 800;
+        color: #e2e8f0;
+        font-style: italic;
+        margin-bottom: 18px;
+        letter-spacing: 0.2px;
     }
 
-    .hero-left p.desc {
-        color: #c8d9ea;
-        font-size: 11.5px;
-        line-height: 1.55;
-        margin: 0 0 20px;
-        max-width: 300px;
+    .hero-desc {
+        color: #cbd5e1;
+        font-size: 14.5px;
+        line-height: 1.65;
+        margin: 0 0 30px;
+        max-width: 530px;
     }
 
-    .hero-btns {
+    .hero-actions {
         display: flex;
-        gap: 12px;
+        gap: 14px;
         flex-wrap: wrap;
     }
 
-    .btn-yellow {
+    .btn-hero-primary {
         display: inline-flex;
         align-items: center;
-        gap: 8px;
-        background: #FDB813;
-        color: #013469;
-        font-weight: 700;
-        font-size: 12px;
-        padding: 9px 18px;
-        border-radius: 6px;
+        gap: 10px;
+        background: linear-gradient(135deg, #FDB813 0%, #f59e0b 100%);
+        color: #012050;
+        font-weight: 800;
+        font-size: 14px;
+        padding: 13px 28px;
+        border-radius: 10px;
         text-decoration: none;
-        font-family: 'Poppins', sans-serif;
-        border: none;
-        cursor: pointer;
+        box-shadow: 0 6px 20px rgba(253, 184, 19, 0.35);
+        transition: all 0.25s ease;
     }
 
-    .btn-outline-white {
+    .btn-hero-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 28px rgba(253, 184, 19, 0.5);
+        color: #000;
+    }
+
+    .btn-hero-secondary {
         display: inline-flex;
         align-items: center;
-        gap: 8px;
-        background: transparent;
+        gap: 10px;
+        background: rgba(255, 255, 255, 0.1);
         color: #fff;
         font-weight: 700;
-        font-size: 12px;
-        padding: 9px 18px;
-        border-radius: 6px;
-        text-decoration: none;
-        border: 2px solid rgba(255, 255, 255, 0.7);
-        font-family: 'Poppins', sans-serif;
-    }
-
-    /* ───────── Filter ───────── */
-    .filter-section {
-        max-width: 1200px;
-        margin: 10px auto 10px;
-        padding: 0 20px;
-    }
-
-    .filter-box {
-        background: #fff;
-        border-radius: 12px;
-        padding: 18px;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, .12);
-    }
-
-    .filter-form {
-        display: grid;
-        grid-template-columns: 2fr 1fr 1fr auto auto;
-        gap: 15px;
-        align-items: center;
-    }
-
-    .filter-input,
-    .filter-select {
-        width: 100%;
-        height: 48px;
-        border: 1px solid #d1d5db;
-        border-radius: 8px;
-        padding: 0 15px;
         font-size: 14px;
-        font-family: 'Poppins', sans-serif;
-        outline: none;
-        transition: .2s;
+        padding: 13px 28px;
+        border-radius: 10px;
+        text-decoration: none;
+        border: 1.5px solid rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(6px);
+        transition: all 0.25s ease;
     }
 
-    .filter-input:focus,
-    .filter-select:focus {
-        border-color: #013469;
+    .btn-hero-secondary:hover {
+        background: rgba(255, 255, 255, 0.22);
+        border-color: #fff;
+        color: #fff;
+        transform: translateY(-2px);
     }
 
-    .btn-yellow {
-        display: inline-flex;
-        align-items: center;
+    /* Hero Right Side Mascot & Talk Bubble */
+    .hero-media {
+        position: relative;
+        display: flex;
+        align-items: flex-end;
         justify-content: center;
-        gap: 8px;
-        background: #FDB813;
+    }
+
+    .mascot-wrapper {
+        position: relative;
+        display: inline-block;
+    }
+
+    .mascot-img {
+        height: 340px;
+        width: auto;
+        object-fit: contain;
+        filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.35));
+    }
+
+    .speech-bubble {
+        position: absolute;
+        top: -15px;
+        left: -85px;
+        background: #ffffff;
         color: #013469;
-        font-weight: 700;
-        font-size: 14px;
-        height: 48px;
-        padding: 0 24px;
-        border-radius: 8px;
-        text-decoration: none;
-        font-family: 'Poppins', sans-serif;
-        border: none;
-        cursor: pointer;
-        transition: .2s;
+        font-weight: 800;
+        font-size: 13px;
+        padding: 11px 20px;
+        border-radius: 22px;
+        border-bottom-right-radius: 2px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+        line-height: 1.35;
+        text-align: center;
+        animation: floatBubble 3.5s ease-in-out infinite;
+        z-index: 5;
     }
 
-    .btn-yellow:hover {
-        background: #e5a40b;
+    .speech-bubble::after {
+        content: '';
+        position: absolute;
+        bottom: -8px;
+        right: 12px;
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 2px solid transparent;
+        border-top: 10px solid #ffffff;
     }
 
-    .reset-btn {
-        height: 48px;
+    @media (max-width: 768px) {
+        .speech-bubble {
+            position: absolute;
+            top: -35px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 11px;
+            padding: 8px 14px;
+            white-space: nowrap;
+            border-bottom-right-radius: 22px;
+        }
+        .speech-bubble::after {
+            right: 50%;
+            transform: translateX(50%);
+        }
+    }
+
+    @keyframes floatBubble {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-7px); }
+    }
+
+    /* Bottom Curve Overlay */
+    .hero-bottom-curve {
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+        z-index: 3;
+    }
+
+    .hero-bottom-curve svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 50px;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════════
+       2. STATISTICS OVERLAP BAR
+       ═══════════════════════════════════════════════════════════════════ */
+    .stats-overlap-container {
+        max-width: 1160px;
+        margin: -30px auto 45px;
         padding: 0 20px;
-        border: none;
-        background: #ef4444;
-        color: white;
-        border-radius: 8px;
-        cursor: pointer;
-        font-weight: 600;
-        transition: .2s;
+        position: relative;
+        z-index: 10;
     }
 
-    .reset-btn:hover {
-        background: #dc2626;
-    }
-
-    /* ── Stats ── */
-    .stats {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 30px 20px 40px;
+    .stats-grid {
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-radius: 18px;
+        box-shadow: 0 12px 35px rgba(1, 52, 105, 0.12);
+        padding: 22px 28px;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 16px;
+        border: 1px solid rgba(226, 232, 240, 0.85);
     }
 
-    .stat-card {
-        background: #fff;
-        border-radius: 10px;
-        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.10);
-        padding: 22px 20px;
+    .stat-card-item {
         display: flex;
         align-items: center;
         gap: 16px;
-        transition: box-shadow 0.2s;
-    }
-
-    .stat-card:hover {
-        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.14);
-    }
-
-    .stat-icon {
-        flex-shrink: 0;
-    }
-
-    .stat-num {
-        font-size: 32px;
-        font-weight: 800;
-        color: #013469;
-        line-height: 1;
-    }
-
-    .stat-label {
-        font-size: 11.5px;
-        color: #6b7280;
-        font-weight: 500;
-        margin-top: 2px;
-    }
-
-    /* ── Map + Facilities Side-by-Side ── */
-    .map-facilities-wrapper {
-        max-width: 1200px;
-        margin: 0 auto 40px;
-        padding: 0 20px;
-        display: flex;
-        gap: 20px;
-        align-items: flex-start;
-    }
-
-    .map-side {
-        flex: 0 0 58%;
-        position: relative;
-    }
-
-    .map-side .map-container {
-        position: relative;
-        width: 100%;
-        height: 500px;
-        background: #e5e7eb;
-        border-radius: 16px;
-        overflow: hidden;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-    }
-
-    .map-side #map-canvas {
-        width: 100% !important;
-        height: 100% !important;
-        display: block !important;
-    }
-
-    /* Floating GOR Card */
-    .home-gor-card {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        width: 280px;
-        background: #fff;
+        padding: 8px 12px;
+        border-right: 1px solid #f1f5f9;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
         border-radius: 12px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-        z-index: 99;
-        overflow: hidden;
-        display: none;
     }
 
-    .facilities-side {
-        flex: 1;
-        background: #fff;
-        border-radius: 16px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-        border: 1px solid #f0f1f3;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        max-height: 540px;
+    .stat-card-item:hover {
+        transform: scale(1.03);
+        box-shadow: 0 4px 16px rgba(1, 52, 105, 0.08);
     }
 
-    .facilities-side-header {
-        padding: 20px 20px 0;
-        flex-shrink: 0;
+    .stat-card-item:last-child {
+        border-right: none;
     }
 
-    .facilities-side-header h2 {
-        font-size: 1.1rem;
-        font-weight: 800;
-        color: #111827;
-        margin: 0 0 4px;
-    }
-
-    .facilities-side-header p {
-        font-size: 12px;
-        color: #6b7280;
-        margin: 0;
-    }
-
-    .facility-filter-buttons {
-        display: flex;
-        gap: 6px;
-        padding: 14px 20px;
-        flex-wrap: wrap;
-        border-bottom: 1px solid #f3f4f6;
-        flex-shrink: 0;
-    }
-
-    .facility-filter-btn {
-        padding: 5px 12px;
-        border-radius: 20px;
-        border: 1.5px solid #e5e7eb;
-        background: #fff;
-        color: #6b7280;
-        font-size: 12px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.2s;
-        font-family: 'Poppins', sans-serif;
-        white-space: nowrap;
-    }
-
-    .facility-filter-btn:hover {
-        border-color: #2563eb;
-        color: #2563eb;
-    }
-
-    .facility-filter-btn.active {
-        background: #2563eb;
-        border-color: #2563eb;
-        color: #fff;
-    }
-
-    .facilities-list-wrap {
-        flex: 1;
-        overflow-y: auto;
-        padding: 12px 20px 20px;
-    }
-
-    .facilities-list-wrap::-webkit-scrollbar {
-        width: 5px;
-    }
-
-    .facilities-list-wrap::-webkit-scrollbar-track {
-        background: transparent;
-    }
-
-    .facilities-list-wrap::-webkit-scrollbar-thumb {
-        background: #d1d5db;
-        border-radius: 10px;
-    }
-
-    .facility-category {
-        margin-bottom: 16px;
-    }
-
-    .facility-category:last-child {
-        margin-bottom: 0;
-    }
-
-    .facility-cat-header {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        margin-bottom: 10px;
-        padding-bottom: 8px;
-        border-bottom: 1px solid #f3f4f6;
-    }
-
-    .facility-cat-icon {
-        width: 28px;
-        height: 28px;
-        border-radius: 8px;
+    .stat-icon-square {
+        width: 52px;
+        height: 52px;
+        border-radius: 14px;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-shrink: 0;
+        transition: transform 0.3s ease;
     }
 
-    .facility-cat-header h3 {
+    .stat-card-item:hover .stat-icon-square {
+        transform: scale(1.1) rotate(-3deg);
+    }
+
+    .stat-icon-square.blue { background: #eff6ff; color: #2563eb; }
+    .stat-icon-square.yellow { background: #fefce8; color: #d97706; }
+    .stat-icon-square.navy { background: #e0e7ff; color: #4338ca; }
+    .stat-icon-square.green { background: #f0fdf4; color: #16a34a; }
+
+    .stat-val {
+        font-size: 28px;
+        font-weight: 900;
+        color: #0f172a;
+        line-height: 1;
+    }
+
+    .stat-title {
         font-size: 13px;
         font-weight: 700;
-        color: #374151;
+        color: #334155;
+        margin-top: 3px;
+    }
+
+    .stat-sub {
+        font-size: 11px;
+        color: #94a3b8;
+        margin-top: 1px;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════════
+       3. SECTION HEADERS & COMMON WRAPPERS
+       ═══════════════════════════════════════════════════════════════════ */
+    .section-wrap {
+        max-width: 1200px;
+        margin: 0 auto 55px;
+        padding: 0 20px;
+    }
+
+    .section-divider {
+        max-width: 1200px;
+        margin: 0 auto 20px;
+        padding: 0 20px;
+    }
+
+    .section-divider hr {
+        border: none;
+        height: 2px;
+        background: linear-gradient(to right, transparent, #e2e8f0 20%, #e2e8f0 80%, transparent);
         margin: 0;
+    }
+
+    .section-header-flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 24px;
+    }
+
+    .section-title-group {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .section-bar {
+        width: 5px;
+        height: 26px;
+        background: linear-gradient(to bottom, #013469, #FDB813);
+        border-radius: 4px;
+    }
+
+    .section-heading {
+        font-size: 22px;
+        font-weight: 800;
+        color: #013469;
+        margin: 0;
+        letter-spacing: -0.3px;
+    }
+
+    .section-subtitle {
+        font-size: 12.5px;
+        color: #64748b;
+        margin: 2px 0 0;
+    }
+
+    .section-link {
+        font-size: 13.5px;
+        font-weight: 700;
+        color: #2563eb;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition: all 0.2s;
+    }
+
+    .section-link:hover {
+        color: #1d4ed8;
+        transform: translateX(3px);
+    }
+
+    /* ═══════════════════════════════════════════════════════════════════
+       4. MAP & FACILITIES SIDE-BY-SIDE SECTION
+       ═══════════════════════════════════════════════════════════════════ */
+    .map-section-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        align-items: stretch;
+    }
+
+    /* Left Side: Map Container */
+    .map-box-card {
+        background: #ffffff;
+        border-radius: 18px;
+        box-shadow: 0 4px 22px rgba(0, 0, 0, 0.06);
+        border: 1px solid #e2e8f0;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .map-container-wrap {
+        position: relative;
+        width: 100%;
+        height: 400px;
+        min-height: 300px;
+        background: #e2e8f0;
+    }
+
+    #map-canvas {
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    /* Selected Venue Detail Box inside Left Column */
+    .home-gor-card {
+        background: #f8fafc;
+        border-top: 1px solid #e2e8f0;
+        padding: 18px 20px;
+        display: none; /* Shown dynamically when clicking a map venue */
+    }
+
+    .gor-card-header {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 15.5px;
+        font-weight: 800;
+        color: #013469;
+        margin-bottom: 6px;
+    }
+
+    .gor-card-body .addr {
+        font-size: 12px;
+        color: #64748b;
+        display: flex;
+        align-items: flex-start;
+        gap: 6px;
+        margin-bottom: 12px;
+        line-height: 1.4;
+    }
+
+    .cabor-grid {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-bottom: 14px;
+    }
+
+    .cabor-tag {
+        background: #e0f2fe;
+        color: #0369a1;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 11.5px;
+        font-weight: 700;
+    }
+
+    .map-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        background: #013469;
+        color: #fff;
+        font-size: 13px;
+        font-weight: 700;
+        padding: 9px 18px;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: background 0.2s;
+    }
+
+    .map-btn:hover {
+        background: #012050;
+        color: #fff;
+    }
+
+    /* Right Side: Facilities & Filter */
+    .facilities-panel-card {
+        background: #ffffff;
+        border-radius: 18px;
+        box-shadow: 0 4px 22px rgba(0, 0, 0, 0.06);
+        border: 1px solid #e2e8f0;
+        padding: 22px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .filter-form-clean {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin-bottom: 18px;
+    }
+
+    .filter-form-clean .full-width {
+        grid-column: 1 / -1;
+    }
+
+    .filter-input-styled, .filter-select-styled {
+        width: 100%;
+        height: 44px;
+        border: 1px solid #cbd5e1;
+        border-radius: 10px;
+        padding: 0 14px;
+        font-size: 13px;
+        font-family: inherit;
+        outline: none;
+        background-color: #fff;
+        transition: all 0.2s;
+    }
+
+    .filter-input-styled:focus, .filter-select-styled:focus {
+        border-color: #013469;
+        box-shadow: 0 0 0 3px rgba(1, 52, 105, 0.1);
+    }
+
+    .filter-actions {
+        display: flex;
+        gap: 10px;
+        grid-column: 1 / -1;
+    }
+
+    .btn-search-blue {
+        flex: 1;
+        height: 44px;
+        background: #013469;
+        color: #fff;
+        font-weight: 700;
+        font-size: 13.5px;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+
+    .btn-search-blue:hover {
+        background: #012050;
+    }
+
+    .btn-reset-light {
+        height: 44px;
+        padding: 0 18px;
+        background: #f1f5f9;
+        color: #475569;
+        font-weight: 600;
+        font-size: 13px;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+
+    .btn-reset-light:hover {
+        background: #e2e8f0;
+    }
+
+    .facility-tabs-bar {
+        display: flex;
+        gap: 6px;
+        overflow-x: auto;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #f1f5f9;
+        margin-bottom: 16px;
+    }
+
+    .facility-tabs-bar::-webkit-scrollbar {
+        height: 4px;
+    }
+
+    .facility-tabs-bar::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 4px;
+    }
+
+    .facility-filter-btn {
+        padding: 6px 14px;
+        border-radius: 20px;
+        border: 1px solid #e2e8f0;
+        background: #f8fafc;
+        color: #64748b;
+        font-size: 12px;
+        font-weight: 600;
+        cursor: pointer;
+        white-space: nowrap;
+        transition: all 0.2s;
+    }
+
+    .facility-filter-btn:hover, .facility-filter-btn.active {
+        background: #013469;
+        border-color: #013469;
+        color: #fff;
+    }
+
+    .facilities-scroll-list {
+        flex: 1;
+        max-height: 310px;
+        overflow-y: auto;
+        padding-right: 4px;
+    }
+
+    .facilities-scroll-list::-webkit-scrollbar {
+        width: 5px;
+    }
+    .facilities-scroll-list::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 10px;
     }
 
     .facility-list-item {
         display: flex;
         align-items: center;
-        gap: 10px;
-        padding: 10px;
-        border-radius: 10px;
-        transition: background 0.15s;
-        margin-bottom: 4px;
-    }
-
-    .facility-list-item:hover {
-        background: #f9fafb;
-    }
-
-    .facility-list-item:last-child {
-        margin-bottom: 0;
-    }
-
-    .fli-icon {
-        width: 32px;
-        height: 32px;
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-    }
-
-    .fli-info {
-        flex: 1;
-        min-width: 0;
-    }
-
-    .fli-name {
-        font-size: 13px;
-        font-weight: 600;
-        color: #1f2937;
-        margin: 0;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    .fli-addr {
-        font-size: 11px;
-        color: #9ca3af;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        margin: 1px 0 0;
-    }
-
-    .fli-route {
-        flex-shrink: 0;
-        padding: 5px 10px;
-        background: #f3f4f6;
-        color: #374151;
-        font-size: 11px;
-        font-weight: 600;
-        border-radius: 6px;
-        text-decoration: none;
-        transition: all 0.2s;
-    }
-
-    .fli-route:hover {
-        background: #2563eb;
-        color: #fff;
-    }
-
-    .facilities-empty {
-        text-align: center;
-        padding: 40px 20px;
-        color: #9ca3af;
-        font-size: 13px;
-        font-style: italic;
-    }
-
-    .gor-card-header {
-        background: #f8fafc;
-        color: #374151;
-        padding: 14px 16px;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        font-size: 15px;
-        font-weight: 800;
-        border-bottom: 1px solid #e5e7eb;
-    }
-
-    .gor-card-body {
-        padding: 16px;
-    }
-
-    .gor-card-body .addr {
-        font-size: 13px;
-        color: #6b7280;
-        display: flex;
-        align-items: flex-start;
-        gap: 8px;
-        margin-bottom: 16px;
-        line-height: 1.5;
-    }
-
-    .gor-card-body .cabang-title {
-        font-size: 12px;
-        font-weight: 800;
-        color: #013469;
-        margin-bottom: 12px;
-        text-transform: uppercase;
-    }
-
-    .cabor-grid {
-        display: flex;
         gap: 12px;
-        flex-wrap: wrap;
-        margin-bottom: 20px;
-    }
-
-    .cabor-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 6px;
-        width: 52px;
-    }
-
-    .cabor-icon {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background: #f4f5f7;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #4b5563;
-    }
-
-    .cabor-item span {
-        font-size: 11px;
-        color: #4b5563;
-        text-align: center;
-        line-height: 1.2;
-    }
-
-    .tags-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        margin-bottom: 16px;
-    }
-
-    .tag-pill {
-        background: #f4f6f9;
-        color: #113264;
-        padding: 6px 12px;
-        border-radius: 16px;
-        font-size: 12px;
-        font-weight: 700;
-    }
-
-    .home-gor-card .map-btn {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 8px;
-        background: #163f7a;
-        color: #fff;
-        font-size: 14px;
-        font-weight: 700;
-        padding: 10px;
-        text-decoration: none;
-        border-radius: 6px;
+        padding: 11px;
+        border-radius: 10px;
+        border: 1px solid #f1f5f9;
+        margin-bottom: 8px;
         transition: background 0.2s;
     }
 
-    .home-gor-card .map-btn:hover {
-        background: #012050;
+    .facility-list-item:hover {
+        background: #f8fafc;
+        border-color: #e2e8f0;
     }
 
-    @media (max-width: 768px) {
-        .home-gor-card {
-            position: relative;
-            top: 0;
-            right: 0;
+    .fli-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .fli-info { flex: 1; min-width: 0; }
+    .fli-name { font-size: 13px; font-weight: 700; color: #1e293b; margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .fli-addr { font-size: 11px; color: #64748b; margin: 2px 0 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .fli-route { padding: 5px 12px; background: #e0f2fe; color: #0284c7; font-size: 11.5px; font-weight: 700; border-radius: 6px; text-decoration: none; transition: all 0.2s; }
+    .fli-route:hover { background: #0284c7; color: #fff; }
+
+    /* ═══════════════════════════════════════════════════════════════════
+       5. UPCOMING MATCHES SECTION (BELOW MAP)
+       ═══════════════════════════════════════════════════════════════════ */
+    .matches-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 22px;
+    }
+
+    .match-card {
+        background: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+        border: 1px solid #e2e8f0;
+        padding: 22px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .match-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 4px;
+        height: 100%;
+        border-radius: 16px 0 0 16px;
+    }
+
+    .match-card[data-sport="pencak-silat"]::before { background: linear-gradient(to bottom, #ef4444, #dc2626); }
+    .match-card[data-sport="drumband"]::before { background: linear-gradient(to bottom, #FDB813, #f59e0b); }
+    .match-card[data-sport="panahan"]::before { background: linear-gradient(to bottom, #22c55e, #16a34a); }
+    .match-card[data-sport="judo-sambo"]::before { background: linear-gradient(to bottom, #8b5cf6, #7c3aed); }
+
+    .match-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 32px rgba(1, 52, 105, 0.15);
+        border-color: #cbd5e1;
+    }
+
+    .match-card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 14px;
+    }
+
+    .match-sport-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: #eff6ff;
+        color: #1d4ed8;
+        font-size: 12px;
+        font-weight: 700;
+        padding: 4px 14px;
+        border-radius: 20px;
+    }
+
+    .match-date-badge {
+        font-size: 11.5px;
+        color: #d97706;
+        font-weight: 700;
+        background: #fefce8;
+        padding: 4px 10px;
+        border-radius: 6px;
+        border: 1px solid #fef08a;
+    }
+
+    .match-title {
+        font-size: 16px;
+        font-weight: 800;
+        color: #0f172a;
+        margin: 0 0 8px;
+        line-height: 1.35;
+    }
+
+    .match-venue-info {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 12.5px;
+        color: #64748b;
+        margin-bottom: 18px;
+    }
+
+    .match-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 14px;
+        border-top: 1px dashed #e2e8f0;
+    }
+
+    .match-status {
+        font-size: 11.5px;
+        font-weight: 700;
+        color: #16a34a;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .match-status .dot {
+        width: 8px;
+        height: 8px;
+        background: #16a34a;
+        border-radius: 50%;
+        box-shadow: 0 0 6px rgba(22, 163, 74, 0.5);
+    }
+
+    .btn-detail-sm {
+        font-size: 12.5px;
+        font-weight: 700;
+        color: #013469;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        transition: color 0.2s;
+    }
+
+    .btn-detail-sm:hover {
+        color: #FDB813;
+    }
+
+    /* ═══════════════════════════════════════════════════════════════════
+       RESPONSIVE DESIGN (MOBILE & TABLET)
+       ═══════════════════════════════════════════════════════════════════ */
+    /* ═══════════════════════════════════════════════════════════════════
+       SCROLL REVEAL ANIMATION
+       ═══════════════════════════════════════════════════════════════════ */
+    .reveal {
+        opacity: 0;
+        transform: translateY(24px);
+        transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                    transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    .stat-card-item.reveal { transition-delay: calc(var(--i, 0) * 0.1s); }
+
+    @media (prefers-reduced-motion: reduce) {
+        .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
+    @media (max-width: 992px) {
+        .hero-bg-img-overlay {
             width: 100%;
-            box-shadow: none;
-            border-radius: 0;
+            opacity: 0.2;
+            -webkit-mask-image: none;
+            mask-image: none;
         }
 
-        .map-container {
-            border-radius: 0;
-            height: 350px;
+        .hero-container {
+            flex-direction: column;
+            text-align: center;
         }
 
-        .filter-section {
-            margin: 20px 16px;
-            padding: 0;
+        .hero-content { max-width: 100%; }
+        .hero-desc { margin: 0 auto 26px; }
+        .hero-actions { justify-content: center; }
+
+        .hero-media { margin-top: 20px; }
+        .mascot-img { height: 220px; }
+
+        .stats-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
         }
 
-        .filter-form {
+        .stat-card-item {
+            border-right: none;
+            border-bottom: 1px solid #f1f5f9;
+            padding-bottom: 10px;
+        }
+
+        .map-section-grid {
             grid-template-columns: 1fr;
         }
 
-        /* Hero mobile */
-        .hero {
-            height: auto;
-            min-height: 320px;
-            flex-direction: column;
-        }
+        .map-container-wrap { height: 340px; }
 
-        .hero-left {
-            width: 100%;
-            clip-path: none;
-            padding: 28px 20px 24px;
-            min-height: 280px;
-        }
-
-        .hero-right {
-            position: relative;
-            width: 100%;
-            height: 180px;
-        }
-
-        .hero-left h2 {
-            font-size: 26px;
-        }
-
-        .hero-left h2 span {
-            font-size: 30px;
-        }
-
-        .hero-left p.desc {
-            max-width: 100%;
-            font-size: 12px;
-        }
-
-        .hero-right .mascot {
-            height: 160px;
-            right: 16px;
-        }
-
-        /* Stats mobile */
-        .stats {
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            padding: 20px 16px 30px;
-        }
-
-        .stat-card {
-            padding: 16px 14px;
-            gap: 12px;
-        }
-
-        .stat-num {
-            font-size: 26px;
-        }
-
-        .stat-icon svg {
-            width: 32px;
-            height: 32px;
-        }
-
-        /* Map section mobile */
-        .map-home-section {
-            padding: 20px 5%;
-        }
+        .section-heading { font-size: 19px; }
     }
 
-    /* Legacy hidden */
-    .venue-body {
-        display: none;
-    }
+    @media (max-width: 576px) {
+        .hero-wrapper { padding: 36px 16px 75px; }
+        .section-divider { padding: 0 16px; margin-bottom: 12px; }
+        .section-divider hr { opacity: 0.5; }
+        .hero-title { font-size: 26px; letter-spacing: -0.3px; }
+        .hero-title .yellow-accent { font-size: 30px; }
+        .hero-tagline-bubble { font-size: 14px; }
+        .hero-desc { font-size: 13px; }
+        .btn-hero-primary, .btn-hero-secondary { width: 100%; justify-content: center; padding: 14px 20px; font-size: 13px; min-height: 48px; }
+        .hero-pill-badge { font-size: 11px; padding: 5px 14px; }
 
-    @media (max-width: 768px) {
-        .home-gor-card {
-            position: relative;
-            top: 0;
-            right: 0;
-            width: 100%;
-            box-shadow: none;
-            border-radius: 0;
-        }
-
-        .filter-section {
-            margin: 20px 16px;
-            padding: 0;
-        }
-
-        .filter-form {
+        .stats-overlap-container { margin-top: -20px; }
+        .stats-grid {
             grid-template-columns: 1fr;
+            padding: 16px;
+            gap: 10px;
         }
+        .stat-card-item { padding: 8px 4px; border-right: none; border-bottom: 1px solid #f1f5f9; }
+        .stat-card-item:last-child { border-bottom: none; }
+        .stat-val { font-size: 22px; }
+        .stat-title { font-size: 12px; }
 
-        /* Hero mobile */
-        .hero {
-            height: auto;
-            min-height: 320px;
-            flex-direction: column;
-        }
+        .section-wrap { padding: 0 16px; margin-bottom: 40px; }
+        .section-heading { font-size: 18px; }
+        .section-subtitle { font-size: 11px; }
 
-        .hero-left {
-            width: 100%;
-            clip-path: none;
-            padding: 28px 20px 24px;
-            min-height: 280px;
-        }
+        .filter-form-clean { grid-template-columns: 1fr; gap: 10px; }
+        .filter-select-styled, .filter-input-styled { height: 48px; font-size: 16px; }
+        .btn-search-blue { height: 48px; font-size: 14px; }
+        .btn-reset-light { height: 48px; font-size: 13px; }
+        .facility-filter-btn { padding: 10px 16px; font-size: 12px; min-height: 44px; }
+        .facilities-scroll-list { max-height: 40vh; }
 
-        .hero-right {
-            position: relative;
-            width: 100%;
-            height: 180px;
-        }
+        .map-container-wrap { height: 300px; min-height: 280px; }
 
-        .hero-left h2 {
-            font-size: 26px;
-        }
-
-        .hero-left h2 span {
-            font-size: 30px;
-        }
-
-        .hero-left p.desc {
-            max-width: 100%;
-            font-size: 12px;
-        }
-
-        .hero-right .mascot {
-            height: 160px;
-            right: 16px;
-        }
-
-        /* Stats mobile */
-        .stats {
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            padding: 20px 16px 30px;
-        }
-
-        .stat-card {
-            padding: 16px 14px;
-            gap: 12px;
-        }
-
-        .stat-num {
-            font-size: 26px;
-        }
-
-        .stat-icon svg {
-            width: 32px;
-            height: 32px;
-        }
-
-        .map-facilities-wrapper {
-            flex-direction: column;
-            padding: 0 16px;
-        }
-
-        .map-side {
-            flex: none;
-            width: 100%;
-        }
-
-        .map-side .map-container {
-            border-radius: 0;
-            height: 350px;
-        }
-
-        .facilities-side {
-            max-height: 400px;
-            border-radius: 12px;
-        }
+        .matches-grid { grid-template-columns: 1fr; gap: 16px; }
+        .match-card { padding: 18px; }
+        .match-title { font-size: 14px; }
     }
 </style>
 @endpush
 
 @section('content')
-<!-- Hero Section -->
-<section class="hero">
-    <div class="hero-left">
-        <div>
-            <h2>PORPROV <span>KOTA BOGOR 2026</span></h2>
-            <p class="tagline">Semangat Sportivitas, Bersatu untuk Prestasi!</p>
-            <p class="desc">Kota Bogor siap menjadi tuan rumah yang ramah, berprestasi, dan menginspirasi pada ajang PORPROV Jawa Barat XV Tahun 2026</p>
-            <div class="hero-btns">
-                <a href="{{ url('/jadwal') }}" class="btn-yellow">
-                    <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     1. HERO SECTION WITH RESTORED BACKGROUND IMAGE
+     ═══════════════════════════════════════════════════════════════════ -->
+<section class="hero-wrapper">
+    <!-- Restored Hero Background Image Overlay from original layout -->
+    <img src="{{ asset('images/hero-bg.png') }}" class="hero-bg-img-overlay" alt="PORPROV XV Kota Bogor Background">
+
+    <!-- Floating Particles -->
+    <div class="hero-particles">
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+    </div>
+
+    <!-- Decorative Wave SVG -->
+    <svg class="hero-bg-wave-svg" viewBox="0 0 1440 320" fill="none">
+        <path d="M0,192L48,176C96,160,192,128,288,138.7C384,149,480,203,576,208C672,213,768,171,864,165.3C960,160,1056,192,1152,197.3C1248,203,1344,181,1392,170.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z" fill="url(#gradWave)"></path>
+        <defs>
+            <linearGradient id="gradWave" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#ffffff" stop-opacity="0.25"/>
+                <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+            </linearGradient>
+        </defs>
+    </svg>
+
+    <div class="hero-container">
+        <!-- Hero Text Content -->
+        <div class="hero-content">
+            <div class="hero-pill-badge">
+                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                Menuju Ajang Olahraga Terbesar Jawa Barat
+            </div>
+            
+            <h1 class="hero-title">
+                PORPROV XV <span class="yellow-accent">KOTA BOGOR 2026</span>
+            </h1>
+
+            <div class="hero-tagline-bubble">
+                "Bersatu, Berprestasi, Bogor Juara!"
+            </div>
+
+            <p class="hero-desc">
+                Semangat sportivitas, persaudaraan dan prestasi untuk membangun Jawa Barat yang lebih maju. Kota Bogor siap menjadi tuan rumah yang ramah dan menginspirasi.
+            </p>
+
+            <div class="hero-actions">
+                <a href="{{ url('/jadwal') }}" class="btn-hero-primary">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                     </svg>
-                    LIHAT JADWAL
+                    Lihat Jadwal
+                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
                 </a>
-                <a href="{{ url('/peta-venue') }}" class="btn-outline-white">
-                    <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                <a href="{{ url('/peta-venue') }}" class="btn-hero-secondary">
+                    <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
-                    PETA VENUE
+                    Peta Venue
                 </a>
             </div>
         </div>
-    </div>
-    <div class="hero-right">
-        <img class="bg" src="{{ asset('images/hero-bg.png') }}" alt="Kota Bogor">
-        <img class="mascot" src="{{ asset('images/maskot.png') }}" alt="Maskot PORPROV">
-    </div>
-</section>
 
-<!-- Statistics Cards -->
-<section class="stats">
-    <div class="stat-card">
-        <div class="stat-icon">
-            <svg width="40" height="40" fill="none" stroke="#013469" viewBox="0 0 24 24" stroke-width="1.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-            </svg>
-        </div>
-        <div>
-            <div class="stat-num">80</div>
-            <div class="stat-label">Hotel</div>
+        <!-- Hero Mascot & Speech Bubble -->
+        <div class="hero-media">
+            <div class="mascot-wrapper">
+                <div class="speech-bubble">
+                    Bogor Siap Jadi Tuan<br>Rumah Terbaik! ⚡
+                </div>
+                <img class="mascot-img" src="{{ asset('images/maskot.png') }}" alt="Maskot PORPROV XV Kota Bogor">
+            </div>
         </div>
     </div>
-    <div class="stat-card">
-        <div class="stat-icon">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#013469" stroke-width="1.5">
-                <circle cx="12" cy="5" r="2" stroke-linecap="round" stroke-linejoin="round" />
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 21l2.5-6M18 11l-3.5 3-1.5 4M13 10l-1 4-3 3M9 21v-3l2-2" />
-            </svg>
-        </div>
-        <div>
-            <div class="stat-num">28</div>
-            <div class="stat-label">Cabang Olahraga</div>
-        </div>
-    </div>
-    <div class="stat-card">
-        <div class="stat-icon">
-            <svg width="40" height="40" fill="none" stroke="#013469" viewBox="0 0 24 24" stroke-width="1.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10M12 14v4m-2-2h4" />
-            </svg>
-        </div>
-        <div>
-            <div class="stat-num">164</div>
-            <div class="stat-label">Apotek</div>
-        </div>
-    </div>
-    <div class="stat-card">
-        <div class="stat-icon">
-            <svg width="40" height="40" fill="none" stroke="#2BB673" viewBox="0 0 24 24" stroke-width="1.5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-            </svg>
-        </div>
-        <div>
-            <div class="stat-num">22</div>
-            <div class="stat-label">Rumah Sakit</div>
-        </div>
+
+    <!-- Bottom Curve Wave -->
+    <div class="hero-bottom-curve">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0 C150,90 350,-40 500,40 C650,120 900,20 1200,60 L1200,120 L0,120 Z" fill="#f8fafc"></path>
+        </svg>
     </div>
 </section>
 
-<!-- Filter -->
-<section class="filter-section">
-    <div class="filter-box">
-        <form class="filter-form" id="map-filter-form">
-            <!-- Fasilitas -->
-            <select class="filter-select" id="fasilitas">
-                <option value="">🔍 Cari Fasilitas</option>
-                <option value="hotel">🏨 Hotel</option>
-                <option value="rumah-sakit">🏥 Rumah Sakit</option>
-                <option value="apotek">💊 Apotek</option>
-                <option value="rumah-makan">🍽️ Rumah Makan</option>
-            </select>
+<!-- ═══════════════════════════════════════════════════════════════════
+     2. STATISTICS OVERLAP CARDS
+     ═══════════════════════════════════════════════════════════════════ -->
+<div class="stats-overlap-container reveal">
+    <div class="stats-grid">
+        <!-- Stat Item 1: Hotel -->
+        <div class="stat-card-item reveal" style="--i: 0">
+            <div class="stat-icon-square blue">
+                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>
+            </div>
+            <div>
+                <div class="stat-val">80+</div>
+                <div class="stat-title">Hotel</div>
+                <div class="stat-sub">Penginapan Nyaman</div>
+            </div>
+        </div>
 
-            <!-- Cabang Olahraga -->
-            <select class="filter-select" id="cabor">
-                <option value="">🏃 Cabang Olahraga</option>
-                <option value="drumband">Drumband</option>
-                <option value="pencak silat">Pencak Silat</option>
-                <option value="taekwondo">Taekwondo</option>
-                <option value="judo">Judo</option>
-                <option value="kurash">Kurash</option>
-                <option value="sambo">Sambo</option>
-                <option value="tenis meja">Tenis Meja</option>
-            </select>
+        <!-- Stat Item 2: Cabor -->
+        <div class="stat-card-item reveal" style="--i: 1">
+            <div class="stat-icon-square yellow">
+                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <circle cx="12" cy="5" r="2" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 21l2.5-6M18 11l-3.5 3-1.5 4M13 10l-1 4-3 3M9 21v-3l2-2" />
+                </svg>
+            </div>
+            <div>
+                <div class="stat-val">28+</div>
+                <div class="stat-title">Cabang Olahraga</div>
+                <div class="stat-sub">Kompetisi Bergengsi</div>
+            </div>
+        </div>
 
-            <!-- Venue -->
-            <select class="filter-select" id="venue">
-                <option value="">📍 Venue</option>
-                <option value="gor pajajaran indoor a">GOR Pajajaran Indoor A</option>
-                <option value="gor pajajaran indoor b">GOR Pajajaran Indoor B</option>
-                <option value="gor yasmin">GOR Yasmin</option>
-                <option value="stadion pajajaran">Stadion Pajajaran</option>
-                <option value="gor vokasi ipb">GOR Vokasi IPB</option>
-            </select>
+        <!-- Stat Item 3: Apotek -->
+        <div class="stat-card-item reveal" style="--i: 2">
+            <div class="stat-icon-square navy">
+                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10M12 14v4m-2-2h4" />
+                </svg>
+            </div>
+            <div>
+                <div class="stat-val">164+</div>
+                <div class="stat-title">Apotek</div>
+                <div class="stat-sub">Siap Melayani</div>
+            </div>
+        </div>
 
-            <button type="submit" class="btn-yellow">Cari</button>
-            <button type="reset" class="reset-btn">Reset</button>
-        </form>
+        <!-- Stat Item 4: Rumah Sakit -->
+        <div class="stat-card-item reveal" style="--i: 3">
+            <div class="stat-icon-square green">
+                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+            </div>
+            <div>
+                <div class="stat-val">22+</div>
+                <div class="stat-title">Rumah Sakit</div>
+                <div class="stat-sub">Layanan Kesehatan</div>
+            </div>
+        </div>
     </div>
-</section>
+</div>
 
-<div class="map-facilities-wrapper">
-    <!-- MAP SIDE -->
-    <div class="map-side">
-        <h2 class="section-title">Peta Lokasi Venue</h2>
-        <div class="map-container">
-            <div id="map-canvas"></div>
+<!-- ═══════════════════════════════════════════════════════════════════
+     DIVIDER
+     ═══════════════════════════════════════════════════════════════════ -->
+<div class="section-divider"><hr></div>
 
+<!-- ═══════════════════════════════════════════════════════════════════
+     3. MAP & NEARBY FACILITIES SIDE-BY-SIDE SECTION
+     ═══════════════════════════════════════════════════════════════════ -->
+<section class="section-wrap reveal">
+    <div class="section-header-flex">
+        <div>
+            <div class="section-title-group">
+                <div class="section-bar"></div>
+                <h2 class="section-heading">Peta Lokasi Venue & Fasilitas</h2>
+            </div>
+            <p class="section-subtitle">Temukan lokasi venue pertandingan dan fasilitas umum terdekat di Kota Bogor</p>
+        </div>
+    </div>
+
+    <div class="map-section-grid">
+        <!-- LEFT: INTERACTIVE MAP -->
+        <div class="map-box-card">
+            <div class="map-container-wrap">
+                <div id="map-canvas"></div>
+            </div>
+
+            <!-- Dynamic Selected Venue Detail Card inside Left Column -->
             <div class="home-gor-card" id="floating-gor-card">
                 <div class="gor-card-header">
-                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="color: #374151;">
+                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
                         <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z" />
                     </svg>
                     <span id="card-gor-name">-</span>
                 </div>
                 <div class="gor-card-body">
                     <div class="addr">
-                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="color: #6b7280; flex-shrink: 0; margin-top: -2px;">
-                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z" />
-                        </svg>
                         <span id="card-gor-addr">-</span>
                     </div>
-                    <div class="cabang-title">CABANG OLAHRAGA</div>
                     <div class="cabor-grid" id="card-gor-cabor-grid"></div>
-
                     <a href="#" id="card-gor-gmaps" target="_blank" class="map-btn">
-                        <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z" />
-                        </svg>
+                        <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
                         Buka di Google Maps
                     </a>
                 </div>
             </div>
         </div>
+
+        <!-- RIGHT: SEARCH FILTER & NEARBY FACILITIES -->
+        <div class="facilities-panel-card">
+            <!-- Filter Form -->
+            <form id="map-filter-form" class="filter-form-clean">
+                <div class="full-width">
+                    <select class="filter-select-styled" id="fasilitas">
+                        <option value="">🔍 Semua Fasilitas Terdekat</option>
+                        <option value="hotel">🏨 Hotel & Penginapan</option>
+                        <option value="rumah-sakit">🏥 Rumah Sakit & Klinik</option>
+                        <option value="apotek">💊 Apotek</option>
+                        <option value="rumah-makan">🍽️ Restoran & Kuliner</option>
+                    </select>
+                </div>
+
+                <div>
+                    <select class="filter-select-styled" id="cabor">
+                        <option value="">🏃 Filter Cabang Olahraga</option>
+                        <option value="drumband">Drumband</option>
+                        <option value="pencak silat">Pencak Silat</option>
+                        <option value="taekwondo">Taekwondo</option>
+                        <option value="judo">Judo</option>
+                        <option value="kurash">Kurash</option>
+                        <option value="sambo">Sambo</option>
+                        <option value="tenis meja">Tenis Meja</option>
+                    </select>
+                </div>
+
+                <div>
+                    <select class="filter-select-styled" id="venue">
+                        <option value="">📍 Filter Nama Venue</option>
+                        <option value="gor pajajaran indoor a">GOR Pajajaran Indoor A</option>
+                        <option value="gor pajajaran indoor b">GOR Pajajaran Indoor B</option>
+                        <option value="gor yasmin">GOR Yasmin</option>
+                        <option value="stadion pajajaran">Stadion Pajajaran</option>
+                        <option value="gor vokasi ipb">GOR Vokasi IPB</option>
+                    </select>
+                </div>
+
+                <div class="filter-actions">
+                    <button type="submit" class="btn-search-blue">Terapkan Filter</button>
+                    <button type="reset" class="btn-reset-light">Reset</button>
+                </div>
+            </form>
+
+            <!-- Category Tabs -->
+            <div class="facility-tabs-bar">
+                <button class="facility-filter-btn active" data-filter="all">Semua</button>
+                <button class="facility-filter-btn" data-filter="cat-hotel">🏨 Hotel</button>
+                <button class="facility-filter-btn" data-filter="cat-rs">🏥 Kesehatan</button>
+                <button class="facility-filter-btn" data-filter="cat-resto">🍽️ Restoran</button>
+                <button class="facility-filter-btn" data-filter="cat-police">🚔 Polisi</button>
+                <button class="facility-filter-btn" data-filter="cat-apotek">💊 Apotek</button>
+            </div>
+
+            <!-- Scrollable Facility Results List -->
+            <div class="facilities-scroll-list" id="facilities-list-wrap">
+                <div class="facilities-empty" id="facilities-placeholder" style="text-align:center; padding:35px 10px; color:#94a3b8; font-size:12.5px; font-style:italic;">
+                    Klik marker venue di peta untuk menampilkan daftar fasilitas terdekat secara otomatis.
+                </div>
+
+                <!-- Hotel -->
+                <div class="facility-category" id="cat-hotel" style="display:none;">
+                    <div id="hotel-container"></div>
+                </div>
+
+                <!-- Kesehatan -->
+                <div class="facility-category" id="cat-rs" style="display:none;">
+                    <div id="rs-container"></div>
+                </div>
+
+                <!-- Restoran -->
+                <div class="facility-category" id="cat-resto" style="display:none;">
+                    <div id="resto-container"></div>
+                </div>
+
+                <!-- Polisi -->
+                <div class="facility-category" id="cat-police" style="display:none;">
+                    <div id="police-container"></div>
+                </div>
+
+                <!-- Apotek -->
+                <div class="facility-category" id="cat-apotek" style="display:none;">
+                    <div id="apotek-container"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     DIVIDER
+     ═══════════════════════════════════════════════════════════════════ -->
+<div class="section-divider"><hr></div>
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     4. UPCOMING MATCHES SECTION (BELOW MAP)
+     ═══════════════════════════════════════════════════════════════════ -->
+<section class="section-wrap reveal">
+    <div class="section-header-flex">
+        <div>
+            <div class="section-title-group">
+                <div class="section-bar"></div>
+                <h2 class="section-heading">Jadwal Pertandingan Mendatang</h2>
+            </div>
+            <p class="section-subtitle">Jadwal cabang olahraga yang akan segera berlangsung pada PORPROV XV 2026</p>
+        </div>
+        <a href="{{ url('/jadwal') }}" class="section-link">
+            Lihat Semua Jadwal
+            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+        </a>
     </div>
 
-    <!-- FACILITIES SIDE -->
-    <div class="facilities-side">
-        <div class="facilities-side-header">
-            <h2>Fasilitas Terdekat</h2>
-            <p>Temukan fasilitas di sekitar lokasi yang dipilih</p>
+    <div class="matches-grid">
+        <!-- Match Card 1 -->
+        <div class="match-card" data-sport="pencak-silat">
+            <div>
+                <div class="match-card-header">
+                    <span class="match-sport-badge" style="background:#fef2f2;color:#dc2626;">🥋 Pencak Silat</span>
+                    <span class="match-date-badge">31 Okt - 5 Nov 2026</span>
+                </div>
+                <h3 class="match-title">Babak Penyisihan & Final Pencak Silat</h3>
+                <div class="match-venue-info">
+                    <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    GOR Pajajaran Indoor A
+                </div>
+            </div>
+            <div class="match-footer">
+                <span class="match-status"><span class="dot"></span> Terjadwal</span>
+                <a href="{{ url('/jadwal') }}" class="btn-detail-sm">
+                    Detail Jadwal →
+                </a>
+            </div>
         </div>
 
-        <div class="facility-filter-buttons">
-            <button class="facility-filter-btn active" data-filter="all">Semua</button>
-            <button class="facility-filter-btn" data-filter="cat-hotel">🏨 Hotel</button>
-            <button class="facility-filter-btn" data-filter="cat-rs">🏥 Kesehatan</button>
-            <button class="facility-filter-btn" data-filter="cat-resto">🍽️ Restoran</button>
-            <button class="facility-filter-btn" data-filter="cat-police">🚔 Polisi</button>
-            <button class="facility-filter-btn" data-filter="cat-apotek">💊 Apotek</button>
+        <!-- Match Card 2 -->
+        <div class="match-card" data-sport="drumband">
+            <div>
+                <div class="match-card-header">
+                    <span class="match-sport-badge" style="background:#fefce8;color:#d97706;">🥁 Drumband</span>
+                    <span class="match-date-badge">7 Nov - 16 Nov 2026</span>
+                </div>
+                <h3 class="match-title">Kompetisi Drumband Antar Kontingen</h3>
+                <div class="match-venue-info">
+                    <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    GOR Pajajaran Indoor A
+                </div>
+            </div>
+            <div class="match-footer">
+                <span class="match-status"><span class="dot"></span> Terjadwal</span>
+                <a href="{{ url('/jadwal') }}" class="btn-detail-sm">
+                    Detail Jadwal →
+                </a>
+            </div>
         </div>
 
-        <div class="facilities-list-wrap" id="facilities-list-wrap">
-            <div class="facilities-empty" id="facilities-placeholder">
-                Klik marker venue di peta untuk menampilkan fasilitas terdekat
-            </div>
-
-            <!-- Hotel -->
-            <div class="facility-category" id="cat-hotel" style="display:none;">
-                <div class="facility-cat-header">
-                    <div class="facility-cat-icon" style="background:#fef3c7; color:#d97706;">
-                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z" />
-                        </svg>
-                    </div>
-                    <h3>Hotel & Penginapan</h3>
+        <!-- Match Card 3 -->
+        <div class="match-card" data-sport="panahan">
+            <div>
+                <div class="match-card-header">
+                    <span class="match-sport-badge" style="background:#f0fdf4;color:#16a34a;">🎯 Panahan</span>
+                    <span class="match-date-badge">31 Okt - 11 Nov 2026</span>
                 </div>
-                <div id="hotel-container"></div>
-            </div>
-
-            <!-- Kesehatan -->
-            <div class="facility-category" id="cat-rs" style="display:none;">
-                <div class="facility-cat-header">
-                    <div class="facility-cat-icon" style="background:#fee2e2; color:#dc2626;">
-                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M19 3H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z" />
-                        </svg>
-                    </div>
-                    <h3>Fasilitas Kesehatan</h3>
+                <h3 class="match-title">Kualifikasi & Final Panahan</h3>
+                <div class="match-venue-info">
+                    <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    Stadion Pajajaran
                 </div>
-                <div id="rs-container"></div>
             </div>
-
-            <!-- Restoran -->
-            <div class="facility-category" id="cat-resto" style="display:none;">
-                <div class="facility-cat-header">
-                    <div class="facility-cat-icon" style="background:#dcfce7; color:#16a34a;">
-                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-7v8h2.5v8H21V2h-5z" />
-                        </svg>
-                    </div>
-                    <h3>Restoran</h3>
-                </div>
-                <div id="resto-container"></div>
+            <div class="match-footer">
+                <span class="match-status"><span class="dot"></span> Terjadwal</span>
+                <a href="{{ url('/jadwal') }}" class="btn-detail-sm">
+                    Detail Jadwal →
+                </a>
             </div>
+        </div>
 
-            <!-- Polisi -->
-            <div class="facility-category" id="cat-police" style="display:none;">
-                <div class="facility-cat-header">
-                    <div class="facility-cat-icon" style="background:#e0e7ff; color:#4f46e5;">
-                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z" />
-                        </svg>
-                    </div>
-                    <h3>Kantor Polisi</h3>
+        <!-- Match Card 4 -->
+        <div class="match-card" data-sport="judo-sambo">
+            <div>
+                <div class="match-card-header">
+                    <span class="match-sport-badge" style="background:#f3e8ff;color:#9333ea;">🤼 Judo & Sambo</span>
+                    <span class="match-date-badge">3 Nov - 10 Nov 2026</span>
                 </div>
-                <div id="police-container"></div>
+                <h3 class="match-title">Pertandingan Judo, Kurash & Sambo</h3>
+                <div class="match-venue-info">
+                    <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                    GOR Pajajaran Indoor B
+                </div>
             </div>
-
-            <!-- Apotek -->
-            <div class="facility-category" id="cat-apotek" style="display:none;">
-                <div class="facility-cat-header">
-                    <div class="facility-cat-icon" style="background:#f3e8ff; color:#9333ea;">
-                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M19 3H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z" />
-                        </svg>
-                    </div>
-                    <h3>Apotek</h3>
-                </div>
-                <div id="apotek-container"></div>
+            <div class="match-footer">
+                <span class="match-status"><span class="dot"></span> Terjadwal</span>
+                <a href="{{ url('/jadwal') }}" class="btn-detail-sm">
+                    Detail Jadwal →
+                </a>
             </div>
         </div>
     </div>
-</div>
+</section>
 
-<!-- Legacy hidden -->
-<div class="venue-body" id="facilities-section" style="display:none;"></div>
 @endsection
 
 @push('scripts')
-<!-- PENTING: Tambahkan Leaflet JS dan CSS sebagai pengganti Google Maps -->
+<!-- Leaflet JS and CSS -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
 <script>
-    const venueData = [{
+    const venueData = [
+        {
             id: 1,
             name: "GOR Pajajaran Indoor A",
             lat: -6.583321,
             lng: 106.800532,
-            address: "Gor Pajajaran, Jl. Pemuda No.02 kel, RT.04/RW.01, Tanah Sareal, Kota Bogor, Jawa Barat 16161",
+            address: "Gor Pajajaran, Jl. Pemuda No.02, Tanah Sareal, Kota Bogor",
             cabor: "Drumband, Pencak Silat, Taekwondo",
-            gmaps_url: "https://www.google.com/maps/place/GOR+Pajajaran+Indoor/@-6.5761045,106.7944374,17z/data=!3m1!4b1!4m6!3m5!1s0x2e69c55c7834537f:0x4e88799594588c3b!8m2!3d-6.5761098!4d106.7970123!16s%2Fg%2F11pvgf0m64?entry=ttu&g_ep=EgoyMDI2MDcxOS4wIKXMDSoASAFQAw%3D%3D",
+            gmaps_url: "https://www.google.com/maps/place/GOR+Pajajaran+Indoor/@-6.5761045,106.7944374,17z",
         },
         {
             id: 2,
             name: "GOR Pajajaran Indoor B",
             lat: -6.584100,
             lng: 106.801200,
-            address: "Gor Pajajaran, Jl. Pemuda No.02 kel, RT.04/RW.01, Tanah Sareal, Kota Bogor, Jawa Barat 16161",
+            address: "Gor Pajajaran, Jl. Pemuda No.02, Tanah Sareal, Kota Bogor",
             cabor: "Judo, Kurash, Sambo",
-            gmaps_url: "https://www.google.com/maps/place/Toko+olahraga+Ewing+Sport+bogor/@-6.5761098,106.7970123,17z/data=!4m6!3m5!1s0x2e69c4379e67ca1f:0x9a0730042810b803!8m2!3d-6.5761098!4d106.7970123!16s%2Fg%2F1pzr718yr?entry=ttu&g_ep=EgoyMDI2MDcxOS4wIKXMDSoASAFQAw%3D%3D",
+            gmaps_url: "https://www.google.com/maps/place/Toko+olahraga+Ewing+Sport+bogor/@-6.5761098,106.7970123,17z",
         },
         {
             id: 3,
             name: "GOR Vokasi IPB",
             lat: -6.589165,
             lng: 106.806324,
-            address: "Jl. Lodaya II, RT.03/RW.05, Cilibende, Babakan, Kecamatan Bogor Tengah, Kota Bogor, Jawa Barat 16128",
+            address: "Jl. Lodaya II, Cilibende, Babakan, Kota Bogor",
             cabor: "Shorinji Kempo, Tarung Derajat",
-            gmaps_url: "https://www.google.com/maps/place/Gymnasium+Sekolah+Vokasi+IPB/@-6.5889744,106.8052783,17z/data=!3m1!4b1!4m6!3m5!1s0x2e69c500578948bd:0xf1a58274d6edbc5a!8m2!3d-6.5889797!4d106.8078532!16s%2Fg%2F11vwvhlk43?entry=ttu&g_ep=EgoyMDI2MDcxOS4wIKXMDSoASAFQAw%3D%3D",
+            gmaps_url: "https://www.google.com/maps/place/Gymnasium+Sekolah+Vokasi+IPB/@-6.5889744,106.8052783,17z",
         },
         {
             id: 4,
-            name: "Majalengka",
-            lat: -6.837000,
-            lng: 108.216000,
-            address: "Majalengka, Jawa Barat",
-            cabor: "Aerosport - Gantolle",
-            gmaps_url: "https://maps.google.com/?q=Majalengka"
-        },
-        {
-            id: 5,
-            name: "Gunung Mas",
-            lat: -6.702000,
-            lng: 106.993000,
-            address: "Puncak, Bogor, Jawa Barat",
-            cabor: "Aerosport - Paralayang",
-            gmaps_url: "https://maps.google.com/?q=Gunung+Mas+Puncak"
-        },
-        {
-            id: 6,
-            name: "Green Forest Hotel",
-            lat: -6.634000,
-            lng: 106.809000,
-            address: "Bogor, Jawa Barat",
-            cabor: "Anggar, Angkat Besi, Angkat Berat, Arung Jeram, Binaraga, Petanque",
-            gmaps_url: "https://maps.google.com/?q=Green+Forest+Hotel+Bogor"
-        },
-        {
-            id: 7,
-            name: "PPSDMAP Kemenhub Kemang",
-            lat: -6.488000,
-            lng: 106.756000,
-            address: "Kemang, Bogor, Jawa Barat",
-            cabor: "Bola Tangan Indoor",
-            gmaps_url: "https://maps.google.com/?q=PPSDMAP+Kemenhub+Kemang"
-        },
-        {
-            id: 8,
-            name: "Padepokan Voli Sentul",
-            lat: -6.568000,
-            lng: 106.857000,
-            address: "Sentul, Bogor, Jawa Barat",
-            cabor: "Bola Tangan Pasir",
-            gmaps_url: "https://maps.google.com/?q=Padepokan+Voli+Sentul"
-        },
-        {
-            id: 9,
-            name: "Brajamustika Hotel",
-            lat: -6.581000,
-            lng: 106.772000,
-            address: "Jl. DR. Sumeru, RT.01/RW.10, Menteng, Kec. Bogor Bar., Kota Bogor, Jawa Barat 16111",
-            cabor: "Dansa",
-            gmaps_url: "https://www.google.com/maps/place/Hotel+Braja+Mustika/@-6.5812267,106.773803,17z/data=!3m1!4b1!4m9!3m8!1s0x2e69c4513eee3a2d:0x85ff382a1dc9430f!5m2!4m1!1i2!8m2!3d-6.581232!4d106.7763779!16s%2Fg%2F1tj35dw0?entry=ttu&g_ep=EgoyMDI2MDcxOS4wIKXMDSoASAFQAw%3D%3D"
-        },
-        {
-            id: 10,
-            name: "Arcamanik",
-            lat: -6.907000,
-            lng: 107.674000,
-            address: "Sport Jabar Arcamanik, Bandung, Jawa Barat",
-            cabor: "Gimnastik Aerobik, Gimnastic Artistik, Gimnastic Ritmik",
-            gmaps_url: "https://maps.google.com/?q=Sport+Jabar+Arcamanik"
-        },
-        {
-            id: 11,
-            name: "Cisangkan",
-            lat: -6.877000,
-            lng: 107.531000,
-            address: "Lapang Tembak Cisangkan, Cimahi, Jawa Barat",
-            cabor: "Menembak",
-            gmaps_url: "https://maps.google.com/?q=Lapang+Tembak+Cisangkan"
-        },
-        {
-            id: 12,
             name: "Stadion Pajajaran",
             lat: -6.584500,
             lng: 106.800000,
-            address: "Jl. Pemuda, Kota Bogor",
-            cabor: "Modern Pentathion, Panahan, Panjat Tebing",
+            address: "Jl. Pemuda, Tanah Sareal, Kota Bogor",
+            cabor: "Modern Pentathlon, Panahan, Panjat Tebing",
             gmaps_url: "https://maps.google.com/?q=Stadion+Pajajaran+Bogor"
         },
         {
-            id: 13,
-            name: "Kota Baru Parahyangan",
-            lat: -6.852000,
-            lng: 107.481000,
-            address: "Padalarang, Kabupaten Bandung Barat, Jawa Barat",
-            cabor: "Ski Air",
-            gmaps_url: "https://maps.google.com/?q=Kota+Baru+Parahyangan"
-        },
-        {
-            id: 14,
+            id: 5,
             name: "GOR Yasmin",
             lat: -6.561000,
             lng: 106.774000,
-            address: "Bogor, Jawa Barat",
+            address: "Kecamatan Bogor Barat, Kota Bogor",
             cabor: "Tenis Meja",
             gmaps_url: "https://maps.google.com/?q=GOR+Yasmin+Bogor"
         }
     ];
 
     let map;
-    let markers = []; // Marker untuk Venue (Merah)
-    let fasilitasMarkers = []; // Marker untuk Fasilitas dari Places API (Biru)
+    let markers = [];
+    let fasilitasMarkers = [];
     let currentVenue = null;
 
     function fetchPlaces(venue, type, containerId, title, categoryId) {
@@ -1165,9 +1408,8 @@
         if (!container || !categoryBlock) return;
 
         categoryBlock.style.display = 'block';
-        container.innerHTML = '<p style="color:#9ca3af; font-style:italic; padding: 12px 0;">Sedang mencari data dari OpenStreetMap...</p>';
+        container.innerHTML = '<p style="color:#94a3b8; font-style:italic; font-size:12px; padding: 8px 0;">Sedang memuat data terdekat...</p>';
 
-        // HARDCODED DATA OVERRIDE UNTUK REQUEST USER
         const venueName = venue.name.toLowerCase();
         const isPajajaran = venueName.includes("pajajaran");
         const isYasmin = venueName.includes("yasmin");
@@ -1175,79 +1417,41 @@
         let customData = null;
         if (isPajajaran) {
             if (type === 'hospital') {
-                customData = [{
-                    name: "Puskesmas Bogor Selatan",
-                    address: "Bogor Selatan",
-                    mapUrl: "https://maps.google.com/?q=Puskesmas+Bogor+Selatan+Bogor"
-                }];
+                customData = [{ name: "Puskesmas Bogor Selatan", address: "Bogor Selatan", mapUrl: "https://maps.google.com/?q=Puskesmas+Bogor+Selatan+Bogor" }];
             } else if (type === 'lodging') {
-                customData = [{
-                    name: "AMAROOSSA ROYAL BOGOR HOTEL",
-                    address: "Bogor Tengah",
-                    mapUrl: "https://www.google.com/maps/search/?api=1&query=Amaroossa+Royal+Bogor"
-                }];
+                customData = [{ name: "AMAROOSSA ROYAL BOGOR HOTEL", address: "Bogor Tengah", mapUrl: "https://www.google.com/maps/search/?api=1&query=Amaroossa+Royal+Bogor" }];
             } else if (type === 'restaurant') {
-                customData = [{
-                    name: "HARTZ CHICKEN BUFFET",
-                    address: "Kota Bogor",
-                    mapUrl: "https://www.google.com/maps/search/?api=1&query=Hartz+Chicken+Buffet+Bogor"
-                }];
+                customData = [{ name: "HARTZ CHICKEN BUFFET", address: "Kota Bogor", mapUrl: "https://www.google.com/maps/search/?api=1&query=Hartz+Chicken+Buffet+Bogor" }];
             }
         } else if (isYasmin) {
             if (type === 'hospital') {
-                customData = [{
-                    name: "RSU Islam Bogor",
-                    address: "Kota Bogor",
-                    mapUrl: "https://www.google.com/maps/search/?api=1&query=RSU+Islam+Bogor"
-                }];
+                customData = [{ name: "RSU Islam Bogor", address: "Kota Bogor", mapUrl: "https://www.google.com/maps/search/?api=1&query=RSU+Islam+Bogor" }];
             } else if (type === 'lodging') {
-                customData = [{
-                    name: "SAHIRA BUTIK HOTEL, PT",
-                    address: "Kota Bogor",
-                    mapUrl: "https://www.google.com/maps/search/?api=1&query=Sahira+Butik+Hotel+Bogor"
-                }];
+                customData = [{ name: "SAHIRA BUTIK HOTEL, PT", address: "Kota Bogor", mapUrl: "https://www.google.com/maps/search/?api=1&query=Sahira+Butik+Hotel+Bogor" }];
             }
         }
 
-        const renderResults = (placesList, isCustom = false) => {
+        const renderResults = (placesList) => {
             container.innerHTML = '';
             placesList.forEach(place => {
                 const lat = place.lat || (place.center && place.center.lat) || latLng[0];
                 const lon = place.lon || (place.center && place.center.lon) || latLng[1];
-                const name = place.name || (place.tags && place.tags.name ? place.tags.name : title + ' Tanpa Nama');
-                const address = place.address || (place.tags && place.tags['addr:street'] ? place.tags['addr:street'] : 'Area sekitar');
+                const name = place.name || (place.tags && place.tags.name ? place.tags.name : title + ' Terdekat');
+                const address = place.address || (place.tags && place.tags['addr:street'] ? place.tags['addr:street'] : 'Sekitar lokasi');
 
-                let iconBg = '#dbeafe',
-                    iconColor = '#2563eb',
-                    categoryIcon = '';
-                if (type === 'lodging') {
-                    iconBg = '#fef3c7';
-                    iconColor = '#d97706';
-                    categoryIcon = '<svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z"/></svg>';
-                } else if (type === 'hospital') {
-                    iconBg = '#fee2e2';
-                    iconColor = '#dc2626';
-                    categoryIcon = '<svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/></svg>';
-                } else if (type === 'restaurant') {
-                    iconBg = '#dcfce7';
-                    iconColor = '#16a34a';
-                    categoryIcon = '<svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-7v8h2.5v8H21V2h-5z"/></svg>';
-                } else if (type === 'police') {
-                    iconBg = '#e0e7ff';
-                    iconColor = '#4f46e5';
-                    categoryIcon = '<svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>';
-                } else if (type === 'pharmacy') {
-                    iconBg = '#f3e8ff';
-                    iconColor = '#9333ea';
-                    categoryIcon = '<svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/></svg>';
-                }
+                let iconBg = '#dbeafe', iconColor = '#2563eb';
+                if (type === 'lodging') { iconBg = '#fef3c7'; iconColor = '#d97706'; }
+                else if (type === 'hospital') { iconBg = '#fee2e2'; iconColor = '#dc2626'; }
+                else if (type === 'restaurant') { iconBg = '#dcfce7'; iconColor = '#16a34a'; }
+                else if (type === 'police') { iconBg = '#e0e7ff'; iconColor = '#4f46e5'; }
+                else if (type === 'pharmacy') { iconBg = '#f3e8ff'; iconColor = '#9333ea'; }
 
                 const mapUrl = place.mapUrl || `https://www.openstreetmap.org/directions?engine=fossgis_osrm_car&route=${latLng[0]}%2C${latLng[1]}%3B${lat}%2C${lon}`;
 
                 container.innerHTML += `
                     <div class="facility-list-item">
                         <div class="fli-icon" style="background:${iconBg}; color:${iconColor};">
-                            ${categoryIcon}
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
                         </div>
                         <div class="fli-info">
                             <p class="fli-name">${name}</p>
@@ -1260,66 +1464,48 @@
         };
 
         if (customData) {
-            renderResults(customData, true);
+            renderResults(customData);
             return;
         }
 
-        let overpassTag = '';
-        if (type === 'lodging') overpassTag = '["tourism"~"hotel|guest_house|motel"]';
-        else if (type === 'hospital') overpassTag = '["amenity"="hospital"]';
+        let overpassTag = '["tourism"~"hotel|guest_house"]';
+        if (type === 'hospital') overpassTag = '["amenity"="hospital"]';
         else if (type === 'pharmacy') overpassTag = '["amenity"="pharmacy"]';
-        else if (type === 'restaurant') overpassTag = '["amenity"~"restaurant|cafe|fast_food"]';
+        else if (type === 'restaurant') overpassTag = '["amenity"~"restaurant|cafe"]';
         else if (type === 'police') overpassTag = '["amenity"="police"]';
-        else overpassTag = `["amenity"="${type}"]`;
 
-        const query = `
-            [out:json];
-            (
-              node${overpassTag}(around:3000, ${latLng[0]}, ${latLng[1]});
-              way${overpassTag}(around:3000, ${latLng[0]}, ${latLng[1]});
-              relation${overpassTag}(around:3000, ${latLng[0]}, ${latLng[1]});
-            );
-            out center;
-        `;
+        const query = `[out:json];(node${overpassTag}(around:3000, ${latLng[0]}, ${latLng[1]});way${overpassTag}(around:3000, ${latLng[0]}, ${latLng[1]}););out center 4;`;
 
-        fetch('https://overpass-api.de/api/interpreter', {
-                method: 'POST',
-                body: query
-            })
+        fetch('https://overpass-api.de/api/interpreter', { method: 'POST', body: query })
             .then(res => res.json())
             .then(data => {
                 if (data.elements && data.elements.length > 0) {
-                    const topResults = data.elements.slice(0, 4);
-                    renderResults(topResults);
+                    renderResults(data.elements.slice(0, 4));
                 } else {
-                    container.innerHTML = `<p style="color:#9ca3af; font-style:italic; padding: 12px 0;">Tidak ada ${title} terdekat ditemukan.</p>`;
+                    container.innerHTML = `<p style="color:#94a3b8; font-style:italic; font-size:12px; padding: 8px 0;">Tidak ada ${title} terdekat ditemukan.</p>`;
                 }
             })
             .catch(err => {
-                console.error(err);
-                container.innerHTML = `<p style="color:#9ca3af; font-style:italic; padding: 12px 0;">Gagal mengambil data ${title}.</p>`;
+                container.innerHTML = `<p style="color:#94a3b8; font-style:italic; font-size:12px; padding: 8px 0;">Gagal memuat data.</p>`;
             });
     }
 
     function initMap() {
         const bogorCenter = [-6.587, 106.803];
-
         const mapElement = document.getElementById("map-canvas");
         if (!mapElement) return;
 
         map = L.map('map-canvas').setView(bogorCenter, 14);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            attribution: '&copy; OpenStreetMap'
         }).addTo(map);
 
-        // Tampilkan semua venue pertama kali di load
         renderVenues(venueData);
         setupFilter();
         setupFacilityFilters();
     }
 
-    // Fungsi Render Marker Venue
     function renderVenues(venuesData) {
         const redIcon = new L.Icon({
             iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
@@ -1331,20 +1517,15 @@
         });
 
         venuesData.forEach(venue => {
-            const marker = L.marker([venue.lat, venue.lng], {
-                icon: redIcon
-            }).addTo(map);
+            const marker = L.marker([venue.lat, venue.lng], { icon: redIcon }).addTo(map);
             marker.bindTooltip(venue.name);
-
             marker.on("click", () => {
                 showVenueDetails(venue);
             });
-
             markers.push(marker);
         });
     }
 
-    // Fungsi Hapus Semua Marker di Peta
     function clearMarkers() {
         markers.forEach(m => map.removeLayer(m));
         markers = [];
@@ -1352,214 +1533,45 @@
         fasilitasMarkers = [];
     }
 
-    // Fungsi Menangani Filter Maps
     function setupFilter() {
         const filterForm = document.getElementById('map-filter-form');
-
-        // Saat form di-submit
         filterForm.addEventListener('submit', function(e) {
             e.preventDefault();
 
-            const fasilitasVal = document.getElementById('fasilitas').value;
             const caborVal = document.getElementById('cabor').value.toLowerCase();
             const venueVal = document.getElementById('venue').value.toLowerCase();
 
-            clearMarkers(); // Bersihkan peta
+            clearMarkers();
             document.getElementById('floating-gor-card').style.display = 'none';
 
-            let isVenueFound = false;
             const bounds = L.latLngBounds();
-
-            // 1. Proses Filter Cabor & Venue
             const filteredVenues = venueData.filter(v => {
-                let matchCabor = true;
-                let matchVenue = true;
-
-                if (caborVal) matchCabor = v.cabor.toLowerCase().includes(caborVal);
-                if (venueVal) matchVenue = v.name.toLowerCase().includes(venueVal);
-
+                let matchCabor = caborVal ? v.cabor.toLowerCase().includes(caborVal) : true;
+                let matchVenue = venueVal ? v.name.toLowerCase().includes(venueVal) : true;
                 return matchCabor && matchVenue;
             });
 
             if (filteredVenues.length > 0) {
                 renderVenues(filteredVenues);
                 filteredVenues.forEach(v => bounds.extend([v.lat, v.lng]));
-                isVenueFound = true;
-            }
-
-            // 2. Proses Cari Fasilitas dengan Overpass API (Hotel, Rumah Sakit, dll)
-            if (fasilitasVal) {
-                let overpassTag = '';
-                if (fasilitasVal === 'hotel') overpassTag = '["tourism"~"hotel|guest_house|motel"]';
-                else if (fasilitasVal === 'rumah-sakit') overpassTag = '["amenity"="hospital"]';
-                else if (fasilitasVal === 'apotek') overpassTag = '["amenity"="pharmacy"]';
-                else if (fasilitasVal === 'rumah-makan') overpassTag = '["amenity"~"restaurant|cafe|fast_food"]';
-
-                // Tentukan lokasi pencarian: di Venue terpilih, atau tengah kota Bogor jika tidak ada Venue
-                const searchCenter = isVenueFound ? [filteredVenues[0].lat, filteredVenues[0].lng] : [map.getCenter().lat, map.getCenter().lng];
-
-                // Map top filter ke side panel
-                const filterToCategory = {
-                    'hotel':       { type: 'lodging',   containerId: 'hotel-container',   title: 'Hotel',           catId: 'cat-hotel' },
-                    'rumah-sakit': { type: 'hospital',   containerId: 'rs-container',      title: 'Fasilitas Kesehatan', catId: 'cat-rs' },
-                    'apotek':      { type: 'pharmacy',   containerId: 'apotek-container',  title: 'Apotek',          catId: 'cat-apotek' },
-                    'rumah-makan': { type: 'restaurant', containerId: 'resto-container',   title: 'Restoran',        catId: 'cat-resto' },
-                };
-                const matchedCategory = filterToCategory[fasilitasVal];
-
-                // Sembunyikan placeholder, tampilkan kategori yang cocok
-                const placeholder = document.getElementById('facilities-placeholder');
-                if (placeholder) placeholder.style.display = 'none';
-                document.querySelectorAll('.facility-category').forEach(cat => {
-                    cat.style.display = cat.id === (matchedCategory ? matchedCategory.catId : '') ? 'block' : 'none';
-                });
-
-                // Aktifkan filter button yang sesuai
-                document.querySelectorAll('.facility-filter-btn').forEach(btn => {
-                    btn.classList.remove('active');
-                    if (matchedCategory && btn.dataset.filter === matchedCategory.catId) btn.classList.add('active');
-                    else if (!matchedCategory && btn.dataset.filter === 'all') btn.classList.add('active');
-                });
-
-                const query = `
-                    [out:json];
-                    (
-                      node${overpassTag}(around:3000, ${searchCenter[0]}, ${searchCenter[1]});
-                      way${overpassTag}(around:3000, ${searchCenter[0]}, ${searchCenter[1]});
-                      relation${overpassTag}(around:3000, ${searchCenter[0]}, ${searchCenter[1]});
-                    );
-                    out center;
-                `;
-
-                const blueIcon = new L.Icon({
-                    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
-                    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-                    iconSize: [25, 41],
-                    iconAnchor: [12, 41],
-                    popupAnchor: [1, -34],
-                    shadowSize: [41, 41]
-                });
-
-                // Set loading status in map
-                document.getElementById('floating-gor-card').style.display = 'block';
-                document.getElementById('card-gor-name').innerText = "Mencari fasilitas...";
-                document.getElementById('card-gor-addr').innerText = "Sedang mengambil data dari OpenStreetMap";
-
-                fetch('https://overpass-api.de/api/interpreter', {
-                        method: 'POST',
-                        body: query
-                    })
-                    .then(res => res.json())
-                    .then(data => {
-                        document.getElementById('floating-gor-card').style.display = 'none';
-                        if (data.elements && data.elements.length > 0) {
-                            data.elements.forEach(place => {
-                                const lat = place.lat || place.center.lat;
-                                const lon = place.lon || place.center.lon;
-                                const name = place.tags && place.tags.name ? place.tags.name : 'Fasilitas Tanpa Nama';
-
-                                // Marker di peta
-                                const pMarker = L.marker([lat, lon], {
-                                    icon: blueIcon
-                                }).addTo(map);
-                                pMarker.bindPopup(`<div style="font-family:'Poppins',sans-serif; font-size:12px;"><strong>${name}</strong></div>`);
-                                fasilitasMarkers.push(pMarker);
-                                bounds.extend([lat, lon]);
-
-                                // Render ke side panel
-                                if (matchedCategory) {
-                                    const container = document.getElementById(matchedCategory.containerId);
-                                    if (container) {
-                                        const address = place.tags && place.tags['addr:street'] ? place.tags['addr:street'] : 'Area sekitar';
-                                        let iconBg = '#dbeafe', iconColor = '#2563eb', categoryIcon = '';
-                                        if (matchedCategory.type === 'lodging') {
-                                            iconBg = '#fef3c7'; iconColor = '#d97706';
-                                            categoryIcon = '<svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z"/></svg>';
-                                        } else if (matchedCategory.type === 'hospital') {
-                                            iconBg = '#fee2e2'; iconColor = '#dc2626';
-                                            categoryIcon = '<svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/></svg>';
-                                        } else if (matchedCategory.type === 'restaurant') {
-                                            iconBg = '#dcfce7'; iconColor = '#16a34a';
-                                            categoryIcon = '<svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-7v8h2.5v8H21V2h-5z"/></svg>';
-                                        } else if (matchedCategory.type === 'pharmacy') {
-                                            iconBg = '#f3e8ff'; iconColor = '#9333ea';
-                                            categoryIcon = '<svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/></svg>';
-                                        }
-                                        const mapUrl = `https://www.openstreetmap.org/directions?engine=fossgis_osrm_car&route=${searchCenter[0]}%2C${searchCenter[1]}%3B${lat}%2C${lon}`;
-                                        container.innerHTML += `
-                                            <div class="facility-list-item">
-                                                <div class="fli-icon" style="background:${iconBg}; color:${iconColor};">${categoryIcon}</div>
-                                                <div class="fli-info">
-                                                    <p class="fli-name">${name}</p>
-                                                    <p class="fli-addr">${address}</p>
-                                                </div>
-                                                <a href="${mapUrl}" target="_blank" class="fli-route">Rute</a>
-                                            </div>
-                                        `;
-                                    }
-                                }
-                            });
-                            map.fitBounds(bounds, { padding: [50, 50] });
-                        } else if (!isVenueFound) {
-                            alert('Fasilitas tidak ditemukan di area sekitar.');
-                        } else {
-                            if (filteredVenues.length === 1) {
-                                map.setView([filteredVenues[0].lat, filteredVenues[0].lng], 15);
-                            } else {
-                                map.fitBounds(bounds, { padding: [50, 50] });
-                            }
-                            alert('Tidak ada fasilitas terdekat yang ditemukan dari OpenStreetMap.');
-                        }
-                    })
-                    .catch(err => {
-                        console.error(err);
-                        document.getElementById('floating-gor-card').style.display = 'none';
-                        alert('Gagal memuat data dari OpenStreetMap.');
-                        if (isVenueFound) {
-                            if (filteredVenues.length === 1) map.setView([filteredVenues[0].lat, filteredVenues[0].lng], 15);
-                            else map.fitBounds(bounds, { padding: [50, 50] });
-                        }
-                    });
+                map.fitBounds(bounds, { padding: [40, 40] });
+                showVenueDetails(filteredVenues[0]);
             } else {
-                // Adjust peta jika hanya filter Venue & Cabor
-                if (isVenueFound) {
-                    if (filteredVenues.length === 1) {
-                        map.setView([filteredVenues[0].lat, filteredVenues[0].lng], 15);
-                    } else {
-                        map.fitBounds(bounds, {
-                            padding: [50, 50]
-                        });
-                    }
-
-                    // Auto-fetch facilities untuk venue pertama
-                    const v = filteredVenues[0];
-                    currentVenue = v;
-                    showVenueDetails(v);
-                } else {
-                    alert('Venue tidak ditemukan dengan kriteria tersebut.');
-                    map.setView([-6.587, 106.803], 14);
-                }
+                alert('Venue tidak ditemukan dengan kriteria tersebut.');
+                renderVenues(venueData);
+                map.setView([-6.587, 106.803], 14);
             }
         });
 
-        // Saat form di-reset
         filterForm.addEventListener('reset', function() {
             setTimeout(() => {
                 clearMarkers();
                 renderVenues(venueData);
                 map.setView([-6.587, 106.803], 14);
                 document.getElementById('floating-gor-card').style.display = 'none';
-                // Show placeholder, hide all categories
                 const placeholder = document.getElementById('facilities-placeholder');
                 if (placeholder) placeholder.style.display = 'block';
-                document.querySelectorAll('.facility-category').forEach(cat => {
-                    cat.style.display = 'none';
-                });
-                // Reset filter buttons
-                document.querySelectorAll('.facility-filter-btn').forEach(btn => {
-                    btn.classList.remove('active');
-                    if (btn.dataset.filter === 'all') btn.classList.add('active');
-                });
+                document.querySelectorAll('.facility-category').forEach(cat => cat.style.display = 'none');
             }, 100);
         });
     }
@@ -1568,50 +1580,21 @@
         currentVenue = venue;
         const floatingCard = document.getElementById('floating-gor-card');
         floatingCard.style.display = 'block';
-        floatingCard.style.zIndex = '1000'; // FIX z-index agar tidak tertutup Leaflet
 
         document.getElementById('card-gor-name').innerText = venue.name;
         document.getElementById('card-gor-addr').innerText = venue.address;
         document.getElementById('card-gor-gmaps').href = venue.gmaps_url;
 
-        // Hide placeholder
         const placeholder = document.getElementById('facilities-placeholder');
         if (placeholder) placeholder.style.display = 'none';
-
-        // Sync dropdown #venue dengan marker yang diklik
-        const venueSelect = document.getElementById('venue');
-        const matchOption = Array.from(venueSelect.options).find(opt => opt.text.trim() === venue.name);
-        venueSelect.selectedIndex = matchOption ? matchOption.index : 0;
 
         const caborArr = venue.cabor.split(',').map(c => c.trim());
         const caborContainer = document.getElementById('card-gor-cabor-grid');
         caborContainer.innerHTML = '';
         caborArr.forEach(c => {
-            let shortName = c;
-            if (c.length > 10) {
-                const words = c.split(' ');
-                shortName = words[words.length - 1];
-            }
-            caborContainer.innerHTML += `
-                <div class="cabor-item">
-                    <div class="cabor-icon">
-                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg>
-                    </div>
-                    <span>${shortName}</span>
-                </div>
-            `;
+            caborContainer.innerHTML += `<span class="cabor-tag">${c}</span>`;
         });
 
-        // Reset filter buttons to "Semua"
-        document.querySelectorAll('.facility-filter-btn').forEach(btn => {
-            btn.classList.remove('active');
-            if (btn.dataset.filter === 'all') btn.classList.add('active');
-        });
-        document.querySelectorAll('.facility-category').forEach(cat => {
-            if (cat.style.display === 'block') cat.style.display = 'block';
-        });
-
-        // Tampilkan fasilitas terdekat (Hotel, RS, Restoran, Polisi) dengan Overpass API atau Custom Data
         if (map) {
             fetchPlaces(venue, 'lodging', 'hotel-container', 'Hotel', 'cat-hotel');
             fetchPlaces(venue, 'hospital', 'rs-container', 'Fasilitas Kesehatan', 'cat-rs');
@@ -1623,11 +1606,11 @@
 
     function setupFacilityFilters() {
         const categoryMap = {
-            'cat-hotel':   { type: 'lodging',   containerId: 'hotel-container',   title: 'Hotel',          catId: 'cat-hotel' },
+            'cat-hotel':   { type: 'lodging',   containerId: 'hotel-container',   title: 'Hotel', catId: 'cat-hotel' },
             'cat-rs':      { type: 'hospital',   containerId: 'rs-container',      title: 'Fasilitas Kesehatan', catId: 'cat-rs' },
-            'cat-resto':   { type: 'restaurant', containerId: 'resto-container',   title: 'Restoran',       catId: 'cat-resto' },
-            'cat-police':  { type: 'police',     containerId: 'police-container',  title: 'Kantor Polisi',  catId: 'cat-police' },
-            'cat-apotek':  { type: 'pharmacy',   containerId: 'apotek-container',  title: 'Apotek',         catId: 'cat-apotek' },
+            'cat-resto':   { type: 'restaurant', containerId: 'resto-container',   title: 'Restoran', catId: 'cat-resto' },
+            'cat-police':  { type: 'police',     containerId: 'police-container',  title: 'Kantor Polisi', catId: 'cat-police' },
+            'cat-apotek':  { type: 'pharmacy',   containerId: 'apotek-container',  title: 'Apotek', catId: 'cat-apotek' },
         };
 
         document.querySelectorAll('.facility-filter-btn').forEach(btn => {
@@ -1636,15 +1619,11 @@
                 this.classList.add('active');
 
                 const filter = this.dataset.filter;
-                document.querySelectorAll('.facility-category').forEach(cat => {
-                    cat.style.display = 'none';
-                });
+                document.querySelectorAll('.facility-category').forEach(cat => cat.style.display = 'none');
 
                 if (filter === 'all') {
                     if (currentVenue) {
-                        Object.values(categoryMap).forEach(c => {
-                            fetchPlaces(currentVenue, c.type, c.containerId, c.title, c.catId);
-                        });
+                        Object.values(categoryMap).forEach(c => fetchPlaces(currentVenue, c.type, c.containerId, c.title, c.catId));
                     }
                 } else if (categoryMap[filter] && currentVenue) {
                     const c = categoryMap[filter];
@@ -1657,5 +1636,21 @@
     window.onload = function() {
         initMap();
     };
+
+    // ── Scroll Reveal Animation ──
+    (function initReveal() {
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.reveal').forEach(function(el) {
+            observer.observe(el);
+        });
+    })();
 </script>
 @endpush
