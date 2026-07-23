@@ -158,31 +158,46 @@
             padding: 8px;
             z-index: 200;
         }
+
         .hamburger svg {
             width: 24px;
             height: 24px;
             stroke: #013469;
         }
-        .hamburger .close-icon { display: none; }
-        .hamburger.open .menu-icon { display: none; }
-        .hamburger.open .close-icon { display: block; }
+
+        .hamburger .close-icon {
+            display: none;
+        }
+
+        .hamburger.open .menu-icon {
+            display: none;
+        }
+
+        .hamburger.open .close-icon {
+            display: block;
+        }
 
         /* Mobile Nav Overlay */
         .mobile-nav-overlay {
             display: none;
             position: fixed;
             inset: 0;
-            background: rgba(0,0,0,0.4);
+            background: rgba(0, 0, 0, 0.4);
             z-index: 150;
         }
-        .mobile-nav-overlay.show { display: block; }
+
+        .mobile-nav-overlay.show {
+            display: block;
+        }
 
         .mobile-nav {
             display: none;
         }
 
         @media (max-width: 768px) {
-            .hamburger { display: flex; }
+            .hamburger {
+                display: flex;
+            }
 
             .header-nav {
                 display: none;
@@ -203,10 +218,11 @@
                 background: #fff;
                 z-index: 160;
                 padding: 70px 20px 24px;
-                box-shadow: -4px 0 20px rgba(0,0,0,0.15);
+                box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
                 transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s;
                 overflow-y: auto;
             }
+
             .mobile-nav.open {
                 right: 0;
             }
@@ -222,6 +238,7 @@
                 letter-spacing: 0.02em;
                 transition: color 0.2s, padding-left 0.2s;
             }
+
             .mobile-nav a:hover,
             .mobile-nav a.active {
                 color: #013469;
@@ -400,7 +417,7 @@
             background-color: #013469;
             color: #FDB813;
             border: 2px solid #FDB813;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
             cursor: pointer;
             display: flex;
             align-items: center;
@@ -419,7 +436,7 @@
             right: 0;
             background: #fff;
             border-radius: 14px;
-            box-shadow: 0 6px 28px rgba(0,0,0,0.2);
+            box-shadow: 0 6px 28px rgba(0, 0, 0, 0.2);
             width: 275px;
             max-height: 80vh;
             overflow-y: auto;
@@ -481,7 +498,8 @@
             text-align: center;
         }
 
-        .a11y-option:hover, .a11y-option.active {
+        .a11y-option:hover,
+        .a11y-option.active {
             background: #013469;
             color: #fff;
             border-color: #013469;
@@ -492,25 +510,41 @@
         }
 
         /* ── EFEK-EFEK AKSESIBILITAS (A11Y) ── */
-        
+
         /* 1. Ukuran Font */
-        body.font-sm * { font-size: 90% !important; }
-        body.font-lg * { font-size: 115% !important; }
-        body.font-xl * { font-size: 130% !important; }
+        body.font-sm * {
+            font-size: 90% !important;
+        }
+
+        body.font-lg * {
+            font-size: 115% !important;
+        }
+
+        body.font-xl * {
+            font-size: 130% !important;
+        }
 
         /* 2. Kontras Tinggi */
         body.high-contrast {
             background-color: #000 !important;
             color: #ffff00 !important;
         }
-        body.high-contrast .site-header, 
+
+        body.high-contrast .site-header,
         body.high-contrast .mobile-nav,
         body.high-contrast .a11y-menu {
             background-color: #000 !important;
             border-color: #ffff00 !important;
             color: #ffff00 !important;
         }
-        body.high-contrast a, body.high-contrast p, body.high-contrast span, body.high-contrast h1, body.high-contrast h2, body.high-contrast h3, body.high-contrast h4 {
+
+        body.high-contrast a,
+        body.high-contrast p,
+        body.high-contrast span,
+        body.high-contrast h1,
+        body.high-contrast h2,
+        body.high-contrast h3,
+        body.high-contrast h4 {
             color: #ffff00 !important;
         }
 
@@ -533,16 +567,24 @@
         }
 
         /* 6. Font Mudah Baca (Dyslexia Friendly Font) */
-        body.readable-font, body.readable-font * {
+        body.readable-font,
+        body.readable-font * {
             font-family: Arial, Helvetica, sans-serif !important;
             letter-spacing: 0.05em !important;
         }
 
         /* 7. Mode Buta Warna (Simulasi Filter) */
-        body.filter-protanopia { filter: url('#protanopia-filter') !important; }
-        body.filter-deuteranopia { filter: url('#deuteranopia-filter') !important; }
-        body.filter-tritanopia { filter: url('#tritanopia-filter') !important; }
+        body.filter-protanopia {
+            filter: url('#protanopia-filter') !important;
+        }
 
+        body.filter-deuteranopia {
+            filter: url('#deuteranopia-filter') !important;
+        }
+
+        body.filter-tritanopia {
+            filter: url('#tritanopia-filter') !important;
+        }
     </style>
 
     @stack('styles')
@@ -552,13 +594,13 @@
     <!-- SVG Filters untuk Mode Buta Warna -->
     <svg style="display:none">
         <filter id="protanopia-filter">
-            <feColorMatrix type="matrix" values="0.567, 0.433, 0, 0, 0  0.558, 0.442, 0, 0, 0  0, 0.242, 0.758, 0, 0  0, 0, 0, 1, 0"/>
+            <feColorMatrix type="matrix" values="0.567, 0.433, 0, 0, 0  0.558, 0.442, 0, 0, 0  0, 0.242, 0.758, 0, 0  0, 0, 0, 1, 0" />
         </filter>
         <filter id="deuteranopia-filter">
-            <feColorMatrix type="matrix" values="0.625, 0.375, 0, 0, 0  0.7, 0.3, 0, 0, 0  0, 0.3, 0.7, 0, 0  0, 0, 0, 1, 0"/>
+            <feColorMatrix type="matrix" values="0.625, 0.375, 0, 0, 0  0.7, 0.3, 0, 0, 0  0, 0.3, 0.7, 0, 0  0, 0, 0, 1, 0" />
         </filter>
         <filter id="tritanopia-filter">
-            <feColorMatrix type="matrix" values="0.95, 0.05, 0, 0, 0  0, 0.433, 0.567, 0, 0  0, 0.475, 0.525, 0, 0  0, 0, 0, 1, 0"/>
+            <feColorMatrix type="matrix" values="0.95, 0.05, 0, 0, 0  0, 0.433, 0.567, 0, 0  0, 0.475, 0.525, 0, 0  0, 0, 0, 1, 0" />
         </filter>
     </svg>
 
@@ -583,15 +625,19 @@
                 <!-- <a href="#" class="btn-login">Login</a> -->
             </div>
             <button class="hamburger" id="hamburger-btn" aria-label="Menu">
-                <svg class="menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
-                <svg class="close-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                <svg class="menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                <svg class="close-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
             </button>
         </div>
     </header>
 
     <!-- Mobile Nav -->
     <div class="mobile-nav-overlay" id="mobile-overlay"></div>
-    <nav class="mobile-nav" id="mobile-nav"> 
+    <nav class="mobile-nav" id="mobile-nav">
         <a href="{{ url('/') }}" class="{{ request()->is('/') ? 'active' : '' }}">BERANDA</a>
         <a href="{{ url('/jadwal') }}" class="{{ request()->is('jadwal') ? 'active' : '' }}">JADWAL</a>
         <a href="{{ url('/peta-venue') }}" class="{{ request()->is('peta-venue') ? 'active' : '' }}">PETA VENUE</a>
@@ -649,7 +695,7 @@
                 </button>
             </div>
         </div>
-        
+
         <!-- Toggle Tombol Utama -->
         <button class="a11y-btn" id="a11yToggle" title="Menu Aksesibilitas">
             <svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -690,7 +736,7 @@
 
         // Buka tutup menu widget
         a11yToggle.addEventListener('click', (e) => {
-            e.stopPropagation(); 
+            e.stopPropagation();
             a11yMenu.classList.toggle('show');
         });
 
@@ -795,8 +841,8 @@
             if (!text || !isVoiceModeActive) return;
             window.speechSynthesis.cancel();
             const utterance = new SpeechSynthesisUtterance(text);
-            utterance.lang = 'id-ID'; 
-            utterance.rate = 1;       
+            utterance.lang = 'id-ID';
+            utterance.rate = 1;
             window.speechSynthesis.speak(utterance);
         }
 
@@ -804,7 +850,7 @@
             e.stopPropagation();
             isVoiceModeActive = !isVoiceModeActive;
             btnVoiceMode.classList.toggle('active', isVoiceModeActive);
-            
+
             if (isVoiceModeActive) {
                 localStorage.setItem('a11y_voiceMode', 'true');
                 speakText("Mode suara diaktifkan");
@@ -822,7 +868,7 @@
                 let linkText = link.getAttribute('aria-label') || link.innerText || link.textContent || "halaman baru";
                 linkText = linkText.trim().replace(/\s+/g, ' ');
                 localStorage.setItem('a11y_pending_speech', "Membuka " + linkText);
-                return; 
+                return;
             }
 
             if (!isVoiceModeActive) return;
@@ -843,7 +889,7 @@
                 textToRead = textToRead.trim().replace(/\s+/g, ' ');
             }
             if (textToRead && textToRead.length > 150) {
-                textToRead = textToRead.substring(0, 100) + "..."; 
+                textToRead = textToRead.substring(0, 100) + "...";
             }
             if (textToRead) {
                 speakText(textToRead);
@@ -855,7 +901,7 @@
         btnResetA11y.addEventListener('click', () => {
             document.body.className = '';
             localStorage.clear();
-            
+
             // Reset status tombol
             btnFontNormal.classList.add('active');
             btnNormalColor.classList.add('active');
@@ -876,16 +922,33 @@
         // Load Preferensi Saat Halaman Dimuat
         window.addEventListener('DOMContentLoaded', () => {
             const savedFont = localStorage.getItem('a11y_fontsize');
-            if (savedFont) setFontSize(savedFont); else btnFontNormal.classList.add('active');
+            if (savedFont) setFontSize(savedFont);
+            else btnFontNormal.classList.add('active');
 
-            if (localStorage.getItem('a11y_highContrast') === 'true') { document.body.classList.add('high-contrast'); btnHighContrast.classList.add('active'); }
-            if (localStorage.getItem('a11y_grayscale') === 'true') { document.body.classList.add('grayscale-mode'); btnGrayscale.classList.add('active'); }
-            if (localStorage.getItem('a11y_negative') === 'true') { document.body.classList.add('negative-contrast'); btnNegative.classList.add('active'); }
-            if (localStorage.getItem('a11y_highlightLinks') === 'true') { document.body.classList.add('highlight-links'); btnHighlightLinks.classList.add('active'); }
-            if (localStorage.getItem('a11y_readableFont') === 'true') { document.body.classList.add('readable-font'); btnReadableFont.classList.add('active'); }
-            
+            if (localStorage.getItem('a11y_highContrast') === 'true') {
+                document.body.classList.add('high-contrast');
+                btnHighContrast.classList.add('active');
+            }
+            if (localStorage.getItem('a11y_grayscale') === 'true') {
+                document.body.classList.add('grayscale-mode');
+                btnGrayscale.classList.add('active');
+            }
+            if (localStorage.getItem('a11y_negative') === 'true') {
+                document.body.classList.add('negative-contrast');
+                btnNegative.classList.add('active');
+            }
+            if (localStorage.getItem('a11y_highlightLinks') === 'true') {
+                document.body.classList.add('highlight-links');
+                btnHighlightLinks.classList.add('active');
+            }
+            if (localStorage.getItem('a11y_readableFont') === 'true') {
+                document.body.classList.add('readable-font');
+                btnReadableFont.classList.add('active');
+            }
+
             const savedColorBlind = localStorage.getItem('a11y_colorBlind');
-            if (savedColorBlind) setBlindnessFilter(savedColorBlind); else btnNormalColor.classList.add('active');
+            if (savedColorBlind) setBlindnessFilter(savedColorBlind);
+            else btnNormalColor.classList.add('active');
 
             if (localStorage.getItem('a11y_voiceMode') === 'true') {
                 isVoiceModeActive = true;
