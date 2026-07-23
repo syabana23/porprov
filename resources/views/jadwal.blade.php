@@ -10,82 +10,6 @@
 @push('styles')
 <style>
     /* ================================================================
-       BANNER
-       ================================================================ */
-    .jadwal-banner {
-        background: #013469;
-        position: relative;
-        height: 110px;
-        display: flex;
-        align-items: center;
-        overflow: hidden;
-    }
-
-    .jadwal-banner .banner-content {
-        padding: 0 28px;
-        position: relative;
-        z-index: 2;
-        display: flex;
-        align-items: center;
-        gap: 16px;
-    }
-
-    .jadwal-banner .banner-content svg {
-        opacity: 0.85;
-        flex-shrink: 0;
-    }
-
-    .jadwal-banner h1 {
-        color: #fff;
-        font-size: 22px;
-        font-weight: 800;
-        text-transform: uppercase;
-        margin: 0;
-        letter-spacing: 0.03em;
-    }
-
-    .jadwal-banner p {
-        color: #c8d9ea;
-        font-size: 12px;
-        margin: 3px 0 0;
-    }
-
-    .jadwal-banner .deco-right {
-        position: absolute;
-        right: 0;
-        top: 0;
-        height: 100%;
-        display: flex;
-        align-items: flex-end;
-        padding-right: 24px;
-    }
-
-    .jadwal-banner .deco-right .mascot {
-        height: 130%;
-        width: auto;
-        object-fit: contain;
-    }
-
-    .jadwal-banner .deco-wave {
-        position: absolute;
-        right: 0;
-        top: 0;
-        width: 35%;
-        height: 100%;
-    }
-
-    .deco-wave .yellow-stripe {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        width: 100%;
-        height: 100%;
-        background: #FDB813;
-        clip-path: polygon(30% 0%, 100% 0%, 100% 100%, 0% 100%);
-        opacity: 0.9;
-    }
-
-    /* ================================================================
        PAGE LAYOUT
        ================================================================ */
     .jadwal-page {
@@ -959,6 +883,11 @@
         </div>
     </div>
     <div class="banner-accent-line"></div>
+    <div class="banner-bottom-curve">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0 C150,90 350,-40 500,40 C650,120 900,20 1200,60 L1200,120 L0,120 Z" fill="#f8fafc"></path>
+        </svg>
+    </div>
 </section>
 
 <div class="jadwal-page">

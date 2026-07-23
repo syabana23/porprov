@@ -25,14 +25,68 @@
             scroll-behavior: smooth;
         }
 
+        main {
+            margin-top: -60px;
+            animation: pageIn 0.4s ease-out;
+        }
+
+        @keyframes pageIn {
+            from { transform: translateY(6px); }
+            to { transform: translateY(0); }
+        }
+
         /* Header */
         .site-header {
-            background: #fff;
-            border-bottom: 1px solid #e5e7eb;
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-bottom: none;
             position: sticky;
             top: 0;
             z-index: 9999;
-            transition: background-color 0.3s, border-color 0.3s;
+            margin: 0 20px;
+            width: calc(100% - 40px);
+            border-radius: 0 0 18px 18px;
+            box-shadow: 0 6px 28px rgba(1, 52, 105, 0.12);
+            transition: background 0.35s ease, box-shadow 0.35s ease;
+        }
+
+        .site-header.scrolled {
+            background: #fff;
+        }
+
+        .site-header.has-hero .header-nav a {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .site-header.has-hero .header-nav a:hover,
+        .site-header.has-hero .header-nav a.active {
+            color: #fff;
+        }
+
+        .site-header.has-hero .header-nav a.active {
+            border-bottom-color: #fff;
+        }
+
+        .site-header.has-hero .hamburger svg {
+            stroke: #fff;
+        }
+
+        .site-header.has-hero.scrolled .header-nav a {
+            color: #4b5563;
+        }
+
+        .site-header.has-hero.scrolled .header-nav a:hover,
+        .site-header.has-hero.scrolled .header-nav a.active {
+            color: #013469;
+        }
+
+        .site-header.has-hero.scrolled .header-nav a.active {
+            border-bottom-color: #013469;
+        }
+
+        .site-header.has-hero.scrolled .hamburger svg {
+            stroke: #013469;
         }
 
         .header-inner {
@@ -54,7 +108,7 @@
         }
 
         .header-logo img {
-            height: 44px;
+            height: 115px;
             width: auto;
         }
 
@@ -86,7 +140,7 @@
         .header-nav a {
             font-size: 12.5px;
             font-weight: 600;
-            color: #4b5563;
+            color: rgba(255, 255, 255, 0.9);
             text-decoration: none;
             padding: 6px 10px;
             transition: color 0.2s;
@@ -97,11 +151,24 @@
 
         .header-nav a:hover,
         .header-nav a.active {
-            color: #013469;
+            color: #fff;
         }
 
         .header-nav a.active {
-            border-bottom: 2.5px solid #013469;
+            border-bottom: 2.5px solid #fff;
+        }
+
+        .site-header.scrolled .header-nav a {
+            color: #4b5563;
+        }
+
+        .site-header.scrolled .header-nav a:hover,
+        .site-header.scrolled .header-nav a.active {
+            color: #013469;
+        }
+
+        .site-header.scrolled .header-nav a.active {
+            border-bottom-color: #013469;
         }
 
         .header-actions {
@@ -162,6 +229,10 @@
         .hamburger svg {
             width: 24px;
             height: 24px;
+            stroke: #fff;
+        }
+
+        .site-header.scrolled .hamburger svg {
             stroke: #013469;
         }
 
@@ -195,6 +266,16 @@
         }
 
         @media (max-width: 768px) {
+            .site-header {
+                margin: 0 10px;
+                width: calc(100% - 20px);
+                border-radius: 0 0 14px 14px;
+            }
+
+            main {
+                margin-top: -56px;
+            }
+
             .hamburger {
                 display: flex;
             }
@@ -255,7 +336,7 @@
             }
 
             .header-logo img {
-                height: 36px;
+                height: 95px;
             }
 
             .header-logo-text .top {
@@ -284,11 +365,12 @@
         /* ── Shared Page Banner ── */
         .page-banner {
             position: relative;
-            background: linear-gradient(135deg, #013469 0%, #0a4fa8 55%, #0d63cc 100%);
-            min-height: 160px;
+            background: linear-gradient(135deg, #001a33 0%, #013469 40%, #0a4fa8 75%, #0d63cc 100%);
+            padding: 80px 0 100px;
             display: flex;
             align-items: center;
             overflow: hidden;
+            color: #fff;
         }
 
         .page-banner::before {
@@ -317,10 +399,10 @@
             max-width: 1200px;
             width: 100%;
             margin: 0 auto;
-            padding: 36px 28px;
+            padding: 0 28px;
             display: flex;
             align-items: center;
-            gap: 22px;
+            gap: 28px;
         }
 
         .page-banner .banner-icon {
@@ -338,31 +420,34 @@
 
         .page-banner .banner-text h1 {
             color: #fff;
-            font-size: 28px;
-            font-weight: 800;
+            font-size: 36px;
+            font-weight: 900;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
+            letter-spacing: -0.3px;
             margin: 0 0 6px;
-            line-height: 1.15;
+            line-height: 1.12;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
         }
 
         .page-banner .banner-text .banner-badge {
             display: inline-block;
-            background: #FDB813;
-            color: #013469;
-            font-size: 10px;
+            background: rgba(253, 184, 19, 0.15);
+            color: #FDB813;
+            font-size: 12px;
             font-weight: 700;
-            padding: 2px 10px;
-            border-radius: 20px;
+            padding: 4px 16px;
+            border-radius: 30px;
             letter-spacing: 0.04em;
-            margin-bottom: 6px;
+            margin-bottom: 10px;
+            border: 1px solid rgba(253, 184, 19, 0.4);
         }
 
         .page-banner .banner-text p {
-            color: rgba(200, 220, 255, 0.85);
-            font-size: 13px;
+            color: #fff;
+            font-size: 14.5px;
             margin: 0;
-            line-height: 1.55;
+            line-height: 1.65;
+            max-width: 530px;
         }
 
         .page-banner .banner-accent-line {
@@ -387,16 +472,62 @@
 
         @media (max-width: 768px) {
             .page-banner {
-                min-height: 120px;
+                padding: 70px 0 75px;
             }
 
             .page-banner .banner-text h1 {
                 font-size: 20px;
+                letter-spacing: 0;
             }
 
             .page-banner .banner-mascot {
                 display: none;
             }
+        }
+
+        @media (max-width: 576px) {
+            .page-banner {
+                padding: 60px 0 70px;
+            }
+
+            .page-banner .banner-text h1 {
+                font-size: 18px;
+            }
+
+            .page-banner .banner-text p {
+                font-size: 13px;
+            }
+
+            .page-banner .banner-icon {
+                width: 44px;
+                height: 44px;
+            }
+
+            .page-banner .banner-icon svg {
+                width: 22px;
+                height: 22px;
+            }
+
+            .page-banner .banner-inner {
+                gap: 18px;
+            }
+        }
+
+        .page-banner .banner-bottom-curve {
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            z-index: 3;
+        }
+
+        .page-banner .banner-bottom-curve svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 50px;
         }
 
         /* ================================================================
@@ -608,11 +739,11 @@
     <header class="site-header">
         <div class="header-inner">
             <a href="{{ url('/') }}" class="header-logo">
-                <img src="{{ asset('images/logo.png') }}" alt="Logo PORPROV XV">
-                <div class="header-logo-text">
+                <img src="{{ asset('images/logo_baru.png') }}" alt="Logo PORPROV XV">
+                <!-- <div class="header-logo-text">
                     <div class="top">PORPROV XV</div>
                     <div class="bottom">KOTA BOGOR 2026</div>
-                </div>
+                </div> -->
             </a>
             <nav class="header-nav">
                 <a href="{{ url('/') }}" class="{{ request()->is('/') ? 'active' : '' }}">BERANDA</a>
@@ -921,6 +1052,16 @@
 
         // Load Preferensi Saat Halaman Dimuat
         window.addEventListener('DOMContentLoaded', () => {
+            // Navbar glass → solid on scroll (semua halaman)
+            const header = document.querySelector('.site-header');
+            if (header) {
+                const target = document.querySelector('.hero-wrapper') || document.querySelector('.page-banner');
+                if (target) {
+                    new IntersectionObserver(entries => {
+                        header.classList.toggle('scrolled', !entries[0].isIntersecting);
+                    }, { threshold: 0, rootMargin: '-1px 0px 0px 0px' }).observe(target);
+                }
+            }
             const savedFont = localStorage.getItem('a11y_fontsize');
             if (savedFont) setFontSize(savedFont);
             else btnFontNormal.classList.add('active');

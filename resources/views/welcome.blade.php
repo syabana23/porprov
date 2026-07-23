@@ -17,7 +17,7 @@
     .hero-wrapper {
         position: relative;
         background: linear-gradient(135deg, #001a33 0%, #013469 40%, #0a4fa8 75%, #0d63cc 100%);
-        padding: 55px 20px 100px;
+        padding: 90px 20px 100px;
         color: #fff;
     }
 
@@ -200,14 +200,14 @@
         display: inline-block;
         font-size: 20px;
         font-weight: 800;
-        color: #e2e8f0;
+        color: #FDB813;
         font-style: italic;
         margin-bottom: 18px;
         letter-spacing: 0.2px;
     }
 
     .hero-desc {
-        color: #cbd5e1;
+        color: #fff;
         font-size: 14.5px;
         line-height: 1.65;
         margin: 0 0 30px;
@@ -1019,7 +1019,7 @@
 
     @media (max-width: 576px) {
         .hero-wrapper {
-            padding: 36px 16px 75px;
+            padding: 80px 16px 75px;
         }
 
         .section-divider {

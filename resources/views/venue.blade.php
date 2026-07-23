@@ -4,35 +4,6 @@
 
 @push('styles')
 <style>
-    .venue-banner {
-        background: #013469;
-        height: 80px;
-        display: flex;
-        align-items: center;
-        padding: 0 28px;
-        gap: 14px;
-    }
-
-    .venue-banner svg {
-        opacity: 0.9;
-        flex-shrink: 0;
-    }
-
-    .venue-banner h1 {
-        color: #fff;
-        font-size: 20px;
-        font-weight: 800;
-        text-transform: uppercase;
-        margin: 0;
-        letter-spacing: 0.04em;
-    }
-
-    .venue-banner p {
-        color: #a8c8e8;
-        font-size: 11px;
-        margin: 3px 0 0;
-    }
-
     /* ───────── Filter ───────── */
     .filter-section {
         max-width: 1200px;
@@ -484,13 +455,25 @@
 @endpush
 
 @section('content')
-<section class="venue-banner">
-    <svg width="28" height="28" fill="none" stroke="#fff" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
-    </svg>
-    <div>
-        <h1>PETA VENUE PORPROV XV 2026</h1>
-        <p>Klik pin pada peta untuk melihat Detail Olahraga, Hotel Terdekat & Rumah Sakit Terdekat (< 3 Km)</p>
+<section class="page-banner">
+    <img class="banner-bg-img" src="{{ asset('images/hero-bg.png') }}" alt="">
+    <div class="banner-inner">
+        <div class="banner-icon">
+            <svg width="28" height="28" fill="none" stroke="#fff" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+            </svg>
+        </div>
+        <div class="banner-text">
+            <span class="banner-badge">PORPROV XV · 2026</span>
+            <h1>PETA VENUE PORPROV XV 2026</h1>
+            <p>Klik pin pada peta untuk melihat Detail Olahraga, Hotel Terdekat & Rumah Sakit Terdekat (&lt; 3 Km)</p>
+        </div>
+    </div>
+    <div class="banner-accent-line"></div>
+    <div class="banner-bottom-curve">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0 C150,90 350,-40 500,40 C650,120 900,20 1200,60 L1200,120 L0,120 Z" fill="#f8fafc"></path>
+        </svg>
     </div>
 </section>
 

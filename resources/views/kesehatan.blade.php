@@ -4,61 +4,6 @@
 
 @push('styles')
 <style>
-    /* ── Banner ── */
-    .kesehatan-banner {
-        position: relative;
-        background: #013469;
-        height: 140px;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-    }
-
-    .kesehatan-banner .bg-img {
-        position: absolute;
-        right: 0;
-        top: 0;
-        width: 50%;
-        height: 100%;
-        object-fit: cover;
-        opacity: 0.35;
-    }
-
-    .kesehatan-banner::after {
-        content: '';
-        position: absolute;
-        right: 0;
-        top: 0;
-        width: 60%;
-        height: 100%;
-        background: linear-gradient(to right, #013469 30%, transparent 100%);
-    }
-
-    .kesehatan-banner .banner-content {
-        position: relative;
-        z-index: 2;
-        padding: 0 24px 0 28px;
-        display: flex;
-        align-items: center;
-        gap: 16px;
-    }
-
-    .kesehatan-banner h1 {
-        color: #fff;
-        font-size: 26px;
-        font-weight: 900;
-        text-transform: uppercase;
-        margin: 0;
-        letter-spacing: 0.03em;
-    }
-
-    .kesehatan-banner p {
-        color: #c8d9ea;
-        font-size: 12px;
-        margin: 5px 0 0;
-        line-height: 1.5;
-    }
-
     /* ── Stats strip ── */
     /* ── Stats strip ── */
     .stats-strip {
@@ -631,6 +576,11 @@
         </div>
     </div>
     <div class="banner-accent-line"></div>
+    <div class="banner-bottom-curve">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0 C150,90 350,-40 500,40 C650,120 900,20 1200,60 L1200,120 L0,120 Z" fill="#f8fafc"></path>
+        </svg>
+    </div>
 </section>
 
 <!-- Stats Strip -->

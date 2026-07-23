@@ -119,6 +119,11 @@
         </div>
     </div>
     <div class="banner-accent-line"></div>
+    <div class="banner-bottom-curve">
+        <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0 C150,90 350,-40 500,40 C650,120 900,20 1200,60 L1200,120 L0,120 Z" fill="#f8fafc"></path>
+        </svg>
+    </div>
 </section>
 
 <!-- Gallery Content -->
