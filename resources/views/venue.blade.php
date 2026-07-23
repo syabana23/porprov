@@ -427,7 +427,9 @@
 
 @push('scripts')
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAF8W19WIUtkrIWIXb22YbAOxxdtsZKugU"></script>
+<!-- PENTING: Tambahkan Leaflet JS dan CSS sebagai pengganti Google Maps -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
 <script>
     // 1. DATABASE DATA STRUKTUR (Venue GOR, Hotel & RS Terdekat)
@@ -674,10 +676,7 @@
     let markers = [];
     // Fungsi inisialisasi maps
     function initMap() {
-        const bogorCenter = {
-            lat: -6.587,
-            lng: 106.803
-        };
+        const bogorCenter = [-6.587, 106.803];
 
         // Pastikan element target ada sebelum menggambar peta
         const mapElement = document.getElementById("map-canvas");
@@ -686,33 +685,28 @@
             return;
         }
 
-        map = new google.maps.Map(mapElement, {
-            zoom: 14,
-            center: bogorCenter,
-            mapTypeControl: false,
-            streetViewControl: false,
-            styles: [{
-                featureType: "poi.business",
-                stylers: [{
-                    visibility: "off"
-                }]
-            }]
+        map = L.map('map-canvas').setView(bogorCenter, 14);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        const redIcon = new L.Icon({
+            iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+            shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowSize: [41, 41]
         });
 
         // Loop data untuk memasang Pin Marker
         venueData.forEach(venue => {
-            const marker = new google.maps.Marker({
-                position: {
-                    lat: venue.lat,
-                    lng: venue.lng
-                },
-                map: map,
-                title: venue.name,
-                animation: google.maps.Animation.DROP
-            });
+            const marker = L.marker([venue.lat, venue.lng], {icon: redIcon}).addTo(map);
+            marker.bindTooltip(venue.name);
 
             // Trigger Klik pada Pin
-            marker.addListener("click", () => {
+            marker.on("click", () => {
                 showVenueDetails(venue);
             });
 
@@ -727,7 +721,10 @@
     // 3. LOGIKA UPDATE TAMPILAN KARTU SECARA DINAMIS
     function showVenueDetails(venue) {
         // A. Update Floating Card Map Atas
-        document.getElementById('floating-gor-card').style.display = 'block';
+        const floatingCard = document.getElementById('floating-gor-card');
+        floatingCard.style.display = 'block';
+        floatingCard.style.zIndex = '1000'; // FIX z-index agar tidak tertutup Leaflet
+
         document.getElementById('card-gor-name').innerText = venue.name;
         document.getElementById('card-gor-addr').innerText = venue.address;
         document.getElementById('card-gor-gmaps').href = venue.gmaps_url;

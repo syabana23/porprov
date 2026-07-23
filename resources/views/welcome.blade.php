@@ -449,6 +449,42 @@
         }
     }
 
+    /* Facilities Section Title */
+    .facilities-section-title {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 32px;
+        padding-bottom: 20px;
+        border-bottom: 2px solid #f3f4f6;
+    }
+
+    .fst-icon {
+        width: 56px;
+        height: 56px;
+        background: linear-gradient(135deg, #2563eb, #1d4ed8);
+        color: white;
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    }
+
+    .facilities-section-title h2 {
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: #111827;
+        margin: 0;
+    }
+
+    .fst-subtitle {
+        font-size: 14px;
+        color: #6b7280;
+        margin: 4px 0 0;
+    }
+
     /* Facilities Cards CSS */
     .venue-body {
         margin-top: 50px;
@@ -457,7 +493,7 @@
     }
 
     .facility-category {
-        margin-bottom: 40px;
+        margin-bottom: 32px;
         background: #fff;
         padding: 24px;
         border-radius: 20px;
@@ -469,22 +505,22 @@
         display: flex;
         align-items: center;
         gap: 14px;
-        margin-bottom: 24px;
+        margin-bottom: 20px;
         padding-bottom: 16px;
         border-bottom: 2px solid #f3f4f6;
     }
 
     .facilities-header h2 {
-        font-size: 1.25rem;
+        font-size: 1.15rem;
         font-weight: 800;
         color: #111827;
         margin: 0;
     }
 
     .facilities-icon {
-        width: 44px;
-        height: 44px;
-        border-radius: 12px;
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -492,71 +528,54 @@
 
     .place-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-        gap: 20px;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 16px;
     }
 
     .place-card {
-        background: #fff;
-        border-radius: 16px;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-        overflow: hidden;
+        background: #fafbfc;
+        border-radius: 14px;
+        padding: 18px;
         display: flex;
         flex-direction: column;
+        gap: 14px;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
-        border: 1px solid #f3f4f6;
+        border: 1px solid #f0f1f3;
     }
 
     .place-card:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        background: #fff;
     }
 
-    .place-card .pc-img {
-        height: 160px;
-        overflow: hidden;
-        position: relative;
-    }
-
-    .place-card .pc-img img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.5s ease;
-    }
-
-    .place-card:hover .pc-img img {
-        transform: scale(1.08);
-    }
-
-    .place-card .pc-badge {
-        position: absolute;
-        top: 12px;
-        right: 12px;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(4px);
-        padding: 4px 10px;
-        border-radius: 20px;
-        font-size: 11px;
-        font-weight: 800;
-        color: #013469;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .place-card .pc-body {
-        padding: 18px;
-        flex-grow: 1;
+    .place-card-top {
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        align-items: flex-start;
+        gap: 12px;
     }
 
-    .place-card .pc-name {
-        font-size: 16px;
-        font-weight: 800;
+    .pc-category-icon {
+        width: 42px;
+        height: 42px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .pc-info {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .pc-name {
+        font-size: 14px;
+        font-weight: 700;
         color: #1f2937;
-        margin: 0 0 6px;
-        line-height: 1.3;
+        margin: 0 0 4px;
+        line-height: 1.4;
         display: -webkit-box;
         -webkit-line-clamp: 2;
         line-clamp: 2;
@@ -564,22 +583,32 @@
         overflow: hidden;
     }
 
-    .place-card .pc-addr {
+    .pc-addr {
         display: flex;
-        align-items: flex-start;
-        gap: 8px;
+        align-items: center;
+        gap: 6px;
         font-size: 12px;
         color: #6b7280;
-        margin-bottom: 20px;
-        line-height: 1.5;
+        line-height: 1.4;
     }
 
-    .place-card .pc-addr svg {
+    .pc-addr svg {
         color: #9ca3af;
-        margin-top: 2px;
+        flex-shrink: 0;
     }
 
-    .place-card .map-btn {
+    .pc-badge {
+        background: #dbeafe;
+        color: #2563eb;
+        padding: 4px 10px;
+        border-radius: 20px;
+        font-size: 11px;
+        font-weight: 700;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    .map-btn {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -588,14 +617,13 @@
         color: #374151;
         font-size: 13px;
         font-weight: 700;
-        padding: 12px 16px;
+        padding: 11px 16px;
         border-radius: 10px;
         text-decoration: none;
         transition: all 0.2s ease;
-        margin-top: auto;
     }
 
-    .place-card .map-btn:hover {
+    .map-btn:hover {
         background: #2563eb;
         color: #ffffff;
     }
@@ -606,6 +634,25 @@
     }
 
     @media (max-width: 768px) {
+        .facilities-section-title {
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .fst-icon {
+            width: 48px;
+            height: 48px;
+        }
+
+        .fst-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .facilities-section-title h2 {
+            font-size: 1.25rem;
+        }
+
         .facility-category {
             padding: 16px;
             border-radius: 16px;
@@ -616,7 +663,7 @@
             overflow-x: auto;
             scroll-snap-type: x mandatory;
             padding-bottom: 12px;
-            gap: 16px;
+            gap: 14px;
         }
 
         .place-card {
@@ -624,10 +671,8 @@
             max-width: 280px;
             scroll-snap-align: start;
             flex-shrink: 0;
-            margin-bottom: 0;
         }
 
-        /* Sembunyikan scrollbar untuk tampilan yang lebih bersih */
         .place-grid::-webkit-scrollbar {
             display: none;
         }
@@ -643,7 +688,6 @@
 @section('content')
 <!-- Hero Section -->
 <section class="hero">
-    <!-- ... (Bagian Hero tetap sama seperti kode asli) ... -->
     <div class="hero-left">
         <div>
             <h2>PORPROV <span>KOTA BOGOR 2026</span></h2>
@@ -674,7 +718,6 @@
 
 <!-- Statistics Cards -->
 <section class="stats">
-    <!-- ... (Bagian Stats tetap sama) ... -->
     <div class="stat-card">
         <div class="stat-icon">
             <svg width="40" height="40" fill="none" stroke="#013469" viewBox="0 0 24 24" stroke-width="1.5">
@@ -798,6 +841,18 @@
 </section>
 
 <div class="venue-body" id="facilities-section">
+    <div class="facilities-section-title">
+        <div class="fst-icon">
+            <svg width="28" height="28" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            </svg>
+        </div>
+        <div>
+            <h2>Fasilitas Terdekat</h2>
+            <p class="fst-subtitle">Temukan fasilitas di sekitar lokasi yang dipilih</p>
+        </div>
+    </div>
+
     <!-- Hotel Section -->
     <div class="facility-category" id="cat-hotel" style="display:none;">
         <div class="facilities-header">
@@ -866,35 +921,36 @@
 @endsection
 
 @push('scripts')
-<!-- PENTING: Tambahkan &libraries=places untuk mengaktifkan API pencarian fasilitas sekitar -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAF8W19WIUtkrIWIXb22YbAOxxdtsZKugU&libraries=places"></script>
+<!-- PENTING: Tambahkan Leaflet JS dan CSS sebagai pengganti Google Maps -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <script>
     const venueData = [{
             id: 1,
             name: "GOR Pajajaran Indoor A",
             lat: -6.583321,
             lng: 106.800532,
-            address: "Jl. Pemuda No.4, Tanah Sareal, Kec. Tanah Sereal, Kota Bogor, Jawa Barat 16161",
+            address: "Gor Pajajaran, Jl. Pemuda No.02 kel, RT.04/RW.01, Tanah Sareal, Kota Bogor, Jawa Barat 16161",
             cabor: "Drumband, Pencak Silat, Taekwondo",
-            gmaps_url: "https://maps.google.com/?q=GOR+Pajajaran+Bogor",
+            gmaps_url: "https://www.google.com/maps/place/GOR+Pajajaran+Indoor/@-6.5761045,106.7944374,17z/data=!3m1!4b1!4m6!3m5!1s0x2e69c55c7834537f:0x4e88799594588c3b!8m2!3d-6.5761098!4d106.7970123!16s%2Fg%2F11pvgf0m64?entry=ttu&g_ep=EgoyMDI2MDcxOS4wIKXMDSoASAFQAw%3D%3D",
         },
         {
             id: 2,
             name: "GOR Pajajaran Indoor B",
             lat: -6.584100,
             lng: 106.801200,
-            address: "Kompleks Olahraga GOR Pajajaran, Jl. Pemuda, Kota Bogor",
+            address: "Gor Pajajaran, Jl. Pemuda No.02 kel, RT.04/RW.01, Tanah Sareal, Kota Bogor, Jawa Barat 16161",
             cabor: "Judo, Kurash, Sambo",
-            gmaps_url: "https://maps.google.com/?q=-6.584100,106.801200",
+            gmaps_url: "https://www.google.com/maps/place/Toko+olahraga+Ewing+Sport+bogor/@-6.5761098,106.7970123,17z/data=!4m6!3m5!1s0x2e69c4379e67ca1f:0x9a0730042810b803!8m2!3d-6.5761098!4d106.7970123!16s%2Fg%2F1pzr718yr?entry=ttu&g_ep=EgoyMDI2MDcxOS4wIKXMDSoASAFQAw%3D%3D",
         },
         {
             id: 3,
             name: "GOR Vokasi IPB",
             lat: -6.589165,
             lng: 106.806324,
-            address: "Kampus IPB Cilibende, Jl. Kumbang No.14, Babakan, Kota Bogor",
+            address: "Jl. Lodaya II, RT.03/RW.05, Cilibende, Babakan, Kecamatan Bogor Tengah, Kota Bogor, Jawa Barat 16128",
             cabor: "Shorinji Kempo, Tarung Derajat",
-            gmaps_url: "https://maps.google.com/?q=Sekolah+Vokasi+IPB+Bogor",
+            gmaps_url: "https://www.google.com/maps/place/Gymnasium+Sekolah+Vokasi+IPB/@-6.5889744,106.8052783,17z/data=!3m1!4b1!4m6!3m5!1s0x2e69c500578948bd:0xf1a58274d6edbc5a!8m2!3d-6.5889797!4d106.8078532!16s%2Fg%2F11vwvhlk43?entry=ttu&g_ep=EgoyMDI2MDcxOS4wIKXMDSoASAFQAw%3D%3D",
         },
         {
             id: 4,
@@ -946,9 +1002,9 @@
             name: "Brajamustika Hotel",
             lat: -6.581000,
             lng: 106.772000,
-            address: "Bogor, Jawa Barat",
+            address: "Jl. DR. Sumeru, RT.01/RW.10, Menteng, Kec. Bogor Bar., Kota Bogor, Jawa Barat 16111",
             cabor: "Dansa",
-            gmaps_url: "https://maps.google.com/?q=Brajamustika+Hotel+Bogor"
+            gmaps_url: "https://www.google.com/maps/place/Hotel+Braja+Mustika/@-6.5812267,106.773803,17z/data=!3m1!4b1!4m9!3m8!1s0x2e69c4513eee3a2d:0x85ff382a1dc9430f!5m2!4m1!1i2!8m2!3d-6.581232!4d106.7763779!16s%2Fg%2F1tj35dw0?entry=ttu&g_ep=EgoyMDI2MDcxOS4wIKXMDSoASAFQAw%3D%3D"
         },
         {
             id: 10,
@@ -1001,86 +1057,171 @@
     let markers = []; // Marker untuk Venue (Merah)
     let fasilitasMarkers = []; // Marker untuk Fasilitas dari Places API (Biru)
 
-    function fetchPlaces(latLng, type, containerId, title, categoryId) {
+    function fetchPlaces(venue, type, containerId, title, categoryId) {
+        const latLng = [Number(venue.lat), Number(venue.lng)];
         const container = document.getElementById(containerId);
         const categoryBlock = document.getElementById(categoryId);
         if (!container || !categoryBlock) return;
 
         categoryBlock.style.display = 'block';
-        container.innerHTML = '<p style="color:#9ca3af; font-style:italic; padding: 12px 0;">Sedang mencari data...</p>';
+        container.innerHTML = '<p style="color:#9ca3af; font-style:italic; padding: 12px 0;">Sedang mencari data dari OpenStreetMap...</p>';
 
-        const service = new google.maps.places.PlacesService(map);
-        const request = {
-            location: latLng,
-            radius: '3000',
-            type: [type]
+        // HARDCODED DATA OVERRIDE UNTUK REQUEST USER
+        const venueName = venue.name.toLowerCase();
+        const isPajajaran = venueName.includes("pajajaran");
+        const isYasmin = venueName.includes("yasmin");
+
+        let customData = null;
+        if (isPajajaran) {
+            if (type === 'hospital') {
+                customData = [{
+                    name: "Puskesmas Bogor Selatan",
+                    address: "Bogor Selatan",
+                    mapUrl: "https://maps.google.com/?q=Puskesmas+Bogor+Selatan+Bogor"
+                }];
+            } else if (type === 'lodging') {
+                customData = [{
+                    name: "AMAROOSSA ROYAL BOGOR HOTEL",
+                    address: "Bogor Tengah",
+                    mapUrl: "https://www.google.com/maps/search/?api=1&query=Amaroossa+Royal+Bogor"
+                }];
+            } else if (type === 'restaurant') {
+                customData = [{
+                    name: "HARTZ CHICKEN BUFFET",
+                    address: "Kota Bogor",
+                    mapUrl: "https://www.google.com/maps/search/?api=1&query=Hartz+Chicken+Buffet+Bogor"
+                }];
+            }
+        } else if (isYasmin) {
+            if (type === 'hospital') {
+                customData = [{
+                    name: "RSU Islam Bogor",
+                    address: "Kota Bogor",
+                    mapUrl: "https://www.google.com/maps/search/?api=1&query=RSU+Islam+Bogor"
+                }];
+            } else if (type === 'lodging') {
+                customData = [{
+                    name: "SAHIRA BUTIK HOTEL, PT",
+                    address: "Kota Bogor",
+                    mapUrl: "https://www.google.com/maps/search/?api=1&query=Sahira+Butik+Hotel+Bogor"
+                }];
+            }
+        }
+
+        const renderResults = (placesList, isCustom = false) => {
+            container.innerHTML = '';
+            placesList.forEach(place => {
+                const lat = place.lat || (place.center && place.center.lat) || latLng[0];
+                const lon = place.lon || (place.center && place.center.lon) || latLng[1];
+                const name = place.name || (place.tags && place.tags.name ? place.tags.name : title + ' Tanpa Nama');
+                const address = place.address || (place.tags && place.tags['addr:street'] ? place.tags['addr:street'] : 'Area sekitar');
+
+                let iconBg = '#dbeafe',
+                    iconColor = '#2563eb',
+                    categoryIcon = '';
+                if (type === 'lodging') {
+                    iconBg = '#fef3c7';
+                    iconColor = '#d97706';
+                    categoryIcon = '<svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z"/></svg>';
+                } else if (type === 'hospital') {
+                    iconBg = '#fee2e2';
+                    iconColor = '#dc2626';
+                    categoryIcon = '<svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/></svg>';
+                } else if (type === 'restaurant') {
+                    iconBg = '#dcfce7';
+                    iconColor = '#16a34a';
+                    categoryIcon = '<svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-7v8h2.5v8H21V2h-5z"/></svg>';
+                } else if (type === 'police') {
+                    iconBg = '#e0e7ff';
+                    iconColor = '#4f46e5';
+                    categoryIcon = '<svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>';
+                } else if (type === 'pharmacy') {
+                    iconBg = '#f3e8ff';
+                    iconColor = '#9333ea';
+                    categoryIcon = '<svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/></svg>';
+                }
+
+                const mapUrl = place.mapUrl || `https://www.openstreetmap.org/directions?engine=fossgis_osrm_car&route=${latLng[0]}%2C${latLng[1]}%3B${lat}%2C${lon}`;
+
+                container.innerHTML += `
+                    <div class="place-card">
+                        <div class="place-card-top">
+                            <div class="pc-category-icon" style="background:${iconBg}; color:${iconColor};">
+                                ${categoryIcon}
+                            </div>
+                            <div class="pc-info">
+                                <p class="pc-name">${name}</p>
+                                <div class="pc-addr">
+                                    <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="flex-shrink:0;">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    </svg>
+                                    <span>${address}</span>
+                                </div>
+                            </div>
+                            <span class="pc-badge">&lt; 3 km</span>
+                        </div>
+                        <a href="${mapUrl}" target="_blank" class="map-btn">
+                            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /></svg>
+                            Lihat Rute
+                        </a>
+                    </div>
+                `;
+            });
         };
 
-        service.nearbySearch(request, (results, status) => {
-            if (status === google.maps.places.PlacesServiceStatus.OK && results.length > 0) {
-                container.innerHTML = '';
-                const topResults = results.slice(0, 4); // Ambil 4 teratas
-                topResults.forEach(place => {
-                    const placeImg = place.photos && place.photos.length > 0 ?
-                        place.photos[0].getUrl({
-                            maxWidth: 400
-                        }) :
-                        'https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=400&q=80';
-                    const name = place.name;
-                    const address = place.vicinity || '';
-                    const mapUrl = `https://www.google.com/maps/search/?api=1&query=${place.geometry.location.lat()},${place.geometry.location.lng()}&query_place_id=${place.place_id}`;
+        if (customData) {
+            renderResults(customData, true);
+            return;
+        }
 
-                    container.innerHTML += `
-                        <div class="place-card">
-                            <div class="pc-img">
-                                <span class="pc-badge">&lt; 3 km</span>
-                                <img src="${placeImg}" alt="${name}" loading="lazy">
-                            </div>
-                            <div class="pc-body">
-                                <div>
-                                    <p class="pc-name">${name}</p>
-                                    <div class="pc-addr">
-                                        <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="flex-shrink:0;">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                        </svg>
-                                        <span>${address}</span>
-                                    </div>
-                                </div>
-                                <a href="${mapUrl}" target="_blank" class="map-btn">
-                                    <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /></svg>
-                                    Lihat Rute
-                                </a>
-                            </div>
-                        </div>
-                    `;
-                });
-            } else {
-                container.innerHTML = `<p style="color:#9ca3af; font-style:italic; padding: 12px 0;">Tidak ada ${title} terdekat ditemukan.</p>`;
-            }
-        });
+        let overpassTag = '';
+        if (type === 'lodging') overpassTag = '["tourism"~"hotel|guest_house|motel"]';
+        else if (type === 'hospital') overpassTag = '["amenity"="hospital"]';
+        else if (type === 'pharmacy') overpassTag = '["amenity"="pharmacy"]';
+        else if (type === 'restaurant') overpassTag = '["amenity"~"restaurant|cafe|fast_food"]';
+        else if (type === 'police') overpassTag = '["amenity"="police"]';
+        else overpassTag = `["amenity"="${type}"]`;
+
+        const query = `
+            [out:json];
+            (
+              node${overpassTag}(around:3000, ${latLng[0]}, ${latLng[1]});
+              way${overpassTag}(around:3000, ${latLng[0]}, ${latLng[1]});
+              relation${overpassTag}(around:3000, ${latLng[0]}, ${latLng[1]});
+            );
+            out center;
+        `;
+
+        fetch('https://overpass-api.de/api/interpreter', {
+                method: 'POST',
+                body: query
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.elements && data.elements.length > 0) {
+                    const topResults = data.elements.slice(0, 4);
+                    renderResults(topResults);
+                } else {
+                    container.innerHTML = `<p style="color:#9ca3af; font-style:italic; padding: 12px 0;">Tidak ada ${title} terdekat ditemukan.</p>`;
+                }
+            })
+            .catch(err => {
+                console.error(err);
+                container.innerHTML = `<p style="color:#9ca3af; font-style:italic; padding: 12px 0;">Gagal mengambil data ${title}.</p>`;
+            });
     }
 
     function initMap() {
-        const bogorCenter = {
-            lat: -6.587,
-            lng: 106.803
-        };
+        const bogorCenter = [-6.587, 106.803];
 
         const mapElement = document.getElementById("map-canvas");
         if (!mapElement) return;
 
-        map = new google.maps.Map(mapElement, {
-            zoom: 14,
-            center: bogorCenter,
-            mapTypeControl: false,
-            streetViewControl: false,
-            styles: [{
-                featureType: "poi.business",
-                stylers: [{
-                    visibility: "off"
-                }]
-            }]
-        });
+        map = L.map('map-canvas').setView(bogorCenter, 14);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
 
         // Tampilkan semua venue pertama kali di load
         renderVenues(venueData);
@@ -1089,19 +1230,22 @@
 
     // Fungsi Render Marker Venue
     function renderVenues(venuesData) {
-        venuesData.forEach(venue => {
-            const marker = new google.maps.Marker({
-                position: {
-                    lat: venue.lat,
-                    lng: venue.lng
-                },
-                map: map,
-                title: venue.name,
-                animation: google.maps.Animation.DROP,
-                icon: 'http://maps.google.com/mapfiles/ms/icons/red-dot.png' // Icon venue
-            });
+        const redIcon = new L.Icon({
+            iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+            shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+            iconSize: [25, 41],
+            iconAnchor: [12, 41],
+            popupAnchor: [1, -34],
+            shadowSize: [41, 41]
+        });
 
-            marker.addListener("click", () => {
+        venuesData.forEach(venue => {
+            const marker = L.marker([venue.lat, venue.lng], {
+                icon: redIcon
+            }).addTo(map);
+            marker.bindTooltip(venue.name);
+
+            marker.on("click", () => {
                 showVenueDetails(venue);
             });
 
@@ -1111,9 +1255,9 @@
 
     // Fungsi Hapus Semua Marker di Peta
     function clearMarkers() {
-        markers.forEach(m => m.setMap(null));
+        markers.forEach(m => map.removeLayer(m));
         markers = [];
-        fasilitasMarkers.forEach(m => m.setMap(null));
+        fasilitasMarkers.forEach(m => map.removeLayer(m));
         fasilitasMarkers = [];
     }
 
@@ -1133,7 +1277,7 @@
             document.getElementById('floating-gor-card').style.display = 'none';
 
             let isVenueFound = false;
-            const bounds = new google.maps.LatLngBounds();
+            const bounds = L.latLngBounds();
 
             // 1. Proses Filter Cabor & Venue
             const filteredVenues = venueData.filter(v => {
@@ -1148,72 +1292,106 @@
 
             if (filteredVenues.length > 0) {
                 renderVenues(filteredVenues);
-                filteredVenues.forEach(v => bounds.extend(new google.maps.LatLng(v.lat, v.lng)));
+                filteredVenues.forEach(v => bounds.extend([v.lat, v.lng]));
                 isVenueFound = true;
             }
 
-            // 2. Proses Cari Fasilitas dengan Google Places API (Hotel, Rumah Sakit, dll)
+            // 2. Proses Cari Fasilitas dengan Overpass API (Hotel, Rumah Sakit, dll)
             if (fasilitasVal) {
-                let placeType = '';
-                if (fasilitasVal === 'hotel') placeType = 'lodging';
-                else if (fasilitasVal === 'rumah-sakit') placeType = 'hospital';
-                else if (fasilitasVal === 'apotek') placeType = 'pharmacy';
-                else if (fasilitasVal === 'rumah-makan') placeType = 'restaurant';
+                let overpassTag = '';
+                if (fasilitasVal === 'hotel') overpassTag = '["tourism"~"hotel|guest_house|motel"]';
+                else if (fasilitasVal === 'rumah-sakit') overpassTag = '["amenity"="hospital"]';
+                else if (fasilitasVal === 'apotek') overpassTag = '["amenity"="pharmacy"]';
+                else if (fasilitasVal === 'rumah-makan') overpassTag = '["amenity"~"restaurant|cafe|fast_food"]';
 
                 // Tentukan lokasi pencarian: di Venue terpilih, atau tengah kota Bogor jika tidak ada Venue
-                const searchCenter = isVenueFound ?
-                    new google.maps.LatLng(filteredVenues[0].lat, filteredVenues[0].lng) :
-                    map.getCenter();
+                const searchCenter = isVenueFound ? [filteredVenues[0].lat, filteredVenues[0].lng] : [map.getCenter().lat, map.getCenter().lng];
 
-                const service = new google.maps.places.PlacesService(map);
-                const request = {
-                    location: searchCenter,
-                    radius: '3000', // Cari dalam radius 3 KM
-                    type: [placeType]
-                };
+                const query = `
+                    [out:json];
+                    (
+                      node${overpassTag}(around:3000, ${searchCenter[0]}, ${searchCenter[1]});
+                      way${overpassTag}(around:3000, ${searchCenter[0]}, ${searchCenter[1]});
+                      relation${overpassTag}(around:3000, ${searchCenter[0]}, ${searchCenter[1]});
+                    );
+                    out center;
+                `;
 
-                service.nearbySearch(request, (results, status) => {
-                    if (status === google.maps.places.PlacesServiceStatus.OK && results) {
-                        results.forEach(place => {
-                            const pMarker = new google.maps.Marker({
-                                position: place.geometry.location,
-                                map: map,
-                                title: place.name,
-                                icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png' // Icon fasilitas
-                            });
-
-                            const infoWindow = new google.maps.InfoWindow({
-                                content: `<div style="font-family:'Poppins',sans-serif; font-size:12px;"><strong>${place.name}</strong><br>${place.vicinity}</div>`
-                            });
-
-                            pMarker.addListener("click", () => infoWindow.open(map, pMarker));
-                            fasilitasMarkers.push(pMarker);
-                            bounds.extend(place.geometry.location);
-                        });
-                        map.fitBounds(bounds);
-                    } else if (!isVenueFound) {
-                        alert('Fasilitas tidak ditemukan di area sekitar.');
-                    }
+                const blueIcon = new L.Icon({
+                    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
+                    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+                    iconSize: [25, 41],
+                    iconAnchor: [12, 41],
+                    popupAnchor: [1, -34],
+                    shadowSize: [41, 41]
                 });
+
+                // Set loading status in map
+                document.getElementById('floating-gor-card').style.display = 'block';
+                document.getElementById('card-gor-name').innerText = "Mencari fasilitas...";
+                document.getElementById('card-gor-addr').innerText = "Sedang mengambil data dari OpenStreetMap";
+
+                fetch('https://overpass-api.de/api/interpreter', {
+                        method: 'POST',
+                        body: query
+                    })
+                    .then(res => res.json())
+                    .then(data => {
+                        document.getElementById('floating-gor-card').style.display = 'none';
+                        if (data.elements && data.elements.length > 0) {
+                            data.elements.forEach(place => {
+                                const lat = place.lat || place.center.lat;
+                                const lon = place.lon || place.center.lon;
+                                const name = place.tags && place.tags.name ? place.tags.name : 'Fasilitas Tanpa Nama';
+
+                                const pMarker = L.marker([lat, lon], {
+                                    icon: blueIcon
+                                }).addTo(map);
+                                pMarker.bindPopup(`<div style="font-family:'Poppins',sans-serif; font-size:12px;"><strong>${name}</strong></div>`);
+
+                                fasilitasMarkers.push(pMarker);
+                                bounds.extend([lat, lon]);
+                            });
+                            map.fitBounds(bounds, {
+                                padding: [50, 50]
+                            });
+                        } else if (!isVenueFound) {
+                            alert('Fasilitas tidak ditemukan di area sekitar.');
+                        } else {
+                            if (filteredVenues.length === 1) {
+                                map.setView([filteredVenues[0].lat, filteredVenues[0].lng], 15);
+                            } else {
+                                map.fitBounds(bounds, {
+                                    padding: [50, 50]
+                                });
+                            }
+                            alert('Tidak ada fasilitas terdekat yang ditemukan dari OpenStreetMap.');
+                        }
+                    })
+                    .catch(err => {
+                        console.error(err);
+                        document.getElementById('floating-gor-card').style.display = 'none';
+                        alert('Gagal memuat data dari OpenStreetMap.');
+                        if (isVenueFound) {
+                            if (filteredVenues.length === 1) map.setView([filteredVenues[0].lat, filteredVenues[0].lng], 15);
+                            else map.fitBounds(bounds, {
+                                padding: [50, 50]
+                            });
+                        }
+                    });
             } else {
                 // Adjust peta jika hanya filter Venue & Cabor
                 if (isVenueFound) {
                     if (filteredVenues.length === 1) {
-                        map.setCenter({
-                            lat: filteredVenues[0].lat,
-                            lng: filteredVenues[0].lng
-                        });
-                        map.setZoom(15);
+                        map.setView([filteredVenues[0].lat, filteredVenues[0].lng], 15);
                     } else {
-                        map.fitBounds(bounds);
+                        map.fitBounds(bounds, {
+                            padding: [50, 50]
+                        });
                     }
                 } else {
                     alert('Venue tidak ditemukan dengan kriteria tersebut.');
-                    map.setCenter({
-                        lat: -6.587,
-                        lng: 106.803
-                    });
-                    map.setZoom(14);
+                    map.setView([-6.587, 106.803], 14);
                 }
             }
         });
@@ -1223,18 +1401,17 @@
             setTimeout(() => {
                 clearMarkers();
                 renderVenues(venueData);
-                map.setCenter({
-                    lat: -6.587,
-                    lng: 106.803
-                });
-                map.setZoom(14);
+                map.setView([-6.587, 106.803], 14);
                 document.getElementById('floating-gor-card').style.display = 'none';
             }, 100);
         });
     }
 
     function showVenueDetails(venue) {
-        document.getElementById('floating-gor-card').style.display = 'block';
+        const floatingCard = document.getElementById('floating-gor-card');
+        floatingCard.style.display = 'block';
+        floatingCard.style.zIndex = '1000'; // FIX z-index agar tidak tertutup Leaflet
+
         document.getElementById('card-gor-name').innerText = venue.name;
         document.getElementById('card-gor-addr').innerText = venue.address;
         document.getElementById('card-gor-gmaps').href = venue.gmaps_url;
@@ -1263,14 +1440,13 @@
             `;
         });
 
-        // Tampilkan fasilitas terdekat (Hotel, RS, Restoran, Polisi)
-        if (map && google && google.maps && google.maps.places) {
-            const latLng = new google.maps.LatLng(Number(venue.lat), Number(venue.lng));
-            fetchPlaces(latLng, 'lodging', 'hotel-container', 'Hotel', 'cat-hotel');
-            fetchPlaces(latLng, 'hospital', 'rs-container', 'Fasilitas Kesehatan', 'cat-rs');
-            fetchPlaces(latLng, 'restaurant', 'resto-container', 'Restoran', 'cat-resto');
-            fetchPlaces(latLng, 'police', 'police-container', 'Kantor Polisi', 'cat-police');
-            fetchPlaces(latLng, 'pharmacy', 'apotek-container', 'Apotek', 'cat-apotek');
+        // Tampilkan fasilitas terdekat (Hotel, RS, Restoran, Polisi) dengan Overpass API atau Custom Data
+        if (map) {
+            fetchPlaces(venue, 'lodging', 'hotel-container', 'Hotel', 'cat-hotel');
+            fetchPlaces(venue, 'hospital', 'rs-container', 'Fasilitas Kesehatan', 'cat-rs');
+            fetchPlaces(venue, 'restaurant', 'resto-container', 'Restoran', 'cat-resto');
+            fetchPlaces(venue, 'police', 'police-container', 'Kantor Polisi', 'cat-police');
+            fetchPlaces(venue, 'pharmacy', 'apotek-container', 'Apotek', 'cat-apotek');
 
             // Scroll ke bagian fasilitas secara halus
             setTimeout(() => {
@@ -1281,7 +1457,7 @@
                         block: 'start'
                     });
                 }
-            }, 300); // Sedikit delay agar view ter-update
+            }, 500); // Sedikit delay agar view ter-update
         }
     }
 
