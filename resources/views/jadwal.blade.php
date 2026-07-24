@@ -1203,8 +1203,8 @@
                 </tr>
                 <tr>
                     <td class="no">10</td>
-                    <td class="sport" data-sport="Dansa" data-venue="Brajamustika Hotel">Dansa</td>
-                    <td class="venue" data-sport="Dansa" data-venue="Brajamustika Hotel">Brajamustika Hotel</td>
+                    <td class="sport" data-sport="Dansa" data-venue="Green Forest Hotel">Dansa</td>
+                    <td class="venue" data-sport="Dansa" data-venue="Green Forest Hotel">Green Forest Hotel</td>
                     <td class="durasi">6</td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>

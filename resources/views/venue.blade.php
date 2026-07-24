@@ -657,7 +657,7 @@
             lng: 106.800532,
             address: "Gor Pajajaran, Jl. Pemuda No.02 kel, RT.04/RW.01, Tanah Sareal, Kota Bogor, Jawa Barat 16161",
             cabor: "Drumband, Pencak Silat, Taekwondo",
-            gmaps_url: "https://www.google.com/maps/place/GOR+Pajajaran+Indoor/@-6.5761045,106.7944374,17z/data=!3m1!4b1!4m6!3m5!1s0x2e69c55c7834537f:0x4e88799594588c3b!8m2!3d-6.5761098!4d106.7970123!16s%2Fg%2F11pvgf0m64?entry=ttu&g_ep=EgoyMDI2MDcxOS4wIKXMDSoASAFQAw%3D%3D",
+            gmaps_url: "https://maps.app.goo.gl/KcwQDC2JxcTsj1LJ8",
         },
         {
             id: 2,
@@ -666,7 +666,7 @@
             lng: 106.801200,
             address: "Gor Pajajaran, Jl. Pemuda No.02 kel, RT.04/RW.01, Tanah Sareal, Kota Bogor, Jawa Barat 16161",
             cabor: "Judo, Kurash, Sambo",
-            gmaps_url: "https://www.google.com/maps/place/Toko+olahraga+Ewing+Sport+bogor/@-6.5761098,106.7970123,17z/data=!4m6!3m5!1s0x2e69c4379e67ca1f:0x9a0730042810b803!8m2!3d-6.5761098!4d106.7970123!16s%2Fg%2F1pzr718yr?entry=ttu&g_ep=EgoyMDI2MDcxOS4wIKXMDSoASAFQAw%3D%3D",
+            gmaps_url: "https://maps.app.goo.gl/h3ei411WRSdW5Uuf8",
         },
         {
             id: 3,
@@ -675,7 +675,7 @@
             lng: 106.806324,
             address: "Jl. Lodaya II, RT.03/RW.05, Cilibende, Babakan, Kecamatan Bogor Tengah, Kota Bogor, Jawa Barat 16128",
             cabor: "Shorinji Kempo, Tarung Derajat",
-            gmaps_url: "https://www.google.com/maps/place/Gymnasium+Sekolah+Vokasi+IPB/@-6.5889744,106.8052783,17z/data=!3m1!4b1!4m6!3m5!1s0x2e69c500578948bd:0xf1a58274d6edbc5a!8m2!3d-6.5889797!4d106.8078532!16s%2Fg%2F11vwvhlk43?entry=ttu&g_ep=EgoyMDI2MDcxOS4wIKXMDSoASAFQAw%3D%3D",
+            gmaps_url: "https://maps.app.goo.gl/ekjekDk57iBAQcTVA",
         },
         {
             id: 4,
@@ -702,7 +702,7 @@
             lng: 106.809000,
             address: "Bogor, Jawa Barat",
             cabor: "Anggar, Angkat Besi, Angkat Berat, Arung Jeram, Binaraga, Petanque",
-            gmaps_url: "https://maps.google.com/?q=Green+Forest+Hotel+Bogor"
+            gmaps_url: "https://maps.app.goo.gl/dgb7WBjKovkcfyLo9"
         },
         {
             id: 7,
@@ -711,7 +711,7 @@
             lng: 106.756000,
             address: "Kemang, Bogor, Jawa Barat",
             cabor: "Bola Tangan Indoor",
-            gmaps_url: "https://maps.google.com/?q=PPSDMAP+Kemenhub+Kemang"
+            gmaps_url: "https://maps.app.goo.gl/Ma2cC3WY3DaWJYQ19"
         },
         {
             id: 8,
@@ -720,7 +720,7 @@
             lng: 106.857000,
             address: "Sentul, Bogor, Jawa Barat",
             cabor: "Bola Tangan Pasir",
-            gmaps_url: "https://maps.google.com/?q=Padepokan+Voli+Sentul"
+            gmaps_url: "https://maps.app.goo.gl/cXPfu5acX62py9QY9"
         },
         {
             id: 9,
@@ -729,7 +729,7 @@
             lng: 106.772000,
             address: "Jl. DR. Sumeru, RT.01/RW.10, Menteng, Kec. Bogor Bar., Kota Bogor, Jawa Barat 16111",
             cabor: "Dansa",
-            gmaps_url: "https://www.google.com/maps/place/Hotel+Braja+Mustika/@-6.5812267,106.773803,17z/data=!3m1!4b1!4m9!3m8!1s0x2e69c4513eee3a2d:0x85ff382a1dc9430f!5m2!4m1!1i2!8m2!3d-6.581232!4d106.7763779!16s%2Fg%2F1tj35dw0?entry=ttu&g_ep=EgoyMDI2MDcxOS4wIKXMDSoASAFQAw%3D%3D"
+            gmaps_url: "https://maps.app.goo.gl/AJwygeGxVYoxbEps5"
         },
         {
             id: 10,
@@ -756,7 +756,7 @@
             lng: 106.800000,
             address: "Jl. Pemuda, Kota Bogor",
             cabor: "Modern Pentathion, Panahan, Panjat Tebing",
-            gmaps_url: "https://maps.google.com/?q=Stadion+Pajajaran+Bogor"
+            gmaps_url: "https://maps.app.goo.gl/HgsrKKn8LD9V792UA"
         },
         {
             id: 13,
@@ -774,155 +774,291 @@
             lng: 106.774000,
             address: "Bogor, Jawa Barat",
             cabor: "Tenis Meja",
-            gmaps_url: "https://maps.google.com/?q=GOR+Yasmin+Bogor"
+            gmaps_url: "https://maps.app.goo.gl/Fqw4Yn97RyvkSeg27"
         }
     ];
 
+    /* ── Data Fasilitas Hardcoded dari PDF ── */
+    const pajajaranFacilities = {
+        hotel: [
+            { name: "Zest Hotel Bogor", address: "Jl. Pajajaran No. 27, Babakan, Kec. Bogor Tengah, Kota Bogor", distance: "1.2 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Zest+Hotel+Bogor+Jl.+Pajajaran+No.+27+Babakan+Bogor+Tengah" },
+            { name: "The Mirah Hotel Bogor", address: "Jl. Pangrango No. 9A, Babakan, Kec. Bogor Tengah, Kota Bogor", distance: "1.5 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=The+Mirah+Hotel+Bogor+Jl.+Pangrango+No.+9A+Babakan+Bogor+Tengah" }
+        ],
+        hospital: [
+            { name: "RS Salak Bogor", address: "Jl. Jend. Sudirman No. 8, Sempur, Kec. Bogor Tengah, Kota Bogor", distance: "1.1 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=RS+Salak+Bogor+Jl.+Jend.+Sudirman+No.+8+Sempur+Bogor+Tengah" },
+            { name: "RS PMI Bogor", address: "Jl. Pajajaran No. 80, Baranangsiang, Kec. Bogor Timur, Kota Bogor", distance: "2.5 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=RS+PMI+Bogor+Jl.+Pajajaran+No.+80+Baranangsiang+Bogor+Timur" },
+            { name: "Puskesmas Bogor Tengah", address: "Jl. Sawojajar No. 38, Pabaton, Kec. Bogor Tengah, Kota Bogor", distance: "1.8 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Puskesmas+Bogor+Tengah+Jl.+Sawojajar+No.+38+Pabaton+Bogor+Tengah" }
+        ],
+        pharmacy: [
+            { name: "Apotek Kimia Farma Juanda", address: "Jl. Ir. H. Juanda No. 30, Babakan, Kec. Bogor Tengah, Kota Bogor", distance: "2.0 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Apotek+Kimia+Farma+Juanda+Jl.+Ir.+H.+Juanda+No.+30+Babakan+Bogor+Tengah" }
+        ],
+        police: [
+            { name: "Polresta Bogor Kota (Mako Muslihat)", address: "Jl. Kapten Muslihat No. 18, Paledang, Kec. Bogor Tengah, Kota Bogor", distance: "2.3 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Polresta+Bogor+Kota+Mako+Muslihat+Jl.+Kapten+Muslihat+No.+18+Paledang+Bogor+Tengah" }
+        ],
+        restaurant: []
+    };
+
+    const greenForestFacilities = {
+        hotel: [
+            { name: "ASTON Bogor Hotel & Resort", address: "Mulyaharja, Kec. Bogor Selatan, Kota Bogor", distance: "1.8 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=ASTON+Bogor+Hotel+%26+Resort+Mulyaharja+Bogor+Selatan" },
+            { name: "Padodi Hotel", address: "Jl. Soemanta Diredja No. 10, Pamoyanan, Kec. Bogor Selatan", distance: "1.5 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Padodi+Hotel+Jl.+Soemanta+Diredja+No.+10+Pamoyanan+Bogor+Selatan" }
+        ],
+        hospital: [
+            { name: "RS Melania Bogor", address: "Jl. Pahlawan No. 91, Bondongan, Kec. Bogor Selatan", distance: "2.8 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=RS+Melania+Bogor+Jl.+Pahlawan+No.+91+Bondongan+Bogor+Selatan" },
+            { name: "Puskesmas Cipaku", address: "Jl. Rangga Gading, Cipaku, Kec. Bogor Selatan", distance: "2.1 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Puskesmas+Cipaku+Jl.+Rangga+Gading+Cipaku+Bogor+Selatan" }
+        ],
+        pharmacy: [
+            { name: "Apotek Kimia Farma Pahlawan", address: "Jl. Pahlawan No. 40, Batutulis, Kec. Bogor Selatan", distance: "2.5 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Apotek+Kimia+Farma+Pahlawan+Jl.+Pahlawan+No.+40+Batutulis+Bogor+Selatan" }
+        ],
+        police: [
+            { name: "Polsek Bogor Selatan", address: "Jl. Layung Sari No. 1, Empang, Kec. Bogor Selatan", distance: "2.6 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Polsek+Bogor+Selatan+Jl.+Layung+Sari+No.+1+Empang+Bogor+Selatan" }
+        ],
+        restaurant: []
+    };
+
+    const brajamustikaFacilities = {
+        hotel: [
+            { name: "Hotel Salak The Heritage", address: "Jl. Ir. H. Juanda No. 8, Pabaton, Kec. Bogor Tengah", distance: "1.6 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Hotel+Salak+The+Heritage+Jl.+Ir.+H.+Juanda+No.+8+Pabaton+Bogor+Tengah" },
+            { name: "Hotel Grand Savero Bogor", address: "Jl. Pajajaran No. 27, Babakan, Kec. Bogor Tengah", distance: "2.2 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Hotel+Grand+Savero+Bogor+Jl.+Pajajaran+No.+27+Babakan+Bogor+Tengah" }
+        ],
+        hospital: [
+            { name: "RS Karya Bhakti Pratiwi", address: "Jl. DR. Sumeru No. 120, Menteng, Kec. Bogor Barat", distance: "1.1 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=RS+Karya+Bhakti+Pratiwi+Jl.+DR.+Sumeru+No.+120+Menteng+Bogor+Barat" },
+            { name: "RSUD Kota Bogor", address: "Jl. DR. Sumeru No. 120, Menteng, Kec. Bogor Barat", distance: "1.3 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=RSUD+Kota+Bogor+Jl.+DR.+Sumeru+No.+120+Menteng+Bogor+Barat" },
+            { name: "Puskesmas Gang Aut / Menteng", address: "Jl. Mawar No. 8, Menteng, Kec. Bogor Barat", distance: "1.0 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Puskesmas+Gang+Aut+Menteng+Jl.+Mawar+No.+8+Menteng+Bogor+Barat" }
+        ],
+        pharmacy: [
+            { name: "Apotek Kimia Farma Sumeru", address: "Jl. DR. Sumeru No. 50, Menteng, Kec. Bogor Barat", distance: "900 m", mapUrl: "https://www.google.com/maps/search/?api=1&query=Apotek+Kimia+Farma+Sumeru+Jl.+DR.+Sumeru+No.+50+Menteng+Bogor+Barat" }
+        ],
+        police: [
+            { name: "Polsek Bogor Barat", address: "Jl. Semplak Raya No. 1, Kec. Bogor Barat", distance: "2.5 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Polsek+Bogor+Barat+Jl.+Semplak+Raya+No.+1+Bogor+Barat" }
+        ],
+        restaurant: []
+    };
+
+    const vokasiFacilities = {
+        hotel: [
+            { name: "IPB Hotel & Convention Centre", address: "Botani Square, Jl. Pajajaran, Baranangsiang", distance: "2.8 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=IPB+Hotel+%26+Convention+Centre+Botani+Square+Jl.+Pajajaran+Baranangsiang" }
+        ],
+        hospital: [
+            { name: "RS PMI Bogor", address: "Jl. Pajajaran No. 80, Baranangsiang, Kec. Bogor Timur", distance: "2.2 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=RS+PMI+Bogor+Jl.+Pajajaran+No.+80+Baranangsiang+Bogor+Timur" },
+            { name: "Puskesmas Bogor Utara", address: "Jl. Tegal Gundil, Kec. Bogor Utara", distance: "1.9 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Puskesmas+Bogor+Utara+Jl.+Tegal+Gundil+Bogor+Utara" }
+        ],
+        pharmacy: [
+            { name: "Apotek Kimia Farma Pajajaran", address: "Jl. Pajajaran No. 35, Babakan, Kec. Bogor Tengah", distance: "1.5 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Apotek+Kimia+Farma+Pajajaran+Jl.+Pajajaran+No.+35+Babakan+Bogor+Tengah" }
+        ],
+        police: [
+            { name: "Polsek Bogor Utara", address: "Jl. Pajajaran No. 200, Cibuluh, Kec. Bogor Utara", distance: "2.1 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Polsek+Bogor+Utara+Jl.+Pajajaran+No.+200+Cibuluh+Bogor+Utara" }
+        ],
+        restaurant: []
+    };
+
+    const yasminFacilities = {
+        hotel: [
+            { name: "WHIZ Prime Hotel Bogor Yasmin", address: "Jl. KH. R. Abdullah Bin Nuh No. 33, Curugmekar", distance: "600 m", mapUrl: "https://www.google.com/maps/search/?api=1&query=WHIZ+Prime+Hotel+Bogor+Yasmin+Jl.+KH.+R.+Abdullah+Bin+Nuh+No.+33+Curugmekar" },
+            { name: "Swiss-Belcourt Bogor", address: "Jl. KH. R. Abdullah Bin Nuh No. 27, Bukit Cimanggu City", distance: "1.2 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Swiss-Belcourt+Bogor+Jl.+KH.+R.+Abdullah+Bin+Nuh+No.+27+Bukit+Cimanggu+City" }
+        ],
+        hospital: [
+            { name: "RS Hermina Bogor", address: "Jl. KH. R. Abdullah Bin Nuh No. E2, Hermina Grand Yasmin", distance: "900 m", mapUrl: "https://www.google.com/maps/search/?api=1&query=RS+Hermina+Bogor+Jl.+KH.+R.+Abdullah+Bin+Nuh+No.+E2+Hermina+Grand+Yasmin" },
+            { name: "RS Islam Bogor", address: "Jl. Perdana No. 22, Budi Agung, Tanahsareal", distance: "2.0 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=RS+Islam+Bogor+Jl.+Perdana+No.+22+Budi+Agung+Tanahsareal" },
+            { name: "Puskesmas Gang Kelor", address: "Jl. Raya Curug No. 12, Curugmekar, Kec. Bogor Barat", distance: "1.4 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Puskesmas+Gang+Kelor+Jl.+Raya+Curug+No.+12+Curugmekar+Bogor+Barat" }
+        ],
+        pharmacy: [
+            { name: "Apotek Kimia Farma Yasmin", address: "Ruko Taman Yasmin Sektor VI No. 108, Curugmekar", distance: "500 m", mapUrl: "https://www.google.com/maps/search/?api=1&query=Apotek+Kimia+Farma+Yasmin+Ruko+Taman+Yasmin+Sektor+VI+No.+108+Curugmekar" }
+        ],
+        police: [
+            { name: "Polsek Tanah Sareal", address: "Jl. Seremped, Kedung Badak, Kec. Tanah Sareal", distance: "2.4 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Polsek+Tanah+Sareal+Jl.+Seremped+Kedung+Badak+Tanah+Sareal" }
+        ],
+        restaurant: []
+    };
+
+    const kemangFacilities = {
+        hotel: [
+            { name: "Salak Sunset Hotel", address: "Jl. Raya Kemang Parung No. 12, Kemang", distance: "2.1 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Salak+Sunset+Hotel+Jl.+Raya+Kemang+Parung+No.+12+Kemang" }
+        ],
+        hospital: [
+            { name: "RS Sentosa Bogor", address: "Jl. Raya Kemang No. 18, Kemang, Kab. Bogor", distance: "1.3 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=RS+Sentosa+Bogor+Jl.+Raya+Kemang+No.+18+Kemang+Kab.+Bogor" },
+            { name: "Puskesmas Kemang", address: "Jl. Raya Kemang No. 5, Kemang, Kab. Bogor", distance: "1.1 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Puskesmas+Kemang+Jl.+Raya+Kemang+No.+5+Kemang+Kab.+Bogor" }
+        ],
+        pharmacy: [
+            { name: "Apotek Kimia Farma Kemang", address: "Jl. Raya Parung-Bogor, Kemang, Kab. Bogor", distance: "800 m", mapUrl: "https://www.google.com/maps/search/?api=1&query=Apotek+Kimia+Farma+Kemang+Jl.+Raya+Parung-Bogor+Kemang+Kab.+Bogor" }
+        ],
+        police: [
+            { name: "Polsek Kemang", address: "Jl. Raya Kemang Parung No. 10, Kemang, Kab. Bogor", distance: "1.5 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Polsek+Kemang+Jl.+Raya+Kemang+Parung+No.+10+Kemang+Kab.+Bogor" }
+        ],
+        restaurant: []
+    };
+
+    const sentulFacilities = {
+        hotel: [
+            { name: "Lorin Sentul Hotel", address: "Kawasan Sirkuit Sentul Internasional, Babakan Madang", distance: "1.2 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Lorin+Sentul+Hotel+Kawasan+Sirkuit+Sentul+Internasional+Babakan+Madang" },
+            { name: "Harris Hotel Sentul City", address: "Jl. Jend. Sudirman, Sentul City, Babakan Madang", distance: "2.5 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Harris+Hotel+Sentul+City+Jl.+Jend.+Sudirman+Sentul+City+Babakan+Madang" }
+        ],
+        hospital: [
+            { name: "RS EMC Sentul", address: "Jl. MH. Thamrin No. 57, Sentul City, Babakan Madang", distance: "2.7 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=RS+EMC+Sentul+Jl.+MH.+Thamrin+No.+57+Sentul+City+Babakan+Madang" },
+            { name: "Puskesmas Babakan Madang", address: "Jl. Raya Sentul No. 1, Babakan Madang", distance: "2.0 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Puskesmas+Babakan+Madang+Jl.+Raya+Sentul+No.+1+Babakan+Madang" }
+        ],
+        pharmacy: [
+            { name: "Apotek Kimia Farma Sentul City", address: "Ruko Plaza Niaga 1, Sentul City", distance: "2.3 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Apotek+Kimia+Farma+Sentul+City+Ruko+Plaza+Niaga+1+Sentul+City" }
+        ],
+        police: [
+            { name: "Polsek Babakan Madang", address: "Jl. Raya Babakan Madang No. 8, Kab. Bogor", distance: "2.2 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Polsek+Babakan+Madang+Jl.+Raya+Babakan+Madang+No.+8+Kab.+Bogor" }
+        ],
+        restaurant: []
+    };
+
+    const gunungMasFacilities = {
+        hotel: [
+            { name: "Bobocabin Gunung Mas", address: "Gunung Mas, Jl. Raya Puncak Gadog No. KM 87, Cisarua", distance: "300 m", mapUrl: "https://www.google.com/maps/search/?api=1&query=Bobocabin+Gunung+Mas+Jl.+Raya+Puncak+Gadog+KM+87+Cisarua" },
+            { name: "Grand Diara Hotel Puncak", address: "Jl. Raya Puncak - Gadog KM 77, Cisarua", distance: "2.9 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Grand+Diara+Hotel+Puncak+Jl.+Raya+Puncak+Gadog+KM+77+Cisarua" }
+        ],
+        hospital: [
+            { name: "RSPG Cisarua (RS Paru Dr. M. Goenawan)", address: "Jl. Raya Puncak No. KM 83, Cisarua, Kab. Bogor", distance: "1.8 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=RSPG+Cisarua+RS+Paru+Dr.+M.+Goenawan+Jl.+Raya+Puncak+KM+83+Cisarua+Kab.+Bogor" },
+            { name: "Puskesmas Cisarua", address: "Jl. Raya Puncak No. KM 81, Cisarua, Kab. Bogor", distance: "2.1 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Puskesmas+Cisarua+Jl.+Raya+Puncak+KM+81+Cisarua+Kab.+Bogor" }
+        ],
+        pharmacy: [
+            { name: "Apotek Kimia Farma Cisarua", address: "Jl. Raya Puncak No. 412, Cisarua, Kab. Bogor", distance: "1.5 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Apotek+Kimia+Farma+Cisarua+Jl.+Raya+Puncak+No.+412+Cisarua+Kab.+Bogor" }
+        ],
+        police: [
+            { name: "Polsek Cisarua", address: "Jl. Raya Puncak KM 82, Cisarua, Kab. Bogor", distance: "2.3 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Polsek+Cisarua+Jl.+Raya+Puncak+KM+82+Cisarua+Kab.+Bogor" }
+        ],
+        restaurant: []
+    };
+
+    const cisangkanFacilities = {
+        hotel: [
+            { name: "Hotel Trikarya Cimahi", address: "Jl. Raya Cisangkan No. 88, Padasuka, Cimahi Tengah", distance: "800 m", mapUrl: "https://www.google.com/maps/search/?api=1&query=Hotel+Trikarya+Cimahi+Jl.+Raya+Cisangkan+No.+88+Padasuka+Cimahi+Tengah" }
+        ],
+        hospital: [
+            { name: "RS Dustira Cimahi", address: "Jl. Dr. Dustira No. 1, Baros, Cimahi Tengah", distance: "2.1 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=RS+Dustira+Cimahi+Jl.+Dr.+Dustira+No.+1+Baros+Cimahi+Tengah" },
+            { name: "Puskesmas Cimahi Tengah", address: "Jl. Raden Demang Hardjakusumah No. 1, Cimahi", distance: "1.6 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Puskesmas+Cimahi+Tengah+Jl.+Raden+Demang+Hardjakusumah+No.+1+Cimahi" }
+        ],
+        pharmacy: [
+            { name: "Apotek Kimia Farma Cisangkan", address: "Jl. Raya Cisangkan No. 12, Padasuka, Cimahi Tengah", distance: "400 m", mapUrl: "https://www.google.com/maps/search/?api=1&query=Apotek+Kimia+Farma+Cisangkan+Jl.+Raya+Cisangkan+No.+12+Padasuka+Cimahi+Tengah" }
+        ],
+        police: [
+            { name: "Polres Cimahi", address: "Jl. Raya Cibeureum No. 1, Cimahi Selatan", distance: "2.5 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Polres+Cimahi+Jl.+Raya+Cibeureum+No.+1+Cimahi+Selatan" }
+        ],
+        restaurant: []
+    };
+
+    const arcamanikFacilities = {
+        hotel: [
+            { name: "Grand Cordela Hotel Bandung", address: "Jl. Soekarno-Hatta No. 791, Cisaranten Endah, Arcamanik", distance: "2.4 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Grand+Cordela+Hotel+Bandung+Jl.+Soekarno-Hatta+No.+791+Cisaranten+Endah+Arcamanik" }
+        ],
+        hospital: [
+            { name: "RS Hermina Arcamanik", address: "Jl. A.H. Nasution No. 50, Antapani, Bandung", distance: "1.7 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=RS+Hermina+Arcamanik+Jl.+A.H.+Nasution+No.+50+Antapani+Bandung" },
+            { name: "Puskesmas Arcamanik", address: "Jl. Cisaranten Kulon No. 4, Arcamanik, Bandung", distance: "1.1 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Puskesmas+Arcamanik+Jl.+Cisaranten+Kulon+No.+4+Arcamanik+Bandung" }
+        ],
+        pharmacy: [
+            { name: "Apotek Kimia Farma Arcamanik", address: "Jl. Arcamanik Endah No. 42, Sukamiskin, Arcamanik", distance: "600 m", mapUrl: "https://www.google.com/maps/search/?api=1&query=Apotek+Kimia+Farma+Arcamanik+Jl.+Arcamanik+Endah+No.+42+Sukamiskin+Arcamanik" }
+        ],
+        police: [
+            { name: "Polsek Arcamanik", address: "Jl. Pacuan Kuda No. 54, Sukamiskin, Arcamanik", distance: "800 m", mapUrl: "https://www.google.com/maps/search/?api=1&query=Polsek+Arcamanik+Jl.+Pacuan+Kuda+No.+54+Sukamiskin+Arcamanik" }
+        ],
+        restaurant: []
+    };
+
+    const kotaBaruFacilities = {
+        hotel: [
+            { name: "Mason Pine Hotel", address: "Jl. Raya Kotabaru Parahyangan, Cipeundeuy, Padalarang", distance: "500 m", mapUrl: "https://www.google.com/maps/search/?api=1&query=Mason+Pine+Hotel+Jl.+Raya+Kotabaru+Parahyangan+Cipeundeuy+Padalarang" }
+        ],
+        hospital: [
+            { name: "RS Cahya Kawaluyan", address: "Jl. Raya Parahyangan KM 1.5, Padalarang, Bandung Barat", distance: "1.2 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=RS+Cahya+Kawaluyan+Jl.+Raya+Parahyangan+KM+1.5+Padalarang+Bandung+Barat" },
+            { name: "Puskesmas Padalarang", address: "Jl. Raya Padalarang No. 470, Bandung Barat", distance: "2.8 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Puskesmas+Padalarang+Jl.+Raya+Padalarang+No.+470+Bandung+Barat" }
+        ],
+        pharmacy: [
+            { name: "Apotek Kimia Farma KBP", address: "Ruko Bumi Simpang, Kota Baru Parahyangan", distance: "800 m", mapUrl: "https://www.google.com/maps/search/?api=1&query=Apotek+Kimia+Farma+KBP+Ruko+Bumi+Simpang+Kota+Baru+Parahyangan" }
+        ],
+        police: [
+            { name: "Polsek Padalarang", address: "Jl. Raya Padalarang No. 501, Bandung Barat", distance: "2.5 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Polsek+Padalarang+Jl.+Raya+Padalarang+No.+501+Bandung+Barat" }
+        ],
+        restaurant: []
+    };
+
+    const majalengkaFacilities = {
+        hotel: [
+            { name: "Fitra Hotel Majalengka", address: "Jl. KH. Abdul Halim No. 88, Majalengka Kulon", distance: "1.1 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Fitra+Hotel+Majalengka+Jl.+KH.+Abdul+Halim+No.+88+Majalengka+Kulon" }
+        ],
+        hospital: [
+            { name: "RSUD Majalengka", address: "Jl. Kesehatan No. 77, Majalengka Wetan", distance: "1.5 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=RSUD+Majalengka+Jl.+Kesehatan+No.+77+Majalengka+Wetan" },
+            { name: "Puskesmas Majalengka", address: "Jl. KH. Abdul Halim No. 200, Majalengka", distance: "1.3 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Puskesmas+Majalengka+Jl.+KH.+Abdul+Halim+No.+200+Majalengka" }
+        ],
+        pharmacy: [
+            { name: "Apotek Kimia Farma Majalengka", address: "Jl. KH. Abdul Halim No. 120, Majalengka", distance: "900 m", mapUrl: "https://www.google.com/maps/search/?api=1&query=Apotek+Kimia+Farma+Majalengka+Jl.+KH.+Abdul+Halim+No.+120+Majalengka" }
+        ],
+        police: [
+            { name: "Polres Majalengka", address: "Jl. KH. Abdul Halim No. 512, Majalengka", distance: "2.0 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Polres+Majalengka+Jl.+KH.+Abdul+Halim+No.+512+Majalengka" }
+        ],
+        restaurant: []
+    };
+
+    const facilitiesData = {
+        "GOR Pajajaran Indoor A": pajajaranFacilities,
+        "GOR Pajajaran Indoor B": pajajaranFacilities,
+        "Stadion Pajajaran": pajajaranFacilities,
+        "Green Forest Hotel": greenForestFacilities,
+        "Brajamustika Hotel": brajamustikaFacilities,
+        "GOR Vokasi IPB": vokasiFacilities,
+        "GOR Yasmin": yasminFacilities,
+        "PPSDMAP Kemenhub Kemang": kemangFacilities,
+        "Padepokan Voli Sentul": sentulFacilities,
+        "Gunung Mas": gunungMasFacilities,
+        "Cisangkan": cisangkanFacilities,
+        "Arcamanik": arcamanikFacilities,
+        "Kota Baru Parahyangan": kotaBaruFacilities,
+        "Majalengka": majalengkaFacilities,
+    };
+
     let map;
     let markers = []; // Marker untuk Venue (Merah)
-    let fasilitasMarkers = []; // Marker untuk Fasilitas dari Places API (Biru)
     let currentVenue = null;
 
-    function fetchPlaces(venue, type, containerId, title, categoryId) {
-        const latLng = [Number(venue.lat), Number(venue.lng)];
+    function renderFacilityCategory(venue, type, containerId, title, categoryId) {
         const container = document.getElementById(containerId);
         const categoryBlock = document.getElementById(categoryId);
         if (!container || !categoryBlock) return;
 
         categoryBlock.style.display = 'block';
-        container.innerHTML = '<p style="color:#9ca3af; font-style:italic; padding: 12px 0;">Sedang mencari data dari OpenStreetMap...</p>';
 
-        const venueName = venue.name.toLowerCase();
-        const isPajajaran = venueName.includes("pajajaran");
-        const isYasmin = venueName.includes("yasmin");
+        const typeMap = { lodging: 'hotel', hospital: 'hospital', restaurant: 'restaurant', police: 'police', pharmacy: 'pharmacy' };
+        const venueFacilities = facilitiesData[venue.name];
 
-        let customData = null;
-        if (isPajajaran) {
-            if (type === 'hospital') {
-                customData = [{
-                    name: "Puskesmas Bogor Selatan",
-                    address: "Bogor Selatan",
-                    mapUrl: "https://maps.google.com/?q=Puskesmas+Bogor+Selatan+Bogor"
-                }];
-            } else if (type === 'lodging') {
-                customData = [{
-                    name: "AMAROOSSA ROYAL BOGOR HOTEL",
-                    address: "Bogor Tengah",
-                    mapUrl: "https://www.google.com/maps/search/?api=1&query=Amaroossa+Royal+Bogor"
-                }];
-            } else if (type === 'restaurant') {
-                customData = [{
-                    name: "HARTZ CHICKEN BUFFET",
-                    address: "Kota Bogor",
-                    mapUrl: "https://www.google.com/maps/search/?api=1&query=Hartz+Chicken+Buffet+Bogor"
-                }];
-            }
-        } else if (isYasmin) {
-            if (type === 'hospital') {
-                customData = [{
-                    name: "RSU Islam Bogor",
-                    address: "Kota Bogor",
-                    mapUrl: "https://www.google.com/maps/search/?api=1&query=RSU+Islam+Bogor"
-                }];
-            } else if (type === 'lodging') {
-                customData = [{
-                    name: "SAHIRA BUTIK HOTEL, PT",
-                    address: "Kota Bogor",
-                    mapUrl: "https://www.google.com/maps/search/?api=1&query=Sahira+Butik+Hotel+Bogor"
-                }];
-            }
-        }
-
-        const renderResults = (placesList, isCustom = false) => {
-            container.innerHTML = '';
-            placesList.forEach(place => {
-                const lat = place.lat || (place.center && place.center.lat) || latLng[0];
-                const lon = place.lon || (place.center && place.center.lon) || latLng[1];
-                const name = place.name || (place.tags && place.tags.name ? place.tags.name : title + ' Tanpa Nama');
-                const address = place.address || (place.tags && place.tags['addr:street'] ? place.tags['addr:street'] : 'Area sekitar');
-
-                let iconBg = '#dbeafe',
-                    iconColor = '#2563eb',
-                    categoryIcon = '';
-                if (type === 'lodging') {
-                    iconBg = '#fef3c7';
-                    iconColor = '#d97706';
-                    categoryIcon = '<svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z"/></svg>';
-                } else if (type === 'hospital') {
-                    iconBg = '#fee2e2';
-                    iconColor = '#dc2626';
-                    categoryIcon = '<svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/></svg>';
-                } else if (type === 'restaurant') {
-                    iconBg = '#dcfce7';
-                    iconColor = '#16a34a';
-                    categoryIcon = '<svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-7v8h2.5v8H21V2h-5z"/></svg>';
-                } else if (type === 'police') {
-                    iconBg = '#e0e7ff';
-                    iconColor = '#4f46e5';
-                    categoryIcon = '<svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>';
-                } else if (type === 'pharmacy') {
-                    iconBg = '#f3e8ff';
-                    iconColor = '#9333ea';
-                    categoryIcon = '<svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/></svg>';
-                }
-
-                const mapUrl = place.mapUrl || `https://www.openstreetmap.org/directions?engine=fossgis_osrm_car&route=${latLng[0]}%2C${latLng[1]}%3B${lat}%2C${lon}`;
-
-                container.innerHTML += `
-                    <div class="facility-list-item">
-                        <div class="fli-icon" style="background:${iconBg}; color:${iconColor};">
-                            ${categoryIcon}
-                        </div>
-                        <div class="fli-info">
-                            <p class="fli-name">${name}</p>
-                            <p class="fli-addr">${address}</p>
-                        </div>
-                        <a href="${mapUrl}" target="_blank" class="fli-route">Rute</a>
-                    </div>
-                `;
-            });
-        };
-
-        if (customData) {
-            renderResults(customData, true);
+        if (!venueFacilities) {
+            container.innerHTML = `<p style="color:#9ca3af; font-style:italic; padding: 12px 0;">Tidak ada data ${title} untuk venue ini.</p>`;
             return;
         }
 
-        let overpassTag = '';
-        if (type === 'lodging') overpassTag = '["tourism"~"hotel|guest_house|motel"]';
-        else if (type === 'hospital') overpassTag = '["amenity"="hospital"]';
-        else if (type === 'pharmacy') overpassTag = '["amenity"="pharmacy"]';
-        else if (type === 'restaurant') overpassTag = '["amenity"~"restaurant|cafe|fast_food"]';
-        else if (type === 'police') overpassTag = '["amenity"="police"]';
-        else overpassTag = `["amenity"="${type}"]`;
+        const items = venueFacilities[typeMap[type]];
+        if (!items || items.length === 0) {
+            container.innerHTML = `<p style="color:#9ca3af; font-style:italic; padding: 12px 0;">Tidak ada ${title} terdekat ditemukan.</p>`;
+            return;
+        }
 
-        const query = `
-            [out:json];
-            (
-              node${overpassTag}(around:3000, ${latLng[0]}, ${latLng[1]});
-              way${overpassTag}(around:3000, ${latLng[0]}, ${latLng[1]});
-              relation${overpassTag}(around:3000, ${latLng[0]}, ${latLng[1]});
-            );
-            out center;
-        `;
+        container.innerHTML = '';
+        items.forEach(item => {
+            let iconBg, iconColor;
+            if (type === 'lodging') { iconBg = '#fef3c7'; iconColor = '#d97706'; }
+            else if (type === 'hospital') { iconBg = '#fee2e2'; iconColor = '#dc2626'; }
+            else if (type === 'restaurant') { iconBg = '#dcfce7'; iconColor = '#16a34a'; }
+            else if (type === 'police') { iconBg = '#e0e7ff'; iconColor = '#4f46e5'; }
+            else if (type === 'pharmacy') { iconBg = '#f3e8ff'; iconColor = '#9333ea'; }
+            else { iconBg = '#dbeafe'; iconColor = '#2563eb'; }
 
-        fetch('https://overpass-api.de/api/interpreter', {
-                method: 'POST',
-                body: query
-            })
-            .then(res => res.json())
-            .then(data => {
-                if (data.elements && data.elements.length > 0) {
-                    const topResults = data.elements.slice(0, 4);
-                    renderResults(topResults);
-                } else {
-                    container.innerHTML = `<p style="color:#9ca3af; font-style:italic; padding: 12px 0;">Tidak ada ${title} terdekat ditemukan.</p>`;
-                }
-            })
-            .catch(err => {
-                console.error(err);
-                container.innerHTML = `<p style="color:#9ca3af; font-style:italic; padding: 12px 0;">Gagal mengambil data ${title}.</p>`;
-            });
+            container.innerHTML += `
+                <div class="facility-list-item">
+                    <div class="fli-icon" style="background:${iconBg}; color:${iconColor};">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/>
+                        </svg>
+                    </div>
+                    <div class="fli-info">
+                        <p class="fli-name">${item.name}</p>
+                        <p class="fli-addr">${item.address} (${item.distance})</p>
+                    </div>
+                    <a href="${item.mapUrl}" target="_blank" class="fli-route">Rute</a>
+                </div>
+            `;
+        });
     }
 
     function initMap() {
@@ -971,8 +1107,6 @@
     function clearMarkers() {
         markers.forEach(m => map.removeLayer(m));
         markers = [];
-        fasilitasMarkers.forEach(m => map.removeLayer(m));
-        fasilitasMarkers = [];
     }
 
     // Fungsi Menangani Filter Maps
@@ -1010,137 +1144,35 @@
                 isVenueFound = true;
             }
 
-            // 2. Proses Cari Fasilitas dengan Overpass API
+            // 2. Proses Cari Fasilitas dari data hardcoded PDF
             if (fasilitasVal) {
-                let overpassTag = '';
-                if (fasilitasVal === 'hotel') overpassTag = '["tourism"~"hotel|guest_house|motel"]';
-                else if (fasilitasVal === 'rumah-sakit') overpassTag = '["amenity"="hospital"]';
-                else if (fasilitasVal === 'apotek') overpassTag = '["amenity"="pharmacy"]';
-                else if (fasilitasVal === 'rumah-makan') overpassTag = '["amenity"~"restaurant|cafe|fast_food"]';
+                if (isVenueFound) {
+                    const v = filteredVenues[0];
+                    currentVenue = v;
+                    showVenueDetails(v);
 
-                const searchCenter = isVenueFound ? [filteredVenues[0].lat, filteredVenues[0].lng] : [map.getCenter().lat, map.getCenter().lng];
+                    const filterToCategory = {
+                        'hotel':       'cat-hotel',
+                        'rumah-sakit': 'cat-rs',
+                        'apotek':      'cat-apotek',
+                        'rumah-makan': 'cat-resto',
+                    };
+                    const targetCat = filterToCategory[fasilitasVal];
 
-                // Map top filter ke side panel
-                const filterToCategory = {
-                    'hotel':       { type: 'lodging',   containerId: 'hotel-container',   title: 'Hotel',           catId: 'cat-hotel' },
-                    'rumah-sakit': { type: 'hospital',   containerId: 'rs-container',      title: 'Fasilitas Kesehatan', catId: 'cat-rs' },
-                    'apotek':      { type: 'pharmacy',   containerId: 'apotek-container',  title: 'Apotek',          catId: 'cat-apotek' },
-                    'rumah-makan': { type: 'restaurant', containerId: 'resto-container',   title: 'Restoran',        catId: 'cat-resto' },
-                };
-                const matchedCategory = filterToCategory[fasilitasVal];
+                    const placeholder = document.getElementById('facilities-placeholder');
+                    if (placeholder) placeholder.style.display = 'none';
 
-                // Sembunyikan placeholder, tampilkan kategori yang cocok
-                const placeholder = document.getElementById('facilities-placeholder');
-                if (placeholder) placeholder.style.display = 'none';
-                document.querySelectorAll('.facility-category').forEach(cat => {
-                    cat.style.display = cat.id === (matchedCategory ? matchedCategory.catId : '') ? 'block' : 'none';
-                });
-
-                // Aktifkan filter button yang sesuai
-                document.querySelectorAll('.facility-filter-btn').forEach(btn => {
-                    btn.classList.remove('active');
-                    if (matchedCategory && btn.dataset.filter === matchedCategory.catId) btn.classList.add('active');
-                    else if (!matchedCategory && btn.dataset.filter === 'all') btn.classList.add('active');
-                });
-
-                const query = `
-                    [out:json];
-                    (
-                      node${overpassTag}(around:3000, ${searchCenter[0]}, ${searchCenter[1]});
-                      way${overpassTag}(around:3000, ${searchCenter[0]}, ${searchCenter[1]});
-                      relation${overpassTag}(around:3000, ${searchCenter[0]}, ${searchCenter[1]});
-                    );
-                    out center;
-                `;
-
-                const blueIcon = new L.Icon({
-                    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
-                    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-                    iconSize: [25, 41],
-                    iconAnchor: [12, 41],
-                    popupAnchor: [1, -34],
-                    shadowSize: [41, 41]
-                });
-
-                document.getElementById('floating-gor-card').style.display = 'block';
-                document.getElementById('card-gor-name').innerText = "Mencari fasilitas...";
-                document.getElementById('card-gor-addr').innerText = "Sedang mengambil data dari OpenStreetMap";
-
-                fetch('https://overpass-api.de/api/interpreter', {
-                        method: 'POST',
-                        body: query
-                    })
-                    .then(res => res.json())
-                    .then(data => {
-                        document.getElementById('floating-gor-card').style.display = 'none';
-                        if (data.elements && data.elements.length > 0) {
-                            data.elements.forEach(place => {
-                                const lat = place.lat || place.center.lat;
-                                const lon = place.lon || place.center.lon;
-                                const name = place.tags && place.tags.name ? place.tags.name : 'Fasilitas Tanpa Nama';
-
-                                // Marker di peta
-                                const pMarker = L.marker([lat, lon], {
-                                    icon: blueIcon
-                                }).addTo(map);
-                                pMarker.bindPopup(`<div style="font-family:'Poppins',sans-serif; font-size:12px;"><strong>${name}</strong></div>`);
-                                fasilitasMarkers.push(pMarker);
-                                bounds.extend([lat, lon]);
-
-                                // Render ke side panel
-                                if (matchedCategory) {
-                                    const container = document.getElementById(matchedCategory.containerId);
-                                    if (container) {
-                                        const address = place.tags && place.tags['addr:street'] ? place.tags['addr:street'] : 'Area sekitar';
-                                        let iconBg = '#dbeafe', iconColor = '#2563eb', categoryIcon = '';
-                                        if (matchedCategory.type === 'lodging') {
-                                            iconBg = '#fef3c7'; iconColor = '#d97706';
-                                            categoryIcon = '<svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z"/></svg>';
-                                        } else if (matchedCategory.type === 'hospital') {
-                                            iconBg = '#fee2e2'; iconColor = '#dc2626';
-                                            categoryIcon = '<svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/></svg>';
-                                        } else if (matchedCategory.type === 'restaurant') {
-                                            iconBg = '#dcfce7'; iconColor = '#16a34a';
-                                            categoryIcon = '<svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-7v8h2.5v8H21V2h-5z"/></svg>';
-                                        } else if (matchedCategory.type === 'pharmacy') {
-                                            iconBg = '#f3e8ff'; iconColor = '#9333ea';
-                                            categoryIcon = '<svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/></svg>';
-                                        }
-                                        const mapUrl = `https://www.openstreetmap.org/directions?engine=fossgis_osrm_car&route=${searchCenter[0]}%2C${searchCenter[1]}%3B${lat}%2C${lon}`;
-                                        container.innerHTML += `
-                                            <div class="facility-list-item">
-                                                <div class="fli-icon" style="background:${iconBg}; color:${iconColor};">${categoryIcon}</div>
-                                                <div class="fli-info">
-                                                    <p class="fli-name">${name}</p>
-                                                    <p class="fli-addr">${address}</p>
-                                                </div>
-                                                <a href="${mapUrl}" target="_blank" class="fli-route">Rute</a>
-                                            </div>
-                                        `;
-                                    }
-                                }
-                            });
-                            map.fitBounds(bounds, { padding: [50, 50] });
-                        } else if (!isVenueFound) {
-                            alert('Fasilitas tidak ditemukan di area sekitar.');
-                        } else {
-                            if (filteredVenues.length === 1) {
-                                map.setView([filteredVenues[0].lat, filteredVenues[0].lng], 15);
-                            } else {
-                                map.fitBounds(bounds, { padding: [50, 50] });
-                            }
-                            alert('Tidak ada fasilitas terdekat yang ditemukan dari OpenStreetMap.');
-                        }
-                    })
-                    .catch(err => {
-                        console.error(err);
-                        document.getElementById('floating-gor-card').style.display = 'none';
-                        alert('Gagal memuat data dari OpenStreetMap.');
-                        if (isVenueFound) {
-                            if (filteredVenues.length === 1) map.setView([filteredVenues[0].lat, filteredVenues[0].lng], 15);
-                            else map.fitBounds(bounds, { padding: [50, 50] });
-                        }
+                    document.querySelectorAll('.facility-category').forEach(cat => {
+                        cat.style.display = cat.id === targetCat ? 'block' : 'none';
                     });
+
+                    document.querySelectorAll('.facility-filter-btn').forEach(btn => {
+                        btn.classList.remove('active');
+                        if (btn.dataset.filter === targetCat) btn.classList.add('active');
+                    });
+                } else {
+                    alert('Venue tidak ditemukan dengan kriteria tersebut.');
+                }
             } else {
                 if (isVenueFound) {
                     if (filteredVenues.length === 1) {
@@ -1233,11 +1265,16 @@
 
         // Fetch fasilitas (Hotel, RS, Restoran, Polisi, Apotek)
         if (map) {
-            fetchPlaces(venue, 'lodging', 'hotel-container', 'Hotel', 'cat-hotel');
-            fetchPlaces(venue, 'hospital', 'rs-container', 'Fasilitas Kesehatan', 'cat-rs');
-            fetchPlaces(venue, 'restaurant', 'resto-container', 'Restoran', 'cat-resto');
-            fetchPlaces(venue, 'police', 'police-container', 'Kantor Polisi', 'cat-police');
-            fetchPlaces(venue, 'pharmacy', 'apotek-container', 'Apotek', 'cat-apotek');
+            var venueTypes = [
+                ['lodging', 'hotel-container', 'Hotel', 'cat-hotel'],
+                ['hospital', 'rs-container', 'Fasilitas Kesehatan', 'cat-rs'],
+                ['restaurant', 'resto-container', 'Restoran', 'cat-resto'],
+                ['police', 'police-container', 'Kantor Polisi', 'cat-police'],
+                ['pharmacy', 'apotek-container', 'Apotek', 'cat-apotek'],
+            ];
+            venueTypes.forEach(function(t) {
+                renderFacilityCategory(venue, t[0], t[1], t[2], t[3]);
+            });
         }
     }
 
@@ -1263,12 +1300,12 @@
                 if (filter === 'all') {
                     if (currentVenue) {
                         Object.values(categoryMap).forEach(c => {
-                            fetchPlaces(currentVenue, c.type, c.containerId, c.title, c.catId);
+                            renderFacilityCategory(currentVenue, c.type, c.containerId, c.title, c.catId);
                         });
                     }
                 } else if (categoryMap[filter] && currentVenue) {
                     const c = categoryMap[filter];
-                    fetchPlaces(currentVenue, c.type, c.containerId, c.title, c.catId);
+                    renderFacilityCategory(currentVenue, c.type, c.containerId, c.title, c.catId);
                 }
             });
         });
