@@ -2,483 +2,7 @@
 
 @section('title', 'Peta Venue - PORPROV XV KOTA BOGOR 2026')
 
-@push('styles')
-<style>
-    /* ───────── Filter ───────── */
-    .filter-section {
-        max-width: 1200px;
-        margin: 20px auto;
-        padding: 0 20px;
-    }
 
-    .filter-box {
-        background: #fff;
-        border-radius: 14px;
-        padding: 20px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-        border: 1px solid #f0f1f3;
-    }
-
-    .filter-form {
-        display: grid;
-        grid-template-columns: 2fr 1fr 1fr auto auto;
-        gap: 15px;
-        align-items: center;
-    }
-
-    .filter-select,
-    .filter-input {
-        width: 100%;
-        height: 48px;
-        border: 1px solid #cbd5e1;
-        border-radius: 10px;
-        padding: 0 14px;
-        padding-right: 38px;
-        font-size: 14px;
-        font-family: 'Poppins', sans-serif;
-        outline: none;
-        background-color: #fff;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2394a3b8' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 6l3.5 3.5L11.5 6' stroke='%2394a3b8' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-        background-repeat: no-repeat;
-        background-position: right 12px center;
-        background-size: 16px;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        transition: all 0.2s;
-    }
-
-    .filter-select:focus,
-    .filter-input:focus {
-        border-color: #013469;
-        box-shadow: 0 0 0 3px rgba(1, 52, 105, 0.1);
-    }
-
-    .btn-yellow {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        background: #013469;
-        color: #fff;
-        font-weight: 700;
-        font-size: 14px;
-        height: 48px;
-        padding: 0 24px;
-        border-radius: 10px;
-        text-decoration: none;
-        font-family: 'Poppins', sans-serif;
-        border: none;
-        cursor: pointer;
-        transition: all 0.2s;
-    }
-
-    .btn-yellow:hover {
-        background: #012050;
-    }
-
-    .reset-btn {
-        height: 48px;
-        padding: 0 18px;
-        border: none;
-        background: #f1f5f9;
-        color: #475569;
-        font-weight: 600;
-        font-size: 13px;
-        border-radius: 10px;
-        font-family: 'Poppins', sans-serif;
-        cursor: pointer;
-        transition: all 0.2s;
-    }
-
-    .reset-btn:hover {
-        background: #e2e8f0;
-    }
-
-    /* ── Map + Facilities Side-by-Side ── */
-    .map-facilities-wrapper {
-        max-width: 1200px;
-        margin: 0 auto 40px;
-        padding: 0 20px;
-        display: flex;
-        gap: 20px;
-        align-items: flex-start;
-    }
-
-    .map-side {
-        flex: 0 0 58%;
-        position: relative;
-    }
-
-    .map-side #map-canvas {
-        width: 100% !important;
-        height: 500px !important;
-        display: block !important;
-        border-radius: 16px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-        background: #e5e7eb;
-    }
-
-    /* Floating GOR Card */
-    .gor-card {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        width: 280px;
-        background: #fff;
-        border-radius: 12px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-        z-index: 99;
-        overflow: hidden;
-        display: none;
-    }
-
-    .facilities-side {
-        flex: 1;
-        background: #fff;
-        border-radius: 16px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-        border: 1px solid #f0f1f3;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        max-height: 540px;
-    }
-
-    .facilities-side-header {
-        padding: 20px 20px 0;
-        flex-shrink: 0;
-    }
-
-    .facilities-side-header h2 {
-        font-size: 1.1rem;
-        font-weight: 800;
-        color: #111827;
-        margin: 0 0 4px;
-    }
-
-    .facilities-side-header p {
-        font-size: 12px;
-        color: #6b7280;
-        margin: 0;
-    }
-
-    .facility-filter-buttons {
-        display: flex;
-        gap: 6px;
-        padding: 14px 20px;
-        flex-wrap: wrap;
-        border-bottom: 1px solid #f3f4f6;
-        flex-shrink: 0;
-    }
-
-    .facility-filter-btn {
-        padding: 5px 12px;
-        border-radius: 20px;
-        border: 1.5px solid #e5e7eb;
-        background: #fff;
-        color: #6b7280;
-        font-size: 12px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.2s;
-        font-family: 'Poppins', sans-serif;
-        white-space: nowrap;
-    }
-
-    .facility-filter-btn:hover {
-        border-color: #2563eb;
-        color: #2563eb;
-    }
-
-    .facility-filter-btn.active {
-        background: #2563eb;
-        border-color: #2563eb;
-        color: #fff;
-    }
-
-    .facilities-list-wrap {
-        flex: 1;
-        overflow-y: auto;
-        padding: 12px 20px 20px;
-    }
-
-    .facilities-list-wrap::-webkit-scrollbar {
-        width: 5px;
-    }
-
-    .facilities-list-wrap::-webkit-scrollbar-track {
-        background: transparent;
-    }
-
-    .facilities-list-wrap::-webkit-scrollbar-thumb {
-        background: #d1d5db;
-        border-radius: 10px;
-    }
-
-    .facility-category {
-        margin-bottom: 16px;
-    }
-
-    .facility-category:last-child {
-        margin-bottom: 0;
-    }
-
-    .facility-cat-header {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        margin-bottom: 10px;
-        padding-bottom: 8px;
-        border-bottom: 1px solid #f3f4f6;
-    }
-
-    .facility-cat-icon {
-        width: 28px;
-        height: 28px;
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-    }
-
-    .facility-cat-header h3 {
-        font-size: 13px;
-        font-weight: 700;
-        color: #374151;
-        margin: 0;
-    }
-
-    .facility-list-item {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        padding: 10px;
-        border-radius: 10px;
-        transition: background 0.15s;
-        margin-bottom: 4px;
-    }
-
-    .facility-list-item:hover {
-        background: #f9fafb;
-    }
-
-    .facility-list-item:last-child {
-        margin-bottom: 0;
-    }
-
-    .fli-icon {
-        width: 32px;
-        height: 32px;
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-    }
-
-    .fli-info {
-        flex: 1;
-        min-width: 0;
-    }
-
-    .fli-name {
-        font-size: 13px;
-        font-weight: 600;
-        color: #1f2937;
-        margin: 0;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-
-    .fli-addr {
-        font-size: 11px;
-        color: #9ca3af;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        margin: 1px 0 0;
-    }
-
-    .fli-route {
-        flex-shrink: 0;
-        padding: 5px 10px;
-        background: #f3f4f6;
-        color: #374151;
-        font-size: 11px;
-        font-weight: 600;
-        border-radius: 6px;
-        text-decoration: none;
-        transition: all 0.2s;
-    }
-
-    .fli-route:hover {
-        background: #2563eb;
-        color: #fff;
-    }
-
-    .facilities-empty {
-        text-align: center;
-        padding: 40px 20px;
-        color: #9ca3af;
-        font-size: 13px;
-        font-style: italic;
-    }
-
-    .gor-card-header {
-        background: #f8fafc;
-        color: #374151;
-        padding: 14px 16px;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        font-size: 15px;
-        font-weight: 800;
-        border-bottom: 1px solid #e5e7eb;
-    }
-
-    .gor-card-body {
-        padding: 16px;
-    }
-
-    .gor-card-body .addr {
-        font-size: 13px;
-        color: #6b7280;
-        display: flex;
-        align-items: flex-start;
-        gap: 8px;
-        margin-bottom: 16px;
-        line-height: 1.5;
-    }
-
-    .gor-card-body .cabang-title {
-        font-size: 12px;
-        font-weight: 800;
-        color: #013469;
-        margin-bottom: 12px;
-        text-transform: uppercase;
-    }
-
-    .cabor-grid {
-        display: flex;
-        gap: 12px;
-        flex-wrap: wrap;
-        margin-bottom: 20px;
-    }
-
-    .cabor-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 6px;
-        width: 52px;
-    }
-
-    .cabor-icon {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background: #f4f5f7;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #4b5563;
-    }
-
-    .cabor-item span {
-        font-size: 11px;
-        color: #4b5563;
-        text-align: center;
-        line-height: 1.2;
-    }
-
-    .gor-card .map-btn {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 8px;
-        background: #163f7a;
-        color: #fff;
-        font-size: 14px;
-        font-weight: 700;
-        padding: 10px;
-        text-decoration: none;
-        border-radius: 6px;
-        transition: background 0.2s;
-    }
-
-    .gor-card .map-btn:hover {
-        background: #012050;
-    }
-
-    /* ── Facilities (legacy, hidden by new layout) ── */
-    .venue-body {
-        display: none;
-    }
-
-    @media (max-width: 768px) {
-        .venue-banner {
-            height: auto;
-            min-height: 80px;
-            padding: 16px;
-        }
-
-        .filter-section {
-            margin: 20px 16px;
-            padding: 0;
-        }
-
-        .filter-form {
-            grid-template-columns: 1fr;
-        }
-
-        .filter-select,
-        .filter-input {
-            height: 48px;
-            font-size: 16px;
-        }
-
-        .btn-yellow,
-        .reset-btn {
-            width: 100%;
-            height: 48px;
-            justify-content: center;
-        }
-
-        .map-facilities-wrapper {
-            flex-direction: column;
-            padding: 0 16px;
-        }
-
-        .map-side {
-            flex: none;
-            width: 100%;
-        }
-
-        .map-side #map-canvas {
-            border-radius: 0;
-            height: 350px !important;
-        }
-
-        .gor-card {
-            position: relative;
-            top: 0;
-            right: 0;
-            width: 100%;
-            box-shadow: none;
-            border-radius: 0;
-            margin-top: 10px;
-        }
-
-        .facilities-side {
-            max-height: 400px;
-            border-radius: 12px;
-        }
-    }
-</style>
-@endpush
 
 @section('content')
 <section class="page-banner">
@@ -510,32 +34,38 @@
             <!-- Fasilitas -->
             <select class="filter-select" id="fasilitas">
                 <option value="">🔍 Cari Fasilitas</option>
-                <option value="hotel">🏨 Hotel</option>
-                <option value="rumah-sakit">🏥 Rumah Sakit</option>
+                <option value="hotel">🏨 Hotel & Penginapan</option>
+                <option value="rumah-sakit">🏥 Rumah Sakit & Klinik</option>
                 <option value="apotek">💊 Apotek</option>
-                <option value="rumah-makan">🍽️ Rumah Makan</option>
+                <option value="rumah-makan">🍽️ Restoran & Kuliner</option>
+                <option value="polisi">🚔 Polisi & Keamanan</option>
             </select>
 
             <!-- Cabang Olahraga -->
             <select class="filter-select" id="cabor">
                 <option value="">🏃 Cabang Olahraga</option>
-                <option value="aerosport">Aerosport (Gantolle / Paralayang)</option>
+                <option value="aerosport">Aerosport - Gantolle</option>
+                <option value="aerosport">Aerosport - Paralayang</option>
                 <option value="anggar">Anggar</option>
+                <option value="dansa">Dansa</option>
                 <option value="angkat berat">Angkat Berat</option>
                 <option value="angkat besi">Angkat Besi</option>
                 <option value="arung jeram">Arung Jeram</option>
                 <option value="binaraga">Binaraga</option>
-                <option value="bola tangan">Bola Tangan</option>
-                <option value="dansa">Dansa</option>
+                <option value="bola tangan">Bola Tangan Indoor</option>
+                <option value="bola tangan">Bola Tangan Pasir</option>
                 <option value="drumband">Drumband</option>
-                <option value="gimnastik">Gimnastik</option>
+                <option value="gimnastik">Gimnastik Aerobik</option>
+                <option value="gimnastik">Gimnastik Artistik</option>
+                <option value="gimnastik">Gimnastik Ritmik</option>
                 <option value="judo">Judo</option>
                 <option value="kurash">Kurash</option>
                 <option value="menembak">Menembak</option>
+                <option value="modern pentathlon">Modern Pentathlon</option>
                 <option value="panahan">Panahan</option>
                 <option value="panjat tebing">Panjat Tebing</option>
                 <option value="pencak silat">Pencak Silat</option>
-                <option value="petanque">Petanque</option>
+                <option value="petanque">Pentaque</option>
                 <option value="sambo">Sambo</option>
                 <option value="shorinji kempo">Shorinji Kempo</option>
                 <option value="ski air">Ski Air</option>
@@ -549,9 +79,17 @@
                 <option value="">📍 Venue</option>
                 <option value="gor pajajaran indoor a">GOR Pajajaran Indoor A</option>
                 <option value="gor pajajaran indoor b">GOR Pajajaran Indoor B</option>
+                <option value="gor vokasi ipb">GOR Vokasi IPB</option>
                 <option value="gor yasmin">GOR Yasmin</option>
                 <option value="stadion pajajaran">Stadion Pajajaran</option>
-                <option value="gor vokasi ipb">GOR Vokasi IPB</option>
+                <option value="green forest hotel">Green Forest Hotel</option>
+                <option value="ppsdmap kemenhub kemang">PPSDMAP Kemenhub Kemang</option>
+                <option value="padepokan voli sentul">Padepokan Voli Sentul</option>
+                <option value="gunung mas">Gunung Mas</option>
+                <option value="cisangkan">Cisangkan</option>
+                <option value="arcamanik">Arcamanik</option>
+                <option value="kota baru parahyangan">Kota Baru Parahyangan</option>
+                <option value="majalengka">Majalengka</option>
             </select>
 
             <button type="submit" class="btn-yellow">Cari</button>
@@ -561,11 +99,11 @@
 </section>
 
 <div class="map-facilities-wrapper">
-    <!-- MAP SIDE -->
-    <div class="map-side">
-        <div id="map-canvas"></div>
+    <div class="map-box-card">
+        <div class="map-container-wrap">
+            <div id="map-canvas"></div>
 
-        <div class="gor-card" id="floating-gor-card">
+            <div class="gor-card" id="floating-gor-card">
             <div class="gor-card-header">
                 <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="color: #374151;">
                     <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z" />
@@ -591,6 +129,7 @@
             </div>
         </div>
     </div>
+</div>
 
     <!-- FACILITIES SIDE -->
     <div class="facilities-side">
@@ -1192,6 +731,7 @@
                         'rumah-sakit': 'cat-rs',
                         'apotek':      'cat-apotek',
                         'rumah-makan': 'cat-resto',
+                        'polisi':      'cat-police',
                     };
                     const targetCat = filterToCategory[fasilitasVal];
 
