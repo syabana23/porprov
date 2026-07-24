@@ -1454,13 +1454,29 @@
                 <div>
                     <select class="filter-select-styled" id="cabor">
                         <option value="">Filter Cabang Olahraga</option>
+                        <option value="aerosport">Aerosport (Gantolle / Paralayang)</option>
+                        <option value="anggar">Anggar</option>
+                        <option value="angkat berat">Angkat Berat</option>
+                        <option value="angkat besi">Angkat Besi</option>
+                        <option value="arung jeram">Arung Jeram</option>
+                        <option value="binaraga">Binaraga</option>
+                        <option value="bola tangan">Bola Tangan</option>
+                        <option value="dansa">Dansa</option>
                         <option value="drumband">Drumband</option>
-                        <option value="pencak silat">Pencak Silat</option>
-                        <option value="taekwondo">Taekwondo</option>
+                        <option value="gimnastik">Gimnastik</option>
                         <option value="judo">Judo</option>
                         <option value="kurash">Kurash</option>
+                        <option value="menembak">Menembak</option>
+                        <option value="pencak silat">Pencak Silat</option>
+                        <option value="petanque">Petanque</option>
+                        <option value="panahan">Panahan</option>
+                        <option value="panjat tebing">Panjat Tebing</option>
                         <option value="sambo">Sambo</option>
+                        <option value="ski air">Ski Air</option>
+                        <option value="taekwondo">Taekwondo</option>
+                        <option value="tarung derajat">Tarung Derajat</option>
                         <option value="tenis meja">Tenis Meja</option>
+                        <option value="shorinji kempo">Shorinji Kempo</option>
                     </select>
                 </div>
 
@@ -1469,9 +1485,17 @@
                         <option value="">Filter Nama Venue</option>
                         <option value="gor pajajaran indoor a">GOR Pajajaran Indoor A</option>
                         <option value="gor pajajaran indoor b">GOR Pajajaran Indoor B</option>
+                        <option value="gor vokasi ipb">GOR Vokasi IPB</option>
                         <option value="gor yasmin">GOR Yasmin</option>
                         <option value="stadion pajajaran">Stadion Pajajaran</option>
-                        <option value="gor vokasi ipb">GOR Vokasi IPB</option>
+                        <option value="green forest hotel">Green Forest Hotel</option>
+                        <option value="ppsdmap kemenhub kemang">PPSDMAP Kemenhub Kemang</option>
+                        <option value="padepokan voli sentul">Padepokan Voli Sentul</option>
+                        <option value="gunung mas">Gunung Mas</option>
+                        <option value="cisangkan">Cisangkan</option>
+                        <option value="arcamanik">Arcamanik</option>
+                        <option value="kota baru parahyangan">Kota Baru Parahyangan</option>
+                        <option value="majalengka">Majalengka</option>
                     </select>
                 </div>
 
@@ -1756,45 +1780,117 @@
             name: "GOR Pajajaran Indoor A",
             lat: -6.583321,
             lng: 106.800532,
-            address: "Gor Pajajaran, Jl. Pemuda No.02, Tanah Sareal, Kota Bogor",
+            address: "Gor Pajajaran, Jl. Pemuda No.02, RT.04/RW.01, Tanah Sareal, Kota Bogor, Jawa Barat 16161",
             cabor: "Drumband, Pencak Silat, Taekwondo",
-            gmaps_url: "https://www.google.com/maps/place/GOR+Pajajaran+Indoor/@-6.5761045,106.7944374,17z",
+            gmaps_url: "https://maps.app.goo.gl/KcwQDC2JxcTsj1LJ8",
         },
         {
             id: 2,
             name: "GOR Pajajaran Indoor B",
             lat: -6.584100,
             lng: 106.801200,
-            address: "Gor Pajajaran, Jl. Pemuda No.02, Tanah Sareal, Kota Bogor",
+            address: "Gor Pajajaran, Jl. Pemuda No.02, RT.04/RW.01, Tanah Sareal, Kota Bogor, Jawa Barat 16161",
             cabor: "Judo, Kurash, Sambo",
-            gmaps_url: "https://www.google.com/maps/place/Toko+olahraga+Ewing+Sport+bogor/@-6.5761098,106.7970123,17z",
+            gmaps_url: "https://maps.app.goo.gl/h3ei411WRSdW5Uuf8",
         },
         {
             id: 3,
             name: "GOR Vokasi IPB",
             lat: -6.589165,
             lng: 106.806324,
-            address: "Jl. Lodaya II, Cilibende, Babakan, Kota Bogor",
+            address: "Jl. Lodaya II, RT.03/RW.05, Cilibende, Babakan, Kec. Bogor Tengah, Kota Bogor, Jawa Barat 16128",
             cabor: "Shorinji Kempo, Tarung Derajat",
-            gmaps_url: "https://www.google.com/maps/place/Gymnasium+Sekolah+Vokasi+IPB/@-6.5889744,106.8052783,17z",
+            gmaps_url: "https://maps.app.goo.gl/ekjekDk57iBAQcTVA",
         },
         {
             id: 4,
-            name: "Stadion Pajajaran",
-            lat: -6.584500,
-            lng: 106.800000,
-            address: "Jl. Pemuda, Tanah Sareal, Kota Bogor",
-            cabor: "Modern Pentathlon, Panahan, Panjat Tebing",
-            gmaps_url: "https://maps.google.com/?q=Stadion+Pajajaran+Bogor"
+            name: "Majalengka",
+            lat: -6.837000,
+            lng: 108.216000,
+            address: "Majalengka, Jawa Barat",
+            cabor: "Aerosport - Gantolle",
+            gmaps_url: "https://maps.google.com/?q=Majalengka"
         },
         {
             id: 5,
+            name: "Gunung Mas",
+            lat: -6.702000,
+            lng: 106.993000,
+            address: "Puncak, Bogor, Jawa Barat",
+            cabor: "Aerosport - Paralayang",
+            gmaps_url: "https://maps.google.com/?q=Gunung+Mas+Puncak"
+        },
+        {
+            id: 6,
+            name: "Green Forest Hotel",
+            lat: -6.634000,
+            lng: 106.809000,
+            address: "Bogor, Jawa Barat",
+            cabor: "Anggar, Angkat Besi, Angkat Berat, Arung Jeram, Binaraga, Petanque, Dansa",
+            gmaps_url: "https://maps.app.goo.gl/dgb7WBjKovkcfyLo9"
+        },
+        {
+            id: 7,
+            name: "PPSDMAP Kemenhub Kemang",
+            lat: -6.488000,
+            lng: 106.756000,
+            address: "Kemang, Bogor, Jawa Barat",
+            cabor: "Bola Tangan Indoor",
+            gmaps_url: "https://maps.app.goo.gl/Ma2cC3WY3DaWJYQ19"
+        },
+        {
+            id: 8,
+            name: "Padepokan Voli Sentul",
+            lat: -6.568000,
+            lng: 106.857000,
+            address: "Sentul, Bogor, Jawa Barat",
+            cabor: "Bola Tangan Pasir",
+            gmaps_url: "https://maps.app.goo.gl/cXPfu5acX62py9QY9"
+        },
+        {
+            id: 9,
+            name: "Arcamanik",
+            lat: -6.907000,
+            lng: 107.674000,
+            address: "Sport Jabar Arcamanik, Bandung, Jawa Barat",
+            cabor: "Gimnastik Aerobik, Gimnastik Artistik, Gimnastik Ritmik",
+            gmaps_url: "https://maps.google.com/?q=Sport+Jabar+Arcamanik"
+        },
+        {
+            id: 10,
+            name: "Cisangkan",
+            lat: -6.877000,
+            lng: 107.531000,
+            address: "Lapang Tembak Cisangkan, Cimahi, Jawa Barat",
+            cabor: "Menembak",
+            gmaps_url: "https://maps.google.com/?q=Lapang+Tembak+Cisangkan"
+        },
+        {
+            id: 11,
+            name: "Stadion Pajajaran",
+            lat: -6.584500,
+            lng: 106.800000,
+            address: "Jl. Pemuda, Kota Bogor",
+            cabor: "Modern Pentathlon, Panahan, Panjat Tebing",
+            gmaps_url: "https://maps.app.goo.gl/HgsrKKn8LD9V792UA"
+        },
+        {
+            id: 12,
+            name: "Kota Baru Parahyangan",
+            lat: -6.852000,
+            lng: 107.481000,
+            address: "Padalarang, Kabupaten Bandung Barat, Jawa Barat",
+            cabor: "Ski Air",
+            gmaps_url: "https://maps.google.com/?q=Kota+Baru+Parahyangan"
+        },
+        {
+            id: 13,
             name: "GOR Yasmin",
             lat: -6.561000,
             lng: 106.774000,
-            address: "Kecamatan Bogor Barat, Kota Bogor",
+            address: "Bogor, Jawa Barat",
             cabor: "Tenis Meja",
-            gmaps_url: "https://maps.google.com/?q=GOR+Yasmin+Bogor"
+            gmaps_url: "https://maps.app.goo.gl/Fqw4Yn97RyvkSeg27"
         }
     ];
 
@@ -1815,7 +1911,9 @@
         police: [
             { name: "Polresta Bogor Kota (Mako Muslihat)", address: "Jl. Kapten Muslihat No. 18, Paledang, Kec. Bogor Tengah, Kota Bogor", distance: "2.3 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Polresta+Bogor+Kota+Mako+Muslihat+Jl.+Kapten+Muslihat+No.+18+Paledang+Bogor+Tengah" }
         ],
-        restaurant: []
+        restaurant: [
+            { name: "Rumah Makan Ampera Pemuda", address: "Jl. Pemuda No. 27, Tanah Sareal, Kec. Tanah Sereal, Kota Bogor", distance: "300 m", mapUrl: "https://www.google.com/maps/search/?api=1&query=Rumah%20Makan%20Ampera%20Pemuda%20Jl.%20Pemuda%20No.%2027%20Tanah%20Sareal%20Bogor" }
+        ]
     };
 
     const greenForestFacilities = {
@@ -1833,26 +1931,9 @@
         police: [
             { name: "Polsek Bogor Selatan", address: "Jl. Layung Sari No. 1, Empang, Kec. Bogor Selatan", distance: "2.6 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Polsek+Bogor+Selatan+Jl.+Layung+Sari+No.+1+Empang+Bogor+Selatan" }
         ],
-        restaurant: []
-    };
-
-    const brajamustikaFacilities = {
-        hotel: [
-            { name: "Hotel Salak The Heritage", address: "Jl. Ir. H. Juanda No. 8, Pabaton, Kec. Bogor Tengah", distance: "1.6 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Hotel+Salak+The+Heritage+Jl.+Ir.+H.+Juanda+No.+8+Pabaton+Bogor+Tengah" },
-            { name: "Hotel Grand Savero Bogor", address: "Jl. Pajajaran No. 27, Babakan, Kec. Bogor Tengah", distance: "2.2 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Hotel+Grand+Savero+Bogor+Jl.+Pajajaran+No.+27+Babakan+Bogor+Tengah" }
-        ],
-        hospital: [
-            { name: "RS Karya Bhakti Pratiwi", address: "Jl. DR. Sumeru No. 120, Menteng, Kec. Bogor Barat", distance: "1.1 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=RS+Karya+Bhakti+Pratiwi+Jl.+DR.+Sumeru+No.+120+Menteng+Bogor+Barat" },
-            { name: "RSUD Kota Bogor", address: "Jl. DR. Sumeru No. 120, Menteng, Kec. Bogor Barat", distance: "1.3 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=RSUD+Kota+Bogor+Jl.+DR.+Sumeru+No.+120+Menteng+Bogor+Barat" },
-            { name: "Puskesmas Gang Aut / Menteng", address: "Jl. Mawar No. 8, Menteng, Kec. Bogor Barat", distance: "1.0 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Puskesmas+Gang+Aut+Menteng+Jl.+Mawar+No.+8+Menteng+Bogor+Barat" }
-        ],
-        pharmacy: [
-            { name: "Apotek Kimia Farma Sumeru", address: "Jl. DR. Sumeru No. 50, Menteng, Kec. Bogor Barat", distance: "900 m", mapUrl: "https://www.google.com/maps/search/?api=1&query=Apotek+Kimia+Farma+Sumeru+Jl.+DR.+Sumeru+No.+50+Menteng+Bogor+Barat" }
-        ],
-        police: [
-            { name: "Polsek Bogor Barat", address: "Jl. Semplak Raya No. 1, Kec. Bogor Barat", distance: "2.5 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Polsek+Bogor+Barat+Jl.+Semplak+Raya+No.+1+Bogor+Barat" }
-        ],
-        restaurant: []
+        restaurant: [
+            { name: "Resto Kampoeng Konsep", address: "Jl. Soemanta Diredja No. 28, Pamoyanan, Kec. Bogor Selatan", distance: "400 m", mapUrl: "https://www.google.com/maps/search/?api=1&query=Resto%20Kampoeng%20Konsep%20Jl.%20Soemanta%20Diredja%20No.%2028%20Pamoyanan%20Bogor%20Selatan" }
+        ]
     };
 
     const vokasiFacilities = {
@@ -1869,7 +1950,9 @@
         police: [
             { name: "Polsek Bogor Utara", address: "Jl. Pajajaran No. 200, Cibuluh, Kec. Bogor Utara", distance: "2.1 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Polsek+Bogor+Utara+Jl.+Pajajaran+No.+200+Cibuluh+Bogor+Utara" }
         ],
-        restaurant: []
+        restaurant: [
+            { name: "Toko Adelways (Kantin IPB Cilibende)", address: "Jl. Cilibende, Babakan, Kec. Bogor Tengah", distance: "250 m", mapUrl: "https://www.google.com/maps/search/?api=1&query=Toko%20Adelways%20Jl.%20Cilibende%20Babakan%20Bogor%20Tengah" }
+        ]
     };
 
     const yasminFacilities = {
@@ -1888,7 +1971,9 @@
         police: [
             { name: "Polsek Tanah Sareal", address: "Jl. Seremped, Kedung Badak, Kec. Tanah Sareal", distance: "2.4 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Polsek+Tanah+Sareal+Jl.+Seremped+Kedung+Badak+Tanah+Sareal" }
         ],
-        restaurant: []
+        restaurant: [
+            { name: "Rumah Makan Ampera Yasmin", address: "Jl. KH. R. Abdullah Bin Nuh No. 37, Curugmekar", distance: "350 m", mapUrl: "https://www.google.com/maps/search/?api=1&query=Rumah%20Makan%20Ampera%20Yasmin%20Jl.%20KH.%20R.%20Abdullah%20Bin%20Nuh%20No.%2037%20Curugmekar" }
+        ]
     };
 
     const kemangFacilities = {
@@ -1905,7 +1990,9 @@
         police: [
             { name: "Polsek Kemang", address: "Jl. Raya Kemang Parung No. 10, Kemang, Kab. Bogor", distance: "1.5 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Polsek+Kemang+Jl.+Raya+Kemang+Parung+No.+10+Kemang+Kab.+Bogor" }
         ],
-        restaurant: []
+        restaurant: [
+            { name: "RM Ayam Goreng Bakar Sayati", address: "Jl. Raya Parung - Bogor, Semplak Barat, Kemang", distance: "450 m", mapUrl: "https://www.google.com/maps/search/?api=1&query=Ayam%20Goreng%20Bakar%20Sayati%20Jl.%20Raya%20Parung%20Bogor%20Semplak%20Barat%20Kemang" }
+        ]
     };
 
     const sentulFacilities = {
@@ -1923,7 +2010,9 @@
         police: [
             { name: "Polsek Babakan Madang", address: "Jl. Raya Babakan Madang No. 8, Kab. Bogor", distance: "2.2 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Polsek+Babakan+Madang+Jl.+Raya+Babakan+Madang+No.+8+Kab.+Bogor" }
         ],
-        restaurant: []
+        restaurant: [
+            { name: "Restoran Lorin Sentul", address: "Kawasan Sirkuit Sentul Internasional, Babakan Madang", distance: "1.2 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Restoran%20Lorin%20Sentul%20Kawasan%20Sirkuit%20Sentul%20Internasional%20Babakan%20Madang" }
+        ]
     };
 
     const gunungMasFacilities = {
@@ -1941,7 +2030,9 @@
         police: [
             { name: "Polsek Cisarua", address: "Jl. Raya Puncak KM 82, Cisarua, Kab. Bogor", distance: "2.3 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Polsek+Cisarua+Jl.+Raya+Puncak+KM+82+Cisarua+Kab.+Bogor" }
         ],
-        restaurant: []
+        restaurant: [
+            { name: "Resto Agrowisata Gunung Mas", address: "Kawasan Agrowisata Gunung Mas, Tugu Selatan, Cisarua", distance: "200 m", mapUrl: "https://www.google.com/maps/search/?api=1&query=Resto%20Agrowisata%20Gunung%20Mas%20Kawasan%20Agrowisata%20Gunung%20Mas%20Tugu%20Selatan%20Cisarua" }
+        ]
     };
 
     const cisangkanFacilities = {
@@ -1958,7 +2049,9 @@
         police: [
             { name: "Polres Cimahi", address: "Jl. Raya Cibeureum No. 1, Cimahi Selatan", distance: "2.5 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Polres+Cimahi+Jl.+Raya+Cibeureum+No.+1+Cimahi+Selatan" }
         ],
-        restaurant: []
+        restaurant: [
+            { name: "RM Ampera Cisangkan", address: "Jl. Raya Barat No. 805, Padasuka, Cimahi Tengah", distance: "350 m", mapUrl: "https://www.google.com/maps/search/?api=1&query=RM%20Ampera%20Cisangkan%20Jl.%20Raya%20Barat%20No.%20805%20Padasuka%20Cimahi%20Tengah" }
+        ]
     };
 
     const arcamanikFacilities = {
@@ -1975,7 +2068,9 @@
         police: [
             { name: "Polsek Arcamanik", address: "Jl. Pacuan Kuda No. 54, Sukamiskin, Arcamanik", distance: "800 m", mapUrl: "https://www.google.com/maps/search/?api=1&query=Polsek+Arcamanik+Jl.+Pacuan+Kuda+No.+54+Sukamiskin+Arcamanik" }
         ],
-        restaurant: []
+        restaurant: [
+            { name: "RM Khas Sunda Cibiuk Arcamanik", address: "Jl. Soekarno Hatta No. 741, Cisaranten Endah, Arcamanik", distance: "1.8 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=RM%20Khas%20Sunda%20Cibiuk%20Arcamanik%20Jl.%20Soekarno%20Hatta%20No.%20741%20Cisaranten%20Endah%20Arcamanik" }
+        ]
     };
 
     const kotaBaruFacilities = {
@@ -1992,7 +2087,9 @@
         police: [
             { name: "Polsek Padalarang", address: "Jl. Raya Padalarang No. 501, Bandung Barat", distance: "2.5 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Polsek+Padalarang+Jl.+Raya+Padalarang+No.+501+Bandung+Barat" }
         ],
-        restaurant: []
+        restaurant: [
+            { name: "Bumi Aki Kota Baru Parahyangan", address: "Jl. Parahyangan Raya No. 1, Kota Baru Parahyangan", distance: "600 m", mapUrl: "https://www.google.com/maps/search/?api=1&query=Bumi%20Aki%20Kota%20Baru%20Parahyangan%20Jl.%20Parahyangan%20Raya%20No.%201%20Kota%20Baru%20Parahyangan" }
+        ]
     };
 
     const majalengkaFacilities = {
@@ -2009,7 +2106,9 @@
         police: [
             { name: "Polres Majalengka", address: "Jl. KH. Abdul Halim No. 512, Majalengka", distance: "2.0 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Polres+Majalengka+Jl.+KH.+Abdul+Halim+No.+512+Majalengka" }
         ],
-        restaurant: []
+        restaurant: [
+            { name: "RM Khas Sunda Saung Balong", address: "Jl. KH. Abdul Halim No. 160, Majalengka Wetan", distance: "700 m", mapUrl: "https://www.google.com/maps/search/?api=1&query=Saung%20Balong%20Jl.%20KH.%20Abdul%20Halim%20No.%20160%20Majalengka%20Wetan" }
+        ]
     };
 
     const facilitiesData = {
@@ -2017,7 +2116,7 @@
         "GOR Pajajaran Indoor B": pajajaranFacilities,
         "Stadion Pajajaran": pajajaranFacilities,
         "Green Forest Hotel": greenForestFacilities,
-        "Brajamustika Hotel": brajamustikaFacilities,
+
         "GOR Vokasi IPB": vokasiFacilities,
         "GOR Yasmin": yasminFacilities,
         "PPSDMAP Kemenhub Kemang": kemangFacilities,
@@ -2086,7 +2185,7 @@
         const mapElement = document.getElementById("map-canvas");
         if (!mapElement) return;
 
-        map = L.map('map-canvas').setView(bogorCenter, 14);
+        map = L.map('map-canvas').setView([-6.65, 107.30], 10);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; OpenStreetMap'
@@ -2150,11 +2249,13 @@
         filterForm.addEventListener('submit', function(e) {
             e.preventDefault();
 
+            const fasilitasVal = document.getElementById('fasilitas').value;
             const caborVal = document.getElementById('cabor').value.toLowerCase();
             const venueVal = document.getElementById('venue').value.toLowerCase();
 
             clearMarkers();
-            document.getElementById('floating-gor-card').style.display = 'none';
+            const floatingCard = document.getElementById('floating-gor-card');
+            if (floatingCard) floatingCard.style.display = 'none';
 
             const bounds = L.latLngBounds();
             const filteredVenues = venueData.filter(v => {
@@ -2176,10 +2277,30 @@
                     padding: [40, 40]
                 });
                 showVenueDetails(filteredVenues[0]);
+
+                // Fasilitas filter
+                const filterToCategory = {
+                    'hotel':       'cat-hotel',
+                    'rumah-sakit': 'cat-rs',
+                    'apotek':      'cat-apotek',
+                    'rumah-makan': 'cat-resto',
+                };
+                const targetCat = filterToCategory[fasilitasVal];
+                if (targetCat) {
+                    const placeholder = document.getElementById('facilities-placeholder');
+                    if (placeholder) placeholder.style.display = 'none';
+                    document.querySelectorAll('.facility-category').forEach(cat => {
+                        cat.style.display = cat.id === targetCat ? 'block' : 'none';
+                    });
+                    document.querySelectorAll('.facility-filter-btn').forEach(btn => {
+                        btn.classList.remove('active');
+                        if (btn.dataset.filter === targetCat) btn.classList.add('active');
+                    });
+                }
             } else {
                 alert('Venue tidak ditemukan dengan kriteria tersebut.');
                 renderVenues(venueData);
-                map.setView([-6.587, 106.803], 14);
+                map.setView([-6.65, 107.30], 10);
             }
         });
 
@@ -2187,8 +2308,9 @@
             setTimeout(() => {
                 clearMarkers();
                 renderVenues(venueData);
-                map.setView([-6.587, 106.803], 14);
-                document.getElementById('floating-gor-card').style.display = 'none';
+                map.setView([-6.65, 107.30], 10);
+                const floatingCard = document.getElementById('floating-gor-card');
+                if (floatingCard) floatingCard.style.display = 'none';
                 const placeholder = document.getElementById('facilities-placeholder');
                 if (placeholder) placeholder.style.display = 'block';
                 document.querySelectorAll('.facility-category').forEach(cat => cat.style.display = 'none');
@@ -2209,6 +2331,8 @@
         "Panahan": "5.PANAHAN.png",
         "Panjat Tebing": "23.PANJAT TEBING.png",
         "Tenis Meja": "8.TENIS MEJA.png",
+        "Aerosport - Gantolle": "14.GANTOLE.png",
+        "Aerosport - Paralayang": "3.PARALAYANG.png",
         "Anggar": "2.ANGGAR.png",
         "Angkat Berat": "20.ANGKAT BERAT.png",
         "Angkat Besi": "10.ANGKAT BESI.png",
