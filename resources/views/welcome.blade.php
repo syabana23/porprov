@@ -6,6 +6,13 @@
 
 @section('content')
 
+@php
+$bg1 = asset('images/venue1.jpeg');
+$bg2 = asset('images/venue2.jpeg');
+$bg3 = asset('images/venue3.jpeg');
+$bg4 = asset('images/venue4.jpeg');
+@endphp
+
 <!-- ═══════════════════════════════════════════════════════════════════
      1. HERO SECTION WITH VENUE SLIDESHOW BACKGROUND & CABOR ICONS
      ═══════════════════════════════════════════════════════════════════ -->
@@ -13,28 +20,28 @@
     <!-- Slideshow Backgrounds (4 venue images + CABOR icons) -->
     <div class="hero-slides" id="hero-slides">
         <!-- Slide 1: GOR Pajajaran Indoor A & B -->
-        <div class="hero-slide active" style="background-image: url('{{ asset('images/venue1.jpeg') }}')">
+        <div class="hero-slide active" style="background-image: url('{{ $bg1 }}')">
             <div class="hero-slide-overlay"></div>
             <div class="hero-slide-cabor">
                 <img src="{{ asset('images/cabor/12.PENCAK SILAT.png') }}" alt="Pencak Silat">
             </div>
         </div>
         <!-- Slide 2: Stadion Pajajaran -->
-        <div class="hero-slide" style="background-image: url('{{ asset('images/venue2.jpeg') }}')">
+        <div class="hero-slide" style="background-image: url('{{ $bg2 }}')">
             <div class="hero-slide-overlay"></div>
             <div class="hero-slide-cabor">
                 <img src="{{ asset('images/cabor/7.MENEMBAK.png') }}" alt="Menembak">
             </div>
         </div>
         <!-- Slide 3: GOR Vokasi IPB -->
-        <div class="hero-slide" style="background-image: url('{{ asset('images/venue3.jpeg') }}')">
+        <div class="hero-slide" style="background-image: url('{{ $bg3 }}')">
             <div class="hero-slide-overlay"></div>
             <div class="hero-slide-cabor">
                 <img src="{{ asset('images/cabor/5.PANAHAN.png') }}" alt="Panahan">
             </div>
         </div>
         <!-- Slide 4: GOR Yasmin -->
-        <div class="hero-slide" style="background-image: url('{{ asset('images/venue4.jpeg') }}')">
+        <div class="hero-slide" style="background-image: url('{{ $bg4 }}')">
             <div class="hero-slide-overlay"></div>
             <div class="hero-slide-cabor">
                 <img src="{{ asset('images/cabor/19.TARUNG DERAJAT.png') }}" alt="Tarung Derajat">
@@ -503,7 +510,7 @@
                         <img src="{{ asset('images/cabor/18.KURASH.png') }}" class="cabor-icon" alt="Kurash">
                         Kurash
                     </span>
-                    <span class="match-date-badge">9 Nov - 14 Nov 2026</span>
+                    <span class="match-date-badge">8 Nov - 13 Nov 2026</span>
                 </div>
                 <h3 class="match-title">Pertandingan Kurash</h3>
                 <div class="match-venue-info">
@@ -530,7 +537,7 @@
                         <img src="{{ asset('images/cabor/17.SAMBO.png') }}" class="cabor-icon" alt="Sambo">
                         Sambo
                     </span>
-                    <span class="match-date-badge">13 Nov - 19 Nov 2026</span>
+                    <span class="match-date-badge">5 Nov - 19 Nov 2026</span>
                 </div>
                 <h3 class="match-title">Pertandingan Sambo</h3>
                 <div class="match-venue-info">
