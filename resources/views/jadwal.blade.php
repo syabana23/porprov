@@ -1,10 +1,9 @@
 @extends('layouts.app')
 
-@section('title', 'Jadwal - PORPROV XV KOTA BOGOR 2026')
+@section('title', 'Jadwal - PANDU PORPROV')
 
 {{-- ═══════════════════════════════════════════════════════════════════ --}}
-{{-- ║  JADWAL & VENUE PERTANDINGAN — PORPROV XV KOTA BOGOR 2026       ║ --}}
-{{-- ║  File : resources/views/jadwal.blade.php                        ║ --}}
+{{-- ║  JADWAL & VENUE PERTANDINGAN — PANDU PORPROV                   ║ --}}
 {{-- ═══════════════════════════════════════════════════════════════════ --}}
 
 

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Berita - PORPROV XV KOTA BOGOR 2026')
+@section('title', 'Berita - PANDU PORPROV')
 
 
 @section('content')

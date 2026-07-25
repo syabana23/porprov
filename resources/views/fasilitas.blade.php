@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Fasilitas Kesehatan - PORPROV XV KOTA BOGOR 2026')
+@section('title', 'Fasilitas Kesehatan - PANDU PORPROV')
 
 
 @section('content')
