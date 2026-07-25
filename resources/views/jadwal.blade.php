@@ -20,7 +20,7 @@
         <div class="banner-text">
             <span class="banner-badge">PORPROV XV · 2026</span>
             <h1>JADWAL & VENUE PERTANDINGAN</h1>
-            <p>Informasi terkini seputar PORPROV XV Kota Bogor 2026</p>
+            <p>Informasi terkini seputar jadwal pertandingan PORPROV XV Kota Bogor 2026</p>
         </div>
     </div>
     <div class="banner-accent-line"></div>
@@ -51,6 +51,31 @@
         </div>
         
         <button class="reset-filter-btn" id="resetFilterBtn">Reset</button>
+    </div>
+
+    <!-- Legend -->
+    <div class="legend-box">
+        <h3>KETERANGAN</h3>
+        <div class="legend-items">
+            <div class="legend-item">
+                <div class="legend-dot prep"></div>
+                <span>Persiapan / Awal Pertandingan</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-dot exec"></div>
+                <span>Pelaksanaan Pertandingan</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-dot final"></div>
+                <span>Final / Penutupan Pertandingan</span>
+            </div>
+        </div>
+        <div class="legend-note">
+            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <p>Klik nama cabor/venue untuk detail</p>
+        </div>
     </div>
 
     <!-- ── Table Info Bar ── -->
@@ -860,55 +885,38 @@
         </table>
     </div>
 
-    <!-- Bottom: Legend + Day Picker + Download -->
-    <div class="jadwal-bottom">
-        <!-- Legend -->
-        <div class="legend-box">
-            <h3>KETERANGAN</h3>
-            <div class="legend-item">
-                <div class="legend-dot prep"></div>
-                <span>Persiapan / Awal<br>Pertandingan</span>
-            </div>
-            <div class="legend-item">
-                <div class="legend-dot exec"></div>
-                <span>Pelaksanaan<br>Pertandingan</span>
-            </div>
-            <div class="legend-item">
-                <div class="legend-dot final"></div>
-                <span>Final / Penutupan<br>Pertandingan</span>
-            </div>
-            <div class="legend-note">
-                <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <p>Klik pada nama cabang olahraga atau venue untuk melihat detail jadwal pertandingan.</p>
-            </div>
+    <!-- Day Picker + Download -->
+    <div class="day-picker-wrap">
+        <h4>Pilih Hari ↑</h4>
+        <div class="day-picker">
+            <button class="day-btn"><span class="num">31</span><span class="mon">Okt</span></button>
+            <button class="day-btn"><span class="num">1</span><span class="mon">Nov</span></button>
+            <button class="day-btn"><span class="num">2</span><span class="mon">Nov</span></button>
+            <button class="day-btn"><span class="num">3</span><span class="mon">Nov</span></button>
+            <button class="day-btn"><span class="num">4</span><span class="mon">Nov</span></button>
+            <button class="day-btn"><span class="num">5</span><span class="mon">Nov</span></button>
+            <button class="day-btn"><span class="num">6</span><span class="mon">Nov</span></button>
+            <button class="day-btn"><span class="num">7</span><span class="mon">Nov</span></button>
+            <button class="day-btn"><span class="num">8</span><span class="mon">Nov</span></button>
+            <button class="day-btn"><span class="num">9</span><span class="mon">Nov</span></button>
+            <button class="day-btn"><span class="num">10</span><span class="mon">Nov</span></button>
+            <button class="day-btn"><span class="num">11</span><span class="mon">Nov</span></button>
+            <button class="day-btn"><span class="num">12</span><span class="mon">Nov</span></button>
+            <button class="day-btn"><span class="num">13</span><span class="mon">Nov</span></button>
+            <button class="day-btn"><span class="num">14</span><span class="mon">Nov</span></button>
+            <button class="day-btn"><span class="num">15</span><span class="mon">Nov</span></button>
+            <button class="day-btn"><span class="num">16</span><span class="mon">Nov</span></button>
+            <button class="day-btn"><span class="num">17</span><span class="mon">Nov</span></button>
+            <button class="day-btn"><span class="num">18</span><span class="mon">Nov</span></button>
+            <button class="day-btn"><span class="num">19</span><span class="mon">Nov</span></button>
+            <button class="day-btn"><span class="num">20</span><span class="mon">Nov</span></button>
         </div>
-
-        <!-- Day Picker + Download -->
-        <div class="day-picker-wrap">
-            <h4>Pilih Hari ↑</h4>
-            <div class="day-picker">
-                <button class="day-btn"><span class="num">31</span><span class="mon">Okt</span></button>
-                <button class="day-btn"><span class="num">1</span><span class="mon">Nov</span></button>
-                <button class="day-btn"><span class="num">2</span><span class="mon">Nov</span></button>
-                <button class="day-btn"><span class="num">3</span><span class="mon">Nov</span></button>
-                <button class="day-btn"><span class="num">4</span><span class="mon">Nov</span></button>
-                <button class="day-btn"><span class="num">5</span><span class="mon">Nov</span></button>
-                <button class="day-btn"><span class="num">6</span><span class="mon">Nov</span></button>
-                <button class="day-btn"><span class="num">7</span><span class="mon">Nov</span></button>
-                <button class="day-btn"><span class="num">8</span><span class="mon">Nov</span></button>
-                <button class="day-btn"><span class="num">9</span><span class="mon">Nov</span></button>
-                <button class="day-btn"><span class="num">10</span><span class="mon">Nov</span></button>
-                <button class="day-btn"><span class="num">11</span><span class="mon">Nov</span></button>
-            </div>
-            <a href="#" class="download-btn">
-                <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                </svg>
-                Unduh Jadwal
-            </a>
-        </div>
+        <a href="#" class="download-btn">
+            <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
+            Unduh Jadwal
+        </a>
     </div>
 </div>
 
@@ -998,6 +1006,25 @@
         const selectedDate = datePickerFilter.value; // Format: "YYYY-MM-DD"
         let visibleCount = 0;
 
+        // Reset & sembunyikan kolom sebelum tanggal yang dipilih
+        document.querySelectorAll('.jadwal-tbl .date-col').forEach(el => el.classList.remove('col-hidden'));
+        document.querySelectorAll('.jadwal-tbl .day-cell').forEach(el => el.classList.remove('col-hidden'));
+        if (selectedDate) {
+            const colIndex = dateToIndexMap[selectedDate];
+            if (colIndex) {
+                const dateHeaders = document.querySelectorAll('.jadwal-tbl thead .month-header .date-col');
+                dateHeaders.forEach((th, idx) => {
+                    if (idx < colIndex - 4) th.classList.add('col-hidden');
+                });
+                tableRows.forEach(row => {
+                    for (let i = 4; i < colIndex; i++) {
+                        const td = row.children[i];
+                        if (td) td.classList.add('col-hidden');
+                    }
+                });
+            }
+        }
+
         tableRows.forEach(row => {
             const sport = row.querySelector('.sport').textContent.toLowerCase();
             const venue = row.querySelector('.venue').textContent.toLowerCase();
@@ -1005,17 +1032,15 @@
 
             let dateMatch = true;
 
-            // Jika pengguna memilih tanggal
+            // Jika pengguna memilih tanggal — tampilkan hanya cabor yang aktif di tanggal itu
             if (selectedDate) {
                 const colIndex = dateToIndexMap[selectedDate];
                 if (colIndex) {
                     const td = row.children[colIndex];
-                    // Jika sel ada, tapi berisi elemen .day-empty -> tidak ada pertandingan
                     if (td && td.querySelector('.day-empty')) {
                         dateMatch = false;
                     }
                 } else {
-                    // Jika memilih tanggal diluar range event
                     dateMatch = false;
                 }
             }

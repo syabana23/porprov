@@ -12,10 +12,10 @@
        ================================================================ */
     .jadwal-table-wrap {
         background: #fff;
-        border-radius: 10px;
-        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.09);
+        border-radius: 12px;
+        box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06);
         overflow: auto;
-        margin-bottom: 28px;
+        margin-bottom: 24px;
         position: relative;
         max-height: 75vh;
         -webkit-overflow-scrolling: touch;
@@ -194,36 +194,32 @@
     }
 
     .jadwal-tbl tbody td.day-cell {
-        padding: 0;
-        height: 36px;
-        min-width: 38px;
+        padding: 3px 2px;
+        height: auto;
+        min-width: 30px;
+    }
+
+    .jadwal-tbl tbody td.day-cell > span {
+        display: block;
+        height: 18px;
+        border-radius: 4px;
+        width: 100%;
     }
 
     .day-prep {
         background: #60a5fa;
-        width: 100%;
-        height: 100%;
-        display: block;
     }
 
     .day-exec {
         background: #fb923c;
-        width: 100%;
-        height: 100%;
-        display: block;
     }
 
     .day-final {
         background: #c084fc;
-        width: 100%;
-        height: 100%;
-        display: block;
     }
 
     .day-empty {
-        width: 100%;
-        height: 100%;
-        display: block;
+        background: transparent;
     }
 
     /* ================================================================
@@ -280,8 +276,12 @@
         }
 
         .jadwal-tbl tbody td.day-cell {
-            height: 28px;
-            min-width: 26px;
+            padding: 2px 1px;
+            min-width: 22px;
+        }
+        .jadwal-tbl tbody td.day-cell > span {
+            height: 14px;
+            border-radius: 3px;
         }
 
         .table-info-bar {
@@ -369,44 +369,45 @@
     }
 
     /* ================================================================
-       BOTTOM LAYOUT
-       ================================================================ */
-    .jadwal-bottom {
-        display: flex;
-        gap: 24px;
-        flex-wrap: wrap;
-    }
-
-    /* ================================================================
        LEGEND
        ================================================================ */
     .legend-box {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        flex-wrap: wrap;
         background: #fff;
         border-radius: 10px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-        padding: 20px;
-        min-width: 240px;
-        flex: 0 0 auto;
+        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+        padding: 12px 20px;
+        margin-bottom: 16px;
     }
 
     .legend-box h3 {
-        font-size: 14px;
-        font-weight: 800;
+        font-size: 12px;
+        font-weight: 700;
         color: #013469;
-        margin: 0 0 16px;
+        margin: 0;
+        white-space: nowrap;
+    }
+
+    .legend-items {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        flex-wrap: wrap;
     }
 
     .legend-item {
         display: flex;
         align-items: center;
-        gap: 12px;
-        margin-bottom: 14px;
+        gap: 6px;
     }
 
     .legend-dot {
-        width: 42px;
-        height: 22px;
-        border-radius: 50px;
+        width: 24px;
+        height: 12px;
+        border-radius: 4px;
         flex-shrink: 0;
     }
 
@@ -415,38 +416,38 @@
     .legend-dot.final { background: #c084fc; }
 
     .legend-item span {
-        font-size: 11.5px;
+        font-size: 11px;
         color: #374151;
         font-weight: 500;
-        line-height: 1.4;
+        white-space: nowrap;
     }
 
     .legend-note {
-        background: #f3f4f6;
-        border-radius: 8px;
-        padding: 10px 12px;
         display: flex;
-        gap: 8px;
-        margin-top: 16px;
+        align-items: center;
+        gap: 6px;
+        margin-left: auto;
+        color: #94a3b8;
+        font-size: 11px;
     }
 
     .legend-note svg {
         flex-shrink: 0;
-        color: #6b7280;
+        color: #94a3b8;
+        width: 13px;
+        height: 13px;
     }
 
     .legend-note p {
-        font-size: 10.5px;
-        color: #6b7280;
         margin: 0;
-        line-height: 1.5;
+        line-height: 1.4;
     }
 
     /* ================================================================
        DAY PICKER + DOWNLOAD
        ================================================================ */
     .day-picker-wrap {
-        flex: 1;
+        width: 100%;
     }
 
     .day-picker-wrap h4 {
@@ -457,15 +458,14 @@
     }
 
     .day-picker {
-        display: flex;
-        gap: 8px;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+        gap: 6px;
         margin-bottom: 24px;
     }
 
     .day-btn {
-        width: 52px;
-        height: 60px;
+        height: 54px;
         background: #fff;
         border: 1px solid #e5e7eb;
         border-radius: 10px;
@@ -475,15 +475,23 @@
         justify-content: center;
         font-family: 'Poppins', sans-serif;
         cursor: pointer;
-        transition: all 0.2s;
+        transition: all 0.2s, transform 0.15s;
         box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
     }
 
-    .day-btn:hover,
+    .day-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(1, 52, 105, 0.15);
+        background: #013469;
+        border-color: #013469;
+        color: #fff;
+    }
+
     .day-btn.active {
         background: #013469;
         border-color: #013469;
         color: #fff;
+        box-shadow: 0 4px 12px rgba(1, 52, 105, 0.25);
     }
 
     .day-btn .num {
@@ -523,11 +531,6 @@
             padding: 16px 16px 32px;
         }
 
-        .jadwal-bottom {
-            flex-direction: column;
-            gap: 16px;
-        }
-
         .legend-box {
             min-width: auto;
             width: 100%;
@@ -537,12 +540,24 @@
             width: 100%;
         }
 
-        .day-btn {
-            width: 44px;
-            height: 52px;
+        .day-picker {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            gap: 6px;
+            padding-bottom: 8px;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
         }
 
-        .day-btn .num { font-size: 15px; }
+        .day-btn {
+            flex: 0 0 46px;
+            height: 48px;
+            scroll-snap-align: start;
+        }
+
+        .day-btn .num { font-size: 14px; }
+        .day-btn .mon { font-size: 9px; }
 
         .download-btn {
             width: 100%;
@@ -550,6 +565,11 @@
             font-size: 14px;
             padding: 12px 24px;
         }
+    }
+
+    .jadwal-tbl th.date-col.col-hidden,
+    .jadwal-tbl td.day-cell.col-hidden {
+        display: none;
     }
 
     /* ================================================================
@@ -563,7 +583,7 @@
         background: #fff;
         padding: 16px;
         border-radius: 12px;
-        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
     }
 
     .filter-box {
