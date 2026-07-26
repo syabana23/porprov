@@ -59,15 +59,15 @@
         <div class="legend-items">
             <div class="legend-item">
                 <div class="legend-dot prep"></div>
-                <span>Persiapan / Awal Pertandingan</span>
+                <span>Persiapan / Kedatangan / Latihan Resmi</span>
             </div>
             <div class="legend-item">
                 <div class="legend-dot exec"></div>
-                <span>Pelaksanaan Pertandingan</span>
+                <span>Hari Pertandingan / Kompetisi</span>
             </div>
             <div class="legend-item">
                 <div class="legend-dot final"></div>
-                <span>Final / Penutupan Pertandingan</span>
+                <span>Final / Acara Penutupan / Kepulangan</span>
             </div>
         </div>
         <div class="legend-note">
@@ -147,7 +147,7 @@
                     <td class="day-cell"><span class="day-exec"></span></td>
                     <td class="day-cell"><span class="day-exec"></span></td>
                     <td class="day-cell"><span class="day-exec"></span></td>
-                    <td class="day-cell"><span class="day-exec"></span></td>
+                    <td class="day-cell"><span class="day-final"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                 </tr>
@@ -209,6 +209,33 @@
                     <td class="no">4</td>
                     <td class="sport" data-sport="Dansa" data-venue="Green Forest Hotel">Dansa</td>
                     <td class="venue" data-sport="Dansa" data-venue="Green Forest Hotel">Green Forest Hotel</td>
+                    <td class="durasi">6</td>
+                    <td class="day-cell"><span class="day-empty"></span></td>
+                    <td class="day-cell"><span class="day-empty"></span></td>
+                    <td class="day-cell"><span class="day-empty"></span></td>
+                    <td class="day-cell"><span class="day-empty"></span></td>
+                    <td class="day-cell"><span class="day-empty"></span></td>
+                    <td class="day-cell"><span class="day-empty"></span></td>
+                    <td class="day-cell"><span class="day-empty"></span></td>
+                    <td class="day-cell"><span class="day-empty"></span></td>
+                    <td class="day-cell"><span class="day-empty"></span></td>
+                    <td class="day-cell"><span class="day-empty"></span></td>
+                    <td class="day-cell"><span class="day-empty"></span></td>
+                    <td class="day-cell"><span class="day-empty"></span></td>
+                    <td class="day-cell"><span class="day-empty"></span></td>
+                    <td class="day-cell"><span class="day-prep"></span></td>
+                    <td class="day-cell"><span class="day-prep"></span></td>
+                    <td class="day-cell"><span class="day-exec"></span></td>
+                    <td class="day-cell"><span class="day-exec"></span></td>
+                    <td class="day-cell"><span class="day-exec"></span></td>
+                    <td class="day-cell"><span class="day-final"></span></td>
+                    <td class="day-cell"><span class="day-empty"></span></td>
+                    <td class="day-cell"><span class="day-empty"></span></td>
+                </tr>
+                <tr>
+                    <td class="no">5</td>
+                    <td class="sport" data-sport="Angkat Berat" data-venue="Green Forest Hotel">Angkat Berat</td>
+                    <td class="venue" data-sport="Angkat Berat" data-venue="Green Forest Hotel">Green Forest Hotel</td>
                     <td class="durasi">7</td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
@@ -221,7 +248,6 @@
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
-                    <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-prep"></span></td>
                     <td class="day-cell"><span class="day-prep"></span></td>
                     <td class="day-cell"><span class="day-exec"></span></td>
@@ -230,32 +256,6 @@
                     <td class="day-cell"><span class="day-exec"></span></td>
                     <td class="day-cell"><span class="day-final"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
-                    <td class="day-cell"><span class="day-empty"></span></td>
-                </tr>
-                <tr>
-                    <td class="no">5</td>
-                    <td class="sport" data-sport="Angkat Berat" data-venue="Green Forest Hotel">Angkat Berat</td>
-                    <td class="venue" data-sport="Angkat Berat" data-venue="Green Forest Hotel">Green Forest Hotel</td>
-                    <td class="durasi">8</td>
-                    <td class="day-cell"><span class="day-empty"></span></td>
-                    <td class="day-cell"><span class="day-empty"></span></td>
-                    <td class="day-cell"><span class="day-empty"></span></td>
-                    <td class="day-cell"><span class="day-empty"></span></td>
-                    <td class="day-cell"><span class="day-empty"></span></td>
-                    <td class="day-cell"><span class="day-empty"></span></td>
-                    <td class="day-cell"><span class="day-empty"></span></td>
-                    <td class="day-cell"><span class="day-empty"></span></td>
-                    <td class="day-cell"><span class="day-empty"></span></td>
-                    <td class="day-cell"><span class="day-empty"></span></td>
-                    <td class="day-cell"><span class="day-empty"></span></td>
-                    <td class="day-cell"><span class="day-prep"></span></td>
-                    <td class="day-cell"><span class="day-prep"></span></td>
-                    <td class="day-cell"><span class="day-exec"></span></td>
-                    <td class="day-cell"><span class="day-exec"></span></td>
-                    <td class="day-cell"><span class="day-exec"></span></td>
-                    <td class="day-cell"><span class="day-exec"></span></td>
-                    <td class="day-cell"><span class="day-exec"></span></td>
-                    <td class="day-cell"><span class="day-final"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                 </tr>
@@ -290,7 +290,7 @@
                     <td class="no">7</td>
                     <td class="sport" data-sport="Arung Jeram" data-venue="Green Forest Hotel">Arung Jeram</td>
                     <td class="venue" data-sport="Arung Jeram" data-venue="Green Forest Hotel">Green Forest Hotel</td>
-                    <td class="durasi">13</td>
+                    <td class="durasi">12</td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
@@ -298,7 +298,7 @@
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
-                    <td class="day-cell"><span class="day-prep"></span></td>
+                    <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-prep"></span></td>
                     <td class="day-cell"><span class="day-prep"></span></td>
                     <td class="day-cell"><span class="day-exec"></span></td>
@@ -333,12 +333,12 @@
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
+                    <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-prep"></span></td>
                     <td class="day-cell"><span class="day-prep"></span></td>
                     <td class="day-cell"><span class="day-exec"></span></td>
                     <td class="day-cell"><span class="day-exec"></span></td>
                     <td class="day-cell"><span class="day-final"></span></td>
-                    <td class="day-cell"><span class="day-empty"></span></td>
                 </tr>
                 <tr>
                     <td class="no">9</td>
@@ -452,7 +452,7 @@
                     <td class="no">13</td>
                     <td class="sport" data-sport="Gimnastik Artistik" data-venue="Arcamanik">Gimnastik Artistik</td>
                     <td class="venue" data-sport="Gimnastik Artistik" data-venue="Arcamanik">Arcamanik</td>
-                    <td class="durasi">10</td>
+                    <td class="durasi">6</td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
@@ -460,7 +460,8 @@
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
-                    <td class="day-cell"><span class="day-prep"></span></td>
+                    <td class="day-cell"><span class="day-empty"></span></td>
+                    <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-prep"></span></td>
                     <td class="day-cell"><span class="day-prep"></span></td>
                     <td class="day-cell"><span class="day-exec"></span></td>
@@ -468,8 +469,7 @@
                     <td class="day-cell"><span class="day-exec"></span></td>
                     <td class="day-cell"><span class="day-final"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
-                    <td class="day-cell"><span class="day-prep"></span></td>
-                    <td class="day-cell"><span class="day-prep"></span></td>
+                    <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
@@ -479,7 +479,8 @@
                     <td class="no">14</td>
                     <td class="sport" data-sport="Gimnastik Ritmik" data-venue="Arcamanik">Gimnastik Ritmik</td>
                     <td class="venue" data-sport="Gimnastik Ritmik" data-venue="Arcamanik">Arcamanik</td>
-                    <td class="durasi">7</td>
+                    <td class="durasi">6</td>
+                    <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
@@ -493,7 +494,6 @@
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-prep"></span></td>
                     <td class="day-cell"><span class="day-prep"></span></td>
-                    <td class="day-cell"><span class="day-exec"></span></td>
                     <td class="day-cell"><span class="day-exec"></span></td>
                     <td class="day-cell"><span class="day-exec"></span></td>
                     <td class="day-cell"><span class="day-exec"></span></td>
@@ -542,6 +542,7 @@
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
+                    <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-prep"></span></td>
                     <td class="day-cell"><span class="day-prep"></span></td>
                     <td class="day-cell"><span class="day-exec"></span></td>
@@ -554,19 +555,18 @@
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
-                    <td class="day-cell"><span class="day-empty"></span></td>
                 </tr>
                 <tr>
                     <td class="no">17</td>
                     <td class="sport" data-sport="Menembak" data-venue="Lapangan Tembak Cisangkan">Menembak</td>
                     <td class="venue" data-sport="Menembak" data-venue="Lapangan Tembak Cisangkan">Lapangan Tembak Cisangkan</td>
-                    <td class="durasi">12</td>
+                    <td class="durasi">11</td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
-                    <td class="day-cell"><span class="day-prep"></span></td>
+                    <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-prep"></span></td>
                     <td class="day-cell"><span class="day-prep"></span></td>
                     <td class="day-cell"><span class="day-exec"></span></td>
@@ -641,13 +641,13 @@
                     <td class="no">20</td>
                     <td class="sport" data-sport="Panjat Tebing" data-venue="Stadion Pajajaran">Panjat Tebing</td>
                     <td class="venue" data-sport="Panjat Tebing" data-venue="Stadion Pajajaran">Stadion Pajajaran</td>
-                    <td class="durasi">16</td>
+                    <td class="durasi">15</td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
-                    <td class="day-cell"><span class="day-prep"></span></td>
+                    <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-prep"></span></td>
                     <td class="day-cell"><span class="day-prep"></span></td>
                     <td class="day-cell"><span class="day-exec"></span></td>
@@ -695,14 +695,15 @@
                     <td class="no">22</td>
                     <td class="sport" data-sport="Petanque" data-venue="Green Forest Hotel">Petanque</td>
                     <td class="venue" data-sport="Petanque" data-venue="Green Forest Hotel">Green Forest Hotel</td>
-                    <td class="durasi">10</td>
+                    <td class="durasi">9</td>
+                    <td class="day-cell"><span class="day-empty"></span></td>
+                    <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-prep"></span></td>
                     <td class="day-cell"><span class="day-prep"></span></td>
-                    <td class="day-cell"><span class="day-exec"></span></td>
                     <td class="day-cell"><span class="day-exec"></span></td>
                     <td class="day-cell"><span class="day-exec"></span></td>
                     <td class="day-cell"><span class="day-exec"></span></td>
@@ -716,28 +717,27 @@
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
-                    <td class="day-cell"><span class="day-empty"></span></td>
                 </tr>
                 <tr>
                     <td class="no">23</td>
                     <td class="sport" data-sport="Sambo" data-venue="Indoor B GOR Pajajaran">Sambo</td>
                     <td class="venue" data-sport="Sambo" data-venue="Indoor B GOR Pajajaran">Indoor B GOR Pajajaran</td>
-                    <td class="durasi">15</td>
+                    <td class="durasi">7</td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
-                    <td class="day-cell"><span class="day-exec"></span></td>
-                    <td class="day-cell"><span class="day-exec"></span></td>
-                    <td class="day-cell"><span class="day-exec"></span></td>
-                    <td class="day-cell"><span class="day-exec"></span></td>
-                    <td class="day-cell"><span class="day-exec"></span></td>
-                    <td class="day-cell"><span class="day-exec"></span></td>
-                    <td class="day-cell"><span class="day-exec"></span></td>
-                    <td class="day-cell"><span class="day-exec"></span></td>
-                    <td class="day-cell"><span class="day-exec"></span></td>
-                    <td class="day-cell"><span class="day-exec"></span></td>
+                    <td class="day-cell"><span class="day-empty"></span></td>
+                    <td class="day-cell"><span class="day-empty"></span></td>
+                    <td class="day-cell"><span class="day-empty"></span></td>
+                    <td class="day-cell"><span class="day-empty"></span></td>
+                    <td class="day-cell"><span class="day-empty"></span></td>
+                    <td class="day-cell"><span class="day-empty"></span></td>
+                    <td class="day-cell"><span class="day-empty"></span></td>
+                    <td class="day-cell"><span class="day-empty"></span></td>
+                    <td class="day-cell"><span class="day-prep"></span></td>
+                    <td class="day-cell"><span class="day-prep"></span></td>
                     <td class="day-cell"><span class="day-exec"></span></td>
                     <td class="day-cell"><span class="day-exec"></span></td>
                     <td class="day-cell"><span class="day-exec"></span></td>
@@ -752,6 +752,7 @@
                     <td class="durasi">7</td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
+                    <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-prep"></span></td>
                     <td class="day-cell"><span class="day-prep"></span></td>
                     <td class="day-cell"><span class="day-exec"></span></td>
@@ -759,7 +760,6 @@
                     <td class="day-cell"><span class="day-exec"></span></td>
                     <td class="day-cell"><span class="day-exec"></span></td>
                     <td class="day-cell"><span class="day-final"></span></td>
-                    <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
@@ -784,6 +784,7 @@
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
+                    <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-prep"></span></td>
                     <td class="day-cell"><span class="day-prep"></span></td>
                     <td class="day-cell"><span class="day-exec"></span></td>
@@ -793,7 +794,6 @@
                     <td class="day-cell"><span class="day-exec"></span></td>
                     <td class="day-cell"><span class="day-exec"></span></td>
                     <td class="day-cell"><span class="day-final"></span></td>
-                    <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
@@ -857,7 +857,7 @@
                     <td class="no">28</td>
                     <td class="sport" data-sport="Tenis Meja" data-venue="GOR Yasmin Bulutangkis">Tenis Meja</td>
                     <td class="venue" data-sport="Tenis Meja" data-venue="GOR Yasmin Bulutangkis">GOR Yasmin Bulutangkis</td>
-                    <td class="durasi">11</td>
+                    <td class="durasi">12</td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
@@ -866,6 +866,7 @@
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-prep"></span></td>
                     <td class="day-cell"><span class="day-prep"></span></td>
+                    <td class="day-cell"><span class="day-exec"></span></td>
                     <td class="day-cell"><span class="day-exec"></span></td>
                     <td class="day-cell"><span class="day-exec"></span></td>
                     <td class="day-cell"><span class="day-exec"></span></td>
@@ -875,7 +876,6 @@
                     <td class="day-cell"><span class="day-exec"></span></td>
                     <td class="day-cell"><span class="day-exec"></span></td>
                     <td class="day-cell"><span class="day-final"></span></td>
-                    <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>

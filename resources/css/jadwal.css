@@ -207,11 +207,11 @@
     }
 
     .day-prep {
-        background: #60a5fa;
+        background: #22d3ee;
     }
 
     .day-exec {
-        background: #fb923c;
+        background: #ef4444;
     }
 
     .day-final {
@@ -411,8 +411,8 @@
         flex-shrink: 0;
     }
 
-    .legend-dot.prep { background: #60a5fa; }
-    .legend-dot.exec { background: #fb923c; }
+    .legend-dot.prep { background: #22d3ee; }
+    .legend-dot.exec { background: #ef4444; }
     .legend-dot.final { background: #c084fc; }
 
     .legend-item span {
