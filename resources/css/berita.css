@@ -189,3 +189,29 @@
             font-size: 17px;
         }
     }
+
+    @media (max-width: 576px) {
+        .berita-body {
+            padding: 16px 12px 30px;
+            gap: 16px;
+        }
+        .news-card .thumb {
+            height: 120px;
+        }
+        .news-card .body {
+            padding: 10px 10px 12px;
+        }
+        .news-card .news-title {
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+    }
+
+    @media (max-width: 320px) {
+        .berita-body {
+            padding: 12px 8px 24px;
+        }
+        .qi-grid {
+            grid-template-columns: 1fr;
+        }
+    }

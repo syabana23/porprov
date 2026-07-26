@@ -701,5 +701,16 @@
         }
 
         body.filter-tritanopia {
-            filter: url('#tritanopia-filter') !important;
+            filter: url('#protanopia-filter') !important;
+        }
+
+        @media (max-width: 360px) {
+            .a11y-widget {
+                bottom: 12px;
+                right: 12px;
+            }
+            .a11y-menu {
+                width: min(275px, 90vw);
+                padding: 12px;
+            }
         }

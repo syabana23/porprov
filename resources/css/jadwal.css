@@ -212,17 +212,20 @@
     .scroll-hint {
         display: none;
         align-items: center;
-        gap: 4px;
+        gap: 6px;
         font-size: 11px;
-        color: #94a3b8;
-        animation: pulseHint 2s ease-in-out infinite;
+        color: #013469;
+        background: #e0f2fe;
+        padding: 4px 10px;
+        border-radius: 20px;
+        font-weight: 600;
+        animation: pulseHint 2.5s ease-in-out infinite;
     }
     @keyframes pulseHint {
-        0%, 100% { opacity: 0.5; }
-        50% { opacity: 1; }
+        0%, 100% { transform: translateX(0); opacity: 0.8; }
+        50% { transform: translateX(4px); opacity: 1; }
     }
-    @media (max-width: 1024px) { .scroll-hint { display: flex; } }
-    @media (max-width: 640px) { .scroll-hint { display: none; } }
+    @media (max-width: 900px) { .scroll-hint { display: inline-flex; } }
 
     /* ================================================================
        TABLE WRAPPER
@@ -908,4 +911,39 @@
         display: flex;
         align-items: center;
         justify-content: center;
+    }
+
+    @media (max-width: 480px) {
+        .cards-grid, .facilities-list {
+            grid-template-columns: 1fr;
+        }
+        .venue-modal-body {
+            padding: 16px;
+        }
+        .venue-modal-header {
+            padding: 18px 16px;
+        }
+    }
+
+    @media (max-width: 320px) {
+        .jadwal-page {
+            padding: 10px 8px 20px;
+        }
+        .jadwal-filter {
+            padding: 10px;
+            gap: 8px;
+        }
+        .legend-box {
+            padding: 8px 10px;
+        }
+        .legend-item {
+            padding: 3px 6px;
+        }
+        .legend-item span {
+            font-size: 9px;
+        }
+        .download-btn {
+            font-size: 13px;
+            padding: 10px 20px;
+        }
     }

@@ -550,3 +550,53 @@
             padding: 0 16px;
         }
     }
+
+    @media (max-width: 576px) {
+        .kesehatan-body {
+            padding: 16px 12px 30px;
+            gap: 16px;
+        }
+        .facility-list-wrap {
+            padding: 14px;
+        }
+        .flw-header h2 {
+            font-size: 15px;
+        }
+        .fi-thumb {
+            height: 100px;
+        }
+        .filter-group {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 6px;
+        }
+        .filter-group .filter-select-wrap {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 320px) {
+        .kesehatan-body {
+            padding: 12px 8px 24px;
+        }
+        .facility-list-wrap {
+            padding: 10px;
+        }
+        .facility-item {
+            padding: 10px;
+            gap: 10px;
+        }
+        .fi-left .fi-name {
+            font-size: 12px;
+        }
+        .fi-addr, .fi-phone, .fi-layanan {
+            font-size: 10px;
+        }
+        .btn-detail {
+            font-size: 10px;
+            padding: 5px 10px;
+        }
+        .fi-distance {
+            font-size: 14px;
+        }
+    }
