@@ -382,6 +382,21 @@
         color: #5b21b6;
     }
 
+    .badge-hotel {
+        background: #e0e7ff;
+        color: #4338ca;
+    }
+
+    .badge-polsek {
+        background: #ccfbf1;
+        color: #0f766e;
+    }
+
+    .badge-restoran {
+        background: #ffedd5;
+        color: #c2410c;
+    }
+
     .fi-addr {
         display: flex;
         align-items: flex-start;

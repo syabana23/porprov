@@ -61,8 +61,9 @@ Route::get('/fasilitas', function () {
         'rs' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'rs')),
         'puskesmas' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'puskesmas')),
         'apotek' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'apotek')),
-        'klinik' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'klinik')),
-        'lab' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'lab')),
+        'hotel' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'hotel')),
+        'polsek' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'polsek')),
+        'restoran' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'restoran')),
     ];
 
     return view('fasilitas', compact('facilities', 'stats'));

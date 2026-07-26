@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Fasilitas Kesehatan - PANDU PORPROV')
+@section('title', 'Fasilitas - PANDU PORPROV')
 
 
 @section('content')
@@ -15,8 +15,8 @@
         </div>
         <div class="banner-text">
             <span class="banner-badge">PORPROV XV &middot; 2026</span>
-            <h1>FASILITAS KESEHATAN</h1>
-            <p>Informasi Fasilitas Kesehatan di Wilayah Kota Bogor</p>
+            <h1>FASILITAS </h1>
+            <p>Informasi Fasilitas yang tersedia di Wilayah Kota Bogor</p>
         </div>
     </div>
     <div class="banner-accent-line"></div>
@@ -74,6 +74,39 @@
                 <div class="ss-lbl">Apotek</div>
             </div>
         </div>
+        <div class="ss-item" data-type="hotel">
+            <div class="ss-icon-wrap" style="background: rgba(99, 102, 241, 0.08); color: #4f46e5;">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5" />
+                </svg>
+            </div>
+            <div class="ss-info">
+                <div class="ss-num">{{ $stats['hotel'] }}</div>
+                <div class="ss-lbl">Hotel</div>
+            </div>
+        </div>
+        <div class="ss-item" data-type="polsek">
+            <div class="ss-icon-wrap" style="background: rgba(16, 185, 129, 0.08); color: #059669;">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+            </div>
+            <div class="ss-info">
+                <div class="ss-num">{{ $stats['polsek'] }}</div>
+                <div class="ss-lbl">Polres/Polsek</div>
+            </div>
+        </div>
+        <div class="ss-item" data-type="restoran">
+            <div class="ss-icon-wrap" style="background: rgba(249, 115, 22, 0.08); color: #ea580c;">
+                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                </svg>
+            </div>
+            <div class="ss-info">
+                <div class="ss-num">{{ $stats['restoran'] }}</div>
+                <div class="ss-lbl">Restoran</div>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -93,24 +126,32 @@
             <div class="filter-select-wrap">
                 <select class="filter-select" id="filterType">
                     <option value="all">Semua Jenis</option>
+                    <option value="hotel">Hotel</option>
                     <option value="rs">Rumah Sakit</option>
-                    <option value="puskesmas">Puskesmas</option>
                     <option value="apotek">Apotek</option>
+                    <option value="puskesmas">Puskesmas</option>
+                    <option value="polsek">Polres / Polsek</option>
+                    <option value="restoran">Restoran</option>
                 </select>
             </div>
         </div>
 
         <div class="filter-group">
-            <label class="filter-label">Lokasi</label>
+            <label class="filter-label">Venue Terkait</label>
             <div class="filter-select-wrap">
-                <select class="filter-select" id="filterLokasi">
-                    <option value="all">Semua Wilayah</option>
-                    <option value="Bogor Tengah">Bogor Tengah</option>
-                    <option value="Bogor Utara">Bogor Utara</option>
-                    <option value="Bogor Selatan">Bogor Selatan</option>
-                    <option value="Bogor Barat">Bogor Barat</option>
-                    <option value="Bogor Timur">Bogor Timur</option>
-                    <option value="Tanah Sareal">Tanah Sareal</option>
+                <select class="filter-select" id="filterVenue">
+                    <option value="all">Semua Venue</option>
+                    <option value="GOR Pajajaran / Stadion Pajajaran (Indoor A, Indoor B, Stadion)">GOR Pajajaran / Stadion Pajajaran</option>
+                    <option value="Green Forest Hotel">Green Forest Hotel</option>
+                    <option value="Gymnasium Sekolah Vokasi IPB">Gymnasium Sekolah Vokasi IPB</option>
+                    <option value="GOR Yasmin Bulutangkis">GOR Yasmin Bulutangkis</option>
+                    <option value="PPSDMAP Kemenhub Kemang Kab-Bogor">PPSDMAP Kemenhub Kemang</option>
+                    <option value="Padepokan Voli Sentul">Padepokan Voli Sentul</option>
+                    <option value="Gunung Mas (Cisarua)">Gunung Mas (Cisarua)</option>
+                    <option value="Lapangan Tembak Cisangkan">Lapangan Tembak Cisangkan</option>
+                    <option value="Arcamanik">Arcamanik</option>
+                    <option value="Kota Baru Parahyangan">Kota Baru Parahyangan</option>
+                    <option value="Majalengka">Majalengka</option>
                 </select>
             </div>
         </div>
@@ -123,7 +164,7 @@
             </svg>
             <div>
                 <div class="ib-title">&#9654; INFORMASI</div>
-                <p>Fasilitas kesehatan ini siap mendukung kebutuhan medis selama pelaksanaan PORPROV XV Kota Bogor 2026</p>
+                <p>Fasilitas pendukung di sekitar venue siap menyukseskan pelaksanaan PORPROV XV Jawa Barat 2026.</p>
             </div>
         </div>
     </div>
@@ -131,7 +172,7 @@
     <!-- Facility List -->
     <div class="facility-list-wrap">
         <div class="flw-header">
-            <h2>Daftar Fasilitas Kesehatan</h2>
+            <h2>Daftar Fasilitas Pendukung</h2>
             <div class="flw-sort">
                 Urutkan:
                 <select id="sortSelect">
@@ -169,13 +210,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const pgBtns = document.getElementById('pgBtns');
     const searchInput = document.getElementById('searchInput');
     const filterType = document.getElementById('filterType');
-    const filterLokasi = document.getElementById('filterLokasi');
+    const filterVenue = document.getElementById('filterVenue');
     const sortSelect = document.getElementById('sortSelect');
     const btnReset = document.getElementById('btnReset');
     const ssItems = document.querySelectorAll('.ss-item');
 
     function getBadgeClass(tipe) {
-        const map = { rs: 'badge-rs', puskesmas: 'badge-puskesmas', klinik: 'badge-klinik', apotek: 'badge-apotek', lab: 'badge-lab' };
+        const map = {
+            rs: 'badge-rs',
+            puskesmas: 'badge-puskesmas',
+            apotek: 'badge-apotek',
+            hotel: 'badge-hotel',
+            polsek: 'badge-polsek',
+            restoran: 'badge-restoran'
+        };
         return map[tipe] || 'badge-rs';
     }
 
@@ -188,12 +236,12 @@ document.addEventListener('DOMContentLoaded', () => {
             ? `<img src="${f.image}" alt="${f.nama}">`
             : `<div class="fi-placeholder">${getInitials(f.nama)}</div>`;
 
-        const websiteBtn = f.website
-            ? `<a href="${f.website}" target="_blank" class="btn-detail">Kunjungi Website &gt;</a>`
-            : `<span class="btn-detail" style="opacity:0.5;cursor:default;">Tidak ada website</span>`;
+        const mapsBtn = f.gmaps
+            ? `<a href="${f.gmaps}" target="_blank" class="btn-detail" style="background:#0284c7;">Peta Lokasi &gt;</a>`
+            : `<span class="btn-detail" style="opacity:0.5;cursor:default;">Tidak ada peta</span>`;
 
         return `
-        <div class="facility-item" data-tipe="${f.tipe}" data-kecamatan="${f.kecamatan}">
+        <div class="facility-item" data-tipe="${f.tipe}">
             <div class="fi-thumb">${thumbContent}</div>
             <div class="fi-details">
                 <div class="fi-top">
@@ -208,6 +256,12 @@ document.addEventListener('DOMContentLoaded', () => {
                             </svg>
                             ${f.alamat}
                         </div>
+                        <div class="fi-venue" style="font-size:11px;color:#1e3a8a;margin-top:4px;display:flex;align-items:center;gap:5px;">
+                            <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="flex-shrink:0;">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16" />
+                            </svg>
+                            Venue Terkait: <span style="font-weight:600;">${f.venue}</span>
+                        </div>
                         ${f.telepon && f.telepon !== '-' ? `
                         <div class="fi-phone">
                             <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -216,11 +270,11 @@ document.addEventListener('DOMContentLoaded', () => {
                             ${f.telepon}
                         </div>
                         ` : ''}
-                        <div class="fi-layanan">Layanan: <span>${f.layanan}</span></div>
+                        ${f.layanan && f.layanan !== '-' ? `<div class="fi-layanan">Layanan: <span>${f.layanan}</span></div>` : ''}
                     </div>
                     <div class="fi-right">
-                        <span class="fi-kecamatan">${f.kecamatan}</span>
-                        ${websiteBtn}
+                        <span class="fi-kecamatan" style="background:#f0fdf4;color:#166534;font-weight:700;">Jarak: ${f.jarak}</span>
+                        ${mapsBtn}
                     </div>
                 </div>
             </div>
@@ -230,12 +284,12 @@ document.addEventListener('DOMContentLoaded', () => {
     function applyFilters() {
         const search = searchInput.value.toLowerCase().trim();
         const type = filterType.value;
-        const lokasi = filterLokasi.value;
+        const venue = filterVenue.value;
 
         filteredData = facilities.filter(f => {
-            if (search && !f.nama.toLowerCase().includes(search) && !f.alamat.toLowerCase().includes(search)) return false;
+            if (search && !f.nama.toLowerCase().includes(search) && !f.alamat.toLowerCase().includes(search) && !f.venue.toLowerCase().includes(search)) return false;
             if (type !== 'all' && f.tipe !== type) return false;
-            if (lokasi !== 'all' && f.kecamatan !== lokasi) return false;
+            if (venue !== 'all' && f.venue !== venue) return false;
             return true;
         });
 
@@ -308,13 +362,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Event listeners
     searchInput.addEventListener('input', applyFilters);
     filterType.addEventListener('change', applyFilters);
-    filterLokasi.addEventListener('change', applyFilters);
+    filterVenue.addEventListener('change', applyFilters);
     sortSelect.addEventListener('change', applyFilters);
 
     btnReset.addEventListener('click', () => {
         searchInput.value = '';
         filterType.value = 'all';
-        filterLokasi.value = 'all';
+        filterVenue.value = 'all';
         sortSelect.value = 'nama';
         ssItems.forEach(i => i.classList.remove('active'));
         document.querySelector('.ss-item[data-type="all"]').classList.add('active');
