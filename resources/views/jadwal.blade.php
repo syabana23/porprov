@@ -11,6 +11,10 @@
 <!-- Banner -->
 <section class="page-banner">
     <img class="banner-bg-img" src="{{ asset('images/hero-bg.png') }}" alt="">
+    <div class="banner-particles">
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span>
+    </div>
     <div class="banner-inner">
         <div class="banner-icon">
             <svg width="28" height="28" fill="none" stroke="#fff" viewBox="0 0 24 24">

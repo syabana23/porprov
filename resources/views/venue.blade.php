@@ -7,6 +7,10 @@
 @section('content')
 <section class="page-banner">
     <img class="banner-bg-img" src="{{ asset('images/hero-bg.png') }}" alt="">
+    <div class="banner-particles">
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span>
+    </div>
     <div class="banner-inner">
         <div class="banner-icon">
             <svg width="28" height="28" fill="none" stroke="#fff" viewBox="0 0 24 24">
@@ -29,21 +33,39 @@
 
 <!-- Filter -->
 <section class="filter-section">
-    <div class="filter-box">
-        <form class="filter-form" id="map-filter-form">
-            <!-- Fasilitas -->
-            <select class="filter-select" id="fasilitas">
-                <option value="">🔍 Cari Fasilitas</option>
-                <option value="hotel">🏨 Hotel & Penginapan</option>
-                <option value="rumah-sakit">🏥 Rumah Sakit & Klinik</option>
-                <option value="apotek">💊 Apotek</option>
-                <option value="rumah-makan">🍽️ Restoran & Kuliner</option>
-                <option value="polisi">🚔 Polisi & Keamanan</option>
+    <form class="jadwal-filter" id="map-filter-form">
+        <!-- Titik Venue -->
+        <div class="filter-box">
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 22s8-5.5 8-12c0-4.42-3.58-8-8-8s-8 3.58-8 8c0 6.5 8 12 8 12z"/>
+                <circle cx="12" cy="10" r="3"/>
+            </svg>
+            <select class="filter-select" id="venue">
+                <option value="">Pilih Venue</option>
+                <option value="gor pajajaran indoor a">GOR Pajajaran Indoor A</option>
+                <option value="gor pajajaran indoor b">GOR Pajajaran Indoor B</option>
+                <option value="gor vokasi ipb">GOR Vokasi IPB</option>
+                <option value="gor yasmin">GOR Yasmin</option>
+                <option value="stadion pajajaran">Stadion Pajajaran</option>
+                <option value="green forest hotel">Green Forest Hotel</option>
+                <option value="ppsdmap kemenhub kemang">PPSDMAP Kemenhub Kemang</option>
+                <option value="padepokan voli sentul">Padepokan Voli Sentul</option>
+                <option value="gunung mas">Gunung Mas</option>
+                <option value="cisangkan">Cisangkan</option>
+                <option value="arcamanik">Arcamanik</option>
+                <option value="kota baru parahyangan">Kota Baru Parahyangan</option>
+                <option value="majalengka">Majalengka</option>
             </select>
-
-            <!-- Cabang Olahraga -->
+        </div>
+        <!-- Cabang Olahraga -->
+        <div class="filter-box">
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <circle cx="12" cy="8" r="6"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14v8"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 22h6"/>
+            </svg>
             <select class="filter-select" id="cabor">
-                <option value="">🏃 Cabang Olahraga</option>
+                <option value="">Pilih Cabang Olahraga</option>
                 <option value="aerosport">Aerosport - Gantolle</option>
                 <option value="aerosport">Aerosport - Paralayang</option>
                 <option value="anggar">Anggar</option>
@@ -73,29 +95,30 @@
                 <option value="tarung derajat">Tarung Derajat</option>
                 <option value="tenis meja">Tenis Meja</option>
             </select>
-
-            <!-- Venue -->
-            <select class="filter-select" id="venue">
-                <option value="">📍 Venue</option>
-                <option value="gor pajajaran indoor a">GOR Pajajaran Indoor A</option>
-                <option value="gor pajajaran indoor b">GOR Pajajaran Indoor B</option>
-                <option value="gor vokasi ipb">GOR Vokasi IPB</option>
-                <option value="gor yasmin">GOR Yasmin</option>
-                <option value="stadion pajajaran">Stadion Pajajaran</option>
-                <option value="green forest hotel">Green Forest Hotel</option>
-                <option value="ppsdmap kemenhub kemang">PPSDMAP Kemenhub Kemang</option>
-                <option value="padepokan voli sentul">Padepokan Voli Sentul</option>
-                <option value="gunung mas">Gunung Mas</option>
-                <option value="cisangkan">Cisangkan</option>
-                <option value="arcamanik">Arcamanik</option>
-                <option value="kota baru parahyangan">Kota Baru Parahyangan</option>
-                <option value="majalengka">Majalengka</option>
+        </div>
+        <!-- Fasilitas -->
+        <div class="filter-box">
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21v-2a4 4 0 00-4-4H9a4 4 0 00-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+            </svg>
+            <select class="filter-select" id="fasilitas">
+                <option value="">Cari Fasilitas</option>
+                <option value="hotel">Hotel & Penginapan</option>
+                <option value="rumah-sakit">Rumah Sakit & Klinik</option>
+                <option value="apotek">Apotek</option>
+                <option value="rumah-makan">Restoran & Kuliner</option>
+                <option value="polisi">Polisi & Keamanan</option>
             </select>
-
-            <button type="submit" class="btn-yellow">Cari</button>
-            <button type="reset" class="reset-btn">Reset</button>
-        </form>
-    </div>
+        </div>
+        <button type="submit" class="btn-cari">
+            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+            </svg>
+            Cari
+        </button>
+        <button type="reset" class="btn-reset-filter">Reset</button>
+    </form>
 </section>
 
 <div class="map-facilities-wrapper">
@@ -104,57 +127,63 @@
             <div id="map-canvas"></div>
 
             <div class="gor-card" id="floating-gor-card">
-            <div class="gor-card-header">
-                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="color: #374151;">
-                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z" />
-                </svg>
-                <span id="card-gor-name">-</span>
-            </div>
-            <div class="gor-card-body">
-                <div class="addr">
-                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="color: #6b7280; flex-shrink: 0; margin-top: -2px;">
+                <div class="gor-card-header">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="color: #374151;">
                         <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z" />
                     </svg>
-                    <span id="card-gor-addr">-</span>
+                    <span id="card-gor-name">-</span>
                 </div>
-                <div class="cabang-title">CABANG OLAHRAGA</div>
-                <div class="cabor-grid" id="card-gor-cabor-grid"></div>
+                <div class="gor-card-body">
+                    <div class="addr">
+                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="color: #6b7280; flex-shrink: 0; margin-top: -2px;">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z" />
+                        </svg>
+                        <span id="card-gor-addr">-</span>
+                    </div>
+                    <div class="cabang-title">CABANG OLAHRAGA</div>
+                    <div class="cabor-grid" id="card-gor-cabor-grid"></div>
 
-                <a href="#" id="card-gor-gmaps" target="_blank" class="map-btn">
-                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z" />
-                    </svg>
-                    Buka di Google Maps
-                </a>
+                    <a href="#" id="card-gor-gmaps" target="_blank" class="map-btn">
+                        <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z" />
+                        </svg>
+                        Buka di Google Maps
+                    </a>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
     <!-- FACILITIES SIDE -->
     <div class="facilities-side">
         <div class="facilities-side-header">
             <h2>Fasilitas Terdekat</h2>
             <p>Temukan fasilitas di sekitar lokasi yang dipilih</p>
+            <span class="facilities-badge">5 Kategori Tersedia</span>
         </div>
 
         <div class="facility-filter-buttons">
             <button class="facility-filter-btn active" data-filter="all">Semua</button>
-            <button class="facility-filter-btn" data-filter="cat-hotel">🏨 Hotel</button>
-            <button class="facility-filter-btn" data-filter="cat-rs">🏥 Kesehatan</button>
-            <button class="facility-filter-btn" data-filter="cat-resto">🍽️ Restoran</button>
-            <button class="facility-filter-btn" data-filter="cat-police">🚔 Polisi</button>
-            <button class="facility-filter-btn" data-filter="cat-apotek">💊 Apotek</button>
+            <button class="facility-filter-btn" data-filter="cat-hotel">Hotel</button>
+            <button class="facility-filter-btn" data-filter="cat-rs">Kesehatan</button>
+            <button class="facility-filter-btn" data-filter="cat-resto">Restoran</button>
+            <button class="facility-filter-btn" data-filter="cat-police">Polisi</button>
+            <button class="facility-filter-btn" data-filter="cat-apotek">Apotek</button>
         </div>
 
         <div class="facilities-list-wrap" id="facilities-list-wrap">
             <div class="facilities-empty" id="facilities-placeholder">
-                Klik marker venue di peta untuk menampilkan fasilitas terdekat
+                <svg width="48" height="48" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.98 1.98 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <p>Klik marker venue di peta untuk menampilkan fasilitas terdekat</p>
             </div>
 
             <!-- Hotel -->
             <div class="facility-category" id="cat-hotel" style="display:none;">
                 <div class="facility-cat-header">
+                    <span class="cat-dot" style="background:#d97706;"></span>
                     <div class="facility-cat-icon" style="background:#fef3c7; color:#d97706;">
                         <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z" />
@@ -168,6 +197,7 @@
             <!-- Kesehatan -->
             <div class="facility-category" id="cat-rs" style="display:none;">
                 <div class="facility-cat-header">
+                    <span class="cat-dot" style="background:#dc2626;"></span>
                     <div class="facility-cat-icon" style="background:#fee2e2; color:#dc2626;">
                         <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M19 3H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z" />
@@ -181,6 +211,7 @@
             <!-- Restoran -->
             <div class="facility-category" id="cat-resto" style="display:none;">
                 <div class="facility-cat-header">
+                    <span class="cat-dot" style="background:#16a34a;"></span>
                     <div class="facility-cat-icon" style="background:#dcfce7; color:#16a34a;">
                         <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-7v8h2.5v8H21V2h-5z" />
@@ -194,6 +225,7 @@
             <!-- Polisi -->
             <div class="facility-category" id="cat-police" style="display:none;">
                 <div class="facility-cat-header">
+                    <span class="cat-dot" style="background:#4f46e5;"></span>
                     <div class="facility-cat-icon" style="background:#e0e7ff; color:#4f46e5;">
                         <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z" />
@@ -207,6 +239,7 @@
             <!-- Apotek -->
             <div class="facility-category" id="cat-apotek" style="display:none;">
                 <div class="facility-cat-header">
+                    <span class="cat-dot" style="background:#9333ea;"></span>
                     <div class="facility-cat-icon" style="background:#f3e8ff; color:#9333ea;">
                         <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M19 3H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z" />
@@ -225,7 +258,7 @@
 @endsection
 
 @push('styles')
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 @endpush
 
 @push('scripts')
@@ -355,219 +388,490 @@
 
     /* ── Data Fasilitas Hardcoded dari PDF ── */
     const pajajaranFacilities = {
-        hotel: [
-            { name: "Zest Hotel Bogor", address: "Jl. Pajajaran No. 27, Babakan, Kec. Bogor Tengah, Kota Bogor", distance: "1.2 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Zest+Hotel+Bogor+Jl.+Pajajaran+No.+27+Babakan+Bogor+Tengah" },
-            { name: "The Mirah Hotel Bogor", address: "Jl. Pangrango No. 9A, Babakan, Kec. Bogor Tengah, Kota Bogor", distance: "1.5 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=The+Mirah+Hotel+Bogor+Jl.+Pangrango+No.+9A+Babakan+Bogor+Tengah" }
+        hotel: [{
+                name: "Zest Hotel Bogor",
+                address: "Jl. Pajajaran No. 27, Babakan, Kec. Bogor Tengah, Kota Bogor",
+                distance: "1.2 km",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=Zest+Hotel+Bogor+Jl.+Pajajaran+No.+27+Babakan+Bogor+Tengah"
+            },
+            {
+                name: "The Mirah Hotel Bogor",
+                address: "Jl. Pangrango No. 9A, Babakan, Kec. Bogor Tengah, Kota Bogor",
+                distance: "1.5 km",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=The+Mirah+Hotel+Bogor+Jl.+Pangrango+No.+9A+Babakan+Bogor+Tengah"
+            }
         ],
-        hospital: [
-            { name: "RS Salak Bogor", address: "Jl. Jend. Sudirman No. 8, Sempur, Kec. Bogor Tengah, Kota Bogor", distance: "1.1 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=RS+Salak+Bogor+Jl.+Jend.+Sudirman+No.+8+Sempur+Bogor+Tengah" },
-            { name: "RS PMI Bogor", address: "Jl. Pajajaran No. 80, Baranangsiang, Kec. Bogor Timur, Kota Bogor", distance: "2.5 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=RS+PMI+Bogor+Jl.+Pajajaran+No.+80+Baranangsiang+Bogor+Timur" },
-            { name: "Puskesmas Bogor Tengah", address: "Jl. Sawojajar No. 38, Pabaton, Kec. Bogor Tengah, Kota Bogor", distance: "1.8 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Puskesmas+Bogor+Tengah+Jl.+Sawojajar+No.+38+Pabaton+Bogor+Tengah" }
+        hospital: [{
+                name: "RS Salak Bogor",
+                address: "Jl. Jend. Sudirman No. 8, Sempur, Kec. Bogor Tengah, Kota Bogor",
+                distance: "1.1 km",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=RS+Salak+Bogor+Jl.+Jend.+Sudirman+No.+8+Sempur+Bogor+Tengah"
+            },
+            {
+                name: "RS PMI Bogor",
+                address: "Jl. Pajajaran No. 80, Baranangsiang, Kec. Bogor Timur, Kota Bogor",
+                distance: "2.5 km",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=RS+PMI+Bogor+Jl.+Pajajaran+No.+80+Baranangsiang+Bogor+Timur"
+            },
+            {
+                name: "Puskesmas Bogor Tengah",
+                address: "Jl. Sawojajar No. 38, Pabaton, Kec. Bogor Tengah, Kota Bogor",
+                distance: "1.8 km",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=Puskesmas+Bogor+Tengah+Jl.+Sawojajar+No.+38+Pabaton+Bogor+Tengah"
+            }
         ],
-        pharmacy: [
-            { name: "Apotek Kimia Farma Juanda", address: "Jl. Ir. H. Juanda No. 30, Babakan, Kec. Bogor Tengah, Kota Bogor", distance: "2.0 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Apotek+Kimia+Farma+Juanda+Jl.+Ir.+H.+Juanda+No.+30+Babakan+Bogor+Tengah" }
-        ],
-        police: [
-            { name: "Polresta Bogor Kota (Mako Muslihat)", address: "Jl. Kapten Muslihat No. 18, Paledang, Kec. Bogor Tengah, Kota Bogor", distance: "2.3 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Polresta+Bogor+Kota+Mako+Muslihat+Jl.+Kapten+Muslihat+No.+18+Paledang+Bogor+Tengah" }
-        ],
-        restaurant: [
-            { name: "Rumah Makan Ampera Pemuda", address: "Jl. Pemuda No. 27, Tanah Sareal, Kec. Tanah Sereal, Kota Bogor", distance: "300 m", mapUrl: "https://www.google.com/maps/search/?api=1&query=Rumah%20Makan%20Ampera%20Pemuda%20Jl.%20Pemuda%20No.%2027%20Tanah%20Sareal%20Bogor" }
-        ]
+        pharmacy: [{
+            name: "Apotek Kimia Farma Juanda",
+            address: "Jl. Ir. H. Juanda No. 30, Babakan, Kec. Bogor Tengah, Kota Bogor",
+            distance: "2.0 km",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=Apotek+Kimia+Farma+Juanda+Jl.+Ir.+H.+Juanda+No.+30+Babakan+Bogor+Tengah"
+        }],
+        police: [{
+            name: "Polresta Bogor Kota (Mako Muslihat)",
+            address: "Jl. Kapten Muslihat No. 18, Paledang, Kec. Bogor Tengah, Kota Bogor",
+            distance: "2.3 km",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=Polresta+Bogor+Kota+Mako+Muslihat+Jl.+Kapten+Muslihat+No.+18+Paledang+Bogor+Tengah"
+        }],
+        restaurant: [{
+            name: "Rumah Makan Ampera Pemuda",
+            address: "Jl. Pemuda No. 27, Tanah Sareal, Kec. Tanah Sereal, Kota Bogor",
+            distance: "300 m",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=Rumah%20Makan%20Ampera%20Pemuda%20Jl.%20Pemuda%20No.%2027%20Tanah%20Sareal%20Bogor"
+        }]
     };
 
     const greenForestFacilities = {
-        hotel: [
-            { name: "ASTON Bogor Hotel & Resort", address: "Mulyaharja, Kec. Bogor Selatan, Kota Bogor", distance: "1.8 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=ASTON+Bogor+Hotel+%26+Resort+Mulyaharja+Bogor+Selatan" },
-            { name: "Padodi Hotel", address: "Jl. Soemanta Diredja No. 10, Pamoyanan, Kec. Bogor Selatan", distance: "1.5 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Padodi+Hotel+Jl.+Soemanta+Diredja+No.+10+Pamoyanan+Bogor+Selatan" }
+        hotel: [{
+                name: "ASTON Bogor Hotel & Resort",
+                address: "Mulyaharja, Kec. Bogor Selatan, Kota Bogor",
+                distance: "1.8 km",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=ASTON+Bogor+Hotel+%26+Resort+Mulyaharja+Bogor+Selatan"
+            },
+            {
+                name: "Padodi Hotel",
+                address: "Jl. Soemanta Diredja No. 10, Pamoyanan, Kec. Bogor Selatan",
+                distance: "1.5 km",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=Padodi+Hotel+Jl.+Soemanta+Diredja+No.+10+Pamoyanan+Bogor+Selatan"
+            }
         ],
-        hospital: [
-            { name: "RS Melania Bogor", address: "Jl. Pahlawan No. 91, Bondongan, Kec. Bogor Selatan", distance: "2.8 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=RS+Melania+Bogor+Jl.+Pahlawan+No.+91+Bondongan+Bogor+Selatan" },
-            { name: "Puskesmas Cipaku", address: "Jl. Rangga Gading, Cipaku, Kec. Bogor Selatan", distance: "2.1 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Puskesmas+Cipaku+Jl.+Rangga+Gading+Cipaku+Bogor+Selatan" }
+        hospital: [{
+                name: "RS Melania Bogor",
+                address: "Jl. Pahlawan No. 91, Bondongan, Kec. Bogor Selatan",
+                distance: "2.8 km",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=RS+Melania+Bogor+Jl.+Pahlawan+No.+91+Bondongan+Bogor+Selatan"
+            },
+            {
+                name: "Puskesmas Cipaku",
+                address: "Jl. Rangga Gading, Cipaku, Kec. Bogor Selatan",
+                distance: "2.1 km",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=Puskesmas+Cipaku+Jl.+Rangga+Gading+Cipaku+Bogor+Selatan"
+            }
         ],
-        pharmacy: [
-            { name: "Apotek Kimia Farma Pahlawan", address: "Jl. Pahlawan No. 40, Batutulis, Kec. Bogor Selatan", distance: "2.5 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Apotek+Kimia+Farma+Pahlawan+Jl.+Pahlawan+No.+40+Batutulis+Bogor+Selatan" }
-        ],
-        police: [
-            { name: "Polsek Bogor Selatan", address: "Jl. Layung Sari No. 1, Empang, Kec. Bogor Selatan", distance: "2.6 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Polsek+Bogor+Selatan+Jl.+Layung+Sari+No.+1+Empang+Bogor+Selatan" }
-        ],
-        restaurant: [
-            { name: "Resto Kampoeng Konsep", address: "Jl. Soemanta Diredja No. 28, Pamoyanan, Kec. Bogor Selatan", distance: "400 m", mapUrl: "https://www.google.com/maps/search/?api=1&query=Resto%20Kampoeng%20Konsep%20Jl.%20Soemanta%20Diredja%20No.%2028%20Pamoyanan%20Bogor%20Selatan" }
-        ]
+        pharmacy: [{
+            name: "Apotek Kimia Farma Pahlawan",
+            address: "Jl. Pahlawan No. 40, Batutulis, Kec. Bogor Selatan",
+            distance: "2.5 km",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=Apotek+Kimia+Farma+Pahlawan+Jl.+Pahlawan+No.+40+Batutulis+Bogor+Selatan"
+        }],
+        police: [{
+            name: "Polsek Bogor Selatan",
+            address: "Jl. Layung Sari No. 1, Empang, Kec. Bogor Selatan",
+            distance: "2.6 km",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=Polsek+Bogor+Selatan+Jl.+Layung+Sari+No.+1+Empang+Bogor+Selatan"
+        }],
+        restaurant: [{
+            name: "Resto Kampoeng Konsep",
+            address: "Jl. Soemanta Diredja No. 28, Pamoyanan, Kec. Bogor Selatan",
+            distance: "400 m",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=Resto%20Kampoeng%20Konsep%20Jl.%20Soemanta%20Diredja%20No.%2028%20Pamoyanan%20Bogor%20Selatan"
+        }]
     };
 
     const vokasiFacilities = {
-        hotel: [
-            { name: "IPB Hotel & Convention Centre", address: "Botani Square, Jl. Pajajaran, Baranangsiang", distance: "2.8 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=IPB+Hotel+%26+Convention+Centre+Botani+Square+Jl.+Pajajaran+Baranangsiang" }
+        hotel: [{
+            name: "IPB Hotel & Convention Centre",
+            address: "Botani Square, Jl. Pajajaran, Baranangsiang",
+            distance: "2.8 km",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=IPB+Hotel+%26+Convention+Centre+Botani+Square+Jl.+Pajajaran+Baranangsiang"
+        }],
+        hospital: [{
+                name: "RS PMI Bogor",
+                address: "Jl. Pajajaran No. 80, Baranangsiang, Kec. Bogor Timur",
+                distance: "2.2 km",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=RS+PMI+Bogor+Jl.+Pajajaran+No.+80+Baranangsiang+Bogor+Timur"
+            },
+            {
+                name: "Puskesmas Bogor Utara",
+                address: "Jl. Tegal Gundil, Kec. Bogor Utara",
+                distance: "1.9 km",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=Puskesmas+Bogor+Utara+Jl.+Tegal+Gundil+Bogor+Utara"
+            }
         ],
-        hospital: [
-            { name: "RS PMI Bogor", address: "Jl. Pajajaran No. 80, Baranangsiang, Kec. Bogor Timur", distance: "2.2 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=RS+PMI+Bogor+Jl.+Pajajaran+No.+80+Baranangsiang+Bogor+Timur" },
-            { name: "Puskesmas Bogor Utara", address: "Jl. Tegal Gundil, Kec. Bogor Utara", distance: "1.9 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Puskesmas+Bogor+Utara+Jl.+Tegal+Gundil+Bogor+Utara" }
-        ],
-        pharmacy: [
-            { name: "Apotek Kimia Farma Pajajaran", address: "Jl. Pajajaran No. 35, Babakan, Kec. Bogor Tengah", distance: "1.5 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Apotek+Kimia+Farma+Pajajaran+Jl.+Pajajaran+No.+35+Babakan+Bogor+Tengah" }
-        ],
-        police: [
-            { name: "Polsek Bogor Utara", address: "Jl. Pajajaran No. 200, Cibuluh, Kec. Bogor Utara", distance: "2.1 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Polsek+Bogor+Utara+Jl.+Pajajaran+No.+200+Cibuluh+Bogor+Utara" }
-        ],
-        restaurant: [
-            { name: "Toko Adelways (Kantin IPB Cilibende)", address: "Jl. Cilibende, Babakan, Kec. Bogor Tengah", distance: "250 m", mapUrl: "https://www.google.com/maps/search/?api=1&query=Toko%20Adelways%20Jl.%20Cilibende%20Babakan%20Bogor%20Tengah" }
-        ]
+        pharmacy: [{
+            name: "Apotek Kimia Farma Pajajaran",
+            address: "Jl. Pajajaran No. 35, Babakan, Kec. Bogor Tengah",
+            distance: "1.5 km",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=Apotek+Kimia+Farma+Pajajaran+Jl.+Pajajaran+No.+35+Babakan+Bogor+Tengah"
+        }],
+        police: [{
+            name: "Polsek Bogor Utara",
+            address: "Jl. Pajajaran No. 200, Cibuluh, Kec. Bogor Utara",
+            distance: "2.1 km",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=Polsek+Bogor+Utara+Jl.+Pajajaran+No.+200+Cibuluh+Bogor+Utara"
+        }],
+        restaurant: [{
+            name: "Toko Adelways (Kantin IPB Cilibende)",
+            address: "Jl. Cilibende, Babakan, Kec. Bogor Tengah",
+            distance: "250 m",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=Toko%20Adelways%20Jl.%20Cilibende%20Babakan%20Bogor%20Tengah"
+        }]
     };
 
     const yasminFacilities = {
-        hotel: [
-            { name: "WHIZ Prime Hotel Bogor Yasmin", address: "Jl. KH. R. Abdullah Bin Nuh No. 33, Curugmekar", distance: "600 m", mapUrl: "https://www.google.com/maps/search/?api=1&query=WHIZ+Prime+Hotel+Bogor+Yasmin+Jl.+KH.+R.+Abdullah+Bin+Nuh+No.+33+Curugmekar" },
-            { name: "Swiss-Belcourt Bogor", address: "Jl. KH. R. Abdullah Bin Nuh No. 27, Bukit Cimanggu City", distance: "1.2 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Swiss-Belcourt+Bogor+Jl.+KH.+R.+Abdullah+Bin+Nuh+No.+27+Bukit+Cimanggu+City" }
+        hotel: [{
+                name: "WHIZ Prime Hotel Bogor Yasmin",
+                address: "Jl. KH. R. Abdullah Bin Nuh No. 33, Curugmekar",
+                distance: "600 m",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=WHIZ+Prime+Hotel+Bogor+Yasmin+Jl.+KH.+R.+Abdullah+Bin+Nuh+No.+33+Curugmekar"
+            },
+            {
+                name: "Swiss-Belcourt Bogor",
+                address: "Jl. KH. R. Abdullah Bin Nuh No. 27, Bukit Cimanggu City",
+                distance: "1.2 km",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=Swiss-Belcourt+Bogor+Jl.+KH.+R.+Abdullah+Bin+Nuh+No.+27+Bukit+Cimanggu+City"
+            }
         ],
-        hospital: [
-            { name: "RS Hermina Bogor", address: "Jl. KH. R. Abdullah Bin Nuh No. E2, Hermina Grand Yasmin", distance: "900 m", mapUrl: "https://www.google.com/maps/search/?api=1&query=RS+Hermina+Bogor+Jl.+KH.+R.+Abdullah+Bin+Nuh+No.+E2+Hermina+Grand+Yasmin" },
-            { name: "RS Islam Bogor", address: "Jl. Perdana No. 22, Budi Agung, Tanahsareal", distance: "2.0 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=RS+Islam+Bogor+Jl.+Perdana+No.+22+Budi+Agung+Tanahsareal" },
-            { name: "Puskesmas Gang Kelor", address: "Jl. Raya Curug No. 12, Curugmekar, Kec. Bogor Barat", distance: "1.4 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Puskesmas+Gang+Kelor+Jl.+Raya+Curug+No.+12+Curugmekar+Bogor+Barat" }
+        hospital: [{
+                name: "RS Hermina Bogor",
+                address: "Jl. KH. R. Abdullah Bin Nuh No. E2, Hermina Grand Yasmin",
+                distance: "900 m",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=RS+Hermina+Bogor+Jl.+KH.+R.+Abdullah+Bin+Nuh+No.+E2+Hermina+Grand+Yasmin"
+            },
+            {
+                name: "RS Islam Bogor",
+                address: "Jl. Perdana No. 22, Budi Agung, Tanahsareal",
+                distance: "2.0 km",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=RS+Islam+Bogor+Jl.+Perdana+No.+22+Budi+Agung+Tanahsareal"
+            },
+            {
+                name: "Puskesmas Gang Kelor",
+                address: "Jl. Raya Curug No. 12, Curugmekar, Kec. Bogor Barat",
+                distance: "1.4 km",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=Puskesmas+Gang+Kelor+Jl.+Raya+Curug+No.+12+Curugmekar+Bogor+Barat"
+            }
         ],
-        pharmacy: [
-            { name: "Apotek Kimia Farma Yasmin", address: "Ruko Taman Yasmin Sektor VI No. 108, Curugmekar", distance: "500 m", mapUrl: "https://www.google.com/maps/search/?api=1&query=Apotek+Kimia+Farma+Yasmin+Ruko+Taman+Yasmin+Sektor+VI+No.+108+Curugmekar" }
-        ],
-        police: [
-            { name: "Polsek Tanah Sareal", address: "Jl. Seremped, Kedung Badak, Kec. Tanah Sareal", distance: "2.4 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Polsek+Tanah+Sareal+Jl.+Seremped+Kedung+Badak+Tanah+Sareal" }
-        ],
-        restaurant: [
-            { name: "Rumah Makan Ampera Yasmin", address: "Jl. KH. R. Abdullah Bin Nuh No. 37, Curugmekar", distance: "350 m", mapUrl: "https://www.google.com/maps/search/?api=1&query=Rumah%20Makan%20Ampera%20Yasmin%20Jl.%20KH.%20R.%20Abdullah%20Bin%20Nuh%20No.%2037%20Curugmekar" }
-        ]
+        pharmacy: [{
+            name: "Apotek Kimia Farma Yasmin",
+            address: "Ruko Taman Yasmin Sektor VI No. 108, Curugmekar",
+            distance: "500 m",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=Apotek+Kimia+Farma+Yasmin+Ruko+Taman+Yasmin+Sektor+VI+No.+108+Curugmekar"
+        }],
+        police: [{
+            name: "Polsek Tanah Sareal",
+            address: "Jl. Seremped, Kedung Badak, Kec. Tanah Sareal",
+            distance: "2.4 km",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=Polsek+Tanah+Sareal+Jl.+Seremped+Kedung+Badak+Tanah+Sareal"
+        }],
+        restaurant: [{
+            name: "Rumah Makan Ampera Yasmin",
+            address: "Jl. KH. R. Abdullah Bin Nuh No. 37, Curugmekar",
+            distance: "350 m",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=Rumah%20Makan%20Ampera%20Yasmin%20Jl.%20KH.%20R.%20Abdullah%20Bin%20Nuh%20No.%2037%20Curugmekar"
+        }]
     };
 
     const kemangFacilities = {
-        hotel: [
-            { name: "Salak Sunset Hotel", address: "Jl. Raya Kemang Parung No. 12, Kemang", distance: "2.1 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Salak+Sunset+Hotel+Jl.+Raya+Kemang+Parung+No.+12+Kemang" }
+        hotel: [{
+            name: "Salak Sunset Hotel",
+            address: "Jl. Raya Kemang Parung No. 12, Kemang",
+            distance: "2.1 km",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=Salak+Sunset+Hotel+Jl.+Raya+Kemang+Parung+No.+12+Kemang"
+        }],
+        hospital: [{
+                name: "RS Sentosa Bogor",
+                address: "Jl. Raya Kemang No. 18, Kemang, Kab. Bogor",
+                distance: "1.3 km",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=RS+Sentosa+Bogor+Jl.+Raya+Kemang+No.+18+Kemang+Kab.+Bogor"
+            },
+            {
+                name: "Puskesmas Kemang",
+                address: "Jl. Raya Kemang No. 5, Kemang, Kab. Bogor",
+                distance: "1.1 km",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=Puskesmas+Kemang+Jl.+Raya+Kemang+No.+5+Kemang+Kab.+Bogor"
+            }
         ],
-        hospital: [
-            { name: "RS Sentosa Bogor", address: "Jl. Raya Kemang No. 18, Kemang, Kab. Bogor", distance: "1.3 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=RS+Sentosa+Bogor+Jl.+Raya+Kemang+No.+18+Kemang+Kab.+Bogor" },
-            { name: "Puskesmas Kemang", address: "Jl. Raya Kemang No. 5, Kemang, Kab. Bogor", distance: "1.1 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Puskesmas+Kemang+Jl.+Raya+Kemang+No.+5+Kemang+Kab.+Bogor" }
-        ],
-        pharmacy: [
-            { name: "Apotek Kimia Farma Kemang", address: "Jl. Raya Parung-Bogor, Kemang, Kab. Bogor", distance: "800 m", mapUrl: "https://www.google.com/maps/search/?api=1&query=Apotek+Kimia+Farma+Kemang+Jl.+Raya+Parung-Bogor+Kemang+Kab.+Bogor" }
-        ],
-        police: [
-            { name: "Polsek Kemang", address: "Jl. Raya Kemang Parung No. 10, Kemang, Kab. Bogor", distance: "1.5 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Polsek+Kemang+Jl.+Raya+Kemang+Parung+No.+10+Kemang+Kab.+Bogor" }
-        ],
-        restaurant: [
-            { name: "RM Ayam Goreng Bakar Sayati", address: "Jl. Raya Parung - Bogor, Semplak Barat, Kemang", distance: "450 m", mapUrl: "https://www.google.com/maps/search/?api=1&query=Ayam%20Goreng%20Bakar%20Sayati%20Jl.%20Raya%20Parung%20Bogor%20Semplak%20Barat%20Kemang" }
-        ]
+        pharmacy: [{
+            name: "Apotek Kimia Farma Kemang",
+            address: "Jl. Raya Parung-Bogor, Kemang, Kab. Bogor",
+            distance: "800 m",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=Apotek+Kimia+Farma+Kemang+Jl.+Raya+Parung-Bogor+Kemang+Kab.+Bogor"
+        }],
+        police: [{
+            name: "Polsek Kemang",
+            address: "Jl. Raya Kemang Parung No. 10, Kemang, Kab. Bogor",
+            distance: "1.5 km",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=Polsek+Kemang+Jl.+Raya+Kemang+Parung+No.+10+Kemang+Kab.+Bogor"
+        }],
+        restaurant: [{
+            name: "RM Ayam Goreng Bakar Sayati",
+            address: "Jl. Raya Parung - Bogor, Semplak Barat, Kemang",
+            distance: "450 m",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=Ayam%20Goreng%20Bakar%20Sayati%20Jl.%20Raya%20Parung%20Bogor%20Semplak%20Barat%20Kemang"
+        }]
     };
 
     const sentulFacilities = {
-        hotel: [
-            { name: "Lorin Sentul Hotel", address: "Kawasan Sirkuit Sentul Internasional, Babakan Madang", distance: "1.2 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Lorin+Sentul+Hotel+Kawasan+Sirkuit+Sentul+Internasional+Babakan+Madang" },
-            { name: "Harris Hotel Sentul City", address: "Jl. Jend. Sudirman, Sentul City, Babakan Madang", distance: "2.5 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Harris+Hotel+Sentul+City+Jl.+Jend.+Sudirman+Sentul+City+Babakan+Madang" }
+        hotel: [{
+                name: "Lorin Sentul Hotel",
+                address: "Kawasan Sirkuit Sentul Internasional, Babakan Madang",
+                distance: "1.2 km",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=Lorin+Sentul+Hotel+Kawasan+Sirkuit+Sentul+Internasional+Babakan+Madang"
+            },
+            {
+                name: "Harris Hotel Sentul City",
+                address: "Jl. Jend. Sudirman, Sentul City, Babakan Madang",
+                distance: "2.5 km",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=Harris+Hotel+Sentul+City+Jl.+Jend.+Sudirman+Sentul+City+Babakan+Madang"
+            }
         ],
-        hospital: [
-            { name: "RS EMC Sentul", address: "Jl. MH. Thamrin No. 57, Sentul City, Babakan Madang", distance: "2.7 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=RS+EMC+Sentul+Jl.+MH.+Thamrin+No.+57+Sentul+City+Babakan+Madang" },
-            { name: "Puskesmas Babakan Madang", address: "Jl. Raya Sentul No. 1, Babakan Madang", distance: "2.0 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Puskesmas+Babakan+Madang+Jl.+Raya+Sentul+No.+1+Babakan+Madang" }
+        hospital: [{
+                name: "RS EMC Sentul",
+                address: "Jl. MH. Thamrin No. 57, Sentul City, Babakan Madang",
+                distance: "2.7 km",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=RS+EMC+Sentul+Jl.+MH.+Thamrin+No.+57+Sentul+City+Babakan+Madang"
+            },
+            {
+                name: "Puskesmas Babakan Madang",
+                address: "Jl. Raya Sentul No. 1, Babakan Madang",
+                distance: "2.0 km",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=Puskesmas+Babakan+Madang+Jl.+Raya+Sentul+No.+1+Babakan+Madang"
+            }
         ],
-        pharmacy: [
-            { name: "Apotek Kimia Farma Sentul City", address: "Ruko Plaza Niaga 1, Sentul City", distance: "2.3 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Apotek+Kimia+Farma+Sentul+City+Ruko+Plaza+Niaga+1+Sentul+City" }
-        ],
-        police: [
-            { name: "Polsek Babakan Madang", address: "Jl. Raya Babakan Madang No. 8, Kab. Bogor", distance: "2.2 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Polsek+Babakan+Madang+Jl.+Raya+Babakan+Madang+No.+8+Kab.+Bogor" }
-        ],
-        restaurant: [
-            { name: "Restoran Lorin Sentul", address: "Kawasan Sirkuit Sentul Internasional, Babakan Madang", distance: "1.2 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Restoran%20Lorin%20Sentul%20Kawasan%20Sirkuit%20Sentul%20Internasional%20Babakan%20Madang" }
-        ]
+        pharmacy: [{
+            name: "Apotek Kimia Farma Sentul City",
+            address: "Ruko Plaza Niaga 1, Sentul City",
+            distance: "2.3 km",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=Apotek+Kimia+Farma+Sentul+City+Ruko+Plaza+Niaga+1+Sentul+City"
+        }],
+        police: [{
+            name: "Polsek Babakan Madang",
+            address: "Jl. Raya Babakan Madang No. 8, Kab. Bogor",
+            distance: "2.2 km",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=Polsek+Babakan+Madang+Jl.+Raya+Babakan+Madang+No.+8+Kab.+Bogor"
+        }],
+        restaurant: [{
+            name: "Restoran Lorin Sentul",
+            address: "Kawasan Sirkuit Sentul Internasional, Babakan Madang",
+            distance: "1.2 km",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=Restoran%20Lorin%20Sentul%20Kawasan%20Sirkuit%20Sentul%20Internasional%20Babakan%20Madang"
+        }]
     };
 
     const gunungMasFacilities = {
-        hotel: [
-            { name: "Bobocabin Gunung Mas", address: "Gunung Mas, Jl. Raya Puncak Gadog No. KM 87, Cisarua", distance: "300 m", mapUrl: "https://www.google.com/maps/search/?api=1&query=Bobocabin+Gunung+Mas+Jl.+Raya+Puncak+Gadog+KM+87+Cisarua" },
-            { name: "Grand Diara Hotel Puncak", address: "Jl. Raya Puncak - Gadog KM 77, Cisarua", distance: "2.9 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Grand+Diara+Hotel+Puncak+Jl.+Raya+Puncak+Gadog+KM+77+Cisarua" }
+        hotel: [{
+                name: "Bobocabin Gunung Mas",
+                address: "Gunung Mas, Jl. Raya Puncak Gadog No. KM 87, Cisarua",
+                distance: "300 m",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=Bobocabin+Gunung+Mas+Jl.+Raya+Puncak+Gadog+KM+87+Cisarua"
+            },
+            {
+                name: "Grand Diara Hotel Puncak",
+                address: "Jl. Raya Puncak - Gadog KM 77, Cisarua",
+                distance: "2.9 km",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=Grand+Diara+Hotel+Puncak+Jl.+Raya+Puncak+Gadog+KM+77+Cisarua"
+            }
         ],
-        hospital: [
-            { name: "RSPG Cisarua (RS Paru Dr. M. Goenawan)", address: "Jl. Raya Puncak No. KM 83, Cisarua, Kab. Bogor", distance: "1.8 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=RSPG+Cisarua+RS+Paru+Dr.+M.+Goenawan+Jl.+Raya+Puncak+KM+83+Cisarua+Kab.+Bogor" },
-            { name: "Puskesmas Cisarua", address: "Jl. Raya Puncak No. KM 81, Cisarua, Kab. Bogor", distance: "2.1 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Puskesmas+Cisarua+Jl.+Raya+Puncak+KM+81+Cisarua+Kab.+Bogor" }
+        hospital: [{
+                name: "RSPG Cisarua (RS Paru Dr. M. Goenawan)",
+                address: "Jl. Raya Puncak No. KM 83, Cisarua, Kab. Bogor",
+                distance: "1.8 km",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=RSPG+Cisarua+RS+Paru+Dr.+M.+Goenawan+Jl.+Raya+Puncak+KM+83+Cisarua+Kab.+Bogor"
+            },
+            {
+                name: "Puskesmas Cisarua",
+                address: "Jl. Raya Puncak No. KM 81, Cisarua, Kab. Bogor",
+                distance: "2.1 km",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=Puskesmas+Cisarua+Jl.+Raya+Puncak+KM+81+Cisarua+Kab.+Bogor"
+            }
         ],
-        pharmacy: [
-            { name: "Apotek Kimia Farma Cisarua", address: "Jl. Raya Puncak No. 412, Cisarua, Kab. Bogor", distance: "1.5 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Apotek+Kimia+Farma+Cisarua+Jl.+Raya+Puncak+No.+412+Cisarua+Kab.+Bogor" }
-        ],
-        police: [
-            { name: "Polsek Cisarua", address: "Jl. Raya Puncak KM 82, Cisarua, Kab. Bogor", distance: "2.3 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Polsek+Cisarua+Jl.+Raya+Puncak+KM+82+Cisarua+Kab.+Bogor" }
-        ],
-        restaurant: [
-            { name: "Resto Agrowisata Gunung Mas", address: "Kawasan Agrowisata Gunung Mas, Tugu Selatan, Cisarua", distance: "200 m", mapUrl: "https://www.google.com/maps/search/?api=1&query=Resto%20Agrowisata%20Gunung%20Mas%20Kawasan%20Agrowisata%20Gunung%20Mas%20Tugu%20Selatan%20Cisarua" }
-        ]
+        pharmacy: [{
+            name: "Apotek Kimia Farma Cisarua",
+            address: "Jl. Raya Puncak No. 412, Cisarua, Kab. Bogor",
+            distance: "1.5 km",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=Apotek+Kimia+Farma+Cisarua+Jl.+Raya+Puncak+No.+412+Cisarua+Kab.+Bogor"
+        }],
+        police: [{
+            name: "Polsek Cisarua",
+            address: "Jl. Raya Puncak KM 82, Cisarua, Kab. Bogor",
+            distance: "2.3 km",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=Polsek+Cisarua+Jl.+Raya+Puncak+KM+82+Cisarua+Kab.+Bogor"
+        }],
+        restaurant: [{
+            name: "Resto Agrowisata Gunung Mas",
+            address: "Kawasan Agrowisata Gunung Mas, Tugu Selatan, Cisarua",
+            distance: "200 m",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=Resto%20Agrowisata%20Gunung%20Mas%20Kawasan%20Agrowisata%20Gunung%20Mas%20Tugu%20Selatan%20Cisarua"
+        }]
     };
 
     const cisangkanFacilities = {
-        hotel: [
-            { name: "Hotel Trikarya Cimahi", address: "Jl. Raya Cisangkan No. 88, Padasuka, Cimahi Tengah", distance: "800 m", mapUrl: "https://www.google.com/maps/search/?api=1&query=Hotel+Trikarya+Cimahi+Jl.+Raya+Cisangkan+No.+88+Padasuka+Cimahi+Tengah" }
+        hotel: [{
+            name: "Hotel Trikarya Cimahi",
+            address: "Jl. Raya Cisangkan No. 88, Padasuka, Cimahi Tengah",
+            distance: "800 m",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=Hotel+Trikarya+Cimahi+Jl.+Raya+Cisangkan+No.+88+Padasuka+Cimahi+Tengah"
+        }],
+        hospital: [{
+                name: "RS Dustira Cimahi",
+                address: "Jl. Dr. Dustira No. 1, Baros, Cimahi Tengah",
+                distance: "2.1 km",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=RS+Dustira+Cimahi+Jl.+Dr.+Dustira+No.+1+Baros+Cimahi+Tengah"
+            },
+            {
+                name: "Puskesmas Cimahi Tengah",
+                address: "Jl. Raden Demang Hardjakusumah No. 1, Cimahi",
+                distance: "1.6 km",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=Puskesmas+Cimahi+Tengah+Jl.+Raden+Demang+Hardjakusumah+No.+1+Cimahi"
+            }
         ],
-        hospital: [
-            { name: "RS Dustira Cimahi", address: "Jl. Dr. Dustira No. 1, Baros, Cimahi Tengah", distance: "2.1 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=RS+Dustira+Cimahi+Jl.+Dr.+Dustira+No.+1+Baros+Cimahi+Tengah" },
-            { name: "Puskesmas Cimahi Tengah", address: "Jl. Raden Demang Hardjakusumah No. 1, Cimahi", distance: "1.6 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Puskesmas+Cimahi+Tengah+Jl.+Raden+Demang+Hardjakusumah+No.+1+Cimahi" }
-        ],
-        pharmacy: [
-            { name: "Apotek Kimia Farma Cisangkan", address: "Jl. Raya Cisangkan No. 12, Padasuka, Cimahi Tengah", distance: "400 m", mapUrl: "https://www.google.com/maps/search/?api=1&query=Apotek+Kimia+Farma+Cisangkan+Jl.+Raya+Cisangkan+No.+12+Padasuka+Cimahi+Tengah" }
-        ],
-        police: [
-            { name: "Polres Cimahi", address: "Jl. Raya Cibeureum No. 1, Cimahi Selatan", distance: "2.5 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Polres+Cimahi+Jl.+Raya+Cibeureum+No.+1+Cimahi+Selatan" }
-        ],
-        restaurant: [
-            { name: "RM Ampera Cisangkan", address: "Jl. Raya Barat No. 805, Padasuka, Cimahi Tengah", distance: "350 m", mapUrl: "https://www.google.com/maps/search/?api=1&query=RM%20Ampera%20Cisangkan%20Jl.%20Raya%20Barat%20No.%20805%20Padasuka%20Cimahi%20Tengah" }
-        ]
+        pharmacy: [{
+            name: "Apotek Kimia Farma Cisangkan",
+            address: "Jl. Raya Cisangkan No. 12, Padasuka, Cimahi Tengah",
+            distance: "400 m",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=Apotek+Kimia+Farma+Cisangkan+Jl.+Raya+Cisangkan+No.+12+Padasuka+Cimahi+Tengah"
+        }],
+        police: [{
+            name: "Polres Cimahi",
+            address: "Jl. Raya Cibeureum No. 1, Cimahi Selatan",
+            distance: "2.5 km",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=Polres+Cimahi+Jl.+Raya+Cibeureum+No.+1+Cimahi+Selatan"
+        }],
+        restaurant: [{
+            name: "RM Ampera Cisangkan",
+            address: "Jl. Raya Barat No. 805, Padasuka, Cimahi Tengah",
+            distance: "350 m",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=RM%20Ampera%20Cisangkan%20Jl.%20Raya%20Barat%20No.%20805%20Padasuka%20Cimahi%20Tengah"
+        }]
     };
 
     const arcamanikFacilities = {
-        hotel: [
-            { name: "Grand Cordela Hotel Bandung", address: "Jl. Soekarno-Hatta No. 791, Cisaranten Endah, Arcamanik", distance: "2.4 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Grand+Cordela+Hotel+Bandung+Jl.+Soekarno-Hatta+No.+791+Cisaranten+Endah+Arcamanik" }
+        hotel: [{
+            name: "Grand Cordela Hotel Bandung",
+            address: "Jl. Soekarno-Hatta No. 791, Cisaranten Endah, Arcamanik",
+            distance: "2.4 km",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=Grand+Cordela+Hotel+Bandung+Jl.+Soekarno-Hatta+No.+791+Cisaranten+Endah+Arcamanik"
+        }],
+        hospital: [{
+                name: "RS Hermina Arcamanik",
+                address: "Jl. A.H. Nasution No. 50, Antapani, Bandung",
+                distance: "1.7 km",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=RS+Hermina+Arcamanik+Jl.+A.H.+Nasution+No.+50+Antapani+Bandung"
+            },
+            {
+                name: "Puskesmas Arcamanik",
+                address: "Jl. Cisaranten Kulon No. 4, Arcamanik, Bandung",
+                distance: "1.1 km",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=Puskesmas+Arcamanik+Jl.+Cisaranten+Kulon+No.+4+Arcamanik+Bandung"
+            }
         ],
-        hospital: [
-            { name: "RS Hermina Arcamanik", address: "Jl. A.H. Nasution No. 50, Antapani, Bandung", distance: "1.7 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=RS+Hermina+Arcamanik+Jl.+A.H.+Nasution+No.+50+Antapani+Bandung" },
-            { name: "Puskesmas Arcamanik", address: "Jl. Cisaranten Kulon No. 4, Arcamanik, Bandung", distance: "1.1 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Puskesmas+Arcamanik+Jl.+Cisaranten+Kulon+No.+4+Arcamanik+Bandung" }
-        ],
-        pharmacy: [
-            { name: "Apotek Kimia Farma Arcamanik", address: "Jl. Arcamanik Endah No. 42, Sukamiskin, Arcamanik", distance: "600 m", mapUrl: "https://www.google.com/maps/search/?api=1&query=Apotek+Kimia+Farma+Arcamanik+Jl.+Arcamanik+Endah+No.+42+Sukamiskin+Arcamanik" }
-        ],
-        police: [
-            { name: "Polsek Arcamanik", address: "Jl. Pacuan Kuda No. 54, Sukamiskin, Arcamanik", distance: "800 m", mapUrl: "https://www.google.com/maps/search/?api=1&query=Polsek+Arcamanik+Jl.+Pacuan+Kuda+No.+54+Sukamiskin+Arcamanik" }
-        ],
-        restaurant: [
-            { name: "RM Khas Sunda Cibiuk Arcamanik", address: "Jl. Soekarno Hatta No. 741, Cisaranten Endah, Arcamanik", distance: "1.8 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=RM%20Khas%20Sunda%20Cibiuk%20Arcamanik%20Jl.%20Soekarno%20Hatta%20No.%20741%20Cisaranten%20Endah%20Arcamanik" }
-        ]
+        pharmacy: [{
+            name: "Apotek Kimia Farma Arcamanik",
+            address: "Jl. Arcamanik Endah No. 42, Sukamiskin, Arcamanik",
+            distance: "600 m",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=Apotek+Kimia+Farma+Arcamanik+Jl.+Arcamanik+Endah+No.+42+Sukamiskin+Arcamanik"
+        }],
+        police: [{
+            name: "Polsek Arcamanik",
+            address: "Jl. Pacuan Kuda No. 54, Sukamiskin, Arcamanik",
+            distance: "800 m",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=Polsek+Arcamanik+Jl.+Pacuan+Kuda+No.+54+Sukamiskin+Arcamanik"
+        }],
+        restaurant: [{
+            name: "RM Khas Sunda Cibiuk Arcamanik",
+            address: "Jl. Soekarno Hatta No. 741, Cisaranten Endah, Arcamanik",
+            distance: "1.8 km",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=RM%20Khas%20Sunda%20Cibiuk%20Arcamanik%20Jl.%20Soekarno%20Hatta%20No.%20741%20Cisaranten%20Endah%20Arcamanik"
+        }]
     };
 
     const kotaBaruFacilities = {
-        hotel: [
-            { name: "Mason Pine Hotel", address: "Jl. Raya Kotabaru Parahyangan, Cipeundeuy, Padalarang", distance: "500 m", mapUrl: "https://www.google.com/maps/search/?api=1&query=Mason+Pine+Hotel+Jl.+Raya+Kotabaru+Parahyangan+Cipeundeuy+Padalarang" }
+        hotel: [{
+            name: "Mason Pine Hotel",
+            address: "Jl. Raya Kotabaru Parahyangan, Cipeundeuy, Padalarang",
+            distance: "500 m",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=Mason+Pine+Hotel+Jl.+Raya+Kotabaru+Parahyangan+Cipeundeuy+Padalarang"
+        }],
+        hospital: [{
+                name: "RS Cahya Kawaluyan",
+                address: "Jl. Raya Parahyangan KM 1.5, Padalarang, Bandung Barat",
+                distance: "1.2 km",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=RS+Cahya+Kawaluyan+Jl.+Raya+Parahyangan+KM+1.5+Padalarang+Bandung+Barat"
+            },
+            {
+                name: "Puskesmas Padalarang",
+                address: "Jl. Raya Padalarang No. 470, Bandung Barat",
+                distance: "2.8 km",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=Puskesmas+Padalarang+Jl.+Raya+Padalarang+No.+470+Bandung+Barat"
+            }
         ],
-        hospital: [
-            { name: "RS Cahya Kawaluyan", address: "Jl. Raya Parahyangan KM 1.5, Padalarang, Bandung Barat", distance: "1.2 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=RS+Cahya+Kawaluyan+Jl.+Raya+Parahyangan+KM+1.5+Padalarang+Bandung+Barat" },
-            { name: "Puskesmas Padalarang", address: "Jl. Raya Padalarang No. 470, Bandung Barat", distance: "2.8 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Puskesmas+Padalarang+Jl.+Raya+Padalarang+No.+470+Bandung+Barat" }
-        ],
-        pharmacy: [
-            { name: "Apotek Kimia Farma KBP", address: "Ruko Bumi Simpang, Kota Baru Parahyangan", distance: "800 m", mapUrl: "https://www.google.com/maps/search/?api=1&query=Apotek+Kimia+Farma+KBP+Ruko+Bumi+Simpang+Kota+Baru+Parahyangan" }
-        ],
-        police: [
-            { name: "Polsek Padalarang", address: "Jl. Raya Padalarang No. 501, Bandung Barat", distance: "2.5 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Polsek+Padalarang+Jl.+Raya+Padalarang+No.+501+Bandung+Barat" }
-        ],
-        restaurant: [
-            { name: "Bumi Aki Kota Baru Parahyangan", address: "Jl. Parahyangan Raya No. 1, Kota Baru Parahyangan", distance: "600 m", mapUrl: "https://www.google.com/maps/search/?api=1&query=Bumi%20Aki%20Kota%20Baru%20Parahyangan%20Jl.%20Parahyangan%20Raya%20No.%201%20Kota%20Baru%20Parahyangan" }
-        ]
+        pharmacy: [{
+            name: "Apotek Kimia Farma KBP",
+            address: "Ruko Bumi Simpang, Kota Baru Parahyangan",
+            distance: "800 m",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=Apotek+Kimia+Farma+KBP+Ruko+Bumi+Simpang+Kota+Baru+Parahyangan"
+        }],
+        police: [{
+            name: "Polsek Padalarang",
+            address: "Jl. Raya Padalarang No. 501, Bandung Barat",
+            distance: "2.5 km",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=Polsek+Padalarang+Jl.+Raya+Padalarang+No.+501+Bandung+Barat"
+        }],
+        restaurant: [{
+            name: "Bumi Aki Kota Baru Parahyangan",
+            address: "Jl. Parahyangan Raya No. 1, Kota Baru Parahyangan",
+            distance: "600 m",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=Bumi%20Aki%20Kota%20Baru%20Parahyangan%20Jl.%20Parahyangan%20Raya%20No.%201%20Kota%20Baru%20Parahyangan"
+        }]
     };
 
     const majalengkaFacilities = {
-        hotel: [
-            { name: "Fitra Hotel Majalengka", address: "Jl. KH. Abdul Halim No. 88, Majalengka Kulon", distance: "1.1 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Fitra+Hotel+Majalengka+Jl.+KH.+Abdul+Halim+No.+88+Majalengka+Kulon" }
+        hotel: [{
+            name: "Fitra Hotel Majalengka",
+            address: "Jl. KH. Abdul Halim No. 88, Majalengka Kulon",
+            distance: "1.1 km",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=Fitra+Hotel+Majalengka+Jl.+KH.+Abdul+Halim+No.+88+Majalengka+Kulon"
+        }],
+        hospital: [{
+                name: "RSUD Majalengka",
+                address: "Jl. Kesehatan No. 77, Majalengka Wetan",
+                distance: "1.5 km",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=RSUD+Majalengka+Jl.+Kesehatan+No.+77+Majalengka+Wetan"
+            },
+            {
+                name: "Puskesmas Majalengka",
+                address: "Jl. KH. Abdul Halim No. 200, Majalengka",
+                distance: "1.3 km",
+                mapUrl: "https://www.google.com/maps/search/?api=1&query=Puskesmas+Majalengka+Jl.+KH.+Abdul+Halim+No.+200+Majalengka"
+            }
         ],
-        hospital: [
-            { name: "RSUD Majalengka", address: "Jl. Kesehatan No. 77, Majalengka Wetan", distance: "1.5 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=RSUD+Majalengka+Jl.+Kesehatan+No.+77+Majalengka+Wetan" },
-            { name: "Puskesmas Majalengka", address: "Jl. KH. Abdul Halim No. 200, Majalengka", distance: "1.3 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Puskesmas+Majalengka+Jl.+KH.+Abdul+Halim+No.+200+Majalengka" }
-        ],
-        pharmacy: [
-            { name: "Apotek Kimia Farma Majalengka", address: "Jl. KH. Abdul Halim No. 120, Majalengka", distance: "900 m", mapUrl: "https://www.google.com/maps/search/?api=1&query=Apotek+Kimia+Farma+Majalengka+Jl.+KH.+Abdul+Halim+No.+120+Majalengka" }
-        ],
-        police: [
-            { name: "Polres Majalengka", address: "Jl. KH. Abdul Halim No. 512, Majalengka", distance: "2.0 km", mapUrl: "https://www.google.com/maps/search/?api=1&query=Polres+Majalengka+Jl.+KH.+Abdul+Halim+No.+512+Majalengka" }
-        ],
-        restaurant: [
-            { name: "RM Khas Sunda Saung Balong", address: "Jl. KH. Abdul Halim No. 160, Majalengka Wetan", distance: "700 m", mapUrl: "https://www.google.com/maps/search/?api=1&query=Saung%20Balong%20Jl.%20KH.%20Abdul%20Halim%20No.%20160%20Majalengka%20Wetan" }
-        ]
+        pharmacy: [{
+            name: "Apotek Kimia Farma Majalengka",
+            address: "Jl. KH. Abdul Halim No. 120, Majalengka",
+            distance: "900 m",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=Apotek+Kimia+Farma+Majalengka+Jl.+KH.+Abdul+Halim+No.+120+Majalengka"
+        }],
+        police: [{
+            name: "Polres Majalengka",
+            address: "Jl. KH. Abdul Halim No. 512, Majalengka",
+            distance: "2.0 km",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=Polres+Majalengka+Jl.+KH.+Abdul+Halim+No.+512+Majalengka"
+        }],
+        restaurant: [{
+            name: "RM Khas Sunda Saung Balong",
+            address: "Jl. KH. Abdul Halim No. 160, Majalengka Wetan",
+            distance: "700 m",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=Saung%20Balong%20Jl.%20KH.%20Abdul%20Halim%20No.%20160%20Majalengka%20Wetan"
+        }]
     };
 
     const facilitiesData = {
@@ -597,7 +901,13 @@
 
         categoryBlock.style.display = 'block';
 
-        const typeMap = { lodging: 'hotel', hospital: 'hospital', restaurant: 'restaurant', police: 'police', pharmacy: 'pharmacy' };
+        const typeMap = {
+            lodging: 'hotel',
+            hospital: 'hospital',
+            restaurant: 'restaurant',
+            police: 'police',
+            pharmacy: 'pharmacy'
+        };
         const venueFacilities = facilitiesData[venue.name];
 
         if (!venueFacilities) {
@@ -614,12 +924,25 @@
         container.innerHTML = '';
         items.forEach(item => {
             let iconBg, iconColor;
-            if (type === 'lodging') { iconBg = '#fef3c7'; iconColor = '#d97706'; }
-            else if (type === 'hospital') { iconBg = '#fee2e2'; iconColor = '#dc2626'; }
-            else if (type === 'restaurant') { iconBg = '#dcfce7'; iconColor = '#16a34a'; }
-            else if (type === 'police') { iconBg = '#e0e7ff'; iconColor = '#4f46e5'; }
-            else if (type === 'pharmacy') { iconBg = '#f3e8ff'; iconColor = '#9333ea'; }
-            else { iconBg = '#dbeafe'; iconColor = '#2563eb'; }
+            if (type === 'lodging') {
+                iconBg = '#fef3c7';
+                iconColor = '#d97706';
+            } else if (type === 'hospital') {
+                iconBg = '#fee2e2';
+                iconColor = '#dc2626';
+            } else if (type === 'restaurant') {
+                iconBg = '#dcfce7';
+                iconColor = '#16a34a';
+            } else if (type === 'police') {
+                iconBg = '#e0e7ff';
+                iconColor = '#4f46e5';
+            } else if (type === 'pharmacy') {
+                iconBg = '#f3e8ff';
+                iconColor = '#9333ea';
+            } else {
+                iconBg = '#dbeafe';
+                iconColor = '#2563eb';
+            }
 
             container.innerHTML += `
                 <div class="facility-list-item">
@@ -729,11 +1052,11 @@
                     showVenueDetails(v);
 
                     const filterToCategory = {
-                        'hotel':       'cat-hotel',
+                        'hotel': 'cat-hotel',
                         'rumah-sakit': 'cat-rs',
-                        'apotek':      'cat-apotek',
+                        'apotek': 'cat-apotek',
                         'rumah-makan': 'cat-resto',
-                        'polisi':      'cat-police',
+                        'polisi': 'cat-police',
                     };
                     const targetCat = filterToCategory[fasilitasVal];
 
@@ -798,7 +1121,7 @@
         currentVenue = venue;
         const floatingCard = document.getElementById('floating-gor-card');
         floatingCard.style.display = 'block';
-        floatingCard.style.zIndex = '1000'; 
+        floatingCard.style.zIndex = '1000';
 
         document.getElementById('card-gor-name').innerText = venue.name;
         document.getElementById('card-gor-addr').innerText = venue.address;
@@ -858,11 +1181,36 @@
 
     function setupFacilityFilters() {
         const categoryMap = {
-            'cat-hotel':   { type: 'lodging',   containerId: 'hotel-container',   title: 'Hotel',          catId: 'cat-hotel' },
-            'cat-rs':      { type: 'hospital',   containerId: 'rs-container',      title: 'Fasilitas Kesehatan', catId: 'cat-rs' },
-            'cat-resto':   { type: 'restaurant', containerId: 'resto-container',   title: 'Restoran',       catId: 'cat-resto' },
-            'cat-police':  { type: 'police',     containerId: 'police-container',  title: 'Kantor Polisi',  catId: 'cat-police' },
-            'cat-apotek':  { type: 'pharmacy',   containerId: 'apotek-container',  title: 'Apotek',         catId: 'cat-apotek' },
+            'cat-hotel': {
+                type: 'lodging',
+                containerId: 'hotel-container',
+                title: 'Hotel',
+                catId: 'cat-hotel'
+            },
+            'cat-rs': {
+                type: 'hospital',
+                containerId: 'rs-container',
+                title: 'Fasilitas Kesehatan',
+                catId: 'cat-rs'
+            },
+            'cat-resto': {
+                type: 'restaurant',
+                containerId: 'resto-container',
+                title: 'Restoran',
+                catId: 'cat-resto'
+            },
+            'cat-police': {
+                type: 'police',
+                containerId: 'police-container',
+                title: 'Kantor Polisi',
+                catId: 'cat-police'
+            },
+            'cat-apotek': {
+                type: 'pharmacy',
+                containerId: 'apotek-container',
+                title: 'Apotek',
+                catId: 'cat-apotek'
+            },
         };
 
         document.querySelectorAll('.facility-filter-btn').forEach(btn => {

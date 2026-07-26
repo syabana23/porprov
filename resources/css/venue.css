@@ -1,106 +1,128 @@
-    /* ───────── Filter ───────── */
+    /* ================================================================
+       PETA VENUE — Modern Redesign
+       ================================================================ */
+
+    /* ───────── Filter Section ───────── */
     .filter-section {
         max-width: 1200px;
         margin: 20px auto;
         padding: 0 20px;
     }
 
+    .jadwal-filter {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 20px;
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        padding: 16px 20px;
+        border-radius: 16px;
+        box-shadow: 0 2px 20px rgba(1, 52, 105, 0.08), 0 1px 4px rgba(0, 0, 0, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        position: relative;
+    }
+
     .filter-box {
+        flex: 1;
+        min-width: 180px;
+        display: flex;
+        align-items: center;
         background: #fff;
-        border-radius: 18px;
-        padding: 20px;
-        box-shadow: 0 4px 22px rgba(0, 0, 0, 0.06);
-        border: 1px solid #e2e8f0;
-    }
-
-    .filter-form {
-        display: grid;
-        grid-template-columns: 2fr 1fr 1fr auto auto;
-        gap: 15px;
-        align-items: center;
-    }
-
-    .filter-select,
-    .filter-input {
-        width: 100%;
-        height: 44px;
-        border: 1px solid #cbd5e1;
-        border-radius: 10px;
+        border: 1.5px solid #e8ecf1;
+        border-radius: 12px;
         padding: 0 14px;
-        padding-right: 38px;
-        font-size: 13px;
-        font-family: 'Poppins', sans-serif;
-        outline: none;
-        background-color: #fff;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%2394a3b8' viewBox='0 0 16 16'%3E%3Cpath d='M4.5 6l3.5 3.5L11.5 6' stroke='%2394a3b8' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-        background-repeat: no-repeat;
-        background-position: right 12px center;
-        background-size: 16px;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        transition: all 0.2s;
+        transition: all 0.25s ease;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
     }
 
-    .filter-select:focus,
-    .filter-input:focus {
+    .filter-box:focus-within {
         border-color: #013469;
-        box-shadow: 0 0 0 3px rgba(1, 52, 105, 0.1);
+        box-shadow: 0 0 0 4px rgba(1, 52, 105, 0.08), 0 2px 8px rgba(1, 52, 105, 0.06);
     }
 
-    .btn-yellow {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        background: #013469;
-        color: #fff;
-        font-weight: 700;
-        font-size: 13.5px;
-        height: 44px;
-        padding: 0 24px;
-        border-radius: 10px;
-        text-decoration: none;
-        font-family: 'Poppins', sans-serif;
+    .filter-box svg {
+        color: #013469;
+        flex-shrink: 0;
+        margin-right: 10px;
+        opacity: 0.6;
+    }
+
+    .filter-box select {
+        width: 100%;
+        background: transparent;
         border: none;
+        padding: 11px 0;
+        font-family: inherit;
+        font-size: 14px;
+        color: #1e293b;
+        outline: none;
         cursor: pointer;
-        transition: all 0.2s;
     }
 
-    .btn-yellow:hover {
-        background: #012050;
-    }
-
-    .reset-btn {
-        height: 44px;
-        padding: 0 18px;
+    .btn-cari {
+        background: linear-gradient(135deg, #013469, #0a4fa8);
+        color: #fff;
         border: none;
-        background: #f1f5f9;
-        color: #475569;
+        padding: 0 28px;
+        border-radius: 12px;
         font-weight: 600;
         font-size: 13px;
-        border-radius: 10px;
-        font-family: 'Poppins', sans-serif;
+        font-family: inherit;
         cursor: pointer;
-        transition: all 0.2s;
+        transition: all 0.25s ease;
+        box-shadow: 0 2px 10px rgba(1, 52, 105, 0.2);
+        letter-spacing: 0.02em;
+        white-space: nowrap;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
     }
 
-    .reset-btn:hover {
-        background: #e2e8f0;
+    .btn-cari:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 16px rgba(1, 52, 105, 0.3);
     }
 
-    /* ── Map Full-Width Card ── */
+    .btn-cari svg {
+        stroke-width: 2.5;
+    }
+
+    .btn-reset-filter {
+        background: #fff;
+        color: #013469;
+        border: 1.5px solid #e8ecf1;
+        padding: 0 24px;
+        border-radius: 12px;
+        font-weight: 500;
+        font-size: 13px;
+        font-family: inherit;
+        cursor: pointer;
+        transition: all 0.25s ease;
+        white-space: nowrap;
+    }
+
+    .btn-reset-filter:hover {
+        border-color: #013469;
+        background: rgba(1, 52, 105, 0.03);
+    }
+
+    /* ── Map & Facilities Wrapper ── */
     .map-facilities-wrapper {
         max-width: 1200px;
         margin: 0 auto 40px;
         padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
     }
 
     .map-box-card {
         background: #fff;
-        border-radius: 18px;
-        box-shadow: 0 4px 22px rgba(0, 0, 0, 0.06);
-        border: 1px solid #e2e8f0;
+        border-radius: 16px;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05), 0 1px 4px rgba(0, 0, 0, 0.02);
+        border: 1px solid rgba(0, 0, 0, 0.04);
         overflow: hidden;
         display: flex;
         flex-direction: column;
@@ -111,7 +133,7 @@
         width: 100%;
         height: 400px;
         min-height: 300px;
-        background: #e2e8f0;
+        background: #e8ecf1;
     }
 
     #map-canvas {
@@ -119,56 +141,175 @@
         height: 100% !important;
     }
 
-    /* Floating GOR Card */
+    /* ── Floating GOR Card ── */
     .gor-card {
         position: absolute;
         top: 20px;
         right: 20px;
         width: 280px;
         background: #fff;
-        border-radius: 12px;
-        box-shadow: 0 4px 22px rgba(0, 0, 0, 0.06);
-        border: 1px solid #e2e8f0;
-        z-index: 99;
+        border-radius: 14px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        z-index: 999;
         overflow: hidden;
         display: none;
     }
 
+    .gor-card-header {
+        background: linear-gradient(135deg, #013469, #014590);
+        color: #fff;
+        padding: 14px 16px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 15px;
+        font-weight: 800;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .gor-card-header svg {
+        color: rgba(255, 255, 255, 0.7) !important;
+    }
+
+    .gor-card-body {
+        padding: 16px;
+    }
+
+    .gor-card-body .addr {
+        font-size: 12px;
+        color: #6b7280;
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        margin-bottom: 16px;
+        line-height: 1.5;
+    }
+
+    .gor-card-body .addr svg {
+        color: #9ca3af !important;
+    }
+
+    .gor-card-body .cabang-title {
+        font-size: 11px;
+        font-weight: 800;
+        color: #013469;
+        margin-bottom: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+    }
+
+    .cabor-grid {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+    }
+
+    .cabor-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        width: 52px;
+    }
+
+    .cabor-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #f0f4ff, #e0eaff);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #013469;
+        transition: transform 0.2s;
+    }
+
+    .cabor-item:hover .cabor-icon {
+        transform: scale(1.1);
+    }
+
+    .cabor-item span {
+        font-size: 10px;
+        color: #4b5563;
+        text-align: center;
+        line-height: 1.2;
+        font-weight: 500;
+    }
+
+    .gor-card .map-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        background: linear-gradient(135deg, #013469, #0a4fa8);
+        color: #fff;
+        font-size: 13px;
+        font-weight: 700;
+        padding: 10px 18px;
+        text-decoration: none;
+        border-radius: 10px;
+        transition: all 0.25s ease;
+        box-shadow: 0 2px 8px rgba(1, 52, 105, 0.2);
+    }
+
+    .gor-card .map-btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 14px rgba(1, 52, 105, 0.3);
+        background: linear-gradient(135deg, #012a54, #014590);
+    }
+
+    /* ── Facilities Side ── */
     .facilities-side {
         background: #fff;
-        border-radius: 18px;
-        box-shadow: 0 4px 22px rgba(0, 0, 0, 0.06);
-        border: 1px solid #e2e8f0;
-        padding: 22px;
+        border-radius: 16px;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05), 0 1px 4px rgba(0, 0, 0, 0.02);
+        border: 1px solid rgba(0, 0, 0, 0.04);
+        padding: 20px;
         display: flex;
         flex-direction: column;
     }
 
     .facilities-side-header {
-        padding: 20px 20px 0;
+        margin-bottom: 16px;
         flex-shrink: 0;
     }
 
     .facilities-side-header h2 {
-        font-size: 1.1rem;
+        font-size: 1.15rem;
         font-weight: 800;
         color: #111827;
         margin: 0 0 4px;
     }
 
     .facilities-side-header p {
-        font-size: 12px;
+        font-size: 12.5px;
         color: #6b7280;
-        margin: 0;
+        margin: 0 0 10px;
+        line-height: 1.4;
+    }
+
+    .facilities-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 10.5px;
+        font-weight: 600;
+        color: #013469;
+        background: rgba(1, 52, 105, 0.07);
+        padding: 4px 12px;
+        border-radius: 20px;
+        letter-spacing: 0.02em;
     }
 
     .facility-filter-buttons {
         display: flex;
-        gap: 6px;
+        gap: 8px;
         overflow-x: auto;
-        padding-bottom: 10px;
+        padding-bottom: 14px;
         border-bottom: 1px solid #f1f5f9;
-        margin-bottom: 16px;
+        margin-bottom: 18px;
         flex-shrink: 0;
     }
 
@@ -182,24 +323,32 @@
     }
 
     .facility-filter-btn {
-        padding: 6px 14px;
-        border-radius: 20px;
-        border: 1px solid #e2e8f0;
-        background: #f8fafc;
+        padding: 7px 18px;
+        border-radius: 100px;
+        border: 1.5px solid #e8ecf1;
+        background: #fff;
         color: #64748b;
         font-size: 12px;
         font-weight: 600;
         cursor: pointer;
-        transition: all 0.2s;
+        transition: all 0.25s ease;
         font-family: 'Poppins', sans-serif;
         white-space: nowrap;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
     }
 
-    .facility-filter-btn:hover,
+    .facility-filter-btn:hover {
+        background: #f0f7ff;
+        border-color: #013469;
+        color: #013469;
+        transform: translateY(-1px);
+    }
+
     .facility-filter-btn.active {
         background: #013469;
         border-color: #013469;
         color: #fff;
+        box-shadow: 0 3px 10px rgba(1, 52, 105, 0.25);
     }
 
     .facilities-list-wrap {
@@ -222,26 +371,33 @@
     }
 
     .facility-category {
-        margin-bottom: 16px;
+        margin-bottom: 18px;
     }
 
     .facility-category:last-child {
         margin-bottom: 0;
     }
 
+    .cat-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        flex-shrink: 0;
+    }
+
     .facility-cat-header {
         display: flex;
         align-items: center;
-        gap: 8px;
-        margin-bottom: 10px;
-        padding-bottom: 8px;
-        border-bottom: 1px solid #f3f4f6;
+        gap: 10px;
+        margin-bottom: 12px;
+        padding-bottom: 10px;
+        border-bottom: 1.5px solid #f1f4f9;
     }
 
     .facility-cat-icon {
-        width: 28px;
-        height: 28px;
-        border-radius: 8px;
+        width: 32px;
+        height: 32px;
+        border-radius: 10px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -249,26 +405,27 @@
     }
 
     .facility-cat-header h3 {
-        font-size: 13px;
+        font-size: 13.5px;
         font-weight: 700;
-        color: #374151;
+        color: #1e293b;
         margin: 0;
     }
 
     .facility-list-item {
         display: flex;
         align-items: center;
-        gap: 12px;
-        padding: 11px;
-        border-radius: 10px;
-        border: 1px solid #f1f5f9;
-        margin-bottom: 8px;
-        transition: background 0.2s;
+        gap: 14px;
+        padding: 14px;
+        border-radius: 12px;
+        margin-bottom: 10px;
+        background: #fff;
+        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04), 0 2px 12px rgba(0, 0, 0, 0.03);
+        transition: all 0.25s ease;
     }
 
     .facility-list-item:hover {
-        background: #f8fafc;
-        border-color: #e2e8f0;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.04);
     }
 
     .facility-list-item:last-child {
@@ -276,8 +433,8 @@
     }
 
     .fli-icon {
-        width: 36px;
-        height: 36px;
+        width: 38px;
+        height: 38px;
         border-radius: 10px;
         display: flex;
         align-items: center;
@@ -291,7 +448,7 @@
     }
 
     .fli-name {
-        font-size: 13px;
+        font-size: 13.5px;
         font-weight: 700;
         color: #1e293b;
         margin: 0;
@@ -301,29 +458,32 @@
     }
 
     .fli-addr {
-        font-size: 11px;
+        font-size: 11.5px;
         color: #64748b;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        margin: 2px 0 0;
+        margin: 3px 0 0;
+        line-height: 1.3;
     }
 
     .fli-route {
         flex-shrink: 0;
-        padding: 5px 12px;
-        background: #e0f2fe;
-        color: #0284c7;
-        font-size: 11.5px;
+        padding: 7px 16px;
+        background: #eef2ff;
+        color: #013469;
+        font-size: 12px;
         font-weight: 700;
-        border-radius: 6px;
+        border-radius: 100px;
         text-decoration: none;
-        transition: all 0.2s;
+        transition: all 0.25s ease;
     }
 
     .fli-route:hover {
-        background: #0284c7;
+        background: #013469;
         color: #fff;
+        box-shadow: 0 3px 10px rgba(1, 52, 105, 0.2);
+        transform: translateY(-1px);
     }
 
     .facilities-empty {
@@ -331,99 +491,34 @@
         padding: 40px 20px;
         color: #9ca3af;
         font-size: 13px;
+        background: #fafbfc;
+        border-radius: 14px;
+        border: 1.5px dashed #e2e8f0;
+    }
+
+    .facilities-empty svg {
+        display: block;
+        margin: 0 auto 12px;
+        color: #cbd5e1;
+        opacity: 0.5;
+    }
+
+    .facilities-empty p {
+        margin: 0;
+        line-height: 1.6;
+        max-width: 260px;
+        margin: 0 auto;
         font-style: italic;
     }
 
-    .gor-card-header {
-        background: #f8fafc;
-        color: #374151;
-        padding: 14px 16px;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        font-size: 15px;
-        font-weight: 800;
-        border-bottom: 1px solid #e5e7eb;
-    }
-
-    .gor-card-body {
-        padding: 16px;
-    }
-
-    .gor-card-body .addr {
-        font-size: 13px;
-        color: #6b7280;
-        display: flex;
-        align-items: flex-start;
-        gap: 8px;
-        margin-bottom: 16px;
-        line-height: 1.5;
-    }
-
-    .gor-card-body .cabang-title {
-        font-size: 12px;
-        font-weight: 800;
-        color: #013469;
-        margin-bottom: 12px;
-        text-transform: uppercase;
-    }
-
-    .cabor-grid {
-        display: flex;
-        gap: 12px;
-        flex-wrap: wrap;
-        margin-bottom: 20px;
-    }
-
-    .cabor-item {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 6px;
-        width: 52px;
-    }
-
-    .cabor-icon {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background: #f4f5f7;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #4b5563;
-    }
-
-    .cabor-item span {
-        font-size: 11px;
-        color: #4b5563;
-        text-align: center;
-        line-height: 1.2;
-    }
-
-    .gor-card .map-btn {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 8px;
-        background: #013469;
-        color: #fff;
-        font-size: 13px;
-        font-weight: 700;
-        padding: 9px 18px;
-        text-decoration: none;
-        border-radius: 8px;
-        transition: background 0.2s;
-    }
-
-    .gor-card .map-btn:hover {
-        background: #012050;
-    }
-
-    /* ── Facilities (legacy, hidden by new layout) ── */
+    /* ── Legacy (hidden) ── */
     .venue-body {
         display: none;
     }
+
+    /* ================================================================
+       RESPONSIVE
+       ================================================================ */
 
     @media (max-width: 992px) {
         .map-container-wrap {
@@ -432,32 +527,51 @@
     }
 
     @media (max-width: 768px) {
-        .venue-banner {
-            height: auto;
-            min-height: 80px;
-            padding: 16px;
-        }
-
         .filter-section {
             margin: 20px 16px;
             padding: 0;
         }
 
         .filter-form {
-            grid-template-columns: 1fr;
+            flex-direction: column;
+            height: auto;
+            border-radius: 14px;
         }
 
-        .filter-select,
-        .filter-input {
-            height: 44px;
+        .filter-bar {
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .filter-field {
+            width: 100%;
+            height: 50px;
+            padding: 0 14px;
+        }
+
+        .filter-divider {
+            width: auto;
+            height: 1px;
+            margin: 0 14px;
+        }
+
+        .filter-select {
+            height: 50px;
             font-size: 16px;
         }
 
-        .btn-yellow,
-        .reset-btn {
+        .btn-search {
+            width: 100%;
+            height: 50px;
+            border-radius: 0;
+            gap: 6px;
+        }
+
+        .btn-reset {
             width: 100%;
             height: 44px;
             justify-content: center;
+            border-top: 1px solid #f1f4f9;
         }
 
         .map-facilities-wrapper {
@@ -482,12 +596,13 @@
     }
 
     @media (max-width: 576px) {
-        .filter-box {
-            padding: 16px;
+        .filter-section {
+            margin: 16px 12px;
+            padding: 0;
         }
 
-        .filter-form {
-            gap: 10px;
+        .filter-field {
+            padding: 0 12px;
         }
 
         .facilities-side {
@@ -495,6 +610,21 @@
         }
 
         .facility-filter-buttons {
-            gap: 4px;
+            gap: 6px;
+        }
+
+        .facility-filter-btn {
+            font-size: 11px;
+            padding: 6px 14px;
+        }
+
+        .facility-list-item {
+            padding: 12px;
+            gap: 10px;
+        }
+
+        .fli-route {
+            padding: 6px 12px;
+            font-size: 11px;
         }
     }
