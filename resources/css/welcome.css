@@ -1220,26 +1220,49 @@
 
         .filter-select-styled,
         .filter-input-styled {
-            height: 48px;
+            height: 50px;
             font-size: 16px;
         }
 
         .btn-search-blue {
-            height: 48px;
+            height: 50px;
             font-size: 14px;
             padding: 0 24px;
         }
 
         .btn-reset-light {
-            height: 48px;
+            height: 50px;
             font-size: 13px;
             padding: 0 20px;
         }
 
         .facility-filter-btn {
-            padding: 10px 16px;
-            font-size: 12px;
-            min-height: 44px;
+            font-size: 11px;
+            padding: 6px 14px;
+            min-height: auto;
+        }
+
+        .facility-list-item {
+            padding: 12px;
+            gap: 10px;
+        }
+
+        .fli-route {
+            padding: 6px 12px;
+            font-size: 11px;
+        }
+
+        .home-gor-card {
+            position: relative;
+            top: 0;
+            right: 0;
+            width: 100%;
+            box-shadow: none;
+            border-radius: 0;
+            border: none;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 0;
+            padding: 16px;
         }
 
         .facilities-scroll-list {
@@ -1302,5 +1325,18 @@
         }
         .section-heading {
             font-size: 16px;
+        }
+        .home-gor-card {
+            padding: 12px;
+        }
+        .facility-list-item {
+            padding: 8px;
+            gap: 8px;
+        }
+        .fli-name {
+            font-size: 12px;
+        }
+        .fli-addr {
+            font-size: 10px;
         }
     }

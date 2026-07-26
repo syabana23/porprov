@@ -266,6 +266,7 @@
 
             .hamburger {
                 display: flex;
+                margin-left: auto;
             }
 
             .header-nav {
