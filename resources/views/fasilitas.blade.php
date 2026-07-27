@@ -33,7 +33,7 @@
         <div class="ss-item active" data-type="all">
             <div class="ss-icon-wrap" style="background: rgba(1, 52, 105, 0.08); color: #013469;">
                 <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
                 </svg>
             </div>
             <div class="ss-info">
@@ -41,10 +41,21 @@
                 <div class="ss-lbl">Semua Fasilitas</div>
             </div>
         </div>
+        <div class="ss-item" data-type="hotel">
+            <div class="ss-icon-wrap" style="background: rgba(79, 70, 229, 0.08); color: #4f46e5;">
+                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z" />
+                </svg>
+            </div>
+            <div class="ss-info">
+                <div class="ss-num">{{ $stats['hotel'] }}</div>
+                <div class="ss-lbl">Hotel</div>
+            </div>
+        </div>
         <div class="ss-item" data-type="rs">
-            <div class="ss-icon-wrap" style="background: rgba(239, 68, 68, 0.08); color: #e53e3e;">
-                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            <div class="ss-icon-wrap" style="background: rgba(220, 38, 38, 0.08); color: #dc2626;">
+                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M19 3H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z" />
                 </svg>
             </div>
             <div class="ss-info">
@@ -53,9 +64,9 @@
             </div>
         </div>
         <div class="ss-item" data-type="puskesmas">
-            <div class="ss-icon-wrap" style="background: rgba(245, 158, 11, 0.08); color: #f59e0b;">
-                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16M9 7h6M9 11h6M9 15h6" />
+            <div class="ss-icon-wrap" style="background: rgba(217, 119, 6, 0.08); color: #d97706;">
+                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1 2 .9 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z" />
                 </svg>
             </div>
             <div class="ss-info">
@@ -64,9 +75,9 @@
             </div>
         </div>
         <div class="ss-item" data-type="apotek">
-            <div class="ss-icon-wrap" style="background: rgba(236, 72, 153, 0.08); color: #ec4899;">
-                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10M12 14v4m-2-2h4" />
+            <div class="ss-icon-wrap" style="background: rgba(219, 39, 119, 0.08); color: #db2777;">
+                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M4.5 10.5C3.67 10.5 3 11.17 3 12v6c0 .83.67 1.5 1.5 1.5h15c.83 0 1.5-.67 1.5-1.5v-6c0-.83-.67-1.5-1.5-1.5h-15zM12 4.5C9.51 4.5 7.5 6.51 7.5 9h9c0-2.49-2.01-4.5-4.5-4.5zM11 13h2v4h-2v-4z" />
                 </svg>
             </div>
             <div class="ss-info">
@@ -74,21 +85,10 @@
                 <div class="ss-lbl">Apotek</div>
             </div>
         </div>
-        <div class="ss-item" data-type="hotel">
-            <div class="ss-icon-wrap" style="background: rgba(99, 102, 241, 0.08); color: #4f46e5;">
-                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5" />
-                </svg>
-            </div>
-            <div class="ss-info">
-                <div class="ss-num">{{ $stats['hotel'] }}</div>
-                <div class="ss-lbl">Hotel</div>
-            </div>
-        </div>
         <div class="ss-item" data-type="polsek">
-            <div class="ss-icon-wrap" style="background: rgba(16, 185, 129, 0.08); color: #059669;">
-                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            <div class="ss-icon-wrap" style="background: rgba(5, 150, 105, 0.08); color: #059669;">
+                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z" />
                 </svg>
             </div>
             <div class="ss-info">
@@ -97,14 +97,25 @@
             </div>
         </div>
         <div class="ss-item" data-type="restoran">
-            <div class="ss-icon-wrap" style="background: rgba(249, 115, 22, 0.08); color: #ea580c;">
-                <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+            <div class="ss-icon-wrap" style="background: rgba(234, 88, 12, 0.08); color: #ea580c;">
+                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-7v8h2.5v8H21V2h-5z" />
                 </svg>
             </div>
             <div class="ss-info">
                 <div class="ss-num">{{ $stats['restoran'] }}</div>
                 <div class="ss-lbl">Restoran</div>
+            </div>
+        </div>
+        <div class="ss-item" data-type="transport">
+            <div class="ss-icon-wrap" style="background: rgba(2, 132, 199, 0.08); color: #0284c7;">
+                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5-1.5zM5 11l1.5-4.5h11L19 11H5z" />
+                </svg>
+            </div>
+            <div class="ss-info">
+                <div class="ss-num">{{ $stats['transport'] ?? 0 }}</div>
+                <div class="ss-lbl">Sewa Kendaraan</div>
             </div>
         </div>
     </div>
@@ -132,6 +143,7 @@
                     <option value="puskesmas">Puskesmas</option>
                     <option value="polsek">Polres / Polsek</option>
                     <option value="restoran">Restoran</option>
+                    <option value="transport">Sewa Kendaraan</option>
                 </select>
             </div>
         </div>
@@ -200,9 +212,62 @@
         // Facility data from PHP
         const facilities = {!! json_encode($facilities) !!};
 
-        const ITEMS_PER_PAGE = 10;
+        const ITEMS_PER_PAGE = 20;
         let currentPage = 1;
         let filteredData = [...facilities];
+
+        // Metadata Kategori untuk Penyangga / Header Grouping
+        const categoryMeta = {
+            hotel: {
+                title: 'Hotel & Penginapan',
+                description: 'Akomodasi resmi dan tempat menginap bagi kontingen, atlet, serta pengunjung.',
+                color: '#4f46e5',
+                bg: '#e0e7ff',
+                icon: `<svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z"/></svg>`
+            },
+            rs: {
+                title: 'Rumah Sakit',
+                description: 'Fasilitas pelayanan kesehatan darurat dan rujukan medis selama kegiatan berlangsung.',
+                color: '#dc2626',
+                bg: '#fee2e2',
+                icon: `<svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/></svg>`
+            },
+            puskesmas: {
+                title: 'Puskesmas',
+                description: 'Pusat kesehatan masyarakat tingkat pertama yang tersebar di sekitar lokasi venue.',
+                color: '#d97706',
+                bg: '#fef3c7',
+                icon: `<svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1 2 .9 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg>`
+            },
+            apotek: {
+                title: 'Apotek & Farmasi',
+                description: 'Penyedia obat-obatan, perlengkapan medis ringan, dan perbekalan kesehatan.',
+                color: '#db2777',
+                bg: '#fce7f3',
+                icon: `<svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M4.5 10.5C3.67 10.5 3 11.17 3 12v6c0 .83.67 1.5 1.5 1.5h15c.83 0 1.5-.67 1.5-1.5v-6c0-.83-.67-1.5-1.5-1.5h-15zM12 4.5C9.51 4.5 7.5 6.51 7.5 9h9c0-2.49-2.01-4.5-4.5-4.5zM11 13h2v4h-2v-4z"/></svg>`
+            },
+            polsek: {
+                title: 'Polres & Polsek (Keamanan)',
+                description: 'Kantor dan pos kepolisian untuk menjamin keamanan dan ketertiban area venue.',
+                color: '#059669',
+                bg: '#d1fae5',
+                icon: `<svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>`
+            },
+            restoran: {
+                title: 'Restoran & Kuliner',
+                description: 'Fasilitas rumah makan dan kuliner terdekat dari area pertandingan.',
+                color: '#ea580c',
+                bg: '#ffedd5',
+                icon: `<svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-7v8h2.5v8H21V2h-5z"/></svg>`
+            },
+            transport: {
+                title: 'Sewa Kendaraan (Transportasi)',
+                description: 'Layanan sewa kendaraan dan penyedia armada transportasi resmi kontingen.',
+                color: '#0284c7',
+                bg: '#e0f2fe',
+                icon: `<svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5-1.5zM5 11l1.5-4.5h11L19 11H5z"/></svg>`
+            }
+        };
 
         // DOM refs
         const listEl = document.getElementById('facilityList');
@@ -222,7 +287,8 @@
                 apotek: 'badge-apotek',
                 hotel: 'badge-hotel',
                 polsek: 'badge-polsek',
-                restoran: 'badge-restoran'
+                restoran: 'badge-restoran',
+                transport: 'badge-transport'
             };
             return map[tipe] || 'badge-rs';
         }
@@ -281,6 +347,45 @@
         </div>`;
         }
 
+        function renderGrouped(pageData) {
+            const categoryOrder = ['hotel', 'rs', 'puskesmas', 'apotek', 'polsek', 'restoran', 'transport'];
+            let html = '';
+
+            categoryOrder.forEach(typeKey => {
+                const groupItems = pageData.filter(item => item.tipe === typeKey);
+                if (groupItems.length > 0) {
+                    const cat = categoryMeta[typeKey] || {
+                        title: typeKey.toUpperCase(),
+                        description: 'Fasilitas pendukung venue',
+                        color: '#013469',
+                        bg: '#e2e8f0',
+                        icon: ''
+                    };
+
+                    html += `
+                    <div class="facility-category-section">
+                        <div class="fcs-header" style="border-left-color: ${cat.color};">
+                            <div class="fcs-icon" style="background: ${cat.bg}; color: ${cat.color};">
+                                ${cat.icon}
+                            </div>
+                            <div class="fcs-title-wrap">
+                                <div class="fcs-title">
+                                    <h3>${cat.title}</h3>
+                                    <span class="fcs-count" style="background: ${cat.bg}; color: ${cat.color};">${groupItems.length} Fasilitas</span>
+                                </div>
+                                <p class="fcs-desc">${cat.description}</p>
+                            </div>
+                        </div>
+                        <div class="fcs-items">
+                            ${groupItems.map(renderItem).join('')}
+                        </div>
+                    </div>`;
+                }
+            });
+
+            return html;
+        }
+
         function applyFilters() {
             const search = searchInput.value.toLowerCase().trim();
             const type = filterType.value;
@@ -325,7 +430,7 @@
                 return;
             }
 
-            listEl.innerHTML = pageData.map(renderItem).join('');
+            listEl.innerHTML = renderGrouped(pageData);
             pgInfo.textContent = `Menampilkan ${start + 1}-${end} dari ${total} Fasilitas`;
 
             // Pagination buttons

@@ -109,6 +109,7 @@
                 <option value="apotek">Apotek</option>
                 <option value="rumah-makan">Restoran & Kuliner</option>
                 <option value="polisi">Polisi & Keamanan</option>
+                <option value="transport">Sewa Kendaraan</option>
             </select>
         </div>
         <button type="submit" class="btn-cari">
@@ -159,16 +160,52 @@
         <div class="facilities-side-header">
             <h2>Fasilitas Terdekat</h2>
             <p>Temukan fasilitas di sekitar lokasi yang dipilih</p>
-            <span class="facilities-badge">5 Kategori Tersedia</span>
+            <span class="facilities-badge">6 Kategori Tersedia</span>
         </div>
 
         <div class="facility-filter-buttons">
-            <button class="facility-filter-btn active" data-filter="all">Semua</button>
-            <button class="facility-filter-btn" data-filter="cat-hotel">Hotel</button>
-            <button class="facility-filter-btn" data-filter="cat-rs">Kesehatan</button>
-            <button class="facility-filter-btn" data-filter="cat-resto">Restoran</button>
-            <button class="facility-filter-btn" data-filter="cat-police">Polisi</button>
-            <button class="facility-filter-btn" data-filter="cat-apotek">Apotek</button>
+            <button class="facility-filter-btn active" data-filter="all">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                </svg>
+                Semua
+            </button>
+            <button class="facility-filter-btn" data-filter="cat-hotel">
+                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z" />
+                </svg>
+                Hotel
+            </button>
+            <button class="facility-filter-btn" data-filter="cat-rs">
+                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M19 3H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z" />
+                </svg>
+                Kesehatan
+            </button>
+            <button class="facility-filter-btn" data-filter="cat-resto">
+                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-7v8h2.5v8H21V2h-5z" />
+                </svg>
+                Restoran
+            </button>
+            <button class="facility-filter-btn" data-filter="cat-police">
+                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z" />
+                </svg>
+                Polisi
+            </button>
+            <button class="facility-filter-btn" data-filter="cat-apotek">
+                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M4.5 10.5C3.67 10.5 3 11.17 3 12v6c0 .83.67 1.5 1.5 1.5h15c.83 0 1.5-.67 1.5-1.5v-6c0-.83-.67-1.5-1.5-1.5h-15zM12 4.5C9.51 4.5 7.5 6.51 7.5 9h9c0-2.49-2.01-4.5-4.5-4.5zM11 13h2v4h-2v-4z" />
+                </svg>
+                Apotek
+            </button>
+            <button class="facility-filter-btn" data-filter="cat-transport">
+                <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5-1.5zM5 11l1.5-4.5h11L19 11H5z" />
+                </svg>
+                Sewa Kendaraan
+            </button>
         </div>
 
         <div class="facilities-list-wrap" id="facilities-list-wrap">
@@ -249,6 +286,20 @@
                 </div>
                 <div id="apotek-container"></div>
             </div>
+
+            <!-- Sewa Kendaraan -->
+            <div class="facility-category" id="cat-transport" style="display:none;">
+                <div class="facility-cat-header">
+                    <span class="cat-dot" style="background:#0284c7;"></span>
+                    <div class="facility-cat-icon" style="background:#e0f2fe; color:#0284c7;">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5-1.5zM5 11l1.5-4.5h11L19 11H5z" />
+                        </svg>
+                    </div>
+                    <h3>Sewa Kendaraan</h3>
+                </div>
+                <div id="transport-container"></div>
+            </div>
         </div>
     </div>
 </div>
@@ -269,35 +320,35 @@
     const venueData = [{
             id: 1,
             name: "GOR Pajajaran Indoor A",
-            lat: -6.583321,
-            lng: 106.800532,
-            address: "Gor Pajajaran, Jl. Pemuda No.02 kel, RT.04/RW.01, Tanah Sareal, Kota Bogor, Jawa Barat 16161",
+            lat: -6.575816698132383,
+            lng: 106.796958655819,
+            address: "GOR Pajajaran, Jl. Pemuda No.02, RT.04/RW.01, Tanah Sareal, Kota Bogor, Jawa Barat 16161",
             cabor: "Drumband, Pencak Silat, Taekwondo",
             gmaps_url: "https://maps.app.goo.gl/KcwQDC2JxcTsj1LJ8",
         },
         {
             id: 2,
             name: "GOR Pajajaran Indoor B",
-            lat: -6.584100,
-            lng: 106.801200,
-            address: "Gor Pajajaran, Jl. Pemuda No.02 kel, RT.04/RW.01, Tanah Sareal, Kota Bogor, Jawa Barat 16161",
+            lat: -6.577928206784957,
+            lng: 106.79690799953588,
+            address: "GOR Pajajaran, Jl. Pemuda No.02, RT.04/RW.01, Tanah Sareal, Kota Bogor, Jawa Barat 16161",
             cabor: "Judo, Kurash, Sambo",
             gmaps_url: "https://maps.app.goo.gl/h3ei411WRSdW5Uuf8",
         },
         {
             id: 3,
             name: "GOR Vokasi IPB",
-            lat: -6.589165,
-            lng: 106.806324,
-            address: "Jl. Lodaya II, RT.03/RW.05, Cilibende, Babakan, Kecamatan Bogor Tengah, Kota Bogor, Jawa Barat 16128",
+            lat: -6.586864818074109,
+            lng: 106.80744643623193,
+            address: "Jl. Lodaya II, RT.03/RW.05, Cilibende, Babakan, Kec. Bogor Tengah, Kota Bogor, Jawa Barat 16128",
             cabor: "Shorinji Kempo, Tarung Derajat",
             gmaps_url: "https://maps.app.goo.gl/ekjekDk57iBAQcTVA",
         },
         {
             id: 4,
             name: "Majalengka",
-            lat: -6.837000,
-            lng: 108.216000,
+            lat: -6.836580168091458,
+            lng: 108.22805804110702,
             address: "Majalengka, Jawa Barat",
             cabor: "Aerosport - Gantolle",
             gmaps_url: "https://maps.google.com/?q=Majalengka"
@@ -305,8 +356,8 @@
         {
             id: 5,
             name: "Gunung Mas",
-            lat: -6.702000,
-            lng: 106.993000,
+            lat: -6.701561756877455,
+            lng: 106.97130253598559,
             address: "Puncak, Bogor, Jawa Barat",
             cabor: "Aerosport - Paralayang",
             gmaps_url: "https://maps.google.com/?q=Gunung+Mas+Puncak"
@@ -314,8 +365,8 @@
         {
             id: 6,
             name: "Green Forest Hotel",
-            lat: -6.634000,
-            lng: 106.809000,
+            lat: -6.64930420834099,
+            lng: 106.806161644181,
             address: "Bogor, Jawa Barat",
             cabor: "Anggar, Angkat Besi, Angkat Berat, Arung Jeram, Binaraga, Petanque, Dansa",
             gmaps_url: "https://maps.app.goo.gl/dgb7WBjKovkcfyLo9"
@@ -323,8 +374,8 @@
         {
             id: 7,
             name: "PPSDMAP Kemenhub Kemang",
-            lat: -6.488000,
-            lng: 106.756000,
+            lat: -6.498024311495613,
+            lng: 106.74365521534482,
             address: "Kemang, Bogor, Jawa Barat",
             cabor: "Bola Tangan Indoor",
             gmaps_url: "https://maps.app.goo.gl/Ma2cC3WY3DaWJYQ19"
@@ -332,54 +383,53 @@
         {
             id: 8,
             name: "Padepokan Voli Sentul",
-            lat: -6.568000,
-            lng: 106.857000,
+            lat: -6.571855570792679,
+            lng: 106.8607669981466,
             address: "Sentul, Bogor, Jawa Barat",
             cabor: "Bola Tangan Pasir",
             gmaps_url: "https://maps.app.goo.gl/cXPfu5acX62py9QY9"
         },
-
         {
-            id: 10,
+            id: 9,
             name: "Arcamanik",
-            lat: -6.907000,
-            lng: 107.674000,
+            lat: -6.911153350109742,
+            lng: 107.67487895150336,
             address: "Sport Jabar Arcamanik, Bandung, Jawa Barat",
-            cabor: "Gimnastik Aerobik, Gimnastic Artistik, Gimnastic Ritmik",
+            cabor: "Gimnastik Aerobik, Gimnastik Artistik, Gimnastik Ritmik",
             gmaps_url: "https://maps.google.com/?q=Sport+Jabar+Arcamanik"
         },
         {
-            id: 11,
+            id: 10,
             name: "Cisangkan",
-            lat: -6.877000,
-            lng: 107.531000,
+            lat: -6.8746820367318255,
+            lng: 107.52764243801157,
             address: "Lapang Tembak Cisangkan, Cimahi, Jawa Barat",
             cabor: "Menembak",
             gmaps_url: "https://maps.google.com/?q=Lapang+Tembak+Cisangkan"
         },
         {
-            id: 12,
+            id: 11,
             name: "Stadion Pajajaran",
-            lat: -6.584500,
-            lng: 106.800000,
-            address: "Jl. Pemuda, Kota Bogor",
-            cabor: "Modern Pentathion, Panahan, Panjat Tebing",
+            lat: -6.5770496557407565,
+            lng: 106.79707946745701,
+            address: "Stadion Pajajaran, Jl. Pemuda No.02, Kota Bogor",
+            cabor: "Modern Pentathlon, Panahan, Panjat Tebing",
             gmaps_url: "https://maps.app.goo.gl/HgsrKKn8LD9V792UA"
         },
         {
-            id: 13,
+            id: 12,
             name: "Kota Baru Parahyangan",
-            lat: -6.852000,
-            lng: 107.481000,
+            lat: -6.85872946272341,
+            lng: 107.4845999774748,
             address: "Padalarang, Kabupaten Bandung Barat, Jawa Barat",
             cabor: "Ski Air",
             gmaps_url: "https://maps.google.com/?q=Kota+Baru+Parahyangan"
         },
         {
-            id: 14,
+            id: 13,
             name: "GOR Yasmin",
-            lat: -6.561000,
-            lng: 106.774000,
+            lat: -6.5669771863684225,
+            lng: 106.77129339999999,
             address: "Bogor, Jawa Barat",
             cabor: "Tenis Meja",
             gmaps_url: "https://maps.app.goo.gl/Fqw4Yn97RyvkSeg27"
@@ -387,6 +437,50 @@
     ];
 
     /* ── Data Fasilitas Hardcoded dari PDF ── */
+    const transportFacilities = [{
+            name: "PO Kerub Pariwisata Indonesia",
+            address: "SPBU 34-16113 Cemplang, Jl. Brigadir Jenderal H Saptadji Hadiprawira, RT.01/RW.09, Cilendek Bar., Kec. Bogor Bar., Kota Bogor",
+            distance: "PIC: +62 822-9992-8709 (Ade)",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=PO+Kerub+Pariwisata+Indonesia+Bogor"
+        },
+        {
+            name: "PO. Midas Transportasi",
+            address: "Ruko Pinus Niaga No. 51, Pine Forest, Sentul City, Bogor",
+            distance: "PIC: +62 878-7223-3106 (Midas)",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=PO+Midas+Transportasi+Sentul+City+Bogor"
+        },
+        {
+            name: "PO. Bin Ilyas Pariwisata",
+            address: "Jl. Karadenan No.39, Karadenan, Cibinong, Kabupaten Bogor",
+            distance: "PIC: +62 877-8100-9726 (Bin Ilyas)",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=PO+Bin+Ilyas+Pariwisata+Cibinong+Bogor"
+        },
+        {
+            name: "Syafa Tour and Travel Bogor",
+            address: "RT.03/RW.19, Katulampa, Kec. Bogor Tim., Kota Bogor",
+            distance: "PIC: +62 838-1904-1575 (Endang)",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=Syafa+Tour+and+Travel+Bogor+Katulampa"
+        },
+        {
+            name: "PO. AdisaPutro Trans",
+            address: "Jl. Raya Cifor No. 14 RT 03/RW 08 Bubulak, Bogor Barat, Kota Bogor",
+            distance: "PIC: +62 857-7496-7369 (Rusli)",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=PO+AdisaPutro+Trans+Bubulak+Bogor"
+        },
+        {
+            name: "PT. Surya Harapan Perdana (PasteurTrans)",
+            address: "Jl. R. Saleh S. Bustaman No.15, RT.01/RW.11, Empang, Kec. Bogor Sel., Kota Bogor",
+            distance: "PIC: +62 823-2224-9794",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=PT+Surya+Harapan+Perdana+PasteurTrans+Empang+Bogor"
+        },
+        {
+            name: "Master Tour & Travel",
+            address: "Jl. Raya Cipaku No.21, RT.03/RW.01, Cipaku, Kec. Bogor Sel., Kota Bogor",
+            distance: "PIC: +62 857-1463-4597 (Wawang)",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=Master+Tour+%26+Travel+Cipaku+Bogor"
+        }
+    ];
+
     const pajajaranFacilities = {
         hotel: [{
                 name: "Zest Hotel Bogor",
@@ -437,7 +531,8 @@
             address: "Jl. Pemuda No. 27, Tanah Sareal, Kec. Tanah Sereal, Kota Bogor",
             distance: "300 m",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=Rumah%20Makan%20Ampera%20Pemuda%20Jl.%20Pemuda%20No.%2027%20Tanah%20Sareal%20Bogor"
-        }]
+        }],
+        transport: transportFacilities
     };
 
     const greenForestFacilities = {
@@ -906,7 +1001,8 @@
             hospital: 'hospital',
             restaurant: 'restaurant',
             police: 'police',
-            pharmacy: 'pharmacy'
+            pharmacy: 'pharmacy',
+            transport: 'transport'
         };
         const venueFacilities = facilitiesData[venue.name];
 
@@ -939,6 +1035,9 @@
             } else if (type === 'pharmacy') {
                 iconBg = '#f3e8ff';
                 iconColor = '#9333ea';
+            } else if (type === 'transport') {
+                iconBg = '#e0f2fe';
+                iconColor = '#0284c7';
             } else {
                 iconBg = '#dbeafe';
                 iconColor = '#2563eb';
@@ -961,6 +1060,60 @@
         });
     }
 
+    const caborIcons = {
+        "Drumband": "24.DRUM BAND.png",
+        "Pencak Silat": "12.PENCAK SILAT.png",
+        "Taekwondo": "9.TAEKWONDO.png",
+        "Judo": "25.JUDO.png",
+        "Kurash": "18.KURASH.png",
+        "Sambo": "17.SAMBO.png",
+        "Shorinji Kempo": "15.KEMPO.png",
+        "Tarung Derajat": "19.TARUNG DERAJAT.png",
+        "Modern Pentathlon": "26.MODERN PENTATHLON.png",
+        "Panahan": "5.PANAHAN.png",
+        "Panjat Tebing": "23.PANJAT TEBING.png",
+        "Tenis Meja": "8.TENIS MEJA.png",
+        "Aerosport - Gantolle": "14.GANTOLE.png",
+        "Aerosport - Paralayang": "3.PARALAYANG.png",
+        "Anggar": "2.ANGGAR.png",
+        "Angkat Berat": "20.ANGKAT BERAT.png",
+        "Angkat Besi": "10.ANGKAT BESI.png",
+        "Arung Jeram": "13.ARUNG JERAM.png",
+        "Binaraga": "6.BINARAGA.png",
+        "Bola Tangan Indoor": "11.BOLA TANGAN.png",
+        "Bola Tangan Pasir": "11.BOLA TANGAN.png",
+        "Dansa": "27.DANSA.png",
+        "Gimnastik Aerobik": "21.SENAM.png",
+        "Gimnastik Artistik": "21.SENAM.png",
+        "Gimnastik Ritmik": "21.SENAM.png",
+        "Menembak": "7.MENEMBAK.png",
+        "Petanque": "16.PENTAQUE.png",
+        "Ski Air": "22.SKI AIR.png",
+    };
+
+    function createSportIcon(sportName) {
+        const iconFile = caborIcons[sportName] || '';
+        const imgHtml = iconFile ?
+            `<img src="/images/cabor/${iconFile}" class="sport-marker-inner" alt="">` :
+            `<svg width="18" height="18" fill="#013469" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8"/></svg>`;
+        return L.divIcon({
+            html: `<div class="sport-marker">${imgHtml}</div>`,
+            className: '',
+            iconSize: [44, 44],
+            iconAnchor: [22, 22],
+            popupAnchor: [0, -22]
+        });
+    }
+
+    function getOffset(index, total) {
+        const spacing = 0.0003;
+        const start = -(total - 1) * spacing / 2;
+        return {
+            lat: 0,
+            lng: start + index * spacing
+        };
+    }
+
     function initMap() {
         const bogorCenter = [-6.587, 106.803];
 
@@ -979,27 +1132,22 @@
     }
 
     // Fungsi Render Marker Venue
-    function renderVenues(venuesData) {
-        const redIcon = new L.Icon({
-            iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
-            shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-            iconSize: [25, 41],
-            iconAnchor: [12, 41],
-            popupAnchor: [1, -34],
-            shadowSize: [41, 41]
-        });
-
+    function renderVenues(venuesData, filterCabor) {
         venuesData.forEach(venue => {
-            const marker = L.marker([venue.lat, venue.lng], {
-                icon: redIcon
-            }).addTo(map);
-            marker.bindTooltip(venue.name);
-
-            marker.on("click", () => {
-                showVenueDetails(venue);
+            const caborList = venue.cabor.split(',').map(c => c.trim());
+            caborList.forEach((cabor, index) => {
+                if (filterCabor && cabor.toLowerCase() !== filterCabor.toLowerCase()) return;
+                const offset = getOffset(index, caborList.length);
+                const icon = createSportIcon(cabor);
+                const marker = L.marker([venue.lat + offset.lat, venue.lng + offset.lng], {
+                    icon: icon
+                }).addTo(map);
+                marker.bindTooltip(`${cabor} - ${venue.name}`);
+                marker.on("click", () => {
+                    showVenueDetails(venue);
+                });
+                markers.push(marker);
             });
-
-            markers.push(marker);
         });
     }
 
@@ -1038,8 +1186,14 @@
                 return matchCabor && matchVenue;
             });
 
+            let filterCabor = null;
+            if (caborVal) {
+                const matched = Object.keys(caborIcons).find(k => k.toLowerCase().includes(caborVal));
+                if (matched) filterCabor = matched;
+            }
+
             if (filteredVenues.length > 0) {
-                renderVenues(filteredVenues);
+                renderVenues(filteredVenues, filterCabor);
                 filteredVenues.forEach(v => bounds.extend([v.lat, v.lng]));
                 isVenueFound = true;
             }
@@ -1057,6 +1211,7 @@
                         'apotek': 'cat-apotek',
                         'rumah-makan': 'cat-resto',
                         'polisi': 'cat-police',
+                        'transport': 'cat-transport',
                     };
                     const targetCat = filterToCategory[fasilitasVal];
 
@@ -1172,6 +1327,7 @@
                 ['restaurant', 'resto-container', 'Restoran', 'cat-resto'],
                 ['police', 'police-container', 'Kantor Polisi', 'cat-police'],
                 ['pharmacy', 'apotek-container', 'Apotek', 'cat-apotek'],
+                ['transport', 'transport-container', 'Sewa Kendaraan', 'cat-transport'],
             ];
             venueTypes.forEach(function(t) {
                 renderFacilityCategory(venue, t[0], t[1], t[2], t[3]);
@@ -1210,6 +1366,12 @@
                 containerId: 'apotek-container',
                 title: 'Apotek',
                 catId: 'cat-apotek'
+            },
+            'cat-transport': {
+                type: 'transport',
+                containerId: 'transport-container',
+                title: 'Sewa Kendaraan',
+                catId: 'cat-transport'
             },
         };
 

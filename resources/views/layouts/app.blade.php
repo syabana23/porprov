@@ -173,6 +173,7 @@
         const btnFontXl = document.getElementById('btnFontXl');
 
         function setFontSize(size) {
+            document.documentElement.classList.remove('font-sm', 'font-lg', 'font-xl');
             document.body.classList.remove('font-sm', 'font-lg', 'font-xl');
             btnFontSm.classList.remove('active');
             btnFontNormal.classList.remove('active');
@@ -180,6 +181,7 @@
             btnFontXl.classList.remove('active');
 
             if (size !== 'normal') {
+                document.documentElement.classList.add(`font-${size}`);
                 document.body.classList.add(`font-${size}`);
                 document.getElementById(`btnFont${size.charAt(0).toUpperCase() + size.slice(1)}`).classList.add('active');
                 localStorage.setItem('a11y_fontsize', size);
@@ -202,33 +204,38 @@
         const btnReadableFont = document.getElementById('btnReadableFont');
 
         btnHighContrast.addEventListener('click', () => {
+            const isContrast = document.documentElement.classList.toggle('high-contrast');
             document.body.classList.toggle('high-contrast');
-            btnHighContrast.classList.toggle('active');
-            localStorage.setItem('a11y_highContrast', document.body.classList.contains('high-contrast'));
+            btnHighContrast.classList.toggle('active', isContrast);
+            localStorage.setItem('a11y_highContrast', isContrast);
         });
 
         btnGrayscale.addEventListener('click', () => {
+            const isGrayscale = document.documentElement.classList.toggle('grayscale-mode');
             document.body.classList.toggle('grayscale-mode');
-            btnGrayscale.classList.toggle('active');
-            localStorage.setItem('a11y_grayscale', document.body.classList.contains('grayscale-mode'));
+            btnGrayscale.classList.toggle('active', isGrayscale);
+            localStorage.setItem('a11y_grayscale', isGrayscale);
         });
 
         btnNegative.addEventListener('click', () => {
+            const isNegative = document.documentElement.classList.toggle('negative-contrast');
             document.body.classList.toggle('negative-contrast');
-            btnNegative.classList.toggle('active');
-            localStorage.setItem('a11y_negative', document.body.classList.contains('negative-contrast'));
+            btnNegative.classList.toggle('active', isNegative);
+            localStorage.setItem('a11y_negative', isNegative);
         });
 
         btnHighlightLinks.addEventListener('click', () => {
+            const isHighlight = document.documentElement.classList.toggle('highlight-links');
             document.body.classList.toggle('highlight-links');
-            btnHighlightLinks.classList.toggle('active');
-            localStorage.setItem('a11y_highlightLinks', document.body.classList.contains('highlight-links'));
+            btnHighlightLinks.classList.toggle('active', isHighlight);
+            localStorage.setItem('a11y_highlightLinks', isHighlight);
         });
 
         btnReadableFont.addEventListener('click', () => {
+            const isReadable = document.documentElement.classList.toggle('readable-font');
             document.body.classList.toggle('readable-font');
-            btnReadableFont.classList.toggle('active');
-            localStorage.setItem('a11y_readableFont', document.body.classList.contains('readable-font'));
+            btnReadableFont.classList.toggle('active', isReadable);
+            localStorage.setItem('a11y_readableFont', isReadable);
         });
 
         // 3. Mode Buta Warna
@@ -238,6 +245,7 @@
         const btnNormalColor = document.getElementById('btnNormalColor');
 
         function setBlindnessFilter(filterType) {
+            document.documentElement.classList.remove('filter-protanopia', 'filter-deuteranopia', 'filter-tritanopia');
             document.body.classList.remove('filter-protanopia', 'filter-deuteranopia', 'filter-tritanopia');
             btnProtanopia.classList.remove('active');
             btnDeuteranopia.classList.remove('active');
@@ -245,6 +253,7 @@
             btnNormalColor.classList.add('active');
 
             if (filterType !== 'normal') {
+                document.documentElement.classList.add(`filter-${filterType}`);
                 document.body.classList.add(`filter-${filterType}`);
                 document.getElementById(`btn${filterType.charAt(0).toUpperCase() + filterType.slice(1)}`).classList.add('active');
                 btnNormalColor.classList.remove('active');
@@ -325,6 +334,7 @@
         // 5. Reset Semua Pengaturan
         const btnResetA11y = document.getElementById('btnResetA11y');
         btnResetA11y.addEventListener('click', () => {
+            document.documentElement.className = '';
             document.body.className = '';
             localStorage.clear();
 
@@ -362,22 +372,27 @@
             else btnFontNormal.classList.add('active');
 
             if (localStorage.getItem('a11y_highContrast') === 'true') {
+                document.documentElement.classList.add('high-contrast');
                 document.body.classList.add('high-contrast');
                 btnHighContrast.classList.add('active');
             }
             if (localStorage.getItem('a11y_grayscale') === 'true') {
+                document.documentElement.classList.add('grayscale-mode');
                 document.body.classList.add('grayscale-mode');
                 btnGrayscale.classList.add('active');
             }
             if (localStorage.getItem('a11y_negative') === 'true') {
+                document.documentElement.classList.add('negative-contrast');
                 document.body.classList.add('negative-contrast');
                 btnNegative.classList.add('active');
             }
             if (localStorage.getItem('a11y_highlightLinks') === 'true') {
+                document.documentElement.classList.add('highlight-links');
                 document.body.classList.add('highlight-links');
                 btnHighlightLinks.classList.add('active');
             }
             if (localStorage.getItem('a11y_readableFont') === 'true') {
+                document.documentElement.classList.add('readable-font');
                 document.body.classList.add('readable-font');
                 btnReadableFont.classList.add('active');
             }

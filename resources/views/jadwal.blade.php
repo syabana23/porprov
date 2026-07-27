@@ -911,6 +911,7 @@
                 <button class="facility-filter-btn" data-filter="cat-resto">Restoran</button>
                 <button class="facility-filter-btn" data-filter="cat-police">Polisi</button>
                 <button class="facility-filter-btn" data-filter="cat-apotek">Apotek</button>
+                <button class="facility-filter-btn" data-filter="cat-transport">Sewa Kendaraan</button>
             </div>
 
             <div class="facility-categories" id="modalFacilityCategories">
@@ -986,6 +987,21 @@
                     </div>
                     <div class="facility-list-wrap">
                         <div class="facility-empty" style="text-align:center;padding:30px 10px;color:#94a3b8;font-size:13px;font-style:italic;">Tidak ada apotek untuk venue ini.</div>
+                    </div>
+                </div>
+
+                <div class="facility-category" id="cat-transport">
+                    <div class="facility-cat-header">
+                        <span class="cat-dot" style="background:#0284c7;"></span>
+                        <div class="facility-cat-icon" style="background:#e0f2fe;color:#0284c7;">
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5-1.5zM5 11l1.5-4.5h11L19 11H5z"/>
+                            </svg>
+                        </div>
+                        <h3>Sewa Kendaraan</h3>
+                    </div>
+                    <div class="facility-list-wrap">
+                        <div class="facility-empty" style="text-align:center;padding:30px 10px;color:#94a3b8;font-size:13px;font-style:italic;">Tidak ada layanan sewa kendaraan untuk venue ini.</div>
                     </div>
                 </div>
             </div>
@@ -1744,7 +1760,21 @@
     const modalSportName = document.getElementById('modalSportName');
     const modalFacilityCategories = document.getElementById('modalFacilityCategories');
 
+    const transportFacilities = [
+        { name: "PO Kerub Pariwisata Indonesia", address: "SPBU 34-16113 Cemplang, Jl. Brigadir Jenderal H Saptadji Hadiprawira, RT.01/RW.09, Cilendek Bar., Kec. Bogor Bar., Kota Bogor", distance: "PIC: +62 822-9992-8709 (Ade)", mapUrl: "https://www.google.com/maps/search/?api=1&query=PO+Kerub+Pariwisata+Indonesia+Bogor" },
+        { name: "PO. Midas Transportasi", address: "Ruko Pinus Niaga No. 51, Pine Forest, Sentul City, Bogor", distance: "PIC: +62 878-7223-3106 (Midas)", mapUrl: "https://www.google.com/maps/search/?api=1&query=PO+Midas+Transportasi+Sentul+City+Bogor" },
+        { name: "PO. Bin Ilyas Pariwisata", address: "Jl. Karadenan No.39, Karadenan, Cibinong, Kabupaten Bogor", distance: "PIC: +62 877-8100-9726 (Bin Ilyas)", mapUrl: "https://www.google.com/maps/search/?api=1&query=PO+Bin+Ilyas+Pariwisata+Cibinong+Bogor" },
+        { name: "Syafa Tour and Travel Bogor", address: "RT.03/RW.19, Katulampa, Kec. Bogor Tim., Kota Bogor", distance: "PIC: +62 838-1904-1575 (Endang)", mapUrl: "https://www.google.com/maps/search/?api=1&query=Syafa+Tour+and+Travel+Bogor+Katulampa" },
+        { name: "PO. AdisaPutro Trans", address: "Jl. Raya Cifor No. 14 RT 03/RW 08 Bubulak, Bogor Barat, Kota Bogor", distance: "PIC: +62 857-7496-7369 (Rusli)", mapUrl: "https://www.google.com/maps/search/?api=1&query=PO+AdisaPutro+Trans+Bubulak+Bogor" },
+        { name: "PT. Surya Harapan Perdana (PasteurTrans)", address: "Jl. R. Saleh S. Bustaman No.15, RT.01/RW.11, Empang, Kec. Bogor Sel., Kota Bogor", distance: "PIC: +62 823-2224-9794", mapUrl: "https://www.google.com/maps/search/?api=1&query=PT+Surya+Harapan+Perdana+PasteurTrans+Empang+Bogor" },
+        { name: "Master Tour & Travel", address: "Jl. Raya Cipaku No.21, RT.03/RW.01, Cipaku, Kec. Bogor Sel., Kota Bogor", distance: "PIC: +62 857-1463-4597 (Wawang)", mapUrl: "https://www.google.com/maps/search/?api=1&query=Master+Tour+%26+Travel+Cipaku+Bogor" }
+    ];
+
     function getFacilityCategoryData(data, category) {
+        if (!data) return transportFacilities;
+        if (category === 'transport') {
+            return data.transport || transportFacilities;
+        }
         return data[category] || [];
     }
 
@@ -1802,13 +1832,14 @@
         const mappedVenue = venueNameMap[venue] || venue;
         const data = venueData[mappedVenue];
 
-        const categories = ['hotel', 'hospital', 'restaurant', 'police', 'pharmacy'];
+        const categories = ['hotel', 'hospital', 'restaurant', 'police', 'pharmacy', 'transport'];
         const catElements = {
             hotel: document.getElementById('cat-hotel'),
             hospital: document.getElementById('cat-health'),
             restaurant: document.getElementById('cat-resto'),
             police: document.getElementById('cat-police'),
-            pharmacy: document.getElementById('cat-apotek')
+            pharmacy: document.getElementById('cat-apotek'),
+            transport: document.getElementById('cat-transport')
         };
 
         categories.forEach(cat => {
@@ -1821,7 +1852,8 @@
                 hospital: 'Tidak ada fasilitas kesehatan untuk venue ini.',
                 restaurant: 'Tidak ada restoran untuk venue ini.',
                 police: 'Tidak ada kantor polisi untuk venue ini.',
-                pharmacy: 'Tidak ada apotek untuk venue ini.'
+                pharmacy: 'Tidak ada apotek untuk venue ini.',
+                transport: 'Tidak ada layanan sewa kendaraan untuk venue ini.'
             };
             if (items.length > 0) {
                 wrap.innerHTML = items.map(item => {
