@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'PANDU PORPROV - Beranda')
+@section('bodyClass', 'beranda')
 
 
 

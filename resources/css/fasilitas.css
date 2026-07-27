@@ -5,6 +5,7 @@
         padding: 14px 0;
         transition: background-color 0.3s, border-color 0.3s;
     }
+
     html.dark .stats-strip {
         background: #1e293b;
         border-bottom: 1px solid #334155;
@@ -19,6 +20,7 @@
         overflow-x: auto;
         scrollbar-width: none;
     }
+
     .stats-strip-inner::-webkit-scrollbar {
         display: none;
     }
@@ -36,6 +38,7 @@
         transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
         flex-shrink: 0;
     }
+
     html.dark .ss-item {
         background: #1e293b;
         border-color: #334155;
@@ -47,6 +50,7 @@
         background: #f1f5f9;
         border-color: #cbd5e1;
     }
+
     html.dark .ss-item:hover {
         background: #334155;
         border-color: #475569;
@@ -57,20 +61,25 @@
         background: #013469;
         border-color: #013469;
     }
+
     html.dark .ss-item.active {
         background: #3b82f6;
         border-color: #3b82f6;
     }
+
     .ss-item.active .ss-num {
         color: #ffffff;
     }
+
     .ss-item.active .ss-lbl {
         color: rgba(255, 255, 255, 0.8);
     }
+
     .ss-item.active .ss-icon-wrap {
         background: rgba(255, 255, 255, 0.15) !important;
         color: #ffffff !important;
     }
+
     .ss-item.active .ss-icon-wrap svg {
         stroke: #ffffff !important;
     }
@@ -99,6 +108,7 @@
         line-height: 1.2;
         transition: color 0.2s;
     }
+
     html.dark .ss-num {
         color: #f8fafc;
     }
@@ -110,6 +120,7 @@
         line-height: 1.2;
         transition: color 0.2s;
     }
+
     html.dark .ss-lbl {
         color: #94a3b8;
     }
@@ -189,6 +200,7 @@
         outline: none;
         margin-bottom: 16px;
     }
+
     .search-input:focus {
         border-color: #013469;
         box-shadow: 0 0 0 2px rgba(1, 52, 105, 0.1);
@@ -244,6 +256,8 @@
     /* ── Main list ── */
     .facility-list-wrap {
         flex: 1;
+        max-width: 900px;
+        margin: 0 auto;
         background: #fff;
         border-radius: 12px;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
@@ -298,7 +312,7 @@
 
     .fi-thumb {
         width: 110px;
-        height: 90px;
+        height: 130px;
         flex-shrink: 0;
         border-radius: 8px;
         overflow: hidden;
@@ -443,7 +457,7 @@
     }
 
     .btn-detail {
-        background: #013469;
+        background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
         color: #fff;
         font-size: 11px;
         font-weight: 700;
@@ -453,12 +467,14 @@
         border: none;
         cursor: pointer;
         text-decoration: none;
-        transition: background 0.2s;
+        transition: all 0.2s;
         display: inline-block;
     }
 
     .btn-detail:hover {
-        background: #012050;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+        opacity: 0.92;
     }
 
     /* Pagination */
@@ -512,6 +528,7 @@
         color: #6b7280;
         font-size: 14px;
     }
+
     .no-results svg {
         margin-bottom: 12px;
         color: #cbd5e1;
@@ -522,20 +539,25 @@
         .fasilitas-body {
             flex-direction: column;
         }
+
         .filter-sidebar {
             width: 100%;
         }
+
         .facility-item {
             flex-direction: column;
         }
+
         .fi-thumb {
             width: 100%;
             height: 120px;
         }
+
         .fi-top {
             flex-direction: column;
             gap: 8px;
         }
+
         .fi-right {
             flex-direction: row;
             align-items: center;
@@ -547,15 +569,19 @@
             padding: 16px 12px 30px;
             gap: 16px;
         }
+
         .facility-list-wrap {
             padding: 14px;
         }
+
         .flw-header h2 {
             font-size: 15px;
         }
+
         .fi-thumb {
             height: 100px;
         }
+
         .pagination {
             flex-direction: column;
             gap: 12px;
@@ -567,19 +593,26 @@
         .fasilitas-body {
             padding: 12px 8px 24px;
         }
+
         .facility-list-wrap {
             padding: 10px;
         }
+
         .facility-item {
             padding: 10px;
             gap: 10px;
         }
+
         .fi-left .fi-name {
             font-size: 12px;
         }
-        .fi-addr, .fi-phone, .fi-layanan {
+
+        .fi-addr,
+        .fi-phone,
+        .fi-layanan {
             font-size: 10px;
         }
+
         .btn-detail {
             font-size: 10px;
             padding: 5px 10px;

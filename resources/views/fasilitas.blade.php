@@ -6,7 +6,7 @@
 @section('content')
 <!-- Banner -->
 <section class="page-banner">
-    <img class="banner-bg-img" src="{{ asset('images/hero-bg.png') }}" alt="">
+    <img class="banner-bg-img" src="{{ asset('images/venue3.jpeg') }}" alt="">
     <div class="banner-inner">
         <div class="banner-icon">
             <svg width="28" height="28" fill="none" stroke="#fff" viewBox="0 0 24 24">
@@ -196,51 +196,51 @@
 
 @push('scripts')
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-    // Facility data from PHP
-    const facilities = @json($facilities);
+    document.addEventListener('DOMContentLoaded', () => {
+        // Facility data from PHP
+        const facilities = {!! json_encode($facilities) !!};
 
-    const ITEMS_PER_PAGE = 10;
-    let currentPage = 1;
-    let filteredData = [...facilities];
+        const ITEMS_PER_PAGE = 10;
+        let currentPage = 1;
+        let filteredData = [...facilities];
 
-    // DOM refs
-    const listEl = document.getElementById('facilityList');
-    const pgInfo = document.getElementById('pgInfo');
-    const pgBtns = document.getElementById('pgBtns');
-    const searchInput = document.getElementById('searchInput');
-    const filterType = document.getElementById('filterType');
-    const filterVenue = document.getElementById('filterVenue');
-    const sortSelect = document.getElementById('sortSelect');
-    const btnReset = document.getElementById('btnReset');
-    const ssItems = document.querySelectorAll('.ss-item');
+        // DOM refs
+        const listEl = document.getElementById('facilityList');
+        const pgInfo = document.getElementById('pgInfo');
+        const pgBtns = document.getElementById('pgBtns');
+        const searchInput = document.getElementById('searchInput');
+        const filterType = document.getElementById('filterType');
+        const filterVenue = document.getElementById('filterVenue');
+        const sortSelect = document.getElementById('sortSelect');
+        const btnReset = document.getElementById('btnReset');
+        const ssItems = document.querySelectorAll('.ss-item');
 
-    function getBadgeClass(tipe) {
-        const map = {
-            rs: 'badge-rs',
-            puskesmas: 'badge-puskesmas',
-            apotek: 'badge-apotek',
-            hotel: 'badge-hotel',
-            polsek: 'badge-polsek',
-            restoran: 'badge-restoran'
-        };
-        return map[tipe] || 'badge-rs';
-    }
+        function getBadgeClass(tipe) {
+            const map = {
+                rs: 'badge-rs',
+                puskesmas: 'badge-puskesmas',
+                apotek: 'badge-apotek',
+                hotel: 'badge-hotel',
+                polsek: 'badge-polsek',
+                restoran: 'badge-restoran'
+            };
+            return map[tipe] || 'badge-rs';
+        }
 
-    function getInitials(nama) {
-        return nama.split(' ').map(w => w[0]).join('').substring(0, 2).toUpperCase();
-    }
+        function getInitials(nama) {
+            return nama.split(' ').map(w => w[0]).join('').substring(0, 2).toUpperCase();
+        }
 
-    function renderItem(f) {
-        const thumbContent = f.image
-            ? `<img src="${f.image}" alt="${f.nama}">`
-            : `<div class="fi-placeholder">${getInitials(f.nama)}</div>`;
+        function renderItem(f) {
+            const thumbContent = f.image ?
+                `<img src="${f.image}" alt="${f.nama}">` :
+                `<div class="fi-placeholder">${getInitials(f.nama)}</div>`;
 
-        const mapsBtn = f.gmaps
-            ? `<a href="${f.gmaps}" target="_blank" class="btn-detail" style="background:#0284c7;">Peta Lokasi &gt;</a>`
-            : `<span class="btn-detail" style="opacity:0.5;cursor:default;">Tidak ada peta</span>`;
+            const mapsBtn = f.gmaps ?
+                `<a href="${f.gmaps}" target="_blank" class="btn-detail" >Peta Lokasi &gt;</a>` :
+                `<span class="btn-detail" style="opacity:0.5;cursor:default;">Tidak ada peta</span>`;
 
-        return `
+            return `
         <div class="facility-item" data-tipe="${f.tipe}">
             <div class="fi-thumb">${thumbContent}</div>
             <div class="fi-details">
@@ -279,116 +279,119 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             </div>
         </div>`;
-    }
+        }
 
-    function applyFilters() {
-        const search = searchInput.value.toLowerCase().trim();
-        const type = filterType.value;
-        const venue = filterVenue.value;
+        function applyFilters() {
+            const search = searchInput.value.toLowerCase().trim();
+            const type = filterType.value;
+            const venue = filterVenue.value;
 
-        filteredData = facilities.filter(f => {
-            if (search && !f.nama.toLowerCase().includes(search) && !f.alamat.toLowerCase().includes(search) && !f.venue.toLowerCase().includes(search)) return false;
-            if (type !== 'all' && f.tipe !== type) return false;
-            if (venue !== 'all' && f.venue !== venue) return false;
-            return true;
-        });
+            filteredData = facilities.filter(f => {
+                if (search && !f.nama.toLowerCase().includes(search) && !f.alamat.toLowerCase().includes(search) && !f.venue.toLowerCase().includes(search)) return false;
+                if (type !== 'all' && f.tipe !== type) return false;
+                if (venue !== 'all' && f.venue !== venue) return false;
+                return true;
+            });
 
-        // Sort
-        const sort = sortSelect.value;
-        filteredData.sort((a, b) => {
-            if (sort === 'nama') return a.nama.localeCompare(b.nama);
-            if (sort === 'nama-desc') return b.nama.localeCompare(a.nama);
-            return 0;
-        });
+            // Sort
+            const sort = sortSelect.value;
+            filteredData.sort((a, b) => {
+                if (sort === 'nama') return a.nama.localeCompare(b.nama);
+                if (sort === 'nama-desc') return b.nama.localeCompare(a.nama);
+                return 0;
+            });
 
-        currentPage = 1;
-        render();
-    }
+            currentPage = 1;
+            render();
+        }
 
-    function render() {
-        const total = filteredData.length;
-        const totalPages = Math.ceil(total / ITEMS_PER_PAGE);
-        const start = (currentPage - 1) * ITEMS_PER_PAGE;
-        const end = Math.min(start + ITEMS_PER_PAGE, total);
-        const pageData = filteredData.slice(start, end);
+        function render() {
+            const total = filteredData.length;
+            const totalPages = Math.ceil(total / ITEMS_PER_PAGE);
+            const start = (currentPage - 1) * ITEMS_PER_PAGE;
+            const end = Math.min(start + ITEMS_PER_PAGE, total);
+            const pageData = filteredData.slice(start, end);
 
-        if (total === 0) {
-            listEl.innerHTML = `
+            if (total === 0) {
+                listEl.innerHTML = `
                 <div class="no-results">
                     <svg width="48" height="48" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>
                     <p>Tidak ada fasilitas ditemukan</p>
                 </div>`;
-            pgInfo.textContent = '';
-            pgBtns.innerHTML = '';
-            return;
-        }
-
-        listEl.innerHTML = pageData.map(renderItem).join('');
-        pgInfo.textContent = `Menampilkan ${start + 1}-${end} dari ${total} Fasilitas`;
-
-        // Pagination buttons
-        let btnsHtml = '';
-        if (currentPage > 1) {
-            btnsHtml += `<button class="pg-btn" data-page="${currentPage - 1}">&lt;</button>`;
-        }
-        for (let i = 1; i <= totalPages; i++) {
-            if (totalPages > 7) {
-                if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
-                    btnsHtml += `<button class="pg-btn ${i === currentPage ? 'active' : ''}" data-page="${i}">${i}</button>`;
-                } else if (i === currentPage - 2 || i === currentPage + 2) {
-                    btnsHtml += `<button class="pg-btn" style="border:none;background:none;cursor:default;">...</button>`;
-                }
-            } else {
-                btnsHtml += `<button class="pg-btn ${i === currentPage ? 'active' : ''}" data-page="${i}">${i}</button>`;
+                pgInfo.textContent = '';
+                pgBtns.innerHTML = '';
+                return;
             }
-        }
-        if (currentPage < totalPages) {
-            btnsHtml += `<button class="pg-btn" data-page="${currentPage + 1}">&gt;</button>`;
-        }
-        pgBtns.innerHTML = btnsHtml;
 
-        // Bind pagination clicks
-        pgBtns.querySelectorAll('.pg-btn[data-page]').forEach(btn => {
-            btn.addEventListener('click', () => {
-                currentPage = parseInt(btn.dataset.page);
-                render();
-                listEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            listEl.innerHTML = pageData.map(renderItem).join('');
+            pgInfo.textContent = `Menampilkan ${start + 1}-${end} dari ${total} Fasilitas`;
+
+            // Pagination buttons
+            let btnsHtml = '';
+            if (currentPage > 1) {
+                btnsHtml += `<button class="pg-btn" data-page="${currentPage - 1}">&lt;</button>`;
+            }
+            for (let i = 1; i <= totalPages; i++) {
+                if (totalPages > 7) {
+                    if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
+                        btnsHtml += `<button class="pg-btn ${i === currentPage ? 'active' : ''}" data-page="${i}">${i}</button>`;
+                    } else if (i === currentPage - 2 || i === currentPage + 2) {
+                        btnsHtml += `<button class="pg-btn" style="border:none;background:none;cursor:default;">...</button>`;
+                    }
+                } else {
+                    btnsHtml += `<button class="pg-btn ${i === currentPage ? 'active' : ''}" data-page="${i}">${i}</button>`;
+                }
+            }
+            if (currentPage < totalPages) {
+                btnsHtml += `<button class="pg-btn" data-page="${currentPage + 1}">&gt;</button>`;
+            }
+            pgBtns.innerHTML = btnsHtml;
+
+            // Bind pagination clicks
+            pgBtns.querySelectorAll('.pg-btn[data-page]').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    currentPage = parseInt(btn.dataset.page);
+                    render();
+                    listEl.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                });
             });
-        });
-    }
+        }
 
-    // Event listeners
-    searchInput.addEventListener('input', applyFilters);
-    filterType.addEventListener('change', applyFilters);
-    filterVenue.addEventListener('change', applyFilters);
-    sortSelect.addEventListener('change', applyFilters);
+        // Event listeners
+        searchInput.addEventListener('input', applyFilters);
+        filterType.addEventListener('change', applyFilters);
+        filterVenue.addEventListener('change', applyFilters);
+        sortSelect.addEventListener('change', applyFilters);
 
-    btnReset.addEventListener('click', () => {
-        searchInput.value = '';
-        filterType.value = 'all';
-        filterVenue.value = 'all';
-        sortSelect.value = 'nama';
-        ssItems.forEach(i => i.classList.remove('active'));
-        document.querySelector('.ss-item[data-type="all"]').classList.add('active');
-        applyFilters();
-    });
-
-    // Stats strip click -> filter sync
-    ssItems.forEach(item => {
-        item.addEventListener('click', () => {
+        btnReset.addEventListener('click', () => {
+            searchInput.value = '';
+            filterType.value = 'all';
+            filterVenue.value = 'all';
+            sortSelect.value = 'nama';
             ssItems.forEach(i => i.classList.remove('active'));
-            item.classList.add('active');
-            const type = item.getAttribute('data-type');
-            filterType.value = type === 'all' ? 'all' : type;
+            document.querySelector('.ss-item[data-type="all"]').classList.add('active');
             applyFilters();
         });
-    });
 
-    // Initial render
-    applyFilters();
-});
+        // Stats strip click -> filter sync
+        ssItems.forEach(item => {
+            item.addEventListener('click', () => {
+                ssItems.forEach(i => i.classList.remove('active'));
+                item.classList.add('active');
+                const type = item.getAttribute('data-type');
+                filterType.value = type === 'all' ? 'all' : type;
+                applyFilters();
+            });
+        });
+
+        // Initial render
+        applyFilters();
+    });
 </script>
 @endpush
 @endsection

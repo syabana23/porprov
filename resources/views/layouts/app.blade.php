@@ -14,7 +14,7 @@
     @stack('styles')
 </head>
 
-<body>
+<body @yield('bodyClass')>
     <!-- SVG Filters untuk Mode Buta Warna -->
     <svg style="display:none">
         <filter id="protanopia-filter">

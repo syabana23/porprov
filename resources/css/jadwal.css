@@ -19,6 +19,7 @@
         z-index: 1;
         overflow: hidden;
     }
+
     .banner-particles span {
         position: absolute;
         width: 8px;
@@ -27,16 +28,67 @@
         border-radius: 50%;
         animation: particleFloat 8s ease-in-out infinite;
     }
-    .banner-particles span:nth-child(1) { top: 15%; left: 10%; animation-delay: 0s; width: 10px; height: 10px; }
-    .banner-particles span:nth-child(2) { top: 25%; left: 80%; animation-delay: 1.2s; width: 6px; height: 6px; }
-    .banner-particles span:nth-child(3) { top: 55%; left: 5%; animation-delay: 2.8s; width: 7px; height: 7px; }
-    .banner-particles span:nth-child(4) { top: 70%; left: 70%; animation-delay: 4s; width: 5px; height: 5px; }
-    .banner-particles span:nth-child(5) { top: 40%; left: 92%; animation-delay: 5.5s; width: 9px; height: 9px; }
-    .banner-particles span:nth-child(6) { top: 80%; left: 20%; animation-delay: 3.2s; width: 6px; height: 6px; }
+
+    .banner-particles span:nth-child(1) {
+        top: 15%;
+        left: 10%;
+        animation-delay: 0s;
+        width: 10px;
+        height: 10px;
+    }
+
+    .banner-particles span:nth-child(2) {
+        top: 25%;
+        left: 80%;
+        animation-delay: 1.2s;
+        width: 6px;
+        height: 6px;
+    }
+
+    .banner-particles span:nth-child(3) {
+        top: 55%;
+        left: 5%;
+        animation-delay: 2.8s;
+        width: 7px;
+        height: 7px;
+    }
+
+    .banner-particles span:nth-child(4) {
+        top: 70%;
+        left: 70%;
+        animation-delay: 4s;
+        width: 5px;
+        height: 5px;
+    }
+
+    .banner-particles span:nth-child(5) {
+        top: 40%;
+        left: 92%;
+        animation-delay: 5.5s;
+        width: 9px;
+        height: 9px;
+    }
+
+    .banner-particles span:nth-child(6) {
+        top: 80%;
+        left: 20%;
+        animation-delay: 3.2s;
+        width: 6px;
+        height: 6px;
+    }
 
     @keyframes particleFloat {
-        0%, 100% { transform: translateY(0) scale(1); opacity: 0.3; }
-        50% { transform: translateY(-20px) scale(1.6); opacity: 0.7; }
+
+        0%,
+        100% {
+            transform: translateY(0) scale(1);
+            opacity: 0.3;
+        }
+
+        50% {
+            transform: translateY(-20px) scale(1.6);
+            opacity: 0.7;
+        }
     }
 
     /* ================================================================
@@ -95,10 +147,17 @@
         cursor: pointer;
     }
 
-    .filter-box input[type="text"] { cursor: text; }
-    .filter-box input[type="date"] { padding-right: 6px; }
+    .filter-box input[type="text"] {
+        cursor: text;
+    }
 
-    .filter-box input::placeholder { color: #9ca3af; }
+    .filter-box input[type="date"] {
+        padding-right: 6px;
+    }
+
+    .filter-box input::placeholder {
+        color: #9ca3af;
+    }
 
     .reset-filter-btn {
         background: linear-gradient(135deg, #013469, #0a4fa8);
@@ -170,9 +229,18 @@
         border-radius: 5px;
         flex-shrink: 0;
     }
-    .legend-dot.prep { background: linear-gradient(90deg, #06b6d4, #22d3ee); }
-    .legend-dot.exec { background: linear-gradient(90deg, #dc2626, #ef4444); }
-    .legend-dot.final { background: linear-gradient(90deg, #a855f7, #c084fc); }
+
+    .legend-dot.prep {
+        background: linear-gradient(90deg, #06b6d4, #22d3ee);
+    }
+
+    .legend-dot.exec {
+        background: linear-gradient(90deg, #dc2626, #ef4444);
+    }
+
+    .legend-dot.final {
+        background: linear-gradient(90deg, #a855f7, #c084fc);
+    }
 
     .legend-item span {
         font-size: 11px;
@@ -189,8 +257,18 @@
         color: #94a3b8;
         font-size: 11px;
     }
-    .legend-note svg { flex-shrink: 0; color: #94a3b8; width: 13px; height: 13px; }
-    .legend-note p { margin: 0; line-height: 1.4; }
+
+    .legend-note svg {
+        flex-shrink: 0;
+        color: #94a3b8;
+        width: 13px;
+        height: 13px;
+    }
+
+    .legend-note p {
+        margin: 0;
+        line-height: 1.4;
+    }
 
     /* ================================================================
        TABLE INFO BAR
@@ -207,7 +285,11 @@
         font-size: 12px;
         color: #64748b;
     }
-    .table-count strong { color: #013469; font-weight: 700; }
+
+    .table-count strong {
+        color: #013469;
+        font-weight: 700;
+    }
 
     .scroll-hint {
         display: none;
@@ -221,11 +303,26 @@
         font-weight: 600;
         animation: pulseHint 2.5s ease-in-out infinite;
     }
+
     @keyframes pulseHint {
-        0%, 100% { transform: translateX(0); opacity: 0.8; }
-        50% { transform: translateX(4px); opacity: 1; }
+
+        0%,
+        100% {
+            transform: translateX(0);
+            opacity: 0.8;
+        }
+
+        50% {
+            transform: translateX(4px);
+            opacity: 1;
+        }
     }
-    @media (max-width: 900px) { .scroll-hint { display: inline-flex; } }
+
+    @media (max-width: 900px) {
+        .scroll-hint {
+            display: inline-flex;
+        }
+    }
 
     /* ================================================================
        TABLE WRAPPER
@@ -256,7 +353,10 @@
         float: right;
         height: 100%;
     }
-    .jadwal-table-wrap.scrolled-right::after { display: none; }
+
+    .jadwal-table-wrap.scrolled-right::after {
+        display: none;
+    }
 
     /* ================================================================
        TABLE BASE
@@ -303,14 +403,14 @@
     }
 
     /* Weekend date columns (Sat/Sun) - subtle tint */
-    .jadwal-tbl thead .month-header th:nth-child(5) br,
+    /* .jadwal-tbl thead .month-header th:nth-child(5) br,
     .jadwal-tbl thead .month-header th:nth-child(6) br,
     .jadwal-tbl thead .month-header th:nth-child(12) br,
     .jadwal-tbl thead .month-header th:nth-child(13) br,
     .jadwal-tbl thead .month-header th:nth-child(19) br,
     .jadwal-tbl thead .month-header th:nth-child(20) br {
-        /* weekend day markers — handled via lighter bg on those columns */
-    }
+    } */
+    /* weekend day markers — handled via lighter bg on those columns */
 
     .jadwal-tbl thead .month-header th {
         background: linear-gradient(180deg, #013a6b, #014590);
@@ -336,6 +436,7 @@
         z-index: 14;
         background: linear-gradient(180deg, #012042, #013469);
     }
+
     .jadwal-tbl thead tr:first-child th:nth-child(2) {
         position: sticky;
         left: 36px;
@@ -376,6 +477,7 @@
         background: linear-gradient(to right, rgba(1, 52, 105, 0.06), transparent);
         pointer-events: none;
     }
+
     .jadwal-tbl thead tr:first-child th:nth-child(2)::after {
         content: '';
         position: absolute;
@@ -404,6 +506,7 @@
         cursor: pointer;
         transition: color 0.2s;
     }
+
     .jadwal-tbl tbody td.sport:hover,
     .jadwal-tbl tbody td.venue:hover {
         color: #FDB813;
@@ -432,7 +535,7 @@
         min-width: 30px;
     }
 
-    .jadwal-tbl tbody td.day-cell > span {
+    .jadwal-tbl tbody td.day-cell>span {
         display: block;
         height: 16px;
         border-radius: 6px;
@@ -441,23 +544,23 @@
         transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
 
-    .jadwal-tbl tbody td.day-cell > span.day-prep {
+    .jadwal-tbl tbody td.day-cell>span.day-prep {
         background: linear-gradient(180deg, #0ec8e6, #22d3ee);
         box-shadow: 0 1px 3px rgba(34, 211, 238, 0.25);
     }
 
-    .jadwal-tbl tbody td.day-cell > span.day-exec {
+    .jadwal-tbl tbody td.day-cell>span.day-exec {
         background: linear-gradient(180deg, #e33737, #ef4444);
         box-shadow: 0 1px 3px rgba(239, 68, 68, 0.25);
     }
 
-    .jadwal-tbl tbody td.day-cell > span.day-final {
+    .jadwal-tbl tbody td.day-cell>span.day-final {
         background: linear-gradient(180deg, #b366f9, #c084fc);
         box-shadow: 0 1px 3px rgba(192, 132, 252, 0.3);
         border: 1px solid rgba(255, 255, 255, 0.3);
     }
 
-    .jadwal-tbl tbody td.day-cell > span.day-empty {
+    .jadwal-tbl tbody td.day-cell>span.day-empty {
         background: transparent;
     }
 
@@ -465,6 +568,7 @@
     .jadwal-tbl tbody tr:nth-child(even) td {
         background-color: #f9fbfd;
     }
+
     .jadwal-tbl tbody tr:nth-child(even) td.no,
     .jadwal-tbl tbody tr:nth-child(even) td.sport {
         background-color: #f9fbfd;
@@ -479,12 +583,13 @@
     .jadwal-tbl tbody tr:hover td {
         background-color: #f0f7ff !important;
     }
+
     .jadwal-tbl tbody tr:hover td.no,
     .jadwal-tbl tbody tr:hover td.sport {
         background-color: #f0f7ff !important;
     }
 
-    .jadwal-tbl tbody tr:hover td.day-cell > span {
+    .jadwal-tbl tbody tr:hover td.day-cell>span {
         transform: scaleY(1.15);
     }
 
@@ -543,11 +648,13 @@
         font-weight: 800;
         line-height: 1;
     }
+
     .day-btn .mon {
         font-size: 10px;
         font-weight: 500;
         text-transform: uppercase;
     }
+
     .day-btn.active .num,
     .day-btn.active .mon {
         color: #fff;
@@ -619,9 +726,11 @@
         .legend-items {
             gap: 6px;
         }
+
         .legend-item {
             padding: 4px 10px 4px 6px;
         }
+
         .legend-item span {
             font-size: 10px;
         }
@@ -665,8 +774,13 @@
             font-size: 10px;
         }
 
-        .jadwal-tbl tbody td.sport::after { display: none; }
-        .jadwal-tbl thead tr:first-child th:nth-child(2)::after { display: none; }
+        .jadwal-tbl tbody td.sport::after {
+            display: none;
+        }
+
+        .jadwal-tbl thead tr:first-child th:nth-child(2)::after {
+            display: none;
+        }
 
         .jadwal-tbl tbody td.venue {
             max-width: 100px;
@@ -682,12 +796,14 @@
             min-width: 22px;
         }
 
-        .jadwal-tbl tbody td.day-cell > span {
+        .jadwal-tbl tbody td.day-cell>span {
             height: 13px;
             border-radius: 4px;
         }
 
-        .scroll-hint { display: none; }
+        .scroll-hint {
+            display: none;
+        }
 
         .day-picker {
             display: flex;
@@ -704,8 +820,14 @@
             height: 48px;
             scroll-snap-align: start;
         }
-        .day-btn .num { font-size: 14px; }
-        .day-btn .mon { font-size: 9px; }
+
+        .day-btn .num {
+            font-size: 14px;
+        }
+
+        .day-btn .mon {
+            font-size: 9px;
+        }
 
         .download-btn {
             width: 100%;
@@ -759,10 +881,12 @@
         visibility: hidden;
         transition: all 0.3s ease;
     }
+
     .venue-modal-overlay.active {
         opacity: 1;
         visibility: visible;
     }
+
     .venue-modal-content {
         background: #fff;
         width: 90%;
@@ -774,9 +898,11 @@
         overflow: hidden;
         position: relative;
     }
+
     .venue-modal-overlay.active .venue-modal-content {
         transform: translateY(0) scale(1);
     }
+
     .venue-modal-close {
         position: absolute;
         top: 16px;
@@ -795,15 +921,18 @@
         justify-content: center;
         transition: all 0.2s;
     }
+
     .venue-modal-close:hover {
         background: rgba(255, 255, 255, 0.4);
         transform: rotate(90deg);
     }
+
     .venue-modal-header {
         background: linear-gradient(135deg, #013469 0%, #014590 100%);
         padding: 24px;
         color: #fff;
     }
+
     .venue-badge {
         display: inline-block;
         background: rgba(255, 255, 255, 0.2);
@@ -815,42 +944,28 @@
         text-transform: uppercase;
         letter-spacing: 0.05em;
     }
+
     .venue-modal-header h2 {
         margin: 0 0 4px;
         font-size: 22px;
         font-weight: 800;
     }
+
     .venue-modal-header p {
         margin: 0;
         color: #cbd5e1;
         font-size: 14px;
     }
+
     .venue-modal-body {
         padding: 24px;
         max-height: 70vh;
         overflow-y: auto;
     }
-    .venue-section {
-        margin-bottom: 24px;
-    }
-    .venue-section:last-child { margin-bottom: 0; }
-    .venue-section h3 {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        font-size: 16px;
-        font-weight: 700;
-        color: #0f172a;
-        margin: 0 0 16px;
-        border-bottom: 2px solid #f1f5f9;
-        padding-bottom: 8px;
-    }
-    .venue-section h3 svg { color: #FDB813; }
-    .cards-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 16px;
-    }
+
+    /* ═══════════════════════════════════════════════════════
+       HOTEL CARD (used inside facility categories)
+       ═══════════════════════════════════════════════════════ */
     .hotel-card {
         background: #f8fafc;
         border: 1px solid #e2e8f0;
@@ -858,17 +973,20 @@
         padding: 16px;
         transition: all 0.2s;
     }
+
     .hotel-card:hover {
         border-color: #cbd5e1;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
         transform: translateY(-2px);
     }
+
     .hotel-card h4 {
         margin: 0 0 8px;
         font-size: 14px;
         font-weight: 700;
         color: #1e293b;
     }
+
     .hotel-meta {
         display: flex;
         align-items: center;
@@ -876,6 +994,7 @@
         font-size: 12px;
         color: #64748b;
     }
+
     .hotel-rating {
         display: flex;
         align-items: center;
@@ -883,43 +1002,200 @@
         color: #eab308;
         font-weight: 600;
     }
-    .facilities-list {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-        gap: 12px;
+
+    /* Facility Filter Buttons */
+    .facility-filter-buttons {
+        display: flex;
+        gap: 6px;
+        overflow-x: auto;
+        padding-bottom: 12px;
+        margin-bottom: 16px;
+        border-bottom: 1px solid #f1f5f9;
+        flex-shrink: 0;
     }
-    .facility-item {
+
+    .facility-filter-buttons::-webkit-scrollbar {
+        height: 4px;
+    }
+
+    .facility-filter-buttons::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 4px;
+    }
+
+    .facility-filter-btn {
+        padding: 6px 16px;
+        border-radius: 100px;
+        border: 1.5px solid #e8ecf1;
+        background: #fff;
+        color: #64748b;
+        font-size: 12px;
+        font-weight: 600;
+        font-family: 'Poppins', sans-serif;
+        cursor: pointer;
+        white-space: nowrap;
+        transition: all 0.25s ease;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+    }
+
+    .facility-filter-btn:hover {
+        background: #f0f7ff;
+        border-color: #013469;
+        color: #013469;
+        transform: translateY(-1px);
+    }
+
+    .facility-filter-btn.active {
+        background: #013469;
+        border-color: #013469;
+        color: #fff;
+        box-shadow: 0 3px 10px rgba(1, 52, 105, 0.25);
+    }
+
+    /* Facility Categories */
+    .facility-categories {
+        max-height: 55vh;
+        overflow-y: auto;
+    }
+
+    .facility-categories::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    .facility-categories::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 10px;
+    }
+
+    .facility-category {
+        margin-bottom: 16px;
+    }
+
+    .facility-category:last-child {
+        margin-bottom: 0;
+    }
+
+    .facility-cat-header {
         display: flex;
         align-items: center;
-        gap: 12px;
-        background: #f8fafc;
-        padding: 12px 16px;
-        border-radius: 10px;
-        font-size: 13px;
-        font-weight: 500;
-        color: #334155;
+        gap: 10px;
+        margin-bottom: 10px;
+        padding-bottom: 8px;
+        border-bottom: 1.5px solid #f1f4f9;
     }
-    .facility-icon {
+
+    .facility-cat-icon {
         width: 32px;
         height: 32px;
-        border-radius: 8px;
-        background: #e0e7ff;
-        color: #4f46e5;
+        border-radius: 10px;
         display: flex;
         align-items: center;
         justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .facility-cat-header h3 {
+        font-size: 13.5px;
+        font-weight: 700;
+        color: #1e293b;
+        margin: 0;
+    }
+
+    .cat-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        flex-shrink: 0;
+    }
+
+    .facility-list-wrap {
+        overflow-y: auto;
+        max-height: 300px;
+        padding-right: 4px;
+    }
+
+    .facility-list-wrap::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    .facility-list-wrap::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 4px;
+    }
+
+    .facility-list-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 10px 12px;
+        border-radius: 10px;
+        background: #f8fafc;
+        border: 1px solid #f1f5f9;
+        margin-bottom: 8px;
+        transition: all 0.2s;
+    }
+
+    .facility-list-item:hover {
+        border-color: #e2e8f0;
+        background: #fff;
+    }
+
+    .fli-icon {
+        width: 34px;
+        height: 34px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .fli-info {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .fli-name {
+        font-size: 13px;
+        font-weight: 700;
+        color: #1e293b;
+        margin: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .fli-addr {
+        font-size: 11px;
+        color: #64748b;
+        margin: 2px 0 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .fli-route {
+        flex-shrink: 0;
+        padding: 5px 12px;
+        background: #e0f2fe;
+        color: #0284c7;
+        font-size: 11.5px;
+        font-weight: 700;
+        border-radius: 6px;
+        text-decoration: none;
+        transition: all 0.2s;
+    }
+
+    .fli-route:hover {
+        background: #0284c7;
+        color: #fff;
     }
 
     @media (max-width: 480px) {
-        .cards-grid, .facilities-list {
-            grid-template-columns: 1fr;
-        }
         .venue-modal-body {
             padding: 16px;
         }
+
         .venue-modal-header {
             padding: 18px 16px;
         }
@@ -929,19 +1205,24 @@
         .jadwal-page {
             padding: 10px 8px 20px;
         }
+
         .jadwal-filter {
             padding: 10px;
             gap: 8px;
         }
+
         .legend-box {
             padding: 8px 10px;
         }
+
         .legend-item {
             padding: 3px 6px;
         }
+
         .legend-item span {
             font-size: 9px;
         }
+
         .download-btn {
             font-size: 13px;
             padding: 10px 20px;
