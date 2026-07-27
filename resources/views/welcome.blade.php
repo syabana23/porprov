@@ -67,7 +67,7 @@ $bg4 = asset('images/venue4.jpeg');
             </div>
 
             <h1 class="hero-title">
-                PORPROV XV <span class="yellow-accent">KOTA BOGOR 2026</span>
+                PANDU PORPROV <span class="yellow-accent">KOTA BOGOR 2026</span>
             </h1>
 
             <div class="hero-tagline-bubble">
@@ -113,61 +113,60 @@ $bg4 = asset('images/venue4.jpeg');
      ═══════════════════════════════════════════════════════════════════ -->
 <div class="stats-overlap-container reveal">
     <div class="stats-grid">
-        <!-- Stat Item 1: Hotel -->
+        <!-- Stat Item 1: Titik Venue -->
         <div class="stat-card-item reveal" style="--i: 0">
-            <div class="stat-icon-square blue">
-                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                </svg>
-            </div>
-            <div>
-                <div class="stat-val">80+</div>
-                <div class="stat-title">Hotel</div>
-                <div class="stat-sub">Penginapan Nyaman</div>
-            </div>
+<div class="stat-icon-square blue">
+                 <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z" />
+                 </svg>
+             </div>
+             <div>
+                 <div class="stat-val">13+</div>
+                 <div class="stat-title">Titik Venue</div>
+                 <div class="stat-sub">Tempat Bertanding</div>
+             </div>
         </div>
 
         <!-- Stat Item 2: Cabor -->
         <div class="stat-card-item reveal" style="--i: 1">
-            <div class="stat-icon-square yellow">
-                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                    <circle cx="12" cy="5" r="2" />
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 21l2.5-6M18 11l-3.5 3-1.5 4M13 10l-1 4-3 3M9 21v-3l2-2" />
-                </svg>
-            </div>
-            <div>
-                <div class="stat-val">28+</div>
-                <div class="stat-title">Cabang Olahraga</div>
-                <div class="stat-sub">Kompetisi Bergengsi</div>
-            </div>
+<div class="stat-icon-square yellow">
+                 <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                     <path stroke-linecap="round" stroke-linejoin="round" d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z" />
+                 </svg>
+             </div>
+             <div>
+                 <div class="stat-val">28+</div>
+                 <div class="stat-title">Cabang Olahraga</div>
+                 <div class="stat-sub">Kompetisi Bergengsi</div>
+             </div>
         </div>
 
-        <!-- Stat Item 3: Apotek -->
+        <!-- Stat Item 3: Peserta -->
         <div class="stat-card-item reveal" style="--i: 2">
-            <div class="stat-icon-square navy">
-                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10M12 14v4m-2-2h4" />
-                </svg>
-            </div>
-            <div>
-                <div class="stat-val">164+</div>
-                <div class="stat-title">Apotek</div>
-                <div class="stat-sub">Siap Melayani</div>
-            </div>
+<div class="stat-icon-square navy">
+                 <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                     <path stroke-linecap="round" stroke-linejoin="round" d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z" />
+                 </svg>
+             </div>
+             <div>
+                 <div class="stat-val">-</div>
+                 <div class="stat-title">Peserta</div>
+                 <div class="stat-sub">Atlet Yang Bertanding</div>
+             </div>
         </div>
 
-        <!-- Stat Item 4: Rumah Sakit -->
+        <!-- Stat Item 4: Fasilitas -->
         <div class="stat-card-item reveal" style="--i: 3">
-            <div class="stat-icon-square green">
-                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                </svg>
-            </div>
-            <div>
-                <div class="stat-val">22+</div>
-                <div class="stat-title">Rumah Sakit</div>
-                <div class="stat-sub">Layanan Kesehatan</div>
-            </div>
+<div class="stat-icon-square green">
+                 <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                 </svg>
+             </div>
+             <div>
+                 <div class="stat-val">165+</div>
+                 <div class="stat-title">Fasilitas</div>
+                 <div class="stat-sub">Segala Kebutuhan & Layanan</div>
+             </div>
         </div>
     </div>
 </div>
@@ -300,34 +299,39 @@ $bg4 = asset('images/venue4.jpeg');
 
             <!-- Category Tabs -->
             <div class="facility-tabs-bar">
-                <button class="facility-filter-btn active" data-filter="all">Semua</button>
+                <button class="facility-filter-btn active" data-filter="all">
+                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                    </svg>
+                    Semua
+                </button>
                 <button class="facility-filter-btn" data-filter="cat-hotel">
-                    <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M2 18h16v-2H2v2zm0-5h16V5H2v8zm2-6h12v4H4V7z" />
+                    <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z" />
                     </svg>
                     Hotel
                 </button>
                 <button class="facility-filter-btn" data-filter="cat-rs">
-                    <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm1 11H9v-2H7v-2h2V7h2v2h2v2h-2v2z" />
+                    <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19 3H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z" />
                     </svg>
                     Kesehatan
                 </button>
                 <button class="facility-filter-btn" data-filter="cat-resto">
-                    <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M4 2v4H2V2h2zm12 0v4h-2V2h2zM4 8h12v8a2 2 0 01-2 2H6a2 2 0 01-2-2V8z" />
+                    <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-7v8h2.5v8H21V2h-5z" />
                     </svg>
                     Restoran
                 </button>
                 <button class="facility-filter-btn" data-filter="cat-police">
-                    <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M10 2l8 3v6a8 8 0 01-8 7 8 8 0 01-8-7V5l8-3zm0 2.1L4 6.2v4.8c0 3.2 2.4 6.2 6 7 3.6-.8 6-3.8 6-7V6.2l-6-2.1zM9 8h2v5H9V8z" />
+                    <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z" />
                     </svg>
                     Polisi
                 </button>
                 <button class="facility-filter-btn" data-filter="cat-apotek">
-                    <svg width="14" height="14" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M12.5 3.5a4 4 0 010 5.66L8.16 13.5a4 4 0 11-5.66-5.66l4.34-4.34a4 4 0 015.66 0zM7.5 5.5L3.16 9.84a2.5 2.5 0 103.54 3.54l4.34-4.34a2.5 2.5 0 00-3.54-3.54z" />
+                    <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19 3H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z" />
                     </svg>
                     Apotek
                 </button>
@@ -347,31 +351,85 @@ $bg4 = asset('images/venue4.jpeg');
 
                 <!-- Hotel -->
                 <div class="facility-category" id="cat-hotel" style="display:none;">
+                    <div class="facility-cat-header">
+                        <span class="cat-dot" style="background:#d97706;"></span>
+                        <div class="facility-cat-icon" style="background:#fef3c7; color:#d97706;">
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M7 13c1.66 0 3-1.34 3-3S8.66 7 7 7s-3 1.34-3 3 1.34 3 3 3zm12-6h-8v7H3V5H1v15h2v-3h18v3h2v-9c0-2.21-1.79-4-4-4z" />
+                            </svg>
+                        </div>
+                        <h3>Hotel & Penginapan</h3>
+                    </div>
                     <div id="hotel-container"></div>
                 </div>
 
                 <!-- Kesehatan -->
                 <div class="facility-category" id="cat-rs" style="display:none;">
+                    <div class="facility-cat-header">
+                        <span class="cat-dot" style="background:#dc2626;"></span>
+                        <div class="facility-cat-icon" style="background:#fee2e2; color:#dc2626;">
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 3H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z" />
+                            </svg>
+                        </div>
+                        <h3>Fasilitas Kesehatan</h3>
+                    </div>
                     <div id="rs-container"></div>
                 </div>
 
                 <!-- Restoran -->
                 <div class="facility-category" id="cat-resto" style="display:none;">
+                    <div class="facility-cat-header">
+                        <span class="cat-dot" style="background:#16a34a;"></span>
+                        <div class="facility-cat-icon" style="background:#dcfce7; color:#16a34a;">
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-7v8h2.5v8H21V2h-5z" />
+                            </svg>
+                        </div>
+                        <h3>Restoran</h3>
+                    </div>
                     <div id="resto-container"></div>
                 </div>
 
                 <!-- Polisi -->
                 <div class="facility-category" id="cat-police" style="display:none;">
+                    <div class="facility-cat-header">
+                        <span class="cat-dot" style="background:#4f46e5;"></span>
+                        <div class="facility-cat-icon" style="background:#e0e7ff; color:#4f46e5;">
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z" />
+                            </svg>
+                        </div>
+                        <h3>Kantor Polisi</h3>
+                    </div>
                     <div id="police-container"></div>
                 </div>
 
                 <!-- Apotek -->
                 <div class="facility-category" id="cat-apotek" style="display:none;">
+                    <div class="facility-cat-header">
+                        <span class="cat-dot" style="background:#9333ea;"></span>
+                        <div class="facility-cat-icon" style="background:#f3e8ff; color:#9333ea;">
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 3H5c-1.1 0-1.99.9-1.99 2L3 19c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z" />
+                            </svg>
+                        </div>
+                        <h3>Apotek</h3>
+                    </div>
                     <div id="apotek-container"></div>
                 </div>
 
                 <!-- Sewa Kendaraan -->
                 <div class="facility-category" id="cat-transport" style="display:none;">
+                    <div class="facility-cat-header">
+                        <span class="cat-dot" style="background:#0284c7;"></span>
+                        <div class="facility-cat-icon" style="background:#e0f2fe; color:#0284c7;">
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5-1.5zM5 11l1.5-4.5h11L19 11H5z" />
+                            </svg>
+                        </div>
+                        <h3>Sewa Kendaraan</h3>
+                    </div>
                     <div id="transport-container"></div>
                 </div>
             </div>

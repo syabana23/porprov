@@ -66,7 +66,7 @@
         <a href="{{ url('/') }}" class="{{ request()->is('/') ? 'active' : '' }}">BERANDA</a>
         <a href="{{ url('/jadwal') }}" class="{{ request()->is('jadwal') ? 'active' : '' }}">JADWAL</a>
         <a href="{{ url('/peta-venue') }}" class="{{ request()->is('peta-venue') ? 'active' : '' }}">PETA VENUE</a>
-        <a href="{{ url('/kesehatan') }}" class="{{ request()->is('kesehatan') ? 'active' : '' }}">KESEHATAN</a>
+        <a href="{{ url('/fasilitas') }}" class="{{ request()->is('fasilitas') ? 'active' : '' }}">FASILITAS</a>
         <a href="{{ url('/galeri') }}" class="{{ request()->is('galeri') ? 'active' : '' }}">GALERI</a>
         <a href="{{ url('/kebijakan-privasi') }}" class="{{ request()->is('kebijakan-privasi') ? 'active' : '' }}">PRIVASI</a>
     </nav>
@@ -364,7 +364,10 @@
                 if (target) {
                     new IntersectionObserver(entries => {
                         header.classList.toggle('scrolled', !entries[0].isIntersecting);
-                    }, { threshold: 0, rootMargin: '-1px 0px 0px 0px' }).observe(target);
+                    }, {
+                        threshold: 0,
+                        rootMargin: '-1px 0px 0px 0px'
+                    }).observe(target);
                 }
             }
             const savedFont = localStorage.getItem('a11y_fontsize');

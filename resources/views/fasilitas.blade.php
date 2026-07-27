@@ -16,7 +16,7 @@
         <div class="banner-text">
             <span class="banner-badge">PORPROV XV &middot; 2026</span>
             <h1>FASILITAS </h1>
-            <p>Informasi Fasilitas yang tersedia di Wilayah Kota Bogor</p>
+            <p>Informasi Fasilitas yang tersedia</p>
         </div>
     </div>
     <div class="banner-accent-line"></div>
@@ -206,13 +206,18 @@
     </div>
 </div>
 
+{{-- Data fasilitas: dipisah dari @push agar formatter tidak merusaknya --}}
+<script>
+    window.__FACILITIES__ = @json($facilities);
+</script>
+
 @push('scripts')
 <script>
     document.addEventListener('DOMContentLoaded', () => {
-        // Facility data from PHP
-        const facilities = {!! json_encode($facilities) !!};
+        // Facility data dari PHP (disimpan di window.__FACILITIES__ agar aman dari formatter)
+        const facilities = window.__FACILITIES__ || [];
 
-        const ITEMS_PER_PAGE = 20;
+        const ITEMS_PER_PAGE = 5;
         let currentPage = 1;
         let filteredData = [...facilities];
 
@@ -326,7 +331,7 @@
                             <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="flex-shrink:0;">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16" />
                             </svg>
-                            Venue Terkait: <span style="font-weight:600;">${f.venue}</span>
+                            Terdekat dari Titik Venue: <span style="font-weight:600;">${f.venue}</span>
                         </div>
                         ${f.telepon && f.telepon !== '-' ? `
                         <div class="fi-phone">

@@ -17,7 +17,7 @@
         <div class="banner-text">
             <span class="banner-badge">PORPROV XV · 2026</span>
             <h1>GALERI DOKUMENTASI</h1>
-            <p>Dokumentasi lapangan Kota Bogor selama kegiatan berlangsung</p>
+            <p>Dokumentasi lapangan selama kegiatan berlangsung</p>
         </div>
     </div>
     <div class="banner-accent-line"></div>
@@ -43,7 +43,7 @@
 
         <!-- Item 1 -->
         <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&w=600&h=400&q=80" alt="Indoor A">
+            <img src="{{ asset('images/venue4.jpeg') }}" alt="Indoor A">
             <div class="overlay"></div>
             <div class="info">
                 <p class="item-name">Indoor A</p>
@@ -66,7 +66,7 @@
 
         <!-- Item 2 -->
         <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1518605368461-1ee12523e05f?auto=format&fit=crop&w=600&h=400&q=80" alt="Lapangan Luar">
+            <img src="{{ asset('images/venue1.jpeg') }}" alt="Lapangan Luar">
             <div class="overlay"></div>
             <div class="info">
                 <p class="item-name">Lapangan Luar</p>
@@ -89,10 +89,10 @@
 
         <!-- Item 3 -->
         <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1582236359520-a7d2cc037cc7?auto=format&fit=crop&w=600&h=400&q=80" alt="Indoor B">
+            <img src="{{ asset('images/venue2.jpeg') }}" alt="Indoor B">
             <div class="overlay"></div>
             <div class="info">
-                <p class="item-name">Indoor B</p>
+                <p class="item-name">Lapangan Luar</p>
                 <div class="item-meta">
                     <span>
                         <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -112,30 +112,7 @@
 
         <!-- Item 4 -->
         <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1508344928928-7165b67de128?auto=format&fit=crop&w=600&h=400&q=80" alt="Lapangan Luar 2">
-            <div class="overlay"></div>
-            <div class="info">
-                <p class="item-name">Lapangan Luar</p>
-                <div class="item-meta">
-                    <span>
-                        <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                        </svg>
-                        10 Nov 2026
-                    </span>
-                    <span>
-                        <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                        </svg>
-                        7 foto
-                    </span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Item 5 -->
-        <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1590494490333-e18bd08779be?auto=format&fit=crop&w=600&h=400&q=80" alt="Indoor B">
+            <img src="{{ asset('images/venue3.jpeg') }}" alt="Lapangan Luar 2">
             <div class="overlay"></div>
             <div class="info">
                 <p class="item-name">Indoor B</p>
@@ -150,35 +127,11 @@
                         <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                         </svg>
-                        6 foto
-                    </span>
-                </div>
-            </div>
-        </div>
-
-        <!-- Item 6 -->
-        <div class="gallery-item">
-            <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=600&h=400&q=80" alt="Lapangan Luar 3">
-            <div class="overlay"></div>
-            <div class="info">
-                <p class="item-name">Lapangan Luar</p>
-                <div class="item-meta">
-                    <span>
-                        <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                        </svg>
-                        10 Nov 2026
-                    </span>
-                    <span>
-                        <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                        </svg>
                         7 foto
                     </span>
                 </div>
             </div>
         </div>
-
     </div>
 
     <!-- Load More -->

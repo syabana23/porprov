@@ -19,8 +19,8 @@
         </div>
         <div class="banner-text">
             <span class="banner-badge">PORPROV XV · 2026</span>
-            <h1>PETA VENUE PORPROV XV 2026</h1>
-            <p>Klik pin pada peta untuk melihat Detail Olahraga, Hotel Terdekat & Rumah Sakit Terdekat (&lt; 3 Km)</p>
+            <h1>PETA VENUE</h1>
+            <p>Klik pin pada peta untuk melihat Detail Olahraga, Hotel Terdekat & Rumah Sakit Terdekat</p>
         </div>
     </div>
     <div class="banner-accent-line"></div>
@@ -1300,10 +1300,14 @@
                 const words = c.split(' ');
                 shortName = words[words.length - 1];
             }
+            const iconFile = caborIcons[c] || '';
+            const iconHtml = iconFile
+                ? `<img src="/images/cabor/${iconFile}" alt="${c}">`
+                : '';
             caborContainer.innerHTML += `
                 <div class="cabor-item">
                     <div class="cabor-icon">
-                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg>
+                        ${iconHtml}
                     </div>
                     <span>${shortName}</span>
                 </div>

@@ -3,6 +3,7 @@
        ═══════════════════════════════════════════════════════════════════ */
     body {
         -webkit-overflow-scrolling: touch;
+        overflow-x: hidden;
     }
 
     /* ═══════════════════════════════════════════════════════════════════
@@ -454,6 +455,7 @@
         max-width: 1200px;
         margin: 0 auto 60px;
         padding: 0 20px;
+        overflow-x: hidden;
     }
 
     .section-divider {
@@ -534,6 +536,7 @@
         grid-template-columns: 65% 35%;
         gap: 24px;
         align-items: stretch;
+        overflow-x: hidden;
     }
 
     /* Left Side: Map Container */
@@ -553,11 +556,14 @@
         height: 400px;
         min-height: 300px;
         background: #e2e8f0;
+        overflow: hidden;
+        max-width: 100%;
     }
 
     #map-canvas {
         width: 100% !important;
         height: 100% !important;
+        overflow-x: hidden;
     }
 
     /* Selected Venue Detail Box inside Left Column */
@@ -734,6 +740,7 @@
         padding-bottom: 10px;
         border-bottom: 1px solid #f1f5f9;
         margin-bottom: 16px;
+        -webkit-overflow-scrolling: touch;
     }
 
     .facility-tabs-bar::-webkit-scrollbar {
@@ -767,14 +774,55 @@
         transform: translateY(-1px);
     }
 
-    .facility-filter-btn.active {
-        background: #013469;
-        border-color: #013469;
-        color: #fff;
-        box-shadow: 0 3px 10px rgba(1, 52, 105, 0.25);
-    }
+.facility-filter-btn.active {
+         background: #013469;
+         border-color: #013469;
+         color: #fff;
+         box-shadow: 0 3px 10px rgba(1, 52, 105, 0.25);
+     }
 
-    .facilities-scroll-list {
+     .facility-category {
+         margin-bottom: 18px;
+     }
+
+     .facility-category:last-child {
+         margin-bottom: 0;
+     }
+
+     .cat-dot {
+         width: 8px;
+         height: 8px;
+         border-radius: 50%;
+         flex-shrink: 0;
+     }
+
+     .facility-cat-header {
+         display: flex;
+         align-items: center;
+         gap: 10px;
+         margin-bottom: 12px;
+         padding-bottom: 10px;
+         border-bottom: 1.5px solid #f1f4f9;
+     }
+
+     .facility-cat-icon {
+         width: 32px;
+         height: 32px;
+         border-radius: 10px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         flex-shrink: 0;
+     }
+
+     .facility-cat-header h3 {
+         font-size: 13.5px;
+         font-weight: 700;
+         color: #1e293b;
+         margin: 0;
+     }
+
+     .facilities-scroll-list {
         flex: 1;
         max-height: 280px;
         overflow-y: auto;
@@ -1061,21 +1109,10 @@
         transition-delay: calc(var(--i, 0) * 0.1s);
     }
 
-    @media (prefers-reduced-motion: reduce) {
-        .reveal {
-            opacity: 1;
-            transform: none;
-            transition: none;
-        }
-    }
 
-    /* ── Panel fasilitas 35% — filter 1 kolom di layar sedang ── */
-    @media (max-width: 1200px) {
-        .filter-form-clean {
-            grid-template-columns: 1fr;
-        }
-    }
-
+    /* ═══════════════════════════════════════════════════════════════════
+       RESPONSIVE — TABLET (≤ 992px)
+       ═══════════════════════════════════════════════════════════════════ */
     @media (max-width: 992px) {
         .hero-bg-img-overlay {
             width: 100%;
@@ -1114,12 +1151,33 @@
             border-bottom: 1px solid #f1f5f9;
         }
 
+        /* Map & Facilities — Stack vertically on tablet */
         .map-section-grid {
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+
+.map-box-card {
+            border-radius: 12px;
+        }
+
+        .facilities-panel-card {
+            border-radius: 14px;
+        }
+
+        /* Filter form 1-col on tablet */
+        .filter-form-clean {
             grid-template-columns: 1fr;
         }
 
-        .map-container-wrap {
-            height: 340px;
+        /* Facility tabs scrollable hint */
+        .facility-tabs-bar {
+            padding-bottom: 8px;
+        }
+
+        /* Facilities scroll list taller when stacked */
+        .facilities-scroll-list {
+            max-height: 320px;
         }
 
         .section-heading {
@@ -1127,18 +1185,253 @@
         }
     }
 
-    @media (max-width: 576px) {
+    /* ═══════════════════════════════════════════════════════════════════
+       RESPONSIVE — MOBILE (≤ 768px)
+       ═══════════════════════════════════════════════════════════════════ */
+    @media (max-width: 768px) {
+        /* Hero */
         .hero-wrapper {
-            padding: 80px 16px 75px;
+            padding: 60px 16px 70px;
         }
 
-        .section-divider {
+        .hero-title {
+            font-size: 28px;
+        }
+
+        .hero-title .yellow-accent {
+            font-size: 34px;
+        }
+
+        .hero-tagline-bubble {
+            font-size: 15px;
+        }
+
+        .hero-desc {
+            font-size: 13.5px;
+        }
+
+        .hero-actions {
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .btn-hero-primary,
+        .btn-hero-secondary {
+            width: 100%;
+            justify-content: center;
+            min-height: 50px;
+        }
+
+        /* Stats */
+        .stats-overlap-container {
+            width: calc(100% - 24px);
+            padding: 0 12px;
+        }
+
+        .stats-grid {
+            gap: 8px;
+            padding: 16px;
+        }
+
+        .stat-card-item {
+            padding: 10px 8px;
+        }
+
+        /* ─── MAP & FACILITIES SECTION ─── */
+        .map-section-grid {
+            grid-template-columns: 1fr;
+            gap: 14px;
+        }
+
+        /* Peta overflow-safe di mobile — ukuran tetap dipertahankan */
+        .map-container-wrap {
+            height: 400px;
+            min-height: 300px;
+            border-radius: 0;
+            overflow: hidden;
+            max-width: 100%;
+            position: relative;
+        }
+
+        #map-canvas {
+            overflow: hidden;
+            max-width: 100%;
+            touch-action: manipulation;
+        }
+
+        .map-box-card {
+            border-radius: 12px;
+        }
+
+        /* GOR detail card di bawah peta */
+        .home-gor-card {
+            padding: 14px 16px;
+            border-radius: 0 0 12px 12px;
+        }
+
+        .gor-card-header {
+            font-size: 14px;
+        }
+
+        .cabor-grid {
+            gap: 5px;
+        }
+
+        .cabor-tag {
+            font-size: 11px;
+            padding: 3px 10px;
+        }
+
+        .map-btn {
+            font-size: 12px;
+            padding: 8px 14px;
+            width: 100%;
+            justify-content: center;
+        }
+
+        /* Panel fasilitas */
+        .facilities-panel-card {
+            padding: 14px;
+            border-radius: 12px;
+        }
+
+        /* Filter form 1 kolom di mobile */
+        .filter-form-clean {
+            grid-template-columns: 1fr;
+            gap: 8px;
+            margin-bottom: 14px;
+        }
+
+        .filter-select-styled {
+            height: 48px;
+            font-size: 15px;
+            border-radius: 10px;
+        }
+
+        .filter-actions {
+            flex-direction: row;
+            gap: 8px;
+        }
+
+        .btn-search-blue {
+            height: 48px;
+            font-size: 13px;
+            flex: 1;
+        }
+
+        .btn-reset-light {
+            height: 48px;
+            font-size: 13px;
             padding: 0 16px;
-            margin-bottom: 12px;
         }
 
-        .section-divider hr {
-            opacity: 0.5;
+        /* Facility tabs scrollable horizontal */
+        .facility-tabs-bar {
+            flex-wrap: nowrap;
+            gap: 6px;
+            padding-bottom: 10px;
+            margin-bottom: 12px;
+            scrollbar-width: none;
+        }
+
+        .facility-filter-btn {
+            font-size: 12px;
+            padding: 7px 14px;
+            min-height: 38px;
+            flex-shrink: 0;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Scroll list fasilitas */
+        .facilities-scroll-list {
+            max-height: 280px;
+        }
+
+        /* Item fasilitas */
+        .facility-list-item {
+            padding: 11px 12px;
+            gap: 10px;
+            border-radius: 10px;
+        }
+
+        .fli-icon {
+            width: 32px;
+            height: 32px;
+        }
+
+        .fli-name {
+            font-size: 13px;
+        }
+
+        .fli-addr {
+            font-size: 11px;
+        }
+
+        .fli-route {
+            padding: 5px 10px;
+            font-size: 11px;
+            min-width: 56px;
+            text-align: center;
+        }
+
+        /* Section headers */
+        .section-wrap {
+            padding: 0 16px;
+            margin-bottom: 40px;
+            overflow-x: hidden;
+        }
+
+        .section-heading {
+            font-size: 18px;
+        }
+
+        .section-header-flex {
+            flex-direction: row;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Match cards */
+        .matches-grid {
+            grid-template-columns: 1fr;
+            gap: 14px;
+        }
+
+        .match-card {
+            padding: 16px;
+        }
+
+        .match-title {
+            font-size: 14.5px;
+        }
+    }
+
+    /* ═══════════════════════════════════════════════════════════════════
+       RESPONSIVE — SMALL MOBILE (≤ 576px)
+       ═══════════════════════════════════════════════════════════════════ */
+    @media (max-width: 576px) {
+        /* Hero adjustments */
+        .hero-wrapper {
+            padding: 76px 16px 72px;
+        }
+
+        .hero-wrapper.hero-slideshow {
+            min-height: 400px;
+        }
+
+        .hero-slide-cabor {
+            right: 12px;
+            top: auto;
+            bottom: 60px;
+            transform: none;
+        }
+
+        .hero-slide-cabor img {
+            max-width: 100px;
+            max-height: 35vw;
+            opacity: 0.75;
         }
 
         .hero-title {
@@ -1158,6 +1451,11 @@
             font-size: 13px;
         }
 
+        .hero-pill-badge {
+            font-size: 11px;
+            padding: 5px 14px;
+        }
+
         .btn-hero-primary,
         .btn-hero-secondary {
             width: 100%;
@@ -1167,42 +1465,63 @@
             min-height: 48px;
         }
 
-        .hero-pill-badge {
-            font-size: 11px;
-            padding: 5px 14px;
-        }
-
+        /* Stats */
         .stats-overlap-container {
             margin-top: -20px;
+            width: calc(100% - 20px);
+            padding: 0 10px;
         }
 
         .stats-grid {
-            grid-template-columns: 1fr;
-            padding: 16px;
+            grid-template-columns: repeat(2, 1fr);
+            padding: 14px;
             gap: 10px;
         }
 
         .stat-card-item {
-            padding: 8px 4px;
+            padding: 10px 6px;
             border-right: none;
+            border-bottom: none;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .stat-card-item:nth-child(odd) {
+            border-right: 1px solid #f1f5f9;
+        }
+
+        .stat-card-item:nth-child(-n+2) {
             border-bottom: 1px solid #f1f5f9;
         }
 
-        .stat-card-item:last-child {
-            border-bottom: none;
-        }
-
         .stat-val {
-            font-size: 22px;
+            font-size: 24px;
         }
 
         .stat-title {
             font-size: 12px;
         }
 
+        .stat-sub {
+            font-size: 10px;
+        }
+
+        .stat-icon-square {
+            width: 42px;
+            height: 42px;
+        }
+
+        /* Dividers */
+        .section-divider {
+            padding: 0 16px;
+            margin-bottom: 12px;
+        }
+
+        /* Section common */
         .section-wrap {
             padding: 0 16px;
-            margin-bottom: 40px;
+            margin-bottom: 36px;
         }
 
         .section-heading {
@@ -1213,9 +1532,71 @@
             font-size: 11px;
         }
 
+        .section-header-flex {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .section-link {
+            font-size: 13px;
+        }
+
+        /* Map section */
+        .map-section-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .map-container-wrap {
+            height: 340px;
+            min-height: 280px;
+            border-radius: 0;
+            overflow: hidden;
+            max-width: 100%;
+            position: relative;
+        }
+
+        #map-canvas {
+            overflow: hidden;
+            max-width: 100%;
+            touch-action: manipulation;
+        }
+
+        .map-box-card {
+            border-radius: 12px;
+        }
+
+        .home-gor-card {
+            padding: 12px 14px;
+        }
+
+        .gor-card-header {
+            font-size: 13px;
+        }
+
+        .cabor-tag {
+            font-size: 10.5px;
+            padding: 3px 8px;
+        }
+
+        .map-btn {
+            font-size: 12px;
+            padding: 8px 12px;
+            width: 100%;
+            justify-content: center;
+        }
+
+        /* Panel fasilitas */
+        .facilities-panel-card {
+            padding: 12px;
+            border-radius: 12px;
+        }
+
+        /* Filter form in facilities panel */
         .filter-form-clean {
             grid-template-columns: 1fr;
-            gap: 10px;
+            gap: 8px;
+            margin-bottom: 12px;
         }
 
         .filter-select-styled,
@@ -1225,33 +1606,79 @@
         }
 
         .btn-search-blue {
-            height: 50px;
-            font-size: 14px;
-            padding: 0 24px;
+            height: 48px;
+            font-size: 13px;
+            flex: 1;
         }
 
         .btn-reset-light {
-            height: 50px;
-            font-size: 13px;
-            padding: 0 20px;
+            height: 48px;
+            font-size: 12px;
+            padding: 0 16px;
+        }
+
+        .filter-actions {
+            flex-direction: row;
+            gap: 8px;
+        }
+
+        /* Facility tabs */
+        .facility-tabs-bar {
+            gap: 6px;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
         }
 
         .facility-filter-btn {
             font-size: 11px;
-            padding: 6px 14px;
-            min-height: auto;
+            padding: 7px 12px;
+            min-height: 38px;
+            flex-shrink: 0;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
         }
 
+        /* Scroll list fasilitas */
+        .facilities-scroll-list {
+            max-height: 45vh;
+        }
+
+        /* Facility list */
         .facility-list-item {
-            padding: 12px;
-            gap: 10px;
+            padding: 10px 12px;
+            gap: 8px;
+        }
+
+        .fli-icon {
+            width: 30px;
+            height: 30px;
+        }
+
+        .fli-name {
+            font-size: 12.5px;
+        }
+
+        .fli-addr {
+            font-size: 10.5px;
         }
 
         .fli-route {
+
             padding: 6px 12px;
             font-size: 11px;
         }
 
+        .facilities-scroll-list {
+            max-height: 45vh;
+        }
+
+        /* Facilities panel */
+        .facilities-panel-card {
+            padding: 14px;
+        }
+
+        /* GOR card / Venue detail */
         .home-gor-card {
             position: relative;
             top: 0;
@@ -1265,78 +1692,121 @@
             padding: 16px;
         }
 
-        .facilities-scroll-list {
-            max-height: 40vh;
+        .gor-card-header {
+            font-size: 14px;
         }
 
-        .map-container-wrap {
-            height: 300px;
-            min-height: 280px;
+        .cabor-grid {
+            gap: 6px;
         }
 
+        .cabor-tag {
+            font-size: 11px;
+            padding: 3px 10px;
+        }
+
+        /* Match cards */
         .matches-grid {
             grid-template-columns: 1fr;
-            gap: 16px;
+            gap: 12px;
         }
 
         .match-card {
-            padding: 18px;
+            padding: 14px;
         }
 
         .match-title {
             font-size: 14px;
         }
-    }
 
-    @media (max-width: 576px) {
-        .section-header-flex {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 8px;
+        .match-venue-info {
+            font-size: 12px;
+        }
+
+        .match-footer {
+            flex-direction: row;
         }
     }
 
-    @media (max-width: 320px) {
+    /* ═══════════════════════════════════════════════════════════════════
+       RESPONSIVE — VERY SMALL (≤ 380px)
+       ═══════════════════════════════════════════════════════════════════ */
+    @media (max-width: 380px) {
         .hero-wrapper {
             padding: 70px 12px 60px;
         }
+
         .hero-title {
             font-size: 22px;
         }
+
         .hero-title .yellow-accent {
             font-size: 26px;
         }
+
         .hero-tagline-bubble {
             font-size: 12px;
         }
+
         .stats-overlap-container {
             margin-top: -15px;
             padding: 0 10px;
         }
+
         .stats-grid {
             padding: 12px;
+            grid-template-columns: repeat(2, 1fr);
         }
+
         .stat-val {
-            font-size: 18px;
+            font-size: 20px;
         }
+
+        .stat-icon-square {
+            width: 36px;
+            height: 36px;
+        }
+
         .section-wrap {
             padding: 0 12px;
             margin-bottom: 30px;
         }
+
         .section-heading {
             font-size: 16px;
         }
+
         .home-gor-card {
             padding: 12px;
         }
+
+        .map-container-wrap {
+            height: 400px;
+            min-height: 300px;
+        }
+
         .facility-list-item {
             padding: 8px;
             gap: 8px;
         }
+
         .fli-name {
             font-size: 12px;
         }
+
         .fli-addr {
             font-size: 10px;
         }
+
+        .facility-filter-btn {
+            font-size: 11px;
+            padding: 6px 12px;
+        }
+
+        .btn-hero-primary,
+        .btn-hero-secondary {
+            font-size: 12px;
+            padding: 12px 16px;
+        }
     }
+
