@@ -891,39 +891,7 @@
         </table>
     </div>
 
-    <!-- Day Picker + Download -->
-    <div class="day-picker-wrap">
-        <h4>Pilih Hari ↑</h4>
-        <div class="day-picker">
-            <button class="day-btn"><span class="num">31</span><span class="mon">Okt</span></button>
-            <button class="day-btn"><span class="num">1</span><span class="mon">Nov</span></button>
-            <button class="day-btn"><span class="num">2</span><span class="mon">Nov</span></button>
-            <button class="day-btn"><span class="num">3</span><span class="mon">Nov</span></button>
-            <button class="day-btn"><span class="num">4</span><span class="mon">Nov</span></button>
-            <button class="day-btn"><span class="num">5</span><span class="mon">Nov</span></button>
-            <button class="day-btn"><span class="num">6</span><span class="mon">Nov</span></button>
-            <button class="day-btn"><span class="num">7</span><span class="mon">Nov</span></button>
-            <button class="day-btn"><span class="num">8</span><span class="mon">Nov</span></button>
-            <button class="day-btn"><span class="num">9</span><span class="mon">Nov</span></button>
-            <button class="day-btn"><span class="num">10</span><span class="mon">Nov</span></button>
-            <button class="day-btn"><span class="num">11</span><span class="mon">Nov</span></button>
-            <button class="day-btn"><span class="num">12</span><span class="mon">Nov</span></button>
-            <button class="day-btn"><span class="num">13</span><span class="mon">Nov</span></button>
-            <button class="day-btn"><span class="num">14</span><span class="mon">Nov</span></button>
-            <button class="day-btn"><span class="num">15</span><span class="mon">Nov</span></button>
-            <button class="day-btn"><span class="num">16</span><span class="mon">Nov</span></button>
-            <button class="day-btn"><span class="num">17</span><span class="mon">Nov</span></button>
-            <button class="day-btn"><span class="num">18</span><span class="mon">Nov</span></button>
-            <button class="day-btn"><span class="num">19</span><span class="mon">Nov</span></button>
-            <button class="day-btn"><span class="num">20</span><span class="mon">Nov</span></button>
-        </div>
-        <a href="#" class="download-btn">
-            <svg width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-            </svg>
-            Unduh Jadwal
-        </a>
-    </div>
+
 </div>
 
 <!-- Modal Fasilitas / Venue -->
@@ -1034,7 +1002,6 @@
     const datePickerFilter = document.getElementById('datePickerFilter');
     const resetFilterBtn = document.getElementById('resetFilterBtn');
     const tableRows = document.querySelectorAll('.jadwal-tbl tbody tr');
-    const dayBtns = document.querySelectorAll('.day-btn');
     const tableCount = document.getElementById('tableCount');
     const totalCount = tableRows.length;
 
@@ -1122,22 +1089,6 @@
         });
 
         updateCount(visibleCount);
-
-        // Sync tombol hari cepat (day-btn) di bagian bawah
-        dayBtns.forEach(btn => btn.classList.remove('active'));
-        if (selectedDate && dateToIndexMap[selectedDate]) {
-            const dateObj = new Date(selectedDate);
-            const d = dateObj.getDate();
-            const m = dateObj.getMonth(); // 9 = Okt, 10 = Nov
-
-            dayBtns.forEach(btn => {
-                const num = parseInt(btn.querySelector('.num').textContent.trim());
-                const mon = btn.querySelector('.mon').textContent.trim().toLowerCase();
-                if (num === d && ((m === 9 && mon === 'okt') || (m === 10 && mon === 'nov'))) {
-                    btn.classList.add('active');
-                }
-            });
-        }
     }
 
     // Event Listeners Filter Utama
@@ -1147,29 +1098,7 @@
     resetFilterBtn.addEventListener('click', () => {
         searchFilter.value = '';
         datePickerFilter.value = '';
-        dayBtns.forEach(btn => btn.classList.remove('active'));
         filterTable();
-    });
-
-    // Event Listeners Tombol Hari Cepat (Bawah)
-    dayBtns.forEach(btn => {
-        btn.addEventListener('click', function() {
-            dayBtns.forEach(b => b.classList.remove('active'));
-            this.classList.add('active');
-
-            const num = this.querySelector('.num').textContent.trim();
-            const mon = this.querySelector('.mon').textContent.trim().toLowerCase();
-
-            // Ubah menjadi format YYYY-MM-DD
-            const y = 2026;
-            const m = mon === 'okt' ? '10' : '11';
-            const d = num.padStart(2, '0');
-            const dateString = `${y}-${m}-${d}`;
-
-            // Update isi Date Picker dan filter ulang
-            datePickerFilter.value = dateString;
-            filterTable();
-        });
     });
 
     // Modal Data — All 13 venues with full facility data from welcome.blade.php

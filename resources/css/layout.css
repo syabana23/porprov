@@ -4,13 +4,9 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background: #f4f5f7 url('/images/venue1.jpeg') center/cover fixed no-repeat;
+            background: #ffffff;
             margin: 0;
             transition: background-color 0.3s, color 0.3s, filter 0.3s;
-        }
-
-        .beranda body {
-            background: #f4f5f7;
         }
 
         html {

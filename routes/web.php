@@ -112,3 +112,7 @@ Route::get('/fasilitas', function () {
 Route::get('/galeri', function () {
     return view('galeri');
 });
+
+Route::get('/kebijakan-privasi', function () {
+    return view('privasi');
+});

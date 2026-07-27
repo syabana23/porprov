@@ -1,0 +1,91 @@
+.privasi-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px 60px;
+}
+
+.privasi-container {
+    background: #fff;
+    border-radius: 16px;
+    padding: 40px 48px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+.privasi-section {
+    margin-bottom: 32px;
+}
+
+.privasi-section:last-of-type {
+    margin-bottom: 0;
+}
+
+.privasi-section h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #013469;
+    margin-bottom: 12px;
+}
+
+.privasi-section p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #475569;
+    margin-bottom: 8px;
+}
+
+.privasi-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 8px 0;
+}
+
+.privasi-section ul li {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #475569;
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 6px;
+}
+
+.privasi-section ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #FDB813;
+}
+
+.privasi-section ul li strong {
+    color: #1e293b;
+}
+
+.privasi-footer {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+    text-align: center;
+}
+
+.privasi-footer p {
+    font-size: 14px;
+    color: #94a3b8;
+}
+
+@media (max-width: 640px) {
+    .privasi-container {
+        padding: 24px 20px;
+    }
+
+    .privasi-section h2 {
+        font-size: 16px;
+    }
+
+    .privasi-section p,
+    .privasi-section ul li {
+        font-size: 14px;
+    }
+}

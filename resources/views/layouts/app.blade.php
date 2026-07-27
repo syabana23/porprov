@@ -44,6 +44,7 @@
                 <a href="{{ url('/peta-venue') }}" class="{{ request()->is('peta-venue') ? 'active' : '' }}">PETA VENUE</a>
                 <a href="{{ url('/fasilitas') }}" class="{{ request()->is('fasilitas') ? 'active' : '' }}">FASILITAS</a>
                 <a href="{{ url('/galeri') }}" class="{{ request()->is('galeri') ? 'active' : '' }}">GALERI</a>
+                <a href="{{ url('/kebijakan-privasi') }}" class="{{ request()->is('kebijakan-privasi') ? 'active' : '' }}">PRIVASI</a>
             </nav>
             <div class="header-actions">
                 <!-- <a href="#" class="btn-login">Login</a> -->
@@ -67,6 +68,7 @@
         <a href="{{ url('/peta-venue') }}" class="{{ request()->is('peta-venue') ? 'active' : '' }}">PETA VENUE</a>
         <a href="{{ url('/kesehatan') }}" class="{{ request()->is('kesehatan') ? 'active' : '' }}">KESEHATAN</a>
         <a href="{{ url('/galeri') }}" class="{{ request()->is('galeri') ? 'active' : '' }}">GALERI</a>
+        <a href="{{ url('/kebijakan-privasi') }}" class="{{ request()->is('kebijakan-privasi') ? 'active' : '' }}">PRIVASI</a>
     </nav>
 
     <main>

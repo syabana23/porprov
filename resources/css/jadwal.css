@@ -594,95 +594,6 @@
     }
 
     /* ================================================================
-       DAY PICKER + DOWNLOAD
-       ================================================================ */
-    .day-picker-wrap {
-        width: 100%;
-    }
-
-    .day-picker-wrap h4 {
-        font-size: 13px;
-        font-weight: 700;
-        color: #374151;
-        margin: 0 0 12px;
-    }
-
-    .day-picker {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
-        gap: 6px;
-        margin-bottom: 20px;
-    }
-
-    .day-btn {
-        height: 54px;
-        background: #fff;
-        border: 1.5px solid #e5e7eb;
-        border-radius: 12px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        font-family: 'Poppins', sans-serif;
-        cursor: pointer;
-        transition: all 0.2s ease, transform 0.15s;
-        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
-    }
-
-    .day-btn:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 6px 20px rgba(1, 52, 105, 0.15);
-        background: #fff;
-        border-color: #013469;
-    }
-
-    .day-btn.active {
-        background: linear-gradient(135deg, #013469, #0a4fa8);
-        border-color: #013469;
-        color: #fff;
-        box-shadow: 0 4px 16px rgba(1, 52, 105, 0.3);
-    }
-
-    .day-btn .num {
-        font-size: 18px;
-        font-weight: 800;
-        line-height: 1;
-    }
-
-    .day-btn .mon {
-        font-size: 10px;
-        font-weight: 500;
-        text-transform: uppercase;
-    }
-
-    .day-btn.active .num,
-    .day-btn.active .mon {
-        color: #fff;
-    }
-
-    .download-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        background: linear-gradient(135deg, #013469, #0a4fa8);
-        color: #fff;
-        font-family: 'Poppins', sans-serif;
-        font-size: 15px;
-        font-weight: 700;
-        padding: 14px 32px;
-        border-radius: 14px;
-        text-decoration: none;
-        box-shadow: 0 4px 18px rgba(1, 52, 105, 0.25);
-        transition: all 0.25s ease;
-    }
-
-    .download-btn:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 24px rgba(1, 52, 105, 0.35);
-        background: linear-gradient(135deg, #012a54, #014590);
-    }
-
-    /* ================================================================
        HIDDEN COLUMNS (filter by date)
        ================================================================ */
     .jadwal-tbl th.date-col.col-hidden,
@@ -803,38 +714,6 @@
 
         .scroll-hint {
             display: none;
-        }
-
-        .day-picker {
-            display: flex;
-            flex-wrap: nowrap;
-            overflow-x: auto;
-            gap: 6px;
-            padding-bottom: 8px;
-            scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        .day-btn {
-            flex: 0 0 46px;
-            height: 48px;
-            scroll-snap-align: start;
-        }
-
-        .day-btn .num {
-            font-size: 14px;
-        }
-
-        .day-btn .mon {
-            font-size: 9px;
-        }
-
-        .download-btn {
-            width: 100%;
-            justify-content: center;
-            font-size: 14px;
-            padding: 12px 24px;
-            border-radius: 12px;
         }
     }
 
