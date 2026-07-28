@@ -43,7 +43,7 @@
 
         <!-- Item 1 -->
         <div class="gallery-item">
-            <img src="{{ asset('images/venue4.jpeg') }}" alt="Indoor A">
+            <img src="{{ asset('images/indoor A.jpeg') }}" alt="Indoor A">
             <div class="overlay"></div>
             <div class="info">
                 <p class="item-name">Indoor A</p>
@@ -89,10 +89,10 @@
 
         <!-- Item 3 -->
         <div class="gallery-item">
-            <img src="{{ asset('images/venue2.jpeg') }}" alt="Indoor B">
+            <img src="{{ asset('images/hotel green forest.jpeg') }}" alt="hotel green forest">
             <div class="overlay"></div>
             <div class="info">
-                <p class="item-name">Lapangan Luar</p>
+                <p class="item-name">hotel green forest</p>
                 <div class="item-meta">
                     <span>
                         <svg width="12" height="12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -112,7 +112,7 @@
 
         <!-- Item 4 -->
         <div class="gallery-item">
-            <img src="{{ asset('images/venue3.jpeg') }}" alt="Lapangan Luar 2">
+            <img src="{{ asset('images/indoor B.jpeg') }}" alt="Lapangan Luar 2">
             <div class="overlay"></div>
             <div class="info">
                 <p class="item-name">Indoor B</p>
