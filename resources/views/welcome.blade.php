@@ -1407,6 +1407,7 @@ $bg4 = asset('images/venue4.jpeg');
         renderVenues(venueData);
         setupFilter();
         setupFacilityFilters();
+        setTimeout(function() { map.invalidateSize(); }, 100);
     }
 
     function createSportIcon(sportName) {
@@ -1671,6 +1672,9 @@ $bg4 = asset('images/venue4.jpeg');
 
     window.onload = function() {
         initMap();
+        window.addEventListener('resize', function() {
+            if (map) map.invalidateSize();
+        });
     };
 
     // ── Scroll Reveal Animation ──

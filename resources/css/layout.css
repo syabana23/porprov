@@ -6,6 +6,7 @@
             font-family: 'Poppins', sans-serif;
             background: #ffffff;
             margin: 0;
+            overflow-x: hidden;
             transition: background-color 0.3s, color 0.3s, filter 0.3s;
         }
 
@@ -15,6 +16,7 @@
 
         main {
             margin-top: -60px;
+            overflow-x: hidden;
             animation: pageIn 0.4s ease-out;
         }
 

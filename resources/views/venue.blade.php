@@ -360,7 +360,7 @@
             lng: 106.97130253598559,
             address: "Puncak, Bogor, Jawa Barat",
             cabor: "Aerosport - Paralayang",
-            gmaps_url: "https://maps.google.com/?q=Gunung+Mas+Puncak"
+            gmaps_url: "https://www.google.com/maps/dir//Gunung+Mas+Wisata+Puncak,+Jl.+Pangrango,+Tugu+Sel.,+Kec.+Cisarua,+Kabupaten+Bogor,+Jawa+Barat+16750/@-6.5894223,106.4822393,10z/data=!4m17!1m8!3m7!1s0x2e69b52b7592188d:0xc43a962f4e24c6f6!2sGunung+Mas+Wisata+Puncak!8m2!3d-6.709873!4d106.9681268!15sChFHdW51bmcgTWFzIFB1bmNha1oTIhFndW51bmcgbWFzIHB1bmNha5IBEnRvdXJpc3RfYXR0cmFjdGlvbpoBRENpOURRVWxSUVVOdlpFTm9kSGxqUmpsdlQycFdhMlZFYUU5VlZscFpWVlJHZW1WcVZqTlNia1pEWWtaQ05tTlZSUkFC4AEA-gEECAAQRQ!16s%2Fg%2F11s7lzyyym!4m7!1m0!1m5!1m1!1s0x2e69b52b7592188d:0xc43a962f4e24c6f6!2m2!1d106.9681268!2d-6.709873?entry=ttu&g_ep=EgoyMDI2MDcyMi4wIKXMDSoASAFQAw%3D%3D"
         },
         {
             id: 6,
@@ -423,7 +423,7 @@
             lng: 107.4845999774748,
             address: "Padalarang, Kabupaten Bandung Barat, Jawa Barat",
             cabor: "Ski Air",
-            gmaps_url: "https://maps.google.com/?q=Kota+Baru+Parahyangan"
+            gmaps_url: "https://www.google.com/maps/dir//Kota+Baru+Parahyangan,+Jl.+Wangsaniaga+Wetan+No.26,+Kertajaya,+Padalarang,+West+Bandung+Regency,+West+Java+40553/@-6.5166431,105.719382,8z/data=!4m17!1m8!3m7!1s0x2e68e546cdd70a63:0xa954b7a90d38dbfb!2sKota+Baru+Parahyangan!8m2!3d-6.8589189!4d107.4845934!15sChVLb3RhIEJhcnUgUGFyYWh5YW5nYW6SARNob3VzaW5nX2RldmVsb3BtZW504AEA!16s%2Fg%2F11fr0r18sz!4m7!1m0!1m5!1m1!1s0x2e68e546cdd70a63:0xa954b7a90d38dbfb!2m2!1d107.4845934!2d-6.8589189?entry=ttu&g_ep=EgoyMDI2MDcyMi4wIKXMDSoASAFQAw%3D%3D"
         },
         {
             id: 13,
@@ -1129,6 +1129,7 @@
         renderVenues(venueData);
         setupFilter();
         setupFacilityFilters();
+        setTimeout(function() { map.invalidateSize(); }, 100);
     }
 
     // Fungsi Render Marker Venue
@@ -1405,6 +1406,9 @@
 
     window.onload = function() {
         initMap();
+        window.addEventListener('resize', function() {
+            if (map) map.invalidateSize();
+        });
     };
 </script>
 @endpush
