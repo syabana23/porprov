@@ -18,15 +18,18 @@
     <div class="banner-inner">
         <div class="banner-icon">
             <svg width="28" height="28" fill="none" stroke="#fff" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z" />
             </svg>
         </div>
         <div class="banner-text">
-            <span class="banner-badge">PORPROV XV · 2026</span>
+            <span class="banner-badge">PORNAVI · 2026</span>
             <h1>JADWAL & VENUE PERTANDINGAN</h1>
             <p>Informasi terkini seputar jadwal pertandingan PORPROV XV Kota Bogor 2026</p>
         </div>
     </div>
+
+
+
     <div class="banner-accent-line"></div>
     <div class="banner-bottom-curve">
         <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -995,7 +998,7 @@
                         <span class="cat-dot" style="background:#0284c7;"></span>
                         <div class="facility-cat-icon" style="background:#e0f2fe;color:#0284c7;">
                             <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5-1.5zM5 11l1.5-4.5h11L19 11H5z"/>
+                                <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5-1.5zM5 11l1.5-4.5h11L19 11H5z" />
                             </svg>
                         </div>
                         <h3>Sewa Kendaraan</h3>
@@ -1760,14 +1763,48 @@
     const modalSportName = document.getElementById('modalSportName');
     const modalFacilityCategories = document.getElementById('modalFacilityCategories');
 
-    const transportFacilities = [
-        { name: "PO Kerub Pariwisata Indonesia", address: "SPBU 34-16113 Cemplang, Jl. Brigadir Jenderal H Saptadji Hadiprawira, RT.01/RW.09, Cilendek Bar., Kec. Bogor Bar., Kota Bogor", distance: "PIC: +62 822-9992-8709 (Ade)", mapUrl: "https://www.google.com/maps/search/?api=1&query=PO+Kerub+Pariwisata+Indonesia+Bogor" },
-        { name: "PO. Midas Transportasi", address: "Ruko Pinus Niaga No. 51, Pine Forest, Sentul City, Bogor", distance: "PIC: +62 878-7223-3106 (Midas)", mapUrl: "https://www.google.com/maps/search/?api=1&query=PO+Midas+Transportasi+Sentul+City+Bogor" },
-        { name: "PO. Bin Ilyas Pariwisata", address: "Jl. Karadenan No.39, Karadenan, Cibinong, Kabupaten Bogor", distance: "PIC: +62 877-8100-9726 (Bin Ilyas)", mapUrl: "https://www.google.com/maps/search/?api=1&query=PO+Bin+Ilyas+Pariwisata+Cibinong+Bogor" },
-        { name: "Syafa Tour and Travel Bogor", address: "RT.03/RW.19, Katulampa, Kec. Bogor Tim., Kota Bogor", distance: "PIC: +62 838-1904-1575 (Endang)", mapUrl: "https://www.google.com/maps/search/?api=1&query=Syafa+Tour+and+Travel+Bogor+Katulampa" },
-        { name: "PO. AdisaPutro Trans", address: "Jl. Raya Cifor No. 14 RT 03/RW 08 Bubulak, Bogor Barat, Kota Bogor", distance: "PIC: +62 857-7496-7369 (Rusli)", mapUrl: "https://www.google.com/maps/search/?api=1&query=PO+AdisaPutro+Trans+Bubulak+Bogor" },
-        { name: "PT. Surya Harapan Perdana (PasteurTrans)", address: "Jl. R. Saleh S. Bustaman No.15, RT.01/RW.11, Empang, Kec. Bogor Sel., Kota Bogor", distance: "PIC: +62 823-2224-9794", mapUrl: "https://www.google.com/maps/search/?api=1&query=PT+Surya+Harapan+Perdana+PasteurTrans+Empang+Bogor" },
-        { name: "Master Tour & Travel", address: "Jl. Raya Cipaku No.21, RT.03/RW.01, Cipaku, Kec. Bogor Sel., Kota Bogor", distance: "PIC: +62 857-1463-4597 (Wawang)", mapUrl: "https://www.google.com/maps/search/?api=1&query=Master+Tour+%26+Travel+Cipaku+Bogor" }
+    const transportFacilities = [{
+            name: "PO Kerub Pariwisata Indonesia",
+            address: "SPBU 34-16113 Cemplang, Jl. Brigadir Jenderal H Saptadji Hadiprawira, RT.01/RW.09, Cilendek Bar., Kec. Bogor Bar., Kota Bogor",
+            distance: "PIC: +62 822-9992-8709 (Ade)",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=PO+Kerub+Pariwisata+Indonesia+Bogor"
+        },
+        {
+            name: "PO. Midas Transportasi",
+            address: "Ruko Pinus Niaga No. 51, Pine Forest, Sentul City, Bogor",
+            distance: "PIC: +62 878-7223-3106 (Midas)",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=PO+Midas+Transportasi+Sentul+City+Bogor"
+        },
+        {
+            name: "PO. Bin Ilyas Pariwisata",
+            address: "Jl. Karadenan No.39, Karadenan, Cibinong, Kabupaten Bogor",
+            distance: "PIC: +62 877-8100-9726 (Bin Ilyas)",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=PO+Bin+Ilyas+Pariwisata+Cibinong+Bogor"
+        },
+        {
+            name: "Syafa Tour and Travel Bogor",
+            address: "RT.03/RW.19, Katulampa, Kec. Bogor Tim., Kota Bogor",
+            distance: "PIC: +62 838-1904-1575 (Endang)",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=Syafa+Tour+and+Travel+Bogor+Katulampa"
+        },
+        {
+            name: "PO. AdisaPutro Trans",
+            address: "Jl. Raya Cifor No. 14 RT 03/RW 08 Bubulak, Bogor Barat, Kota Bogor",
+            distance: "PIC: +62 857-7496-7369 (Rusli)",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=PO+AdisaPutro+Trans+Bubulak+Bogor"
+        },
+        {
+            name: "PT. Surya Harapan Perdana (PasteurTrans)",
+            address: "Jl. R. Saleh S. Bustaman No.15, RT.01/RW.11, Empang, Kec. Bogor Sel., Kota Bogor",
+            distance: "PIC: +62 823-2224-9794",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=PT+Surya+Harapan+Perdana+PasteurTrans+Empang+Bogor"
+        },
+        {
+            name: "Master Tour & Travel",
+            address: "Jl. Raya Cipaku No.21, RT.03/RW.01, Cipaku, Kec. Bogor Sel., Kota Bogor",
+            distance: "PIC: +62 857-1463-4597 (Wawang)",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=Master+Tour+%26+Travel+Cipaku+Bogor"
+        }
     ];
 
     function getFacilityCategoryData(data, category) {

@@ -24,28 +24,28 @@ $bg4 = asset('images/venue4.jpeg');
         <div class="hero-slide active" style="background-image: url('{{ $bg1 }}')">
             <div class="hero-slide-overlay"></div>
             <div class="hero-slide-cabor">
-                <img src="{{ asset('images/cabor/12.PENCAK SILAT.png') }}" alt="Pencak Silat">
+                <img src="{{ asset('images/cabor/23.PANJAT TEBING.PNG') }}" alt="Panjat Tebing">
             </div>
         </div>
         <!-- Slide 2: Stadion Pajajaran -->
         <div class="hero-slide" style="background-image: url('{{ $bg2 }}')">
             <div class="hero-slide-overlay"></div>
             <div class="hero-slide-cabor">
-                <img src="{{ asset('images/cabor/7.MENEMBAK.png') }}" alt="Menembak">
+                <img src="{{ asset('images/cabor/5.PANAHAN.png') }}" alt="Panahan">
             </div>
         </div>
         <!-- Slide 3: GOR Vokasi IPB -->
         <div class="hero-slide" style="background-image: url('{{ $bg3 }}')">
             <div class="hero-slide-overlay"></div>
             <div class="hero-slide-cabor">
-                <img src="{{ asset('images/cabor/5.PANAHAN.png') }}" alt="Panahan">
+                <img src="{{ asset('images/cabor/9.TAEKWONDO.png') }}" alt="Taekwondo">
             </div>
         </div>
         <!-- Slide 4: GOR Yasmin -->
         <div class="hero-slide" style="background-image: url('{{ $bg4 }}')">
             <div class="hero-slide-overlay"></div>
             <div class="hero-slide-cabor">
-                <img src="{{ asset('images/cabor/19.TARUNG DERAJAT.png') }}" alt="Tarung Derajat">
+                <img src="{{ asset('images/cabor/25.JUDO.png') }}" alt="Judo">
             </div>
         </div>
     </div>
@@ -67,7 +67,7 @@ $bg4 = asset('images/venue4.jpeg');
             </div>
 
             <h1 class="hero-title">
-                PANDU PORPROV <span class="yellow-accent">KOTA BOGOR 2026</span>
+                PORPPROV <span class="yellow-accent">NAVIGATION AND INFORMATION</span><span class="white-accent"> KOTA BOGOR 2026</span>
             </h1>
 
             <div class="hero-tagline-bubble">
@@ -115,58 +115,58 @@ $bg4 = asset('images/venue4.jpeg');
     <div class="stats-grid">
         <!-- Stat Item 1: Titik Venue -->
         <div class="stat-card-item reveal" style="--i: 0">
-<div class="stat-icon-square blue">
-                 <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                     <path stroke-linecap="round" stroke-linejoin="round" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z" />
-                 </svg>
-             </div>
-             <div>
-                 <div class="stat-val">13+</div>
-                 <div class="stat-title">Titik Venue</div>
-                 <div class="stat-sub">Tempat Bertanding</div>
-             </div>
+            <div class="stat-icon-square blue">
+                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z" />
+                </svg>
+            </div>
+            <div>
+                <div class="stat-val">13+</div>
+                <div class="stat-title">Titik Venue</div>
+                <div class="stat-sub">Tempat Bertanding</div>
+            </div>
         </div>
 
         <!-- Stat Item 2: Cabor -->
         <div class="stat-card-item reveal" style="--i: 1">
-<div class="stat-icon-square yellow">
-                 <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                     <path stroke-linecap="round" stroke-linejoin="round" d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z" />
-                 </svg>
-             </div>
-             <div>
-                 <div class="stat-val">28+</div>
-                 <div class="stat-title">Cabang Olahraga</div>
-                 <div class="stat-sub">Kompetisi Bergengsi</div>
-             </div>
+            <div class="stat-icon-square yellow">
+                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94.63 1.5 1.98 2.63 3.61 2.96V19H7v2h10v-2h-4v-3.1c1.63-.33 2.98-1.46 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z" />
+                </svg>
+            </div>
+            <div>
+                <div class="stat-val">28+</div>
+                <div class="stat-title">Cabang Olahraga</div>
+                <div class="stat-sub">Kompetisi Bergengsi</div>
+            </div>
         </div>
 
         <!-- Stat Item 3: Peserta -->
         <div class="stat-card-item reveal" style="--i: 2">
-<div class="stat-icon-square navy">
-                 <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                     <path stroke-linecap="round" stroke-linejoin="round" d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z" />
-                 </svg>
-             </div>
-             <div>
-                 <div class="stat-val">-</div>
-                 <div class="stat-title">Peserta</div>
-                 <div class="stat-sub">Atlet Yang Bertanding</div>
-             </div>
+            <div class="stat-icon-square navy">
+                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z" />
+                </svg>
+            </div>
+            <div>
+                <div class="stat-val">-</div>
+                <div class="stat-title">Peserta</div>
+                <div class="stat-sub">Atlet Yang Bertanding</div>
+            </div>
         </div>
 
         <!-- Stat Item 4: Fasilitas -->
         <div class="stat-card-item reveal" style="--i: 3">
-<div class="stat-icon-square green">
-                 <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                 </svg>
-             </div>
-             <div>
-                 <div class="stat-val">165+</div>
-                 <div class="stat-title">Fasilitas</div>
-                 <div class="stat-sub">Segala Kebutuhan & Layanan</div>
-             </div>
+            <div class="stat-icon-square green">
+                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+            </div>
+            <div>
+                <div class="stat-val">165+</div>
+                <div class="stat-title">Fasilitas</div>
+                <div class="stat-sub">Segala Kebutuhan & Layanan</div>
+            </div>
         </div>
     </div>
 </div>
@@ -1407,7 +1407,9 @@ $bg4 = asset('images/venue4.jpeg');
         renderVenues(venueData);
         setupFilter();
         setupFacilityFilters();
-        setTimeout(function() { map.invalidateSize(); }, 100);
+        setTimeout(function() {
+            map.invalidateSize();
+        }, 100);
     }
 
     function createSportIcon(sportName) {

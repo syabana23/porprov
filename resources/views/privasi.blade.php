@@ -13,7 +13,7 @@
             </svg>
         </div>
         <div class="banner-text">
-            <span class="banner-badge">PORPROV XV · 2026</span>
+            <span class="banner-badge">PORNAVI · 2026</span>
             <h1>KEBIJAKAN PRIVASI</h1>
             <p>Kebijakan privasi dan perlindungan data pengunjung website</p>
         </div>
