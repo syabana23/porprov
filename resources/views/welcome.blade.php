@@ -57,8 +57,8 @@ $bg4 = asset('images/venue4.jpeg');
     </div>
 
     <div class="hero-container">
-        <!-- Hero Text Content -->
-        <div class="hero-content">
+        <!-- Top Row Header: Tagline Badge (Left) & Desktop Countdown (Right) -->
+        <div class="hero-top-row">
             <div class="hero-pill-badge">
                 <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
@@ -66,6 +66,31 @@ $bg4 = asset('images/venue4.jpeg');
                 Menuju Ajang Olahraga Terbesar Jawa Barat
             </div>
 
+            <!-- Hero Countdown Component (Desktop: Top Right) -->
+            <div class="hero-countdown-wrapper desktop-only">
+                <div class="hero-countdown">
+                    <div class="cd-box">
+                        <span class="cd-num gold cd-days-val">00</span>
+                        <span class="cd-label">HARI</span>
+                    </div>
+                    <div class="cd-box">
+                        <span class="cd-num gold cd-hours-val">00</span>
+                        <span class="cd-label">JAM</span>
+                    </div>
+                    <div class="cd-box">
+                        <span class="cd-num gold cd-minutes-val">00</span>
+                        <span class="cd-label">MENIT</span>
+                    </div>
+                    <div class="cd-box">
+                        <span class="cd-num gold cd-seconds-val">00</span>
+                        <span class="cd-label">DETIK</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Text Content -->
+        <div class="hero-content">
             <h1 class="hero-title">
                 PORPPROV <span class="yellow-accent">NAVIGATION AND INFORMATION</span><span class="white-accent"> KOTA BOGOR 2026</span>
             </h1>
@@ -77,6 +102,28 @@ $bg4 = asset('images/venue4.jpeg');
             <p class="hero-desc">
                 Semangat sportivitas, persaudaraan dan prestasi untuk membangun Jawa Barat yang lebih maju. Kota Bogor siap menjadi tuan rumah yang ramah dan menginspirasi.
             </p>
+
+            <!-- Hero Countdown Component (Mobile: Centered Above Buttons) -->
+            <div class="hero-countdown-wrapper mobile-only">
+                <div class="hero-countdown center-aligned">
+                    <div class="cd-box">
+                        <span class="cd-num gold cd-days-val">00</span>
+                        <span class="cd-label">HARI</span>
+                    </div>
+                    <div class="cd-box">
+                        <span class="cd-num gold cd-hours-val">00</span>
+                        <span class="cd-label">JAM</span>
+                    </div>
+                    <div class="cd-box">
+                        <span class="cd-num gold cd-minutes-val">00</span>
+                        <span class="cd-label">MENIT</span>
+                    </div>
+                    <div class="cd-box">
+                        <span class="cd-num gold cd-seconds-val">00</span>
+                        <span class="cd-label">DETIK</span>
+                    </div>
+                </div>
+            </div>
 
             <div class="hero-actions">
                 <a href="{{ url('/jadwal') }}" class="btn-hero-primary">
@@ -1598,6 +1645,10 @@ $bg4 = asset('images/venue4.jpeg');
             renderFacilityCategory(venue, 'pharmacy', 'apotek-container', 'Apotek', 'cat-apotek');
             renderFacilityCategory(venue, 'transport', 'transport-container', 'Sewa Kendaraan', 'cat-transport');
         }
+
+        if (window.innerWidth <= 768 && floatingCard) {
+            floatingCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
     }
 
     function setupFacilityFilters() {
@@ -1670,6 +1721,54 @@ $bg4 = asset('images/venue4.jpeg');
             current = (current + 1) % slides.length;
             slides[current].classList.add('active');
         }, 5000);
+    })();
+
+    // ── Hero Countdown Timer (Countdown to 7 November) ──
+    (function initHeroCountdown() {
+        const daysEls = document.querySelectorAll('.cd-days-val');
+        const hoursEls = document.querySelectorAll('.cd-hours-val');
+        const minutesEls = document.querySelectorAll('.cd-minutes-val');
+        const secondsEls = document.querySelectorAll('.cd-seconds-val');
+
+        if (!daysEls.length) return;
+
+        function updateCountdown() {
+            const now = new Date();
+            let target = new Date('2026-11-07T00:00:00+07:00');
+            if (now > target) {
+                target = new Date(now.getFullYear(), 10, 7, 0, 0, 0);
+                if (now > target) {
+                    target = new Date(now.getFullYear() + 1, 10, 7, 0, 0, 0);
+                }
+            }
+
+            const diff = target.getTime() - now.getTime();
+            if (diff <= 0) {
+                daysEls.forEach(el => el.textContent = '00');
+                hoursEls.forEach(el => el.textContent = '00');
+                minutesEls.forEach(el => el.textContent = '00');
+                secondsEls.forEach(el => el.textContent = '00');
+                return;
+            }
+
+            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+            const dStr = String(d).padStart(2, '0');
+            const hStr = String(h).padStart(2, '0');
+            const mStr = String(m).padStart(2, '0');
+            const sStr = String(s).padStart(2, '0');
+
+            daysEls.forEach(el => el.textContent = dStr);
+            hoursEls.forEach(el => el.textContent = hStr);
+            minutesEls.forEach(el => el.textContent = mStr);
+            secondsEls.forEach(el => el.textContent = sStr);
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
     })();
 
     window.onload = function() {
