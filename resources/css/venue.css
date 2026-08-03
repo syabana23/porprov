@@ -29,36 +29,65 @@
         min-width: 180px;
         display: flex;
         align-items: center;
-        background: #fff;
-        border: 1.5px solid #e8ecf1;
+        background: #f8fafc;
+        border: 1.5px solid #e2e8f0;
         border-radius: 12px;
         padding: 0 14px;
-        transition: all 0.25s ease;
+        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+        position: relative;
+    }
+
+    .filter-box:hover {
+        background: #ffffff;
+        border-color: #94a3b8;
+        box-shadow: 0 2px 8px rgba(1, 52, 105, 0.06);
     }
 
     .filter-box:focus-within {
+        background: #ffffff;
         border-color: #013469;
-        box-shadow: 0 0 0 4px rgba(1, 52, 105, 0.08), 0 2px 8px rgba(1, 52, 105, 0.06);
+        box-shadow: 0 0 0 3.5px rgba(1, 52, 105, 0.12), 0 2px 8px rgba(1, 52, 105, 0.08);
     }
 
     .filter-box svg {
         color: #013469;
         flex-shrink: 0;
         margin-right: 10px;
-        opacity: 0.6;
+        opacity: 0.55;
+        transition: opacity 0.2s;
     }
 
-    .filter-box select {
+    .filter-box:focus-within svg {
+        opacity: 0.9;
+    }
+
+    .filter-box select,
+    .filter-box .filter-select {
         width: 100%;
         background: transparent;
         border: none;
-        padding: 11px 0;
+        padding: 13px 28px 13px 0;
         font-family: inherit;
-        font-size: 14px;
-        color: #1e293b;
+        font-size: 13.5px;
+        font-weight: 500;
+        color: #334155;
         outline: none;
         cursor: pointer;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23013469' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 0px center;
+        background-size: 15px;
+    }
+
+    .filter-box select option,
+    .filter-box .filter-select option {
+        font-weight: 500;
+        color: #334155;
+        background: #ffffff;
     }
 
     .btn-cari {
@@ -126,6 +155,10 @@
         overflow: hidden;
         display: flex;
         flex-direction: column;
+        /* Isolate stacking context so Leaflet layers can't escape above siblings */
+        isolation: isolate;
+        position: relative;
+        z-index: 1;
     }
 
     .map-container-wrap {
@@ -135,11 +168,29 @@
         min-height: 280px;
         background: #e8ecf1;
         overflow: hidden;
+        /* Create new stacking context to contain all Leaflet internal z-indexes */
+        isolation: isolate;
     }
 
     #map-canvas {
         width: 100% !important;
         height: 100% !important;
+    }
+
+    /* When mobile nav is open, further clamp the map stacking context */
+    body.nav-open .map-box-card,
+    body.nav-open .map-container-wrap,
+    body.nav-open .map-facilities-wrapper {
+        z-index: 0 !important;
+        isolation: isolate;
+    }
+
+    /* Leaflet container inside map — ensure it stays within bounds */
+    .map-container-wrap .leaflet-container {
+        z-index: auto;
+    }
+    .map-container-wrap .leaflet-pane {
+        z-index: auto;
     }
 
     /* ── Floating GOR Card ── */
@@ -692,4 +743,42 @@
         width: 28px;
         height: 28px;
         object-fit: contain;
+    }
+
+    /* ── Dark Mode: Filter ── */
+    html.dark .jadwal-filter {
+        background: rgba(15, 23, 42, 0.9);
+        border-color: rgba(51, 65, 85, 0.6);
+    }
+
+    html.dark .filter-box {
+        background: #1e293b;
+        border-color: #334155;
+    }
+
+    html.dark .filter-box:hover {
+        background: #263347;
+        border-color: #475569;
+    }
+
+    html.dark .filter-box:focus-within {
+        background: #263347;
+        border-color: #3b82f6;
+        box-shadow: 0 0 0 3.5px rgba(59, 130, 246, 0.15);
+    }
+
+    html.dark .filter-box select,
+    html.dark .filter-box .filter-select {
+        color: #e2e8f0;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2360a5fa' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    }
+
+    html.dark .filter-box select option,
+    html.dark .filter-box .filter-select option {
+        background: #1e293b;
+        color: #e2e8f0;
+    }
+
+    html.dark .filter-box svg {
+        color: #60a5fa;
     }

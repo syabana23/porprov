@@ -210,7 +210,7 @@ $bg4 = asset('images/venue4.jpeg');
                 </svg>
             </div>
             <div>
-                <div class="stat-val">165+</div>
+                <div class="stat-val">80+</div>
                 <div class="stat-title">Fasilitas</div>
                 <div class="stat-sub">Segala Kebutuhan & Layanan</div>
             </div>
@@ -1647,7 +1647,10 @@ $bg4 = asset('images/venue4.jpeg');
         }
 
         if (window.innerWidth <= 768 && floatingCard) {
-            floatingCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            floatingCard.scrollIntoView({
+                behavior: 'smooth',
+                block: 'nearest'
+            });
         }
     }
 
