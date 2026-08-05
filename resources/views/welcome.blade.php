@@ -86,6 +86,7 @@ $bg4 = asset('images/venue4.jpeg');
                         <span class="cd-label">DETIK</span>
                     </div>
                 </div>
+                <span class="cd-caption">Menuju Pembukaan PORPROV Jabar</span>
             </div>
         </div>
 
@@ -123,6 +124,7 @@ $bg4 = asset('images/venue4.jpeg');
                         <span class="cd-label">DETIK</span>
                     </div>
                 </div>
+                <span class="cd-caption">Menuju Pembukaan PORPROV Jabar</span>
             </div>
 
             <div class="hero-actions">
