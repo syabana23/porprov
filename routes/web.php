@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ChatbotController;
+
+Route::get('/chatbot/chat', [ChatbotController::class, 'chat']);
+Route::post('/chatbot', [ChatbotController::class, 'chat']);
 
 Route::get('/', function () {
     return view('welcome');
