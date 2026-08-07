@@ -8,6 +8,7 @@
 @import './berita.css';
 @import './galeri.css';
 @import './privasi.css';
+@import './countdown.css';
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';

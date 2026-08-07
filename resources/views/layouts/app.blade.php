@@ -133,9 +133,7 @@
         </button>
     </div>
 
-    <footer class="site-footer">
-        &copy; 2026 Pemerintah Kota Bogor
-    </footer>
+    @include('partials.footer')
 
     @stack('scripts')
 

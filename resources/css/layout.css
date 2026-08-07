@@ -350,12 +350,208 @@
 
         /* Footer */
         .site-footer {
+            background: linear-gradient(-0.5deg, #ffffff 1.8%, #fff3d6 98.3%);
+            color: #013469;
+        }
+
+        .footer-main {
+            padding: 64px 40px;
+        }
+
+        .footer-container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .footer-brand {
+            width: 371px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            max-width: 100%;
+        }
+
+        .footer-logo {
+            width: 164px;
+            height: 93px;
+            display: block;
+        }
+
+        .footer-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .footer-desc {
+            font-size: 16px;
+            line-height: 1.8;
+            letter-spacing: 0.5px;
+            opacity: 0.8;
+            color: #013469;
+        }
+
+        .footer-title {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 1.6;
+            letter-spacing: 0.5px;
+            color: #013469;
+            margin-bottom: 16px;
+        }
+
+        .footer-organizers {
+            width: 340px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 100%;
+        }
+
+        .organizers-coa {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .organizers-coa img {
+            width: 80px;
+            height: 93px;
+            object-fit: contain;
+        }
+
+        .organizers-mascots {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .organizers-mascots img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+        }
+
+        .organizers-mascots img:nth-child(2) {
+            width: 64px;
+            height: 80px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+        }
+
+        .footer-links-col {
+            display: flex;
+            flex-direction: column;
+            width: 151px;
+        }
+
+        .footer-links-col a {
+            font-size: 14.4px;
+            line-height: 1.5;
+            color: #013469;
+            opacity: 0.8;
+            padding: 4px 0;
+            transition: opacity 0.2s;
+            text-decoration: none;
+        }
+
+        .footer-links-col a:hover {
+            opacity: 1;
+        }
+
+        .footer-bottom {
             background: #013469;
-            color: #fff;
+            height: 96px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 64px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-bottom p {
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            line-height: 1.25;
+            color: rgba(235, 253, 255, 0.8);
             text-align: center;
-            padding: 14px 20px;
-            font-size: 13px;
-            font-weight: 500;
+            position: relative;
+            z-index: 10;
+        }
+
+        .ribbon {
+            position: absolute;
+            top: -40px;
+            width: 510px;
+            height: 338px;
+            pointer-events: none;
+            user-select: none;
+            opacity: 0.9;
+        }
+
+        .ribbon-left {
+            left: -95px;
+        }
+
+        .ribbon-right {
+            right: -95px;
+            transform: scaleX(-1);
+        }
+
+        @media (max-width: 1024px) {
+            .footer-grid {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 40px;
+            }
+
+            .footer-brand,
+            .footer-organizers {
+                width: 100%;
+            }
+
+            .footer-organizers {
+                align-items: flex-start;
+            }
+
+            .organizers-mascots {
+                justify-content: flex-start;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .footer-main {
+                padding: 40px 20px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 24px;
+            }
+
+            .organizers-coa {
+                gap: 30px;
+            }
+
+            .footer-bottom {
+                padding: 0 20px;
+            }
         }
 
         /* ── Shared Page Banner ── */

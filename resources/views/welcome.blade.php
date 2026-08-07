@@ -66,28 +66,6 @@ $bg4 = asset('images/venue4.jpeg');
                 Menuju Ajang Olahraga Terbesar Jawa Barat
             </div>
 
-            <!-- Hero Countdown Component (Desktop: Top Right) -->
-            <div class="hero-countdown-wrapper desktop-only">
-                <div class="hero-countdown">
-                    <div class="cd-box">
-                        <span class="cd-num gold cd-days-val">00</span>
-                        <span class="cd-label">HARI</span>
-                    </div>
-                    <div class="cd-box">
-                        <span class="cd-num gold cd-hours-val">00</span>
-                        <span class="cd-label">JAM</span>
-                    </div>
-                    <div class="cd-box">
-                        <span class="cd-num gold cd-minutes-val">00</span>
-                        <span class="cd-label">MENIT</span>
-                    </div>
-                    <div class="cd-box">
-                        <span class="cd-num gold cd-seconds-val">00</span>
-                        <span class="cd-label">DETIK</span>
-                    </div>
-                </div>
-                <span class="cd-caption">Menuju Pembukaan PORPROV Jabar</span>
-            </div>
         </div>
 
         <!-- Hero Text Content -->
@@ -677,6 +655,9 @@ $bg4 = asset('images/venue4.jpeg');
         </div>
     </div>
 </section>
+
+<!-- Floating Countdown Widget -->
+@include('partials.floating-countdown')
 
 @endsection
 
@@ -1730,10 +1711,10 @@ $bg4 = asset('images/venue4.jpeg');
 
     // ── Hero Countdown Timer (Countdown to 7 November) ──
     (function initHeroCountdown() {
-        const daysEls = document.querySelectorAll('.cd-days-val');
-        const hoursEls = document.querySelectorAll('.cd-hours-val');
-        const minutesEls = document.querySelectorAll('.cd-minutes-val');
-        const secondsEls = document.querySelectorAll('.cd-seconds-val');
+        const daysEls = document.querySelectorAll('.cd-days-val, .fc-days-val');
+        const hoursEls = document.querySelectorAll('.cd-hours-val, .fc-hours-val');
+        const minutesEls = document.querySelectorAll('.cd-minutes-val, .fc-minutes-val');
+        const secondsEls = document.querySelectorAll('.cd-seconds-val, .fc-seconds-val');
 
         if (!daysEls.length) return;
 

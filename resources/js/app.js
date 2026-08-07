@@ -3,6 +3,7 @@
 import '../css/chatbot.css';
 
 import './chatbot.js';
+import './countdown.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   // ----- Dark Mode -----
