@@ -24,7 +24,7 @@ $bg4 = asset('images/venue4.jpeg');
         <div class="hero-slide active" style="background-image: url('{{ $bg1 }}')">
             <div class="hero-slide-overlay"></div>
             <div class="hero-slide-cabor">
-                <img src="{{ asset('images/cabor/23.PANJAT TEBING.PNG') }}" alt="Panjat Tebing">
+                <img src="{{ asset('images/cabor/23.PANJAT TEBING.png') }}" alt="Panjat Tebing">
             </div>
         </div>
         <!-- Slide 2: Stadion Pajajaran -->
@@ -66,28 +66,6 @@ $bg4 = asset('images/venue4.jpeg');
                 Menuju Ajang Olahraga Terbesar Jawa Barat
             </div>
 
-            <!-- Hero Countdown Component (Desktop: Top Right) -->
-            <div class="hero-countdown-wrapper desktop-only">
-                <div class="hero-countdown">
-                    <div class="cd-box">
-                        <span class="cd-num gold cd-days-val">00</span>
-                        <span class="cd-label">HARI</span>
-                    </div>
-                    <div class="cd-box">
-                        <span class="cd-num gold cd-hours-val">00</span>
-                        <span class="cd-label">JAM</span>
-                    </div>
-                    <div class="cd-box">
-                        <span class="cd-num gold cd-minutes-val">00</span>
-                        <span class="cd-label">MENIT</span>
-                    </div>
-                    <div class="cd-box">
-                        <span class="cd-num gold cd-seconds-val">00</span>
-                        <span class="cd-label">DETIK</span>
-                    </div>
-                </div>
-                <span class="cd-caption">Menuju Pembukaan PORPROV Jabar</span>
-            </div>
         </div>
 
         <!-- Hero Text Content -->
@@ -103,29 +81,6 @@ $bg4 = asset('images/venue4.jpeg');
             <p class="hero-desc">
                 Semangat sportivitas, persaudaraan dan prestasi untuk membangun Jawa Barat yang lebih maju. Kota Bogor siap menjadi tuan rumah yang ramah dan menginspirasi.
             </p>
-
-            <!-- Hero Countdown Component (Mobile: Centered Above Buttons) -->
-            <div class="hero-countdown-wrapper mobile-only">
-                <div class="hero-countdown center-aligned">
-                    <div class="cd-box">
-                        <span class="cd-num gold cd-days-val">00</span>
-                        <span class="cd-label">HARI</span>
-                    </div>
-                    <div class="cd-box">
-                        <span class="cd-num gold cd-hours-val">00</span>
-                        <span class="cd-label">JAM</span>
-                    </div>
-                    <div class="cd-box">
-                        <span class="cd-num gold cd-minutes-val">00</span>
-                        <span class="cd-label">MENIT</span>
-                    </div>
-                    <div class="cd-box">
-                        <span class="cd-num gold cd-seconds-val">00</span>
-                        <span class="cd-label">DETIK</span>
-                    </div>
-                </div>
-                <span class="cd-caption">Menuju Pembukaan PORPROV Jabar</span>
-            </div>
 
             <div class="hero-actions">
                 <a href="{{ url('/jadwal') }}" class="btn-hero-primary">
@@ -677,6 +632,9 @@ $bg4 = asset('images/venue4.jpeg');
         </div>
     </div>
 </section>
+
+<!-- Floating Countdown Widget -->
+@include('partials.floating-countdown')
 
 @endsection
 
@@ -1447,7 +1405,7 @@ $bg4 = asset('images/venue4.jpeg');
         const mapElement = document.getElementById("map-canvas");
         if (!mapElement) return;
 
-        map = L.map('map-canvas').setView([-6.65, 107.30], 10);
+        map = L.map('map-canvas').setView(bogorCenter, 13);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; OpenStreetMap'
@@ -1456,9 +1414,21 @@ $bg4 = asset('images/venue4.jpeg');
         renderVenues(venueData);
         setupFilter();
         setupFacilityFilters();
-        setTimeout(function() {
-            map.invalidateSize();
-        }, 100);
+        ensureMapSize(mapElement);
+    }
+
+    function ensureMapSize(mapElement) {
+        if (!mapElement) return;
+        const invalidate = function() {
+            if (map) map.invalidateSize();
+        };
+        setTimeout(invalidate, 100);
+        window.addEventListener('load', invalidate);
+        const parent = mapElement.parentElement;
+        if (parent && window.ResizeObserver) {
+            const ro = new ResizeObserver(invalidate);
+            ro.observe(parent);
+        }
     }
 
     function createSportIcon(sportName) {
@@ -1569,7 +1539,7 @@ $bg4 = asset('images/venue4.jpeg');
             } else {
                 alert('Venue tidak ditemukan dengan kriteria tersebut.');
                 renderVenues(venueData);
-                map.setView([-6.65, 107.30], 10);
+                map.setView([-6.587, 106.803], 13);
             }
         });
 
@@ -1577,7 +1547,7 @@ $bg4 = asset('images/venue4.jpeg');
             setTimeout(() => {
                 clearMarkers();
                 renderVenues(venueData);
-                map.setView([-6.65, 107.30], 10);
+                map.setView([-6.587, 106.803], 13);
                 const floatingCard = document.getElementById('floating-gor-card');
                 if (floatingCard) floatingCard.style.display = 'none';
                 const placeholder = document.getElementById('facilities-placeholder');
@@ -1730,10 +1700,10 @@ $bg4 = asset('images/venue4.jpeg');
 
     // ── Hero Countdown Timer (Countdown to 7 November) ──
     (function initHeroCountdown() {
-        const daysEls = document.querySelectorAll('.cd-days-val');
-        const hoursEls = document.querySelectorAll('.cd-hours-val');
-        const minutesEls = document.querySelectorAll('.cd-minutes-val');
-        const secondsEls = document.querySelectorAll('.cd-seconds-val');
+        const daysEls = document.querySelectorAll('.cd-days-val, .fc-days-val');
+        const hoursEls = document.querySelectorAll('.cd-hours-val, .fc-hours-val');
+        const minutesEls = document.querySelectorAll('.cd-minutes-val, .fc-minutes-val');
+        const secondsEls = document.querySelectorAll('.cd-seconds-val, .fc-seconds-val');
 
         if (!daysEls.length) return;
 

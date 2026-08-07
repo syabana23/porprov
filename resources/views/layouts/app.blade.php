@@ -33,15 +33,41 @@
     <header class="site-header">
         <div class="header-inner">
             <a href="{{ url('/') }}" class="header-logo">
-                <img src="{{ asset('images/logo_baru.png') }}" alt="Logo PORPROV XV">
-                <!-- <div class="header-logo-text">
-                    <div class="top">PORPROV XV</div>
-                    <div class="bottom">KOTA BOGOR 2026</div>
-                </div> -->
+                <img src="{{ asset('images/logo_baru.PNG') }}" alt="Logo PORPROV XV">
+                <span class="logo-divider" aria-hidden="true"></span>
+                <span class="city-logo-row">
+                    <img src="{{ asset('images/kota-bogor.png') }}" alt="Logo Kota Bogor">
+                    <img src="{{ asset('images/kota-bekasi.png') }}" alt="Logo Kota Bekasi">
+                    <img src="{{ asset('images/kota-depok.png') }}" alt="Logo Kota Depok">
+                </span>
             </a>
             <nav class="header-nav">
                 <a href="{{ url('/') }}" class="{{ request()->is('/') ? 'active' : '' }}">BERANDA</a>
-                <a href="{{ url('/jadwal') }}" class="{{ request()->is('jadwal') ? 'active' : '' }}">JADWAL</a>
+                <div class="nav-item has-dropdown">
+                    <a href="#" class="nav-link {{ (request()->is('jadwal') || request()->is('cabor*') || request()->is('kontingen')) ? 'active' : '' }}" data-nav-trigger aria-haspopup="true" aria-expanded="false">
+                        PERTANDINGAN
+                        <svg class="nav-caret" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6" />
+                        </svg>
+                    </a>
+                    <div class="nav-dropdown">
+                        <a href="{{ url('/jadwal') }}" class="{{ request()->is('jadwal') ? 'active' : '' }}">JADWAL</a>
+                        <a href="{{ url('/cabor') }}" class="{{ request()->is('cabor*') ? 'active' : '' }}">CABOR</a>
+                        <a href="{{ url('/kontingen') }}" class="{{ request()->is('kontingen') ? 'active' : '' }}">KONTINGEN</a>
+                    </div>
+                </div>
+                <div class="nav-item has-dropdown">
+                    <a href="#" class="nav-link {{ (request()->is('klasemen*') || request()->is('atlet')) ? 'active' : '' }}" data-nav-trigger aria-haspopup="true" aria-expanded="false">
+                        KLASEMEN
+                        <svg class="nav-caret" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6" />
+                        </svg>
+                    </a>
+                    <div class="nav-dropdown">
+                        <a href="{{ url('/klasemen-medali') }}" class="{{ request()->is('klasemen-medali') ? 'active' : '' }}">MEDALI</a>
+                        <a href="{{ url('/atlet') }}" class="{{ request()->is('atlet') ? 'active' : '' }}">ATLET</a>
+                    </div>
+                </div>
                 <a href="{{ url('/peta-venue') }}" class="{{ request()->is('peta-venue') ? 'active' : '' }}">PETA VENUE</a>
                 <a href="{{ url('/fasilitas') }}" class="{{ request()->is('fasilitas') ? 'active' : '' }}">FASILITAS</a>
                 <a href="{{ url('/galeri') }}" class="{{ request()->is('galeri') ? 'active' : '' }}">GALERI</a>
@@ -65,7 +91,31 @@
     <div class="mobile-nav-overlay" id="mobile-overlay"></div>
     <nav class="mobile-nav" id="mobile-nav">
         <a href="{{ url('/') }}" class="{{ request()->is('/') ? 'active' : '' }}">BERANDA</a>
-        <a href="{{ url('/jadwal') }}" class="{{ request()->is('jadwal') ? 'active' : '' }}">JADWAL</a>
+        <div class="mobile-nav-group">
+            <button type="button" class="mobile-nav-parent">
+                PERTANDINGAN
+                <svg class="mobile-caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6" />
+                </svg>
+            </button>
+            <div class="mobile-nav-sub">
+                <a href="{{ url('/jadwal') }}" class="{{ request()->is('jadwal') ? 'active' : '' }}">JADWAL</a>
+                <a href="{{ url('/cabor') }}" class="{{ request()->is('cabor*') ? 'active' : '' }}">CABOR</a>
+                <a href="{{ url('/kontingen') }}" class="{{ request()->is('kontingen') ? 'active' : '' }}">KONTINGEN</a>
+            </div>
+        </div>
+        <div class="mobile-nav-group">
+            <button type="button" class="mobile-nav-parent">
+                KLASEMEN
+                <svg class="mobile-caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6" />
+                </svg>
+            </button>
+            <div class="mobile-nav-sub">
+                <a href="{{ url('/klasemen-medali') }}" class="{{ request()->is('klasemen-medali') ? 'active' : '' }}">MEDALI</a>
+                <a href="{{ url('/atlet') }}" class="{{ request()->is('atlet') ? 'active' : '' }}">ATLET</a>
+            </div>
+        </div>
         <a href="{{ url('/peta-venue') }}" class="{{ request()->is('peta-venue') ? 'active' : '' }}">PETA VENUE</a>
         <a href="{{ url('/fasilitas') }}" class="{{ request()->is('fasilitas') ? 'active' : '' }}">FASILITAS</a>
         <a href="{{ url('/galeri') }}" class="{{ request()->is('galeri') ? 'active' : '' }}">GALERI</a>
@@ -133,11 +183,7 @@
         </button>
     </div>
 
-    <footer class="site-footer">
-        &copy; 2026 Pemerintah Kota Bogor
-    </footer>
-
-    @stack('scripts')
+    @include('partials.footer')
 
     <script>
         // Logika Hamburger Menu Mobile
@@ -154,6 +200,42 @@
 
         if (hamburger) hamburger.addEventListener('click', toggleMobileNav);
         if (mobileOverlay) mobileOverlay.addEventListener('click', toggleMobileNav);
+
+        // ==========================================
+        // Dropdown PERTANDINGAN (Desktop)
+        // ==========================================
+        const navTrigger = document.querySelector('.nav-item[data-nav-trigger], .nav-item .nav-link[data-nav-trigger], .nav-item .nav-link');
+        const navItem = document.querySelector('.nav-item.has-dropdown');
+
+        if (navTrigger && navItem) {
+            const closeDesktopDropdown = () => {
+                navItem.classList.remove('open');
+                navTrigger.setAttribute('aria-expanded', 'false');
+            };
+
+            navTrigger.addEventListener('click', (e) => {
+                e.preventDefault();
+                const open = navItem.classList.toggle('open');
+                navTrigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!navItem.contains(e.target)) closeDesktopDropdown();
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') closeDesktopDropdown();
+            });
+        }
+
+        // ==========================================
+        // Dropdown PERTANDINGAN (Mobile)
+        // ==========================================
+        document.querySelectorAll('.mobile-nav-group .mobile-nav-parent').forEach((parent) => {
+            parent.addEventListener('click', () => {
+                parent.parentElement.classList.toggle('open');
+            });
+        });
 
         // ==========================================
         // Logika Aksesibilitas Lengkap (A11y)
@@ -419,6 +501,7 @@
             }
         });
     </script>
+    @stack('scripts')
     @include('components.chatbot')
 </body>
 

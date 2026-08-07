@@ -1,0 +1,185 @@
+/* ═══════════════════════════════════════════════════════════════════
+   FLOATING COUNTDOWN WIDGET
+   Layout persis alá porprovbekasikota2026.id, warna brand navy+kuning
+   ═══════════════════════════════════════════════════════════════════ */
+.pcd-wrap {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9990;
+}
+
+.pcd-card {
+    pointer-events: auto;
+    position: absolute;
+    left: 16px;
+    bottom: 24px;
+    width: max-content;
+    max-width: calc(100vw - 2rem);
+    border-radius: 26px;
+    border: 1px solid rgba(253, 184, 19, 0.35);
+    background: linear-gradient(135deg, rgba(0, 26, 51, 0.94), rgba(1, 52, 105, 0.94));
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.38);
+    padding: 16px;
+    touch-action: none;
+}
+
+.pcd-drag {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 8px;
+    cursor: grab;
+}
+
+.pcd-card.pcd-grabbing .pcd-drag {
+    cursor: grabbing;
+}
+
+.pcd-heading {
+    min-width: 0;
+}
+
+.pcd-title {
+    font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #FDB813;
+    margin: 0;
+}
+
+.pcd-sub {
+    font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+}
+
+.pcd-toggle {
+    border-radius: 999px;
+    border: 1px solid rgba(253, 184, 19, 0.4);
+    padding: 4px 12px;
+    font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: #FDB813;
+    background: transparent;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    flex-shrink: 0;
+}
+
+.pcd-toggle:hover {
+    background: rgba(253, 184, 19, 0.15);
+    color: #ffffff;
+}
+
+.pcd-timer {
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.pcd-card.pcd-collapsed .pcd-timer,
+.pcd-card.pcd-collapsed .pcd-done {
+    display: none;
+}
+
+.pcd-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    min-width: 72px;
+}
+
+.pcd-digits {
+    display: flex;
+    gap: 6px;
+}
+
+.pcd-digit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 30px;
+    height: 38px;
+    border-radius: 9px;
+    background: rgba(0, 26, 51, 0.85);
+    border: 1px solid rgba(253, 184, 19, 0.35);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.08);
+    font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1;
+    color: #FDB813;
+    text-shadow: 0 0 10px rgba(253, 184, 19, 0.35);
+}
+
+.pcd-label {
+    font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.pcd-done {
+    margin-top: 12px;
+    text-align: center;
+    font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #FDB813;
+}
+
+/* Tampil juga di mobile — ngambang seperti desktop */
+@media (max-width: 767px) {
+    .pcd-card {
+        left: 12px;
+        bottom: 16px;
+        max-width: calc(100vw - 24px);
+        padding: 12px;
+        border-radius: 20px;
+    }
+
+    .pcd-title {
+        font-size: 16px;
+    }
+
+    .pcd-sub {
+        font-size: 12px;
+    }
+
+    .pcd-timer {
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .pcd-unit {
+        min-width: 0;
+        flex: 1 1 42%;
+        gap: 2px;
+    }
+
+    .pcd-digit {
+        min-width: 22px;
+        height: 30px;
+        font-size: 15px;
+        border-radius: 7px;
+    }
+
+    .pcd-label {
+        font-size: 12px;
+    }
+
+    .pcd-toggle {
+        padding: 3px 10px;
+        font-size: 11px;
+    }
+}
