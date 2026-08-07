@@ -1,0 +1,514 @@
+/* ============================================================
+   CABOR Page (list + modal) — PORPROV Jabar 2026
+   ============================================================ */
+
+.cabor-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 42px 28px 80px;
+    position: relative;
+    z-index: 1;
+}
+
+/* ---------- Intro ---------- */
+.cabor-intro {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 34px;
+    flex-wrap: wrap;
+}
+
+.cabor-intro-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.cabor-intro-title h2 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #013469;
+    margin: 0;
+    letter-spacing: -0.3px;
+}
+
+.cabor-intro p {
+    max-width: 560px;
+    font-size: 13.5px;
+    color: #64748b;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ---------- Grid ---------- */
+.cabor-grid-all {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(205px, 1fr));
+    gap: 18px;
+}
+
+.cabor-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    padding: 24px 16px 18px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.cabor-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px -18px rgba(1, 52, 105, 0.35);
+    border-color: #013469;
+}
+
+.cabor-card-logo {
+    width: 96px;
+    height: 96px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f1f5f9;
+    border-radius: 50%;
+    margin-bottom: 14px;
+    border: 2px solid #e2e8f0;
+    transition: border-color 0.25s ease, background 0.25s ease;
+    overflow: hidden;
+}
+
+.cabor-card:hover .cabor-card-logo {
+    border-color: #FDB813;
+    background: #fff7e0;
+}
+
+.cabor-card-logo img {
+    width: 72px;
+    height: 72px;
+    object-fit: contain;
+}
+
+.cabor-card-name {
+    font-size: 14px;
+    font-weight: 800;
+    color: #013469;
+    line-height: 1.3;
+    margin-bottom: 8px;
+    min-height: 36px;
+    display: flex;
+    align-items: center;
+}
+
+.cabor-card-venue {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 11.5px;
+    color: #64748b;
+    line-height: 1.4;
+    margin-bottom: 12px;
+}
+
+.cabor-card-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #2563eb;
+    transition: gap 0.2s ease;
+}
+
+.cabor-card:hover .cabor-card-cta {
+    gap: 9px;
+}
+
+/* ============================================================
+   MODAL DETAIL CABOR
+   ============================================================ */
+.cabor-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(4px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.cabor-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.cabor-modal-content {
+    background: #f8fafc;
+    width: 100%;
+    max-width: 880px;
+    max-height: 88vh;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.35);
+    display: flex;
+    flex-direction: column;
+    transform: translateY(24px) scale(0.97);
+    transition: all 0.32s cubic-bezier(0.175, 0.885, 0.32, 1.15);
+}
+
+.cabor-modal-overlay.active .cabor-modal-content {
+    transform: translateY(0) scale(1);
+}
+
+.cabor-modal-header {
+    position: relative;
+    background: linear-gradient(135deg, #013469 0%, #014590 100%);
+    padding: 24px 28px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-shrink: 0;
+}
+
+.cabor-modal-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    font-size: 22px;
+    line-height: 1;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    z-index: 2;
+}
+
+.cabor-modal-close:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: rotate(90deg);
+}
+
+.cabor-modal-logo {
+    width: 74px;
+    height: 74px;
+    flex-shrink: 0;
+    background: #fff;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+.cabor-modal-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.cabor-modal-headtext {
+    flex: 1;
+    min-width: 0;
+    padding-right: 34px;
+}
+
+.cabor-modal-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.15);
+    color: #FDB813;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.04em;
+    margin-bottom: 8px;
+    border: 1px solid rgba(253, 184, 19, 0.4);
+}
+
+.cabor-modal-headtext h2 {
+    margin: 0 0 4px;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.3px;
+}
+
+.cabor-modal-headtext p {
+    margin: 0;
+    color: #cbd5e1;
+    font-size: 13.5px;
+}
+
+.cabor-modal-body {
+    padding: 26px 28px 32px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 transparent;
+}
+
+.cabor-modal-body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.cabor-modal-body::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 6px;
+}
+
+/* ---------- Info blocks (inside modal body) ---------- */
+.cabor-info-block {
+    text-align: left;
+    border-top: 1px dashed #e2e8f0;
+    padding-top: 18px;
+    margin-top: 18px;
+}
+
+.cabor-info-block h3 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13.5px;
+    font-weight: 800;
+    color: #013469;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin: 0 0 10px;
+}
+
+.cabor-info-block h3 svg {
+    color: #FDB813;
+}
+
+.cabor-info-block p {
+    font-size: 13.5px;
+    color: #475569;
+    line-height: 1.75;
+    margin: 0;
+}
+
+.cabor-venue-name {
+    font-weight: 700;
+    color: #013469;
+}
+
+.cabor-venue-addr {
+    margin-top: 6px;
+}
+
+/* ---------- Transport header ---------- */
+.cabor-transport-header {
+    margin-bottom: 18px;
+}
+
+.cabor-transport-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.cabor-transport-title h2 {
+    font-size: 20px;
+    font-weight: 800;
+    color: #013469;
+    margin: 0;
+    letter-spacing: -0.3px;
+}
+
+.cabor-transport-header p {
+    font-size: 13.5px;
+    color: #64748b;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.cabor-transport-header p strong {
+    color: #013469;
+}
+
+/* ---------- Route cards ---------- */
+.route-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    padding: 22px 24px;
+    margin-bottom: 18px;
+    box-shadow: 0 6px 24px -18px rgba(1, 52, 105, 0.25);
+}
+
+.route-card-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.route-number {
+    width: 30px;
+    height: 30px;
+    flex-shrink: 0;
+    background: linear-gradient(135deg, #013469, #0a4fa8);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 800;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.route-card-head h3 {
+    font-size: 15px;
+    font-weight: 800;
+    color: #013469;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.route-steps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    counter-reset: route-step;
+}
+
+.route-steps li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    position: relative;
+    padding-bottom: 16px;
+    font-size: 13.5px;
+    color: #475569;
+    line-height: 1.7;
+}
+
+.route-steps li:last-child {
+    padding-bottom: 0;
+}
+
+.route-steps li:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 16px;
+    bottom: 2px;
+    width: 2px;
+    background: #e2e8f0;
+}
+
+.route-step-dot {
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+    margin-top: 5px;
+    background: #FDB813;
+    border: 3px solid #fff7e0;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px #FDB813;
+    position: relative;
+    z-index: 1;
+}
+
+.route-step-text strong {
+    color: #013469;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+    .cabor-page {
+        padding: 30px 18px 60px;
+    }
+
+    .cabor-intro {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cabor-grid-all {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 12px;
+    }
+
+    .cabor-card {
+        padding: 18px 10px 14px;
+    }
+
+    .cabor-card-logo {
+        width: 76px;
+        height: 76px;
+    }
+
+    .cabor-card-logo img {
+        width: 58px;
+        height: 58px;
+    }
+
+    .cabor-card-name {
+        font-size: 12.5px;
+        min-height: auto;
+    }
+
+    .cabor-modal-overlay {
+        padding: 12px;
+        align-items: flex-end;
+    }
+
+    .cabor-modal-content {
+        max-height: 92vh;
+        border-radius: 18px 18px 0 0;
+    }
+
+    .cabor-modal-header {
+        padding: 18px;
+        gap: 12px;
+    }
+
+    .cabor-modal-logo {
+        width: 54px;
+        height: 54px;
+        padding: 6px;
+    }
+
+    .cabor-modal-headtext {
+        padding-right: 30px;
+    }
+
+    .cabor-modal-headtext h2 {
+        font-size: 17px;
+    }
+
+    .cabor-modal-badge {
+        font-size: 10px;
+        padding: 3px 10px;
+    }
+
+    .cabor-modal-body {
+        padding: 18px 16px 26px;
+    }
+
+    .route-card {
+        padding: 18px 16px;
+    }
+}

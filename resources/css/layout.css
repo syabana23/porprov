@@ -107,6 +107,24 @@
             width: auto;
         }
 
+        .logo-divider {
+            width: 1px;
+            height: 52px;
+            background: rgba(148, 163, 184, 0.55);
+            flex-shrink: 0;
+        }
+
+        .city-logo-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .city-logo-row img {
+            height: 44px;
+            width: auto;
+        }
+
         .header-logo-text {
             line-height: 1.15;
         }
@@ -164,6 +182,71 @@
 
         .site-header.scrolled .header-nav a.active {
             border-bottom-color: #013469;
+        }
+
+        /* ---------- Dropdown PERTANDINGAN (desktop) ---------- */
+        .nav-item {
+            position: relative;
+        }
+
+        .header-nav .nav-link {
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .nav-caret {
+            transition: transform 0.2s ease;
+            margin-left: 4px;
+            flex-shrink: 0;
+        }
+
+        .nav-item:hover .nav-caret,
+        .nav-item.open .nav-caret {
+            transform: rotate(180deg);
+        }
+
+        .nav-dropdown {
+            position: absolute;
+            top: calc(100% + 14px);
+            left: 50%;
+            transform: translateX(-50%) translateY(6px);
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            box-shadow: 0 16px 40px -12px rgba(1, 52, 105, 0.28);
+            padding: 8px;
+            min-width: 170px;
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.22s ease, visibility 0.22s ease, transform 0.22s ease;
+        }
+
+        .nav-item:hover .nav-dropdown,
+        .nav-item.open .nav-dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .header-nav .nav-dropdown a {
+            color: #4b5563;
+            padding: 10px 16px;
+            border-radius: 8px;
+            transition: background 0.18s ease, color 0.18s ease;
+        }
+
+        .header-nav .nav-dropdown a:hover {
+            color: #013469;
+            background: #f1f5f9;
+        }
+
+        .header-nav .nav-dropdown a.active {
+            color: #013469;
+            font-weight: 700;
+            background: #f1f5f9;
+            border-bottom: none;
         }
 
         .header-actions {
@@ -326,6 +409,62 @@
                 color: #013469;
             }
 
+            .mobile-nav-group {
+                border-bottom: 1px solid #f3f4f6;
+            }
+
+            .mobile-nav-parent {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+                background: none;
+                border: none;
+                font-family: 'Poppins', sans-serif;
+                font-size: 14px;
+                font-weight: 600;
+                color: #374151;
+                padding: 14px 0;
+                text-transform: uppercase;
+                letter-spacing: 0.02em;
+                cursor: pointer;
+                transition: color 0.2s;
+            }
+
+            .mobile-nav-parent:hover {
+                color: #013469;
+            }
+
+            .mobile-caret {
+                transition: transform 0.2s ease;
+                flex-shrink: 0;
+            }
+
+            .mobile-nav-group.open .mobile-caret {
+                transform: rotate(180deg);
+            }
+
+            .mobile-nav-sub {
+                display: none;
+            }
+
+            .mobile-nav-group.open .mobile-nav-sub {
+                display: block;
+            }
+
+            .mobile-nav-sub a {
+                padding: 11px 0 11px 24px;
+                font-size: 13px;
+                color: #6b7280;
+                border-bottom: none;
+            }
+
+            .mobile-nav-sub a:hover,
+            .mobile-nav-sub a.active {
+                color: #013469;
+                border-bottom: none;
+            }
+
             .header-inner {
                 height: 56px;
                 gap: 12px;
@@ -333,6 +472,18 @@
 
             .header-logo img {
                 height: 95px;
+            }
+
+            .logo-divider {
+                height: 34px;
+            }
+
+            .city-logo-row {
+                gap: 6px;
+            }
+
+            .city-logo-row img {
+                height: 28px;
             }
 
             .header-logo-text .top {

@@ -3,11 +3,684 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ChatbotController;
 
+$venueRutes = [
+    'GOR Pajajaran' => [
+        [
+            'judul' => 'KRL + Angkot via Jl. Pemuda',
+            'langkah' => [
+                'Naik KRL Commuter Line dan turun di Stasiun Bogor.',
+                'Naik angkot trayek 07 (Bubulak–Ciparigi), 17 (Salabenda–Pasar Anyar), 18 (Villa Mutiara–Pasar Anyar), atau 23 (Taman Griya Kencana–Pasar Anyar) yang melewati Jl. Pemuda.',
+                'Turun di depan GOR/Stadion Pajajaran, Jl. Pemuda, Tanah Sareal.',
+            ],
+        ],
+        [
+            'judul' => 'BisKita Trans Pakuan Koridor 5/6 (halte GOR)',
+            'langkah' => [
+                'Naik KRL Commuter Line dan turun di Stasiun Bogor.',
+                'Lanjut naik BisKita Trans Pakuan Koridor 5 (Ciparigi–Stasiun Bogor) atau Koridor 6 (Parung Banteng–Stasiun Bogor) yang melewati Jl. Pemuda.',
+                'Turun di halte GOR/Air Mancur, lalu jalan kaki menuju GOR/Stadion Pajajaran.',
+            ],
+        ],
+        [
+            'judul' => 'Dari Terminal Baranangsiang',
+            'langkah' => [
+                'Dari Terminal Baranangsiang naik angkot trayek 07/07A (jurusan Ciparigi), 17, atau 18 yang melewati Jl. Pemuda.',
+                'Turun di depan GOR/Stadion Pajajaran, Jl. Pemuda, Tanah Sareal.',
+            ],
+        ],
+        [
+            'judul' => 'Dari Pasar Anyar / Terminal Merdeka',
+            'langkah' => [
+                'Naik angkot trayek 17 (Salabenda), 18 (Villa Mutiara), 23 (Taman Griya Kencana), atau 24 (Pondok Rumput) dari kawasan Pasar Anyar/Air Mancur.',
+                'Turun di Jl. Pemuda, di depan GOR/Stadion Pajajaran.',
+            ],
+        ],
+        [
+            'judul' => 'Transjabodetabek dari Jakarta',
+            'langkah' => [
+                'Naik bus Transjabodetabek jurusan Bogor (mis. Bogor–Senen atau Blok M–Bogor).',
+                'Turun di kawasan Jl. Pemuda atau Terminal Merdeka, lalu lanjut angkot trayek 07/17/18 menuju GOR/Stadion Pajajaran.',
+            ],
+        ],
+    ],
+    'Green Forest Hotel' => [
+        [
+            'judul' => 'KRL + Angkot via Jl. Pahlawan',
+            'langkah' => [
+                'Naik KRL Commuter Line dan turun di Stasiun Bogor.',
+                'Naik angkot trayek 01 (Cipinang Gading–Perum Yasmin) atau trayek 08 (Taman Pajajaran–Bantar Kemang–Terminal Merdeka) yang melewati Jl. Pahlawan.',
+                'Turun di depan Green Forest Hotel, Jl. Pahlawan, Bogor Selatan.',
+            ],
+        ],
+        [
+            'judul' => 'Angkot Trayek 02',
+            'langkah' => [
+                'Naik angkot trayek 02 (Warung Nangka–Lawang Saketeng/Bogor Trade Mall) dari kawasan Lawang Saketeng, Empang, atau Rancamaya yang melewati Jl. Pahlawan.',
+                'Turun di Jl. Pahlawan, dekat Green Forest Hotel, Bogor Selatan.',
+            ],
+        ],
+        [
+            'judul' => 'Angkot Trayek 14',
+            'langkah' => [
+                'Naik angkot trayek 14 (Sukasari–Pasir Kuda–Terminal Bubulak) yang melewati Jl. Pahlawan (via Jl. Layungsari).',
+                'Turun di Jl. Pahlawan / kawasan Bondongan, dekat Green Forest Hotel.',
+            ],
+        ],
+        [
+            'judul' => 'Angkot Trayek 29',
+            'langkah' => [
+                'Naik angkot trayek 29 (Pabuaran–Terminal Merdeka) yang melewati Jl. Pahlawan dan kawasan Bogor Nirwana Resident.',
+                'Turun di dekat Green Forest Hotel, Jl. Pahlawan, Bogor Selatan.',
+            ],
+        ],
+        [
+            'judul' => 'BisKita + Angkot',
+            'langkah' => [
+                'Naik BisKita Trans Pakuan Koridor 2 (Bubulak–Ciawi) dan turun di halte Stasiun Bogor/Masjid Raya.',
+                'Lanjut naik angkot trayek 01 atau 08 menuju Jl. Pahlawan, Green Forest Hotel.',
+            ],
+        ],
+    ],
+    'Gymnasium Sekolah Vokasi IPB' => [
+        [
+            'judul' => 'KRL + Angkot Trayek 03',
+            'langkah' => [
+                'Naik KRL Commuter Line dan turun di Stasiun Bogor.',
+                'Naik angkot trayek 03 (Cimahpar–Bogor Trade Mall) yang melewati Jl. Kumbang–Jl. Lodaya.',
+                'Turun di Jl. Kumbang / Jl. Lodaya, lalu jalan kaki menuju Gymnasium Sekolah Vokasi IPB.',
+            ],
+        ],
+        [
+            'judul' => 'Angkot Trayek 30',
+            'langkah' => [
+                'Naik angkot trayek 30 (Warung Jambu–Bogor Trade Mall) yang melewati Jl. Kumbang–Jl. Lodaya.',
+                'Turun di Jl. Lodaya, lalu jalan kaki menuju Gymnasium Sekolah Vokasi IPB (Cilibende).',
+            ],
+        ],
+        [
+            'judul' => 'BisKita Trans Pakuan Koridor 1',
+            'langkah' => [
+                'Naik BisKita Trans Pakuan Koridor 1 (Bubulak–Cidangiang).',
+                'Turun di halte Botani Square / Terminal Baranangsiang, lalu jalan kaki (±10 menit) menuju Gymnasium Sekolah Vokasi IPB di Cilibende.',
+            ],
+        ],
+        [
+            'judul' => 'Dari Terminal Baranangsiang',
+            'langkah' => [
+                'Dari Terminal Baranangsiang naik angkot trayek 03 atau 30.',
+                'Turun di Jl. Kumbang / Jl. Lodaya, lalu jalan kaki menuju Gymnasium Sekolah Vokasi IPB.',
+            ],
+        ],
+    ],
+    'GOR Yasmin Bulutangkis' => [
+        [
+            'judul' => 'KRL + Angkot jurusan Yasmin',
+            'langkah' => [
+                'Naik KRL Commuter Line dan turun di Stasiun Bogor.',
+                'Naik angkot trayek 01 jurusan Perum Yasmin, atau trayek 11 (Curug–Pasar Anyar), 12 (Bubulak–Pasar Anyar), atau 26 (Terminal Merdeka–Villa Mutiara) yang melewati kawasan Yasmin–Curugmekar.',
+                'Turun di dekat GOR Yasmin, Jl. KH. R. Abdullah bin Nuh, Curugmekar.',
+            ],
+        ],
+        [
+            'judul' => 'BisKita Trans Pakuan Koridor 1',
+            'langkah' => [
+                'Naik BisKita Trans Pakuan Koridor 1 (Bubulak–Cidangiang).',
+                'Turun di halte Ruko Yasmin / RS Hermina / Kolam Renang Yasmin, lalu jalan kaki menuju GOR Yasmin.',
+            ],
+        ],
+        [
+            'judul' => 'Angkot Trayek 22',
+            'langkah' => [
+                'Naik angkot trayek 22 (Terminal Bubulak–Kencana) yang melewati Jl. KH. R. Abdullah bin Nuh (kawasan Yasmin).',
+                'Turun di kawasan Curugmekar, dekat GOR Yasmin Bulutangkis.',
+            ],
+        ],
+        [
+            'judul' => 'Angkot Trayek 15',
+            'langkah' => [
+                'Naik angkot trayek 15 (Terminal Merdeka–Situgede) yang melewati Jl. KH. R. Abdullah bin Nuh.',
+                'Turun di dekat GOR Yasmin Bulutangkis, Jl. KH. R. Abdullah bin Nuh, Curugmekar.',
+            ],
+        ],
+    ],
+    'PPSDMAP Kemenhub Kemang' => [
+        [
+            'judul' => 'KRL + Angkot jurusan Parung',
+            'langkah' => [
+                'Naik KRL Commuter Line dan turun di Stasiun Bogor.',
+                'Dari Terminal Baranangsiang naik angkot jurusan Parung yang melewati Jl. Raya Parung–Bogor.',
+                'Turun di depan PPSDMAP Kemenhub, Jl. Raya Parung, Kemang.',
+            ],
+        ],
+        [
+            'judul' => 'Dari Terminal Parung',
+            'langkah' => [
+                'Dari Terminal Parung naik angkot jurusan Bogor.',
+                'Turun di depan PPSDMAP Kemenhub, Jl. Raya Parung–Bogor, Kemang.',
+            ],
+        ],
+        [
+            'judul' => 'KRL Stasiun Cibinong + Angkot',
+            'langkah' => [
+                'Naik KRL Commuter Line dan turun di Stasiun Cibinong.',
+                'Lanjut naik angkot jurusan Parung/Kemang yang melewati Jl. Raya Parung–Bogor.',
+                'Turun di depan PPSDMAP Kemenhub, Kemang.',
+            ],
+        ],
+        [
+            'judul' => 'Ojek / Taksi (last mile)',
+            'langkah' => [
+                'Dari Stasiun Bogor atau terminal terdekat lanjut naik ojek atau taksi menuju PPSDMAP Kemenhub, Jl. Raya Parung–Bogor, Kemang.',
+            ],
+        ],
+    ],
+    'Padepokan Voli Sentul' => [
+        [
+            'judul' => 'KRL Bojonggede + Bus Listrik Gratis',
+            'langkah' => [
+                'Naik KRL Commuter Line dan turun di Stasiun Bojonggede.',
+                'Naik bus listrik gratis jurusan Sentul City.',
+                'Turun di kawasan Sentul City, lanjut jalan kaki atau ojek menuju Padepokan Voli Sentul.',
+            ],
+        ],
+        [
+            'judul' => 'KRL Bogor + Angkot jurusan Sentul',
+            'langkah' => [
+                'Naik KRL Commuter Line dan turun di Stasiun Bogor.',
+                'Dari Terminal Baranangsiang naik angkot jurusan Sentul City/Cibinong.',
+                'Turun di kawasan Sirkuit Sentul Internasional, lanjut jalan kaki menuju Padepokan Voli Sentul.',
+            ],
+        ],
+        [
+            'judul' => 'Dari Terminal Cibinong',
+            'langkah' => [
+                'Dari Terminal Cibinong naik angkot jurusan Sentul (Babakan Madang).',
+                'Turun di kawasan Sirkuit Sentul Internasional, dekat Padepokan Voli Sentul.',
+            ],
+        ],
+        [
+            'judul' => 'Dari Jakarta via Transjabodetabek',
+            'langkah' => [
+                'Naik bus Transjabodetabek jurusan Bogor dan turun di Bogor.',
+                'Lanjut naik angkot jurusan Sentul City, atau ojek/taksi menuju Padepokan Voli Sentul.',
+            ],
+        ],
+    ],
+    'Gunung Mas (Cisarua)' => [
+        [
+            'judul' => 'KRL + Angkot via Sukasari',
+            'langkah' => [
+                'Naik KRL Commuter Line dan turun di Stasiun Bogor.',
+                'Naik angkot trayek 27 (Buntar–Sukasari) atau ojek menuju Sukasari.',
+                'Lanjut naik angkot jurusan Cisarua/Puncak, turun di Gunung Mas (Jl. Raya Puncak KM 87).',
+            ],
+        ],
+        [
+            'judul' => 'Bus AKDP jurusan Puncak/Cianjur',
+            'langkah' => [
+                'Dari Terminal Baranangsiang naik bus jurusan Puncak/Cianjur (Elang, Cipta Staya, Sari Wangi, dll).',
+                'Turun di depan Gunung Mas, Jl. Raya Puncak KM 87, Cisarua.',
+            ],
+        ],
+        [
+            'judul' => 'BisKita Koridor 2 + Angkot',
+            'langkah' => [
+                'Naik BisKita Trans Pakuan Koridor 2 (Bubulak–Ciawi).',
+                'Turun di kawasan Ciawi, lanjut naik angkot jurusan Cisarua.',
+                'Turun di Gunung Mas, Jl. Raya Puncak KM 87, Cisarua.',
+            ],
+        ],
+        [
+            'judul' => 'KRL + Angkot jurusan Puncak',
+            'langkah' => [
+                'Naik KRL Commuter Line dan turun di Stasiun Bogor.',
+                'Dari Terminal Baranangsiang naik angkot jurusan Cisarua/Puncak, turun di Gunung Mas (Jl. Raya Puncak KM 87).',
+            ],
+        ],
+    ],
+    'Sport Jabar Arcamanik' => [
+        [
+            'judul' => 'KRL Stasiun Bandung + Bus/Angkot',
+            'langkah' => [
+                'Naik kereta api lokal/KRL Commuter Line Bandung Raya dan turun di Stasiun Bandung.',
+                'Lanjut naik Trans Metro Bandung/Metro Jabar Trans atau angkot jurusan Arcamanik.',
+                'Turun di kawasan Arcamanik (Jl. Pacuan Kuda), menuju Sport Jabar.',
+            ],
+        ],
+        [
+            'judul' => 'KRL Stasiun Kiaracondong (lebih dekat)',
+            'langkah' => [
+                'Naik kereta api lokal/KRL dan turun di Stasiun Kiaracondong.',
+                'Lanjut naik angkot jurusan Arcamanik (±15 menit) atau ojek.',
+                'Turun di Sport Jabar, Jl. Pacuan Kuda, Sukamiskin, Arcamanik.',
+            ],
+        ],
+        [
+            'judul' => 'Dari Terminal Cicaheum / Kiaracondong',
+            'langkah' => [
+                'Naik angkot kota Bandung jurusan Arcamanik dari Terminal Cicaheum atau Pasar Kiaracondong.',
+                'Turun di Jl. Pacuan Kuda, dekat Sport Jabar.',
+            ],
+        ],
+    ],
+    'Lapangan Tembak Cisangkan' => [
+        [
+            'judul' => 'KRL Stasiun Cimahi + Angkot',
+            'langkah' => [
+                'Naik KRL Commuter Line Bandung Raya dan turun di Stasiun Cimahi.',
+                'Lanjut naik angkot jurusan Padasuka/Cisangkan atau ojek.',
+                'Turun di Lapangan Tembak Cisangkan, Jl. Raya Cisangkan, Cimahi.',
+            ],
+        ],
+        [
+            'judul' => 'Dari Stasiun Bandung',
+            'langkah' => [
+                'Naik KRL/KA lokal dari Stasiun Bandung menuju Stasiun Cimahi.',
+                'Lanjut naik angkot/ojek jurusan Padasuka/Cisangkan.',
+                'Turun di Lapangan Tembak Cisangkan, Jl. Raya Cisangkan.',
+            ],
+        ],
+        [
+            'judul' => 'Angkot Kota Cimahi',
+            'langkah' => [
+                'Dari pusat Kota Cimahi naik angkot jurusan Padasuka.',
+                'Turun di Lapangan Tembak Cisangkan, Jl. Raya Cisangkan, Cimahi Tengah.',
+            ],
+        ],
+    ],
+    'Kota Baru Parahyangan' => [
+        [
+            'judul' => 'Whoosh + Shuttle Gratis KCIC',
+            'langkah' => [
+                'Naik Kereta Cepat Whoosh dan turun di Stasiun Padalarang.',
+                'Lanjut naik shuttle gratis KCIC menuju Kota Baru Parahyangan (tersedia ±30 perjalanan/hari).',
+                'Turun di kawasan Kota Baru Parahyangan, menuju venue ski air.',
+            ],
+        ],
+        [
+            'judul' => 'Whoosh + Trans Metro Pasundan 2D',
+            'langkah' => [
+                'Naik Whoosh dan turun di Stasiun Padalarang.',
+                'Lanjut naik bus Trans Metro Pasundan 2D (Kota Baru Parahyangan–Stasiun Padalarang–Cimahi–Alun-alun Bandung), tarif Rp4.900, beroperasi 04.30–20.00 WIB.',
+                'Turun di kawasan Kota Baru Parahyangan.',
+            ],
+        ],
+        [
+            'judul' => 'KRL Commuter Line Bandung Raya',
+            'langkah' => [
+                'Naik KRL Commuter Line Bandung Raya dan turun di Stasiun Padalarang.',
+                'Lanjut naik Trans Metro Pasundan 2D atau ojek/taksi menuju Kota Baru Parahyangan.',
+            ],
+        ],
+        [
+            'judul' => 'KA Feeder / Angkot Padalarang',
+            'langkah' => [
+                'Naik KA Feeder menuju Padalarang, atau angkot jurusan Padalarang/Kota Baru Parahyangan dari Cimahi/Bandung.',
+                'Turun di kawasan Kota Baru Parahyangan, menuju venue ski air.',
+            ],
+        ],
+    ],
+    'Majalengka' => [
+        [
+            'judul' => 'Bus AKAP via Tol Cipali',
+            'langkah' => [
+                'Naik bus AKAP dari Terminal Kampung Rambutan/Pulo Gebang Jakarta jurusan Cirebon via Tol Cipali.',
+                'Turun di exit Kertajati/Majalengka, lalu lanjut angkutan desa atau ojek menuju lokasi kegiatan (titik take-off).',
+            ],
+        ],
+        [
+            'judul' => 'Travel dari Bandung',
+            'langkah' => [
+                'Naik travel (Arnes Shuttle, MS Trans, Bhinneka Shuttle) dari Bandung (Balubur Town Square/Pasteur) jurusan Majalengka.',
+                'Turun di kota Majalengka (±2 jam perjalanan).',
+                'Lanjut angkutan lokal atau ojek menuju lokasi kegiatan.',
+            ],
+        ],
+        [
+            'judul' => 'Bus Cirebon–Majalengka',
+            'langkah' => [
+                'Naik bus Cirebon–Majalengka via Kuningan.',
+                'Turun di kota Majalengka, lalu lanjut angkutan lokal menuju lokasi kegiatan.',
+            ],
+        ],
+        [
+            'judul' => 'Kereta ke Cirebon + Lanjut Bus/Travel',
+            'langkah' => [
+                'Naik kereta api dan turun di Stasiun Cirebon.',
+                'Lanjut naik bus/travel menuju Majalengka.',
+                'Lanjut angkutan lokal atau ojek menuju lokasi kegiatan.',
+            ],
+        ],
+    ],
+];
+
+$cabors = [
+    [
+        'slug' => 'aerosport-gantolle',
+        'nama' => 'Aerosport - Gantolle',
+        'logo' => '14.GANTOLE.png',
+        'deskripsi' => 'Gantolle merupakan cabang aerosport yang menerbangkan sayap gantung (hang glider) tanpa mesin dengan lepas landas dari ketinggian. Perpaduan antara keterampilan mengendalikan sayap dan membaca arah angin membuat olahraga ini menuntut keberanian serta konsentrasi tinggi.',
+        'venue' => 'Majalengka',
+        'alamat' => 'Kabupaten Majalengka, Jawa Barat',
+        'rute' => $venueRutes['Majalengka'],
+    ],
+    [
+        'slug' => 'aerosport-paralayang',
+        'nama' => 'Aerosport - Paralayang',
+        'logo' => '3.PARALAYANG.png',
+        'deskripsi' => 'Paralayang adalah olahraga terbang bebas dengan parasut besar (paraglider) yang diisi angin, lepas landas dari ketinggian dan mendarat dengan berjalan. Atlet dituntut menguasai teknik aerodinamika dan kondisi cuaca agar dapat terbang dengan stabil dan aman.',
+        'venue' => 'Gunung Mas (Cisarua)',
+        'alamat' => 'Jl. Raya Puncak KM 87, Tugu Selatan, Cisarua, Kab. Bogor',
+        'rute' => $venueRutes['Gunung Mas (Cisarua)'],
+    ],
+    [
+        'slug' => 'anggar',
+        'nama' => 'Anggar',
+        'logo' => '2.ANGGAR.png',
+        'deskripsi' => 'Anggar adalah olahraga bela diri seni pedang yang dipertandingkan secara individu maupun beregu. Terdapat tiga senjata: floret, sabel, dan degen, dengan sistem penilaian elektronik untuk menentukan siapa yang berhasil menyentuh sasaran lawan terlebih dahulu.',
+        'venue' => 'Green Forest Hotel',
+        'alamat' => 'Jl. Pahlawan, Bondongan, Kec. Bogor Selatan, Kota Bogor',
+        'rute' => $venueRutes['Green Forest Hotel'],
+    ],
+    [
+        'slug' => 'dansa',
+        'nama' => 'Dansa',
+        'logo' => '27.DANSA.png',
+        'deskripsi' => 'Dansa (dance sport) adalah olahraga seni yang menggabungkan gerakan tari dengan musik dalam pasangan. Terbagi dalam kategori standar dan Latin, penilaian menekankan teknik, kekompakan pasangan, serta ekspresi artistik di atas lantai dansa.',
+        'venue' => 'Green Forest Hotel',
+        'alamat' => 'Jl. Pahlawan, Bondongan, Kec. Bogor Selatan, Kota Bogor',
+        'rute' => $venueRutes['Green Forest Hotel'],
+    ],
+    [
+        'slug' => 'angkat-berat',
+        'nama' => 'Angkat Berat',
+        'logo' => '20.ANGKAT BERAT.png',
+        'deskripsi' => 'Angkat berat adalah olahraga mengangkat beban logam seberat mungkin dalam satu gerakan angkatan. Atlet bersaing dalam kategori snatch dan clean & jerk, dengan total angkatan terbaik yang menentukan pemenangnya.',
+        'venue' => 'Green Forest Hotel',
+        'alamat' => 'Jl. Pahlawan, Bondongan, Kec. Bogor Selatan, Kota Bogor',
+        'rute' => $venueRutes['Green Forest Hotel'],
+    ],
+    [
+        'slug' => 'angkat-besi',
+        'nama' => 'Angkat Besi',
+        'logo' => '10.ANGKAT BESI.png',
+        'deskripsi' => 'Angkat besi merupakan olahraga kekuatan yang menguji kemampuan atlet mengangkat barbel dari lantai hingga di atas kepala. Dua jenis angkatan utama adalah snatch dan clean & jerk yang dinilai dari teknik serta keberhasilan angkatan.',
+        'venue' => 'Green Forest Hotel',
+        'alamat' => 'Jl. Pahlawan, Bondongan, Kec. Bogor Selatan, Kota Bogor',
+        'rute' => $venueRutes['Green Forest Hotel'],
+    ],
+    [
+        'slug' => 'arung-jeram',
+        'nama' => 'Arung Jeram',
+        'logo' => '13.ARUNG JERAM.png',
+        'deskripsi' => 'Arung jeram adalah olahraga air yang dilakukan dengan perahu karet melewati jeram-jeram sungai berarus deras. Mengutamakan kerja sama tim, kekompakan dayung, dan kemampuan membaca arus untuk melewati lintasan dengan aman dan cepat.',
+        'venue' => 'Green Forest Hotel',
+        'alamat' => 'Jl. Pahlawan, Bondongan, Kec. Bogor Selatan, Kota Bogor',
+        'rute' => $venueRutes['Green Forest Hotel'],
+    ],
+    [
+        'slug' => 'binaraga',
+        'nama' => 'Binaraga',
+        'logo' => '6.BINARAGA.png',
+        'deskripsi' => 'Binaraga adalah olahraga yang menonjolkan estetika otot melalui pembentukan tubuh dengan latihan beban. Penilaian dilakukan berdasarkan kesimetrisan, proporsi, dan kekencangan otot pada pose yang ditampilkan atlet di panggung.',
+        'venue' => 'Green Forest Hotel',
+        'alamat' => 'Jl. Pahlawan, Bondongan, Kec. Bogor Selatan, Kota Bogor',
+        'rute' => $venueRutes['Green Forest Hotel'],
+    ],
+    [
+        'slug' => 'bola-tangan-indoor',
+        'nama' => 'Bola Tangan Indoor',
+        'logo' => '11.BOLA TANGAN.png',
+        'deskripsi' => 'Bola tangan indoor dimainkan oleh dua tim berisi tujuh pemain yang saling melempar, mengoper, dan memasukkan bola ke gawang lawan. Permainan berlangsung cepat di lapangan tertutup dengan aturan langkah yang ketat.',
+        'venue' => 'PPSDMAP Kemenhub Kemang',
+        'alamat' => 'Jl. Raya Parung–Bogor, Kemang, Kab. Bogor',
+        'rute' => $venueRutes['PPSDMAP Kemenhub Kemang'],
+    ],
+    [
+        'slug' => 'bola-tangan-pasir',
+        'nama' => 'Bola Tangan Pasir',
+        'logo' => '11.BOLA TANGAN.png',
+        'deskripsi' => 'Bola tangan pasir dimainkan di lapangan berpasir dengan aturan yang lebih dinamis dan santai. Dengan jumlah pemain yang lebih sedikit dan tempo cepat, olahraga ini menuntut kelincahan serta ketahanan fisik di permukaan pasir.',
+        'venue' => 'Padepokan Voli Sentul',
+        'alamat' => 'Kawasan Sirkuit Sentul Internasional, Babakan Madang, Kab. Bogor',
+        'rute' => $venueRutes['Padepokan Voli Sentul'],
+    ],
+    [
+        'slug' => 'drumband',
+        'nama' => 'Drumband',
+        'logo' => '24.DRUM BAND.png',
+        'deskripsi' => 'Drumband adalah cabang olahraga seni yang memadukan musik perkusi, alat musik tiup, dan koreografi baris-berbaris. Penampilannya menuntut keselarasan ritme, kekompakan formasi, serta disiplin tinggi dari seluruh anggota tim.',
+        'venue' => 'GOR Pajajaran Indoor A',
+        'alamat' => 'Jl. Pemuda No. 02, Tanah Sareal, Kota Bogor',
+        'rute' => $venueRutes['GOR Pajajaran'],
+    ],
+    [
+        'slug' => 'gimnastik-aerobik',
+        'nama' => 'Gimnastik Aerobik',
+        'logo' => '21.SENAM.png',
+        'deskripsi' => 'Gimnastik aerobik menggabungkan gerakan senam dengan musik berirama cepat dan gerakan aerobik kompleks. Atlet dinilai dari kesulitan gerakan, kekuatan, kelenturan, serta sinkronisasi antar atlet.',
+        'venue' => 'Sport Jabar Arcamanik',
+        'alamat' => 'Jl. Pacuan Kuda, Sukamiskin, Arcamanik, Kota Bandung',
+        'rute' => $venueRutes['Sport Jabar Arcamanik'],
+    ],
+    [
+        'slug' => 'gimnastik-artistik',
+        'nama' => 'Gimnastik Artistik',
+        'logo' => '21.SENAM.png',
+        'deskripsi' => 'Gimnastik artistik adalah senam yang menampilkan kekuatan, keseimbangan, dan kelenturan pada alat seperti palang, gelang, kuda-kuda, dan lantai. Nomornya terbagi untuk putra dan putri dengan penilaian pada kesulitan dan eksekusi.',
+        'venue' => 'Sport Jabar Arcamanik',
+        'alamat' => 'Jl. Pacuan Kuda, Sukamiskin, Arcamanik, Kota Bandung',
+        'rute' => $venueRutes['Sport Jabar Arcamanik'],
+    ],
+    [
+        'slug' => 'gimnastik-ritmik',
+        'nama' => 'Gimnastik Ritmik',
+        'logo' => '21.SENAM.png',
+        'deskripsi' => 'Gimnastik ritmik menggabungkan senam dengan alat seperti pita, bola, simpai, dan gada mengikuti musik. Penampilannya menonjolkan keanggunan, fleksibilitas, dan koordinasi gerakan yang selaras dengan irama.',
+        'venue' => 'Sport Jabar Arcamanik',
+        'alamat' => 'Jl. Pacuan Kuda, Sukamiskin, Arcamanik, Kota Bandung',
+        'rute' => $venueRutes['Sport Jabar Arcamanik'],
+    ],
+    [
+        'slug' => 'judo',
+        'nama' => 'Judo',
+        'logo' => '25.JUDO.png',
+        'deskripsi' => 'Judo adalah bela diri asal Jepang yang berfokus pada teknik bantingan dan kuncian untuk menjatuhkan lawan. Pertandingan dimenangkan dengan mendapatkan ippon, waza-ari, atau akumulasi poin teknis, dengan prinsip saling menghormati.',
+        'venue' => 'GOR Pajajaran Indoor B',
+        'alamat' => 'Jl. Pemuda No. 02, Tanah Sareal, Kota Bogor',
+        'rute' => $venueRutes['GOR Pajajaran'],
+    ],
+    [
+        'slug' => 'kurash',
+        'nama' => 'Kurash',
+        'logo' => '18.KURASH.png',
+        'deskripsi' => 'Kurash adalah olahraga gulat tradisional asal Asia Tengah yang bertujuan menjatuhkan lawan dengan teknik bantingan tanpa menyentuh lantai. Berbeda dari judo, kurash melarang teknik menahan atau kuncian di atas matras.',
+        'venue' => 'GOR Pajajaran Indoor B',
+        'alamat' => 'Jl. Pemuda No. 02, Tanah Sareal, Kota Bogor',
+        'rute' => $venueRutes['GOR Pajajaran'],
+    ],
+    [
+        'slug' => 'menembak',
+        'nama' => 'Menembak',
+        'logo' => '7.MENEMBAK.png',
+        'deskripsi' => 'Menembak adalah cabang olahraga akurasi yang menguji ketepatan, kestabilan, dan konsentrasi atlet dalam membidik sasaran. Terdapat berbagai nomor senapan dan pistol pada jarak tertentu dengan sistem skor.',
+        'venue' => 'Lapangan Tembak Cisangkan',
+        'alamat' => 'Jl. Raya Cisangkan, Padasuka, Cimahi Tengah, Kota Cimahi',
+        'rute' => $venueRutes['Lapangan Tembak Cisangkan'],
+    ],
+    [
+        'slug' => 'modern-pentathlon',
+        'nama' => 'Modern Pentathlon',
+        'logo' => '26.MODERN PENTATHLON.png',
+        'deskripsi' => 'Modern pentathlon menggabungkan lima nomor olahraga: anggar, renang, menembak, lari, dan berkuda. Atlet diuji ketangguhannya secara menyeluruh dalam kompetisi yang menuntut keterampilan serba bisa.',
+        'venue' => 'Stadion Pajajaran',
+        'alamat' => 'Jl. Pemuda No. 02, Tanah Sareal, Kota Bogor',
+        'rute' => $venueRutes['GOR Pajajaran'],
+    ],
+    [
+        'slug' => 'panahan',
+        'nama' => 'Panahan',
+        'logo' => '5.PANAHAN.png',
+        'deskripsi' => 'Panahan adalah olahraga akurasi menggunakan busur dan anak panah untuk membidik sasaran pada jarak tertentu. Ketepatan, kestabilan, dan kontrol pernapasan menjadi kunci utama untuk meraih skor terbaik.',
+        'venue' => 'Stadion Pajajaran',
+        'alamat' => 'Jl. Pemuda No. 02, Tanah Sareal, Kota Bogor',
+        'rute' => $venueRutes['GOR Pajajaran'],
+    ],
+    [
+        'slug' => 'panjat-tebing',
+        'nama' => 'Panjat Tebing',
+        'logo' => '23.PANJAT TEBING.png',
+        'deskripsi' => 'Panjat tebing adalah olahraga memanjat dinding atau tebing buatan yang menguji kekuatan, keseimbangan, dan ketahanan. Terdapat nomor speed, boulder, dan lead dengan tingkat kesulitan lintasan yang berbeda-beda.',
+        'venue' => 'Stadion Pajajaran',
+        'alamat' => 'Jl. Pemuda No. 02, Tanah Sareal, Kota Bogor',
+        'rute' => $venueRutes['GOR Pajajaran'],
+    ],
+    [
+        'slug' => 'pencak-silat',
+        'nama' => 'Pencak Silat',
+        'logo' => '12.PENCAK SILAT.png',
+        'deskripsi' => 'Pencak silat adalah seni bela diri tradisional Indonesia yang memadukan gerakan menyerang, bertahan, dan seni gerak. Selain nomor tanding, terdapat kategori seni yang menampilkan keindahan gerakan jurus.',
+        'venue' => 'GOR Pajajaran Indoor A',
+        'alamat' => 'Jl. Pemuda No. 02, Tanah Sareal, Kota Bogor',
+        'rute' => $venueRutes['GOR Pajajaran'],
+    ],
+    [
+        'slug' => 'petanque',
+        'nama' => 'Petanque',
+        'logo' => '16.PENTAQUE.png',
+        'deskripsi' => 'Petanque adalah olahraga lempar bola besi untuk mendekatkan diri ke bola sasaran (jack). Mengutamakan akurasi, strategi, dan ketenangan dalam setiap lemparan di lintasan berpasir.',
+        'venue' => 'Green Forest Hotel',
+        'alamat' => 'Jl. Pahlawan, Bondongan, Kec. Bogor Selatan, Kota Bogor',
+        'rute' => $venueRutes['Green Forest Hotel'],
+    ],
+    [
+        'slug' => 'sambo',
+        'nama' => 'Sambo',
+        'logo' => '17.SAMBO.png',
+        'deskripsi' => 'Sambo adalah seni bela diri asal Rusia yang menggabungkan teknik gulat, bantingan, dan kuncian. Pertandingan dimenangkan dengan menjatuhkan lawan, mendapatkan poin teknis, maupun menyerah karena kuncian.',
+        'venue' => 'GOR Pajajaran Indoor B',
+        'alamat' => 'Jl. Pemuda No. 02, Tanah Sareal, Kota Bogor',
+        'rute' => $venueRutes['GOR Pajajaran'],
+    ],
+    [
+        'slug' => 'shorinji-kempo',
+        'nama' => 'Shorinji Kempo',
+        'logo' => '15.KEMPO.png',
+        'deskripsi' => 'Shorinji kempo adalah seni bela diri asal Jepang yang menekankan keseimbangan teknik serangan dan pertahanan. Latihannya berfokus pada pembentukan karakter dan pertahanan diri dengan gerakan yang efisien.',
+        'venue' => 'Gymnasium Sekolah Vokasi IPB',
+        'alamat' => 'Jl. Lodaya II, Cilibende, Babakan, Kec. Bogor Tengah, Kota Bogor',
+        'rute' => $venueRutes['Gymnasium Sekolah Vokasi IPB'],
+    ],
+    [
+        'slug' => 'ski-air',
+        'nama' => 'Ski Air',
+        'logo' => '22.SKI AIR.png',
+        'deskripsi' => 'Ski air adalah olahraga air yang dilakukan dengan meluncur di atas permukaan air menggunakan papan ski sambil ditarik perahu. Atlet dinilai dari kecepatan, keseimbangan, dan kemampuan melakukan trik di atas air.',
+        'venue' => 'Kota Baru Parahyangan',
+        'alamat' => 'Padalarang, Kab. Bandung Barat, Jawa Barat',
+        'rute' => $venueRutes['Kota Baru Parahyangan'],
+    ],
+    [
+        'slug' => 'taekwondo',
+        'nama' => 'Taekwondo',
+        'logo' => '9.TAEKWONDO.png',
+        'deskripsi' => 'Taekwondo adalah seni bela diri asal Korea yang menonjolkan tendangan tinggi dan teknik serangan cepat. Pertandingan dinilai berdasarkan teknik tendangan dan pukulan yang sah ke sasaran badan dan kepala.',
+        'venue' => 'GOR Pajajaran Indoor A',
+        'alamat' => 'Jl. Pemuda No. 02, Tanah Sareal, Kota Bogor',
+        'rute' => $venueRutes['GOR Pajajaran'],
+    ],
+    [
+        'slug' => 'tarung-derajat',
+        'nama' => 'Tarung Derajat',
+        'logo' => '19.TARUNG DERAJAT.png',
+        'deskripsi' => 'Tarung derajat adalah seni bela diri asal Indonesia yang mengedepankan kekuatan pukulan dan tendangan praktis. Dikenal dengan semboyan "Aku Ramah Bukan Berarti Takut", olahraga ini menekankan refleks dan efisiensi gerakan.',
+        'venue' => 'Gymnasium Sekolah Vokasi IPB',
+        'alamat' => 'Jl. Lodaya II, Cilibende, Babakan, Kec. Bogor Tengah, Kota Bogor',
+        'rute' => $venueRutes['Gymnasium Sekolah Vokasi IPB'],
+    ],
+    [
+        'slug' => 'tenis-meja',
+        'nama' => 'Tenis Meja',
+        'logo' => '8.TENIS MEJA.png',
+        'deskripsi' => 'Tenis meja atau pingpong dimainkan di atas meja dengan bet dan bola kecil. Kecepatan reaksi, kontrol putaran bola, dan strategi menjadi kunci untuk memenangkan pertandingan.',
+        'venue' => 'GOR Yasmin Bulutangkis',
+        'alamat' => 'Jl. KH. R. Abdullah bin Nuh, Curugmekar, Kec. Bogor Barat, Kota Bogor',
+        'rute' => $venueRutes['GOR Yasmin Bulutangkis'],
+    ],
+];
+
+$kontingens = [
+    ['slug' => 'kota-bogor', 'nama' => 'Kota Bogor', 'logo' => 'kota-bogor.png'],
+    ['slug' => 'kota-bekasi', 'nama' => 'Kota Bekasi', 'logo' => 'kota-bekasi.png'],
+    ['slug' => 'kota-depok', 'nama' => 'Kota Depok', 'logo' => 'kota-depok.png'],
+    ['slug' => 'kota-bandung', 'nama' => 'Kota Bandung', 'logo' => 'kota-bandung.png'],
+    ['slug' => 'kota-cimahi', 'nama' => 'Kota Cimahi', 'logo' => 'kota-cimahi.png'],
+    ['slug' => 'kota-cirebon', 'nama' => 'Kota Cirebon', 'logo' => 'kota-cirebon.png'],
+    ['slug' => 'kota-sukabumi', 'nama' => 'Kota Sukabumi', 'logo' => 'kota-sukabumi.png'],
+    ['slug' => 'kota-tasikmalaya', 'nama' => 'Kota Tasikmalaya', 'logo' => 'kota-tasikmalaya.png'],
+    ['slug' => 'kab-bogor', 'nama' => 'Kabupaten Bogor', 'logo' => 'kab-bogor.png'],
+    ['slug' => 'kab-cianjur', 'nama' => 'Kabupaten Cianjur', 'logo' => 'kab-cianjur.png'],
+    ['slug' => 'kab-ciamis', 'nama' => 'Kabupaten Ciamis', 'logo' => 'kab-ciamis.png'],
+    ['slug' => 'kab-garut', 'nama' => 'Kabupaten Garut', 'logo' => 'kab-garut.png'],
+    ['slug' => 'kab-karawang', 'nama' => 'Kabupaten Karawang', 'logo' => 'kab-karawang.png'],
+    ['slug' => 'kab-sumedang', 'nama' => 'Kabupaten Sumedang', 'logo' => 'kab-sumedang.png'],
+];
+
+$klasemen = [
+    ['slug' => 'kota-bogor', 'nama' => 'Kota Bogor', 'logo' => 'kota-bogor.png', 'emas' => 0, 'perak' => 0, 'perunggu' => 0],
+    ['slug' => 'kota-bekasi', 'nama' => 'Kota Bekasi', 'logo' => 'kota-bekasi.png', 'emas' => 0, 'perak' => 0, 'perunggu' => 0],
+    ['slug' => 'kota-depok', 'nama' => 'Kota Depok', 'logo' => 'kota-depok.png', 'emas' => 0, 'perak' => 0, 'perunggu' => 0],
+    ['slug' => 'kota-bandung', 'nama' => 'Kota Bandung', 'logo' => 'kota-bandung.png', 'emas' => 0, 'perak' => 0, 'perunggu' => 0],
+    ['slug' => 'kota-cimahi', 'nama' => 'Kota Cimahi', 'logo' => 'kota-cimahi.png', 'emas' => 0, 'perak' => 0, 'perunggu' => 0],
+    ['slug' => 'kota-cirebon', 'nama' => 'Kota Cirebon', 'logo' => 'kota-cirebon.png', 'emas' => 0, 'perak' => 0, 'perunggu' => 0],
+    ['slug' => 'kota-sukabumi', 'nama' => 'Kota Sukabumi', 'logo' => 'kota-sukabumi.png', 'emas' => 0, 'perak' => 0, 'perunggu' => 0],
+    ['slug' => 'kota-tasikmalaya', 'nama' => 'Kota Tasikmalaya', 'logo' => 'kota-tasikmalaya.png', 'emas' => 0, 'perak' => 0, 'perunggu' => 0],
+    ['slug' => 'kab-bogor', 'nama' => 'Kabupaten Bogor', 'logo' => 'kab-bogor.png', 'emas' => 0, 'perak' => 0, 'perunggu' => 0],
+    ['slug' => 'kab-cianjur', 'nama' => 'Kabupaten Cianjur', 'logo' => 'kab-cianjur.png', 'emas' => 0, 'perak' => 0, 'perunggu' => 0],
+    ['slug' => 'kab-ciamis', 'nama' => 'Kabupaten Ciamis', 'logo' => 'kab-ciamis.png', 'emas' => 0, 'perak' => 0, 'perunggu' => 0],
+    ['slug' => 'kab-garut', 'nama' => 'Kabupaten Garut', 'logo' => 'kab-garut.png', 'emas' => 0, 'perak' => 0, 'perunggu' => 0],
+    ['slug' => 'kab-karawang', 'nama' => 'Kabupaten Karawang', 'logo' => 'kab-karawang.png', 'emas' => 0, 'perak' => 0, 'perunggu' => 0],
+    ['slug' => 'kab-sumedang', 'nama' => 'Kabupaten Sumedang', 'logo' => 'kab-sumedang.png', 'emas' => 0, 'perak' => 0, 'perunggu' => 0],
+];
+
+$atlets = [];
+
+$liveStream = [
+    'video_id' => '4vdOCO3KWB0',
+    'title' => 'Live Streaming Resmi PORPROV XV Kota Bogor 2026',
+];
+
 Route::get('/chatbot/chat', [ChatbotController::class, 'chat']);
 Route::post('/chatbot', [ChatbotController::class, 'chat']);
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/cabor', function () use ($cabors) {
+    return view('cabor', compact('cabors'));
+});
+
+Route::get('/kontingen', function () use ($kontingens) {
+    return view('kontingen', compact('kontingens'));
+});
+
+Route::get('/klasemen-medali', function () use ($klasemen) {
+    usort($klasemen, function ($a, $b) {
+        return [$b['emas'], $b['perak'], $b['perunggu']] <=> [$a['emas'], $a['perak'], $a['perunggu']];
+    });
+    return view('klasemen-medali', compact('klasemen'));
+});
+
+Route::get('/atlet', function () use ($atlets) {
+    usort($atlets, function ($a, $b) {
+        return [$b['emas'], $b['perak'], $b['perunggu']] <=> [$a['emas'], $a['perak'], $a['perunggu']];
+    });
+    return view('atlet', compact('atlets'));
+});
+
+Route::get('/live-streaming', function () use ($liveStream) {
+    return view('live-streaming', compact('liveStream'));
 });
 
 Route::get('/berita', function () {

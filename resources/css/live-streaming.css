@@ -1,0 +1,134 @@
+/* ============================================================
+   LIVE STREAMING Page — PORPROV Jabar 2026
+   ============================================================ */
+
+.live-page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 42px 28px 80px;
+    position: relative;
+    z-index: 1;
+}
+
+.live-main {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 26px;
+    box-shadow: 0 12px 40px -20px rgba(1, 52, 105, 0.3);
+}
+
+.live-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+}
+
+.live-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: #dc2626;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    padding: 6px 14px;
+    border-radius: 20px;
+    flex-shrink: 0;
+}
+
+.live-dot {
+    width: 8px;
+    height: 8px;
+    background: #fff;
+    border-radius: 50%;
+    animation: live-pulse 1.4s ease-in-out infinite;
+}
+
+@keyframes live-pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.35; transform: scale(0.75); }
+}
+
+.live-title {
+    font-size: 20px;
+    font-weight: 800;
+    color: #013469;
+    margin: 0;
+    line-height: 1.4;
+    letter-spacing: -0.3px;
+}
+
+.live-player-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #000;
+    box-shadow: 0 10px 30px -16px rgba(1, 52, 105, 0.4);
+}
+
+.live-player-wrap iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.live-note {
+    font-size: 13.5px;
+    color: #64748b;
+    line-height: 1.7;
+    margin: 18px 0 0;
+}
+
+.live-actions {
+    margin-top: 18px;
+}
+
+.live-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #013469, #0a4fa8);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    padding: 13px 24px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 8px 24px -12px rgba(1, 52, 105, 0.55);
+}
+
+.live-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px -12px rgba(1, 52, 105, 0.6);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+    .live-page {
+        padding: 30px 18px 60px;
+    }
+
+    .live-main {
+        padding: 18px;
+    }
+
+    .live-title {
+        font-size: 17px;
+    }
+
+    .live-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
