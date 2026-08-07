@@ -82,29 +82,6 @@ $bg4 = asset('images/venue4.jpeg');
                 Semangat sportivitas, persaudaraan dan prestasi untuk membangun Jawa Barat yang lebih maju. Kota Bogor siap menjadi tuan rumah yang ramah dan menginspirasi.
             </p>
 
-            <!-- Hero Countdown Component (Mobile: Centered Above Buttons) -->
-            <div class="hero-countdown-wrapper mobile-only">
-                <div class="hero-countdown center-aligned">
-                    <div class="cd-box">
-                        <span class="cd-num gold cd-days-val">00</span>
-                        <span class="cd-label">HARI</span>
-                    </div>
-                    <div class="cd-box">
-                        <span class="cd-num gold cd-hours-val">00</span>
-                        <span class="cd-label">JAM</span>
-                    </div>
-                    <div class="cd-box">
-                        <span class="cd-num gold cd-minutes-val">00</span>
-                        <span class="cd-label">MENIT</span>
-                    </div>
-                    <div class="cd-box">
-                        <span class="cd-num gold cd-seconds-val">00</span>
-                        <span class="cd-label">DETIK</span>
-                    </div>
-                </div>
-                <span class="cd-caption">Menuju Pembukaan PORPROV Jabar</span>
-            </div>
-
             <div class="hero-actions">
                 <a href="{{ url('/jadwal') }}" class="btn-hero-primary">
                     <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.2">
