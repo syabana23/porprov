@@ -8,15 +8,12 @@
 @import './berita.css';
 @import './galeri.css';
 @import './privasi.css';
-<<<<<<< HEAD
 @import './countdown.css';
-=======
 @import './cabor.css';
 @import './kontingen.css';
 @import './klasemen.css';
 @import './atlet.css';
 @import './live-streaming.css';
->>>>>>> bf538f426f728e9e17af6ca22145d4afa37adb7a
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';

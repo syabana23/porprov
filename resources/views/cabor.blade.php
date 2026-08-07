@@ -43,7 +43,7 @@
         @foreach ($cabors as $cabor)
         <a href="#caborModal" class="cabor-card" data-slug="{{ $cabor['slug'] }}">
             <div class="cabor-card-logo">
-                <img src="{{ asset('images/CABOR/' . $cabor['logo']) }}" alt="{{ $cabor['nama'] }}">
+                <img src="{{ asset('images/cabor/' . $cabor['logo']) }}" alt="{{ $cabor['nama'] }}">
             </div>
             <span class="cabor-card-name">{{ $cabor['nama'] }}</span>
             <span class="cabor-card-venue">
@@ -119,7 +119,7 @@
     window.CABORS = @json($cabors);
 </script>
 <script>
-    const CABOR_IMG = "{{ asset('images/CABOR') }}";
+    const CABOR_IMG = "{{ asset('images/cabor') }}";
     const caborModal = document.getElementById('caborModal');
     const caborCloseBtn = document.getElementById('caborModalClose');
 

@@ -24,7 +24,7 @@ $bg4 = asset('images/venue4.jpeg');
         <div class="hero-slide active" style="background-image: url('{{ $bg1 }}')">
             <div class="hero-slide-overlay"></div>
             <div class="hero-slide-cabor">
-                <img src="{{ asset('images/cabor/23.PANJAT TEBING.PNG') }}" alt="Panjat Tebing">
+                <img src="{{ asset('images/cabor/23.PANJAT TEBING.png') }}" alt="Panjat Tebing">
             </div>
         </div>
         <!-- Slide 2: Stadion Pajajaran -->
@@ -1428,7 +1428,7 @@ $bg4 = asset('images/venue4.jpeg');
         const mapElement = document.getElementById("map-canvas");
         if (!mapElement) return;
 
-        map = L.map('map-canvas').setView([-6.65, 107.30], 10);
+        map = L.map('map-canvas').setView(bogorCenter, 13);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; OpenStreetMap'
@@ -1437,9 +1437,21 @@ $bg4 = asset('images/venue4.jpeg');
         renderVenues(venueData);
         setupFilter();
         setupFacilityFilters();
-        setTimeout(function() {
-            map.invalidateSize();
-        }, 100);
+        ensureMapSize(mapElement);
+    }
+
+    function ensureMapSize(mapElement) {
+        if (!mapElement) return;
+        const invalidate = function() {
+            if (map) map.invalidateSize();
+        };
+        setTimeout(invalidate, 100);
+        window.addEventListener('load', invalidate);
+        const parent = mapElement.parentElement;
+        if (parent && window.ResizeObserver) {
+            const ro = new ResizeObserver(invalidate);
+            ro.observe(parent);
+        }
     }
 
     function createSportIcon(sportName) {
@@ -1550,7 +1562,7 @@ $bg4 = asset('images/venue4.jpeg');
             } else {
                 alert('Venue tidak ditemukan dengan kriteria tersebut.');
                 renderVenues(venueData);
-                map.setView([-6.65, 107.30], 10);
+                map.setView([-6.587, 106.803], 13);
             }
         });
 
@@ -1558,7 +1570,7 @@ $bg4 = asset('images/venue4.jpeg');
             setTimeout(() => {
                 clearMarkers();
                 renderVenues(venueData);
-                map.setView([-6.65, 107.30], 10);
+                map.setView([-6.587, 106.803], 13);
                 const floatingCard = document.getElementById('floating-gor-card');
                 if (floatingCard) floatingCard.style.display = 'none';
                 const placeholder = document.getElementById('facilities-placeholder');

@@ -5,7 +5,7 @@
                 <!-- Kolom 1: Branding -->
                 <div class="footer-brand">
                     <a href="{{ url('/') }}" class="footer-logo">
-                        <img src="{{ asset('images/logo_baru.png') }}" alt="Logo PORPROV XV">
+                        <img src="{{ asset('images/logo_baru.PNG') }}" alt="Logo PORPROV XV">
                     </a>
                     <p class="footer-desc">
                         <strong>PORPROV XV</strong> Kota Bogor 2026 adalah ajang sport festival terbesar tingkat provinsi — tempat atlet dari seluruh kota/kabupaten di Jawa Barat.
@@ -48,8 +48,8 @@
 
     <!-- Copyright Bar -->
     <div class="footer-bottom">
-        <img src="{{ asset('images/footer/ribbon.png') }}" alt="" aria-hidden="true" class="ribbon ribbon-left">
-        <img src="{{ asset('images/footer/ribbon.png') }}" alt="" aria-hidden="true" class="ribbon ribbon-right">
+        <img src="{{ asset('images/footer/ribbon-sm.png') }}" alt="" aria-hidden="true" class="ribbon ribbon-left">
+        <img src="{{ asset('images/footer/ribbon-sm.png') }}" alt="" aria-hidden="true" class="ribbon ribbon-right">
         <p>&copy; 2026 Pemerintah Kota Bogor</p>
     </div>
 </footer>

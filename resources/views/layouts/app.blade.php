@@ -33,7 +33,7 @@
     <header class="site-header">
         <div class="header-inner">
             <a href="{{ url('/') }}" class="header-logo">
-                <img src="{{ asset('images/logo_baru.png') }}" alt="Logo PORPROV XV">
+                <img src="{{ asset('images/logo_baru.PNG') }}" alt="Logo PORPROV XV">
                 <span class="logo-divider" aria-hidden="true"></span>
                 <span class="city-logo-row">
                     <img src="{{ asset('images/kota-bogor.png') }}" alt="Logo Kota Bogor">
@@ -184,8 +184,6 @@
     </div>
 
     @include('partials.footer')
-
-    @stack('scripts')
 
     <script>
         // Logika Hamburger Menu Mobile

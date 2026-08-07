@@ -1121,7 +1121,7 @@
         const mapElement = document.getElementById("map-canvas");
         if (!mapElement) return;
 
-        map = L.map('map-canvas').setView(bogorCenter, 14);
+        map = L.map('map-canvas').setView(bogorCenter, 13);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -1130,9 +1130,38 @@
         renderVenues(venueData);
         setupFilter();
         setupFacilityFilters();
-        setTimeout(function() {
-            map.invalidateSize();
-        }, 100);
+
+        const bogorBounds = L.latLngBounds();
+        venueData.forEach(v => bogorBounds.extend([v.lat, v.lng]));
+        map.fitBounds(bogorBounds, {
+            padding: [40, 40],
+            maxZoom: 14
+        });
+
+        ensureMapSize(mapElement);
+    }
+
+    function ensureMapSize(mapElement) {
+        if (!mapElement) return;
+        const invalidate = function() {
+            if (map) map.invalidateSize();
+        };
+        setTimeout(invalidate, 100);
+        window.addEventListener('load', invalidate);
+        const parent = mapElement.parentElement;
+        if (parent && window.ResizeObserver) {
+            const ro = new ResizeObserver(invalidate);
+            ro.observe(parent);
+        }
+    }
+
+    function resetVenueBounds() {
+        const bogorBounds = L.latLngBounds();
+        venueData.forEach(v => bogorBounds.extend([v.lat, v.lng]));
+        map.fitBounds(bogorBounds, {
+            padding: [40, 40],
+            maxZoom: 14
+        });
     }
 
     // Fungsi Render Marker Venue
@@ -1249,7 +1278,7 @@
                     showVenueDetails(v);
                 } else {
                     alert('Venue tidak ditemukan dengan kriteria tersebut.');
-                    map.setView([-6.587, 106.803], 14);
+                    resetVenueBounds();
                 }
             }
         });
@@ -1259,7 +1288,7 @@
             setTimeout(() => {
                 clearMarkers();
                 renderVenues(venueData);
-                map.setView([-6.587, 106.803], 14);
+                resetVenueBounds();
                 document.getElementById('floating-gor-card').style.display = 'none';
                 // Show placeholder, hide all categories
                 const placeholder = document.getElementById('facilities-placeholder');
