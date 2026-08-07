@@ -10,6 +10,48 @@ toggle.addEventListener("click", () => {
         chatWindow.style.display === "flex" ? "none" : "flex";
 });
 
+function getCurrentTime() {
+
+    const now = new Date();
+
+    return now.toLocaleTimeString("id-ID", {
+
+        hour: "2-digit",
+
+        minute: "2-digit"
+
+    });
+
+}
+
+function saveChat() {
+
+    localStorage.setItem(
+
+        "porprov_chat",
+
+        chatBody.innerHTML
+
+    );
+
+}
+
+function loadChat() {
+
+    const chat = localStorage.getItem(
+
+        "porprov_chat"
+
+    );
+
+    if (chat) {
+
+        chatBody.innerHTML = chat;
+
+    }
+
+}
+
 // tambah bubble
 function addMessage(message, sender) {
 
@@ -19,7 +61,7 @@ function addMessage(message, sender) {
 
     const avatar = sender === "user"
         ? "👤"
-        : "🤖";
+        : "👑";
 
     wrapper.innerHTML = `
 
@@ -31,15 +73,27 @@ function addMessage(message, sender) {
 
         <div class="${sender}-message">
 
+        <div>
+
             ${message}
 
         </div>
+
+        <div class="chat-time">
+
+            ${getCurrentTime()}
+
+        </div>
+
+</div>
 
     `;
 
     chatBody.appendChild(wrapper);
 
     chatBody.scrollTop = chatBody.scrollHeight;
+
+    saveChat();
 
 }
 
@@ -58,7 +112,17 @@ function addBotResponse(data) {
 
         <div class="bot-message">
 
-            <div>${data.answer}</div>
+           <div>
+
+            ${data.answer}
+
+        </div>
+
+        <div class="chat-time">
+
+            ${getCurrentTime()}
+
+        </div>
 
     `;
 
@@ -85,6 +149,8 @@ function addBotResponse(data) {
     chatBody.appendChild(wrapper);
 
     chatBody.scrollTop = chatBody.scrollHeight;
+
+    saveChat();
 
 }
 
@@ -176,3 +242,18 @@ input.addEventListener("keypress", (e) => {
     }
 
 });
+
+// Muat riwayat chat saat halaman dibuka
+loadChat();
+
+if (!localStorage.getItem("porprov_chat")) {
+
+    addBotResponse({
+
+        answer: "Halo 👋<br>Selamat datang di Website PORPROV Jabar XV.",
+
+        button: null
+
+    });
+
+}

@@ -30,14 +30,7 @@
 
     </div>
 
-    <div id="chat-body">
-
-        <div class="bot-message">
-            Halo 👋 <br>
-            Selamat datang di Website PORPROV Jabar XV.
-        </div>
-
-    </div>
+    <div id="chat-body"></div>
 
     <div id="chat-footer">
 
