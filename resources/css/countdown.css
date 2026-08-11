@@ -138,9 +138,48 @@
     color: #FDB813;
 }
 
-/* Sembunyi di mobile — hero countdown sudah ada di beranda */
+/* Tampil juga di mobile — ngambang seperti desktop */
 @media (max-width: 767px) {
-    .pcd-wrap {
-        display: none;
+    .pcd-card {
+        left: 12px;
+        bottom: 16px;
+        max-width: calc(100vw - 24px);
+        padding: 12px;
+        border-radius: 20px;
+    }
+
+    .pcd-title {
+        font-size: 16px;
+    }
+
+    .pcd-sub {
+        font-size: 12px;
+    }
+
+    .pcd-timer {
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .pcd-unit {
+        min-width: 0;
+        flex: 1 1 42%;
+        gap: 2px;
+    }
+
+    .pcd-digit {
+        min-width: 22px;
+        height: 30px;
+        font-size: 15px;
+        border-radius: 7px;
+    }
+
+    .pcd-label {
+        font-size: 12px;
+    }
+
+    .pcd-toggle {
+        padding: 3px 10px;
+        font-size: 11px;
     }
 }
