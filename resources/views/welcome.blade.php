@@ -239,6 +239,7 @@ $bg4 = asset('images/venue4.jpeg');
                         <option value="rumah-makan">Restoran & Kuliner</option>
                         <option value="polisi">Polisi & Keamanan</option>
                         <option value="transport">Sewa Kendaraan</option>
+                        <option value="rekreasi">Rekreasi</option>
                     </select>
                 </div>
 
@@ -345,6 +346,12 @@ $bg4 = asset('images/venue4.jpeg');
                     </svg>
                     Sewa Kendaraan
                 </button>
+                <button class="facility-filter-btn" data-filter="cat-rekreasi">
+                    <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M20.57 14.86 22 13.43 20.57 12 17 15.57 8.43 7 12 3.43 10.57 2 9.14 3.43 7.71 2 5.57 4.14 4.14 2.71 2.71 4.14l1.43 1.43L2 7.71l1.43 1.43L2 10.57 3.43 12 7 8.43 15.57 17 12 20.57 13.43 22l1.43-1.43L16.29 22l2.14-2.14 1.43 1.43 1.43-1.43-1.43-1.43L22 16.29z" />
+                    </svg>
+                    Rekreasi
+                </button>
             </div>
 
             <!-- Scrollable Facility Results List -->
@@ -435,6 +442,20 @@ $bg4 = asset('images/venue4.jpeg');
                         <h3>Sewa Kendaraan</h3>
                     </div>
                     <div id="transport-container"></div>
+                </div>
+
+                <!-- Rekreasi -->
+                <div class="facility-category" id="cat-rekreasi" style="display:none;">
+                    <div class="facility-cat-header">
+                        <span class="cat-dot" style="background:#0d9488;"></span>
+                        <div class="facility-cat-icon" style="background:#ccfbf1; color:#0d9488;">
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.57 14.86 22 13.43 20.57 12 17 15.57 8.43 7 12 3.43 10.57 2 9.14 3.43 7.71 2 5.57 4.14 4.14 2.71 2.71 4.14l1.43 1.43L2 7.71l1.43 1.43L2 10.57 3.43 12 7 8.43 15.57 17 12 20.57 13.43 22l1.43-1.43L16.29 22l2.14-2.14 1.43 1.43 1.43-1.43-1.43-1.43L22 16.29z" />
+                            </svg>
+                        </div>
+                        <h3>Rekreasi</h3>
+                    </div>
+                    <div id="rekreasi-container"></div>
                 </div>
             </div>
         </div>
@@ -810,6 +831,13 @@ $bg4 = asset('images/venue4.jpeg');
         }
     ];
 
+    const rekreasiFacilities = [{
+        name: "IKIGAI Fitness",
+        address: "IKIGAI Ekalos, Gedung Plaza Ekalos, Jl. Siliwangi, RW.04, Sukasari, Bogor",
+        distance: "buka 06:00-21:00",
+        mapUrl: "https://www.google.com/maps/place/IKIGAI+FITNESS+-+Lippo+Plaza+Ekalokasari+Bogor/@-6.6216624,106.8144763,17z/data=!3m2!4b1!5s0x2e69c5fdf77397b5:0x881f18442bc0f864!4m6!3m5!1s0x2e69c5d5719e94ab:0x8c6b0ea36866c2e6!8m2!3d-6.6216624!4d106.8170512!16s%2Fg%2F11stp2j67s?entry=ttu&g_ep=EgoyMDI2MDgwNS4xIKXMDSoASAFQAw%3D%3D"
+    }];
+
     const pajajaranFacilities = {
         hotel: [{
                 name: "Zest Hotel Bogor",
@@ -861,7 +889,8 @@ $bg4 = asset('images/venue4.jpeg');
             distance: "300 m",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=Rumah%20Makan%20Ampera%20Pemuda%20Jl.%20Pemuda%20No.%2027%20Tanah%20Sareal%20Bogor"
         }],
-        transport: transportFacilities
+        transport: transportFacilities,
+        rekreasi: rekreasiFacilities
     };
 
     const greenForestFacilities = {
@@ -909,7 +938,8 @@ $bg4 = asset('images/venue4.jpeg');
             distance: "400 m",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=Resto%20Kampoeng%20Konsep%20Jl.%20Soemanta%20Diredja%20No.%2028%20Pamoyanan%20Bogor%20Selatan"
         }],
-        transport: transportFacilities
+        transport: transportFacilities,
+        rekreasi: rekreasiFacilities
     };
 
     const vokasiFacilities = {
@@ -950,7 +980,8 @@ $bg4 = asset('images/venue4.jpeg');
             distance: "250 m",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=Toko%20Adelways%20Jl.%20Cilibende%20Babakan%20Bogor%20Tengah"
         }],
-        transport: transportFacilities
+        transport: transportFacilities,
+        rekreasi: rekreasiFacilities
     };
 
     const yasminFacilities = {
@@ -1004,7 +1035,8 @@ $bg4 = asset('images/venue4.jpeg');
             distance: "350 m",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=Rumah%20Makan%20Ampera%20Yasmin%20Jl.%20KH.%20R.%20Abdullah%20Bin%20Nuh%20No.%2037%20Curugmekar"
         }],
-        transport: transportFacilities
+        transport: transportFacilities,
+        rekreasi: rekreasiFacilities
     };
 
     const kemangFacilities = {
@@ -1045,7 +1077,8 @@ $bg4 = asset('images/venue4.jpeg');
             distance: "450 m",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=Ayam%20Goreng%20Bakar%20Sayati%20Jl.%20Raya%20Parung%20Bogor%20Semplak%20Barat%20Kemang"
         }],
-        transport: transportFacilities
+        transport: transportFacilities,
+        rekreasi: rekreasiFacilities
     };
 
     const sentulFacilities = {
@@ -1093,7 +1126,8 @@ $bg4 = asset('images/venue4.jpeg');
             distance: "1.2 km",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=Restoran%20Lorin%20Sentul%20Kawasan%20Sirkuit%20Sentul%20Internasional%20Babakan%20Madang"
         }],
-        transport: transportFacilities
+        transport: transportFacilities,
+        rekreasi: rekreasiFacilities
     };
 
     const gunungMasFacilities = {
@@ -1342,7 +1376,8 @@ $bg4 = asset('images/venue4.jpeg');
             restaurant: 'restaurant',
             police: 'police',
             pharmacy: 'pharmacy',
-            transport: 'transport'
+            transport: 'transport',
+            rekreasi: 'rekreasi'
         };
         const venueFacilities = facilitiesData[venue.name];
 
@@ -1378,6 +1413,9 @@ $bg4 = asset('images/venue4.jpeg');
             } else if (type === 'transport') {
                 iconBg = '#e0f2fe';
                 iconColor = '#0284c7';
+            } else if (type === 'rekreasi') {
+                iconBg = '#ccfbf1';
+                iconColor = '#0d9488';
             } else {
                 iconBg = '#dbeafe';
                 iconColor = '#2563eb';
@@ -1523,6 +1561,7 @@ $bg4 = asset('images/venue4.jpeg');
                     'rumah-makan': 'cat-resto',
                     'polisi': 'cat-police',
                     'transport': 'cat-transport',
+                    'rekreasi': 'cat-rekreasi',
                 };
                 const targetCat = filterToCategory[fasilitasVal];
                 if (targetCat) {
@@ -1616,6 +1655,7 @@ $bg4 = asset('images/venue4.jpeg');
             renderFacilityCategory(venue, 'police', 'police-container', 'Kantor Polisi', 'cat-police');
             renderFacilityCategory(venue, 'pharmacy', 'apotek-container', 'Apotek', 'cat-apotek');
             renderFacilityCategory(venue, 'transport', 'transport-container', 'Sewa Kendaraan', 'cat-transport');
+            renderFacilityCategory(venue, 'rekreasi', 'rekreasi-container', 'Rekreasi', 'cat-rekreasi');
         }
 
         if (window.innerWidth <= 768 && floatingCard) {
@@ -1663,6 +1703,12 @@ $bg4 = asset('images/venue4.jpeg');
                 containerId: 'transport-container',
                 title: 'Sewa Kendaraan',
                 catId: 'cat-transport'
+            },
+            'cat-rekreasi': {
+                type: 'rekreasi',
+                containerId: 'rekreasi-container',
+                title: 'Rekreasi',
+                catId: 'cat-rekreasi'
             },
         };
 

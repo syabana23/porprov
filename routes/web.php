@@ -762,6 +762,7 @@ Route::get('/fasilitas', function () {
         ['nama' => 'PO. AdisaPutro Trans', 'tipe' => 'transport', 'tipe_label' => 'Sewa Kendaraan', 'alamat' => 'Jl. Raya Cifor No. 14 RT 03/RW 08 Bubulak, Bogor Barat, Kota Bogor', 'venue' => 'Kota Bogor', 'jarak' => 'Kota Bogor', 'gmaps' => 'https://www.google.com/maps/search/?api=1&query=PO+AdisaPutro+Trans+Bubulak+Bogor', 'telepon' => '+62 857-7496-7369 (Rusli)', 'layanan' => 'sewa kendaraan', 'website' => '', 'image' => ''],
         ['nama' => 'PT. Surya Harapan Perdana (PasteurTrans)', 'tipe' => 'transport', 'tipe_label' => 'Sewa Kendaraan', 'alamat' => 'Jl. R. Saleh S. Bustaman No.15, RT.01/RW.11, Empang, Kec. Bogor Sel., Kota Bogor, Jawa Barat 16132', 'venue' => 'Kota Bogor', 'jarak' => 'Kota Bogor', 'gmaps' => 'https://www.google.com/maps/search/?api=1&query=PT+Surya+Harapan+Perdana+PasteurTrans+Empang+Bogor', 'telepon' => '+62 823-2224-9794', 'layanan' => 'sewa kendaraan', 'website' => '', 'image' => ''],
         ['nama' => 'Master Tour & Travel', 'tipe' => 'transport', 'tipe_label' => 'Sewa Kendaraan', 'alamat' => 'Jl. Raya Cipaku No.21, RT.03/RW.01, Cipaku, Kec. Bogor Sel., Kota Bogor, Jawa Barat 16133', 'venue' => 'Kota Bogor', 'jarak' => 'Kota Bogor', 'gmaps' => 'https://www.google.com/maps/search/?api=1&query=Master+Tour+%26+Travel+Cipaku+Bogor', 'telepon' => '+62 857-1463-4597 (Wawang)', 'layanan' => 'sewa kendaraan', 'website' => '', 'image' => ''],
+        ['nama' => 'IKIGAI Fitness', 'tipe' => 'rekreasi', 'tipe_label' => 'Fitness', 'alamat' => 'IKIGAI Ekalos, Gedung Plaza Ekalos, Jl. Siliwangi, RW.04, Sukasari, Bogor', 'venue' => ['GOR Pajajaran / Stadion Pajajaran (Indoor A, Indoor B, Stadion)', 'Green Forest Hotel', 'Gymnasium Sekolah Vokasi IPB', 'GOR Yasmin Bulutangkis', 'PPSDMAP Kemenhub Kemang Kab-Bogor', 'Padepokan Voli Sentul'], 'jarak' => '-', 'gmaps' => 'https://www.google.com/maps/place/IKIGAI+FITNESS+-+Lippo+Plaza+Ekalokasari+Bogor/@-6.6216624,106.8144763,17z/data=!3m2!4b1!5s0x2e69c5fdf77397b5:0x881f18442bc0f864!4m6!3m5!1s0x2e69c5d5719e94ab:0x8c6b0ea36866c2e6!8m2!3d-6.6216624!4d106.8170512!16s%2Fg%2F11stp2j67s?entry=ttu&g_ep=EgoyMDI2MDgwNS4xIKXMDSoASAFQAw%3D%3D', 'telepon' => '081229112334', 'layanan' => 'fitness, buka pukul 06:00-21:00', 'website' => '', 'image' => ''],
     ];
 
     // Count stats
@@ -774,6 +775,7 @@ Route::get('/fasilitas', function () {
         'polsek' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'polsek')),
         'restoran' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'restoran')),
         'transport' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'transport')),
+        'rekreasi' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'rekreasi')),
     ];
 
     return view('fasilitas', compact('facilities', 'stats'));

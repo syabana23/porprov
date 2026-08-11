@@ -493,6 +493,11 @@ html.dark .ss-lbl {
     color: #0284c7;
 }
 
+.badge-rekreasi {
+    background: #ccfbf1;
+    color: #0d9488;
+}
+
 /* ── Section Penyangga Kategori ── */
 .facility-category-section {
     margin-bottom: 28px;
