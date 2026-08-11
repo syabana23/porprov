@@ -1,0 +1,761 @@
+{
+  "faq": [
+    {
+      "title": "Halo",
+      "questions": [
+        "halo",
+        "hai",
+        "hi",
+        "selamat pagi",
+        "selamat siang",
+        "selamat malam",
+        "pagi",
+        "siang",
+        "malam",
+        "hallo"
+      ],
+      "answer": "Halo 👋 Ada yang bisa saya bantu mengenai PORPROV Jabar XV Kota Bogor 2026? Anda bisa menanyakan lokasi venue, cabor, hotel terdekat, rumah sakit, puskesmas, kuliner, kantor polisi, apotek, maupun sewa kendaraan.",
+      "button": null
+    },
+    {
+      "title": "Daftar Cabor",
+      "questions": [
+        "apa saja cabang olahraga",
+        "daftar cabor",
+        "cabor apa saja",
+        "cabang olahraga",
+        "olahraga apa saja",
+        "list cabor"
+      ],
+      "answer": "PORPROV Jabar XV Kota Bogor 2026 menyelenggarakan 28 Cabang Olahraga resmi: Aerosport (Gantolle & Paralayang), Anggar, Dansa, Angkat Berat, Angkat Besi, Arung Jeram, Binaraga, Bola Tangan (Indoor & Pasir), Drumband, Gimnastik (Aerobik, Artistik, Ritmik), Judo, Kurash, Menembak, Modern Pentathlon, Panahan, Panjat Tebing, Pencak Silat, Petanque, Sambo, Shorinji Kempo, Ski Air, Taekwondo, Tarung Derajat, dan Tenis Meja.",
+      "button": {
+        "text": "📍 Buka Peta Venue",
+        "url": "/peta-venue"
+      }
+    },
+    {
+      "title": "Venue",
+      "questions": [
+        "peta venue",
+        "lokasi venue",
+        "semua venue",
+        "dimana lokasi pertandingan"
+      ],
+      "answer": "Seluruh lokasi venue pertandingan PORPROV Jabar XV dapat Anda eksplorasi secara interaktif melalui menu Peta Venue.",
+      "button": {
+        "text": "📍 Buka Peta Venue",
+        "url": "/peta-venue"
+      }
+    },
+    {
+      "title": "Jadwal",
+      "questions": [
+        "jadwal",
+        "kapan pertandingan",
+        "jam pertandingan",
+        "main kapan",
+        "jadwal pertandingan"
+      ],
+      "answer": "Informasi jadwal lengkap dan hasil pertandingan tersedia pada menu Jadwal.",
+      "button": {
+        "text": "📅 Lihat Jadwal Pertandingan",
+        "url": "/jadwal"
+      }
+    },
+    {
+      "title": "Galeri",
+      "questions": [
+        "foto",
+        "gambar",
+        "galeri",
+        "dokumentasi"
+      ],
+      "answer": "Seluruh dokumentasi foto dan video kegiatan tersedia pada menu Galeri.",
+      "button": {
+        "text": "🖼️ Buka Galeri",
+        "url": "/galeri"
+      }
+    }
+  ],
+
+  "venues": [
+    {
+      "id": "gor-pajajaran-indoor-a",
+      "nama": "GOR Pajajaran Indoor A",
+      "aliases": ["gor pajajaran indoor a", "indoor a", "pajajaran indoor a", "gor pajajaran"],
+      "alamat": "Jl. Pemuda No. 02, Tanah Sareal, Kota Bogor",
+      "gmaps": "https://www.google.com/maps/search/?api=1&query=GOR+Pajajaran+Jl.+Pemuda+No.+02+Tanah+Sareal+Kota+Bogor",
+      "deskripsi": "Gelanggang Olahraga Pajajaran Indoor A merupakan salah satu fasilitas olahraga utama Kota Bogor.",
+      "cabors": ["Drumband", "Pencak Silat", "Taekwondo"],
+      "facilities": {
+        "hotel": [
+          { "name": "Zest Hotel Bogor", "address": "Jl. Pajajaran No. 27, Babakan, Kec. Bogor Tengah, Kota Bogor", "distance": "1.2 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=Zest+Hotel+Bogor" },
+          { "name": "The Mirah Hotel Bogor", "address": "Jl. Pangrango No. 9A, Babakan, Kec. Bogor Tengah, Kota Bogor", "distance": "1.5 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=The+Mirah+Hotel+Bogor" }
+        ],
+        "hospital": [
+          { "name": "RS Salak Bogor", "address": "Jl. Jend. Sudirman No. 8, Sempur, Kec. Bogor Tengah, Kota Bogor", "distance": "1.1 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=RS+Salak+Bogor" },
+          { "name": "RS PMI Bogor", "address": "Jl. Pajajaran No. 80, Baranangsiang, Kec. Bogor Timur, Kota Bogor", "distance": "2.5 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=RS+PMI+Bogor" }
+        ],
+        "puskesmas": [
+          { "name": "Puskesmas Bogor Tengah", "address": "Jl. Sawojajar No. 38, Pabaton, Kec. Bogor Tengah, Kota Bogor", "distance": "1.8 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=Puskesmas+Bogor+Tengah" }
+        ],
+        "restaurant": [
+          { "name": "Rumah Makan Ampera Pemuda", "address": "Jl. Pemuda No. 27, Tanah Sareal, Kec. Tanah Sereal, Kota Bogor", "distance": "300 m", "gmaps": "https://www.google.com/maps/search/?api=1&query=RM+Ampera+Pemuda+Bogor" }
+        ],
+        "police": [
+          { "name": "Polresta Bogor Kota (Mako Muslihat)", "address": "Jl. Kapten Muslihat No. 18, Paledang, Kec. Bogor Tengah, Kota Bogor", "distance": "2.3 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=Polresta+Bogor+Kota" }
+        ],
+        "pharmacy": [
+          { "name": "Apotek Kimia Farma Juanda", "address": "Jl. Ir. H. Juanda No. 30, Babakan, Kec. Bogor Tengah, Kota Bogor", "distance": "2.0 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=Apotek+Kimia+Farma+Juanda" }
+        ],
+        "transport": [
+          { "name": "Rental Mobil & Motor Bogor Trans", "address": "Jl. Pemuda No. 15, Tanah Sareal, Kota Bogor", "distance": "500 m", "gmaps": "https://www.google.com/maps/search/?api=1&query=Rental+Mobil+Bogor+Trans" }
+        ]
+      }
+    },
+    {
+      "id": "gor-pajajaran-indoor-b",
+      "nama": "GOR Pajajaran Indoor B",
+      "aliases": ["gor pajajaran indoor b", "indoor b", "pajajaran indoor b"],
+      "alamat": "Jl. Pemuda No. 02, Tanah Sareal, Kota Bogor",
+      "gmaps": "https://www.google.com/maps/search/?api=1&query=GOR+Pajajaran+Indoor+B+Bogor",
+      "deskripsi": "Gelanggang Olahraga Pajajaran Indoor B digunakan untuk cabang olahraga beladiri dan indoor.",
+      "cabors": ["Judo", "Kurash", "Sambo"],
+      "facilities": {
+        "hotel": [
+          { "name": "Zest Hotel Bogor", "address": "Jl. Pajajaran No. 27, Babakan, Kec. Bogor Tengah, Kota Bogor", "distance": "1.2 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=Zest+Hotel+Bogor" },
+          { "name": "The Mirah Hotel Bogor", "address": "Jl. Pangrango No. 9A, Babakan, Kec. Bogor Tengah, Kota Bogor", "distance": "1.5 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=The+Mirah+Hotel+Bogor" }
+        ],
+        "hospital": [
+          { "name": "RS Salak Bogor", "address": "Jl. Jend. Sudirman No. 8, Sempur, Kec. Bogor Tengah, Kota Bogor", "distance": "1.1 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=RS+Salak+Bogor" }
+        ],
+        "puskesmas": [
+          { "name": "Puskesmas Bogor Tengah", "address": "Jl. Sawojajar No. 38, Pabaton, Kec. Bogor Tengah", "distance": "1.8 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=Puskesmas+Bogor+Tengah" }
+        ],
+        "restaurant": [
+          { "name": "Rumah Makan Ampera Pemuda", "address": "Jl. Pemuda No. 27, Tanah Sareal, Kec. Tanah Sereal", "distance": "300 m", "gmaps": "https://www.google.com/maps/search/?api=1&query=RM+Ampera+Pemuda+Bogor" }
+        ],
+        "police": [
+          { "name": "Polresta Bogor Kota", "address": "Jl. Kapten Muslihat No. 18, Paledang, Kec. Bogor Tengah", "distance": "2.3 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=Polresta+Bogor+Kota" }
+        ],
+        "pharmacy": [
+          { "name": "Apotek Kimia Farma Juanda", "address": "Jl. Ir. H. Juanda No. 30, Babakan, Kec. Bogor Tengah", "distance": "2.0 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=Apotek+Kimia+Farma+Juanda" }
+        ],
+        "transport": [
+          { "name": "Rental Mobil Bogor Trans", "address": "Jl. Pemuda No. 15, Tanah Sareal", "distance": "500 m", "gmaps": "https://www.google.com/maps/search/?api=1&query=Rental+Mobil+Bogor" }
+        ]
+      }
+    },
+    {
+      "id": "stadion-pajajaran",
+      "nama": "Stadion Pajajaran",
+      "aliases": ["stadion pajajaran", "stadion pemuda"],
+      "alamat": "Jl. Pemuda No. 02, Tanah Sareal, Kota Bogor",
+      "gmaps": "https://www.google.com/maps/search/?api=1&query=Stadion+Pajajaran+Bogor",
+      "deskripsi": "Stadion terbuka utama Kota Bogor untuk atletik, panahan, panjat tebing, dan modern pentathlon.",
+      "cabors": ["Modern Pentathlon", "Panahan", "Panjat Tebing"],
+      "facilities": {
+        "hotel": [
+          { "name": "Zest Hotel Bogor", "address": "Jl. Pajajaran No. 27, Babakan, Kec. Bogor Tengah", "distance": "1.2 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=Zest+Hotel+Bogor" }
+        ],
+        "hospital": [
+          { "name": "RS Salak Bogor", "address": "Jl. Jend. Sudirman No. 8, Sempur, Kec. Bogor Tengah", "distance": "1.1 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=RS+Salak+Bogor" }
+        ],
+        "puskesmas": [
+          { "name": "Puskesmas Bogor Tengah", "address": "Jl. Sawojajar No. 38, Pabaton, Kec. Bogor Tengah", "distance": "1.8 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=Puskesmas+Bogor+Tengah" }
+        ],
+        "restaurant": [
+          { "name": "Rumah Makan Ampera Pemuda", "address": "Jl. Pemuda No. 27, Tanah Sareal", "distance": "300 m", "gmaps": "https://www.google.com/maps/search/?api=1&query=RM+Ampera+Pemuda+Bogor" }
+        ],
+        "police": [
+          { "name": "Polresta Bogor Kota", "address": "Jl. Kapten Muslihat No. 18, Paledang, Kec. Bogor Tengah", "distance": "2.3 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=Polresta+Bogor+Kota" }
+        ],
+        "pharmacy": [
+          { "name": "Apotek Kimia Farma Juanda", "address": "Jl. Ir. H. Juanda No. 30, Babakan, Kec. Bogor Tengah", "distance": "2.0 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=Apotek+Kimia+Farma+Juanda" }
+        ],
+        "transport": [
+          { "name": "Rental Mobil Bogor Trans", "address": "Jl. Pemuda No. 15, Tanah Sareal", "distance": "500 m", "gmaps": "https://www.google.com/maps/search/?api=1&query=Rental+Mobil+Bogor" }
+        ]
+      }
+    },
+    {
+      "id": "green-forest-hotel",
+      "nama": "Green Forest Hotel",
+      "aliases": ["green forest", "green forest hotel", "hotel green forest"],
+      "alamat": "Jl. Pahlawan, Bondongan, Kec. Bogor Selatan, Kota Bogor",
+      "gmaps": "https://www.google.com/maps/search/?api=1&query=Green+Forest+Hotel+Bogor",
+      "deskripsi": "Kawasan konvensi & resort di Bogor Selatan yang menjadi lokasi pertandingan beladiri, angkat beban, dan olahraga konsentrasi.",
+      "cabors": ["Anggar", "Dansa", "Angkat Berat", "Angkat Besi", "Arung Jeram", "Binaraga", "Petanque"],
+      "facilities": {
+        "hotel": [
+          { "name": "ASTON Bogor Hotel & Resort", "address": "Mulyaharja, Kec. Bogor Selatan, Kota Bogor", "distance": "1.8 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=ASTON+Bogor+Hotel" },
+          { "name": "Padodi Hotel", "address": "Jl. Soemanta Diredja No. 10, Pamoyanan, Kec. Bogor Selatan", "distance": "1.5 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=Padodi+Hotel+Bogor" }
+        ],
+        "hospital": [
+          { "name": "RS Melania Bogor", "address": "Jl. Pahlawan No. 91, Bondongan, Kec. Bogor Selatan", "distance": "2.8 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=RS+Melania+Bogor" }
+        ],
+        "puskesmas": [
+          { "name": "Puskesmas Cipaku", "address": "Jl. Rangga Gading, Cipaku, Kec. Bogor Selatan", "distance": "2.1 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=Puskesmas+Cipaku+Bogor" }
+        ],
+        "restaurant": [
+          { "name": "Resto Kampoeng Konsep", "address": "Jl. Soemanta Diredja No. 28, Pamoyanan, Kec. Bogor Selatan", "distance": "400 m", "gmaps": "https://www.google.com/maps/search/?api=1&query=Resto+Kampoeng+Konsep" }
+        ],
+        "police": [
+          { "name": "Polsek Bogor Selatan", "address": "Jl. Layung Sari No. 1, Empang, Kec. Bogor Selatan", "distance": "2.6 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=Polsek+Bogor+Selatan" }
+        ],
+        "pharmacy": [
+          { "name": "Apotek Kimia Farma Pahlawan", "address": "Jl. Pahlawan No. 40, Batutulis, Kec. Bogor Selatan", "distance": "2.5 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=Apotek+Kimia+Farma+Pahlawan" }
+        ],
+        "transport": [
+          { "name": "Rental Kendaraan Bogor Selatan", "address": "Jl. Pahlawan No. 12, Bondongan, Kec. Bogor Selatan", "distance": "800 m", "gmaps": "https://www.google.com/maps/search/?api=1&query=Rental+Kendaraan+Bogor+Selatan" }
+        ]
+      }
+    },
+    {
+      "id": "gymnasium-sekolah-vokasi-ipb",
+      "nama": "Gymnasium Sekolah Vokasi IPB",
+      "aliases": ["gor vokasi ipb", "gymnasium vokasi ipb", "vokasi ipb", "ipb cilibende", "gymnasium ipb"],
+      "alamat": "Jl. Lodaya II, Cilibende, Babakan, Kec. Bogor Tengah, Kota Bogor",
+      "gmaps": "https://www.google.com/maps/search/?api=1&query=Gymnasium+Sekolah+Vokasi+IPB",
+      "deskripsi": "Gedung olahraga indoor multifungsi di kampus Vokasi IPB Cilibende.",
+      "cabors": ["Shorinji Kempo", "Tarung Derajat"],
+      "facilities": {
+        "hotel": [
+          { "name": "IPB Hotel & Convention Centre", "address": "Botani Square, Jl. Pajajaran, Baranangsiang", "distance": "2.8 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=IPB+Hotel+Convention+Centre" }
+        ],
+        "hospital": [
+          { "name": "RS PMI Bogor", "address": "Jl. Pajajaran No. 80, Baranangsiang, Kec. Bogor Timur", "distance": "2.2 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=RS+PMI+Bogor" }
+        ],
+        "puskesmas": [
+          { "name": "Puskesmas Bogor Utara", "address": "Jl. Tegal Gundil, Kec. Bogor Utara", "distance": "1.9 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=Puskesmas+Bogor+Utara" }
+        ],
+        "restaurant": [
+          { "name": "Toko Adelways (Kantin IPB Cilibende)", "address": "Jl. Cilibende, Babakan, Kec. Bogor Tengah", "distance": "250 m", "gmaps": "https://www.google.com/maps/search/?api=1&query=Toko+Adelways+Cilibende" }
+        ],
+        "police": [
+          { "name": "Polsek Bogor Utara", "address": "Jl. Pajajaran No. 200, Cibuluh, Kec. Bogor Utara", "distance": "2.1 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=Polsek+Bogor+Utara" }
+        ],
+        "pharmacy": [
+          { "name": "Apotek Kimia Farma Pajajaran", "address": "Jl. Pajajaran No. 35, Babakan, Kec. Bogor Tengah", "distance": "1.5 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=Apotek+Kimia+Farma+Pajajaran" }
+        ],
+        "transport": [
+          { "name": "Sewa Kendaraan Kampus IPB", "address": "Jl. Kumbang No. 10, Babakan, Kec. Bogor Tengah", "distance": "600 m", "gmaps": "https://www.google.com/maps/search/?api=1&query=Sewa+Mobil+IPB+Bogor" }
+        ]
+      }
+    },
+    {
+      "id": "gor-yasmin-bulutangkis",
+      "nama": "GOR Yasmin Bulutangkis",
+      "aliases": ["gor yasmin", "gor yasmin bulutangkis", "yasmin"],
+      "alamat": "Jl. KH. R. Abdullah bin Nuh, Curugmekar, Kec. Bogor Barat, Kota Bogor",
+      "gmaps": "https://www.google.com/maps/search/?api=1&query=GOR+Yasmin+Bulutangkis+Bogor",
+      "deskripsi": "Fasilitas olahraga di kawasan Taman Yasmin Bogor Barat.",
+      "cabors": ["Tenis Meja"],
+      "facilities": {
+        "hotel": [
+          { "name": "Savero Hotel Yasmin", "address": "Jl. KH. R. Abdullah bin Nuh No. 38, Curugmekar", "distance": "1.1 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=Savero+Hotel+Yasmin+Bogor" }
+        ],
+        "hospital": [
+          { "name": "RS Hermina Bogor", "address": "Jl. KH. R. Abdullah Bin Nuh No. 37, Curugmekar", "distance": "600 m", "gmaps": "https://www.google.com/maps/search/?api=1&query=RS+Hermina+Bogor" },
+          { "name": "RS Islam Bogor", "address": "Jl. Perdana No. 22, Budi Agung, Tanah Sareal", "distance": "2.2 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=RS+Islam+Bogor" }
+        ],
+        "puskesmas": [
+          { "name": "Puskesmas Gang Kelor", "address": "Jl. Raya Curug No. 12, Curugmekar, Kec. Bogor Barat", "distance": "1.4 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=Puskesmas+Gang+Kelor" }
+        ],
+        "restaurant": [
+          { "name": "Rumah Makan Ampera Yasmin", "address": "Jl. KH. R. Abdullah Bin Nuh No. 37, Curugmekar", "distance": "350 m", "gmaps": "https://www.google.com/maps/search/?api=1&query=Rumah+Makan+Ampera+Yasmin" }
+        ],
+        "police": [
+          { "name": "Polsek Tanah Sareal", "address": "Jl. Seremped, Kedung Badak, Kec. Tanah Sareal", "distance": "2.4 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=Polsek+Tanah+Sareal" }
+        ],
+        "pharmacy": [
+          { "name": "Apotek Kimia Farma Yasmin", "address": "Ruko Taman Yasmin Sektor VI No. 108, Curugmekar", "distance": "500 m", "gmaps": "https://www.google.com/maps/search/?api=1&query=Apotek+Kimia+Farma+Yasmin" }
+        ],
+        "transport": [
+          { "name": "Sewa Kendaraan Yasmin", "address": "Jl. KH. R. Abdullah Bin Nuh, Taman Yasmin", "distance": "700 m", "gmaps": "https://www.google.com/maps/search/?api=1&query=Sewa+Mobil+Yasmin+Bogor" }
+        ]
+      }
+    },
+    {
+      "id": "ppsdmap-kemenhub-kemang",
+      "nama": "PPSDMAP Kemenhub Kemang",
+      "aliases": ["ppsdmap kemenhub kemang", "ppsdmap kemang", "kemenhub kemang"],
+      "alamat": "Jl. Raya Parung–Bogor, Kemang, Kab. Bogor",
+      "gmaps": "https://www.google.com/maps/search/?api=1&query=PPSDMAP+Kemenhub+Kemang",
+      "deskripsi": "Kompleks pusat pelatihan Kemenhub di Kemang Kabupaten Bogor.",
+      "cabors": ["Bola Tangan Indoor"],
+      "facilities": {
+        "hotel": [
+          { "name": "Salak Sunset Hotel", "address": "Jl. Raya Kemang Parung No. 12, Kemang", "distance": "2.1 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=Salak+Sunset+Hotel" }
+        ],
+        "hospital": [
+          { "name": "RS Sentosa Bogor", "address": "Jl. Raya Kemang No. 18, Kemang, Kab. Bogor", "distance": "1.3 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=RS+Sentosa+Bogor" }
+        ],
+        "puskesmas": [
+          { "name": "Puskesmas Kemang", "address": "Jl. Raya Kemang No. 5, Kemang, Kab. Bogor", "distance": "1.1 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=Puskesmas+Kemang" }
+        ],
+        "restaurant": [
+          { "name": "RM Ayam Goreng Bakar Sayati", "address": "Jl. Raya Parung - Bogor, Semplak Barat, Kemang", "distance": "450 m", "gmaps": "https://www.google.com/maps/search/?api=1&query=RM+Ayam+Goreng+Bakar+Sayati" }
+        ],
+        "police": [
+          { "name": "Polsek Kemang", "address": "Jl. Raya Kemang Parung No. 10, Kemang, Kab. Bogor", "distance": "1.5 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=Polsek+Kemang" }
+        ],
+        "pharmacy": [
+          { "name": "Apotek Kimia Farma Kemang", "address": "Jl. Raya Parung-Bogor, Kemang, Kab. Bogor", "distance": "800 m", "gmaps": "https://www.google.com/maps/search/?api=1&query=Apotek+Kimia+Farma+Kemang" }
+        ],
+        "transport": [
+          { "name": "Rental Mobil Kemang Parung", "address": "Jl. Raya Parung - Bogor No. 88, Kemang", "distance": "1.0 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=Rental+Mobil+Kemang+Parung" }
+        ]
+      }
+    },
+    {
+      "id": "padepokan-voli-sentul",
+      "nama": "Padepokan Voli Sentul",
+      "aliases": ["padepokan voli sentul", "padepokan sentul", "sentul voli"],
+      "alamat": "Kawasan Sirkuit Sentul Internasional, Babakan Madang, Kab. Bogor",
+      "gmaps": "https://www.google.com/maps/search/?api=1&query=Padepokan+Voli+Sentul",
+      "deskripsi": "Pusat pelatihan voli & fasilitas olahraga lapangan pasir nasional di Sentul.",
+      "cabors": ["Bola Tangan Pasir"],
+      "facilities": {
+        "hotel": [
+          { "name": "Lorin Sentul Hotel", "address": "Kawasan Sirkuit Sentul Internasional, Babakan Madang", "distance": "1.2 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=Lorin+Sentul+Hotel" },
+          { "name": "Harris Hotel Sentul City", "address": "Jl. Jend. Sudirman, Sentul City, Babakan Madang", "distance": "2.5 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=Harris+Hotel+Sentul+City" }
+        ],
+        "hospital": [
+          { "name": "RS EMC Sentul", "address": "Jl. MH. Thamrin No. 57, Sentul City, Babakan Madang", "distance": "2.7 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=RS+EMC+Sentul" }
+        ],
+        "puskesmas": [
+          { "name": "Puskesmas Babakan Madang", "address": "Jl. Raya Sentul No. 1, Babakan Madang", "distance": "2.0 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=Puskesmas+Babakan+Madang" }
+        ],
+        "restaurant": [
+          { "name": "Restoran Lorin Sentul", "address": "Kawasan Sirkuit Sentul Internasional, Babakan Madang", "distance": "1.2 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=Restoran+Lorin+Sentul" }
+        ],
+        "police": [
+          { "name": "Polsek Babakan Madang", "address": "Jl. Raya Babakan Madang No. 8, Kab. Bogor", "distance": "2.2 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=Polsek+Babakan+Madang" }
+        ],
+        "pharmacy": [
+          { "name": "Apotek Kimia Farma Sentul City", "address": "Ruko Plaza Niaga 1, Sentul City", "distance": "2.3 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=Apotek+Kimia+Farma+Sentul+City" }
+        ],
+        "transport": [
+          { "name": "Sewa Mobil Sentul City", "address": "Plaza Niaga Sentul City, Babakan Madang", "distance": "2.1 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=Sewa+Mobil+Sentul+City" }
+        ]
+      }
+    },
+    {
+      "id": "gunung-mas-cisarua",
+      "nama": "Gunung Mas (Cisarua)",
+      "aliases": ["gunung mas", "gunung mas cisarua", "puncak cisarua"],
+      "alamat": "Jl. Raya Puncak KM 87, Tugu Selatan, Cisarua, Kab. Bogor",
+      "gmaps": "https://www.google.com/maps/search/?api=1&query=Agrowisata+Gunung+Mas+Cisarua",
+      "deskripsi": "Kawasan agrowisata Puncak Cisarua untuk olahraga udara aerosport paralayang.",
+      "cabors": ["Aerosport - Paralayang"],
+      "facilities": {
+        "hotel": [
+          { "name": "Bobocabin Gunung Mas", "address": "Gunung Mas, Jl. Raya Puncak Gadog No. KM 87, Cisarua", "distance": "300 m", "gmaps": "https://www.google.com/maps/search/?api=1&query=Bobocabin+Gunung+Mas" },
+          { "name": "Grand Diara Hotel Puncak", "address": "Jl. Raya Puncak - Gadog KM 77, Cisarua", "distance": "2.9 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=Grand+Diara+Hotel+Puncak" }
+        ],
+        "hospital": [
+          { "name": "RSPG Cisarua (RS Paru Dr. M. Goenawan)", "address": "Jl. Raya Puncak No. KM 83, Cisarua, Kab. Bogor", "distance": "1.8 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=RSPG+Cisarua" }
+        ],
+        "puskesmas": [
+          { "name": "Puskesmas Cisarua", "address": "Jl. Raya Puncak No. KM 81, Cisarua, Kab. Bogor", "distance": "2.1 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=Puskesmas+Cisarua" }
+        ],
+        "restaurant": [
+          { "name": "Resto Agrowisata Gunung Mas", "address": "Kawasan Agrowisata Gunung Mas, Tugu Selatan, Cisarua", "distance": "200 m", "gmaps": "https://www.google.com/maps/search/?api=1&query=Resto+Agrowisata+Gunung+Mas" }
+        ],
+        "police": [
+          { "name": "Polsek Cisarua", "address": "Jl. Raya Puncak KM 82, Cisarua, Kab. Bogor", "distance": "2.3 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=Polsek+Cisarua" }
+        ],
+        "pharmacy": [
+          { "name": "Apotek Kimia Farma Cisarua", "address": "Jl. Raya Puncak No. 412, Cisarua, Kab. Bogor", "distance": "1.5 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=Apotek+Kimia+Farma+Cisarua" }
+        ],
+        "transport": [
+          { "name": "Sewa Mobil & Jeep Puncak Cisarua", "address": "Jl. Raya Puncak KM 85, Cisarua", "distance": "1.2 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=Sewa+Jeep+Puncak" }
+        ]
+      }
+    },
+    {
+      "id": "lapangan-tembak-cisangkan",
+      "nama": "Lapangan Tembak Cisangkan",
+      "aliases": ["cisangkan", "lapangan tembak cisangkan", "tembak cisangkan cimahi"],
+      "alamat": "Jl. Raya Cisangkan, Padasuka, Cimahi Tengah, Kota Cimahi",
+      "gmaps": "https://www.google.com/maps/search/?api=1&query=Lapangan+Tembak+Cisangkan+Cimahi",
+      "deskripsi": "Fasilitas arena menembak profesional di Cimahi Tengah.",
+      "cabors": ["Menembak"],
+      "facilities": {
+        "hotel": [
+          { "name": "Hotel Trikarya Cimahi", "address": "Jl. Raya Cisangkan No. 88, Padasuka, Cimahi Tengah", "distance": "800 m", "gmaps": "https://www.google.com/maps/search/?api=1&query=Hotel+Trikarya+Cimahi" }
+        ],
+        "hospital": [
+          { "name": "RS Dustira Cimahi", "address": "Jl. Dr. Dustira No. 1, Baros, Cimahi Tengah", "distance": "2.1 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=RS+Dustira+Cimahi" }
+        ],
+        "puskesmas": [
+          { "name": "Puskesmas Cimahi Tengah", "address": "Jl. Raden Demang Hardjakusumah No. 1, Cimahi", "distance": "1.6 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=Puskesmas+Cimahi+Tengah" }
+        ],
+        "restaurant": [
+          { "name": "RM Ampera Cisangkan", "address": "Jl. Raya Barat No. 805, Padasuka, Cimahi Tengah", "distance": "350 m", "gmaps": "https://www.google.com/maps/search/?api=1&query=RM+Ampera+Cisangkan" }
+        ],
+        "police": [
+          { "name": "Polres Cimahi", "address": "Jl. Raya Cibeureum No. 1, Cimahi Selatan", "distance": "2.5 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=Polres+Cimahi" }
+        ],
+        "pharmacy": [
+          { "name": "Apotek Kimia Farma Cisangkan", "address": "Jl. Raya Cisangkan No. 12, Padasuka, Cimahi Tengah", "distance": "400 m", "gmaps": "https://www.google.com/maps/search/?api=1&query=Apotek+Kimia+Farma+Cisangkan" }
+        ],
+        "transport": [
+          { "name": "Sewa Kendaraan Cimahi Trans", "address": "Jl. Raya Cisangkan No. 45, Cimahi Tengah", "distance": "600 m", "gmaps": "https://www.google.com/maps/search/?api=1&query=Sewa+Mobil+Cimahi" }
+        ]
+      }
+    },
+    {
+      "id": "sport-jabar-arcamanik",
+      "nama": "Sport Jabar Arcamanik",
+      "aliases": ["arcamanik", "sport jabar arcamanik", "gor arcamanik bandung"],
+      "alamat": "Jl. Pacuan Kuda, Sukamiskin, Arcamanik, Kota Bandung",
+      "gmaps": "https://www.google.com/maps/search/?api=1&query=Sport+Jabar+Arcamanik+Bandung",
+      "deskripsi": "Kompleks olahraga terpadu milik Pemprov Jabar di Arcamanik Bandung.",
+      "cabors": ["Gimnastik Aerobik", "Gimnastik Artistik", "Gimnastik Ritmik"],
+      "facilities": {
+        "hotel": [
+          { "name": "Grand Cordela Hotel Bandung", "address": "Jl. Soekarno-Hatta No. 791, Cisaranten Endah, Arcamanik", "distance": "2.4 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=Grand+Cordela+Hotel+Bandung" }
+        ],
+        "hospital": [
+          { "name": "RS Hermina Arcamanik", "address": "Jl. A.H. Nasution No. 50, Antapani, Bandung", "distance": "1.7 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=RS+Hermina+Arcamanik" }
+        ],
+        "puskesmas": [
+          { "name": "Puskesmas Arcamanik", "address": "Jl. Cisaranten Kulon No. 4, Arcamanik, Bandung", "distance": "1.1 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=Puskesmas+Arcamanik" }
+        ],
+        "restaurant": [
+          { "name": "RM Khas Sunda Cibiuk Arcamanik", "address": "Jl. Soekarno Hatta No. 741, Cisaranten Endah, Arcamanik", "distance": "1.8 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=RM+Cibiuk+Arcamanik" }
+        ],
+        "police": [
+          { "name": "Polsek Arcamanik", "address": "Jl. Pacuan Kuda No. 54, Sukamiskin, Arcamanik", "distance": "800 m", "gmaps": "https://www.google.com/maps/search/?api=1&query=Polsek+Arcamanik" }
+        ],
+        "pharmacy": [
+          { "name": "Apotek Kimia Farma Arcamanik", "address": "Jl. Arcamanik Endah No. 42, Sukamiskin, Arcamanik", "distance": "600 m", "gmaps": "https://www.google.com/maps/search/?api=1&query=Apotek+Kimia+Farma+Arcamanik" }
+        ],
+        "transport": [
+          { "name": "Sewa Mobil Bandung Arcamanik", "address": "Jl. Pacuan Kuda No. 12, Arcamanik, Bandung", "distance": "500 m", "gmaps": "https://www.google.com/maps/search/?api=1&query=Sewa+Mobil+Arcamanik+Bandung" }
+        ]
+      }
+    },
+    {
+      "id": "kota-baru-parahyangan",
+      "nama": "Kota Baru Parahyangan",
+      "aliases": ["kota baru parahyangan", "kbp padalarang", "ski air kbp"],
+      "alamat": "Padalarang, Kab. Bandung Barat, Jawa Barat",
+      "gmaps": "https://www.google.com/maps/search/?api=1&query=Kota+Baru+Parahyangan+Padalarang",
+      "deskripsi": "Kawasan perairan Kota Baru Parahyangan untuk cabang olahraga ski air.",
+      "cabors": ["Ski Air"],
+      "facilities": {
+        "hotel": [
+          { "name": "Mason Pine Hotel", "address": "Jl. Raya Kotabaru Parahyangan, Cipeundeuy, Padalarang", "distance": "500 m", "gmaps": "https://www.google.com/maps/search/?api=1&query=Mason+Pine+Hotel" }
+        ],
+        "hospital": [
+          { "name": "RS Cahya Kawaluyan", "address": "Jl. Raya Parahyangan KM 1.5, Padalarang, Bandung Barat", "distance": "1.2 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=RS+Cahya+Kawaluyan" }
+        ],
+        "puskesmas": [
+          { "name": "Puskesmas Padalarang", "address": "Jl. Raya Padalarang No. 470, Bandung Barat", "distance": "2.8 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=Puskesmas+Padalarang" }
+        ],
+        "restaurant": [
+          { "name": "Bumi Aki Kota Baru Parahyangan", "address": "Jl. Parahyangan Raya No. 1, Kota Baru Parahyangan", "distance": "600 m", "gmaps": "https://www.google.com/maps/search/?api=1&query=Bumi+Aki+Kota+Baru+Parahyangan" }
+        ],
+        "police": [
+          { "name": "Polsek Padalarang", "address": "Jl. Raya Padalarang No. 501, Bandung Barat", "distance": "2.5 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=Polsek+Padalarang" }
+        ],
+        "pharmacy": [
+          { "name": "Apotek Kimia Farma KBP", "address": "Ruko Bumi Simpang, Kota Baru Parahyangan", "distance": "800 m", "gmaps": "https://www.google.com/maps/search/?api=1&query=Apotek+Kimia+Farma+KBP" }
+        ],
+        "transport": [
+          { "name": "Sewa Mobil KBP Padalarang", "address": "Ruko Parahyangan, Kota Baru Parahyangan", "distance": "700 m", "gmaps": "https://www.google.com/maps/search/?api=1&query=Sewa+Mobil+Padalarang" }
+        ]
+      }
+    },
+    {
+      "id": "majalengka",
+      "nama": "Majalengka",
+      "aliases": ["majalengka", "gantolle majalengka"],
+      "alamat": "Kabupaten Majalengka, Jawa Barat",
+      "gmaps": "https://www.google.com/maps/search/?api=1&query=Kabupaten+Majalengka+Jawa+Barat",
+      "deskripsi": "Lokasi arena gantolle di Kabupaten Majalengka.",
+      "cabors": ["Aerosport - Gantolle"],
+      "facilities": {
+        "hotel": [
+          { "name": "Fitra Hotel Majalengka", "address": "Jl. KH. Abdul Halim No. 88, Majalengka Kulon", "distance": "1.1 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=Fitra+Hotel+Majalengka" }
+        ],
+        "hospital": [
+          { "name": "RSUD Majalengka", "address": "Jl. Kesehatan No. 77, Majalengka Wetan", "distance": "1.5 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=RSUD+Majalengka" }
+        ],
+        "puskesmas": [
+          { "name": "Puskesmas Majalengka", "address": "Jl. KH. Abdul Halim No. 200, Majalengka", "distance": "1.3 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=Puskesmas+Majalengka" }
+        ],
+        "restaurant": [
+          { "name": "RM Khas Sunda Saung Balong", "address": "Jl. KH. Abdul Halim No. 160, Majalengka Wetan", "distance": "700 m", "gmaps": "https://www.google.com/maps/search/?api=1&query=Saung+Balong+Majalengka" }
+        ],
+        "police": [
+          { "name": "Polres Majalengka", "address": "Jl. KH. Abdul Halim No. 512, Majalengka", "distance": "2.0 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=Polres+Majalengka" }
+        ],
+        "pharmacy": [
+          { "name": "Apotek Kimia Farma Majalengka", "address": "Jl. KH. Abdul Halim No. 120, Majalengka", "distance": "900 m", "gmaps": "https://www.google.com/maps/search/?api=1&query=Apotek+Kimia+Farma+Majalengka" }
+        ],
+        "transport": [
+          { "name": "Sewa Kendaraan Majalengka Trans", "address": "Jl. KH. Abdul Halim No. 99, Majalengka", "distance": "1.0 km", "gmaps": "https://www.google.com/maps/search/?api=1&query=Sewa+Mobil+Majalengka" }
+        ]
+      }
+    }
+  ],
+
+  "cabors": [
+    {
+      "slug": "aerosport-gantolle",
+      "nama": "Aerosport - Gantolle",
+      "aliases": ["gantolle", "aerosport gantolle", "gantole"],
+      "venue": "Majalengka",
+      "alamat": "Kabupaten Majalengka, Jawa Barat",
+      "gmaps": "https://www.google.com/maps/search/?api=1&query=Kabupaten+Majalengka+Jawa+Barat",
+      "deskripsi": "Gantolle merupakan cabang aerosport yang menerbangkan sayap gantung (hang glider) tanpa mesin dari ketinggian."
+    },
+    {
+      "slug": "aerosport-paralayang",
+      "nama": "Aerosport - Paralayang",
+      "aliases": ["paralayang", "aerosport paralayang", "paragliding"],
+      "venue": "Gunung Mas (Cisarua)",
+      "alamat": "Jl. Raya Puncak KM 87, Tugu Selatan, Cisarua, Kab. Bogor",
+      "gmaps": "https://www.google.com/maps/search/?api=1&query=Agrowisata+Gunung+Mas+Cisarua",
+      "deskripsi": "Paralayang adalah olahraga terbang bebas dengan parasut besar yang diisi angin dari ketinggian Puncak Cisarua."
+    },
+    {
+      "slug": "anggar",
+      "nama": "Anggar",
+      "aliases": ["anggar", "fencing"],
+      "venue": "Green Forest Hotel",
+      "alamat": "Jl. Pahlawan, Bondongan, Kec. Bogor Selatan, Kota Bogor",
+      "gmaps": "https://www.google.com/maps/search/?api=1&query=Green+Forest+Hotel+Bogor",
+      "deskripsi": "Anggar adalah olahraga bela diri seni pedang yang dipertandingkan secara individu maupun beregu."
+    },
+    {
+      "slug": "dansa",
+      "nama": "Dansa",
+      "aliases": ["dansa", "dance sport", "dancesport"],
+      "venue": "Green Forest Hotel",
+      "alamat": "Jl. Pahlawan, Bondongan, Kec. Bogor Selatan, Kota Bogor",
+      "gmaps": "https://www.google.com/maps/search/?api=1&query=Green+Forest+Hotel+Bogor",
+      "deskripsi": "Dansa (dance sport) adalah olahraga seni yang menggabungkan gerakan tari dengan musik dalam pasangan."
+    },
+    {
+      "slug": "angkat-berat",
+      "nama": "Angkat Berat",
+      "aliases": ["angkat berat", "powerlifting"],
+      "venue": "Green Forest Hotel",
+      "alamat": "Jl. Pahlawan, Bondongan, Kec. Bogor Selatan, Kota Bogor",
+      "gmaps": "https://www.google.com/maps/search/?api=1&query=Green+Forest+Hotel+Bogor",
+      "deskripsi": "Angkat berat adalah olahraga mengangkat beban logam seberat mungkin dalam satu gerakan angkatan."
+    },
+    {
+      "slug": "angkat-besi",
+      "nama": "Angkat Besi",
+      "aliases": ["angkat besi", "weightlifting"],
+      "venue": "Green Forest Hotel",
+      "alamat": "Jl. Pahlawan, Bondongan, Kec. Bogor Selatan, Kota Bogor",
+      "gmaps": "https://www.google.com/maps/search/?api=1&query=Green+Forest+Hotel+Bogor",
+      "deskripsi": "Angkat besi merupakan olahraga kekuatan yang menguji kemampuan atlet mengangkat barbel dari lantai ke atas kepala."
+    },
+    {
+      "slug": "arung-jeram",
+      "nama": "Arung Jeram",
+      "aliases": ["arung jeram", "rafting"],
+      "venue": "Green Forest Hotel",
+      "alamat": "Jl. Pahlawan, Bondongan, Kec. Bogor Selatan, Kota Bogor",
+      "gmaps": "https://www.google.com/maps/search/?api=1&query=Green+Forest+Hotel+Bogor",
+      "deskripsi": "Arung jeram adalah olahraga air yang dilakukan dengan perahu karet melewati jeram-jeram sungai berarus deras."
+    },
+    {
+      "slug": "binaraga",
+      "nama": "Binaraga",
+      "aliases": ["binaraga", "bodybuilding"],
+      "venue": "Green Forest Hotel",
+      "alamat": "Jl. Pahlawan, Bondongan, Kec. Bogor Selatan, Kota Bogor",
+      "gmaps": "https://www.google.com/maps/search/?api=1&query=Green+Forest+Hotel+Bogor",
+      "deskripsi": "Binaraga adalah olahraga yang menonjolkan estetika otot melalui pembentukan tubuh dengan latihan beban."
+    },
+    {
+      "slug": "bola-tangan-indoor",
+      "nama": "Bola Tangan Indoor",
+      "aliases": ["bola tangan indoor", "bola tangan", "handball indoor", "handball"],
+      "venue": "PPSDMAP Kemenhub Kemang",
+      "alamat": "Jl. Raya Parung–Bogor, Kemang, Kab. Bogor",
+      "gmaps": "https://www.google.com/maps/search/?api=1&query=PPSDMAP+Kemenhub+Kemang",
+      "deskripsi": "Bola tangan indoor dimainkan oleh dua tim berisi tujuh pemain yang saling melempar dan memasukkan bola ke gawang."
+    },
+    {
+      "slug": "bola-tangan-pasir",
+      "nama": "Bola Tangan Pasir",
+      "aliases": ["bola tangan pasir", "beach handball", "handball pasir"],
+      "venue": "Padepokan Voli Sentul",
+      "alamat": "Kawasan Sirkuit Sentul Internasional, Babakan Madang, Kab. Bogor",
+      "gmaps": "https://www.google.com/maps/search/?api=1&query=Padepokan+Voli+Sentul",
+      "deskripsi": "Bola tangan pasir dimainkan di lapangan berpasir dengan aturan yang lebih dinamis dan santai."
+    },
+    {
+      "slug": "drumband",
+      "nama": "Drumband",
+      "aliases": ["drumband", "marching band", "drum band"],
+      "venue": "GOR Pajajaran Indoor A",
+      "alamat": "Jl. Pemuda No. 02, Tanah Sareal, Kota Bogor",
+      "gmaps": "https://www.google.com/maps/search/?api=1&query=GOR+Pajajaran+Jl.+Pemuda+No.+02+Tanah+Sareal+Kota+Bogor",
+      "deskripsi": "Drumband adalah cabang olahraga seni yang memadukan musik perkusi, alat musik tiup, dan koreografi baris-berbaris."
+    },
+    {
+      "slug": "gimnastik-aerobik",
+      "nama": "Gimnastik Aerobik",
+      "aliases": ["gimnastik aerobik", "senam aerobik", "aerobik"],
+      "venue": "Sport Jabar Arcamanik",
+      "alamat": "Jl. Pacuan Kuda, Sukamiskin, Arcamanik, Kota Bandung",
+      "gmaps": "https://www.google.com/maps/search/?api=1&query=Sport+Jabar+Arcamanik+Bandung",
+      "deskripsi": "Gimnastik aerobik menggabungkan gerakan senam dengan musik berirama cepat dan gerakan aerobik kompleks."
+    },
+    {
+      "slug": "gimnastik-artistik",
+      "nama": "Gimnastik Artistik",
+      "aliases": ["gimnastik artistik", "senam artistik", "artistik"],
+      "venue": "Sport Jabar Arcamanik",
+      "alamat": "Jl. Pacuan Kuda, Sukamiskin, Arcamanik, Kota Bandung",
+      "gmaps": "https://www.google.com/maps/search/?api=1&query=Sport+Jabar+Arcamanik+Bandung",
+      "deskripsi": "Gimnastik artistik adalah senam yang menampilkan kekuatan, keseimbangan, dan kelenturan pada alat."
+    },
+    {
+      "slug": "gimnastik-ritmik",
+      "nama": "Gimnastik Ritmik",
+      "aliases": ["gimnastik ritmik", "senam ritmik", "ritmik"],
+      "venue": "Sport Jabar Arcamanik",
+      "alamat": "Jl. Pacuan Kuda, Sukamiskin, Arcamanik, Kota Bandung",
+      "gmaps": "https://www.google.com/maps/search/?api=1&query=Sport+Jabar+Arcamanik+Bandung",
+      "deskripsi": "Gimnastik ritmik menggabungkan senam dengan alat seperti pita, bola, simpai, dan gada mengikuti musik."
+    },
+    {
+      "slug": "judo",
+      "nama": "Judo",
+      "aliases": ["judo"],
+      "venue": "GOR Pajajaran Indoor B",
+      "alamat": "Jl. Pemuda No. 02, Tanah Sareal, Kota Bogor",
+      "gmaps": "https://www.google.com/maps/search/?api=1&query=GOR+Pajajaran+Indoor+B+Bogor",
+      "deskripsi": "Judo adalah bela diri asal Jepang yang berfokus pada teknik bantingan dan kuncian untuk menjatuhkan lawan."
+    },
+    {
+      "slug": "kurash",
+      "nama": "Kurash",
+      "aliases": ["kurash"],
+      "venue": "GOR Pajajaran Indoor B",
+      "alamat": "Jl. Pemuda No. 02, Tanah Sareal, Kota Bogor",
+      "gmaps": "https://www.google.com/maps/search/?api=1&query=GOR+Pajajaran+Indoor+B+Bogor",
+      "deskripsi": "Kurash adalah olahraga gulat tradisional asal Asia Tengah yang bertujuan menjatuhkan lawan dengan teknik bantingan."
+    },
+    {
+      "slug": "menembak",
+      "nama": "Menembak",
+      "aliases": ["menembak", "shooting"],
+      "venue": "Lapangan Tembak Cisangkan",
+      "alamat": "Jl. Raya Cisangkan, Padasuka, Cimahi Tengah, Kota Cimahi",
+      "gmaps": "https://www.google.com/maps/search/?api=1&query=Lapangan+Tembak+Cisangkan+Cimahi",
+      "deskripsi": "Menembak adalah cabang olahraga akurasi yang menguji ketepatan, kestabilan, dan konsentrasi atlet."
+    },
+    {
+      "slug": "modern-pentathlon",
+      "nama": "Modern Pentathlon",
+      "aliases": ["modern pentathlon", "pentathlon"],
+      "venue": "Stadion Pajajaran",
+      "alamat": "Jl. Pemuda No. 02, Tanah Sareal, Kota Bogor",
+      "gmaps": "https://www.google.com/maps/search/?api=1&query=Stadion+Pajajaran+Bogor",
+      "deskripsi": "Modern pentathlon menggabungkan lima nomor olahraga: anggar, renang, menembak, lari, dan berkuda."
+    },
+    {
+      "slug": "panahan",
+      "nama": "Panahan",
+      "aliases": ["panahan", "archery"],
+      "venue": "Stadion Pajajaran",
+      "alamat": "Jl. Pemuda No. 02, Tanah Sareal, Kota Bogor",
+      "gmaps": "https://www.google.com/maps/search/?api=1&query=Stadion+Pajajaran+Bogor",
+      "deskripsi": "Panahan adalah olahraga akurasi menggunakan busur dan anak panah untuk membidik sasaran."
+    },
+    {
+      "slug": "panjat-tebing",
+      "nama": "Panjat Tebing",
+      "aliases": ["panjat tebing", "rock climbing", "wall climbing"],
+      "venue": "Stadion Pajajaran",
+      "alamat": "Jl. Pemuda No. 02, Tanah Sareal, Kota Bogor",
+      "gmaps": "https://www.google.com/maps/search/?api=1&query=Stadion+Pajajaran+Bogor",
+      "deskripsi": "Panjat tebing adalah olahraga memanjat dinding atau tebing buatan yang menguji kekuatan dan keseimbangan."
+    },
+    {
+      "slug": "pencak-silat",
+      "nama": "Pencak Silat",
+      "aliases": ["pencak silat", "silat"],
+      "venue": "GOR Pajajaran Indoor A",
+      "alamat": "Jl. Pemuda No. 02, Tanah Sareal, Kota Bogor",
+      "gmaps": "https://www.google.com/maps/search/?api=1&query=GOR+Pajajaran+Jl.+Pemuda+No.+02+Tanah+Sareal+Kota+Bogor",
+      "deskripsi": "Pencak silat adalah seni bela diri tradisional Indonesia yang memadukan gerakan menyerang, bertahan, dan seni gerak."
+    },
+    {
+      "slug": "petanque",
+      "nama": "Petanque",
+      "aliases": ["petanque", "pentaque"],
+      "venue": "Green Forest Hotel",
+      "alamat": "Jl. Pahlawan, Bondongan, Kec. Bogor Selatan, Kota Bogor",
+      "gmaps": "https://www.google.com/maps/search/?api=1&query=Green+Forest+Hotel+Bogor",
+      "deskripsi": "Petanque adalah olahraga lempar bola besi untuk mendekatkan diri ke bola sasaran (jack)."
+    },
+    {
+      "slug": "sambo",
+      "nama": "Sambo",
+      "aliases": ["sambo"],
+      "venue": "GOR Pajajaran Indoor B",
+      "alamat": "Jl. Pemuda No. 02, Tanah Sareal, Kota Bogor",
+      "gmaps": "https://www.google.com/maps/search/?api=1&query=GOR+Pajajaran+Indoor+B+Bogor",
+      "deskripsi": "Sambo adalah seni bela diri asal Rusia yang menggabungkan teknik gulat, bantingan, dan kuncian."
+    },
+    {
+      "slug": "shorinji-kempo",
+      "nama": "Shorinji Kempo",
+      "aliases": ["shorinji kempo", "kempo"],
+      "venue": "Gymnasium Sekolah Vokasi IPB",
+      "alamat": "Jl. Lodaya II, Cilibende, Babakan, Kec. Bogor Tengah, Kota Bogor",
+      "gmaps": "https://www.google.com/maps/search/?api=1&query=Gymnasium+Sekolah+Vokasi+IPB",
+      "deskripsi": "Shorinji kempo adalah seni bela diri asal Jepang yang menekankan keseimbangan teknik serangan dan pertahanan."
+    },
+    {
+      "slug": "ski-air",
+      "nama": "Ski Air",
+      "aliases": ["ski air", "water ski", "waterski"],
+      "venue": "Kota Baru Parahyangan",
+      "alamat": "Padalarang, Kab. Bandung Barat, Jawa Barat",
+      "gmaps": "https://www.google.com/maps/search/?api=1&query=Kota+Baru+Parahyangan+Padalarang",
+      "deskripsi": "Ski air adalah olahraga air yang dilakukan dengan meluncur di atas permukaan air menggunakan papan ski."
+    },
+    {
+      "slug": "taekwondo",
+      "nama": "Taekwondo",
+      "aliases": ["taekwondo", "tkd"],
+      "venue": "GOR Pajajaran Indoor A",
+      "alamat": "Jl. Pemuda No. 02, Tanah Sareal, Kota Bogor",
+      "gmaps": "https://www.google.com/maps/search/?api=1&query=GOR+Pajajaran+Jl.+Pemuda+No.+02+Tanah+Sareal+Kota+Bogor",
+      "deskripsi": "Taekwondo adalah seni bela diri asal Korea yang menonjolkan tendangan tinggi dan teknik serangan cepat."
+    },
+    {
+      "slug": "tarung-derajat",
+      "nama": "Tarung Derajat",
+      "aliases": ["tarung derajat", "aa boxer", "boxer"],
+      "venue": "Gymnasium Sekolah Vokasi IPB",
+      "alamat": "Jl. Lodaya II, Cilibende, Babakan, Kec. Bogor Tengah, Kota Bogor",
+      "gmaps": "https://www.google.com/maps/search/?api=1&query=Gymnasium+Sekolah+Vokasi+IPB",
+      "deskripsi": "Tarung derajat adalah seni bela diri asal Indonesia yang mengedepankan kekuatan pukulan dan tendangan praktis."
+    },
+    {
+      "slug": "tenis-meja",
+      "nama": "Tenis Meja",
+      "aliases": ["tenis meja", "pingpong", "table tennis"],
+      "venue": "GOR Yasmin Bulutangkis",
+      "alamat": "Jl. KH. R. Abdullah bin Nuh, Curugmekar, Kec. Bogor Barat, Kota Bogor",
+      "gmaps": "https://www.google.com/maps/search/?api=1&query=GOR+Yasmin+Bulutangkis+Bogor",
+      "deskripsi": "Tenis meja atau pingpong dimainkan di atas meja dengan bet dan bola kecil."
+    }
+  ]
+}
