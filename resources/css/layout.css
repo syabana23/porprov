@@ -569,14 +569,14 @@
 
         .organizers-coa {
             display: flex;
-            gap: 50px;
+            gap: 26px;
             align-items: center;
             margin-bottom: 16px;
         }
 
         .organizers-coa img {
-            width: 80px;
-            height: 93px;
+            width: 96px;
+            height: 112px;
             object-fit: contain;
         }
 
@@ -588,14 +588,9 @@
         }
 
         .organizers-mascots img {
-            width: 80px;
-            height: 80px;
+            width: auto;
+            height: 150px;
             object-fit: contain;
-        }
-
-        .organizers-mascots img:nth-child(2) {
-            width: 64px;
-            height: 80px;
         }
 
         .footer-links {
@@ -697,7 +692,7 @@
             }
 
             .organizers-coa {
-                gap: 30px;
+                gap: 16px;
             }
 
             .footer-bottom {

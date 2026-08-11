@@ -4,7 +4,7 @@
         <div class="pcd-drag" id="pcdDrag" aria-label="Area geser countdown">
             <div class="pcd-heading">
                 <p class="pcd-title">Menuju PORPROV Jabar XV</p>
-                <p class="pcd-sub">7 November 2026 - 20 November 2026</p>
+                <p class="pcd-sub">31 Oktober 2026 - 20 November 2026</p>
             </div>
             <button type="button" data-no-drag="true" class="pcd-toggle" id="pcdToggle"
                 aria-expanded="true" aria-label="Tutup countdown">Tutup</button>
