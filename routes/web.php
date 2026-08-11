@@ -626,22 +626,7 @@ $kontingens = [
     ['slug' => 'kab-sumedang', 'nama' => 'Kabupaten Sumedang', 'logo' => 'kab-sumedang.png'],
 ];
 
-$klasemen = [
-    ['slug' => 'kota-bogor', 'nama' => 'Kota Bogor', 'logo' => 'kota-bogor.png', 'emas' => 0, 'perak' => 0, 'perunggu' => 0],
-    ['slug' => 'kota-bekasi', 'nama' => 'Kota Bekasi', 'logo' => 'kota-bekasi.png', 'emas' => 0, 'perak' => 0, 'perunggu' => 0],
-    ['slug' => 'kota-depok', 'nama' => 'Kota Depok', 'logo' => 'kota-depok.png', 'emas' => 0, 'perak' => 0, 'perunggu' => 0],
-    ['slug' => 'kota-bandung', 'nama' => 'Kota Bandung', 'logo' => 'kota-bandung.png', 'emas' => 0, 'perak' => 0, 'perunggu' => 0],
-    ['slug' => 'kota-cimahi', 'nama' => 'Kota Cimahi', 'logo' => 'kota-cimahi.png', 'emas' => 0, 'perak' => 0, 'perunggu' => 0],
-    ['slug' => 'kota-cirebon', 'nama' => 'Kota Cirebon', 'logo' => 'kota-cirebon.png', 'emas' => 0, 'perak' => 0, 'perunggu' => 0],
-    ['slug' => 'kota-sukabumi', 'nama' => 'Kota Sukabumi', 'logo' => 'kota-sukabumi.png', 'emas' => 0, 'perak' => 0, 'perunggu' => 0],
-    ['slug' => 'kota-tasikmalaya', 'nama' => 'Kota Tasikmalaya', 'logo' => 'kota-tasikmalaya.png', 'emas' => 0, 'perak' => 0, 'perunggu' => 0],
-    ['slug' => 'kab-bogor', 'nama' => 'Kabupaten Bogor', 'logo' => 'kab-bogor.png', 'emas' => 0, 'perak' => 0, 'perunggu' => 0],
-    ['slug' => 'kab-cianjur', 'nama' => 'Kabupaten Cianjur', 'logo' => 'kab-cianjur.png', 'emas' => 0, 'perak' => 0, 'perunggu' => 0],
-    ['slug' => 'kab-ciamis', 'nama' => 'Kabupaten Ciamis', 'logo' => 'kab-ciamis.png', 'emas' => 0, 'perak' => 0, 'perunggu' => 0],
-    ['slug' => 'kab-garut', 'nama' => 'Kabupaten Garut', 'logo' => 'kab-garut.png', 'emas' => 0, 'perak' => 0, 'perunggu' => 0],
-    ['slug' => 'kab-karawang', 'nama' => 'Kabupaten Karawang', 'logo' => 'kab-karawang.png', 'emas' => 0, 'perak' => 0, 'perunggu' => 0],
-    ['slug' => 'kab-sumedang', 'nama' => 'Kabupaten Sumedang', 'logo' => 'kab-sumedang.png', 'emas' => 0, 'perak' => 0, 'perunggu' => 0],
-];
+$klasemen = [];
 
 $atlets = [];
 

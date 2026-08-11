@@ -39,6 +39,15 @@
         <p>Peringkat diurutkan berdasarkan jumlah medali emas, lalu perak, lalu perunggu. Data diperbarui secara berkala selama pertandingan berlangsung.</p>
     </div>
 
+    @if (empty($klasemen))
+    <div class="atlet-empty">
+        <svg width="46" height="46" fill="none" stroke="#94a3b8" viewBox="0 0 24 24" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M8 21h8m-4-4v4m-6 0h12M7 4h10v4a5 5 0 01-10 0V4zm-2 0H3a1 1 0 001 1h3M17 4h3a1 1 0 01-1 1h-3" />
+        </svg>
+        <p>Belum ada data klasemen medali.</p>
+        <span>Data akan ditampilkan setelah pertandingan dimulai.</span>
+    </div>
+    @else
     <div class="klasemen-table-wrap">
         <table class="klasemen-table">
             <thead>
@@ -78,5 +87,6 @@
             </tbody>
         </table>
     </div>
+    @endif
 </div>
 @endsection

@@ -41,11 +41,11 @@
     }
 }
 
-/* ---- Toggle Button (Positioned next to Accessibility Widget) ---- */
+/* ---- Toggle Button (Positioned above Accessibility Widget) ---- */
 #chat-toggle {
     position: fixed;
-    bottom: 24px;
-    right: 88px; /* Offset to the left of accessibility widget (right: 24px + 52px + 12px gap) */
+    bottom: 88px; /* Above accessibility widget (24px + 52px + 12px gap) */
+    right: 24px;
     width: 54px;
     height: 54px;
     border-radius: 50%;
@@ -93,7 +93,7 @@
 /* ---- Chat Window (Prevents Top Navbar Overlap) ---- */
 #chat-window {
     position: fixed;
-    bottom: 88px;
+    bottom: 160px; /* Above the chat toggle (88px + 54px + 18px gap) */
     right: 24px;
     width: 390px;
     height: 580px;
@@ -575,8 +575,16 @@
     }
 
     #chat-toggle {
-        bottom: 18px;
-        right: 84px; /* Next to accessibility widget on mobile */
+        bottom: 88px; /* Above accessibility widget on mobile */
+        right: 24px;
+    }
+}
+
+/* ---- Very small screens: follow accessibility widget inset ---- */
+@media (max-width: 360px) {
+    #chat-toggle {
+        bottom: 74px;
+        right: 12px;
     }
 }
 
