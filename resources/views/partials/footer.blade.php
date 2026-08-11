@@ -34,6 +34,7 @@
                         <a href="{{ url('/') }}">Beranda</a>
                         <a href="{{ url('/peta-venue') }}">Peta Venue</a>
                         <a href="{{ url('/fasilitas') }}">Fasilitas</a>
+                        <a href="{{ url('/klasemen-medali') }}">Klasemen Medali</a>
                     </div>
                     <div class="footer-links-col">
                         <h4 class="footer-title">Informasi</h4>
