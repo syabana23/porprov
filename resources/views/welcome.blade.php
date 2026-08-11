@@ -1698,7 +1698,7 @@ $bg4 = asset('images/venue4.jpeg');
         }, 5000);
     })();
 
-    // ── Hero Countdown Timer (Countdown to 7 November) ──
+    // ── Hero Countdown Timer (Countdown to 31 October) ──
     (function initHeroCountdown() {
         const daysEls = document.querySelectorAll('.cd-days-val, .fc-days-val');
         const hoursEls = document.querySelectorAll('.cd-hours-val, .fc-hours-val');
@@ -1709,11 +1709,11 @@ $bg4 = asset('images/venue4.jpeg');
 
         function updateCountdown() {
             const now = new Date();
-            let target = new Date('2026-11-07T00:00:00+07:00');
+            let target = new Date('2026-10-31T00:00:00+07:00');
             if (now > target) {
-                target = new Date(now.getFullYear(), 10, 7, 0, 0, 0);
+                target = new Date(now.getFullYear(), 9, 31, 0, 0, 0);
                 if (now > target) {
-                    target = new Date(now.getFullYear() + 1, 10, 7, 0, 0, 0);
+                    target = new Date(now.getFullYear() + 1, 9, 31, 0, 0, 0);
                 }
             }
 

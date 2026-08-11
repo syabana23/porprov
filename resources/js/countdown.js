@@ -26,11 +26,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function tick() {
         const now = new Date();
-        let target = new Date('2026-11-07T00:00:00+07:00');
+        let target = new Date('2026-10-31T00:00:00+07:00');
         if (now > target) {
-            target = new Date(now.getFullYear(), 10, 7, 0, 0, 0);
+            target = new Date(now.getFullYear(), 9, 31, 0, 0, 0);
             if (now > target) {
-                target = new Date(now.getFullYear() + 1, 10, 7, 0, 0, 0);
+                target = new Date(now.getFullYear() + 1, 9, 31, 0, 0, 0);
             }
         }
 
