@@ -29,6 +29,7 @@
 
 <!-- Stats Strip -->
 <div class="stats-strip">
+    <button type="button" class="ss-scroll-btn ss-scroll-prev" aria-label="Geser kategori ke kiri" hidden>&#8249;</button>
     <div class="stats-strip-inner">
         <div class="ss-item active" data-type="all">
             <div class="ss-icon-wrap" style="background: rgba(1, 52, 105, 0.08); color: #013469;">
@@ -130,6 +131,7 @@
             </div>
         </div>
     </div>
+    <button type="button" class="ss-scroll-btn ss-scroll-next" aria-label="Geser kategori ke kanan" hidden>&#8250;</button>
 </div>
 
 <!-- Body -->

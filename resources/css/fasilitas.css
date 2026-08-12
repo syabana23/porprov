@@ -1,5 +1,6 @@
 /* ── Stats strip ── */
 .stats-strip {
+    position: relative;
     background: #ffffff;
     border-bottom: 1px solid #e5e7eb;
     padding: 14px 0;
@@ -19,10 +20,96 @@ html.dark .stats-strip {
     padding: 0 20px;
     overflow-x: auto;
     scrollbar-width: none;
+    scroll-behavior: smooth;
 }
 
 .stats-strip-inner::-webkit-scrollbar {
     display: none;
+}
+
+/* Fade tepi sebagai indikator masih ada konten di samping */
+.stats-strip::before,
+.stats-strip::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 48px;
+    pointer-events: none;
+    z-index: 1;
+    transition: opacity 0.25s ease;
+}
+
+.stats-strip::before {
+    left: 0;
+    background: linear-gradient(to right, #ffffff 15%, rgba(255, 255, 255, 0));
+}
+
+.stats-strip::after {
+    right: 0;
+    background: linear-gradient(to left, #ffffff 15%, rgba(255, 255, 255, 0));
+}
+
+.stats-strip.at-start::before,
+.stats-strip.at-end::after {
+    opacity: 0;
+}
+
+html.dark .stats-strip::before {
+    background: linear-gradient(to right, #1e293b 15%, rgba(30, 41, 59, 0));
+}
+
+html.dark .stats-strip::after {
+    background: linear-gradient(to left, #1e293b 15%, rgba(30, 41, 59, 0));
+}
+
+/* Tombol geser kategori */
+.ss-scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid #e2e8f0;
+    background: #ffffff;
+    color: #013469;
+    font-size: 22px;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    z-index: 2;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+html.dark .ss-scroll-btn {
+    background: #334155;
+    border-color: #475569;
+    color: #e2e8f0;
+}
+
+.ss-scroll-btn:hover {
+    background: #013469;
+    color: #ffffff;
+    border-color: #013469;
+    box-shadow: 0 4px 12px rgba(1, 52, 105, 0.3);
+}
+
+html.dark .ss-scroll-btn:hover {
+    background: #475569;
+    border-color: #64748b;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.ss-scroll-prev {
+    left: 12px;
+}
+
+.ss-scroll-next {
+    right: 12px;
 }
 
 .ss-item {

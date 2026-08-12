@@ -36,7 +36,7 @@
                 <img src="{{ asset('images/logo_baru.PNG') }}" alt="Logo PORPROV XV">
                 <span class="logo-divider" aria-hidden="true"></span>
                 <span class="city-logo-row">
-                    <img src="{{ asset('images/kota-bogor.png') }}" alt="Logo Kota Bogor">
+                    <img src="{{ asset('images/logobarukotabogor-.png') }}" alt="Logo Kota Bogor">
                     <img src="{{ asset('images/kota-bekasi.png') }}" alt="Logo Kota Bekasi">
                     <img src="{{ asset('images/kota-depok.png') }}" alt="Logo Kota Depok">
                 </span>
