@@ -9,15 +9,17 @@
     --cb-border: #e5e7eb;
     --cb-text: #111827;
     --cb-text-muted: #6b7280;
-    --cb-accent: #2563eb;
-    --cb-accent-hover: #1d4ed8;
-    --cb-accent-light: #eff6ff;
-    --cb-user-bg: #2563eb;
+    --cb-accent: #013469;
+    --cb-accent-hover: #0a4fa8;
+    --cb-accent-light: #e8eff8;
+    --cb-accent-text: #013469;
+    --cb-header-grad: linear-gradient(135deg, #0a4fa8 0%, #1d4ed8 100%);
+    --cb-user-bg: #013469;
     --cb-user-text: #ffffff;
     --cb-bot-bg: #ffffff;
     --cb-bot-border: #e5e7eb;
-    --cb-shadow: 0 8px 40px rgba(0,0,0,.15);
-    --cb-shadow-sm: 0 2px 8px rgba(0,0,0,.08);
+    --cb-shadow: 0 8px 40px rgba(1,52,105,.18);
+    --cb-shadow-sm: 0 2px 8px rgba(1,52,105,.10);
     --cb-radius: 16px;
     --cb-radius-bubble: 18px;
     --cb-font: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -32,9 +34,11 @@
         --cb-border: #313244;
         --cb-text: #cdd6f4;
         --cb-text-muted: #6c7086;
-        --cb-accent: #89b4fa;
-        --cb-accent-hover: #74c7ec;
-        --cb-accent-light: #1e1e2e;
+        --cb-accent: #013469;
+        --cb-accent-hover: #0a4fa8;
+        --cb-accent-light: #242f45;
+        --cb-accent-text: #a9c1e2;
+        --cb-header-grad: linear-gradient(135deg, #0a4fa8 0%, #1d4ed8 100%);
         --cb-bot-bg: #1e1e2e;
         --cb-bot-border: #313244;
         --cb-shadow: 0 8px 40px rgba(0,0,0,.5);
@@ -56,7 +60,7 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    box-shadow: 0 4px 20px rgba(37, 99, 235, .45);
+    box-shadow: 0 4px 20px rgba(1, 52, 105, .45);
     z-index: 10001; /* Higher than accessibility button (10000) & navbar (9999) */
     transition: transform .2s ease, box-shadow .2s ease, background .2s;
 }
@@ -64,7 +68,7 @@
 #chat-toggle:hover {
     background: var(--cb-accent-hover);
     transform: scale(1.08);
-    box-shadow: 0 6px 28px rgba(37, 99, 235, .55);
+    box-shadow: 0 6px 28px rgba(1, 52, 105, .55);
 }
 
 #chat-toggle svg {
@@ -126,7 +130,7 @@
     justify-content: space-between;
     padding: 0 14px 0 16px;
     height: var(--cb-header-h);
-    background: var(--cb-accent);
+    background: var(--cb-header-grad);
     color: #fff;
     flex-shrink: 0;
 }
@@ -332,14 +336,51 @@
     color: var(--cb-user-text);
     border: none;
     border-bottom-right-radius: 5px;
-    box-shadow: 0 2px 10px rgba(37,99,235,.3);
+    box-shadow: 0 2px 10px rgba(1,52,105,.3);
 }
 
 /* ---- Inline links inside bubbles ---- */
-.bot-bubble a {
-    color: var(--cb-accent);
-    text-decoration: underline;
-    font-weight: 500;
+.bot-bubble a:not(.cb-action-btn) {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--cb-accent-text);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1.5px dashed var(--cb-accent-text);
+    padding-bottom: 1px;
+    transition: color .15s, border-color .15s;
+}
+
+.bot-bubble a:not(.cb-action-btn):hover {
+    color: var(--cb-accent-hover);
+    border-bottom-style: solid;
+}
+
+/* ---- Bubble content typography ---- */
+.bot-bubble strong {
+    color: var(--cb-accent-text);
+    font-weight: 700;
+}
+
+.bot-bubble em {
+    color: var(--cb-text-muted);
+    font-style: italic;
+}
+
+.bot-bubble code {
+    background: var(--cb-accent-light);
+    color: var(--cb-text);
+    padding: 2px 5px;
+    border-radius: 5px;
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+    font-size: 12px;
+}
+
+.cb-bullet {
+    color: var(--cb-accent-text);
+    font-weight: 700;
+    margin-right: 1px;
 }
 
 /* ---- Action Button inside bubble ---- */
@@ -399,7 +440,7 @@
 }
 
 .msg-copy:hover {
-    color: var(--cb-accent);
+    color: var(--cb-accent-text);
     background: var(--cb-accent-light);
 }
 
@@ -463,8 +504,8 @@
 }
 
 .suggestion-chip:hover {
-    border-color: var(--cb-accent);
-    color: var(--cb-accent);
+    border-color: var(--cb-accent-text);
+    color: var(--cb-accent-text);
     background: var(--cb-accent-light);
 }
 
@@ -488,8 +529,8 @@
 }
 
 #chat-input-wrapper:focus-within {
-    border-color: var(--cb-accent);
-    box-shadow: 0 0 0 3px rgba(37,99,235,.1);
+    border-color: var(--cb-accent-text);
+    box-shadow: 0 0 0 3px rgba(1,52,105,.1);
 }
 
 #chat-input {

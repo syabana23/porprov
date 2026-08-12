@@ -98,29 +98,73 @@
     }
 
     // ----------------------------------------------------------------
-    // Lightweight Markdown & HTML Renderer
+    // Safe HTML Sanitizer (whitelist) — DOMParser based
+    // ----------------------------------------------------------------
+    const ALLOWED_TAGS = new Set(['STRONG', 'B', 'I', 'EM', 'U', 'BR', 'CODE', 'A', 'SPAN', 'P', 'UL', 'OL', 'LI']);
+    const ALLOWED_ATTRS = {
+        A:    ['href', 'target', 'rel'],
+        CODE: ['class'],
+        SPAN: ['class'],
+        P:    ['class'],
+    };
+
+    function sanitizeHtml(html) {
+        const doc = new DOMParser().parseFromString(`<div id="__cb_root">${html}</div>`, 'text/html');
+        const root = doc.getElementById('__cb_root');
+        if (!root) return '';
+
+        function clean(node) {
+            [...node.childNodes].forEach(child => {
+                if (child.nodeType !== Node.ELEMENT_NODE) return;
+                if (ALLOWED_TAGS.has(child.tagName)) {
+                    [...child.attributes].forEach(attr => {
+                        const allowed = (ALLOWED_ATTRS[child.tagName] || []).includes(attr.name);
+                        if (attr.name.startsWith('on') || attr.name === 'style' || !allowed) {
+                            child.removeAttribute(attr.name);
+                        }
+                    });
+                    if (child.tagName === 'A') {
+                        const href = (child.getAttribute('href') || '').trim();
+                        if (!href || /^\s*(javascript|data|vbscript):/i.test(href)) {
+                            child.removeAttribute('href');
+                        } else {
+                            child.setAttribute('target', '_blank');
+                            child.setAttribute('rel', 'noopener noreferrer');
+                        }
+                    }
+                    clean(child);
+                } else {
+                    while (child.firstChild) node.insertBefore(child.firstChild, child);
+                    node.removeChild(child);
+                }
+            });
+        }
+
+        clean(root);
+        return root.innerHTML;
+    }
+
+    // ----------------------------------------------------------------
+    // Lightweight Markdown & Safe HTML Renderer
     // ----------------------------------------------------------------
     function renderMarkdown(text) {
         if (!text) return '';
-        // Step 1: Escape raw HTML FIRST — prevents XSS from server/API responses
-        let html = text
-            .replace(/&/g, '&amp;')
-            .replace(/</g, '&lt;')
-            .replace(/>/g, '&gt;')
-            .replace(/"/g, '&quot;');
-        // Step 2: Apply safe markdown transforms (only known-safe tags injected)
+        let html = text;
         // Bold: **text** or __text__
         html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
         html = html.replace(/__(.*?)__/g, '<strong>$1</strong>');
         // Italic: *text* or _text_
         html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
         // Inline Code: `code`
-        html = html.replace(/`([^`]+)`/g, '<code style="background:rgba(0,0,0,0.06);padding:2px 4px;border-radius:4px;font-family:monospace;font-size:12px;">$1</code>');
+        html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
+        // Style bullet markers (accent-colored bullet, rapi)
+        html = html.replace(/(<br>\s*|^)\u2022\s*/g, '$1<span class="cb-bullet">\u2022</span> ');
         // Line breaks (if not already containing <br>)
         if (!html.includes('<br>') && !html.includes('<p>')) {
             html = html.replace(/\n/g, '<br>');
         }
-        return html;
+        // Sanitize whitelist — mencegah XSS sambil tetap merender HTML dari server
+        return sanitizeHtml(html);
     }
 
     // ----------------------------------------------------------------
