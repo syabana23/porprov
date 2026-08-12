@@ -213,8 +213,12 @@ $bg4 = asset('images/venue4.jpeg');
                 </div>
                 <div class="gor-card-body">
                     <div class="addr">
+                        <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24" style="flex-shrink:0; margin-top:2px; color:#9ca3af;">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z" />
+                        </svg>
                         <span id="card-gor-addr">-</span>
                     </div>
+                    <div class="cabang-title">CABANG OLAHRAGA</div>
                     <div class="cabor-grid" id="card-gor-cabor-grid"></div>
                     <a href="#" id="card-gor-gmaps" target="_blank" class="map-btn">
                         <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24">
@@ -1643,9 +1647,23 @@ $bg4 = asset('images/venue4.jpeg');
         const caborContainer = document.getElementById('card-gor-cabor-grid');
         caborContainer.innerHTML = '';
         caborArr.forEach(c => {
+            let shortName = c;
+            if (c.length > 10) {
+                const words = c.split(' ');
+                shortName = words[words.length - 1];
+            }
             const iconFile = caborIcons[c] || '';
-            const iconHtml = iconFile ? `<img src="/images/cabor/${iconFile}" class="cabor-tag-icon" alt=""> ` : '';
-            caborContainer.innerHTML += `<span class="cabor-tag">${iconHtml}${c}</span>`;
+            const iconHtml = iconFile ?
+                `<img src="/images/cabor/${iconFile}" alt="${c}">` :
+                '';
+            caborContainer.innerHTML += `
+                <div class="cabor-item">
+                    <div class="cabor-icon">
+                        ${iconHtml}
+                    </div>
+                    <span>${shortName}</span>
+                </div>
+            `;
         });
 
         if (map) {

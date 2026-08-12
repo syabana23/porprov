@@ -678,48 +678,122 @@
 
     /* Selected Venue Detail Box inside Left Column */
     .home-gor-card {
-        background: #f8fafc;
+        background: #fff;
         border-top: 1px solid #e2e8f0;
-        padding: 18px 20px;
         display: none;
+        overflow: hidden;
         /* Shown dynamically when clicking a map venue */
     }
 
-    .gor-card-header {
+    .home-gor-card .gor-card-header {
+        background: linear-gradient(135deg, #013469, #014590);
+        color: #fff;
+        padding: 14px 16px;
         display: flex;
         align-items: center;
         gap: 8px;
-        font-size: 15.5px;
+        font-size: 15px;
         font-weight: 800;
-        color: #013469;
-        margin-bottom: 6px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        margin-bottom: 0;
     }
 
-    .gor-card-body .addr {
+    .home-gor-card .gor-card-header svg {
+        color: rgba(255, 255, 255, 0.7) !important;
+    }
+
+    .home-gor-card .gor-card-body {
+        padding: 16px;
+    }
+
+    .home-gor-card .gor-card-body .addr {
         font-size: 12px;
-        color: #64748b;
+        color: #6b7280;
         display: flex;
         align-items: flex-start;
-        gap: 6px;
-        margin-bottom: 12px;
-        line-height: 1.4;
-    }
-
-    .cabor-grid {
-        display: flex;
         gap: 8px;
-        flex-wrap: wrap;
         margin-bottom: 14px;
+        line-height: 1.5;
     }
 
-    .cabor-tag {
-        background: #e0f2fe;
-        color: #0369a1;
-        padding: 4px 12px;
-        border-radius: 20px;
-        font-size: 11.5px;
-        font-weight: 700;
+    .home-gor-card .cabang-title {
+        font-size: 11px;
+        font-weight: 800;
+        color: #013469;
+        margin-bottom: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
     }
+
+    .home-gor-card .cabor-grid {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-bottom: 18px;
+    }
+
+    .home-gor-card .cabor-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        width: 52px;
+    }
+
+    .home-gor-card .cabor-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #f0f4ff, #e0eaff);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #013469;
+        transition: transform 0.2s;
+    }
+
+    .home-gor-card .cabor-item:hover .cabor-icon {
+        transform: scale(1.1);
+    }
+
+    .home-gor-card .cabor-icon img {
+        width: 26px;
+        height: 26px;
+        object-fit: contain;
+    }
+
+    .home-gor-card .cabor-item span {
+        font-size: 10px;
+        color: #4b5563;
+        text-align: center;
+        line-height: 1.2;
+        font-weight: 500;
+    }
+
+    .home-gor-card .map-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        background: linear-gradient(135deg, #013469, #0a4fa8);
+        color: #fff;
+        font-size: 13px;
+        font-weight: 700;
+        padding: 10px 18px;
+        text-decoration: none;
+        border-radius: 10px;
+        transition: all 0.25s ease;
+        box-shadow: 0 2px 8px rgba(1, 52, 105, 0.2);
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .home-gor-card .map-btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 14px rgba(1, 52, 105, 0.3);
+        background: linear-gradient(135deg, #012a54, #014590);
+    }
+
 
     .map-btn {
         display: inline-flex;
@@ -858,6 +932,34 @@
     html.dark .filter-select-styled option {
         background: #1e293b;
         color: #e2e8f0;
+    }
+
+    /* ── Dark Mode: Home GOR Card ── */
+    html.dark .home-gor-card {
+        background: #1e293b;
+        border-color: #334155;
+    }
+
+    html.dark .home-gor-card .gor-card-header {
+        background: linear-gradient(135deg, #0f172a, #1e293b);
+        border-bottom-color: #334155;
+    }
+
+    html.dark .home-gor-card .gor-card-body .addr {
+        color: #94a3b8;
+    }
+
+    html.dark .home-gor-card .cabang-title {
+        color: #60a5fa;
+    }
+
+    html.dark .home-gor-card .cabor-item span {
+        color: #cbd5e1;
+    }
+
+    html.dark .home-gor-card .cabor-icon {
+        background: linear-gradient(135deg, #0f172a, #1e293b);
+        color: #60a5fa;
     }
 
     .filter-actions {
@@ -1487,28 +1589,44 @@
 
         /* GOR detail card di bawah peta */
         .home-gor-card {
-            padding: 14px 16px;
             border-radius: 0 0 12px 12px;
         }
 
-        .gor-card-header {
+        .home-gor-card .gor-card-header {
             font-size: 14px;
+            padding: 12px 14px;
         }
 
-        .cabor-grid {
-            gap: 5px;
+        .home-gor-card .gor-card-body {
+            padding: 14px;
         }
 
-        .cabor-tag {
-            font-size: 11px;
-            padding: 3px 10px;
+        .home-gor-card .cabor-grid {
+            gap: 8px;
+            margin-bottom: 14px;
         }
 
-        .map-btn {
+        .home-gor-card .cabor-item {
+            width: 48px;
+        }
+
+        .home-gor-card .cabor-icon {
+            width: 38px;
+            height: 38px;
+        }
+
+        .home-gor-card .cabor-icon img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .home-gor-card .cabor-item span {
+            font-size: 9.5px;
+        }
+
+        .home-gor-card .map-btn {
             font-size: 12px;
-            padding: 8px 14px;
-            width: 100%;
-            justify-content: center;
+            padding: 9px 14px;
         }
 
         /* Panel fasilitas */
@@ -1936,20 +2054,38 @@
             border: none;
             border-top: 1px solid #e2e8f0;
             margin-top: 0;
-            padding: 16px;
         }
 
-        .gor-card-header {
-            font-size: 14px;
+        .home-gor-card .gor-card-header {
+            font-size: 13.5px;
+            padding: 11px 13px;
         }
 
-        .cabor-grid {
-            gap: 6px;
+        .home-gor-card .gor-card-body {
+            padding: 12px 13px;
         }
 
-        .cabor-tag {
-            font-size: 11px;
-            padding: 3px 10px;
+        .home-gor-card .cabor-grid {
+            gap: 7px;
+            margin-bottom: 12px;
+        }
+
+        .home-gor-card .cabor-item {
+            width: 46px;
+        }
+
+        .home-gor-card .cabor-icon {
+            width: 36px;
+            height: 36px;
+        }
+
+        .home-gor-card .cabor-icon img {
+            width: 22px;
+            height: 22px;
+        }
+
+        .home-gor-card .cabor-item span {
+            font-size: 9px;
         }
 
         /* Match cards */
