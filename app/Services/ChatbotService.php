@@ -67,16 +67,17 @@ class ChatbotService
         $sessionVenue = session($lastVenueKey, '');
         $sessionCabor = session($lastCaborKey, '');
 
+        // Step 1: Resolve context OUTSIDE cache — session state must always update
+        $context = $this->resolver->resolveContext($message);
+
+        // Step 2: Update session OUTSIDE cache — runs on every request, not just cache misses
+        $this->updateSessionState($context);
+
+        // Step 3: Cache only the response (keyed by message + session context snapshot)
         $cacheKey = 'cb_resp_' . md5(strtolower($trimMsg) . '|' . $sessionVenue . '|' . $sessionCabor);
 
-        return Cache::remember($cacheKey, 600, function () use ($message) {
-            // 1. Resolve Context (Intent + Entities)
-            $context = $this->resolver->resolveContext($message);
-
-            // 2. Update Session State
-            $this->updateSessionState($context);
-
-            // 3. Find and Execute matching Intent Handler
+        return Cache::remember($cacheKey, 600, function () use ($context) {
+            // Find and execute matching Intent Handler
             foreach ($this->handlers as $handler) {
                 if ($handler->canHandle($context)) {
                     return $handler->handle($context)->toArray();

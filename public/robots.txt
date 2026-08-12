@@ -1,2 +1,6 @@
 User-agent: *
-Disallow:
+Disallow: /storage/
+Disallow: /vendor/
+Disallow: /.env
+Disallow: /config/
+Disallow: /up

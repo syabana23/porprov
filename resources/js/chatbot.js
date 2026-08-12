@@ -102,7 +102,13 @@
     // ----------------------------------------------------------------
     function renderMarkdown(text) {
         if (!text) return '';
-        let html = text;
+        // Step 1: Escape raw HTML FIRST — prevents XSS from server/API responses
+        let html = text
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;');
+        // Step 2: Apply safe markdown transforms (only known-safe tags injected)
         // Bold: **text** or __text__
         html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
         html = html.replace(/__(.*?)__/g, '<strong>$1</strong>');
@@ -181,6 +187,8 @@
         const bubble = document.createElement('div');
         bubble.className = `msg-bubble ${sender}-bubble`;
         bubble.innerHTML = renderMarkdown(htmlContent);
+        // Store raw content for JSON persistence (safe text, not rendered HTML)
+        bubble.dataset.rawContent = htmlContent;
 
         // Action button inside bubble
         if (buttonData && buttonData.url && buttonData.text) {
@@ -220,6 +228,14 @@
 
         row.appendChild(avatar);
         row.appendChild(bubbleWrap);
+
+        // Store button data for JSON persistence
+        if (buttonData && buttonData.url && buttonData.text) {
+            row.dataset.btnUrl  = buttonData.url;
+            row.dataset.btnText = buttonData.text;
+        }
+        row.dataset.sender = sender;
+        row.dataset.time   = timeEl.textContent;
 
         return row;
     }
@@ -272,6 +288,7 @@
         const sep = document.createElement('div');
         sep.className = 'msg-date-sep';
         sep.textContent = label;
+        sep.dataset.dateLabel = label;
         chatBody.appendChild(sep);
     }
 
@@ -333,22 +350,52 @@
     }
 
     // ----------------------------------------------------------------
-    // Persistence (localStorage)
+    // Persistence (localStorage) — stores structured JSON, NOT raw innerHTML
     // ----------------------------------------------------------------
     function saveChat() {
         try {
-            localStorage.setItem(STORAGE_KEY, chatBody.innerHTML);
+            const entries = [];
+            chatBody.childNodes.forEach(node => {
+                if (node.nodeType !== Node.ELEMENT_NODE) return;
+                if (node.classList.contains('msg-date-sep')) {
+                    entries.push({ type: 'date', label: node.dataset.dateLabel || node.textContent });
+                } else if (node.classList.contains('msg-row')) {
+                    const bubble = node.querySelector('.msg-bubble');
+                    entries.push({
+                        type    : 'message',
+                        sender  : node.dataset.sender || (node.classList.contains('bot-row') ? 'bot' : 'user'),
+                        content : bubble ? (bubble.dataset.rawContent || '') : '',
+                        time    : node.dataset.time || '',
+                        btnUrl  : node.dataset.btnUrl  || null,
+                        btnText : node.dataset.btnText || null,
+                    });
+                }
+            });
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(entries));
         } catch(e) {}
     }
 
     function loadChat() {
         try {
-            const saved = localStorage.getItem(STORAGE_KEY);
-            if (saved) {
-                chatBody.innerHTML = saved;
-                return true;
-            }
-        } catch(e) {}
+            const raw = localStorage.getItem(STORAGE_KEY);
+            if (!raw) return false;
+            const entries = JSON.parse(raw);
+            if (!Array.isArray(entries) || entries.length === 0) return false;
+            entries.forEach(entry => {
+                if (entry.type === 'date') {
+                    addDateSeparator(entry.label);
+                } else if (entry.type === 'message') {
+                    const btn = (entry.btnUrl && entry.btnText)
+                        ? { url: entry.btnUrl, text: entry.btnText }
+                        : null;
+                    const row = buildMessageRow(entry.content, entry.sender, entry.time, btn);
+                    chatBody.appendChild(row);
+                }
+            });
+            return true;
+        } catch(e) {
+            localStorage.removeItem(STORAGE_KEY);
+        }
         return false;
     }
 

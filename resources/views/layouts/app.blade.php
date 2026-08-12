@@ -419,7 +419,10 @@
         btnResetA11y.addEventListener('click', () => {
             document.documentElement.className = '';
             document.body.className = '';
-            localStorage.clear();
+            // Remove only accessibility keys — preserve chat history and theme
+            ['a11y_fontsize','a11y_highContrast','a11y_grayscale','a11y_negative',
+             'a11y_highlightLinks','a11y_readableFont','a11y_colorBlind','a11y_voiceMode',
+             'a11y_pending_speech','theme'].forEach(k => localStorage.removeItem(k));
 
             // Reset status tombol
             btnFontNormal.classList.add('active');

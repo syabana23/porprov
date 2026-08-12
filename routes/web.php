@@ -630,13 +630,13 @@ $klasemen = [];
 
 $atlets = [];
 
+$rawVideoId = '4vdOCO3KWB0';
 $liveStream = [
-    'video_id' => '4vdOCO3KWB0',
+    'video_id' => preg_match('/^[a-zA-Z0-9_-]{11}$/', $rawVideoId) ? $rawVideoId : '',
     'title' => 'Live Streaming Resmi PORPROV XV Kota Bogor 2026',
 ];
 
-Route::get('/chatbot/chat', [ChatbotController::class, 'chat']);
-Route::post('/chatbot', [ChatbotController::class, 'chat']);
+Route::post('/chatbot', [ChatbotController::class, 'chat'])->middleware('throttle:30,1');
 
 Route::get('/', function () {
     return view('welcome');
