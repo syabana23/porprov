@@ -128,31 +128,31 @@
     <div class="map-box-card">
         <div class="map-container-wrap">
             <div id="map-canvas"></div>
+        </div>
 
-            <div class="gor-card" id="floating-gor-card">
-                <div class="gor-card-header">
-                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="color: #374151;">
+        <div class="gor-card" id="floating-gor-card">
+            <div class="gor-card-header">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="color: #374151;">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z" />
+                </svg>
+                <span id="card-gor-name">-</span>
+            </div>
+            <div class="gor-card-body">
+                <div class="addr">
+                    <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="color: #6b7280; flex-shrink: 0; margin-top: -2px;">
                         <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z" />
                     </svg>
-                    <span id="card-gor-name">-</span>
+                    <span id="card-gor-addr">-</span>
                 </div>
-                <div class="gor-card-body">
-                    <div class="addr">
-                        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" style="color: #6b7280; flex-shrink: 0; margin-top: -2px;">
-                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z" />
-                        </svg>
-                        <span id="card-gor-addr">-</span>
-                    </div>
-                    <div class="cabang-title">CABANG OLAHRAGA</div>
-                    <div class="cabor-grid" id="card-gor-cabor-grid"></div>
+                <div class="cabang-title">CABANG OLAHRAGA</div>
+                <div class="cabor-grid" id="card-gor-cabor-grid"></div>
 
-                    <a href="#" id="card-gor-gmaps" target="_blank" class="map-btn">
-                        <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z" />
-                        </svg>
-                        Buka di Google Maps
-                    </a>
-                </div>
+                <a href="#" id="card-gor-gmaps" target="_blank" class="map-btn">
+                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M19 19H5V5h7V3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z" />
+                    </svg>
+                    Buka di Google Maps
+                </a>
             </div>
         </div>
     </div>
@@ -1408,6 +1408,13 @@
             ];
             venueTypes.forEach(function(t) {
                 renderFacilityCategory(venue, t[0], t[1], t[2], t[3]);
+            });
+        }
+
+        if (window.innerWidth <= 768 && floatingCard) {
+            floatingCard.scrollIntoView({
+                behavior: 'smooth',
+                block: 'nearest'
             });
         }
     }
