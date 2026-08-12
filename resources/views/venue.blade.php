@@ -1193,10 +1193,30 @@
         }
     }
 
+    // Smooth Modern Parabolic Fly Animation (Zoom Out -> Pan -> Zoom In)
+    function smoothFlyTo(latLng, targetZoom = 16) {
+        if (!map) return;
+        map.flyTo(L.latLng(latLng), targetZoom, {
+            duration: 1.8,
+            easeLinearity: 0.15,
+            noMoveStart: false
+        });
+    }
+
+    function smoothFlyToBounds(bounds, options = {}) {
+        if (!map) return;
+        map.flyToBounds(bounds, {
+            padding: options.padding || [50, 50],
+            maxZoom: options.maxZoom || 15,
+            duration: 1.8,
+            easeLinearity: 0.15
+        });
+    }
+
     function resetVenueBounds() {
         const bogorBounds = L.latLngBounds();
         venueData.forEach(v => bogorBounds.extend([v.lat, v.lng]));
-        map.fitBounds(bogorBounds, {
+        smoothFlyToBounds(bogorBounds, {
             padding: [40, 40],
             maxZoom: 14
         });
@@ -1215,6 +1235,7 @@
                 }).addTo(map);
                 marker.bindTooltip(`${cabor} - ${venue.name}`);
                 marker.on("click", () => {
+                    smoothFlyTo([venue.lat + offset.lat, venue.lng + offset.lng], 16);
                     showVenueDetails(venue);
                 });
                 markers.push(marker);
@@ -1231,6 +1252,25 @@
     // Fungsi Menangani Filter Maps
     function setupFilter() {
         const filterForm = document.getElementById('map-filter-form');
+        const venueSelect = document.getElementById('venue');
+        const caborSelect = document.getElementById('cabor');
+        const fasilitasSelect = document.getElementById('fasilitas');
+
+        if (venueSelect) {
+            venueSelect.addEventListener('change', function() {
+                filterForm.dispatchEvent(new Event('submit'));
+            });
+        }
+        if (caborSelect) {
+            caborSelect.addEventListener('change', function() {
+                filterForm.dispatchEvent(new Event('submit'));
+            });
+        }
+        if (fasilitasSelect) {
+            fasilitasSelect.addEventListener('change', function() {
+                filterForm.dispatchEvent(new Event('submit'));
+            });
+        }
 
         // Saat form di-submit
         filterForm.addEventListener('submit', function(e) {
@@ -1274,6 +1314,7 @@
                 if (isVenueFound) {
                     const v = filteredVenues[0];
                     currentVenue = v;
+                    smoothFlyTo([v.lat, v.lng], 16);
                     showVenueDetails(v);
 
                     const filterToCategory = {
@@ -1304,10 +1345,11 @@
             } else {
                 if (isVenueFound) {
                     if (filteredVenues.length === 1) {
-                        map.setView([filteredVenues[0].lat, filteredVenues[0].lng], 15);
+                        smoothFlyTo([filteredVenues[0].lat, filteredVenues[0].lng], 16);
                     } else {
-                        map.fitBounds(bounds, {
-                            padding: [50, 50]
+                        smoothFlyToBounds(bounds, {
+                            padding: [50, 50],
+                            maxZoom: 15
                         });
                     }
 

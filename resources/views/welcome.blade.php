@@ -1442,6 +1442,25 @@ $bg4 = asset('images/venue4.jpeg');
         });
     }
 
+    function smoothFlyTo(latLng, targetZoom = 16) {
+        if (!map) return;
+        map.flyTo(L.latLng(latLng), targetZoom, {
+            duration: 1.8,
+            easeLinearity: 0.15,
+            noMoveStart: false
+        });
+    }
+
+    function smoothFlyToBounds(bounds, options = {}) {
+        if (!map) return;
+        map.flyToBounds(bounds, {
+            padding: options.padding || [40, 40],
+            maxZoom: options.maxZoom || 15,
+            duration: 1.8,
+            easeLinearity: 0.15
+        });
+    }
+
     function initMap() {
         const bogorCenter = [-6.587, 106.803];
         const mapElement = document.getElementById("map-canvas");
@@ -1508,6 +1527,7 @@ $bg4 = asset('images/venue4.jpeg');
                 }).addTo(map);
                 marker.bindTooltip(`${cabor} - ${venue.name}`);
                 marker.on("click", () => {
+                    smoothFlyTo([venue.lat + offset.lat, venue.lng + offset.lng], 16);
                     showVenueDetails(venue);
                     const vs = document.getElementById('venue');
                     const v = venue.name.toLowerCase();
@@ -1525,6 +1545,26 @@ $bg4 = asset('images/venue4.jpeg');
 
     function setupFilter() {
         const filterForm = document.getElementById('map-filter-form');
+        const venueSelect = document.getElementById('venue');
+        const caborSelect = document.getElementById('cabor');
+        const fasilitasSelect = document.getElementById('fasilitas');
+
+        if (venueSelect) {
+            venueSelect.addEventListener('change', function() {
+                filterForm.dispatchEvent(new Event('submit'));
+            });
+        }
+        if (caborSelect) {
+            caborSelect.addEventListener('change', function() {
+                filterForm.dispatchEvent(new Event('submit'));
+            });
+        }
+        if (fasilitasSelect) {
+            fasilitasSelect.addEventListener('change', function() {
+                filterForm.dispatchEvent(new Event('submit'));
+            });
+        }
+
         filterForm.addEventListener('submit', function(e) {
             e.preventDefault();
 
@@ -1552,9 +1592,13 @@ $bg4 = asset('images/venue4.jpeg');
             if (filteredVenues.length > 0) {
                 renderVenues(filteredVenues, filterCabor);
                 filteredVenues.forEach(v => bounds.extend([v.lat, v.lng]));
-                map.fitBounds(bounds, {
-                    padding: [40, 40]
-                });
+                if (filteredVenues.length === 1) {
+                    smoothFlyTo([filteredVenues[0].lat, filteredVenues[0].lng], 16);
+                } else {
+                    smoothFlyToBounds(bounds, {
+                        padding: [40, 40]
+                    });
+                }
                 showVenueDetails(filteredVenues[0]);
 
                 // Fasilitas filter
@@ -1582,7 +1626,7 @@ $bg4 = asset('images/venue4.jpeg');
             } else {
                 alert('Venue tidak ditemukan dengan kriteria tersebut.');
                 renderVenues(venueData);
-                map.setView([-6.587, 106.803], 13);
+                smoothFlyTo([-6.587, 106.803], 13);
             }
         });
 
@@ -1590,7 +1634,7 @@ $bg4 = asset('images/venue4.jpeg');
             setTimeout(() => {
                 clearMarkers();
                 renderVenues(venueData);
-                map.setView([-6.587, 106.803], 13);
+                smoothFlyTo([-6.587, 106.803], 13);
                 const floatingCard = document.getElementById('floating-gor-card');
                 if (floatingCard) floatingCard.style.display = 'none';
                 const placeholder = document.getElementById('facilities-placeholder');
