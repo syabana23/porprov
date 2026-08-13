@@ -150,7 +150,7 @@
 
 .cs-search-input {
   width: 100%;
-  padding: 0.5rem 0.75rem 0.5rem 2.25rem;
+  padding: 0.5625rem 0.75rem 0.5625rem 2.5rem;
   border: 1px solid #e2e8f0;
   border-radius: 0.625rem;
   font-size: 0.84375rem;
@@ -158,6 +158,8 @@
   color: #0f172a;
   outline: none;
   transition: all 0.15s ease;
+  box-sizing: border-box;
+  height: 40px;
 }
 
 .cs-search-input:focus {
@@ -168,7 +170,7 @@
 
 .cs-search-icon {
   position: absolute;
-  left: 0.75rem;
+  left: 0.875rem;
   top: 50%;
   transform: translateY(-50%);
   color: #94a3b8;
@@ -328,7 +330,7 @@ html.dark .cs-check-icon {
 
 .jadwal-filter {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.35fr) minmax(0, 1.15fr) auto;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
   align-items: center;
   width: 100%;
@@ -366,10 +368,10 @@ html.dark .jadwal-filter {
 
 .filter-form-clean .filter-actions {
   grid-column: 1 / -1;
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 10px;
-  height: var(--filter-height);
+  align-items: stretch;
   width: 100%;
 }
 
@@ -401,15 +403,17 @@ html.dark .jadwal-filter {
 }
 
 .filter-actions {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  height: var(--filter-height);
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  align-items: stretch;
 }
 
 .btn-cari,
 .btn-search-blue {
-  display: inline-flex;
+  width: 100%;
+  display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
@@ -417,7 +421,7 @@ html.dark .jadwal-filter {
   min-height: var(--filter-height);
   max-height: var(--filter-height);
   box-sizing: border-box;
-  padding: 0 1.5rem;
+  padding: 0 1rem;
   background: linear-gradient(135deg, #013469, #0a4fa8);
   color: #ffffff;
   font-weight: 600;
@@ -445,14 +449,15 @@ html.dark .jadwal-filter {
 
 .btn-reset,
 .btn-reset-light {
-  display: inline-flex;
+  width: 100%;
+  display: flex;
   align-items: center;
   justify-content: center;
   height: var(--filter-height);
   min-height: var(--filter-height);
   max-height: var(--filter-height);
   box-sizing: border-box;
-  padding: 0 1.25rem;
+  padding: 0 1rem;
   background: #f1f5f9;
   color: #475569;
   font-weight: 500;
@@ -488,17 +493,6 @@ html.dark .btn-reset-light:hover {
   .jadwal-filter {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
-
-  .jadwal-filter .filter-actions {
-    grid-column: 1 / -1;
-    display: flex;
-    width: 100%;
-  }
-
-  .jadwal-filter .btn-cari,
-  .jadwal-filter .btn-reset {
-    flex: 1;
-  }
 }
 
 @media (max-width: 768px) {
@@ -508,14 +502,8 @@ html.dark .btn-reset-light:hover {
   }
 
   .jadwal-filter .filter-actions {
-    flex-direction: column;
-    width: 100%;
-    height: auto;
-  }
-
-  .jadwal-filter .btn-cari,
-  .jadwal-filter .btn-reset {
-    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
 }
 

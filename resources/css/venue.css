@@ -11,7 +11,7 @@
 
     .jadwal-filter {
         display: grid;
-        grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.35fr) minmax(0, 1.15fr) auto;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 12px;
         align-items: center;
         margin-bottom: 24px;
@@ -38,15 +38,17 @@
     }
 
     .filter-actions {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        height: var(--filter-height, 48px);
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        align-items: stretch;
         margin: 0;
         padding: 0;
     }
 
     .btn-cari {
+        width: 100%;
         height: var(--filter-height, 48px);
         min-height: var(--filter-height, 48px);
         max-height: var(--filter-height, 48px);
@@ -54,7 +56,7 @@
         background: linear-gradient(135deg, #013469, #0a4fa8);
         color: #fff;
         border: none;
-        padding: 0 24px;
+        padding: 0 1rem;
         border-radius: 0.75rem;
         font-weight: 600;
         font-size: 0.9375rem;
@@ -63,10 +65,10 @@
         transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
         box-shadow: 0 4px 12px rgba(1, 52, 105, 0.2);
         white-space: nowrap;
-        display: inline-flex;
+        display: flex;
         align-items: center;
         justify-content: center;
-        gap: 8px;
+        gap: 0.5rem;
         margin: 0;
     }
 
@@ -78,6 +80,7 @@
 
     .btn-reset,
     .btn-reset-filter {
+        width: 100%;
         height: var(--filter-height, 48px);
         min-height: var(--filter-height, 48px);
         max-height: var(--filter-height, 48px);
@@ -85,7 +88,7 @@
         background: #f1f5f9;
         color: #475569;
         border: 1px solid #e2e8f0;
-        padding: 0 20px;
+        padding: 0 1rem;
         border-radius: 0.75rem;
         font-weight: 500;
         font-size: 0.9375rem;
@@ -93,7 +96,7 @@
         cursor: pointer;
         transition: all 0.2s ease;
         white-space: nowrap;
-        display: inline-flex;
+        display: flex;
         align-items: center;
         justify-content: center;
         margin: 0;
@@ -662,18 +665,6 @@
         .jadwal-filter {
             grid-template-columns: repeat(3, minmax(0, 1fr));
         }
-
-        .filter-actions {
-            grid-column: 1 / -1;
-            display: flex;
-            width: 100%;
-        }
-
-        .btn-cari,
-        .btn-reset,
-        .btn-reset-filter {
-            flex: 1;
-        }
     }
 
     @media (max-width: 768px) {
@@ -684,15 +675,8 @@
         }
 
         .filter-actions {
-            flex-direction: column;
-            width: 100%;
-            height: auto;
-        }
-
-        .btn-cari,
-        .btn-reset,
-        .btn-reset-filter {
-            width: 100%;
+            grid-template-columns: 1fr;
+            gap: 10px;
         }
     }
 
