@@ -82,7 +82,7 @@
 
     .btn-reset,
     .btn-reset-filter {
-        width: 100%;
+        width: 40px;
         height: var(--filter-height, 48px);
         min-height: var(--filter-height, 48px);
         max-height: var(--filter-height, 48px);
@@ -98,7 +98,7 @@
         cursor: pointer;
         transition: all 0.2s ease;
         white-space: nowrap;
-        display: flex;
+        display: inline-flex;
         align-items: center;
         justify-content: center;
         margin: 0;

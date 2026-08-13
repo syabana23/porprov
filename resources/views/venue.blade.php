@@ -36,8 +36,8 @@
 <section class="filter-section">
     <form class="jadwal-filter" id="map-filter-form">
         <!-- Titik Venue -->
-        <div class="filter-box">
-            <select class="filter-select" id="venue">
+        <div class="filter-box-full-width">
+            <select class="filter-select-styled" id="venue">
                 <option value="">Pilih Venue</option>
                 <option value="gor pajajaran indoor a">GOR Pajajaran Indoor A</option>
                 <option value="gor pajajaran indoor b">GOR Pajajaran Indoor B</option>
@@ -55,8 +55,8 @@
             </select>
         </div>
         <!-- Cabang Olahraga -->
-        <div class="filter-box">
-            <select class="filter-select" id="cabor">
+        <div class="filter-box-full-width">
+            <select class="filter-select-styled" id="cabor">
                 <option value="">Pilih Cabang Olahraga</option>
                 <option value="aerosport">Aerosport - Gantolle</option>
                 <option value="aerosport">Aerosport - Paralayang</option>
@@ -89,8 +89,8 @@
             </select>
         </div>
         <!-- Fasilitas -->
-        <div class="filter-box">
-            <select class="filter-select" id="fasilitas">
+        <div class="filter-box-full-width">
+            <select class="filter-select-styled" id="fasilitas">
                 <option value="">Cari Fasilitas</option>
                 <option value="hotel">Hotel & Penginapan</option>
                 <option value="rumah-sakit">Rumah Sakit & Klinik</option>
@@ -103,12 +103,12 @@
         </div>
         <div class="filter-actions">
             <button type="submit" class="btn-cari">
-                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
                 <span>Cari</span>
             </button>
-            <button type="reset" class="btn-reset">Reset</button>
+            <button type="reset" class="btn-reset-filter">Reset</button>
         </div>
     </form>
 </section>
