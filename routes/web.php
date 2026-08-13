@@ -358,6 +358,126 @@ $venueRutes = [
     ],
 ];
 
+$venues = [
+    [
+        'id' => 1,
+        'name' => 'GOR Pajajaran Indoor A',
+        'lat' => -6.575816698132383,
+        'lng' => 106.796958655819,
+        'address' => 'GOR Pajajaran, Jl. Pemuda No.02, RT.04/RW.01, Tanah Sareal, Kota Bogor, Jawa Barat 16161',
+        'cabor' => 'Drumband, Pencak Silat, Taekwondo',
+        'gmaps_url' => 'https://maps.app.goo.gl/KcwQDC2JxcTsj1LJ8',
+    ],
+    [
+        'id' => 2,
+        'name' => 'GOR Pajajaran Indoor B',
+        'lat' => -6.577928206784957,
+        'lng' => 106.79690799953588,
+        'address' => 'GOR Pajajaran, Jl. Pemuda No.02, RT.04/RW.01, Tanah Sareal, Kota Bogor, Jawa Barat 16161',
+        'cabor' => 'Judo, Kurash, Sambo',
+        'gmaps_url' => 'https://maps.app.goo.gl/h3ei411WRSdW5Uuf8',
+    ],
+    [
+        'id' => 3,
+        'name' => 'GOR Vokasi IPB',
+        'lat' => -6.586864818074109,
+        'lng' => 106.80744643623193,
+        'address' => 'Jl. Lodaya II, RT.03/RW.05, Cilibende, Babakan, Kec. Bogor Tengah, Kota Bogor, Jawa Barat 16128',
+        'cabor' => 'Shorinji Kempo, Tarung Derajat',
+        'gmaps_url' => 'https://maps.app.goo.gl/ekjekDk57iBAQcTVA',
+    ],
+    [
+        'id' => 4,
+        'name' => 'Majalengka',
+        'lat' => -6.836580168091458,
+        'lng' => 108.22805804110702,
+        'address' => 'Majalengka, Jawa Barat',
+        'cabor' => 'Aerosport - Gantolle',
+        'gmaps_url' => 'https://maps.google.com/?q=Majalengka',
+    ],
+    [
+        'id' => 5,
+        'name' => 'Gunung Mas',
+        'lat' => -6.701561756877455,
+        'lng' => 106.97130253598559,
+        'address' => 'Puncak, Bogor, Jawa Barat',
+        'cabor' => 'Aerosport - Paralayang',
+        'gmaps_url' => 'https://maps.google.com/?q=Gunung+Mas+Puncak',
+    ],
+    [
+        'id' => 6,
+        'name' => 'Green Forest Hotel',
+        'lat' => -6.64930420834099,
+        'lng' => 106.806161644181,
+        'address' => 'Bogor, Jawa Barat',
+        'cabor' => 'Anggar, Angkat Besi, Angkat Berat, Arung Jeram, Binaraga, Petanque, Dansa',
+        'gmaps_url' => 'https://maps.app.goo.gl/dgb7WBjKovkcfyLo9',
+    ],
+    [
+        'id' => 7,
+        'name' => 'PPSDMAP Kemenhub Kemang',
+        'lat' => -6.498024311495613,
+        'lng' => 106.74365521534482,
+        'address' => 'Kemang, Bogor, Jawa Barat',
+        'cabor' => 'Bola Tangan Indoor',
+        'gmaps_url' => 'https://maps.app.goo.gl/Ma2cC3WY3DaWJYQ19',
+    ],
+    [
+        'id' => 8,
+        'name' => 'Padepokan Voli Sentul',
+        'lat' => -6.571855570792679,
+        'lng' => 106.8607669981466,
+        'address' => 'Sentul, Bogor, Jawa Barat',
+        'cabor' => 'Bola Tangan Pasir',
+        'gmaps_url' => 'https://maps.app.goo.gl/cXPfu5acX62py9QY9',
+    ],
+    [
+        'id' => 9,
+        'name' => 'Arcamanik',
+        'lat' => -6.911153350109742,
+        'lng' => 107.67487895150336,
+        'address' => 'Sport Jabar Arcamanik, Bandung, Jawa Barat',
+        'cabor' => 'Gimnastik Aerobik, Gimnastik Artistik, Gimnastik Ritmik',
+        'gmaps_url' => 'https://maps.google.com/?q=Sport+Jabar+Arcamanik',
+    ],
+    [
+        'id' => 10,
+        'name' => 'Cisangkan',
+        'lat' => -6.8746820367318255,
+        'lng' => 107.52764243801157,
+        'address' => 'Lapang Tembak Cisangkan, Cimahi, Jawa Barat',
+        'cabor' => 'Menembak',
+        'gmaps_url' => 'https://maps.google.com/?q=Lapang+Tembak+Cisangkan',
+    ],
+    [
+        'id' => 11,
+        'name' => 'Stadion Pajajaran',
+        'lat' => -6.5770496557407565,
+        'lng' => 106.79707946745701,
+        'address' => 'Stadion Pajajaran, Jl. Pemuda No.02, Kota Bogor',
+        'cabor' => 'Modern Pentathlon, Panahan, Panjat Tebing',
+        'gmaps_url' => 'https://maps.app.goo.gl/HgsrKKn8LD9V792UA',
+    ],
+    [
+        'id' => 12,
+        'name' => 'Kota Baru Parahyangan',
+        'lat' => -6.85872946272341,
+        'lng' => 107.4845999774748,
+        'address' => 'Padalarang, Kabupaten Bandung Barat, Jawa Barat',
+        'cabor' => 'Ski Air',
+        'gmaps_url' => 'https://maps.google.com/?q=Kota+Baru+Parahyangan',
+    ],
+    [
+        'id' => 13,
+        'name' => 'GOR Yasmin',
+        'lat' => -6.5669771863684225,
+        'lng' => 106.77129339999999,
+        'address' => 'Bogor, Jawa Barat',
+        'cabor' => 'Tenis Meja',
+        'gmaps_url' => 'https://maps.app.goo.gl/Fqw4Yn97RyvkSeg27',
+    ],
+];
+
 $cabors = [
     [
         'slug' => 'aerosport-gantolle',
@@ -642,10 +762,6 @@ $liveStream = [
 
 Route::post('/chatbot', [ChatbotController::class, 'chat'])->middleware('throttle:30,1');
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('/cabor', function () use ($cabors) {
     return view('cabor', compact('cabors'));
 });
@@ -654,18 +770,12 @@ Route::get('/kontingen', function () use ($kontingens) {
     return view('kontingen', compact('kontingens'));
 });
 
-Route::get('/klasemen-medali', function () use ($klasemen) {
-    usort($klasemen, function ($a, $b) {
-        return [$b['emas'], $b['perak'], $b['perunggu']] <=> [$a['emas'], $a['perak'], $a['perunggu']];
-    });
-    return view('klasemen-medali', compact('klasemen'));
+Route::get('/klasemen-medali', function () {
+    abort(404);
 });
 
-Route::get('/atlet', function () use ($atlets) {
-    usort($atlets, function ($a, $b) {
-        return [$b['emas'], $b['perak'], $b['perunggu']] <=> [$a['emas'], $a['perak'], $a['perunggu']];
-    });
-    return view('atlet', compact('atlets'));
+Route::get('/atlet', function () {
+    abort(404);
 });
 
 Route::get('/live-streaming', function () use ($liveStream) {
@@ -684,8 +794,7 @@ Route::get('/peta-venue', function () {
     return view('venue');
 });
 
-Route::get('/fasilitas', function () {
-    $facilities = [
+$facilities = [
         ['nama' => 'Zest Hotel Bogor', 'tipe' => 'hotel', 'tipe_label' => 'Hotel', 'alamat' => 'Jl. Pajajaran No. 27, Babakan, Kec. Bogor Tengah, Kota Bogor', 'venue' => 'GOR Pajajaran / Stadion Pajajaran (Indoor A, Indoor B, Stadion)', 'jarak' => '1.2 km', 'gmaps' => 'https://www.google.com/maps/search/?api=1&query=Zest%20Hotel%20Bogor%20Jl.%20Pajajaran%20No.%2027%2C%20Babakan%2C%20Kec.%20Bogor%20Tengah%2C%20Kota%20Bogor', 'telepon' => '-', 'layanan' => '-', 'website' => '', 'image' => ''],
         ['nama' => 'The Mirah Hotel Bogor', 'tipe' => 'hotel', 'tipe_label' => 'Hotel', 'alamat' => 'Jl. Pangrango No. 9A, Babakan, Kec. Bogor Tengah, Kota Bogor', 'venue' => 'GOR Pajajaran / Stadion Pajajaran (Indoor A, Indoor B, Stadion)', 'jarak' => '1.5 km', 'gmaps' => 'https://www.google.com/maps/search/?api=1&query=The%20Mirah%20Hotel%20Bogor%20Jl.%20Pangrango%20No.%209A%2C%20Babakan%2C%20Kec.%20Bogor%20Tengah%2C%20Kota%20Bogor', 'telepon' => '-', 'layanan' => '-', 'website' => '', 'image' => ''],
         ['nama' => 'RS Salak Bogor', 'tipe' => 'rs', 'tipe_label' => 'Rumah Sakit', 'alamat' => 'Jl. Jend. Sudirman No. 8, Sempur, Kec. Bogor Tengah, Kota Bogor', 'venue' => 'GOR Pajajaran / Stadion Pajajaran (Indoor A, Indoor B, Stadion)', 'jarak' => '1.1 km', 'gmaps' => 'https://www.google.com/maps/search/?api=1&query=RS%20Salak%20Bogor%20Jl.%20Jend.%20Sudirman%20No.%208%2C%20Sempur%2C%20Kec.%20Bogor%20Tengah%2C%20Kota%20Bogor', 'telepon' => '-', 'layanan' => '-', 'website' => '', 'image' => ''],
@@ -766,23 +875,34 @@ Route::get('/fasilitas', function () {
         ['nama' => 'PO. AdisaPutro Trans', 'tipe' => 'transport', 'tipe_label' => 'Sewa Kendaraan', 'alamat' => 'Jl. Raya Cifor No. 14 RT 03/RW 08 Bubulak, Bogor Barat, Kota Bogor', 'venue' => 'Kota Bogor', 'jarak' => 'Kota Bogor', 'gmaps' => 'https://www.google.com/maps/search/?api=1&query=PO+AdisaPutro+Trans+Bubulak+Bogor', 'telepon' => '+62 857-7496-7369 (Rusli)', 'layanan' => 'sewa kendaraan', 'website' => '', 'image' => ''],
         ['nama' => 'PT. Surya Harapan Perdana (PasteurTrans)', 'tipe' => 'transport', 'tipe_label' => 'Sewa Kendaraan', 'alamat' => 'Jl. R. Saleh S. Bustaman No.15, RT.01/RW.11, Empang, Kec. Bogor Sel., Kota Bogor, Jawa Barat 16132', 'venue' => 'Kota Bogor', 'jarak' => 'Kota Bogor', 'gmaps' => 'https://www.google.com/maps/search/?api=1&query=PT+Surya+Harapan+Perdana+PasteurTrans+Empang+Bogor', 'telepon' => '+62 823-2224-9794', 'layanan' => 'sewa kendaraan', 'website' => '', 'image' => ''],
         ['nama' => 'Master Tour & Travel', 'tipe' => 'transport', 'tipe_label' => 'Sewa Kendaraan', 'alamat' => 'Jl. Raya Cipaku No.21, RT.03/RW.01, Cipaku, Kec. Bogor Sel., Kota Bogor, Jawa Barat 16133', 'venue' => 'Kota Bogor', 'jarak' => 'Kota Bogor', 'gmaps' => 'https://www.google.com/maps/search/?api=1&query=Master+Tour+%26+Travel+Cipaku+Bogor', 'telepon' => '+62 857-1463-4597 (Wawang)', 'layanan' => 'sewa kendaraan', 'website' => '', 'image' => ''],
-        ['nama' => 'IKIGAI Fitness', 'tipe' => 'rekreasi', 'tipe_label' => 'Fitness', 'alamat' => 'IKIGAI Ekalos, Gedung Plaza Ekalos, Jl. Siliwangi, RW.04, Sukasari, Bogor', 'venue' => ['GOR Pajajaran / Stadion Pajajaran (Indoor A, Indoor B, Stadion)', 'Green Forest Hotel', 'Gymnasium Sekolah Vokasi IPB', 'GOR Yasmin Bulutangkis', 'PPSDMAP Kemenhub Kemang Kab-Bogor', 'Padepokan Voli Sentul'], 'jarak' => '-', 'gmaps' => 'https://www.google.com/maps/place/IKIGAI+FITNESS+-+Lippo+Plaza+Ekalokasari+Bogor/@-6.6216624,106.8144763,17z/data=!3m2!4b1!5s0x2e69c5fdf77397b5:0x881f18442bc0f864!4m6!3m5!1s0x2e69c5d5719e94ab:0x8c6b0ea36866c2e6!8m2!3d-6.6216624!4d106.8170512!16s%2Fg%2F11stp2j67s?entry=ttu&g_ep=EgoyMDI2MDgwNS4xIKXMDSoASAFQAw%3D%3D', 'telepon' => '081229112334', 'layanan' => 'fitness, buka pukul 06:00-21:00', 'website' => '', 'image' => ''],
+        ['nama' => 'IKIGAI Fitness', 'tipe' => 'rekreasi', 'tipe_label' => 'Fitness', 'alamat' => 'IKIGAI Ekalos, Gedung Plaza Ekalos, Jl. Siliwangi, RW.04, Sukasari, Bogor', 'venue' => ['GOR Pajajaran / Stadion Pajajaran (Indoor A, Indoor B, Stadion)', 'Green Forest Hotel', 'Gymnasium Sekolah Vokasi IPB', 'GOR Yasmin Bulutangkis', 'PPSDMAP Kemenhub Kemang Kab-Bogor', 'Padepokan Voli Sentul'], 'jarak' => '-', 'gmaps' => 'https://www.google.com/maps/place/IKIGAI+FITNESS+-+Lippo+Plaza+Ekalokasari+Bogor/@-6.6216624,106.8144763,17z/data=!3m2!4b1!5s0x2e69c5fdf77397b5:0x881f18442bc0f864!4m6!3m5!1s0x2e69c5d5719e94ab:0x8c6b0ea36866c2e6!8m2!3d-6.6216624!4d106.8170512!16s%2Fg%2F11stp2j67s?entry=ttu&g_ep=EgoyMDI2MDgwNS4xIKXMDSoASAFQAw%3D%3D', 'layanan' => 'fitness, buka pukul 06:00-21:00', 'website' => '', 'image' => ''],
     ];
 
-    // Count stats
-    $stats = [
-        'total' => count($facilities),
-        'rs' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'rs')),
-        'puskesmas' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'puskesmas')),
-        'apotek' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'apotek')),
-        'hotel' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'hotel')),
-        'polsek' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'polsek')),
-        'restoran' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'restoran')),
-        'transport' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'transport')),
-        'rekreasi' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'rekreasi')),
-    ];
+$stats = [
+    'total' => count($facilities),
+    'rs' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'rs')),
+    'puskesmas' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'puskesmas')),
+    'apotek' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'apotek')),
+    'hotel' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'hotel')),
+    'polsek' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'polsek')),
+    'restoran' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'restoran')),
+    'transport' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'transport')),
+    'rekreasi' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'rekreasi')),
+];
 
+Route::get('/fasilitas', function () use ($facilities, $stats) {
     return view('fasilitas', compact('facilities', 'stats'));
+});
+
+Route::get('/', function () use ($venues, $cabors, $kontingens, $facilities) {
+    $stats = [
+        'venues' => count($venues),
+        'cabors' => count($cabors),
+        'kontingens' => count($kontingens),
+        'fasilitas' => count($facilities),
+    ];
+
+    return view('welcome', compact('stats', 'venues'));
 });
 
 Route::get('/galeri', function () {
