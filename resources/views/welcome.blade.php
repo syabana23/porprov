@@ -125,7 +125,7 @@ $bg4 = asset('images/venue4.jpeg');
                 </svg>
             </div>
             <div>
-                <div class="stat-val">13+</div>
+                <div class="stat-val">{{ $stats['venues'] }}</div>
                 <div class="stat-title">Titik Venue</div>
                 <div class="stat-sub">Tempat Bertanding</div>
             </div>
@@ -139,7 +139,7 @@ $bg4 = asset('images/venue4.jpeg');
                 </svg>
             </div>
             <div>
-                <div class="stat-val">28+</div>
+                <div class="stat-val">{{ $stats['cabors'] }}</div>
                 <div class="stat-title">Cabang Olahraga</div>
                 <div class="stat-sub">Kompetisi Bergengsi</div>
             </div>
@@ -153,9 +153,9 @@ $bg4 = asset('images/venue4.jpeg');
                 </svg>
             </div>
             <div>
-                <div class="stat-val">-</div>
-                <div class="stat-title">Peserta</div>
-                <div class="stat-sub">Atlet Yang Bertanding</div>
+                <div class="stat-val">{{ $stats['kontingens'] }}</div>
+                <div class="stat-title">Contingen</div>
+                <div class="stat-sub">Kabupaten/Kota Peserta</div>
             </div>
         </div>
 
@@ -167,7 +167,7 @@ $bg4 = asset('images/venue4.jpeg');
                 </svg>
             </div>
             <div>
-                <div class="stat-val">80+</div>
+                <div class="stat-val">{{ $stats['fasilitas'] }}</div>
                 <div class="stat-title">Fasilitas</div>
                 <div class="stat-sub">Segala Kebutuhan & Layanan</div>
             </div>
@@ -271,7 +271,7 @@ $bg4 = asset('images/venue4.jpeg');
                         <option value="panahan">Panahan</option>
                         <option value="panjat tebing">Panjat Tebing</option>
                         <option value="pencak silat">Pencak Silat</option>
-                        <option value="petanque">Pentaque</option>
+                        <option value="petanque">Petanque</option>
                         <option value="sambo">Sambo</option>
                         <option value="shorinji kempo">Shorinji Kempo</option>
                         <option value="ski air">Ski Air</option>
@@ -494,61 +494,7 @@ $bg4 = asset('images/venue4.jpeg');
     </div>
 
     <div class="matches-grid">
-        <!-- Match Card 1: Pencak Silat -->
-        <div class="match-card">
-            <div>
-                <div class="match-card-header">
-                    <span class="match-sport-badge" style="background:#eff6ff;color:#013469;">
-                        <img src="{{ asset('images/cabor/12.PENCAK SILAT.png') }}" class="cabor-icon" alt="Pencak Silat">
-                        Pencak Silat
-                    </span>
-                    <span class="match-date-badge">2 Nov - 9 Nov 2026</span>
-                </div>
-                <h3 class="match-title">Babak Penyisihan & Final Pencak Silat</h3>
-                <div class="match-venue-info">
-                    <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                    GOR Pajajaran Indoor A
-                </div>
-            </div>
-            <div class="match-footer">
-                <span class="match-status"><span class="dot"></span> Terjadwal</span>
-                <a href="{{ url('/jadwal') }}" class="btn-detail-sm">
-                    Detail Jadwal →
-                </a>
-            </div>
-        </div>
-
-        <!-- Match Card 2: Drumband -->
-        <div class="match-card">
-            <div>
-                <div class="match-card-header">
-                    <span class="match-sport-badge" style="background:#eff6ff;color:#013469;">
-                        <img src="{{ asset('images/cabor/24.DRUM BAND.png') }}" class="cabor-icon" alt="Drumband">
-                        Drumband
-                    </span>
-                    <span class="match-date-badge">7 Nov - 16 Nov 2026</span>
-                </div>
-                <h3 class="match-title">Kompetisi Drumband Antar Kontingen</h3>
-                <div class="match-venue-info">
-                    <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                    GOR Pajajaran Indoor A
-                </div>
-            </div>
-            <div class="match-footer">
-                <span class="match-status"><span class="dot"></span> Terjadwal</span>
-                <a href="{{ url('/jadwal') }}" class="btn-detail-sm">
-                    Detail Jadwal →
-                </a>
-            </div>
-        </div>
-
-        <!-- Match Card 3: Panahan -->
+        <!-- Match Card 1: Panahan -->
         <div class="match-card">
             <div>
                 <div class="match-card-header">
@@ -575,7 +521,34 @@ $bg4 = asset('images/venue4.jpeg');
             </div>
         </div>
 
-        <!-- Match Card 4: Judo -->
+        <!-- Match Card 2: Pencak Silat -->
+        <div class="match-card">
+            <div>
+                <div class="match-card-header">
+                    <span class="match-sport-badge" style="background:#eff6ff;color:#013469;">
+                        <img src="{{ asset('images/cabor/12.PENCAK SILAT.png') }}" class="cabor-icon" alt="Pencak Silat">
+                        Pencak Silat
+                    </span>
+                    <span class="match-date-badge">2 Nov - 9 Nov 2026</span>
+                </div>
+                <h3 class="match-title">Babak Penyisihan & Final Pencak Silat</h3>
+                <div class="match-venue-info">
+                    <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    GOR Pajajaran Indoor A
+                </div>
+            </div>
+            <div class="match-footer">
+                <span class="match-status"><span class="dot"></span> Terjadwal</span>
+                <a href="{{ url('/jadwal') }}" class="btn-detail-sm">
+                    Detail Jadwal →
+                </a>
+            </div>
+        </div>
+
+        <!-- Match Card 3: Judo -->
         <div class="match-card">
             <div>
                 <div class="match-card-header">
@@ -602,17 +575,17 @@ $bg4 = asset('images/venue4.jpeg');
             </div>
         </div>
 
-        <!-- Match Card 5: Kurash -->
+        <!-- Match Card 4: Sambo -->
         <div class="match-card">
             <div>
                 <div class="match-card-header">
                     <span class="match-sport-badge" style="background:#eff6ff;color:#013469;">
-                        <img src="{{ asset('images/cabor/18.KURASH.png') }}" class="cabor-icon" alt="Kurash">
-                        Kurash
+                        <img src="{{ asset('images/cabor/17.SAMBO.png') }}" class="cabor-icon" alt="Sambo">
+                        Sambo
                     </span>
-                    <span class="match-date-badge">8 Nov - 13 Nov 2026</span>
+                    <span class="match-date-badge">5 Nov - 19 Nov 2026</span>
                 </div>
-                <h3 class="match-title">Pertandingan Kurash</h3>
+                <h3 class="match-title">Pertandingan Sambo</h3>
                 <div class="match-venue-info">
                     <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -629,17 +602,44 @@ $bg4 = asset('images/venue4.jpeg');
             </div>
         </div>
 
-        <!-- Match Card 6: Sambo -->
+        <!-- Match Card 5: Drumband -->
         <div class="match-card">
             <div>
                 <div class="match-card-header">
                     <span class="match-sport-badge" style="background:#eff6ff;color:#013469;">
-                        <img src="{{ asset('images/cabor/17.SAMBO.png') }}" class="cabor-icon" alt="Sambo">
-                        Sambo
+                        <img src="{{ asset('images/cabor/24.DRUM BAND.png') }}" class="cabor-icon" alt="Drumband">
+                        Drumband
                     </span>
-                    <span class="match-date-badge">5 Nov - 19 Nov 2026</span>
+                    <span class="match-date-badge">7 Nov - 16 Nov 2026</span>
                 </div>
-                <h3 class="match-title">Pertandingan Sambo</h3>
+                <h3 class="match-title">Kompetisi Drumband Antar Kontingen</h3>
+                <div class="match-venue-info">
+                    <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    GOR Pajajaran Indoor A
+                </div>
+            </div>
+            <div class="match-footer">
+                <span class="match-status"><span class="dot"></span> Terjadwal</span>
+                <a href="{{ url('/jadwal') }}" class="btn-detail-sm">
+                    Detail Jadwal →
+                </a>
+            </div>
+        </div>
+
+        <!-- Match Card 6: Kurash -->
+        <div class="match-card">
+            <div>
+                <div class="match-card-header">
+                    <span class="match-sport-badge" style="background:#eff6ff;color:#013469;">
+                        <img src="{{ asset('images/cabor/18.KURASH.png') }}" class="cabor-icon" alt="Kurash">
+                        Kurash
+                    </span>
+                    <span class="match-date-badge">8 Nov - 13 Nov 2026</span>
+                </div>
+                <h3 class="match-title">Pertandingan Kurash</h3>
                 <div class="match-venue-info">
                     <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -671,124 +671,7 @@ $bg4 = asset('images/venue4.jpeg');
 <script src="{{ asset('vendor/leaflet/leaflet.js') }}"></script>
 
 <script>
-    const venueData = [{
-            id: 1,
-            name: "GOR Pajajaran Indoor A",
-            lat: -6.575816698132383,
-            lng: 106.796958655819,
-            address: "GOR Pajajaran, Jl. Pemuda No.02, RT.04/RW.01, Tanah Sareal, Kota Bogor, Jawa Barat 16161",
-            cabor: "Drumband, Pencak Silat, Taekwondo",
-            gmaps_url: "https://maps.app.goo.gl/KcwQDC2JxcTsj1LJ8",
-        },
-        {
-            id: 2,
-            name: "GOR Pajajaran Indoor B",
-            lat: -6.577928206784957,
-            lng: 106.79690799953588,
-            address: "GOR Pajajaran, Jl. Pemuda No.02, RT.04/RW.01, Tanah Sareal, Kota Bogor, Jawa Barat 16161",
-            cabor: "Judo, Kurash, Sambo",
-            gmaps_url: "https://maps.app.goo.gl/h3ei411WRSdW5Uuf8",
-        },
-        {
-            id: 3,
-            name: "GOR Vokasi IPB",
-            lat: -6.586864818074109,
-            lng: 106.80744643623193,
-            address: "Jl. Lodaya II, RT.03/RW.05, Cilibende, Babakan, Kec. Bogor Tengah, Kota Bogor, Jawa Barat 16128",
-            cabor: "Shorinji Kempo, Tarung Derajat",
-            gmaps_url: "https://maps.app.goo.gl/ekjekDk57iBAQcTVA",
-        },
-        {
-            id: 4,
-            name: "Majalengka",
-            lat: -6.836580168091458,
-            lng: 108.22805804110702,
-            address: "Majalengka, Jawa Barat",
-            cabor: "Aerosport - Gantolle",
-            gmaps_url: "https://maps.google.com/?q=Majalengka"
-        },
-        {
-            id: 5,
-            name: "Gunung Mas",
-            lat: -6.701561756877455,
-            lng: 106.97130253598559,
-            address: "Puncak, Bogor, Jawa Barat",
-            cabor: "Aerosport - Paralayang",
-            gmaps_url: "https://maps.google.com/?q=Gunung+Mas+Puncak"
-        },
-        {
-            id: 6,
-            name: "Green Forest Hotel",
-            lat: -6.64930420834099,
-            lng: 106.806161644181,
-            address: "Bogor, Jawa Barat",
-            cabor: "Anggar, Angkat Besi, Angkat Berat, Arung Jeram, Binaraga, Petanque, Dansa",
-            gmaps_url: "https://maps.app.goo.gl/dgb7WBjKovkcfyLo9"
-        },
-        {
-            id: 7,
-            name: "PPSDMAP Kemenhub Kemang",
-            lat: -6.498024311495613,
-            lng: 106.74365521534482,
-            address: "Kemang, Bogor, Jawa Barat",
-            cabor: "Bola Tangan Indoor",
-            gmaps_url: "https://maps.app.goo.gl/Ma2cC3WY3DaWJYQ19"
-        },
-        {
-            id: 8,
-            name: "Padepokan Voli Sentul",
-            lat: -6.571855570792679,
-            lng: 106.8607669981466,
-            address: "Sentul, Bogor, Jawa Barat",
-            cabor: "Bola Tangan Pasir",
-            gmaps_url: "https://maps.app.goo.gl/cXPfu5acX62py9QY9"
-        },
-        {
-            id: 9,
-            name: "Arcamanik",
-            lat: -6.911153350109742,
-            lng: 107.67487895150336,
-            address: "Sport Jabar Arcamanik, Bandung, Jawa Barat",
-            cabor: "Gimnastik Aerobik, Gimnastik Artistik, Gimnastik Ritmik",
-            gmaps_url: "https://maps.google.com/?q=Sport+Jabar+Arcamanik"
-        },
-        {
-            id: 10,
-            name: "Cisangkan",
-            lat: -6.8746820367318255,
-            lng: 107.52764243801157,
-            address: "Lapang Tembak Cisangkan, Cimahi, Jawa Barat",
-            cabor: "Menembak",
-            gmaps_url: "https://maps.google.com/?q=Lapang+Tembak+Cisangkan"
-        },
-        {
-            id: 11,
-            name: "Stadion Pajajaran",
-            lat: -6.5770496557407565,
-            lng: 106.79707946745701,
-            address: "Stadion Pajajaran, Jl. Pemuda No.02, Kota Bogor",
-            cabor: "Modern Pentathlon, Panahan, Panjat Tebing",
-            gmaps_url: "https://maps.app.goo.gl/HgsrKKn8LD9V792UA"
-        },
-        {
-            id: 12,
-            name: "Kota Baru Parahyangan",
-            lat: -6.85872946272341,
-            lng: 107.4845999774748,
-            address: "Padalarang, Kabupaten Bandung Barat, Jawa Barat",
-            cabor: "Ski Air",
-            gmaps_url: "https://maps.google.com/?q=Kota+Baru+Parahyangan"
-        },
-        {
-            id: 13,
-            name: "GOR Yasmin",
-            lat: -6.5669771863684225,
-            lng: 106.77129339999999,
-            address: "Bogor, Jawa Barat",
-            cabor: "Tenis Meja",
-            gmaps_url: "https://maps.app.goo.gl/Fqw4Yn97RyvkSeg27"
-        }
-    ];
+    const venueData = @json($venues);
 
     /* ── Data Fasilitas Hardcoded dari PDF ── */
     const transportFacilities = [{
@@ -1532,6 +1415,7 @@ $bg4 = asset('images/venue4.jpeg');
                     const vs = document.getElementById('venue');
                     const v = venue.name.toLowerCase();
                     if (Array.from(vs.options).some(o => o.value === v)) vs.value = v;
+                    if (window.filterCaborByVenue) window.filterCaborByVenue();
                 });
                 markers.push(marker);
             });
@@ -1549,8 +1433,40 @@ $bg4 = asset('images/venue4.jpeg');
         const caborSelect = document.getElementById('cabor');
         const fasilitasSelect = document.getElementById('fasilitas');
 
+        const allCaborOptions = Array.from(caborSelect.options).map(o => ({ value: o.value, text: o.text }));
+
+        function filterCaborByVenue() {
+            const venueVal = venueSelect.value.toLowerCase();
+            caborSelect.innerHTML = '';
+            caborSelect.add(new Option(allCaborOptions[0].text, ''));
+
+            if (!venueVal) {
+                allCaborOptions.slice(1).forEach(o => caborSelect.add(new Option(o.text, o.value)));
+                caborSelect.value = '';
+                return;
+            }
+
+            const venue = venueData.find(v => v.name.toLowerCase().includes(venueVal));
+            if (!venue) {
+                allCaborOptions.slice(1).forEach(o => caborSelect.add(new Option(o.text, o.value)));
+                caborSelect.value = '';
+                return;
+            }
+
+            const venueCabors = venue.cabor.split(',').map(c => c.trim().toLowerCase());
+            allCaborOptions.slice(1).forEach(o => {
+                if (venueCabors.includes(o.text.trim().toLowerCase())) {
+                    caborSelect.add(new Option(o.text, o.value));
+                }
+            });
+            caborSelect.value = '';
+        }
+
+        window.filterCaborByVenue = filterCaborByVenue;
+
         if (venueSelect) {
             venueSelect.addEventListener('change', function() {
+                filterCaborByVenue();
                 filterForm.dispatchEvent(new Event('submit'));
             });
         }

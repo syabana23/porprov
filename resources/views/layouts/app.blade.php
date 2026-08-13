@@ -36,7 +36,7 @@
                 <img src="{{ asset('images/logo_baru.PNG') }}" alt="Logo PORPROV XV">
                 <span class="logo-divider" aria-hidden="true"></span>
                 <span class="city-logo-row">
-                    <img src="{{ asset('images/kota-bogor.png') }}" alt="Logo Kota Bogor">
+                    <img src="{{ asset('images/logobarukotabogor-.png') }}" alt="Logo Kota Bogor">
                     <img src="{{ asset('images/kota-bekasi.png') }}" alt="Logo Kota Bekasi">
                     <img src="{{ asset('images/kota-depok.png') }}" alt="Logo Kota Depok">
                 </span>
@@ -54,18 +54,6 @@
                         <a href="{{ url('/jadwal') }}" class="{{ request()->is('jadwal') ? 'active' : '' }}">JADWAL</a>
                         <a href="{{ url('/cabor') }}" class="{{ request()->is('cabor*') ? 'active' : '' }}">CABOR</a>
                         <a href="{{ url('/kontingen') }}" class="{{ request()->is('kontingen') ? 'active' : '' }}">KONTINGEN</a>
-                    </div>
-                </div>
-                <div class="nav-item has-dropdown">
-                    <a href="#" class="nav-link {{ (request()->is('klasemen*') || request()->is('atlet')) ? 'active' : '' }}" data-nav-trigger aria-haspopup="true" aria-expanded="false">
-                        KLASEMEN
-                        <svg class="nav-caret" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6" />
-                        </svg>
-                    </a>
-                    <div class="nav-dropdown">
-                        <a href="{{ url('/klasemen-medali') }}" class="{{ request()->is('klasemen-medali') ? 'active' : '' }}">MEDALI</a>
-                        <a href="{{ url('/atlet') }}" class="{{ request()->is('atlet') ? 'active' : '' }}">ATLET</a>
                     </div>
                 </div>
                 <a href="{{ url('/peta-venue') }}" class="{{ request()->is('peta-venue') ? 'active' : '' }}">PETA VENUE</a>
@@ -102,18 +90,6 @@
                 <a href="{{ url('/jadwal') }}" class="{{ request()->is('jadwal') ? 'active' : '' }}">JADWAL</a>
                 <a href="{{ url('/cabor') }}" class="{{ request()->is('cabor*') ? 'active' : '' }}">CABOR</a>
                 <a href="{{ url('/kontingen') }}" class="{{ request()->is('kontingen') ? 'active' : '' }}">KONTINGEN</a>
-            </div>
-        </div>
-        <div class="mobile-nav-group">
-            <button type="button" class="mobile-nav-parent">
-                KLASEMEN
-                <svg class="mobile-caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6" />
-                </svg>
-            </button>
-            <div class="mobile-nav-sub">
-                <a href="{{ url('/klasemen-medali') }}" class="{{ request()->is('klasemen-medali') ? 'active' : '' }}">MEDALI</a>
-                <a href="{{ url('/atlet') }}" class="{{ request()->is('atlet') ? 'active' : '' }}">ATLET</a>
             </div>
         </div>
         <a href="{{ url('/peta-venue') }}" class="{{ request()->is('peta-venue') ? 'active' : '' }}">PETA VENUE</a>

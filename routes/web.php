@@ -6,235 +6,239 @@ use App\Http\Controllers\ChatbotController;
 $venueRutes = [
     'GOR Pajajaran' => [
         [
-            'judul' => 'KRL + Angkot via Jl. Pemuda',
+            'judul' => 'Bus',
             'langkah' => [
-                'Naik KRL Commuter Line dan turun di Stasiun Bogor.',
-                'Naik angkot trayek 07 (Bubulak–Ciparigi), 17 (Salabenda–Pasar Anyar), 18 (Villa Mutiara–Pasar Anyar), atau 23 (Taman Griya Kencana–Pasar Anyar) yang melewati Jl. Pemuda.',
-                'Turun di depan GOR/Stadion Pajajaran, Jl. Pemuda, Tanah Sareal.',
+                'Rute Terbaik: Naik BISKITA Trans Pakuan yang menuju kawasan GOR Pajajaran atau Stasiun Bogor.',
+                'Titik Turun: Turun di halte terdekat di sekitar kawasan GOR Pajajaran.',
+                'Melanjutkan Perjalanan: Dari titik turun, Anda dapat berjalan kaki menuju lokasi pertandingan yang berada di kompleks GOR Pajajaran.',
             ],
         ],
         [
-            'judul' => 'BisKita Trans Pakuan Koridor 5/6 (halte GOR)',
+            'judul' => 'KRL',
             'langkah' => [
-                'Naik KRL Commuter Line dan turun di Stasiun Bogor.',
-                'Lanjut naik BisKita Trans Pakuan Koridor 5 (Ciparigi–Stasiun Bogor) atau Koridor 6 (Parung Banteng–Stasiun Bogor) yang melewati Jl. Pemuda.',
-                'Turun di halte GOR/Air Mancur, lalu jalan kaki menuju GOR/Stadion Pajajaran.',
+                'Stasiun Terdekat: Stasiun Bogor.',
+                'Petunjuk Arah: Gunakan KRL Commuter Line dan turun di Stasiun Bogor.',
+                'Melanjutkan Perjalanan: Dari stasiun, lanjutkan menggunakan BISKITA, angkot, ojek online, atau taksi menuju kawasan Jl. Pemuda/GOR Pajajaran.',
             ],
         ],
         [
-            'judul' => 'Dari Terminal Baranangsiang',
+            'judul' => 'Angkot',
             'langkah' => [
-                'Dari Terminal Baranangsiang naik angkot trayek 07/07A (jurusan Ciparigi), 17, atau 18 yang melewati Jl. Pemuda.',
-                'Turun di depan GOR/Stadion Pajajaran, Jl. Pemuda, Tanah Sareal.',
+                'Angkot dari Stasiun/Terminal: Naik angkot Trayek 7 jurusan Terminal Bubulak – Merdeka – Ciparigi.',
+                'Titik Turun: Turun di kawasan Jl. Pemuda/GOR Pajajaran.',
+                'Melanjutkan Perjalanan: Dari jalan utama, Anda tinggal berjalan kaki untuk mencapai kompleks GOR Pajajaran.',
             ],
         ],
         [
-            'judul' => 'Dari Pasar Anyar / Terminal Merdeka',
+            'judul' => 'Kendaraan Pribadi',
             'langkah' => [
-                'Naik angkot trayek 17 (Salabenda), 18 (Villa Mutiara), 23 (Taman Griya Kencana), atau 24 (Pondok Rumput) dari kawasan Pasar Anyar/Air Mancur.',
-                'Turun di Jl. Pemuda, di depan GOR/Stadion Pajajaran.',
-            ],
-        ],
-        [
-            'judul' => 'Transjabodetabek dari Jakarta',
-            'langkah' => [
-                'Naik bus Transjabodetabek jurusan Bogor (mis. Bogor–Senen atau Blok M–Bogor).',
-                'Turun di kawasan Jl. Pemuda atau Terminal Merdeka, lalu lanjut angkot trayek 07/17/18 menuju GOR/Stadion Pajajaran.',
+                'Via Tol Jagorawi: Keluar menuju Kota Bogor, lalu ambil arah Tanah Sareal.',
+                'Arah Lokasi: Ikuti navigasi menuju kawasan Jl. Pemuda dan GOR Pajajaran.',
+                'Fasilitas Parkir: Gunakan area parkir yang tersedia di sekitar kompleks GOR Pajajaran.',
             ],
         ],
     ],
     'Green Forest Hotel' => [
         [
-            'judul' => 'KRL + Angkot via Jl. Pahlawan',
+            'judul' => 'Bus',
             'langkah' => [
-                'Naik KRL Commuter Line dan turun di Stasiun Bogor.',
-                'Naik angkot trayek 01 (Cipinang Gading–Perum Yasmin) atau trayek 08 (Taman Pajajaran–Bantar Kemang–Terminal Merdeka) yang melewati Jl. Pahlawan.',
-                'Turun di depan Green Forest Hotel, Jl. Pahlawan, Bogor Selatan.',
+                'Rute Terbaik: Naik BISKITA Trans Pakuan yang menuju kawasan Bogor Selatan/Pajajaran.',
+                'Titik Turun: Turun di halte terdekat menuju kawasan Pamoyanan.',
+                'Melanjutkan Perjalanan: Dari titik turun, Anda dapat menggunakan layanan ojek online atau taksi menuju Green Forest Bogor dengan waktu tempuh menyesuaikan kondisi lalu lintas.',
             ],
         ],
         [
-            'judul' => 'Angkot Trayek 02',
+            'judul' => 'KRL',
             'langkah' => [
-                'Naik angkot trayek 02 (Warung Nangka–Lawang Saketeng/Bogor Trade Mall) dari kawasan Lawang Saketeng, Empang, atau Rancamaya yang melewati Jl. Pahlawan.',
-                'Turun di Jl. Pahlawan, dekat Green Forest Hotel, Bogor Selatan.',
+                'Stasiun Terdekat: Stasiun Bogor.',
+                'Petunjuk Arah: Gunakan KRL Commuter Line dan turun di Stasiun Bogor.',
+                'Melanjutkan Perjalanan: Dari stasiun, lanjutkan perjalanan menggunakan angkot, ojek online, atau taksi menuju kawasan Pamoyanan hingga mencapai lokasi Green Forest Bogor.',
             ],
         ],
         [
-            'judul' => 'Angkot Trayek 14',
+            'judul' => 'Angkot',
             'langkah' => [
-                'Naik angkot trayek 14 (Sukasari–Pasir Kuda–Terminal Bubulak) yang melewati Jl. Pahlawan (via Jl. Layungsari).',
-                'Turun di Jl. Pahlawan / kawasan Bondongan, dekat Green Forest Hotel.',
+                'Angkot dari Stasiun/Terminal: Naik angkot Trayek 28 jurusan Pabuaran – Lawang Saketeng/BTM.',
+                'Titik Turun: Turun di kawasan Pamoyanan/Jl. Raya Cipaku.',
+                'Melanjutkan Perjalanan: Dari titik turun, lanjutkan dengan berjalan kaki atau menggunakan ojek online menuju Green Forest Bogor.',
             ],
         ],
         [
-            'judul' => 'Angkot Trayek 29',
+            'judul' => 'Kendaraan Pribadi',
             'langkah' => [
-                'Naik angkot trayek 29 (Pabuaran–Terminal Merdeka) yang melewati Jl. Pahlawan dan kawasan Bogor Nirwana Resident.',
-                'Turun di dekat Green Forest Hotel, Jl. Pahlawan, Bogor Selatan.',
-            ],
-        ],
-        [
-            'judul' => 'BisKita + Angkot',
-            'langkah' => [
-                'Naik BisKita Trans Pakuan Koridor 2 (Bubulak–Ciawi) dan turun di halte Stasiun Bogor/Masjid Raya.',
-                'Lanjut naik angkot trayek 01 atau 08 menuju Jl. Pahlawan, Green Forest Hotel.',
+                'Via Tol Jagorawi: Keluar menuju Kota Bogor, lalu ambil arah Bogor Selatan/Pamoyanan.',
+                'Arah Lokasi: Ikuti navigasi menuju kawasan Jl. RE. Soemantadiredja hingga Green Forest Bogor.',
+                'Fasilitas Parkir: Gunakan area parkir yang tersedia di sekitar kompleks venue.',
             ],
         ],
     ],
     'Gymnasium Sekolah Vokasi IPB' => [
         [
-            'judul' => 'KRL + Angkot Trayek 03',
+            'judul' => 'Bus',
             'langkah' => [
-                'Naik KRL Commuter Line dan turun di Stasiun Bogor.',
-                'Naik angkot trayek 03 (Cimahpar–Bogor Trade Mall) yang melewati Jl. Kumbang–Jl. Lodaya.',
-                'Turun di Jl. Kumbang / Jl. Lodaya, lalu jalan kaki menuju Gymnasium Sekolah Vokasi IPB.',
+                'Rute Terbaik: Naik BISKITA Trans Pakuan menuju kawasan Pajajaran/Bogor Tengah.',
+                'Titik Turun: Turun di halte terdekat menuju kawasan Cilibende/Babakan.',
+                'Melanjutkan Perjalanan: Dari titik turun, lanjutkan menggunakan ojek online menuju Jl. Lodaya II dan GOR Vokasi IPB.',
             ],
         ],
         [
-            'judul' => 'Angkot Trayek 30',
+            'judul' => 'KRL',
             'langkah' => [
-                'Naik angkot trayek 30 (Warung Jambu–Bogor Trade Mall) yang melewati Jl. Kumbang–Jl. Lodaya.',
-                'Turun di Jl. Lodaya, lalu jalan kaki menuju Gymnasium Sekolah Vokasi IPB (Cilibende).',
+                'Stasiun Terdekat: Stasiun Bogor.',
+                'Petunjuk Arah: Gunakan KRL Commuter Line dan turun di Stasiun Bogor.',
+                'Melanjutkan Perjalanan: Dari stasiun, lanjutkan menggunakan angkot atau ojek online menuju kawasan Cilibende/Babakan hingga lokasi GOR Vokasi IPB.',
             ],
         ],
         [
-            'judul' => 'BisKita Trans Pakuan Koridor 1',
+            'judul' => 'Angkot',
             'langkah' => [
-                'Naik BisKita Trans Pakuan Koridor 1 (Bubulak–Cidangiang).',
-                'Turun di halte Botani Square / Terminal Baranangsiang, lalu jalan kaki (±10 menit) menuju Gymnasium Sekolah Vokasi IPB di Cilibende.',
+                'Angkot dari Stasiun/Terminal: Naik angkot Trayek 3 jurusan Cimahpar – BTM.',
+                'Titik Turun: Turun di kawasan Jl. Lodaya.',
+                'Melanjutkan Perjalanan: Dari titik turun, Anda dapat berjalan kaki atau menggunakan ojek online menuju GOR Vokasi IPB.',
             ],
         ],
         [
-            'judul' => 'Dari Terminal Baranangsiang',
+            'judul' => 'Kendaraan Pribadi',
             'langkah' => [
-                'Dari Terminal Baranangsiang naik angkot trayek 03 atau 30.',
-                'Turun di Jl. Kumbang / Jl. Lodaya, lalu jalan kaki menuju Gymnasium Sekolah Vokasi IPB.',
+                'Via Tol Jagorawi: Keluar menuju Kota Bogor, lalu ambil arah Pajajaran/Bogor Tengah.',
+                'Arah Lokasi: Ikuti navigasi menuju Jl. Lodaya II hingga GOR Vokasi IPB.',
+                'Fasilitas Parkir: Gunakan area parkir yang tersedia di sekitar venue.',
             ],
         ],
     ],
     'GOR Yasmin Bulutangkis' => [
         [
-            'judul' => 'KRL + Angkot jurusan Yasmin',
+            'judul' => 'Bus',
             'langkah' => [
-                'Naik KRL Commuter Line dan turun di Stasiun Bogor.',
-                'Naik angkot trayek 01 jurusan Perum Yasmin, atau trayek 11 (Curug–Pasar Anyar), 12 (Bubulak–Pasar Anyar), atau 26 (Terminal Merdeka–Villa Mutiara) yang melewati kawasan Yasmin–Curugmekar.',
-                'Turun di dekat GOR Yasmin, Jl. KH. R. Abdullah bin Nuh, Curugmekar.',
+                'Rute Terbaik: Naik BISKITA Trans Pakuan menuju kawasan Yasmin/Bubulak.',
+                'Titik Turun: Turun di halte terdekat di kawasan Yasmin.',
+                'Melanjutkan Perjalanan: Dari titik turun, lanjutkan berjalan kaki atau menggunakan ojek online menuju GOR Yasmin.',
             ],
         ],
         [
-            'judul' => 'BisKita Trans Pakuan Koridor 1',
+            'judul' => 'KRL',
             'langkah' => [
-                'Naik BisKita Trans Pakuan Koridor 1 (Bubulak–Cidangiang).',
-                'Turun di halte Ruko Yasmin / RS Hermina / Kolam Renang Yasmin, lalu jalan kaki menuju GOR Yasmin.',
+                'Stasiun Terdekat: Stasiun Bogor.',
+                'Petunjuk Arah: Gunakan KRL Commuter Line dan turun di Stasiun Bogor.',
+                'Melanjutkan Perjalanan: Dari stasiun, lanjutkan menggunakan BISKITA, angkot, atau ojek online menuju kawasan Yasmin/Cilendek Barat hingga lokasi GOR Yasmin.',
             ],
         ],
         [
-            'judul' => 'Angkot Trayek 22',
+            'judul' => 'Angkot',
             'langkah' => [
-                'Naik angkot trayek 22 (Terminal Bubulak–Kencana) yang melewati Jl. KH. R. Abdullah bin Nuh (kawasan Yasmin).',
-                'Turun di kawasan Curugmekar, dekat GOR Yasmin Bulutangkis.',
+                'Angkot dari Stasiun/Terminal: Naik angkot Trayek 1 jurusan Cipinang Gading – Perumahan Yasmin.',
+                'Titik Turun: Turun di kawasan Perumahan Yasmin/Cilendek Barat.',
+                'Melanjutkan Perjalanan: Dari titik turun, lanjutkan berjalan kaki atau menggunakan ojek online menuju GOR Yasmin.',
             ],
         ],
         [
-            'judul' => 'Angkot Trayek 15',
+            'judul' => 'Kendaraan Pribadi',
             'langkah' => [
-                'Naik angkot trayek 15 (Terminal Merdeka–Situgede) yang melewati Jl. KH. R. Abdullah bin Nuh.',
-                'Turun di dekat GOR Yasmin Bulutangkis, Jl. KH. R. Abdullah bin Nuh, Curugmekar.',
+                'Via Tol: Keluar menuju Kota Bogor, lalu ambil arah Bogor Barat/Yasmin.',
+                'Arah Lokasi: Ikuti navigasi menuju kawasan Jl. Wijaya Kusuma Raya hingga GOR Yasmin.',
+                'Fasilitas Parkir: Gunakan area parkir yang tersedia di sekitar venue.',
             ],
         ],
     ],
     'PPSDMAP Kemenhub Kemang' => [
         [
-            'judul' => 'KRL + Angkot jurusan Parung',
+            'judul' => 'Bus',
             'langkah' => [
-                'Naik KRL Commuter Line dan turun di Stasiun Bogor.',
-                'Dari Terminal Baranangsiang naik angkot jurusan Parung yang melewati Jl. Raya Parung–Bogor.',
-                'Turun di depan PPSDMAP Kemenhub, Jl. Raya Parung, Kemang.',
+                'Rute Terbaik: Naik bus atau angkutan umum yang menuju arah Kemang–Parung.',
+                'Titik Turun: Turun di titik pemberhentian terdekat di sepanjang Jl. Raya Kemang–Parung.',
+                'Melanjutkan Perjalanan: Dari titik turun, lanjutkan menggunakan ojek online atau taksi menuju PPSDMAP Kemenhub.',
             ],
         ],
         [
-            'judul' => 'Dari Terminal Parung',
+            'judul' => 'KRL',
             'langkah' => [
-                'Dari Terminal Parung naik angkot jurusan Bogor.',
-                'Turun di depan PPSDMAP Kemenhub, Jl. Raya Parung–Bogor, Kemang.',
+                'Stasiun Terdekat: Stasiun Bogor.',
+                'Petunjuk Arah: Gunakan KRL Commuter Line dan turun di Stasiun Bogor.',
+                'Melanjutkan Perjalanan: Dari stasiun, lanjutkan menggunakan angkot, ojek online, atau taksi menuju kawasan Kemang–Parung hingga lokasi venue.',
             ],
         ],
         [
-            'judul' => 'KRL Stasiun Cibinong + Angkot',
+            'judul' => 'Angkot',
             'langkah' => [
-                'Naik KRL Commuter Line dan turun di Stasiun Cibinong.',
-                'Lanjut naik angkot jurusan Parung/Kemang yang melewati Jl. Raya Parung–Bogor.',
-                'Turun di depan PPSDMAP Kemenhub, Kemang.',
+                'Angkot dari Stasiun/Terminal: Naik angkot Trayek 06 jurusan Terminal Merdeka – Parung.',
+                'Titik Turun: Turun di kawasan Kemang/Jl. Raya Kemang–Parung.',
+                'Melanjutkan Perjalanan: Dari titik turun, lanjutkan menggunakan ojek online menuju PPSDMAP Kemenhub.',
             ],
         ],
         [
-            'judul' => 'Ojek / Taksi (last mile)',
+            'judul' => 'Kendaraan Pribadi',
             'langkah' => [
-                'Dari Stasiun Bogor atau terminal terdekat lanjut naik ojek atau taksi menuju PPSDMAP Kemenhub, Jl. Raya Parung–Bogor, Kemang.',
+                'Via Tol: Keluar menuju Kota Bogor, lalu ambil arah Kemang–Parung.',
+                'Arah Lokasi: Ikuti Jl. Raya Kemang–Parung menuju kawasan Pd. Udik hingga PPSDMAP Kemenhub.',
+                'Fasilitas Parkir: Gunakan area parkir yang tersedia di kompleks venue.',
             ],
         ],
     ],
     'Padepokan Voli Sentul' => [
         [
-            'judul' => 'KRL Bojonggede + Bus Listrik Gratis',
+            'judul' => 'Bus',
             'langkah' => [
-                'Naik KRL Commuter Line dan turun di Stasiun Bojonggede.',
-                'Naik bus listrik gratis jurusan Sentul City.',
-                'Turun di kawasan Sentul City, lanjut jalan kaki atau ojek menuju Padepokan Voli Sentul.',
+                'Rute Terbaik: Naik bus atau angkutan umum menuju kawasan Sentul City/Babakan Madang.',
+                'Titik Turun: Turun di kawasan Sentul atau titik terdekat menuju Citaringgul.',
+                'Melanjutkan Perjalanan: Dari titik turun, lanjutkan menggunakan ojek online menuju Padepokan Voli Sentul.',
             ],
         ],
         [
-            'judul' => 'KRL Bogor + Angkot jurusan Sentul',
+            'judul' => 'KRL',
             'langkah' => [
-                'Naik KRL Commuter Line dan turun di Stasiun Bogor.',
-                'Dari Terminal Baranangsiang naik angkot jurusan Sentul City/Cibinong.',
-                'Turun di kawasan Sirkuit Sentul Internasional, lanjut jalan kaki menuju Padepokan Voli Sentul.',
+                'Stasiun Terdekat: Stasiun Bogor.',
+                'Petunjuk Arah: Gunakan KRL Commuter Line dan turun di Stasiun Bogor.',
+                'Melanjutkan Perjalanan: Dari stasiun, lanjutkan menggunakan ojek online atau taksi menuju kawasan Sentul–Citaringgul hingga lokasi Padepokan Voli Sentul.',
             ],
         ],
         [
-            'judul' => 'Dari Terminal Cibinong',
+            'judul' => 'Angkot',
             'langkah' => [
-                'Dari Terminal Cibinong naik angkot jurusan Sentul (Babakan Madang).',
-                'Turun di kawasan Sirkuit Sentul Internasional, dekat Padepokan Voli Sentul.',
+                'Angkot dari Stasiun/Terminal: Naik angkot Trayek 44 jurusan Citeureup – Babakan Madang.',
+                'Titik Turun: Turun di kawasan Babakan Madang/Citaringgul.',
+                'Melanjutkan Perjalanan: Dari titik turun, lanjutkan menggunakan ojek online menuju Padepokan Voli Sentul.',
             ],
         ],
         [
-            'judul' => 'Dari Jakarta via Transjabodetabek',
+            'judul' => 'Kendaraan Pribadi',
             'langkah' => [
-                'Naik bus Transjabodetabek jurusan Bogor dan turun di Bogor.',
-                'Lanjut naik angkot jurusan Sentul City, atau ojek/taksi menuju Padepokan Voli Sentul.',
+                'Via Tol Jagorawi: Keluar menuju kawasan Sentul/Sentul City.',
+                'Arah Lokasi: Lanjutkan perjalanan menuju Babakan Madang–Citaringgul dan ikuti navigasi menuju Padepokan Voli Sentul.',
+                'Fasilitas Parkir: Gunakan area parkir yang tersedia di sekitar venue dan ikuti arahan petugas.',
             ],
         ],
     ],
     'Gunung Mas (Cisarua)' => [
         [
-            'judul' => 'KRL + Angkot via Sukasari',
+            'judul' => 'Bus',
             'langkah' => [
-                'Naik KRL Commuter Line dan turun di Stasiun Bogor.',
-                'Naik angkot trayek 27 (Buntar–Sukasari) atau ojek menuju Sukasari.',
-                'Lanjut naik angkot jurusan Cisarua/Puncak, turun di Gunung Mas (Jl. Raya Puncak KM 87).',
+                'Rute Terbaik: Naik bus atau angkutan umum dari Kota Bogor menuju arah Ciawi–Puncak–Cisarua.',
+                'Titik Turun: Turun di kawasan Tugu/Cisarua atau titik terdekat menuju Gunung Mas.',
+                'Melanjutkan Perjalanan: Dari jalan utama, lanjutkan menggunakan ojek menuju kawasan Gunung Mas/Paralayang Puncak.',
             ],
         ],
         [
-            'judul' => 'Bus AKDP jurusan Puncak/Cianjur',
+            'judul' => 'KRL',
             'langkah' => [
-                'Dari Terminal Baranangsiang naik bus jurusan Puncak/Cianjur (Elang, Cipta Staya, Sari Wangi, dll).',
-                'Turun di depan Gunung Mas, Jl. Raya Puncak KM 87, Cisarua.',
+                'Stasiun Terdekat: Stasiun Bogor.',
+                'Petunjuk Arah: Gunakan KRL Commuter Line dan turun di Stasiun Bogor.',
+                'Melanjutkan Perjalanan: Dari stasiun, lanjutkan menggunakan angkot menuju Sukasari, kemudian berganti angkutan menuju Ciawi–Cisarua. Dari Cisarua, lanjutkan menggunakan ojek menuju Gunung Mas.',
             ],
         ],
         [
-            'judul' => 'BisKita Koridor 2 + Angkot',
+            'judul' => 'Angkot',
             'langkah' => [
-                'Naik BisKita Trans Pakuan Koridor 2 (Bubulak–Ciawi).',
-                'Turun di kawasan Ciawi, lanjut naik angkot jurusan Cisarua.',
-                'Turun di Gunung Mas, Jl. Raya Puncak KM 87, Cisarua.',
+                'Angkot dari Stasiun/Terminal: Naik angkot Trayek 02 jurusan Sukasari – Bubulak menuju Sukasari. Selanjutnya berganti angkot Trayek 02A jurusan Sukasari – Cisarua.',
+                'Titik Turun: Turun di kawasan Cisarua/Tugu Selatan.',
+                'Melanjutkan Perjalanan: Dari titik turun, lanjutkan menggunakan ojek online menuju kawasan Gunung Mas/Paralayang Puncak.',
             ],
         ],
         [
-            'judul' => 'KRL + Angkot jurusan Puncak',
+            'judul' => 'Kendaraan Pribadi',
             'langkah' => [
-                'Naik KRL Commuter Line dan turun di Stasiun Bogor.',
-                'Dari Terminal Baranangsiang naik angkot jurusan Cisarua/Puncak, turun di Gunung Mas (Jl. Raya Puncak KM 87).',
+                'Via Tol Jagorawi: Keluar di arah Ciawi, kemudian masuk ke Jl. Raya Puncak.',
+                'Arah Lokasi: Lanjutkan melewati Gadog dan Cisarua menuju Tugu Selatan/Gunung Mas.',
+                'Fasilitas Parkir: Gunakan area parkir di kawasan Gunung Mas dan ikuti arahan petugas menuju lokasi pertandingan.',
             ],
         ],
     ],
@@ -351,6 +355,126 @@ $venueRutes = [
                 'Lanjut angkutan lokal atau ojek menuju lokasi kegiatan.',
             ],
         ],
+    ],
+];
+
+$venues = [
+    [
+        'id' => 1,
+        'name' => 'GOR Pajajaran Indoor A',
+        'lat' => -6.575816698132383,
+        'lng' => 106.796958655819,
+        'address' => 'GOR Pajajaran, Jl. Pemuda No.02, RT.04/RW.01, Tanah Sareal, Kota Bogor, Jawa Barat 16161',
+        'cabor' => 'Drumband, Pencak Silat, Taekwondo',
+        'gmaps_url' => 'https://maps.app.goo.gl/KcwQDC2JxcTsj1LJ8',
+    ],
+    [
+        'id' => 2,
+        'name' => 'GOR Pajajaran Indoor B',
+        'lat' => -6.577928206784957,
+        'lng' => 106.79690799953588,
+        'address' => 'GOR Pajajaran, Jl. Pemuda No.02, RT.04/RW.01, Tanah Sareal, Kota Bogor, Jawa Barat 16161',
+        'cabor' => 'Judo, Kurash, Sambo',
+        'gmaps_url' => 'https://maps.app.goo.gl/h3ei411WRSdW5Uuf8',
+    ],
+    [
+        'id' => 3,
+        'name' => 'GOR Vokasi IPB',
+        'lat' => -6.586864818074109,
+        'lng' => 106.80744643623193,
+        'address' => 'Jl. Lodaya II, RT.03/RW.05, Cilibende, Babakan, Kec. Bogor Tengah, Kota Bogor, Jawa Barat 16128',
+        'cabor' => 'Shorinji Kempo, Tarung Derajat',
+        'gmaps_url' => 'https://maps.app.goo.gl/ekjekDk57iBAQcTVA',
+    ],
+    [
+        'id' => 4,
+        'name' => 'Majalengka',
+        'lat' => -6.836580168091458,
+        'lng' => 108.22805804110702,
+        'address' => 'Majalengka, Jawa Barat',
+        'cabor' => 'Aerosport - Gantolle',
+        'gmaps_url' => 'https://maps.google.com/?q=Majalengka',
+    ],
+    [
+        'id' => 5,
+        'name' => 'Gunung Mas',
+        'lat' => -6.701561756877455,
+        'lng' => 106.97130253598559,
+        'address' => 'Puncak, Bogor, Jawa Barat',
+        'cabor' => 'Aerosport - Paralayang',
+        'gmaps_url' => 'https://maps.google.com/?q=Gunung+Mas+Puncak',
+    ],
+    [
+        'id' => 6,
+        'name' => 'Green Forest Hotel',
+        'lat' => -6.64930420834099,
+        'lng' => 106.806161644181,
+        'address' => 'Bogor, Jawa Barat',
+        'cabor' => 'Anggar, Angkat Besi, Angkat Berat, Arung Jeram, Binaraga, Petanque, Dansa',
+        'gmaps_url' => 'https://maps.app.goo.gl/dgb7WBjKovkcfyLo9',
+    ],
+    [
+        'id' => 7,
+        'name' => 'PPSDMAP Kemenhub Kemang',
+        'lat' => -6.498024311495613,
+        'lng' => 106.74365521534482,
+        'address' => 'Kemang, Bogor, Jawa Barat',
+        'cabor' => 'Bola Tangan Indoor',
+        'gmaps_url' => 'https://maps.app.goo.gl/Ma2cC3WY3DaWJYQ19',
+    ],
+    [
+        'id' => 8,
+        'name' => 'Padepokan Voli Sentul',
+        'lat' => -6.571855570792679,
+        'lng' => 106.8607669981466,
+        'address' => 'Sentul, Bogor, Jawa Barat',
+        'cabor' => 'Bola Tangan Pasir',
+        'gmaps_url' => 'https://maps.app.goo.gl/cXPfu5acX62py9QY9',
+    ],
+    [
+        'id' => 9,
+        'name' => 'Arcamanik',
+        'lat' => -6.911153350109742,
+        'lng' => 107.67487895150336,
+        'address' => 'Sport Jabar Arcamanik, Bandung, Jawa Barat',
+        'cabor' => 'Gimnastik Aerobik, Gimnastik Artistik, Gimnastik Ritmik',
+        'gmaps_url' => 'https://maps.google.com/?q=Sport+Jabar+Arcamanik',
+    ],
+    [
+        'id' => 10,
+        'name' => 'Cisangkan',
+        'lat' => -6.8746820367318255,
+        'lng' => 107.52764243801157,
+        'address' => 'Lapang Tembak Cisangkan, Cimahi, Jawa Barat',
+        'cabor' => 'Menembak',
+        'gmaps_url' => 'https://maps.google.com/?q=Lapang+Tembak+Cisangkan',
+    ],
+    [
+        'id' => 11,
+        'name' => 'Stadion Pajajaran',
+        'lat' => -6.5770496557407565,
+        'lng' => 106.79707946745701,
+        'address' => 'Stadion Pajajaran, Jl. Pemuda No.02, Kota Bogor',
+        'cabor' => 'Modern Pentathlon, Panahan, Panjat Tebing',
+        'gmaps_url' => 'https://maps.app.goo.gl/HgsrKKn8LD9V792UA',
+    ],
+    [
+        'id' => 12,
+        'name' => 'Kota Baru Parahyangan',
+        'lat' => -6.85872946272341,
+        'lng' => 107.4845999774748,
+        'address' => 'Padalarang, Kabupaten Bandung Barat, Jawa Barat',
+        'cabor' => 'Ski Air',
+        'gmaps_url' => 'https://maps.google.com/?q=Kota+Baru+Parahyangan',
+    ],
+    [
+        'id' => 13,
+        'name' => 'GOR Yasmin',
+        'lat' => -6.5669771863684225,
+        'lng' => 106.77129339999999,
+        'address' => 'Bogor, Jawa Barat',
+        'cabor' => 'Tenis Meja',
+        'gmaps_url' => 'https://maps.app.goo.gl/Fqw4Yn97RyvkSeg27',
     ],
 ];
 
@@ -638,10 +762,6 @@ $liveStream = [
 
 Route::post('/chatbot', [ChatbotController::class, 'chat'])->middleware('throttle:30,1');
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('/cabor', function () use ($cabors) {
     return view('cabor', compact('cabors'));
 });
@@ -650,18 +770,12 @@ Route::get('/kontingen', function () use ($kontingens) {
     return view('kontingen', compact('kontingens'));
 });
 
-Route::get('/klasemen-medali', function () use ($klasemen) {
-    usort($klasemen, function ($a, $b) {
-        return [$b['emas'], $b['perak'], $b['perunggu']] <=> [$a['emas'], $a['perak'], $a['perunggu']];
-    });
-    return view('klasemen-medali', compact('klasemen'));
+Route::get('/klasemen-medali', function () {
+    abort(404);
 });
 
-Route::get('/atlet', function () use ($atlets) {
-    usort($atlets, function ($a, $b) {
-        return [$b['emas'], $b['perak'], $b['perunggu']] <=> [$a['emas'], $a['perak'], $a['perunggu']];
-    });
-    return view('atlet', compact('atlets'));
+Route::get('/atlet', function () {
+    abort(404);
 });
 
 Route::get('/live-streaming', function () use ($liveStream) {
@@ -680,8 +794,7 @@ Route::get('/peta-venue', function () {
     return view('venue');
 });
 
-Route::get('/fasilitas', function () {
-    $facilities = [
+$facilities = [
         ['nama' => 'Zest Hotel Bogor', 'tipe' => 'hotel', 'tipe_label' => 'Hotel', 'alamat' => 'Jl. Pajajaran No. 27, Babakan, Kec. Bogor Tengah, Kota Bogor', 'venue' => 'GOR Pajajaran / Stadion Pajajaran (Indoor A, Indoor B, Stadion)', 'jarak' => '1.2 km', 'gmaps' => 'https://www.google.com/maps/search/?api=1&query=Zest%20Hotel%20Bogor%20Jl.%20Pajajaran%20No.%2027%2C%20Babakan%2C%20Kec.%20Bogor%20Tengah%2C%20Kota%20Bogor', 'telepon' => '-', 'layanan' => '-', 'website' => '', 'image' => ''],
         ['nama' => 'The Mirah Hotel Bogor', 'tipe' => 'hotel', 'tipe_label' => 'Hotel', 'alamat' => 'Jl. Pangrango No. 9A, Babakan, Kec. Bogor Tengah, Kota Bogor', 'venue' => 'GOR Pajajaran / Stadion Pajajaran (Indoor A, Indoor B, Stadion)', 'jarak' => '1.5 km', 'gmaps' => 'https://www.google.com/maps/search/?api=1&query=The%20Mirah%20Hotel%20Bogor%20Jl.%20Pangrango%20No.%209A%2C%20Babakan%2C%20Kec.%20Bogor%20Tengah%2C%20Kota%20Bogor', 'telepon' => '-', 'layanan' => '-', 'website' => '', 'image' => ''],
         ['nama' => 'RS Salak Bogor', 'tipe' => 'rs', 'tipe_label' => 'Rumah Sakit', 'alamat' => 'Jl. Jend. Sudirman No. 8, Sempur, Kec. Bogor Tengah, Kota Bogor', 'venue' => 'GOR Pajajaran / Stadion Pajajaran (Indoor A, Indoor B, Stadion)', 'jarak' => '1.1 km', 'gmaps' => 'https://www.google.com/maps/search/?api=1&query=RS%20Salak%20Bogor%20Jl.%20Jend.%20Sudirman%20No.%208%2C%20Sempur%2C%20Kec.%20Bogor%20Tengah%2C%20Kota%20Bogor', 'telepon' => '-', 'layanan' => '-', 'website' => '', 'image' => ''],
@@ -762,23 +875,34 @@ Route::get('/fasilitas', function () {
         ['nama' => 'PO. AdisaPutro Trans', 'tipe' => 'transport', 'tipe_label' => 'Sewa Kendaraan', 'alamat' => 'Jl. Raya Cifor No. 14 RT 03/RW 08 Bubulak, Bogor Barat, Kota Bogor', 'venue' => 'Kota Bogor', 'jarak' => 'Kota Bogor', 'gmaps' => 'https://www.google.com/maps/search/?api=1&query=PO+AdisaPutro+Trans+Bubulak+Bogor', 'telepon' => '+62 857-7496-7369 (Rusli)', 'layanan' => 'sewa kendaraan', 'website' => '', 'image' => ''],
         ['nama' => 'PT. Surya Harapan Perdana (PasteurTrans)', 'tipe' => 'transport', 'tipe_label' => 'Sewa Kendaraan', 'alamat' => 'Jl. R. Saleh S. Bustaman No.15, RT.01/RW.11, Empang, Kec. Bogor Sel., Kota Bogor, Jawa Barat 16132', 'venue' => 'Kota Bogor', 'jarak' => 'Kota Bogor', 'gmaps' => 'https://www.google.com/maps/search/?api=1&query=PT+Surya+Harapan+Perdana+PasteurTrans+Empang+Bogor', 'telepon' => '+62 823-2224-9794', 'layanan' => 'sewa kendaraan', 'website' => '', 'image' => ''],
         ['nama' => 'Master Tour & Travel', 'tipe' => 'transport', 'tipe_label' => 'Sewa Kendaraan', 'alamat' => 'Jl. Raya Cipaku No.21, RT.03/RW.01, Cipaku, Kec. Bogor Sel., Kota Bogor, Jawa Barat 16133', 'venue' => 'Kota Bogor', 'jarak' => 'Kota Bogor', 'gmaps' => 'https://www.google.com/maps/search/?api=1&query=Master+Tour+%26+Travel+Cipaku+Bogor', 'telepon' => '+62 857-1463-4597 (Wawang)', 'layanan' => 'sewa kendaraan', 'website' => '', 'image' => ''],
-        ['nama' => 'IKIGAI Fitness', 'tipe' => 'rekreasi', 'tipe_label' => 'Fitness', 'alamat' => 'IKIGAI Ekalos, Gedung Plaza Ekalos, Jl. Siliwangi, RW.04, Sukasari, Bogor', 'venue' => ['GOR Pajajaran / Stadion Pajajaran (Indoor A, Indoor B, Stadion)', 'Green Forest Hotel', 'Gymnasium Sekolah Vokasi IPB', 'GOR Yasmin Bulutangkis', 'PPSDMAP Kemenhub Kemang Kab-Bogor', 'Padepokan Voli Sentul'], 'jarak' => '-', 'gmaps' => 'https://www.google.com/maps/place/IKIGAI+FITNESS+-+Lippo+Plaza+Ekalokasari+Bogor/@-6.6216624,106.8144763,17z/data=!3m2!4b1!5s0x2e69c5fdf77397b5:0x881f18442bc0f864!4m6!3m5!1s0x2e69c5d5719e94ab:0x8c6b0ea36866c2e6!8m2!3d-6.6216624!4d106.8170512!16s%2Fg%2F11stp2j67s?entry=ttu&g_ep=EgoyMDI2MDgwNS4xIKXMDSoASAFQAw%3D%3D', 'telepon' => '081229112334', 'layanan' => 'fitness, buka pukul 06:00-21:00', 'website' => '', 'image' => ''],
+        ['nama' => 'IKIGAI Fitness', 'tipe' => 'rekreasi', 'tipe_label' => 'Fitness', 'alamat' => 'IKIGAI Ekalos, Gedung Plaza Ekalos, Jl. Siliwangi, RW.04, Sukasari, Bogor', 'venue' => ['GOR Pajajaran / Stadion Pajajaran (Indoor A, Indoor B, Stadion)', 'Green Forest Hotel', 'Gymnasium Sekolah Vokasi IPB', 'GOR Yasmin Bulutangkis', 'PPSDMAP Kemenhub Kemang Kab-Bogor', 'Padepokan Voli Sentul'], 'jarak' => '-', 'gmaps' => 'https://www.google.com/maps/place/IKIGAI+FITNESS+-+Lippo+Plaza+Ekalokasari+Bogor/@-6.6216624,106.8144763,17z/data=!3m2!4b1!5s0x2e69c5fdf77397b5:0x881f18442bc0f864!4m6!3m5!1s0x2e69c5d5719e94ab:0x8c6b0ea36866c2e6!8m2!3d-6.6216624!4d106.8170512!16s%2Fg%2F11stp2j67s?entry=ttu&g_ep=EgoyMDI2MDgwNS4xIKXMDSoASAFQAw%3D%3D', 'layanan' => 'fitness, buka pukul 06:00-21:00', 'website' => '', 'image' => ''],
     ];
 
-    // Count stats
-    $stats = [
-        'total' => count($facilities),
-        'rs' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'rs')),
-        'puskesmas' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'puskesmas')),
-        'apotek' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'apotek')),
-        'hotel' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'hotel')),
-        'polsek' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'polsek')),
-        'restoran' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'restoran')),
-        'transport' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'transport')),
-        'rekreasi' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'rekreasi')),
-    ];
+$stats = [
+    'total' => count($facilities),
+    'rs' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'rs')),
+    'puskesmas' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'puskesmas')),
+    'apotek' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'apotek')),
+    'hotel' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'hotel')),
+    'polsek' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'polsek')),
+    'restoran' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'restoran')),
+    'transport' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'transport')),
+    'rekreasi' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'rekreasi')),
+];
 
+Route::get('/fasilitas', function () use ($facilities, $stats) {
     return view('fasilitas', compact('facilities', 'stats'));
+});
+
+Route::get('/', function () use ($venues, $cabors, $kontingens, $facilities) {
+    $stats = [
+        'venues' => count($venues),
+        'cabors' => count($cabors),
+        'kontingens' => count($kontingens),
+        'fasilitas' => count($facilities),
+    ];
+
+    return view('welcome', compact('stats', 'venues'));
 });
 
 Route::get('/galeri', function () {

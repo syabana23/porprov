@@ -88,7 +88,7 @@
                 <option value="panahan">Panahan</option>
                 <option value="panjat tebing">Panjat Tebing</option>
                 <option value="pencak silat">Pencak Silat</option>
-                <option value="petanque">Pentaque</option>
+                <option value="petanque">Petanque</option>
                 <option value="sambo">Sambo</option>
                 <option value="shorinji kempo">Shorinji Kempo</option>
                 <option value="ski air">Ski Air</option>
@@ -1237,6 +1237,10 @@
                 marker.on("click", () => {
                     smoothFlyTo([venue.lat + offset.lat, venue.lng + offset.lng], 16);
                     showVenueDetails(venue);
+                    const vs = document.getElementById('venue');
+                    const v = venue.name.toLowerCase();
+                    if (Array.from(vs.options).some(o => o.value === v)) vs.value = v;
+                    if (window.filterCaborByVenue) window.filterCaborByVenue();
                 });
                 markers.push(marker);
             });
@@ -1256,8 +1260,40 @@
         const caborSelect = document.getElementById('cabor');
         const fasilitasSelect = document.getElementById('fasilitas');
 
+        const allCaborOptions = Array.from(caborSelect.options).map(o => ({ value: o.value, text: o.text }));
+
+        function filterCaborByVenue() {
+            const venueVal = venueSelect.value.toLowerCase();
+            caborSelect.innerHTML = '';
+            caborSelect.add(new Option(allCaborOptions[0].text, ''));
+
+            if (!venueVal) {
+                allCaborOptions.slice(1).forEach(o => caborSelect.add(new Option(o.text, o.value)));
+                caborSelect.value = '';
+                return;
+            }
+
+            const venue = venueData.find(v => v.name.toLowerCase().includes(venueVal));
+            if (!venue) {
+                allCaborOptions.slice(1).forEach(o => caborSelect.add(new Option(o.text, o.value)));
+                caborSelect.value = '';
+                return;
+            }
+
+            const venueCabors = venue.cabor.split(',').map(c => c.trim().toLowerCase());
+            allCaborOptions.slice(1).forEach(o => {
+                if (venueCabors.includes(o.text.trim().toLowerCase())) {
+                    caborSelect.add(new Option(o.text, o.value));
+                }
+            });
+            caborSelect.value = '';
+        }
+
+        window.filterCaborByVenue = filterCaborByVenue;
+
         if (venueSelect) {
             venueSelect.addEventListener('change', function() {
+                filterCaborByVenue();
                 filterForm.dispatchEvent(new Event('submit'));
             });
         }
