@@ -153,6 +153,34 @@ function initFasilitasPage() {
   const btnReset = document.getElementById('btnReset');
   const ssItems = document.querySelectorAll('.ss-item');
 
+  // ---- Scroll indicator untuk strip kategori ----
+  const statsStrip = document.querySelector('.stats-strip');
+  const statsInner = document.querySelector('.stats-strip-inner');
+  const scrollPrev = document.querySelector('.ss-scroll-prev');
+  const scrollNext = document.querySelector('.ss-scroll-next');
+
+  function updateScrollButtons() {
+    if (!statsInner || !scrollPrev || !scrollNext) return;
+    const maxScroll = statsInner.scrollWidth - statsInner.clientWidth;
+    const hasOverflow = maxScroll > 0;
+    scrollPrev.hidden = !hasOverflow || statsInner.scrollLeft <= 0;
+    scrollNext.hidden = !hasOverflow || statsInner.scrollLeft >= maxScroll - 1;
+    statsStrip.classList.toggle('at-start', !hasOverflow || statsInner.scrollLeft <= 0);
+    statsStrip.classList.toggle('at-end', !hasOverflow || statsInner.scrollLeft >= maxScroll - 1);
+  }
+
+  if (statsInner && scrollPrev && scrollNext) {
+    scrollPrev.addEventListener('click', () => {
+      statsInner.scrollBy({ left: -300, behavior: 'smooth' });
+    });
+    scrollNext.addEventListener('click', () => {
+      statsInner.scrollBy({ left: 300, behavior: 'smooth' });
+    });
+    statsInner.addEventListener('scroll', updateScrollButtons, { passive: true });
+    window.addEventListener('resize', updateScrollButtons);
+    updateScrollButtons();
+  }
+
   // Populate venue dropdown dynamically
   if (filterVenue) {
     const venues = [...new Set(facilities.flatMap(f => (Array.isArray(f.venue) ? f.venue : [f.venue])).filter(Boolean))].sort();
