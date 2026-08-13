@@ -44,7 +44,6 @@
                     </div>
                 </div>
 
-<<<<<<< HEAD
                 <!-- Kolom 3: Navigasi Cepat -->
                 <div class="footer-col footer-links-col">
                     <h4 class="footer-title">Navigasi Cepat</h4>
@@ -87,21 +86,6 @@
                             <span class="stat-label">Total Pengunjung</span>
                             <span class="stat-value">{{ number_format($visitCount ?? 1245, 0, ',', '.') }}</span>
                         </div>
-=======
-                <!-- Kolom 3: Navigasi -->
-                <div class="footer-links">
-                    <div class="footer-links-col">
-                        <h4 class="footer-title">Navigasi Cepat</h4>
-                        <a href="{{ url('/') }}">Beranda</a>
-                        <a href="{{ url('/peta-venue') }}">Peta Venue</a>
-                        <a href="{{ url('/fasilitas') }}">Fasilitas</a>
-                    </div>
-                    <div class="footer-links-col">
-                        <h4 class="footer-title">Informasi</h4>
-                        <a href="{{ url('/jadwal') }}">Jadwal</a>
-                        <a href="{{ url('/galeri') }}">Galeri</a>
-                        <a href="{{ url('/kebijakan-privasi') }}">Kebijakan Privasi</a>
->>>>>>> b2de0e2ae6c581c8dd6cceb735b63d46eb234926
                     </div>
                 </div>
             </div>
