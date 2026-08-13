@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@import './custom-select.css';
 @import './layout.css';
 @import './welcome.css';
 @import './venue.css';

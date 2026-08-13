@@ -249,7 +249,7 @@ $bg4 = asset('images/venue4.jpeg');
 
                 <div>
                     <select class="filter-select-styled" id="cabor">
-                        <option value="">Filter Cabang Olahraga</option>
+                        <option value="">Pilih Cabang Olahraga</option>
                         <option value="aerosport">Aerosport - Gantolle</option>
                         <option value="aerosport">Aerosport - Paralayang</option>
                         <option value="anggar">Anggar</option>
@@ -283,7 +283,7 @@ $bg4 = asset('images/venue4.jpeg');
 
                 <div>
                     <select class="filter-select-styled" id="venue">
-                        <option value="">Filter Nama Venue</option>
+                        <option value="">Pilih Venue</option>
                         <option value="gor pajajaran indoor a">GOR Pajajaran Indoor A</option>
                         <option value="gor pajajaran indoor b">GOR Pajajaran Indoor B</option>
                         <option value="gor vokasi ipb">GOR Vokasi IPB</option>

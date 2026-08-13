@@ -1,0 +1,527 @@
+/* ==========================================================================
+   CustomSelect Component - Modern, Clean & Production-Ready Dropdown System
+   ========================================================================== */
+
+/* Visually hide native select while keeping it in form tree */
+.cs-native-hidden {
+  position: absolute !important;
+  opacity: 0 !important;
+  width: 1px !important;
+  height: 1px !important;
+  pointer-events: none !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+}
+
+/* Wrapper Container */
+.custom-select-wrapper {
+  position: relative;
+  display: block;
+  width: 100%;
+  font-family: inherit;
+  user-select: none;
+}
+
+/* Trigger Button */
+.cs-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 48px;
+  padding: 0.625rem 1rem;
+  background-color: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 0.75rem;
+  color: #1e293b;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.02);
+  outline: none;
+  text-align: left;
+}
+
+.cs-trigger:hover {
+  border-color: #cbd5e1;
+  background-color: #f8fafc;
+  box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.05);
+}
+
+.cs-trigger:focus-visible,
+.cs-open .cs-trigger {
+  border-color: #0284c7;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3.5px rgba(2, 132, 199, 0.15), 0 4px 12px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Has value vs Placeholder */
+.cs-has-value .cs-trigger {
+  border-color: #cbd5e1;
+}
+
+.cs-icon-wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.625rem;
+  color: #0284c7;
+  flex-shrink: 0;
+  transition: color 0.2s ease;
+}
+
+.cs-label {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #0f172a;
+  font-weight: 500;
+}
+
+.cs-label.cs-placeholder {
+  color: #64748b;
+  font-weight: 400;
+}
+
+.cs-chevron {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  margin-left: 0.5rem;
+  flex-shrink: 0;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s ease;
+}
+
+.cs-open .cs-chevron {
+  transform: rotate(180deg);
+  color: #0284c7;
+}
+
+/* Floating Dropdown Panel */
+.cs-dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  z-index: 99999;
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  border-radius: 0.875rem;
+  box-shadow: 0 16px 36px -4px rgba(15, 23, 42, 0.12), 0 4px 12px -2px rgba(15, 23, 42, 0.06);
+  padding: 0.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px) scale(0.98);
+  transform-origin: top center;
+  transition: opacity 0.18s ease, transform 0.18s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.18s;
+  pointer-events: none;
+  min-width: 220px;
+}
+
+.cs-open .cs-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+/* Drop-up orientation */
+.cs-drop-up .cs-dropdown {
+  top: auto;
+  bottom: calc(100% + 6px);
+  transform-origin: bottom center;
+  transform: translateY(8px) scale(0.98);
+}
+
+.cs-drop-up.cs-open .cs-dropdown {
+  transform: translateY(0) scale(1);
+}
+
+/* Search Box */
+.cs-search-wrap {
+  position: relative;
+  margin-bottom: 0.375rem;
+  padding: 0.125rem;
+}
+
+.cs-search-input {
+  width: 100%;
+  padding: 0.5rem 0.75rem 0.5rem 2.25rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.625rem;
+  font-size: 0.84375rem;
+  background: #f8fafc;
+  color: #0f172a;
+  outline: none;
+  transition: all 0.15s ease;
+}
+
+.cs-search-input:focus {
+  border-color: #0284c7;
+  background: #ffffff;
+  box-shadow: 0 0 0 2.5px rgba(2, 132, 199, 0.12);
+}
+
+.cs-search-icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+}
+
+/* Options List */
+.cs-options-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 260px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e1 transparent;
+}
+
+.cs-options-list::-webkit-scrollbar {
+  width: 5px;
+}
+
+.cs-options-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.cs-options-list::-webkit-scrollbar-thumb {
+  background-color: #cbd5e1;
+  border-radius: 10px;
+}
+
+/* Individual Option */
+.cs-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.625rem 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 450;
+  color: #334155;
+  cursor: pointer;
+  transition: background-color 0.12s ease, color 0.12s ease;
+}
+
+.cs-option:hover,
+.cs-option.cs-highlighted {
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+
+.cs-option.cs-selected {
+  background-color: #eff6ff;
+  color: #1d4ed8;
+  font-weight: 600;
+}
+
+.cs-check-icon {
+  display: none;
+  color: #1d4ed8;
+  flex-shrink: 0;
+  margin-left: 0.5rem;
+}
+
+.cs-option.cs-selected .cs-check-icon {
+  display: inline-flex;
+}
+
+.cs-option-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Empty search result */
+.cs-empty {
+  padding: 1.25rem 0.75rem;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 0.875rem;
+  font-style: italic;
+}
+
+/* Disabled wrapper */
+.cs-disabled .cs-trigger {
+  opacity: 0.6;
+  cursor: not-allowed;
+  background-color: #f8fafc;
+  border-color: #e2e8f0;
+}
+
+/* Dark Mode support */
+html.dark .cs-trigger {
+  background-color: #1e293b;
+  border-color: #334155;
+  color: #f8fafc;
+}
+
+html.dark .cs-trigger:hover {
+  border-color: #475569;
+  background-color: #334155;
+}
+
+html.dark .cs-label {
+  color: #f8fafc;
+}
+
+html.dark .cs-label.cs-placeholder {
+  color: #94a3b8;
+}
+
+html.dark .cs-dropdown {
+  background-color: #1e293b;
+  border-color: #334155;
+  box-shadow: 0 16px 36px -4px rgba(0, 0, 0, 0.4);
+}
+
+html.dark .cs-search-input {
+  background-color: #0f172a;
+  border-color: #334155;
+  color: #f8fafc;
+}
+
+html.dark .cs-option {
+  color: #cbd5e1;
+}
+
+html.dark .cs-option:hover,
+html.dark .cs-option.cs-highlighted {
+  background-color: #334155;
+  color: #ffffff;
+}
+
+html.dark .cs-option.cs-selected {
+  background-color: #1e3a8a;
+  color: #60a5fa;
+}
+
+html.dark .cs-check-icon {
+  color: #60a5fa;
+}
+
+/* ==========================================================================
+   VENUE MAP & HOMEPAGE FILTER BAR REDESIGN (Professional Event Style)
+   ========================================================================== */
+
+:root {
+  --filter-height: 48px;
+}
+
+.filter-section {
+  background: transparent;
+  padding: 0;
+  margin-bottom: 2rem;
+}
+
+.jadwal-filter {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.35fr) minmax(0, 1.15fr) auto;
+  gap: 12px;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  background: #ffffff;
+  padding: 16px 20px;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 4px 12px -2px rgba(0, 0, 0, 0.02);
+  border: 1px solid #e2e8f0;
+}
+
+html.dark .jadwal-filter {
+  background: #1e293b;
+  border-color: #334155;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+}
+
+/* Homepage Sidebar Filter Card Layout */
+.filter-form-clean {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  background: transparent;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+}
+
+.filter-form-clean .full-width {
+  grid-column: 1 / -1;
+}
+
+.filter-form-clean .filter-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: var(--filter-height);
+  width: 100%;
+}
+
+.filter-form-clean .custom-select-wrapper .cs-trigger {
+  height: var(--filter-height);
+  min-height: var(--filter-height);
+  max-height: var(--filter-height);
+  padding: 0 0.625rem;
+  box-sizing: border-box;
+}
+
+.filter-form-clean .custom-select-wrapper .cs-icon-wrap {
+  margin-right: 6px;
+}
+
+.filter-form-clean .custom-select-wrapper .cs-label {
+  font-size: 0.875rem;
+}
+
+.filter-form-clean .custom-select-wrapper .cs-chevron {
+  margin-left: 4px;
+}
+
+.filter-box,
+.filter-form-clean > div:not(.filter-actions) {
+  display: block;
+  width: 100%;
+  min-width: 0;
+}
+
+.filter-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: var(--filter-height);
+}
+
+.btn-cari,
+.btn-search-blue {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: var(--filter-height);
+  min-height: var(--filter-height);
+  max-height: var(--filter-height);
+  box-sizing: border-box;
+  padding: 0 1.5rem;
+  background: linear-gradient(135deg, #013469, #0a4fa8);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  border: none;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 12px rgba(1, 52, 105, 0.2);
+  white-space: nowrap;
+  margin: 0;
+}
+
+.btn-cari:hover,
+.btn-search-blue:hover {
+  background: linear-gradient(135deg, #0a4fa8, #073a7d);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(1, 52, 105, 0.3);
+}
+
+.btn-cari:active,
+.btn-search-blue:active {
+  transform: translateY(0);
+}
+
+.btn-reset,
+.btn-reset-light {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--filter-height);
+  min-height: var(--filter-height);
+  max-height: var(--filter-height);
+  box-sizing: border-box;
+  padding: 0 1.25rem;
+  background: #f1f5f9;
+  color: #475569;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  margin: 0;
+}
+
+.btn-reset:hover,
+.btn-reset-light:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+html.dark .btn-reset,
+html.dark .btn-reset-light {
+  background: #334155;
+  color: #cbd5e1;
+  border-color: #475569;
+}
+
+html.dark .btn-reset:hover,
+html.dark .btn-reset-light:hover {
+  background: #475569;
+  color: #ffffff;
+}
+
+@media (max-width: 991px) {
+  .jadwal-filter {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .jadwal-filter .filter-actions {
+    grid-column: 1 / -1;
+    display: flex;
+    width: 100%;
+  }
+
+  .jadwal-filter .btn-cari,
+  .jadwal-filter .btn-reset {
+    flex: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .jadwal-filter {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .jadwal-filter .filter-actions {
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+  }
+
+  .jadwal-filter .btn-cari,
+  .jadwal-filter .btn-reset {
+    width: 100%;
+  }
+}
+
+/* Hide legacy custom select wrap pseudo carets */
+.filter-select-wrap::after,
+.filter-select-wrap-pro::after {
+  display: none !important;
+}
+
