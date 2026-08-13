@@ -9,10 +9,10 @@
     --cb-border: #e5e7eb;
     --cb-text: #111827;
     --cb-text-muted: #6b7280;
-    --cb-accent: #2563eb;
-    --cb-accent-hover: #1d4ed8;
-    --cb-accent-light: #eff6ff;
-    --cb-user-bg: #2563eb;
+    --cb-accent: #013469;
+    --cb-accent-hover: #0a4fa8;
+    --cb-accent-light: #eaf1f9;
+    --cb-user-bg: #013469;
     --cb-user-text: #ffffff;
     --cb-bot-bg: #ffffff;
     --cb-bot-border: #e5e7eb;
@@ -23,6 +23,7 @@
     --cb-font: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --cb-header-h: 60px;
     --cb-footer-h: 80px;
+    --cb-accent-grad: linear-gradient(135deg, #013469, #0a4fa8);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -32,9 +33,9 @@
         --cb-border: #313244;
         --cb-text: #cdd6f4;
         --cb-text-muted: #6c7086;
-        --cb-accent: #89b4fa;
-        --cb-accent-hover: #74c7ec;
-        --cb-accent-light: #1e1e2e;
+        --cb-accent: #0a4fa8;
+        --cb-accent-hover: #6a9fd0;
+        --cb-accent-light: #0d2240;
         --cb-bot-bg: #1e1e2e;
         --cb-bot-border: #313244;
         --cb-shadow: 0 8px 40px rgba(0,0,0,.5);
@@ -56,7 +57,7 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    box-shadow: 0 4px 20px rgba(37, 99, 235, .45);
+    box-shadow: 0 4px 20px rgba(1, 52, 105, .45);
     z-index: 10001; /* Higher than accessibility button (10000) & navbar (9999) */
     transition: transform .2s ease, box-shadow .2s ease, background .2s;
 }
@@ -64,7 +65,7 @@
 #chat-toggle:hover {
     background: var(--cb-accent-hover);
     transform: scale(1.08);
-    box-shadow: 0 6px 28px rgba(37, 99, 235, .55);
+    box-shadow: 0 6px 28px rgba(1, 52, 105, .55);
 }
 
 #chat-toggle svg {
@@ -126,7 +127,7 @@
     justify-content: space-between;
     padding: 0 14px 0 16px;
     height: var(--cb-header-h);
-    background: var(--cb-accent);
+    background: var(--cb-accent-grad);
     color: #fff;
     flex-shrink: 0;
 }
@@ -332,7 +333,7 @@
     color: var(--cb-user-text);
     border: none;
     border-bottom-right-radius: 5px;
-    box-shadow: 0 2px 10px rgba(37,99,235,.3);
+    box-shadow: 0 2px 10px rgba(1,52,105,.3);
 }
 
 /* ---- Inline links inside bubbles ---- */
@@ -489,7 +490,7 @@
 
 #chat-input-wrapper:focus-within {
     border-color: var(--cb-accent);
-    box-shadow: 0 0 0 3px rgba(37,99,235,.1);
+    box-shadow: 0 0 0 3px rgba(1,52,105,.12);
 }
 
 #chat-input {
