@@ -37,10 +37,6 @@
     <form class="jadwal-filter" id="map-filter-form">
         <!-- Titik Venue -->
         <div class="filter-box">
-            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 22s8-5.5 8-12c0-4.42-3.58-8-8-8s-8 3.58-8 8c0 6.5 8 12 8 12z" />
-                <circle cx="12" cy="10" r="3" />
-            </svg>
             <select class="filter-select" id="venue">
                 <option value="">Pilih Venue</option>
                 <option value="gor pajajaran indoor a">GOR Pajajaran Indoor A</option>
@@ -60,11 +56,6 @@
         </div>
         <!-- Cabang Olahraga -->
         <div class="filter-box">
-            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <circle cx="12" cy="8" r="6" />
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14v8" />
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 22h6" />
-            </svg>
             <select class="filter-select" id="cabor">
                 <option value="">Pilih Cabang Olahraga</option>
                 <option value="aerosport">Aerosport - Gantolle</option>
@@ -99,10 +90,6 @@
         </div>
         <!-- Fasilitas -->
         <div class="filter-box">
-            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21v-2a4 4 0 00-4-4H9a4 4 0 00-4 4v2" />
-                <circle cx="12" cy="7" r="4" />
-            </svg>
             <select class="filter-select" id="fasilitas">
                 <option value="">Cari Fasilitas</option>
                 <option value="hotel">Hotel & Penginapan</option>
@@ -114,13 +101,15 @@
                 <option value="rekreasi">Rekreasi</option>
             </select>
         </div>
-        <button type="submit" class="btn-cari">
-            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-            </svg>
-            Cari
-        </button>
-        <button type="reset" class="btn-reset-filter">Reset</button>
+        <div class="filter-actions">
+            <button type="submit" class="btn-cari">
+                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+                Cari
+            </button>
+            <button type="reset" class="btn-reset">Reset</button>
+        </div>
     </form>
 </section>
 

@@ -1,11 +1,17 @@
 // resources/js/app.js
 // Dark mode toggle and count‑up animation for statistics cards
 import '../css/chatbot.css';
+import '../css/custom-select.css';
 
 import './chatbot.js';
 import './countdown.js';
+import { CustomSelect } from './custom-select.js';
+
+window.CustomSelect = CustomSelect;
 
 document.addEventListener('DOMContentLoaded', () => {
+  // ----- Initialize Custom Select Components Globally -----
+  CustomSelect.initAll();
   // ----- Dark Mode -----
   const htmlEl = document.documentElement;
   const toggleBtn = document.getElementById('darkModeToggle');
