@@ -12,6 +12,10 @@ class SecurityHeaders
     {
         $response = $next($request);
 
+        // Remove server fingerprint headers
+        $response->headers->remove('X-Powered-By');
+        $response->headers->remove('Server');
+
         // Prevent clickjacking
         $response->headers->set('X-Frame-Options', 'DENY');
 

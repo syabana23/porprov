@@ -1,5 +1,9 @@
 <?php
 
+// Remove server fingerprint headers
+header_remove('X-Powered-By');
+header_remove('Server');
+
 use Illuminate\Foundation\Application;
 use Illuminate\Http\Request;
 

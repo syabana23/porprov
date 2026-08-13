@@ -108,7 +108,7 @@
                 </svg>
                 <span>Cari</span>
             </button>
-            <button type="reset" class="btn-reset-filter">Reset</button>
+            <button type="reset" class="btn-reset">Reset</button>
         </div>
     </form>
 </section>
