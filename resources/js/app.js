@@ -1,7 +1,6 @@
 // resources/js/app.js
 // Dark mode toggle and count‑up animation for statistics cards
 import '../css/chatbot.css';
-import '../css/custom-select.css';
 
 import './chatbot.js';
 import './countdown.js';

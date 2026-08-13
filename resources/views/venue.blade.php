@@ -1249,7 +1249,10 @@
         const caborSelect = document.getElementById('cabor');
         const fasilitasSelect = document.getElementById('fasilitas');
 
-        const allCaborOptions = Array.from(caborSelect.options).map(o => ({ value: o.value, text: o.text }));
+        const allCaborOptions = Array.from(caborSelect.options).map(o => ({
+            value: o.value,
+            text: o.text
+        }));
 
         function filterCaborByVenue() {
             const venueVal = venueSelect.value.toLowerCase();
