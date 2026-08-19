@@ -20,7 +20,7 @@
                         <!-- Baris Logo Kota -->
                         <div class="organizer-row organizer-coas">
                             <div class="organizer-item">
-                                <img src="{{ asset('images/footer/kota_bekasi.png') }}" alt="Kota Bekasi" class="org-coa">
+                                <img src="{{ asset('images/footer/kota_bekasi.png') }}" alt="Kota Bekasi" class="org-coa org-coa-bekasi">
                             </div>
                             <div class="organizer-item">
                                 <img src="{{ asset('images/footer/kota_depok.png') }}" alt="Kota Depok" class="org-coa">
@@ -50,7 +50,7 @@
                     <a href="{{ url('/') }}">Beranda</a>
                     <a href="{{ url('/peta-venue') }}">Peta Venue</a>
                     <a href="{{ url('/fasilitas') }}">Fasilitas</a>
-                    <a href="{{ url('/klasemen-medali') }}">Klasemen Medali</a>
+
                 </div>
 
                 <!-- Kolom 4: Informasi -->

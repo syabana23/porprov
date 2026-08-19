@@ -154,8 +154,8 @@ $bg4 = asset('images/venue4.jpeg');
             </div>
             <div>
                 <div class="stat-val">{{ $stats['kontingens'] }}</div>
-                <div class="stat-title">Contingen</div>
-                <div class="stat-sub">Kabupaten/Kota Peserta</div>
+                <div class="stat-title">Kontingen</div>
+                <div class="stat-sub">Kabupaten/Kota</div>
             </div>
         </div>
 

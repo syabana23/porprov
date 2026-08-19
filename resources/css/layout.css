@@ -590,7 +590,7 @@
         .organizer-row {
             display: flex;
             gap: 24px;
-            align-items: flex-end;
+            align-items: center;
             justify-content: center;
         }
 
@@ -606,6 +606,10 @@
             height: 84px;
             object-fit: contain;
             object-position: center bottom;
+        }
+
+        .org-coa-bekasi {
+            transform: scale(1.15);
         }
 
         .org-mascot {
@@ -770,6 +774,10 @@
                 height: 68px;
                 object-fit: contain;
                 object-position: center bottom;
+            }
+
+            .org-coa-bekasi {
+                transform: scale(1.15);
             }
 
             .org-mascot {
