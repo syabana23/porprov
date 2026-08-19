@@ -148,7 +148,7 @@
         <div class="filter-group">
             <label class="filter-label">Jenis Fasilitas</label>
             <div class="filter-select-wrap">
-                <select class="filter-select" id="f ilterType">
+                <select class="filter-select" id="filterType">
                     <option value="all">Semua Jenis</option>
                     <option value="hotel">Hotel</option>
                     <option value="rs">Rumah Sakit</option>
