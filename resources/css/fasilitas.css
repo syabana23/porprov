@@ -585,6 +585,11 @@ html.dark .ss-lbl {
     color: #0d9488;
 }
 
+.badge-mall {
+    background: #ede9fe;
+    color: #7c3aed;
+}
+
 /* ── Section Penyangga Kategori ── */
 .facility-category-section {
     margin-bottom: 28px;

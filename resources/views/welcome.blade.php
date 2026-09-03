@@ -244,6 +244,7 @@ $bg4 = asset('images/venue4.jpeg');
                         <option value="polisi">Polisi & Keamanan</option>
                         <option value="transport">Sewa Kendaraan</option>
                         <option value="rekreasi">Rekreasi</option>
+                        <option value="mall">Mall</option>
                     </select>
                 </div>
 
@@ -356,6 +357,12 @@ $bg4 = asset('images/venue4.jpeg');
                     </svg>
                     Rekreasi
                 </button>
+                <button class="facility-filter-btn" data-filter="cat-mall">
+                    <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M7 18c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
+                    </svg>
+                    Mall
+                </button>
             </div>
 
             <!-- Scrollable Facility Results List -->
@@ -460,6 +467,20 @@ $bg4 = asset('images/venue4.jpeg');
                         <h3>Rekreasi</h3>
                     </div>
                     <div id="rekreasi-container"></div>
+                </div>
+
+                <!-- Mall -->
+                <div class="facility-category" id="cat-mall" style="display:none;">
+                    <div class="facility-cat-header">
+                        <span class="cat-dot" style="background:#7c3aed;"></span>
+                        <div class="facility-cat-icon" style="background:#ede9fe; color:#7c3aed;">
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M7 18c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
+                            </svg>
+                        </div>
+                        <h3>Mall & Pusat Belanja</h3>
+                    </div>
+                    <div id="mall-container"></div>
                 </div>
             </div>
         </div>
@@ -737,6 +758,18 @@ $bg4 = asset('images/venue4.jpeg');
                 address: "Jl. Pangrango No. 9A, Babakan, Kec. Bogor Tengah, Kota Bogor",
                 distance: "1.5 km",
                 mapUrl: "https://www.google.com/maps/search/?api=1&query=The+Mirah+Hotel+Bogor+Jl.+Pangrango+No.+9A+Babakan+Bogor+Tengah"
+            },
+            {
+                name: "The Sahira Hotel",
+                address: "Jl. A. Yani No.17-23, RT.02/RW.02, Tanah Sareal, Kota Bogor, Jawa Barat 16161",
+                distance: "300 m",
+                mapUrl: "https://www.google.com/maps/dir/Gor+pajajaran,+CQFX%2B99C,+RT.04%2FRW.01,+Tanah+Sareal,+Kota+Bogor,+Jawa+Barat+16161/The+Sahira+Hotel,+Jl.+A.+Yani+No.17-23,+RT.02%2FRW.02,+Tanah+Sareal,+Kota+Bogor,+Jawa+Barat+16161/@-6.5764685,106.7978136,17.47z/data=!4m13!4m12!1m5!1m1!1s0x2e69c5000cee40ab:0xa412bd10cefea370!2m2!1d106.7983925!2d-6.5765742!1m5!1m1!1s0x2e69c3993958a32d:0x905190fd46d58a74!2m2!1d106.7999397!2d-6.5749112?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D"
+            },
+            {
+                name: "Key Inn Hotel",
+                address: "Jl. Jend. Sudirman Gg. Lb. Pilar No.40B, RT.01/RW.03, Sempur, Kecamatan Bogor Tengah, Kota Bogor, Jawa Barat 16129",
+                distance: "900 m",
+                mapUrl: "https://www.google.com/maps/dir/Gor+pajajaran,+CQFX%2B99C,+RT.04%2FRW.01,+Tanah+Sareal,+Kota+Bogor,+Jawa+Barat+16161/Key+Inn+Hotel+Bogor,+Jl.+Jend.+Sudirman+Gg.+Lb.+Pilar+No.40B,+RT.01%2FRW.03,+Sempur,+Bogor+Tengah,+Bogor+City,+West+Java+16129/@-6.5808268,106.7916117,16z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x2e69c5000cee40ab:0xa412bd10cefea370!2m2!1d106.7983925!2d-6.5765742!1m5!1m1!1s0x2e69c58e1bbf04d5:0xd2750d460b939140!2m2!1d106.7970748!2d-6.5835792?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D"
             }
         ],
         hospital: [{
@@ -756,6 +789,24 @@ $bg4 = asset('images/venue4.jpeg');
                 address: "Jl. Sawojajar No. 38, Pabaton, Kec. Bogor Tengah, Kota Bogor",
                 distance: "1.8 km",
                 mapUrl: "https://www.google.com/maps/search/?api=1&query=Puskesmas+Bogor+Tengah+Jl.+Sawojajar+No.+38+Pabaton+Bogor+Tengah"
+            },
+            {
+                name: "RS Azra",
+                address: "Jl. Raya Pajajaran No.219, RT.02/RW.11, Bantarjati, Kec. Bogor Utara, Kota Bogor, Jawa Barat 16153",
+                distance: "1.2 km",
+                mapUrl: "https://www.google.com/maps/dir/Gor+pajajaran,+CQFX%2B99C,+RT.04%2FRW.01,+Tanah+Sareal,+Kota+Bogor,+Jawa+Barat+16161/Rumah+Sakit+Azra+Bogor,+Jl.+Raya+Pajajaran+No.219,+RT.02%2FRW.11,+Bantarjati,+Kec.+Bogor+Utara,+Kota+Bogor,+Jawa+Barat+16153/@-6.57281,106.7976765,16z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x2e69c5000cee40ab:0xa412bd10cefea370!2m2!1d106.7983925!2d-6.5765742!1m5!1m1!1s0x2e69c42e35fd5fd3:0x5497922a2532233!2m2!1d106.8074803!2d-6.5793169?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D"
+            },
+            {
+                name: "RSIA Pasutri Bogor",
+                address: "Jl. Merak No.3, RT.03/RW.06, Tanah Sareal, Kota Bogor, Jawa Barat 16161",
+                distance: "800 m",
+                mapUrl: "https://www.google.com/maps/dir/Gor+pajajaran,+CQFX%2B99C,+RT.04%2FRW.01,+Tanah+Sareal,+Kota+Bogor,+Jawa+Barat+16161/RSIA+Pasutri+Bogor,+CQHX%2BQQR,+Jl.+Merak+No.3,+RT.03%2FRW.06,+Tanah+Sareal,+Kota+Bogor,+Jawa+Barat+16161/@-6.5739631,106.7927543,16z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x2e69c5000cee40ab:0xa412bd10cefea370!2m2!1d106.7983925!2d-6.5765742!1m5!1m1!1s0x2e69c5f7b0de7fd3:0x7ebb0e784df9fa48!2m2!1d106.798903!2d-6.570604?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D"
+            },
+            {
+                name: "RS Mulia Pajajaran Bogor",
+                address: "Jl. Raya Pajajaran No.98, RT.02/RW.03, Bantarjati, Kec. Bogor Utara, Kota Bogor, Jawa Barat 16153",
+                distance: "1.1 km",
+                mapUrl: "https://www.google.com/maps/dir/Gor+pajajaran,+CQFX%2B99C,+RT.04%2FRW.01,+Tanah+Sareal,+Kota+Bogor,+Jawa+Barat+16161/RS+Mulia+Pajajaran+Bogor,+Jl.+Raya+Pajajaran+No.98,+RT.02%2FRW.03,+Bantarjati,+Kec.+Bogor+Utara,+Kota+Bogor,+Jawa+Barat+16153/@-6.5798556,106.7822267,14z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x2e69c5000cee40ab:0xa412bd10cefea370!2m2!1d106.7983925!2d-6.5765742!1m5!1m1!1s0x2e69c5f2b4b395cf:0x96f61aa7b6f95871!2m2!1d106.8076464!2d-6.5757867?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D"
             }
         ],
         pharmacy: [{
@@ -769,6 +820,11 @@ $bg4 = asset('images/venue4.jpeg');
             address: "Jl. Kapten Muslihat No. 18, Paledang, Kec. Bogor Tengah, Kota Bogor",
             distance: "2.3 km",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=Polresta+Bogor+Kota+Mako+Muslihat+Jl.+Kapten+Muslihat+No.+18+Paledang+Bogor+Tengah"
+        }, {
+            name: "Polsek Bogor Utara",
+            address: "Jl. Raya Pajajaran No.26, RT.05/RW.10, Bantarjati, Kec. Bogor Utara, Kota Bogor, Jawa Barat 16153",
+            distance: "1.1 km",
+            mapUrl: "https://www.google.com/maps/dir/Gor+pajajaran,+CQFX%2B99C,+RT.04%2FRW.01,+Tanah+Sareal,+Kota+Bogor,+Jawa+Barat+16161/Polsek+Bogor+Utara,+Jl.+Raya+Pajajaran+No.26,+RT.05%2FRW.10,+Bantarjati,+Kec.+Bogor+Utara,+Kota+Bogor,+Jawa+Barat+16153/@-6.5845962,106.7915827,15z/data=!4m13!4m12!1m5!1m1!1s0x2e69c5000cee40ab:0xa412bd10cefea370!2m2!1d106.7983925!2d-6.5765742!1m5!1m1!1s0x2e69c5e2ccc27bef:0x95860988a497f417!2m2!1d106.8068179!2d-6.579187?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D"
         }],
         restaurant: [{
             name: "Rumah Makan Ampera Pemuda",
@@ -777,7 +833,13 @@ $bg4 = asset('images/venue4.jpeg');
             mapUrl: "https://www.google.com/maps/search/?api=1&query=Rumah%20Makan%20Ampera%20Pemuda%20Jl.%20Pemuda%20No.%2027%20Tanah%20Sareal%20Bogor"
         }],
         transport: transportFacilities,
-        rekreasi: rekreasiFacilities
+        rekreasi: rekreasiFacilities,
+        mall: [{
+            name: "Mall Jambu Dua",
+            address: "Jl. A. Yani No.1, RT.01/RW.06, Bantarjati, Kec. Bogor Utara, Kota Bogor, Jawa Barat 16153",
+            distance: "1.5 km",
+            mapUrl: "https://www.google.com/maps/dir/Gor+pajajaran,+CQFX%2B99C,+RT.04%2FRW.01,+Tanah+Sareal,+Kota+Bogor,+Jawa+Barat+16161/Jambu+Dua,+Jl.+A.+Yani+No.1,+RT.01%2FRW.06,+Bantarjati,+Kec.+Bogor+Utara,+Kota+Bogor,+Jawa+Barat+16153/@-6.5716908,106.7976765,16z/data=!3m1!5s0x2e69c4243e4284af:0xde1c35e312f243b7!4m13!4m12!1m5!1m1!1s0x2e69c5000cee40ab:0xa412bd10cefea370!2m2!1d106.7983925!2d-6.5765742!1m5!1m1!1s0x2e69c55b908dacfb:0x6e2c85a178aa83f8!2m2!1d106.8079468!2d-6.569317?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D"
+        }]
     };
 
     const greenForestFacilities = {
@@ -805,6 +867,18 @@ $bg4 = asset('images/venue4.jpeg');
                 address: "Jl. Rangga Gading, Cipaku, Kec. Bogor Selatan",
                 distance: "2.1 km",
                 mapUrl: "https://www.google.com/maps/search/?api=1&query=Puskesmas+Cipaku+Jl.+Rangga+Gading+Cipaku+Bogor+Selatan"
+            },
+            {
+                name: "RS VANIA",
+                address: "Jl. Siliwangi No.11, RT.01/RW.03, Sukasari, Kec. Bogor Tim., Kota Bogor",
+                distance: "4 km",
+                mapUrl: "https://www.google.com/maps/dir/Green+Forest+Bogor,+Jl.+RE.+Soemantadiredja+No.99,+RT.03%2FRW.12,+Pamoyanan,+Kec.+Bogor+Sel.,+Kota+Bogor,+Jawa+Barat+16136/RUMAH+SAKIT+VANIA,+Jl.+Siliwangi+No.11,+RT.01%2FRW.03,+Sukasari,+Kec.+Bogor+Tim.,+Kota+Bogor,+Jawa+Barat+16142/@-6.6296626,106.7838324,14z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x2e69cf4fde33c0b3:0x70889815f5e23386!2m2!1d106.806108!2d-6.6494907!1m5!1m1!1s0x2e69c5e5dbfe64e7:0x8273af2732cab4e2!2m2!1d106.8078123!2d-6.6131137?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D"
+            },
+            {
+                name: "RS UMMI",
+                address: "Jl. Empang II No.2, RT.04/RW.02, Empang, Kec. Bogor Sel., Kota Bogor",
+                distance: "4.5 km",
+                mapUrl: "https://www.google.com/maps/dir/Green+Forest+Bogor,+Jl.+RE.+Soemantadiredja+No.99,+RT.03%2FRW.12,+Pamoyanan,+Kec.+Bogor+Sel.,+Kota+Bogor,+Jawa+Barat+16136/RS+UMMI,+Jl.+Empang+II+No.2,+RT.04%2FRW.02,+Empang,+Kec.+Bogor+Sel.,+Kota+Bogor,+Jawa+Barat+16132/@-6.62865,106.7828612,14z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x2e69cf4fde33c0b3:0x70889815f5e23386!2m2!1d106.806108!2d-6.6494907!1m5!1m1!1s0x2e69c5668d0c8dbb:0x6663382e4fa5d02a!2m2!1d106.7945423!2d-6.6086429?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D"
             }
         ],
         pharmacy: [{
@@ -826,7 +900,18 @@ $bg4 = asset('images/venue4.jpeg');
             mapUrl: "https://www.google.com/maps/search/?api=1&query=Resto%20Kampoeng%20Konsep%20Jl.%20Soemanta%20Diredja%20No.%2028%20Pamoyanan%20Bogor%20Selatan"
         }],
         transport: transportFacilities,
-        rekreasi: rekreasiFacilities
+        rekreasi: [...rekreasiFacilities, {
+            name: "The Jungle Water Park",
+            address: "Jl. Bogor Nirwana Boulevard, Mulyaharja, Kec. Bogor Selatan",
+            distance: "4.5 km",
+            mapUrl: "https://www.google.com/maps/dir/Green+Forest+Bogor,+Jl.+RE.+Soemantadiredja+No.99,+RT.03%2FRW.12,+Pamoyanan,+Kec.+Bogor+Sel.,+Kota+Bogor,+Jawa+Barat+16136/The+Jungle+Waterpark+Bogor,+Perumahan,+Jl.+Bogor+Nirwana+Residence+Jl.+Bukit+Nirwana+Raya,+RT.05%2FRW.12,+Mulyaharja,+Kec.+Bogor+Sel.,+Kota+Bogor,+Jawa+Barat+16132/@-6.6438986,106.7893085,15z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x2e69cf4fde33c0b3:0x70889815f5e23386!2m2!1d106.806108!2d-6.6494907!1m5!1m1!1s0x2e69cf5deba619f3:0x485a13f031e8b904!2m2!1d106.7949215!2d-6.6344794?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D"
+        }],
+        mall: [{
+            name: "Mall BTM",
+            address: "Jl. Ir. H. Juanda No.68, RT.01/RW.13, Paledang, Kec. Bogor Tengah, Kota Bogor",
+            distance: "6.6 km",
+            mapUrl: "https://www.google.com/maps/dir/Green+Forest+Bogor,+Jl.+RE.+Soemantadiredja+No.99,+RT.03%2FRW.12,+Pamoyanan,+Kec.+Bogor+Sel.,+Kota+Bogor,+Jawa+Barat+16136/Mall+BTM+Bogor,+Jl.+Ir.+H.+Juanda+No.68,+RT.01%2FRW.13,+Paledang,+Kecamatan+Bogor+Tengah,+Kota+Bogor,+Jawa+Barat+16122/@-6.6254957,106.7846035,14z/data=!3m2!4b1!5s0x2e69c5c08b54d0b5:0x45125fa3ca6c7203!4m13!4m12!1m5!1m1!1s0x2e69cf4fde33c0b3:0x70889815f5e23386!2m2!1d106.806108!2d-6.6494907!1m5!1m1!1s0x2e69c5b6757d7817:0x82ab1619188f430e!2m2!1d106.7952921!2d-6.6050687?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D"
+        }]
     };
 
     const vokasiFacilities = {
@@ -835,6 +920,11 @@ $bg4 = asset('images/venue4.jpeg');
             address: "Botani Square, Jl. Pajajaran, Baranangsiang",
             distance: "2.8 km",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=IPB+Hotel+%26+Convention+Centre+Botani+Square+Jl.+Pajajaran+Baranangsiang"
+        }, {
+            name: "Swiss-Belhotel Bogor",
+            address: "Jl. Salak No.38-40, RT.03/RW.04, Babakan, Kecamatan Bogor Tengah, Kota Bogor, Jawa Barat 16129",
+            distance: "500 m",
+            mapUrl: "https://www.google.com/maps/dir/Gymnasium+Sekolah+Vokasi+IPB,+CR65%2B76H,+Jl.+Lodaya+II,+RT.03%2FRW.05,+Cilibende,+Babakan,+Bogor+Tengah,+Bogor+City,+West+Java+16128/Swiss-Belhotel+Bogor,+Jl.+Salak+No.38-40,+RT.03%2FRW.04,+Babakan,+Kecamatan+Bogor+Tengah,+Kota+Bogor,+Jawa+Barat+16129/@-6.5889391,106.8019192,18z/data=!3m1!5s0x2e69c4243e4284af:0xde1c35e312f243b7!4m13!4m12!1m5!1m1!1s0x2e69c500578948bd:0xf1a58274d6edbc5a!2m2!1d106.8078532!2d-6.5889797!1m5!1m1!1s0x2e69c5cd17948f23:0xcc8d353aabd8f8c3!2m2!1d106.8041729!2d-6.5889394?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D"
         }],
         hospital: [{
                 name: "RS PMI Bogor",
@@ -847,6 +937,18 @@ $bg4 = asset('images/venue4.jpeg');
                 address: "Jl. Tegal Gundil, Kec. Bogor Utara",
                 distance: "1.9 km",
                 mapUrl: "https://www.google.com/maps/search/?api=1&query=Puskesmas+Bogor+Utara+Jl.+Tegal+Gundil+Bogor+Utara"
+            },
+            {
+                name: "RS Azra",
+                address: "Jl. Raya Pajajaran No.219, RT.02/RW.11, Bantarjati, Kec. Bogor Utara, Kota Bogor, Jawa Barat 16153",
+                distance: "1.9 km",
+                mapUrl: "https://www.google.com/maps/dir/Gor+pajajaran,+CQFX%2B99C,+RT.04%2FRW.01,+Tanah+Sareal,+Kota+Bogor,+Jawa+Barat+16161/Rumah+Sakit+Azra+Bogor,+Jl.+Raya+Pajajaran+No.219,+RT.02%2FRW.11,+Bantarjati,+Kec.+Bogor+Utara,+Kota+Bogor,+Jawa+Barat+16153/@-6.57281,106.7976765,16z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x2e69c5000cee40ab:0xa412bd10cefea370!2m2!1d106.7983925!2d-6.5765742!1m5!1m1!1s0x2e69c42e35fd5fd3:0x5497922a2532233!2m2!1d106.8074803!2d-6.5793169?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D"
+            },
+            {
+                name: "RS Siloam Bogor",
+                address: "Jl. Raya Pajajaran No.27, RT.01/RW.04, Babakan, Kecamatan Bogor Tengah, Kota Bogor, Jawa Barat 16128",
+                distance: "1.0 km",
+                mapUrl: "https://www.google.com/maps/dir/Gymnasium+Sekolah+Vokasi+IPB,+CR65%2B76H,+Jl.+Lodaya+II,+RT.03%2FRW.05,+Cilibende,+Babakan,+Bogor+Tengah,+Bogor+City,+West+Java+16128/Siloam+Hospitals+Bogor,+Jl.+Raya+Pajajaran+No.27,+RT.01%2FRW.04,+Babakan,+Bogor+Tengah,+Bogor+City,+West+Java+16128/@-6.5956616,106.7956764,16z/data=!3m1!5s0x2e69c4243e4284af:0xde1c35e312f243b7!4m13!4m12!1m5!1m1!1s0x2e69c500578948bd:0xf1a58274d6edbc5a!2m2!1d106.8078532!2d-6.5889797!1m5!1m1!1s0x2e69c5cfedf6086d:0x64de2ab6cd78dce4!2m2!1d106.8046881!2d-6.5956638?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D"
             }
         ],
         pharmacy: [{
@@ -857,9 +959,9 @@ $bg4 = asset('images/venue4.jpeg');
         }],
         police: [{
             name: "Polsek Bogor Utara",
-            address: "Jl. Pajajaran No. 200, Cibuluh, Kec. Bogor Utara",
-            distance: "2.1 km",
-            mapUrl: "https://www.google.com/maps/search/?api=1&query=Polsek+Bogor+Utara+Jl.+Pajajaran+No.+200+Cibuluh+Bogor+Utara"
+            address: "Jl. Raya Pajajaran No.26, RT.05/RW.10, Bantarjati, Kec. Bogor Utara, Kota Bogor, Jawa Barat 16153",
+            distance: "1.9 km",
+            mapUrl: "https://www.google.com/maps/dir/Gor+pajajaran,+CQFX%2B99C,+RT.04%2FRW.01,+Tanah+Sareal,+Kota+Bogor,+Jawa+Barat+16161/Polsek+Bogor+Utara,+Jl.+Raya+Pajajaran+No.26,+RT.05%2FRW.10,+Bantarjati,+Kec.+Bogor+Utara,+Kota+Bogor,+Jawa+Barat+16153/@-6.5845962,106.7915827,15z/data=!4m13!4m12!1m5!1m1!1s0x2e69c5000cee40ab:0xa412bd10cefea370!2m2!1d106.7983925!2d-6.5765742!1m5!1m1!1s0x2e69c5e2ccc27bef:0x95860988a497f417!2m2!1d106.8068179!2d-6.579187?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D"
         }],
         restaurant: [{
             name: "Toko Adelways (Kantin IPB Cilibende)",
@@ -868,7 +970,23 @@ $bg4 = asset('images/venue4.jpeg');
             mapUrl: "https://www.google.com/maps/search/?api=1&query=Toko%20Adelways%20Jl.%20Cilibende%20Babakan%20Bogor%20Tengah"
         }],
         transport: transportFacilities,
-        rekreasi: rekreasiFacilities
+        rekreasi: [...rekreasiFacilities, {
+            name: "Kebun Raya Bogor",
+            address: "Jl. Otto Iskandardinata No.13, Paledang, Kecamatan Bogor Tengah, Kota Bogor, Jawa Barat 16122",
+            distance: "1.4 km",
+            mapUrl: "https://www.google.com/maps/dir/Gymnasium+Sekolah+Vokasi+IPB,+CR65%2B76H,+Jl.+Lodaya+II,+RT.03%2FRW.05,+Cilibende,+Babakan,+Bogor+Tengah,+Bogor+City,+West+Java+16128/Kebun+Raya+Bogor,+Jl.+Otto+Iskandardinata+No.13,+Paledang,+Kecamatan+Bogor+Tengah,+Kota+Bogor,+Jawa+Barat+16122/@-6.5976279,106.7815411,15z/data=!3m1!5s0x2e69c4243e4284af:0xde1c35e312f243b7!4m13!4m12!1m5!1m1!1s0x2e69c500578948bd:0xf1a58274d6edbc5a!2m2!1d106.8078532!2d-6.5889797!1m5!1m1!1s0x2e69c5c412a67abb:0x75f23c6b45a37ee5!2m2!1d106.7995698!2d-6.5976289?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D"
+        }, {
+            name: "Lapangan Sempur Bogor",
+            address: "CR52+99J, Jl. Sempur, RT.02/RW.01, Sempur, Kecamatan Bogor Tengah, Kota Bogor, Jawa Barat 16129",
+            distance: "1.0 km",
+            mapUrl: "https://www.google.com/maps/dir/Gymnasium+Sekolah+Vokasi+IPB,+CR65%2B76H,+Jl.+Lodaya+II,+RT.03%2FRW.05,+Cilibende,+Babakan,+Bogor+Tengah,+Bogor+City,+West+Java+16128/Lapangan+Sempur+Bogor,+CR52%2B99J,+Jl.+Sempur,+RT.02%2FRW.01,+Sempur,+Kecamatan+Bogor+Tengah,+Kota+Bogor,+Jawa+Barat+16129/@-6.5915343,106.7963791,17z/data=!3m1!5s0x2e69c4243e4284af:0xde1c35e312f243b7!4m13!4m12!1m5!1m1!1s0x2e69c500578948bd:0xf1a58274d6edbc5a!2m2!1d106.8078532!2d-6.5889797!1m5!1m1!1s0x2e69c5cb9987d027:0xdc1330b7afd8d1b7!2m2!1d106.8008852!2d-6.591534?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D"
+        }],
+        mall: [{
+            name: "Mall Botani Square Bogor",
+            address: "Jl. Raya Pajajaran No.40, RT.04/RW.05, Tugu Kujang, Kecamatan Bogor Tengah, Kota Bogor, Jawa Barat 16127",
+            distance: "1.5 km",
+            mapUrl: "https://www.google.com/maps/dir/Gymnasium+Sekolah+Vokasi+IPB,+CR65%2B76H,+Jl.+Lodaya+II,+RT.03%2FRW.05,+Cilibende,+Babakan,+Bogor+Tengah,+Bogor+City,+West+Java+16128/Botani+Square,+Jl.+Raya+Pajajaran+No.40,+RT.04%2FRW.05,+Tugu+Kujang,+Kecamatan+Bogor+Tengah,+Kota+Bogor,+Jawa+Barat+16127/@-6.6014327,106.7943125,15z/data=!3m1!5s0x2e69c4243e4284af:0xde1c35e312f243b7!4m13!4m12!1m5!1m1!1s0x2e69c500578948bd:0xf1a58274d6edbc5a!2m2!1d106.8078532!2d-6.5889797!1m5!1m1!1s0x2e69c5c5287d2ae7:0x9edb391e7c74be19!2m2!1d106.8069032!2d-6.6014292?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D"
+        }]
     };
 
     const yasminFacilities = {
@@ -1264,7 +1382,8 @@ $bg4 = asset('images/venue4.jpeg');
             police: 'police',
             pharmacy: 'pharmacy',
             transport: 'transport',
-            rekreasi: 'rekreasi'
+            rekreasi: 'rekreasi',
+            mall: 'mall'
         };
         const venueFacilities = facilitiesData[venue.name];
 
@@ -1303,6 +1422,9 @@ $bg4 = asset('images/venue4.jpeg');
             } else if (type === 'rekreasi') {
                 iconBg = '#ccfbf1';
                 iconColor = '#0d9488';
+            } else if (type === 'mall') {
+                iconBg = '#ede9fe';
+                iconColor = '#7c3aed';
             } else {
                 iconBg = '#dbeafe';
                 iconColor = '#2563eb';
@@ -1526,6 +1648,7 @@ $bg4 = asset('images/venue4.jpeg');
                     'polisi': 'cat-police',
                     'transport': 'cat-transport',
                     'rekreasi': 'cat-rekreasi',
+                    'mall': 'cat-mall',
                 };
                 const targetCat = filterToCategory[fasilitasVal];
                 if (targetCat) {
@@ -1634,6 +1757,7 @@ $bg4 = asset('images/venue4.jpeg');
             renderFacilityCategory(venue, 'pharmacy', 'apotek-container', 'Apotek', 'cat-apotek');
             renderFacilityCategory(venue, 'transport', 'transport-container', 'Sewa Kendaraan', 'cat-transport');
             renderFacilityCategory(venue, 'rekreasi', 'rekreasi-container', 'Rekreasi', 'cat-rekreasi');
+            renderFacilityCategory(venue, 'mall', 'mall-container', 'Mall', 'cat-mall');
         }
 
         if (window.innerWidth <= 768 && floatingCard) {
@@ -1687,6 +1811,12 @@ $bg4 = asset('images/venue4.jpeg');
                 containerId: 'rekreasi-container',
                 title: 'Rekreasi',
                 catId: 'cat-rekreasi'
+            },
+            'cat-mall': {
+                type: 'mall',
+                containerId: 'mall-container',
+                title: 'Mall',
+                catId: 'cat-mall'
             },
         };
 

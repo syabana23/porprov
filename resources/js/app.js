@@ -145,6 +145,13 @@ function initFasilitasPage() {
       color: '#0d9488',
       bg: '#ccfbf1',
       icon: `<svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M20.57 14.86 22 13.43 20.57 12 17 15.57 8.43 7 12 3.43 10.57 2 9.14 3.43 7.71 2 5.57 4.14 4.14 2.71 2.71 4.14l1.43 1.43L2 7.71l1.43 1.43L2 10.57 3.43 12 7 8.43 15.57 17 12 20.57 13.43 22l1.43-1.43L16.29 22l2.14-2.14 1.43 1.43 1.43-1.43-1.43-1.43L22 16.29z"/></svg>`
+    },
+    mall: {
+      title: 'Mall & Pusat Belanja',
+      description: 'Pusat perbelanjaan dan mall terdekat dari area venue untuk kebutuhan pengunjung.',
+      color: '#7c3aed',
+      bg: '#ede9fe',
+      icon: `<svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M7 18c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>`
     }
   };
 
@@ -213,7 +220,8 @@ function initFasilitasPage() {
       polsek: 'badge-polsek',
       restoran: 'badge-restoran',
       transport: 'badge-transport',
-      rekreasi: 'badge-rekreasi'
+      rekreasi: 'badge-rekreasi',
+      mall: 'badge-mall'
     };
     return map[tipe] || 'badge-rs';
   }
