@@ -771,9 +771,15 @@
             },
             {
                 name: "Swiss-Belcourt Bogor",
-                address: "Jl. KH. R. Abdullah Bin Nuh No. 27, Bukit Cimanggu City",
-                distance: "1.2 km",
-                mapUrl: "https://www.google.com/maps/search/?api=1&query=Swiss-Belcourt+Bogor+Jl.+KH.+R.+Abdullah+Bin+Nuh+No.+27+Bukit+Cimanggu+City"
+                address: "Jl. Sholeh Iskandar Jl. Bukit Cimanggu City Raya No.1, RT.01/RW.13, Cibadak, Tanah Sareal, Kota Bogor, Jawa Barat 16168",
+                distance: "1.5 km",
+                mapUrl: "https://maps.app.goo.gl/2VQeXZGysaj5Fjg36"
+            },
+            {
+                name: "Bogor Icon Hotel",
+                address: "Jl. Bukit Cimanggu City Raya No.1, RT.01/RW.13, Cibadak, Tanah Sareal, Kota Bogor, Jawa Barat 16166",
+                distance: "1.3 km",
+                mapUrl: "https://maps.app.goo.gl/692aN19h5YPbm6aQA"
             }
         ],
         hospital: [{
@@ -781,6 +787,18 @@
                 address: "Jl. KH. R. Abdullah Bin Nuh No. E2, Hermina Grand Yasmin",
                 distance: "900 m",
                 mapUrl: "https://www.google.com/maps/search/?api=1&query=RS+Hermina+Bogor+Jl.+KH.+R.+Abdullah+Bin+Nuh+No.+E2+Hermina+Grand+Yasmin"
+            },
+            {
+                name: "RSUD Kota Bogor",
+                address: "Jl. DR. Sumeru No.120, RT.03/RW.20, Menteng, Kec. Bogor Barat, Kota Bogor, Jawa Barat 16112",
+                distance: "2.3 km",
+                mapUrl: "https://maps.app.goo.gl/yVasRkJ3pjvQF2RQA"
+            },
+            {
+                name: "RS Graha Medika Bogor",
+                address: "Jl. KH. R. Abdullah Bin Nuh No.2, RT.04/RW.12, Cilendek Barat, Kec. Bogor Barat, Kota Bogor, Jawa Barat 16113",
+                distance: "700 m",
+                mapUrl: "https://maps.app.goo.gl/qsWiRw3Y9JBqEABNA"
             },
             {
                 name: "RS Islam Bogor",
@@ -806,6 +824,11 @@
             address: "Jl. Seremped, Kedung Badak, Kec. Tanah Sareal",
             distance: "2.4 km",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=Polsek+Tanah+Sareal+Jl.+Seremped+Kedung+Badak+Tanah+Sareal"
+        }, {
+            name: "Polsek Bogor Barat",
+            address: "CQ9G+V9J, Jl. DR. Sumeru No.89, RT.01/RW.10, Menteng, Kec. Bogor Barat, Kota Bogor, Jawa Barat 16111",
+            distance: "2.1 km",
+            mapUrl: "https://maps.app.goo.gl/B8HtTPSJUEYy1k6f7"
         }],
         restaurant: [{
             name: "Rumah Makan Ampera Yasmin",
@@ -813,7 +836,28 @@
             distance: "350 m",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=Rumah%20Makan%20Ampera%20Yasmin%20Jl.%20KH.%20R.%20Abdullah%20Bin%20Nuh%20No.%2037%20Curugmekar"
         }],
-        rekreasi: rekreasiFacilities
+        rekreasi: [...rekreasiFacilities, {
+            name: "Yasmin Waterpark",
+            address: "Yasmin Centre, Jl. KH. R. Abdullah Bin Nuh, RT.06/RW.02, Curugmekar, Kec. Bogor Barat, Kota Bogor, Jawa Barat 16113",
+            distance: "800 m",
+            mapUrl: "https://maps.app.goo.gl/1PXjuMGZak6tU5PG8"
+        }, {
+            name: "Marcopolo Water Adventure",
+            address: "Jl. Bukit Cimanggu City Raya Jl. Sholeh Iskandar, RT.01/RW.11, Cibadak, Tanah Sareal, Kota Bogor, Jawa Barat 16168",
+            distance: "1.6 km",
+            mapUrl: "https://maps.app.goo.gl/gnAWSfJ5eQWq9PBy5"
+        }, {
+            name: "Kawasan Wisata Situ Gede",
+            address: "Jl. Cilubang Nagrak No.RT 02/04, RT.03/RW.06, Situgede, Kec. Bogor Barat, Kota Bogor, Jawa Barat 16115",
+            distance: "3.1 km",
+            mapUrl: "https://maps.app.goo.gl/j4ccYwx5RgpNgXmTA"
+        }],
+        mall: [{
+            name: "Bogor Great Mall",
+            address: "Jl. KH. R. Abdullah Bin Nuh, RT.05/RW.04, Cibadak, Tanah Sareal, Kota Bogor, Jawa Barat 16166",
+            distance: "1.1 km",
+            mapUrl: "https://maps.app.goo.gl/BbmsiFRYf9hPwSsi8"
+        }]
     };
 
     const kemangFacilities = {
@@ -822,12 +866,23 @@
             address: "Jl. Raya Kemang Parung No. 12, Kemang",
             distance: "2.1 km",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=Salak+Sunset+Hotel+Jl.+Raya+Kemang+Parung+No.+12+Kemang"
+        }, {
+            name: "Swiss-Belcourt Bogor",
+            address: "Jl. Sholeh Iskandar Jl. Bukit Cimanggu City Raya No.1, RT.01/RW.13, Cibadak, Tanah Sareal, Kota Bogor, Jawa Barat 16168",
+            distance: "4.2 km",
+            mapUrl: "https://maps.app.goo.gl/2VQeXZGysaj5Fjg36"
         }],
         hospital: [{
                 name: "RS Sentosa Bogor",
                 address: "Jl. Raya Kemang No. 18, Kemang, Kab. Bogor",
                 distance: "1.3 km",
                 mapUrl: "https://www.google.com/maps/search/?api=1&query=RS+Sentosa+Bogor+Jl.+Raya+Kemang+No.+18+Kemang+Kab.+Bogor"
+            },
+            {
+                name: "RS Islam Bogor",
+                address: "Jl. Perdana Raya No.22, RT.01/RW.10, Kedungbadak, Tanah Sareal, Kota Bogor, Jawa Barat 16710",
+                distance: "3.8 km",
+                mapUrl: "https://maps.app.goo.gl/aLXpeMRB5RkzAg2c9"
             },
             {
                 name: "Puskesmas Kemang",
@@ -854,7 +909,12 @@
             distance: "450 m",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=Ayam%20Goreng%20Bakar%20Sayati%20Jl.%20Raya%20Parung%20Bogor%20Semplak%20Barat%20Kemang"
         }],
-        rekreasi: rekreasiFacilities
+        rekreasi: [...rekreasiFacilities, {
+            name: "Marcopolo Water Adventure",
+            address: "Jl. Bukit Cimanggu City Raya Jl. Sholeh Iskandar, RT.01/RW.11, Cibadak, Tanah Sareal, Kota Bogor, Jawa Barat 16168",
+            distance: "4.4 km",
+            mapUrl: "https://maps.app.goo.gl/gnAWSfJ5eQWq9PBy5"
+        }]
     };
 
     const sentulFacilities = {
@@ -869,6 +929,12 @@
                 address: "Jl. Jend. Sudirman, Sentul City, Babakan Madang",
                 distance: "2.5 km",
                 mapUrl: "https://www.google.com/maps/search/?api=1&query=Harris+Hotel+Sentul+City+Jl.+Jend.+Sudirman+Sentul+City+Babakan+Madang"
+            },
+            {
+                name: "Hotel Green Wattana Sentul",
+                address: "Jl. Juanda Blok F3/R21, Cijayanti, Kec. Babakan Madang, Kabupaten Bogor, Jawa Barat 16810",
+                distance: "1.5 km",
+                mapUrl: "https://maps.app.goo.gl/fJfgjh4i5iwLaxHW8"
             }
         ],
         hospital: [{
@@ -902,7 +968,28 @@
             distance: "1.2 km",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=Restoran%20Lorin%20Sentul%20Kawasan%20Sirkuit%20Sentul%20Internasional%20Babakan%20Madang"
         }],
-        rekreasi: rekreasiFacilities
+        rekreasi: [...rekreasiFacilities, {
+            name: "JungleLand Adventure Theme Park",
+            address: "Kawasan Sentul Nirwana, Jl. Jungle Land No.1, Karang Tengah, Kec. Babakan Madang, Kabupaten Bogor, Jawa Barat 16810",
+            distance: "2.2 km",
+            mapUrl: "https://maps.app.goo.gl/1o395KjTfXxryYD27"
+        }, {
+            name: "Curug Bidadari Sentul",
+            address: "9WP5+99R, Jl. Sentul Paradise Park, Bojong Koneng, Kec. Babakan Madang, Kabupaten Bogor, Jawa Barat 16810",
+            distance: "1.9 km",
+            mapUrl: "https://maps.app.goo.gl/SU2GdDQk9xq4YUMn8"
+        }, {
+            name: "Bukit Pelangi",
+            address: "9VFM+9VQ, Jl. Bukit Pelangi, Gn. Geulis, Kec. Sukaraja, Kabupaten Bogor, Jawa Barat 16710",
+            distance: "4.0 km",
+            mapUrl: "https://maps.app.goo.gl/VyMSmfFjCZhzAiD4A"
+        }],
+        mall: [{
+            name: "Mall AEON Sentul Bogor",
+            address: "Jl. MH. Thamrin, Citaringgul, Kec. Babakan Madang, Kabupaten Bogor, Jawa Barat 16810",
+            distance: "1.6 km",
+            mapUrl: "https://maps.app.goo.gl/o5QoJqAqdvAfqkZn8"
+        }]
     };
 
     const gunungMasFacilities = {
@@ -917,6 +1004,12 @@
                 address: "Jl. Raya Puncak - Gadog KM 77, Cisarua",
                 distance: "2.9 km",
                 mapUrl: "https://www.google.com/maps/search/?api=1&query=Grand+Diara+Hotel+Puncak+Jl.+Raya+Puncak+Gadog+KM+77+Cisarua"
+            },
+            {
+                name: "The Grand Hill Hotel",
+                address: "Jl. Raya Puncak, Tugu Sel., Kec. Cisarua, Kabupaten Bogor, Jawa Barat 16750",
+                distance: "1.2 km",
+                mapUrl: "https://maps.app.goo.gl/rZMK4NJpnARgWhZw5"
             }
         ],
         hospital: [{
