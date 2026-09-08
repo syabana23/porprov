@@ -388,11 +388,11 @@
         {
             id: 5,
             name: "Gunung Mas",
-            lat: -6.701561756877455,
-            lng: 106.97130253598559,
-            address: "Puncak, Bogor, Jawa Barat",
+            lat: -6.6872581,
+            lng: 106.9412494,
+            address: "Jl. Raya Puncak, Jawa Barat",
             cabor: "Aerosport - Paralayang",
-            gmaps_url: "https://www.google.com/maps/dir//Gunung+Mas+Wisata+Puncak,+Jl.+Pangrango,+Tugu+Sel.,+Kec.+Cisarua,+Kabupaten+Bogor,+Jawa+Barat+16750/@-6.5894223,106.4822393,10z/data=!4m17!1m8!3m7!1s0x2e69b52b7592188d:0xc43a962f4e24c6f6!2sGunung+Mas+Wisata+Puncak!8m2!3d-6.709873!4d106.9681268!15sChFHdW51bmcgTWFzIFB1bmNha1oTIhFndW51bmcgbWFzIHB1bmNha5IBEnRvdXJpc3RfYXR0cmFjdGlvbpoBRENpOURRVWxSUVVOdlpFTm9kSGxqUmpsdlQycFdhMlZFYUU5VlZscFpWVlJHZW1WcVZqTlNia1pEWWtaQ05tTlZSUkFC4AEA-gEECAAQRQ!16s%2Fg%2F11s7lzyyym!4m7!1m0!1m5!1m1!1s0x2e69b52b7592188d:0xc43a962f4e24c6f6!2m2!1d106.9681268!2d-6.709873?entry=ttu&g_ep=EgoyMDI2MDcyMi4wIKXMDSoASAFQAw%3D%3D"
+            gmaps_url: "https://www.google.com/maps/place/Jl.+Raya+Puncak,+Jawa+Barat/@-6.6872528,106.9386745,17z/data=!3m1!4b1!4m6!3m5!1s0x2e69c8395455aa9b:0x692b4679ab657e47!8m2!3d-6.6872581!4d106.9412494!16s%2Fg%2F1hm1smv20?entry=tts"
         },
         {
             id: 6,

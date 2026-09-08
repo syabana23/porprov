@@ -968,6 +968,11 @@ $bg4 = asset('images/venue4.jpeg');
             address: "Jl. Cilibende, Babakan, Kec. Bogor Tengah",
             distance: "250 m",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=Toko%20Adelways%20Jl.%20Cilibende%20Babakan%20Bogor%20Tengah"
+        }, {
+            name: "Teras Om Frend",
+            address: "CR65+HMX Il, Jl. Lodaya, RT.003/RW.002, Babakan, Kec. Bogor Tengah, Kota Bogor, Jawa Barat 16128",
+            distance: "150 m",
+            mapUrl: "https://www.google.com/maps/place/CR65%2BHMX+Teras+Om+Frend,+Il,+Jl.+Lodaya,+RT.003%2FRW.002,+Babakan,+Kecamatan+Bogor+Tengah,+Kota+Bogor,+Jawa+Barat+16128/@-6.588509,106.8092212,16z/data=!3m1!1e3!4m6!3m5!1s0x2e69c5001ab40295:0xf34d26c1bef53a78!8m2!3d-6.588509!4d106.8092212!16s%2Fg%2F11ntswsj17?g_ep=Eg1tbF8yMDI2MDkwMV8wIOC7DCoASAJQAg%3D%3D"
         }],
         transport: transportFacilities,
         rekreasi: [...rekreasiFacilities, {
