@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ChatbotController;
 
-$venueRutes = [
+$venueRoutes = [
     'GOR Pajajaran' => [
         [
             'judul' => 'Bus',
@@ -486,7 +486,7 @@ $cabors = [
         'deskripsi' => 'Gantolle merupakan cabang aerosport yang menerbangkan sayap gantung (hang glider) tanpa mesin dengan lepas landas dari ketinggian. Perpaduan antara keterampilan mengendalikan sayap dan membaca arah angin membuat olahraga ini menuntut keberanian serta konsentrasi tinggi.',
         'venue' => 'Majalengka',
         'alamat' => 'Kabupaten Majalengka, Jawa Barat',
-        'rute' => $venueRutes['Majalengka'],
+        'rute' => $venueRoutes['Majalengka'],
     ],
     [
         'slug' => 'aerosport-paralayang',
@@ -495,7 +495,7 @@ $cabors = [
         'deskripsi' => 'Paralayang adalah olahraga terbang bebas dengan parasut besar (paraglider) yang diisi angin, lepas landas dari ketinggian dan mendarat dengan berjalan. Atlet dituntut menguasai teknik aerodinamika dan kondisi cuaca agar dapat terbang dengan stabil dan aman.',
         'venue' => 'Gunung Mas (Cisarua)',
         'alamat' => 'Jl. Raya Puncak, Jawa Barat',
-        'rute' => $venueRutes['Gunung Mas (Cisarua)'],
+        'rute' => $venueRoutes['Gunung Mas (Cisarua)'],
     ],
     [
         'slug' => 'anggar',
@@ -504,7 +504,7 @@ $cabors = [
         'deskripsi' => 'Anggar adalah olahraga bela diri seni pedang yang dipertandingkan secara individu maupun beregu. Terdapat tiga senjata: floret, sabel, dan degen, dengan sistem penilaian elektronik untuk menentukan siapa yang berhasil menyentuh sasaran lawan terlebih dahulu.',
         'venue' => 'Green Forest Hotel',
         'alamat' => 'Jl. Pahlawan, Bondongan, Kec. Bogor Selatan, Kota Bogor',
-        'rute' => $venueRutes['Green Forest Hotel'],
+        'rute' => $venueRoutes['Green Forest Hotel'],
     ],
     [
         'slug' => 'dansa',
@@ -513,7 +513,7 @@ $cabors = [
         'deskripsi' => 'Dansa (dance sport) adalah olahraga seni yang menggabungkan gerakan tari dengan musik dalam pasangan. Terbagi dalam kategori standar dan Latin, penilaian menekankan teknik, kekompakan pasangan, serta ekspresi artistik di atas lantai dansa.',
         'venue' => 'Green Forest Hotel',
         'alamat' => 'Jl. Pahlawan, Bondongan, Kec. Bogor Selatan, Kota Bogor',
-        'rute' => $venueRutes['Green Forest Hotel'],
+        'rute' => $venueRoutes['Green Forest Hotel'],
     ],
     [
         'slug' => 'angkat-berat',
@@ -522,7 +522,7 @@ $cabors = [
         'deskripsi' => 'Angkat berat adalah olahraga mengangkat beban logam seberat mungkin dalam satu gerakan angkatan. Atlet bersaing dalam kategori snatch dan clean & jerk, dengan total angkatan terbaik yang menentukan pemenangnya.',
         'venue' => 'Green Forest Hotel',
         'alamat' => 'Jl. Pahlawan, Bondongan, Kec. Bogor Selatan, Kota Bogor',
-        'rute' => $venueRutes['Green Forest Hotel'],
+        'rute' => $venueRoutes['Green Forest Hotel'],
     ],
     [
         'slug' => 'angkat-besi',
@@ -531,7 +531,7 @@ $cabors = [
         'deskripsi' => 'Angkat besi merupakan olahraga kekuatan yang menguji kemampuan atlet mengangkat barbel dari lantai hingga di atas kepala. Dua jenis angkatan utama adalah snatch dan clean & jerk yang dinilai dari teknik serta keberhasilan angkatan.',
         'venue' => 'Green Forest Hotel',
         'alamat' => 'Jl. Pahlawan, Bondongan, Kec. Bogor Selatan, Kota Bogor',
-        'rute' => $venueRutes['Green Forest Hotel'],
+        'rute' => $venueRoutes['Green Forest Hotel'],
     ],
     [
         'slug' => 'arung-jeram',
@@ -540,7 +540,7 @@ $cabors = [
         'deskripsi' => 'Arung jeram adalah olahraga air yang dilakukan dengan perahu karet melewati jeram-jeram sungai berarus deras. Mengutamakan kerja sama tim, kekompakan dayung, dan kemampuan membaca arus untuk melewati lintasan dengan aman dan cepat.',
         'venue' => 'Green Forest Hotel',
         'alamat' => 'Jl. Pahlawan, Bondongan, Kec. Bogor Selatan, Kota Bogor',
-        'rute' => $venueRutes['Green Forest Hotel'],
+        'rute' => $venueRoutes['Green Forest Hotel'],
     ],
     [
         'slug' => 'binaraga',
@@ -549,7 +549,7 @@ $cabors = [
         'deskripsi' => 'Binaraga adalah olahraga yang menonjolkan estetika otot melalui pembentukan tubuh dengan latihan beban. Penilaian dilakukan berdasarkan kesimetrisan, proporsi, dan kekencangan otot pada pose yang ditampilkan atlet di panggung.',
         'venue' => 'Green Forest Hotel',
         'alamat' => 'Jl. Pahlawan, Bondongan, Kec. Bogor Selatan, Kota Bogor',
-        'rute' => $venueRutes['Green Forest Hotel'],
+        'rute' => $venueRoutes['Green Forest Hotel'],
     ],
     [
         'slug' => 'bola-tangan-indoor',
@@ -558,7 +558,7 @@ $cabors = [
         'deskripsi' => 'Bola tangan indoor dimainkan oleh dua tim berisi tujuh pemain yang saling melempar, mengoper, dan memasukkan bola ke gawang lawan. Permainan berlangsung cepat di lapangan tertutup dengan aturan langkah yang ketat.',
         'venue' => 'PPSDMAP Kemenhub Kemang',
         'alamat' => 'Jl. Raya Parung–Bogor, Kemang, Kab. Bogor',
-        'rute' => $venueRutes['PPSDMAP Kemenhub Kemang'],
+        'rute' => $venueRoutes['PPSDMAP Kemenhub Kemang'],
     ],
     [
         'slug' => 'bola-tangan-pasir',
@@ -567,7 +567,7 @@ $cabors = [
         'deskripsi' => 'Bola tangan pasir dimainkan di lapangan berpasir dengan aturan yang lebih dinamis dan santai. Dengan jumlah pemain yang lebih sedikit dan tempo cepat, olahraga ini menuntut kelincahan serta ketahanan fisik di permukaan pasir.',
         'venue' => 'Padepokan Voli Sentul',
         'alamat' => 'Kawasan Sirkuit Sentul Internasional, Babakan Madang, Kab. Bogor',
-        'rute' => $venueRutes['Padepokan Voli Sentul'],
+        'rute' => $venueRoutes['Padepokan Voli Sentul'],
     ],
     [
         'slug' => 'drumband',
@@ -576,7 +576,7 @@ $cabors = [
         'deskripsi' => 'Drumband adalah cabang olahraga seni yang memadukan musik perkusi, alat musik tiup, dan koreografi baris-berbaris. Penampilannya menuntut keselarasan ritme, kekompakan formasi, serta disiplin tinggi dari seluruh anggota tim.',
         'venue' => 'GOR Pajajaran Indoor A',
         'alamat' => 'Jl. Pemuda No. 02, Tanah Sareal, Kota Bogor',
-        'rute' => $venueRutes['GOR Pajajaran'],
+        'rute' => $venueRoutes['GOR Pajajaran'],
     ],
     [
         'slug' => 'gimnastik-aerobik',
@@ -585,7 +585,7 @@ $cabors = [
         'deskripsi' => 'Gimnastik aerobik menggabungkan gerakan senam dengan musik berirama cepat dan gerakan aerobik kompleks. Atlet dinilai dari kesulitan gerakan, kekuatan, kelenturan, serta sinkronisasi antar atlet.',
         'venue' => 'Sport Jabar Arcamanik',
         'alamat' => 'Jl. Pacuan Kuda, Sukamiskin, Arcamanik, Kota Bandung',
-        'rute' => $venueRutes['Sport Jabar Arcamanik'],
+        'rute' => $venueRoutes['Sport Jabar Arcamanik'],
     ],
     [
         'slug' => 'gimnastik-artistik',
@@ -594,7 +594,7 @@ $cabors = [
         'deskripsi' => 'Gimnastik artistik adalah senam yang menampilkan kekuatan, keseimbangan, dan kelenturan pada alat seperti palang, gelang, kuda-kuda, dan lantai. Nomornya terbagi untuk putra dan putri dengan penilaian pada kesulitan dan eksekusi.',
         'venue' => 'Sport Jabar Arcamanik',
         'alamat' => 'Jl. Pacuan Kuda, Sukamiskin, Arcamanik, Kota Bandung',
-        'rute' => $venueRutes['Sport Jabar Arcamanik'],
+        'rute' => $venueRoutes['Sport Jabar Arcamanik'],
     ],
     [
         'slug' => 'gimnastik-ritmik',
@@ -603,7 +603,7 @@ $cabors = [
         'deskripsi' => 'Gimnastik ritmik menggabungkan senam dengan alat seperti pita, bola, simpai, dan gada mengikuti musik. Penampilannya menonjolkan keanggunan, fleksibilitas, dan koordinasi gerakan yang selaras dengan irama.',
         'venue' => 'Sport Jabar Arcamanik',
         'alamat' => 'Jl. Pacuan Kuda, Sukamiskin, Arcamanik, Kota Bandung',
-        'rute' => $venueRutes['Sport Jabar Arcamanik'],
+        'rute' => $venueRoutes['Sport Jabar Arcamanik'],
     ],
     [
         'slug' => 'judo',
@@ -612,7 +612,7 @@ $cabors = [
         'deskripsi' => 'Judo adalah bela diri asal Jepang yang berfokus pada teknik bantingan dan kuncian untuk menjatuhkan lawan. Pertandingan dimenangkan dengan mendapatkan ippon, waza-ari, atau akumulasi poin teknis, dengan prinsip saling menghormati.',
         'venue' => 'GOR Pajajaran Indoor B',
         'alamat' => 'Jl. Pemuda No. 02, Tanah Sareal, Kota Bogor',
-        'rute' => $venueRutes['GOR Pajajaran'],
+        'rute' => $venueRoutes['GOR Pajajaran'],
     ],
     [
         'slug' => 'kurash',
@@ -621,7 +621,7 @@ $cabors = [
         'deskripsi' => 'Kurash adalah olahraga gulat tradisional asal Asia Tengah yang bertujuan menjatuhkan lawan dengan teknik bantingan tanpa menyentuh lantai. Berbeda dari judo, kurash melarang teknik menahan atau kuncian di atas matras.',
         'venue' => 'GOR Pajajaran Indoor B',
         'alamat' => 'Jl. Pemuda No. 02, Tanah Sareal, Kota Bogor',
-        'rute' => $venueRutes['GOR Pajajaran'],
+        'rute' => $venueRoutes['GOR Pajajaran'],
     ],
     [
         'slug' => 'menembak',
@@ -630,7 +630,7 @@ $cabors = [
         'deskripsi' => 'Menembak adalah cabang olahraga akurasi yang menguji ketepatan, kestabilan, dan konsentrasi atlet dalam membidik sasaran. Terdapat berbagai nomor senapan dan pistol pada jarak tertentu dengan sistem skor.',
         'venue' => 'Lapangan Tembak Cisangkan',
         'alamat' => 'Jl. Raya Cisangkan, Padasuka, Cimahi Tengah, Kota Cimahi',
-        'rute' => $venueRutes['Lapangan Tembak Cisangkan'],
+        'rute' => $venueRoutes['Lapangan Tembak Cisangkan'],
     ],
     [
         'slug' => 'modern-pentathlon',
@@ -639,7 +639,7 @@ $cabors = [
         'deskripsi' => 'Modern pentathlon menggabungkan lima nomor olahraga: anggar, renang, menembak, lari, dan berkuda. Atlet diuji ketangguhannya secara menyeluruh dalam kompetisi yang menuntut keterampilan serba bisa.',
         'venue' => 'Stadion Pajajaran',
         'alamat' => 'Jl. Pemuda No. 02, Tanah Sareal, Kota Bogor',
-        'rute' => $venueRutes['GOR Pajajaran'],
+        'rute' => $venueRoutes['GOR Pajajaran'],
     ],
     [
         'slug' => 'panahan',
@@ -648,7 +648,7 @@ $cabors = [
         'deskripsi' => 'Panahan adalah olahraga akurasi menggunakan busur dan anak panah untuk membidik sasaran pada jarak tertentu. Ketepatan, kestabilan, dan kontrol pernapasan menjadi kunci utama untuk meraih skor terbaik.',
         'venue' => 'Stadion Pajajaran',
         'alamat' => 'Jl. Pemuda No. 02, Tanah Sareal, Kota Bogor',
-        'rute' => $venueRutes['GOR Pajajaran'],
+        'rute' => $venueRoutes['GOR Pajajaran'],
     ],
     [
         'slug' => 'panjat-tebing',
@@ -657,7 +657,7 @@ $cabors = [
         'deskripsi' => 'Panjat tebing adalah olahraga memanjat dinding atau tebing buatan yang menguji kekuatan, keseimbangan, dan ketahanan. Terdapat nomor speed, boulder, dan lead dengan tingkat kesulitan lintasan yang berbeda-beda.',
         'venue' => 'Stadion Pajajaran',
         'alamat' => 'Jl. Pemuda No. 02, Tanah Sareal, Kota Bogor',
-        'rute' => $venueRutes['GOR Pajajaran'],
+        'rute' => $venueRoutes['GOR Pajajaran'],
     ],
     [
         'slug' => 'pencak-silat',
@@ -666,7 +666,7 @@ $cabors = [
         'deskripsi' => 'Pencak silat adalah seni bela diri tradisional Indonesia yang memadukan gerakan menyerang, bertahan, dan seni gerak. Selain nomor tanding, terdapat kategori seni yang menampilkan keindahan gerakan jurus.',
         'venue' => 'GOR Pajajaran Indoor A',
         'alamat' => 'Jl. Pemuda No. 02, Tanah Sareal, Kota Bogor',
-        'rute' => $venueRutes['GOR Pajajaran'],
+        'rute' => $venueRoutes['GOR Pajajaran'],
     ],
     [
         'slug' => 'petanque',
@@ -675,7 +675,7 @@ $cabors = [
         'deskripsi' => 'Petanque adalah olahraga lempar bola besi untuk mendekatkan diri ke bola sasaran (jack). Mengutamakan akurasi, strategi, dan ketenangan dalam setiap lemparan di lintasan berpasir.',
         'venue' => 'Green Forest Hotel',
         'alamat' => 'Jl. Pahlawan, Bondongan, Kec. Bogor Selatan, Kota Bogor',
-        'rute' => $venueRutes['Green Forest Hotel'],
+        'rute' => $venueRoutes['Green Forest Hotel'],
     ],
     [
         'slug' => 'sambo',
@@ -684,7 +684,7 @@ $cabors = [
         'deskripsi' => 'Sambo adalah seni bela diri asal Rusia yang menggabungkan teknik gulat, bantingan, dan kuncian. Pertandingan dimenangkan dengan menjatuhkan lawan, mendapatkan poin teknis, maupun menyerah karena kuncian.',
         'venue' => 'GOR Pajajaran Indoor B',
         'alamat' => 'Jl. Pemuda No. 02, Tanah Sareal, Kota Bogor',
-        'rute' => $venueRutes['GOR Pajajaran'],
+        'rute' => $venueRoutes['GOR Pajajaran'],
     ],
     [
         'slug' => 'shorinji-kempo',
@@ -693,7 +693,7 @@ $cabors = [
         'deskripsi' => 'Shorinji kempo adalah seni bela diri asal Jepang yang menekankan keseimbangan teknik serangan dan pertahanan. Latihannya berfokus pada pembentukan karakter dan pertahanan diri dengan gerakan yang efisien.',
         'venue' => 'Gymnasium Sekolah Vokasi IPB',
         'alamat' => 'Jl. Lodaya II, Cilibende, Babakan, Kec. Bogor Tengah, Kota Bogor',
-        'rute' => $venueRutes['Gymnasium Sekolah Vokasi IPB'],
+        'rute' => $venueRoutes['Gymnasium Sekolah Vokasi IPB'],
     ],
     [
         'slug' => 'ski-air',
@@ -702,7 +702,7 @@ $cabors = [
         'deskripsi' => 'Ski air adalah olahraga air yang dilakukan dengan meluncur di atas permukaan air menggunakan papan ski sambil ditarik perahu. Atlet dinilai dari kecepatan, keseimbangan, dan kemampuan melakukan trik di atas air.',
         'venue' => 'Kota Baru Parahyangan',
         'alamat' => 'Padalarang, Kab. Bandung Barat, Jawa Barat',
-        'rute' => $venueRutes['Kota Baru Parahyangan'],
+        'rute' => $venueRoutes['Kota Baru Parahyangan'],
     ],
     [
         'slug' => 'taekwondo',
@@ -711,7 +711,7 @@ $cabors = [
         'deskripsi' => 'Taekwondo adalah seni bela diri asal Korea yang menonjolkan tendangan tinggi dan teknik serangan cepat. Pertandingan dinilai berdasarkan teknik tendangan dan pukulan yang sah ke sasaran badan dan kepala.',
         'venue' => 'GOR Pajajaran Indoor A',
         'alamat' => 'Jl. Pemuda No. 02, Tanah Sareal, Kota Bogor',
-        'rute' => $venueRutes['GOR Pajajaran'],
+        'rute' => $venueRoutes['GOR Pajajaran'],
     ],
     [
         'slug' => 'tarung-derajat',
@@ -720,7 +720,7 @@ $cabors = [
         'deskripsi' => 'Tarung derajat adalah seni bela diri asal Indonesia yang mengedepankan kekuatan pukulan dan tendangan praktis. Dikenal dengan semboyan "Aku Ramah Bukan Berarti Takut", olahraga ini menekankan refleks dan efisiensi gerakan.',
         'venue' => 'Gymnasium Sekolah Vokasi IPB',
         'alamat' => 'Jl. Lodaya II, Cilibende, Babakan, Kec. Bogor Tengah, Kota Bogor',
-        'rute' => $venueRutes['Gymnasium Sekolah Vokasi IPB'],
+        'rute' => $venueRoutes['Gymnasium Sekolah Vokasi IPB'],
     ],
     [
         'slug' => 'tenis-meja',
@@ -729,7 +729,7 @@ $cabors = [
         'deskripsi' => 'Tenis meja atau pingpong dimainkan di atas meja dengan bet dan bola kecil. Kecepatan reaksi, kontrol putaran bola, dan strategi menjadi kunci untuk memenangkan pertandingan.',
         'venue' => 'GOR Yasmin Bulutangkis',
         'alamat' => 'Jl. KH. R. Abdullah bin Nuh, Curugmekar, Kec. Bogor Barat, Kota Bogor',
-        'rute' => $venueRutes['GOR Yasmin Bulutangkis'],
+        'rute' => $venueRoutes['GOR Yasmin Bulutangkis'],
     ],
 ];
 
@@ -900,7 +900,7 @@ $facilities = [
         ['nama' => 'Fitra Hotel Majalengka', 'tipe' => 'hotel', 'tipe_label' => 'Hotel', 'alamat' => 'Jl. KH. Abdul Halim No. 88, Majalengka Kulon', 'venue' => 'Majalengka', 'jarak' => '1.1 km', 'gmaps' => 'https://www.google.com/maps/search/?api=1&query=Fitra%20Hotel%20Majalengka%20Jl.%20KH.%20Abdul%20Halim%20No.%2088%2C%20Majalengka%20Kulon', 'telepon' => '-', 'layanan' => '-', 'website' => '', 'image' => ''],
         ['nama' => 'RSUD Majalengka', 'tipe' => 'rs', 'tipe_label' => 'Rumah Sakit', 'alamat' => 'Jl. Kesehatan No. 77, Majalengka Wetan', 'venue' => 'Majalengka', 'jarak' => '1.5 km', 'gmaps' => 'https://www.google.com/maps/search/?api=1&query=RSUD%20Majalengka%20Jl.%20Kesehatan%20No.%2077%2C%20Majalengka%20Wetan', 'telepon' => '-', 'layanan' => '-', 'website' => '', 'image' => ''],
         ['nama' => 'Apotek Kimia Farma Majalengka', 'tipe' => 'apotek', 'tipe_label' => 'Apotek', 'alamat' => 'Jl. KH. Abdul Halim No. 120, Majalengka', 'venue' => 'Majalengka', 'jarak' => '900 m', 'gmaps' => 'https://www.google.com/maps/search/?api=1&query=Apotek%20Kimia%20Farma%20Majalengka%20Jl.%20KH.%20Abdul%20Halim%20No.%20120%2C%20Majalengka', 'telepon' => '-', 'layanan' => '-', 'website' => '', 'image' => ''],
-        ['nama' => 'Puskesmas Majalengka', 'tipe' => 'puskesmas', 'tipe_label' => 'Puskesmas', 'alamat' => 'Jl. KH. Abdul Halim No. 200, Majalengka', 'venue' => 'Majalengka', 'jarak' => '1.3 km', 'gmaps' => 'https://www.google.com/maps/search/?api=1&query=%20%20%20Jl.%20KH.%20Abdul%20Halim%20No.%20200%2C%20Majalengka', 'telepon' => '-', 'layanan' => '-', 'website' => '', 'image' => ''],
+        ['nama' => 'Puskesmas Majalengka', 'tipe' => 'puskesmas', 'tipe_label' => 'Puskesmas', 'alamat' => 'Jl. KH. Abdul Halim No. 200, Majalengka', 'venue' => 'Majalengka', 'jarak' => '1.3 km', 'gmaps' => 'https://www.google.com/maps/search/?api=1&query=Jl.%20KH.%20Abdul%20Halim%20No.%20200%2C%20Majalengka', 'telepon' => '-', 'layanan' => '-', 'website' => '', 'image' => ''],
         ['nama' => 'Polres Majalengka', 'tipe' => 'polsek', 'tipe_label' => 'Polres / Polsek', 'alamat' => 'Jl. KH. Abdul Halim No. 512, Majalengka', 'venue' => 'Majalengka', 'jarak' => '2.0 km', 'gmaps' => 'https://www.google.com/maps/search/?api=1&query=Polres%20Majalengka%20Jl.%20KH.%20Abdul%20Halim%20No.%20512%2C%20Majalengka', 'telepon' => '-', 'layanan' => '-', 'website' => '', 'image' => ''],
         ['nama' => 'RM Khas Sunda Saung Balong', 'tipe' => 'restoran', 'tipe_label' => 'Restoran', 'alamat' => 'Jl. KH. Abdul Halim No. 160, Majalengka Wetan', 'venue' => 'Majalengka', 'jarak' => '700 m', 'gmaps' => 'https://www.google.com/maps/search/?api=1&query=Saung%20Balong%20Jl.%20KH.%20Abdul%20Halim%20Majalengka', 'telepon' => '-', 'layanan' => '-', 'website' => '', 'image' => ''],
         ['nama' => 'PO Kerub Pariwisata Indonesia', 'tipe' => 'transport', 'tipe_label' => 'Sewa Kendaraan', 'alamat' => 'SPBU 34-16113 Cemplang, Jl. Brigadir Jenderal H Saptadji Hadiprawira, RT.01/RW.09, Cilendek Bar., Kec. Bogor Bar., Kota Bogor, Jawa Barat 16113', 'venue' => 'Kota Bogor', 'jarak' => 'Kota Bogor', 'gmaps' => 'https://www.google.com/maps/search/?api=1&query=PO+Kerub+Pariwisata+Indonesia+Bogor', 'telepon' => '+62 822-9992-8709 (Ade)', 'layanan' => 'sewa kendaraan', 'website' => '', 'image' => ''],

@@ -35,7 +35,7 @@ class FacilityIntentHandler implements IntentHandlerInterface
 
     public function handle(ChatContext $context): ChatResponse
     {
-        // Resolve facility type: dari intent (priority) atau dari legay facilityType
+        // Resolve facility type: dari intent (priority) atau dari legacy facilityType
         $facilityType = IntentDetector::intentToFacilityType($context->intent ?? '')
             ?? $context->facilityType;
 

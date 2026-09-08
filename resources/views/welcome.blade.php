@@ -71,7 +71,7 @@ $bg4 = asset('images/venue4.jpeg');
         <!-- Hero Text Content -->
         <div class="hero-content">
             <h1 class="hero-title">
-                PORPPROV <span class="yellow-accent">NAVIGATION AND INFORMATION</span><span class="white-accent"> KOTA BOGOR 2026</span>
+                PORPROV <span class="yellow-accent">NAVIGATION AND INFORMATION</span><span class="white-accent"> KOTA BOGOR 2026</span>
             </h1>
 
             <div class="hero-tagline-bubble">
@@ -251,20 +251,20 @@ $bg4 = asset('images/venue4.jpeg');
                 <div>
                     <select class="filter-select-styled" id="cabor">
                         <option value="">Pilih Cabang Olahraga</option>
-                        <option value="aerosport">Aerosport - Gantolle</option>
-                        <option value="aerosport">Aerosport - Paralayang</option>
+                        <option value="aerosport-gantolle">Aerosport - Gantolle</option>
+                        <option value="aerosport-paralayang">Aerosport - Paralayang</option>
                         <option value="anggar">Anggar</option>
                         <option value="dansa">Dansa</option>
                         <option value="angkat berat">Angkat Berat</option>
                         <option value="angkat besi">Angkat Besi</option>
                         <option value="arung jeram">Arung Jeram</option>
                         <option value="binaraga">Binaraga</option>
-                        <option value="bola tangan">Bola Tangan Indoor</option>
-                        <option value="bola tangan">Bola Tangan Pasir</option>
+                        <option value="bola-tangan-indoor">Bola Tangan Indoor</option>
+                        <option value="bola-tangan-pasir">Bola Tangan Pasir</option>
                         <option value="drumband">Drumband</option>
-                        <option value="gimnastik">Gimnastik Aerobik</option>
-                        <option value="gimnastik">Gimnastik Artistik</option>
-                        <option value="gimnastik">Gimnastik Ritmik</option>
+                        <option value="gimnastik-aerobik">Gimnastik Aerobik</option>
+                        <option value="gimnastik-artistik">Gimnastik Artistik</option>
+                        <option value="gimnastik-ritmik">Gimnastik Ritmik</option>
                         <option value="judo">Judo</option>
                         <option value="kurash">Kurash</option>
                         <option value="menembak">Menembak</option>

@@ -81,33 +81,9 @@ class IntentDetector
 
     public function detect(string $message): ?string
     {
-        $lower = strtolower($message);
-        $scores = [];
+        $scores = $this->detectAll($message);
 
-        foreach ($this->intentKeywords as $intent => $keywords) {
-            $score = 0;
-            foreach ($keywords as $kw) {
-                if (str_word_count($kw) > 1) {
-                    if (str_contains($lower, $kw)) {
-                        $score += $this->intentWeight($kw);
-                    }
-                } else {
-                    if (preg_match('/\b' . preg_quote($kw, '/') . '\b/', $lower)) {
-                        $score += $this->intentWeight($kw);
-                    }
-                }
-            }
-            if ($score > 0) {
-                $scores[$intent] = $score;
-            }
-        }
-
-        if (empty($scores)) {
-            return null;
-        }
-
-        arsort($scores);
-        return array_key_first($scores);
+        return empty($scores) ? null : array_key_first($scores);
     }
 
     public function detectAll(string $message): array
