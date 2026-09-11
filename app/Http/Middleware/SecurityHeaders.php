@@ -33,14 +33,16 @@ class SecurityHeaders
 
         // Content Security Policy
         // youtube.com allowed for live-streaming iframe; fonts.googleapis.com for Poppins
+        // nominatim.openstreetmap.org for geocode JSONP (peta venue route)
+        // router.project-osrm.org for OSRM routing fetch (peta venue route)
         $response->headers->set('Content-Security-Policy',
             "default-src 'self'; " .
-            "script-src 'self' 'unsafe-inline'; " .
+            "script-src 'self' 'unsafe-inline' https://nominatim.openstreetmap.org; " .
             "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; " .
             "font-src 'self' https://fonts.gstatic.com; " .
             "img-src 'self' data: https:; " .
             "frame-src https://www.youtube.com https://www.youtube-nocookie.com; " .
-            "connect-src 'self'; " .
+            "connect-src 'self' https://nominatim.openstreetmap.org https://router.project-osrm.org; " .
             "object-src 'none'; " .
             "base-uri 'self'; " .
             "form-action 'self';"

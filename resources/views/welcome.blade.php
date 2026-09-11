@@ -196,6 +196,92 @@ $bg4 = asset('images/venue4.jpeg');
         </div>
     </div>
 
+    <style>
+        /* ═══ Route Controls — satukan semua kelas route di sini (portfolio) ═══ */
+        .route-controls { display: flex; flex-direction: column; gap: 8px; }
+        .route-divider { height: 1px; background: #e2e8f0; margin: 4px 0 2px; }
+        .route-loading {
+            display: flex; align-items: center; gap: 8px; padding: 10px 14px;
+            background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 10px;
+            color: #1e40af; font-size: 13px; font-weight: 600;
+        }
+        .route-loading .route-spinner {
+            display: inline-block; width: 14px; height: 14px;
+            border: 2px solid rgba(37, 99, 235, 0.25); border-top-color: #2563eb;
+            border-radius: 50%; animation: route-spin 0.6s linear infinite; flex-shrink: 0;
+        }
+        .route-usage {
+            display: flex; align-items: center; gap: 6px; padding: 8px 12px;
+            background: #fffbeb; border: 1px solid #fde68a; border-radius: 8px;
+            color: #92400e; font-size: 12px; font-weight: 500;
+        }
+        .route-error {
+            display: flex; align-items: center; gap: 6px; padding: 8px 12px;
+            background: #fef2f2; border: 1px solid #fecaca; border-radius: 8px;
+            color: #dc2626; font-size: 12px; font-weight: 500;
+        }
+        .route-info {
+            display: flex; align-items: center; gap: 8px; padding: 8px 12px;
+            background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 8px;
+            color: #1e40af; font-size: 13px; font-weight: 600;
+        }
+        .route-info svg { flex-shrink: 0; }
+        .route-info .route-info-title {
+            font-weight: 700; white-space: nowrap; overflow: hidden;
+            text-overflow: ellipsis; max-width: 100%; min-width: 0; flex-shrink: 1;
+        }
+        .route-spinner {
+            display: inline-block; width: 14px; height: 14px;
+            border: 2px solid rgba(255, 255, 255, 0.3); border-top-color: #fff;
+            border-radius: 50%; animation: route-spin 0.6s linear infinite;
+        }
+        @keyframes route-spin { to { transform: rotate(360deg); } }
+        .btn-route {
+            display: flex; justify-content: center; align-items: center; gap: 8px;
+            width: 100%; padding: 10px 18px;
+            background: linear-gradient(135deg, #2563eb, #1d4ed8); color: #fff;
+            border: none; border-radius: 10px; font-size: 13px; font-weight: 700;
+            font-family: inherit; cursor: pointer; transition: all 0.25s ease;
+            box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+        }
+        .btn-route:hover {
+            transform: translateY(-1px); box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+            background: linear-gradient(135deg, #1d4ed8, #1e40af);
+        }
+        .btn-route:active { transform: translateY(0); }
+        .btn-route:disabled, .btn-route.loading { opacity: 0.7; cursor: not-allowed; transform: none; }
+        .btn-clear-route {
+            display: flex; justify-content: center; align-items: center; gap: 6px;
+            width: 100%; padding: 8px 14px; background: #f1f5f9; color: #64748b;
+            border: 1px solid #e2e8f0; border-radius: 8px; font-size: 12px;
+            font-weight: 600; font-family: inherit; cursor: pointer; transition: all 0.2s ease;
+        }
+        .btn-clear-route:hover { background: #e2e8f0; color: #475569; border-color: #cbd5e1; }
+        .route-stop-marker {
+            display: flex; align-items: center; justify-content: center;
+            width: 18px; height: 18px; border-radius: 50%; background: #ffffff;
+            border: 2px solid var(--stop-color, #6b7280);
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25); position: relative;
+        }
+        .route-stop-marker span { width: 7px; height: 7px; border-radius: 50%; background: var(--stop-color, #6b7280); }
+        .user-loc-marker {
+            position: relative; width: 22px; height: 22px;
+            display: flex; align-items: center; justify-content: center;
+        }
+        .user-loc-marker .ul-pulse {
+            position: absolute; width: 22px; height: 22px; border-radius: 50%;
+            background: rgba(37, 99, 235, 0.35); animation: user-loc-pulse 1.6s ease-out infinite;
+        }
+        .user-loc-marker .ul-core {
+            width: 12px; height: 12px; border-radius: 50%; background: #2563eb;
+            border: 2.5px solid #ffffff; box-shadow: 0 1px 5px rgba(0, 0, 0, 0.35); z-index: 1;
+        }
+        @keyframes user-loc-pulse {
+            0% { transform: scale(0.6); opacity: 0.9; }
+            100% { transform: scale(1.6); opacity: 0; }
+        }
+    </style>
+
     <div class="map-section-grid">
         <!-- LEFT: INTERACTIVE MAP -->
         <div class="map-box-card">
@@ -226,6 +312,40 @@ $bg4 = asset('images/venue4.jpeg');
                         </svg>
                         Buka di Google Maps
                     </a>
+
+                    <!-- Route Controls (otomatis, tanpa pilihan fasilitas manual) -->
+                    <div class="route-controls" id="route-controls" style="display:none;">
+                        <div class="route-divider"></div>
+                        <button class="btn-route" id="btn-show-route" type="button">
+                            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l5.447 2.724A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
+                            </svg>
+                            Tampilkan Rute
+                        </button>
+                        <div class="route-loading" id="route-loading" style="display:none;">
+                            <span class="route-spinner"></span>
+                            <span>Mencari fasilitas terdekat & menghitung rute...</span>
+                        </div>
+                        <button class="btn-clear-route" id="btn-clear-route" type="button" style="display:none;">
+                            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                            Hapus Rute
+                        </button>
+                        <div class="route-info" id="route-info" style="display:none;">
+                            <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l5.447 2.724A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
+                            </svg>
+                            <span class="route-info-title" id="route-info-title"></span>
+                            <span>Jarak: <span id="route-distance"></span></span> &middot;
+                            <span>Estimasi waktu: <span id="route-duration"></span></span> &middot;
+                            <span id="route-stops"></span>
+                        </div>
+                        <div class="route-usage" id="route-usage" style="display:none;"></div>
+                        <div class="route-error" id="route-error" style="display:none;"></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1095,11 +1215,6 @@ $bg4 = asset('images/venue4.jpeg');
 
     const kemangFacilities = {
         hotel: [{
-            name: "Salak Sunset Hotel",
-            address: "Jl. Raya Kemang Parung No. 12, Kemang",
-            distance: "2.1 km",
-            mapUrl: "https://www.google.com/maps/search/?api=1&query=Salak+Sunset+Hotel+Jl.+Raya+Kemang+Parung+No.+12+Kemang"
-        }, {
             name: "Swiss-Belcourt Bogor",
             address: "Jl. Sholeh Iskandar Jl. Bukit Cimanggu City Raya No.1, RT.01/RW.13, Cibadak, Tanah Sareal, Kota Bogor, Jawa Barat 16168",
             distance: "4.2 km",
@@ -1116,34 +1231,15 @@ $bg4 = asset('images/venue4.jpeg');
                 address: "Jl. Perdana Raya No.22, RT.01/RW.10, Kedungbadak, Tanah Sareal, Kota Bogor, Jawa Barat 16710",
                 distance: "3.8 km",
                 mapUrl: "https://maps.app.goo.gl/aLXpeMRB5RkzAg2c9"
-            },
-            {
-                name: "Puskesmas Kemang",
-                address: "Jl. Raya Kemang No. 5, Kemang, Kab. Bogor",
-                distance: "1.1 km",
-                mapUrl: "https://www.google.com/maps/search/?api=1&query=Puskesmas+Kemang+Jl.+Raya+Kemang+No.+5+Kemang+Kab.+Bogor"
             }
         ],
-        pharmacy: [{
-            name: "Apotek Kimia Farma Kemang",
-            address: "Jl. Raya Parung-Bogor, Kemang, Kab. Bogor",
-            distance: "800 m",
-            mapUrl: "https://www.google.com/maps/search/?api=1&query=Apotek+Kimia+Farma+Kemang+Jl.+Raya+Parung-Bogor+Kemang+Kab.+Bogor"
-        }],
         police: [{
             name: "Polsek Kemang",
             address: "Jl. Raya Kemang Parung No. 10, Kemang, Kab. Bogor",
             distance: "1.5 km",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=Polsek+Kemang+Jl.+Raya+Kemang+Parung+No.+10+Kemang+Kab.+Bogor"
         }],
-        restaurant: [{
-            name: "RM Ayam Goreng Bakar Sayati",
-            address: "Jl. Raya Parung - Bogor, Semplak Barat, Kemang",
-            distance: "450 m",
-            mapUrl: "https://www.google.com/maps/search/?api=1&query=Ayam%20Goreng%20Bakar%20Sayati%20Jl.%20Raya%20Parung%20Bogor%20Semplak%20Barat%20Kemang"
-        }],
-        transport: transportFacilities,
-        rekreasi: [...rekreasiFacilities, {
+        rekreasi: [{
             name: "Marcopolo Water Adventure",
             address: "Jl. Bukit Cimanggu City Raya Jl. Sholeh Iskandar, RT.01/RW.11, Cibadak, Tanah Sareal, Kota Bogor, Jawa Barat 16168",
             distance: "4.4 km",
@@ -1248,7 +1344,7 @@ $bg4 = asset('images/venue4.jpeg');
             }
         ],
         hospital: [{
-                name: "RSPG Cisarua (RS Paru Dr. M. Goenawan)",
+                name: "RSP Goenawan Partowidigdo",
                 address: "Jl. Raya Puncak No. KM 83, Cisarua, Kab. Bogor",
                 distance: "1.8 km",
                 mapUrl: "https://www.google.com/maps/search/?api=1&query=RSPG+Cisarua+RS+Paru+Dr.+M.+Goenawan+Jl.+Raya+Puncak+KM+83+Cisarua+Kab.+Bogor"
@@ -1465,6 +1561,10 @@ $bg4 = asset('images/venue4.jpeg');
     let map;
     let markers = [];
     let currentVenue = null;
+    let currentRouteLayer = null;
+    let routeStopMarkers = [];
+    let userLocationMarker = null;
+    let facilityLayerMarkers = [];
 
     function renderFacilityCategory(venue, type, containerId, title, categoryId) {
         const container = document.getElementById(containerId);
@@ -1814,12 +1914,19 @@ $bg4 = asset('images/venue4.jpeg');
 
     function showVenueDetails(venue) {
         currentVenue = venue;
+        clearRoute();
         const floatingCard = document.getElementById('floating-gor-card');
         floatingCard.style.display = 'block';
 
         document.getElementById('card-gor-name').innerText = venue.name;
         document.getElementById('card-gor-addr').innerText = venue.address;
         document.getElementById('card-gor-gmaps').href = venue.gmaps_url;
+
+        // Siapkan kontrol rute di card venue
+        const routeControls = document.getElementById('route-controls');
+        if (routeControls) routeControls.style.display = 'flex';
+        const routeErr = document.getElementById('route-error');
+        if (routeErr) routeErr.style.display = 'none';
 
         const placeholder = document.getElementById('facilities-placeholder');
         if (placeholder) placeholder.style.display = 'none';
@@ -1998,8 +2105,656 @@ $bg4 = asset('images/venue4.jpeg');
         setInterval(updateCountdown, 1000);
     })();
 
-    window.onload = function() {
+// ════ ROUTE — satu garis biru mengikuti jalan (ditambahkan ke beranda)
+    // fitted dari venue.blade. Lokasi opsional: user → fasilitas → venue;
+    // tanpa lokasi: venue → fasilitas. Fasilitas tanpa koordinat valid dilewati.
+
+    const facilityCoordsMap = {
+        "ASTON Bogor Hotel & Resort": [-6.6039181, 106.8386862],
+        "Apotek Kimia Farma KBP": [-6.8683426, 107.4672913],
+        "Bobocabin Gunung Mas": [-6.7062251, 106.9688804],
+        "Bogor Great Mall": [-6.5560457, 106.7755713],
+        "Bogor Icon Hotel": [-6.5561334, 106.7827129],
+        "Bukit Pelangi": [-6.618203, 106.8808525],
+        "Bumi Aki Kota Baru Parahyangan": [-6.866775, 107.4648551],
+        "Curug Bidadari Sentul": [-6.5882587, 106.9849449],
+        "Fitra Hotel Majalengka": [-6.8361704, 108.2322636],
+        "Grand Cordela Hotel Bandung": [-6.9370389, 107.687952],
+        "Harris Hotel Sentul City": [-6.5595269, 106.8506102],
+        "IPB Hotel & Convention Centre": [-6.6021771, 106.8066276],
+        "JungleLand Adventure Theme Park": [-6.5728839, 106.8947001],
+        "Kebun Raya Bogor": [-6.5983048, 106.7994229],
+        "Key Inn Hotel": [-6.5976712, 106.80908],
+        "Lapangan Sempur Bogor": [-6.5916349, 106.8007857],
+        "Lorin Sentul Hotel": [-6.5315604, 106.85655],
+        "Mall AEON Sentul Bogor": [-6.5669259, 106.8578248],
+        "Mall BTM": [-6.6048843, 106.7955589],
+        "Mall Botani Square Bogor": [-6.6013419, 106.8073342],
+        "Mall Jambu Dua": [-6.5687869, 106.8092602],
+        "Marcopolo Water Adventure": [-6.5478286, 106.7826037],
+        "Mason Pine Hotel": [-6.8639199, 107.4801649],
+        "Polres Cimahi": [-6.8852792, 107.5535739],
+        "Polresta Bogor Kota (Mako Muslihat)": [-6.5965986, 106.7914163],
+        "Polsek Babakan Madang": [-6.5716116, 106.8651862],
+        "Polsek Bogor Barat": [-6.65764, 106.8492406],
+        "Polsek Bogor Selatan": [-6.6422893, 106.8076973],
+        "Polsek Bogor Utara": [-6.5792052, 106.8067405],
+        "Polsek Kemang": [-6.4787686, 106.7234857],
+        "Polsek Padalarang": [-6.8422655, 107.4969093],
+        "Polsek Tanah Sareal": [-6.5425753, 106.7841037],
+        "Puskesmas Arcamanik": [-6.9145472, 107.6786845],
+        "Puskesmas Babakan Madang": [-6.5324324, 106.8564552],
+        "Puskesmas Bogor Tengah": [-6.5929668, 106.7944517],
+        "Puskesmas Bogor Utara": [-6.5477817, 106.8218678],
+        "Puskesmas Cimahi Tengah": [-6.8723378, 107.5420574],
+        "Puskesmas Cipaku": [-6.6304133, 106.8108651],
+        "Puskesmas Cisarua": [-6.6821598, 106.9343392],
+        "Puskesmas Gang Kelor": [-6.5789198, 106.7725332],
+        "Puskesmas Kemang": [-6.539033, 106.7377041],
+        "Puskesmas Majalengka": [-6.8313609, 108.2061656],
+        "Puskesmas Padalarang": [-6.8425848, 107.4952806],
+        "RM Khas Sunda Saung Balong": [-6.833943, 108.2294288],
+        "RS Azra": [-6.5791788, 106.8080928],
+        "RS Cahya Kawaluyan": [-6.8657101, 107.4739769],
+        "RS Dustira Cimahi": [-6.886595, 107.5342305],
+        "RS EMC Sentul": [-6.5671542, 106.8537723],
+        "RS Graha Medika Bogor": [-6.5647497, 106.7617167],
+        "RS Hermina Arcamanik": [-6.9049139, 107.6667357],
+        "RS Hermina Bogor": [-6.5575957, 106.7739056],
+        "RS Melania Bogor": [-6.6112552, 106.8007868],
+        "RS Mulia Pajajaran Bogor": [-6.5755166, 106.807309],
+        "RS PMI Bogor": [-6.5984054, 106.8060224],
+        "RS Sentosa Bogor": [-6.4953005, 106.7511403],
+        "RS Siloam Bogor": [-6.5955895, 106.8049335],
+        "RS UMMI": [-6.6088556, 106.7946494],
+        "RS VANIA": [-6.6128581, 106.8079247],
+        "RSIA Pasutri Bogor": [-6.5705914, 106.7989952],
+        "RSP Goenawan Partowidigdo": [-6.6883853, 106.9395411],
+        "RSUD Kota Bogor": [-6.5804103, 106.7784481],
+        "RSUD Majalengka": [-6.7608967, 108.1955299],
+        "Restoran Lorin Sentul": [-6.5315604, 106.85655],
+        "Rumah Makan Ampera Pemuda": [-6.5789558, 106.7964602],
+        "Swiss-Belhotel Bogor": [-6.5886646, 106.8042799],
+        "The Grand Hill Hotel": [-6.6894345, 106.9610658],
+        "The Jungle Water Park": [-6.6344256, 106.7954514],
+        "The Mirah Hotel Bogor": [-6.5907329, 106.8036028],
+        "The Sahira Hotel": [-6.5750492, 106.8001943],
+        "Toko Adelways (Kantin IPB Cilibende)": [-6.5954187, 106.7882974],
+        "Yasmin Waterpark": [-6.5617285, 106.7651193],
+        "Zest Hotel Bogor": [-6.5933754, 106.8051007],
+    };
+
+    // Rute biru tunggal: lokasi pengguna → ≤4 fasilitas VALID → venue
+    // (tanpa lokasi: venue → ≤4 fasilitas VALID terdekat). Fasilitas tanpa
+    // koordinat valid DILEWATI (pakai berikutnya), tanpa koordinat palsu/
+    // estimasi. GEOCODE_LIMIT membatasi request geocode runtime.
+    const ROUTE_STOPS_MAX = 4;      // maks fasilitas yang masuk jalur rute (3–5)
+    const ROUTE_GEOCODE_LIMIT = 16; // maks fasilitas yang dicoba di-geocode runtime
+    const NOMINATIM_DELAY_MS = 1100; // rate limit Nominatim (>= 1 detik/request)
+
+    function createFacilityStopIcon(color) {
+        return L.divIcon({
+            html: `<div class="route-stop-marker" style="--stop-color:${color}">
+                <span></span>
+            </div>`,
+            className: '',
+            iconSize: [18, 18],
+            iconAnchor: [9, 9]
+        });
+    }
+
+    // Icon marker lokasi pengguna — berbeda dari marker fasilitas/venue.
+    function createUserLocationIcon() {
+        return L.divIcon({
+            html: `<div class="user-loc-marker"><span class="ul-pulse"></span><span class="ul-core"></span></div>`,
+            className: '',
+            iconSize: [24, 24],
+            iconAnchor: [12, 12]
+        });
+    }
+
+    // Ambil lokasi pengguna via geolocation browser (titik awal rute).
+    // Return Promise.resolve(pos) atau Promise.resolve({ error: 'denied'|'unavailable' }).
+    function getUserLocation() {
+        return new Promise(resolve => {
+            if (!('geolocation' in navigator)) {
+                return resolve({ error: 'unavailable' });
+            }
+            navigator.geolocation.getCurrentPosition(
+                function(pos) {
+                    resolve({ lat: pos.coords.latitude, lng: pos.coords.longitude });
+                },
+                function(err) {
+                    const denied = err && (err.code === err.PERMISSION_DENIED || err.code === 1);
+                    resolve({ error: denied ? 'denied' : 'unavailable' });
+                },
+                { enableHighAccuracy: true, timeout: 10000, maximumAge: 30000 }
+            );
+        });
+    }
+
+    function clearRoute() {
+        if (currentRouteLayer && map) {
+            map.removeLayer(currentRouteLayer);
+            currentRouteLayer = null;
+        }
+        (routeStopMarkers || []).forEach(m => { if (m && map) map.removeLayer(m); });
+        routeStopMarkers = [];
+        if (userLocationMarker && map) {
+            map.removeLayer(userLocationMarker);
+            userLocationMarker = null;
+        }
+        (facilityLayerMarkers || []).forEach(m => { if (m && map) map.removeLayer(m); });
+        facilityLayerMarkers = [];
+        const info = document.getElementById('route-info');
+        const error = document.getElementById('route-error');
+        const usage = document.getElementById('route-usage');
+        const loading = document.getElementById('route-loading');
+        const btnClear = document.getElementById('btn-clear-route');
+        const btnRoute = document.getElementById('btn-show-route');
+        const infoTitle = document.getElementById('route-info-title');
+        if (info) info.style.display = 'none';
+        if (infoTitle) infoTitle.textContent = '';
+        if (error) error.style.display = 'none';
+        if (usage) usage.style.display = 'none';
+        if (loading) loading.style.display = 'none';
+        if (btnClear) btnClear.style.display = 'none';
+        if (btnRoute) {
+            btnRoute.classList.remove('loading');
+            btnRoute.disabled = false;
+            btnRoute.style.display = 'flex';
+        }
+    }
+
+    function formatDistance(meters) {
+        if (meters >= 1000) {
+            return (meters / 1000).toFixed(1) + ' km';
+        }
+        return Math.round(meters) + ' m';
+    }
+
+    function formatDuration(seconds) {
+        const mins = Math.round(seconds / 60);
+        if (mins < 60) return mins + ' menit';
+        const hours = Math.floor(mins / 60);
+        const remainMins = mins % 60;
+        return hours + ' jam ' + remainMins + ' menit';
+    }
+
+    // Ekstrak koordinat langsung dari URL Google Maps jika tersedia (tanpa geocoding)
+    function extractCoordsFromMapUrl(mapUrl) {
+        if (!mapUrl) return null;
+        const m3 = mapUrl.match(/!3d(-?\d+\.?\d*)!4d(-?\d+\.?\d*)/);
+        if (m3) return { lat: parseFloat(m3[1]), lng: parseFloat(m3[2]) };
+        const mAt = mapUrl.match(/@(-?\d+\.?\d*),(-?\d+\.?\d*)/);
+        if (mAt) return { lat: parseFloat(mAt[1]), lng: parseFloat(mAt[2]) };
+        const mQuery = mapUrl.match(/query=(-?\d+\.?\d*),(-?\d+\.?\d*)/);
+        if (mQuery) return { lat: parseFloat(mQuery[1]), lng: parseFloat(mQuery[2]) };
+        return null;
+    }
+
+    // Ekstrak teks nama+alamat dari URL text-search Google Maps utk geocoding
+    function parseQueryFromMapUrl(mapUrl) {
+        if (!mapUrl) return null;
+        const m = mapUrl.match(/[?&]query=([^&]+)/);
+        if (!m) return null;
+        try {
+            return decodeURIComponent(m[1].replace(/\+/g, ' '));
+        } catch (e) {
+            return null;
+        }
+    }
+
+    // Geocode satu fasilitas via OSM Nominatim (tanpa API key).
+    // Dipanggil via JSONP (<script src>) sehingga bebas dari blokir CORS browser.
+    // Return null jika gagal/rate-limit/response kosong (fasilitas di-skip, tanpa koordinat palsu).
+    function geocodeFacility(query) {
+        return new Promise(resolve => {
+            if (!query) return resolve(null);
+            const cbName = '_nomCb_' + Date.now() + '_' + Math.floor(Math.random() * 1e5);
+            let done = false;
+            let s = null;
+            let timer = null;
+            function finish(val) {
+                if (done) return;
+                done = true;
+                clearTimeout(timer);
+                if (s && s.parentNode) s.parentNode.removeChild(s);
+                delete window[cbName];
+                resolve(val);
+            }
+            window[cbName] = function(data) {
+                if (!data || data.length === 0) return finish(null);
+                finish({ lat: parseFloat(data[0].lat), lng: parseFloat(data[0].lon) });
+            };
+            try {
+                s = document.createElement('script');
+                s.async = true;
+                s.onerror = function() { finish(null); };
+                s.src = 'https://nominatim.openstreetmap.org/search?' + new URLSearchParams({
+                    q: query,
+                    format: 'json',
+                    limit: '1',
+                    countrycodes: 'id',
+                    json_callback: cbName
+                }).toString();
+            } catch (e) {
+                finish(null);
+                return;
+            }
+            timer = setTimeout(function() { finish(null); }, 8000);
+            document.head.appendChild(s);
+        });
+    }
+
+    function haversineKm(lat1, lng1, lat2, lng2) {
+        const R = 6371;
+        const dLat = (lat2 - lat1) * Math.PI / 180;
+        const dLng = (lng2 - lng1) * Math.PI / 180;
+        const a = Math.sin(dLat / 2) ** 2 +
+            Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+            Math.sin(dLng / 2) ** 2;
+        return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    }
+
+    // Parse nilai jarak dari data fasilitas ("300 m", "1.2 km") menjadi km.
+    function parseDistanceKm(str) {
+        if (!str) return NaN;
+        const m = String(str).trim().match(/^([\d.,]+)\s*(km|m)?$/i);
+        if (!m) return NaN;
+        const v = parseFloat(m[1].replace(',', '.'));
+        if (isNaN(v) || v < 0) return NaN;
+        return (m[2] || '').toLowerCase() === 'm' ? v / 1000 : v;
+    }
+
+    // Bearing awal (derajat 0-360) dari titik A ke titik B.
+    function bearingDeg(lat1, lng1, lat2, lng2) {
+        const toRad = Math.PI / 180;
+        const phi1 = lat1 * toRad;
+        const phi2 = lat2 * toRad;
+        const dLng = (lng2 - lng1) * toRad;
+        const y = Math.sin(dLng) * Math.cos(phi2);
+        const x = Math.cos(phi1) * Math.sin(phi2) - Math.sin(phi1) * Math.cos(phi2) * Math.cos(dLng);
+        return (Math.atan2(y, x) * 180 / Math.PI + 360) % 360;
+    }
+
+    // Titik tujuan dari start + arah (derajat) + jarak (km).
+    function destinationPoint(lat, lng, brngDeg, km) {
+        const toRad = Math.PI / 180;
+        const R = 6371;
+        const brng = brngDeg * toRad;
+        const d = km / R;
+        const phi1 = lat * toRad;
+        const lam1 = lng * toRad;
+        const phi2 = Math.asin(Math.sin(phi1) * Math.cos(d) + Math.cos(phi1) * Math.sin(d) * Math.cos(brng));
+        const lam2 = lam1 + Math.atan2(
+            Math.sin(brng) * Math.sin(d) * Math.cos(phi1),
+            Math.cos(d) - Math.sin(phi1) * Math.sin(phi2)
+        );
+        return { lat: phi2 / toRad, lng: lam2 / toRad };
+    }
+
+    // Ekstrak nama kota/kabupaten dari alamat venue untuk fallback geocoding.
+    function extractCityFromAddress(address) {
+        if (!address) return '';
+        const m = address.match(/(?:Kota|Kab(?:upaten)?\.?\s+)(\w[\w\s]*?)(?:,|\s*\d|$)/i);
+        if (m) return m[1].trim();
+        // fallback: cari kata kota umum
+        const cities = ['Bogor', 'Cimahi', 'Bandung', 'Majalengka', 'Padalarang', 'Depok', 'Bekasi', 'Sukabumi'];
+        for (const c of cities) {
+            if (address.indexOf(c) !== -1) return c;
+        }
+        return '';
+    }
+
+    // Ambil fasilitas terdekat (sesuai daftar per venue) dari venue;
+    // utk masing-masing dapatkan koordinat: baked → URL map → geocoding runtime.
+    // realOnly=true: fasilitas tanpa koordinat VALID dilewati (tanpa estimasi/
+    // palsu) dan hasil dibatasi ROUTE_STOPS_MAX — dipakai utk jalur rute.
+    // Strategi geocode: nama pendek dulu (hit-rate tinggi), fallback nama+kota.
+    // Filter: hasil geocode harus ≤ 40 km dari venue (buang false positive).
+    async function collectNearestFacilities(venue, opts) {
+        const venueFacilities = facilitiesData[venue.name];
+        if (!venueFacilities) return [];
+
+        opts = opts || {};
+        const MAX_DIST_KM = 40; // toleransi jarak maks dari venue
+        const venueCity = extractCityFromAddress(venue.address);
+
+        const priorityOrder = ['hospital', 'hotel', 'pharmacy', 'restaurant', 'police', 'transport', 'rekreasi', 'lodging'];
+        const categoryLabels = {
+            hotel: 'Hotel', lodging: 'Hotel', hospital: 'Rumah Sakit',
+            pharmacy: 'Apotek', restaurant: 'Restoran', police: 'Polisi',
+            transport: 'Transport', rekreasi: 'Rekreasi'
+        };
+
+        // Kumpulkan semua kandidat fasilitas (kategori prioritas didahulukan)
+        const candidates = [];
+        priorityOrder.forEach(type => {
+            const items = venueFacilities[type] || [];
+            items.forEach(item => {
+                if (!item || !item.name) return;
+                candidates.push({
+                    name: item.name,
+                    address: item.address || '',
+                    distance: item.distance || '',
+                    mapUrl: item.mapUrl || '',
+                    type: type,
+                    label: categoryLabels[type] || type
+                });
+            });
+        });
+
+        // Batasi jumlah yg dicoba di-geocode agar cepat (prioritas kategori)
+        const toProcess = candidates.slice(0, ROUTE_GEOCODE_LIMIT);
+        let resolved = [];
+        const needsEstimate = [];
+
+        for (let i = 0; i < toProcess.length; i++) {
+            const fac = toProcess[i];
+            let coord = null;
+
+            // Prioritas 1: koordinat yang sudah di-bake di facilityCoordsMap
+            const baked = facilityCoordsMap[fac.name];
+            if (baked) {
+                coord = { lat: baked[0], lng: baked[1] };
+            } else {
+                // Prioritas 2: ekstrak koordinat dari URL Google Maps
+                coord = extractCoordsFromMapUrl(fac.mapUrl);
+            }
+
+            if (!coord) {
+                // Prioritas 3: geocoding runtime bertingkat (nama pendek → nama + kota)
+                const queryChain = [fac.name];
+                if (venueCity && fac.name.indexOf(venueCity) === -1) {
+                    queryChain.push(fac.name + ' ' + venueCity);
+                }
+
+                for (let qi = 0; qi < queryChain.length; qi++) {
+                    const result = await geocodeFacility(queryChain[qi]);
+                    if (result) {
+                        // Filter jarak: buang false positive (salah kota/provinsi)
+                        const dist = haversineKm(result.lat, result.lng, venue.lat, venue.lng);
+                        if (dist <= MAX_DIST_KM) {
+                            coord = result;
+                            break;
+                        }
+                    }
+                    // delay rate limit antar request
+                    await new Promise(r => setTimeout(r, NOMINATIM_DELAY_MS));
+                }
+            }
+
+            if (coord) {
+                coord.distToVenue = haversineKm(coord.lat, coord.lng, venue.lat, venue.lng);
+                coord.name = fac.name;
+                coord.type = fac.type;
+                coord.label = fac.label;
+                coord.address = fac.address;
+                coord.estimated = false;
+                resolved.push(coord);
+            } else {
+                needsEstimate.push(fac);
+            }
+        }
+
+        // FALLBACK ESTIMASI (hanya utk tampilan peta, BUKAN utk rute).
+        // Saat realOnly=true, fasilitas tanpa koordinat valid DILEWATI —
+        // "jangan membuat koordinat palsu", rute pakai fasilitas berikutnya.
+        if (!opts.realOnly && needsEstimate.length > 0 && resolved.length > 0) {
+            const anchor = resolved.slice().sort((a, b) => a.distToVenue - b.distToVenue)[0];
+            needsEstimate.forEach(fac => {
+                const distKm = parseDistanceKm(fac.distance);
+                if (!(distKm > 0) || distKm > MAX_DIST_KM) return;
+                const brng = bearingDeg(venue.lat, venue.lng, anchor.lat, anchor.lng);
+                const p = destinationPoint(venue.lat, venue.lng, brng, distKm);
+                resolved.push({
+                    lat: p.lat, lng: p.lng,
+                    distToVenue: distKm,
+                    name: fac.name,
+                    type: fac.type,
+                    label: fac.label,
+                    address: fac.address,
+                    estimated: true
+                });
+            });
+        }
+
+        // urutkan berdasarkan jarak ke venue; realOnly membatasi yg masuk rute
+        resolved.sort((a, b) => a.distToVenue - b.distToVenue);
+        if (opts.realOnly) {
+            const capStops = (venue && venue.maxStops) ? venue.maxStops : ROUTE_STOPS_MAX;
+            resolved = resolved.slice(0, capStops);
+        }
+        return resolved;
+    }
+
+    // Susun urutan kunjungan secara logis (greedy nearest-neighbor):
+    // mulai dari titik start, selalu lanjut ke titik terdekat yang belum
+    // dikunjungi, akhiri di venue. Hanya menentukan URUTAN waypoint,
+    // bukan bentuk garis (bentuk garis tetap dari OSRM route geometry).
+    function orderWaypoints(points, startIdx, endIdx) {
+        const remaining = points.map((_, i) => i);
+        const removeIdx = (arr, idx) => arr.splice(arr.indexOf(idx), 1);
+        const order = [startIdx];
+        removeIdx(remaining, startIdx);
+        removeIdx(remaining, endIdx);
+
+        let cur = startIdx;
+        while (remaining.length > 0) {
+            let best = -1;
+            let bestDist = Infinity;
+            for (let i = 0; i < remaining.length; i++) {
+                const d = haversineKm(
+                    points[cur].lat, points[cur].lng,
+                    points[remaining[i]].lat, points[remaining[i]].lng
+                );
+                if (d < bestDist) {
+                    bestDist = d;
+                    best = remaining[i];
+                }
+            }
+            if (best === -1) break;
+            order.push(best);
+            removeIdx(remaining, best);
+            cur = best;
+        }
+        order.push(endIdx);
+        return order.map(i => points[i]);
+    }
+
+    // OSRM: gabungkan semua waypoint jadi SATU LineString geometry yang
+    // mengikuti jalan sebenarnya (bukan garis lurus antar titik).
+    // 1) Coba /trip (roundtrip=false) utk OPTIMASI urutan waypoint.
+    // 2) Fallback ke /route dgn urutan greedy yg sudah ditentukan
+    //    (dua-duanya tetap mengikuti jaringan jalan).
+    async function fetchConnectedRoute(points) {
+        if (!points || points.length < 2) return null;
+        const coordsStr = points.map(p => `${p.lng},${p.lat}`).join(';');
+        const base = 'https://router.project-osrm.org';
+
+        try {
+            const tripUrl = `${base}/trip/v1/driving/${coordsStr}?roundtrip=false&source=first&destination=last&overview=full&geometries=geojson&steps=false`;
+            const res = await fetch(tripUrl);
+            if (res.ok) {
+                const data = await res.json();
+                if (data.code === 'Ok' && data.trips && data.trips.length > 0) {
+                    const t = data.trips[0];
+                    if (t.legs && t.legs.length > 0 && t.geometry) {
+                        const coords = t.geometry.coordinates.map(c => [c[1], c[0]]);
+                        return { coordinates: coords, distance: t.distance, duration: t.duration };
+                    }
+                }
+            }
+        } catch (e) { /* lanjut ke fallback route */ }
+
+        try {
+            const routeUrl = `${base}/route/v1/driving/${coordsStr}?overview=full&geometries=geojson`;
+            const res = await fetch(routeUrl);
+            if (!res.ok) return null;
+            const data = await res.json();
+            if (data.code !== 'Ok' || !data.routes || data.routes.length === 0) return null;
+            const route = data.routes[0];
+            const coords = route.geometry.coordinates.map(c => [c[1], c[0]]);
+            return {
+                coordinates: coords,
+                distance: route.distance,
+                duration: route.duration
+            };
+        } catch (e) {
+            return null;
+        }
+    }
+
+    // Orchestrator utama: tombol "Tampilkan Rute" → lokasi pengguna →
+    // fasilitas terdekat (koordinat valid saja) → OSRM buat SATU jalur
+    // biru: lokasi pengguna → ≤4 fasilitas → venue.
+    async function startAutoRoute() {
+        if (!currentVenue || !map) return;
+
+        clearRoute();
+
+        const btn = document.getElementById('btn-show-route');
+        const loading = document.getElementById('route-loading');
+        const error = document.getElementById('route-error');
+        const info = document.getElementById('route-info');
+        const usage = document.getElementById('route-usage');
+        const btnClear = document.getElementById('btn-clear-route');
+        const infoTitle = document.getElementById('route-info-title');
+
+        // state loading
+        btn.style.display = 'none';
+        loading.style.display = 'flex';
+
+        // 1. Lokasi pengguna = titik awal rute (OPSIONAL). Jika diizinkan →
+        //    user → fasilitas → venue. Jika ditolak/tak ada → rute dari venue
+        //    → fasilitas terdekat (tetap satu garis biru utuh, tanpa wajib izin).
+        const pos = await getUserLocation();
+        const hasUserLoc = !!(pos && !pos.error);
+        if (hasUserLoc) {
+            userLocationMarker = L.marker([pos.lat, pos.lng], {
+                icon: createUserLocationIcon(),
+                zIndexOffset: 1000
+            }).addTo(map);
+            userLocationMarker.bindTooltip('Lokasi Anda');
+        }
+
+        // 2. Fasilitas terdekat dengan koordinat VALID (baked/URL/geocode).
+        //    Tanpa koordinat valid → dilewati, pakai fasilitas berikutnya.
+        let facilityCoords = [];
+        try {
+            facilityCoords = await collectNearestFacilities(currentVenue, { realOnly: true });
+        } catch (e) {
+            facilityCoords = [];
+        }
+
+        // 3. Marker SEMUA fasilitas valid di peta (warna per kategori).
+        const stopColors = {
+            hospital: '#dc2626', hotel: '#d97706', lodging: '#d97706',
+            pharmacy: '#9333ea', restaurant: '#16a34a', police: '#4f46e5',
+            transport: '#0284c7', rekreasi: '#0d9488', venue: '#2563eb'
+        };
+        facilityLayerMarkers = [];
+        facilityCoords.forEach(f => {
+            const color = stopColors[f.type] || '#6b7280';
+            const m = L.marker([f.lat, f.lng], {
+                icon: createFacilityStopIcon(color),
+                zIndexOffset: 300
+            }).addTo(map);
+            m.bindTooltip(`${f.label || ''} ${f.name}` + (f.address ? ' · ' + f.address : ''));
+            facilityLayerMarkers.push(m);
+        });
+
+        // 4. Waypoint: (lokasi user →) ≤maxStops fasilitas terdekat → venue.
+        const venuePts = facilityCoords.map(f => ({
+            lat: f.lat, lng: f.lng,
+            name: f.name, type: f.type, label: f.label,
+            address: f.address, estimated: f.estimated
+        }));
+        const waypoints = [];
+        if (hasUserLoc) {
+            waypoints.push({ lat: pos.lat, lng: pos.lng, name: 'Lokasi Anda', type: 'user' });
+        } else {
+            waypoints.push({ lat: currentVenue.lat, lng: currentVenue.lng, name: currentVenue.name, type: 'venue' });
+        }
+        waypoints.push(...venuePts);
+        if (hasUserLoc) {
+            waypoints.push({ lat: currentVenue.lat, lng: currentVenue.lng, name: currentVenue.name, type: 'venue' });
+        }
+
+        // 5. Urutkan kunjungan: mulai dari titik awal (index 0), akhiri di
+        //    venue (pakai lokasi) atau fasilitas terjauh (tanpa lokasi).
+        const orderedPoints = orderWaypoints(waypoints, 0, waypoints.length - 1);
+
+        // 6. OSRM (trip utk optimasi urutan, fallback route greedy) — SATU
+        //    LineString yang mengikuti jalan sebenarnya.
+        const result = await fetchConnectedRoute(orderedPoints);
+
+        loading.style.display = 'none';
+        btn.style.display = 'flex';
+
+        if (!result) {
+            error.textContent = 'Rute tidak dapat ditemukan.';
+            error.style.display = 'flex';
+            return;
+        }
+
+        // 7. Polyline biru tunggal
+        currentRouteLayer = L.polyline(result.coordinates, {
+            color: '#2563eb',
+            weight: 5,
+            opacity: 0.78,
+            smoothFactor: 1,
+            lineCap: 'round',
+            lineJoin: 'round'
+        }).addTo(map);
+
+        // 8. Info jarak/waktu/jumlah fasilitas
+        infoTitle.textContent = hasUserLoc
+            ? 'Rute ke ' + currentVenue.name
+            : 'Rute dari ' + currentVenue.name + ' ke fasilitas terdekat';
+        document.getElementById('route-distance').textContent = formatDistance(result.distance);
+        document.getElementById('route-duration').textContent = formatDuration(result.duration);
+        document.getElementById('route-stops').textContent = venuePts.length + ' fasilitas di rute';
+        info.style.display = 'flex';
+        btnClear.style.display = 'flex';
+
+        // 9. Zoom fit keseluruhan rute (user → venue)
+        const bounds = L.latLngBounds([
+            [hasUserLoc ? pos.lat : currentVenue.lat, hasUserLoc ? pos.lng : currentVenue.lng],
+            [currentVenue.lat, currentVenue.lng]
+        ]);
+        result.coordinates.forEach(c => bounds.extend(c));
+        map.flyToBounds(bounds, {
+            padding: [60, 60],
+            maxZoom: 15,
+            duration: 1.2
+        });
+    }
+
+    function setupRouteControls() {
+        const btnRoute = document.getElementById('btn-show-route');
+        const btnClear = document.getElementById('btn-clear-route');
+        const routeError = document.getElementById('route-error');
+
+        if (btnRoute) {
+            btnRoute.addEventListener('click', function() {
+                if (!currentVenue) return;
+                routeError.style.display = 'none';
+                startAutoRoute();
+            });
+        }
+
+        if (btnClear) {
+            btnClear.addEventListener('click', function() {
+                clearRoute();
+            });
+        }
+    }
+
+        window.onload = function() {
         initMap();
+        setupRouteControls();
         window.addEventListener('resize', function() {
             if (map) map.invalidateSize();
         });

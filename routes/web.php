@@ -398,11 +398,11 @@ $venues = [
     [
         'id' => 5,
         'name' => 'Gunung Mas',
-        'lat' => -6.6872581,
-        'lng' => 106.9412494,
-        'address' => 'Jl. Raya Puncak, Jawa Barat',
+        'lat' => -6.7010382,
+        'lng' => 106.9694386,
+        'address' => 'Jl. Raya Puncak KM 87, Tugu Selatan, Cisarua, Kab. Bogor',
         'cabor' => 'Aerosport - Paralayang',
-        'gmaps_url' => 'https://www.google.com/maps/place/Jl.+Raya+Puncak,+Jawa+Barat/@-6.6872528,106.9386745,17z/data=!3m1!4b1!4m6!3m5!1s0x2e69c8395455aa9b:0x692b4679ab657e47!8m2!3d-6.6872581!4d106.9412494!16s%2Fg%2F1hm1smv20?entry=tts',
+        'gmaps_url' => 'https://www.google.com/maps/search/?api=1&query=Agrowisata+Gunung+Mas+Cisarua',
     ],
     [
         'id' => 6,
