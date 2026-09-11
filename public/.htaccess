@@ -32,6 +32,12 @@
     Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
     Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
 
+    # [TAMBAHAN] Memenuhi rekomendasi audit (Tanpa Unsafe-Inline & Unsafe-Eval)
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self';"
+    
+    # [TAMBAHAN] Proteksi XSS bawaan browser
+    Header always set X-XSS-Protection "1; mode=block"
+
     # Block access to sensitive files
     <FilesMatch "\.(env|log|sql|bak|sh|git)$">
         Require all denied
