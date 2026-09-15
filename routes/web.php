@@ -140,13 +140,13 @@ $venueRoutes = [
             ],
         ],
     ],
-    'PPSDMAP Kemenhub Kemang' => [
+    'Sport Center IPB Dramaga' => [
         [
             'judul' => 'Bus',
             'langkah' => [
-                'Rute Terbaik: Naik bus atau angkutan umum yang menuju arah Kemang–Parung.',
-                'Titik Turun: Turun di titik pemberhentian terdekat di sepanjang Jl. Raya Kemang–Parung.',
-                'Melanjutkan Perjalanan: Dari titik turun, lanjutkan menggunakan ojek online atau taksi menuju PPSDMAP Kemenhub.',
+                'Rute Terbaik: Naik bus atau angkutan umum yang menuju arah Dramaga–Ciampea.',
+                'Titik Turun: Turun di pemberhentian terdekat di sepanjang Jl. Raya Dramaga (Depan Kampus IPB Dramaga).',
+                'Melanjutkan Perjalanan: Dari titik turun, lanjutkan berjalan kaki atau ojek online menuju Sport Center IPB Dramaga.',
             ],
         ],
         [
@@ -154,23 +154,23 @@ $venueRoutes = [
             'langkah' => [
                 'Stasiun Terdekat: Stasiun Bogor.',
                 'Petunjuk Arah: Gunakan KRL Commuter Line dan turun di Stasiun Bogor.',
-                'Melanjutkan Perjalanan: Dari stasiun, lanjutkan menggunakan angkot, ojek online, atau taksi menuju kawasan Kemang–Parung hingga lokasi venue.',
+                'Melanjutkan Perjalanan: Dari stasiun, lanjutkan menggunakan angkot, ojek online, atau taksi menuju arah Jl. Raya Dramaga / Kampus IPB Dramaga hingga lokasi venue.',
             ],
         ],
         [
             'judul' => 'Angkot',
             'langkah' => [
-                'Angkot dari Stasiun/Terminal: Naik angkot Trayek 06 jurusan Terminal Merdeka – Parung.',
-                'Titik Turun: Turun di kawasan Kemang/Jl. Raya Kemang–Parung.',
-                'Melanjutkan Perjalanan: Dari titik turun, lanjutkan menggunakan ojek online menuju PPSDMAP Kemenhub.',
+                'Angkot dari Stasiun/Terminal: Naik angkutan trayek yang melayani rute Bogor–Dramaga (arah Ciampea).',
+                'Titik Turun: Turun di kawasan Jl. Raya Dramaga / depan Kampus IPB Dramaga.',
+                'Melanjutkan Perjalanan: Dari titik turun, lanjutkan berjalan kaki atau ojek online menuju Sport Center IPB Dramaga.',
             ],
         ],
         [
             'judul' => 'Kendaraan Pribadi',
             'langkah' => [
-                'Via Tol: Keluar menuju Kota Bogor, lalu ambil arah Kemang–Parung.',
-                'Arah Lokasi: Ikuti Jl. Raya Kemang–Parung menuju kawasan Pd. Udik hingga PPSDMAP Kemenhub.',
-                'Fasilitas Parkir: Gunakan area parkir yang tersedia di kompleks venue.',
+                'Via Tol: Keluar menuju Kota Bogor, lalu ambil arah Jl. Raya Dramaga.',
+                'Arah Lokasi: Ikuti Jl. Raya Dramaga (arah Ciampea) hingga kawasan Kampus IPB Dramaga.',
+                'Fasilitas Parkir: Gunakan area parkir yang tersedia di sekitar Sport Center.',
             ],
         ],
     ],
@@ -415,12 +415,12 @@ $venues = [
     ],
     [
         'id' => 7,
-        'name' => 'PPSDMAP Kemenhub Kemang',
-        'lat' => -6.498024311495613,
-        'lng' => 106.74365521534482,
-        'address' => 'Kemang, Bogor, Jawa Barat',
+        'name' => 'Sport Center IPB Dramaga',
+        'lat' => -6.5858263,
+        'lng' => 106.7317778,
+        'address' => 'Sport Center, Jl. Raya Dramaga, Babakan, Kec. Dramaga, Kabupaten Bogor, Jawa Barat',
         'cabor' => 'Bola Tangan Indoor',
-        'gmaps_url' => 'https://maps.app.goo.gl/Ma2cC3WY3DaWJYQ19',
+        'gmaps_url' => 'https://www.google.com/maps/place/Sport+Center/@-6.5858263,106.7317778,17z/data=!3m1!4b1!4m6!3m5!1s0x2e69c4d6e6893129:0x102008023a172318!8m2!3d-6.5858263!4d106.7317778!16s%2Fg%2F11bzv48r3t',
     ],
     [
         'id' => 8,
@@ -556,9 +556,9 @@ $cabors = [
         'nama' => 'Bola Tangan Indoor',
         'logo' => '11.BOLA TANGAN.png',
         'deskripsi' => 'Bola tangan indoor dimainkan oleh dua tim berisi tujuh pemain yang saling melempar, mengoper, dan memasukkan bola ke gawang lawan. Permainan berlangsung cepat di lapangan tertutup dengan aturan langkah yang ketat.',
-        'venue' => 'PPSDMAP Kemenhub Kemang',
-        'alamat' => 'Jl. Raya Parung–Bogor, Kemang, Kab. Bogor',
-        'rute' => $venueRoutes['PPSDMAP Kemenhub Kemang'],
+        'venue' => 'Sport Center IPB Dramaga',
+        'alamat' => 'Sport Center, Jl. Raya Dramaga, Babakan, Kec. Dramaga, Kabupaten Bogor, Jawa Barat',
+        'rute' => $venueRoutes['Sport Center IPB Dramaga'],
     ],
     [
         'slug' => 'bola-tangan-pasir',
@@ -850,15 +850,6 @@ $facilities = [
         ['nama' => 'Yasmin Waterpark', 'tipe' => 'rekreasi', 'tipe_label' => 'Rekreasi', 'alamat' => 'Yasmin Centre, Jl. KH. R. Abdullah Bin Nuh, RT.06/RW.02, Curugmekar, Kec. Bogor Barat, Kota Bogor, Jawa Barat 16113', 'venue' => 'GOR Yasmin Bulutangkis', 'jarak' => '800 m', 'gmaps' => 'https://maps.app.goo.gl/1PXjuMGZak6tU5PG8', 'telepon' => '-', 'layanan' => 'waterpark, wahana air', 'website' => '', 'image' => ''],
         ['nama' => 'Marcopolo Water Adventure', 'tipe' => 'rekreasi', 'tipe_label' => 'Rekreasi', 'alamat' => 'Jl. Bukit Cimanggu City Raya Jl. Sholeh Iskandar, RT.01/RW.11, Cibadak, Tanah Sareal, Kota Bogor, Jawa Barat 16168', 'venue' => 'GOR Yasmin Bulutangkis', 'jarak' => '1.6 km', 'gmaps' => 'https://maps.app.goo.gl/gnAWSfJ5eQWq9PBy5', 'telepon' => '-', 'layanan' => 'waterpark, wahana air', 'website' => '', 'image' => ''],
         ['nama' => 'Kawasan Wisata Situ Gede', 'tipe' => 'rekreasi', 'tipe_label' => 'Rekreasi', 'alamat' => 'Jl. Cilubang Nagrak No.RT 02/04, RT.03/RW.06, Situgede, Kec. Bogor Barat, Kota Bogor, Jawa Barat 16115', 'venue' => 'GOR Yasmin Bulutangkis', 'jarak' => '3.1 km', 'gmaps' => 'https://maps.app.goo.gl/j4ccYwx5RgpNgXmTA', 'telepon' => '-', 'layanan' => 'wisata alam, danau', 'website' => '', 'image' => ''],
-        ['nama' => 'Salak Sunset Hotel', 'tipe' => 'hotel', 'tipe_label' => 'Hotel', 'alamat' => 'Jl. Raya Kemang Parung No. 12, Kemang', 'venue' => 'PPSDMAP Kemenhub Kemang Kab-Bogor', 'jarak' => '2.1 km', 'gmaps' => 'https://www.google.com/maps/search/?api=1&query=Salak%20Sunset%20Hotel%20Jl.%20Raya%20Kemang%20Parung%20No.%2012%2C%20Kemang', 'telepon' => '-', 'layanan' => '-', 'website' => '', 'image' => ''],
-        ['nama' => 'RS Sentosa Bogor', 'tipe' => 'rs', 'tipe_label' => 'Rumah Sakit', 'alamat' => 'Jl. Raya Kemang No. 18, Kemang, Kab. Bogor', 'venue' => 'PPSDMAP Kemenhub Kemang Kab-Bogor', 'jarak' => '1.3 km', 'gmaps' => 'https://www.google.com/maps/search/?api=1&query=RS%20Sentosa%20Bogor%20Jl.%20Raya%20Kemang%20No.%2018%2C%20Kemang%2C%20Kab.%20Bogor', 'telepon' => '-', 'layanan' => '-', 'website' => '', 'image' => ''],
-        ['nama' => 'Apotek Kimia Farma Kemang', 'tipe' => 'apotek', 'tipe_label' => 'Apotek', 'alamat' => 'Jl. Raya Parung-Bogor, Kemang, Kab. Bogor', 'venue' => 'PPSDMAP Kemenhub Kemang Kab-Bogor', 'jarak' => '800 m', 'gmaps' => 'https://www.google.com/maps/search/?api=1&query=Apotek%20Kimia%20Farma%20Kemang%20Jl.%20Raya%20Parung-Bogor%2C%20Kemang%2C%20Kab.%20Bogor', 'telepon' => '-', 'layanan' => '-', 'website' => '', 'image' => ''],
-        ['nama' => 'Puskesmas Kemang', 'tipe' => 'puskesmas', 'tipe_label' => 'Puskesmas', 'alamat' => 'Jl. Raya Kemang No. 5, Kemang, Kab. Bogor', 'venue' => 'PPSDMAP Kemenhub Kemang Kab-Bogor', 'jarak' => '1.1 km', 'gmaps' => 'https://www.google.com/maps/search/?api=1&query=Puskesmas%20Kemang%20Jl.%20Raya%20Kemang%20No.%205%2C%20Kemang%2C%20Kab.%20Bogor', 'telepon' => '-', 'layanan' => '-', 'website' => '', 'image' => ''],
-        ['nama' => 'Polsek Kemang', 'tipe' => 'polsek', 'tipe_label' => 'Polres / Polsek', 'alamat' => 'Jl. Raya Kemang Parung No. 10, Kemang, Kab. Bogor', 'venue' => 'PPSDMAP Kemenhub Kemang Kab-Bogor', 'jarak' => '1.5 km', 'gmaps' => 'https://www.google.com/maps/search/?api=1&query=Polsek%20Kemang%20Jl.%20Raya%20Kemang%20Parung%20No.%2010%2C%20Kemang%2C%20Kab.%20Bogor', 'telepon' => '-', 'layanan' => '-', 'website' => '', 'image' => ''],
-        ['nama' => 'RM Ayam Goreng Bakar Sayati', 'tipe' => 'restoran', 'tipe_label' => 'Restoran', 'alamat' => 'Jl. Raya Parung - Bogor, Semplak Barat, Kemang', 'venue' => 'PPSDMAP Kemenhub Kemang Kab-Bogor', 'jarak' => '450 m', 'gmaps' => 'https://www.google.com/maps/search/?api=1&query=Ayam%20Goreng%20Bakar%20Sayati%20Kemang%20Bogor', 'telepon' => '-', 'layanan' => '-', 'website' => '', 'image' => ''],
-        ['nama' => 'Swiss-Belcourt Bogor', 'tipe' => 'hotel', 'tipe_label' => 'Hotel', 'alamat' => 'Jl. Sholeh Iskandar Jl. Bukit Cimanggu City Raya No.1, RT.01/RW.13, Cibadak, Tanah Sareal, Kota Bogor, Jawa Barat 16168', 'venue' => 'PPSDMAP Kemenhub Kemang Kab-Bogor', 'jarak' => '4.2 km', 'gmaps' => 'https://maps.app.goo.gl/2VQeXZGysaj5Fjg36', 'telepon' => '-', 'layanan' => '-', 'website' => '', 'image' => ''],
-        ['nama' => 'RS Islam Bogor', 'tipe' => 'rs', 'tipe_label' => 'Rumah Sakit', 'alamat' => 'Jl. Perdana Raya No.22, RT.01/RW.10, Kedungbadak, Tanah Sareal, Kota Bogor, Jawa Barat 16710', 'venue' => 'PPSDMAP Kemenhub Kemang Kab-Bogor', 'jarak' => '3.8 km', 'gmaps' => 'https://maps.app.goo.gl/aLXpeMRB5RkzAg2c9', 'telepon' => '-', 'layanan' => '-', 'website' => '', 'image' => ''],
-        ['nama' => 'Marcopolo Water Adventure', 'tipe' => 'rekreasi', 'tipe_label' => 'Rekreasi', 'alamat' => 'Jl. Bukit Cimanggu City Raya Jl. Sholeh Iskandar, RT.01/RW.11, Cibadak, Tanah Sareal, Kota Bogor, Jawa Barat 16168', 'venue' => 'PPSDMAP Kemenhub Kemang Kab-Bogor', 'jarak' => '4.4 km', 'gmaps' => 'https://maps.app.goo.gl/gnAWSfJ5eQWq9PBy5', 'telepon' => '-', 'layanan' => 'waterpark, wahana air', 'website' => '', 'image' => ''],
         ['nama' => 'Lorin Sentul Hotel', 'tipe' => 'hotel', 'tipe_label' => 'Hotel', 'alamat' => 'Kawasan Sirkuit Sentul Internasional, Babakan Madang', 'venue' => 'Padepokan Voli Sentul', 'jarak' => '1.2 km', 'gmaps' => 'https://www.google.com/maps/search/?api=1&query=Lorin%20Sentul%20Hotel%20Kawasan%20Sirkuit%20Sentul%20Internasional%2C%20Babakan%20Madang', 'telepon' => '-', 'layanan' => '-', 'website' => '', 'image' => ''],
         ['nama' => 'Harris Hotel Sentul City', 'tipe' => 'hotel', 'tipe_label' => 'Hotel', 'alamat' => 'Jl. Jend. Sudirman, Sentul City, Babakan Madang', 'venue' => 'Padepokan Voli Sentul', 'jarak' => '2.5 km', 'gmaps' => 'https://www.google.com/maps/search/?api=1&query=Harris%20Hotel%20Sentul%20City%20Jl.%20Jend.%20Sudirman%2C%20Sentul%20City%2C%20Babakan%20Madang', 'telepon' => '-', 'layanan' => '-', 'website' => '', 'image' => ''],
         ['nama' => 'RS EMC Sentul', 'tipe' => 'rs', 'tipe_label' => 'Rumah Sakit', 'alamat' => 'Jl. MH. Thamrin No. 57, Sentul City, Babakan Madang', 'venue' => 'Padepokan Voli Sentul', 'jarak' => '2.7 km', 'gmaps' => 'https://www.google.com/maps/search/?api=1&query=RS%20EMC%20Sentul%20Jl.%20MH.%20Thamrin%20No.%2057%2C%20Sentul%20City%2C%20Babakan%20Madang', 'telepon' => '-', 'layanan' => '-', 'website' => '', 'image' => ''],
@@ -910,7 +901,7 @@ $facilities = [
         ['nama' => 'PO. AdisaPutro Trans', 'tipe' => 'transport', 'tipe_label' => 'Sewa Kendaraan', 'alamat' => 'Jl. Raya Cifor No. 14 RT 03/RW 08 Bubulak, Bogor Barat, Kota Bogor', 'venue' => 'Kota Bogor', 'jarak' => 'Kota Bogor', 'gmaps' => 'https://www.google.com/maps/search/?api=1&query=PO+AdisaPutro+Trans+Bubulak+Bogor', 'telepon' => '+62 857-7496-7369 (Rusli)', 'layanan' => 'sewa kendaraan', 'website' => '', 'image' => ''],
         ['nama' => 'PT. Surya Harapan Perdana (PasteurTrans)', 'tipe' => 'transport', 'tipe_label' => 'Sewa Kendaraan', 'alamat' => 'Jl. R. Saleh S. Bustaman No.15, RT.01/RW.11, Empang, Kec. Bogor Sel., Kota Bogor, Jawa Barat 16132', 'venue' => 'Kota Bogor', 'jarak' => 'Kota Bogor', 'gmaps' => 'https://www.google.com/maps/search/?api=1&query=PT+Surya+Harapan+Perdana+PasteurTrans+Empang+Bogor', 'telepon' => '+62 823-2224-9794', 'layanan' => 'sewa kendaraan', 'website' => '', 'image' => ''],
         ['nama' => 'Master Tour & Travel', 'tipe' => 'transport', 'tipe_label' => 'Sewa Kendaraan', 'alamat' => 'Jl. Raya Cipaku No.21, RT.03/RW.01, Cipaku, Kec. Bogor Sel., Kota Bogor, Jawa Barat 16133', 'venue' => 'Kota Bogor', 'jarak' => 'Kota Bogor', 'gmaps' => 'https://www.google.com/maps/search/?api=1&query=Master+Tour+%26+Travel+Cipaku+Bogor', 'telepon' => '+62 857-1463-4597 (Wawang)', 'layanan' => 'sewa kendaraan', 'website' => '', 'image' => ''],
-        ['nama' => 'IKIGAI Fitness', 'tipe' => 'rekreasi', 'tipe_label' => 'Fitness', 'alamat' => 'IKIGAI Ekalos, Gedung Plaza Ekalos, Jl. Siliwangi, RW.04, Sukasari, Bogor', 'venue' => ['GOR Pajajaran / Stadion Pajajaran (Indoor A, Indoor B, Stadion)', 'Green Forest Hotel', 'Gymnasium Sekolah Vokasi IPB', 'GOR Yasmin Bulutangkis', 'PPSDMAP Kemenhub Kemang Kab-Bogor', 'Padepokan Voli Sentul'], 'jarak' => '-', 'gmaps' => 'https://www.google.com/maps/place/IKIGAI+FITNESS+-+Lippo+Plaza+Ekalokasari+Bogor/@-6.6216624,106.8144763,17z/data=!3m2!4b1!5s0x2e69c5fdf77397b5:0x881f18442bc0f864!4m6!3m5!1s0x2e69c5d5719e94ab:0x8c6b0ea36866c2e6!8m2!3d-6.6216624!4d106.8170512!16s%2Fg%2F11stp2j67s?entry=ttu&g_ep=EgoyMDI2MDgwNS4xIKXMDSoASAFQAw%3D%3D', 'layanan' => 'fitness, buka pukul 06:00-21:00', 'website' => '', 'image' => ''],
+        ['nama' => 'IKIGAI Fitness', 'tipe' => 'rekreasi', 'tipe_label' => 'Fitness', 'alamat' => 'IKIGAI Ekalos, Gedung Plaza Ekalos, Jl. Siliwangi, RW.04, Sukasari, Bogor', 'venue' => ['GOR Pajajaran / Stadion Pajajaran (Indoor A, Indoor B, Stadion)', 'Green Forest Hotel', 'Gymnasium Sekolah Vokasi IPB', 'GOR Yasmin Bulutangkis', 'Padepokan Voli Sentul'], 'jarak' => '-', 'gmaps' => 'https://www.google.com/maps/place/IKIGAI+FITNESS+-+Lippo+Plaza+Ekalokasari+Bogor/@-6.6216624,106.8144763,17z/data=!3m2!4b1!5s0x2e69c5fdf77397b5:0x881f18442bc0f864!4m6!3m5!1s0x2e69c5d5719e94ab:0x8c6b0ea36866c2e6!8m2!3d-6.6216624!4d106.8170512!16s%2Fg%2F11stp2j67s?entry=ttu&g_ep=EgoyMDI2MDgwNS4xIKXMDSoASAFQAw%3D%3D', 'layanan' => 'fitness, buka pukul 06:00-21:00', 'website' => '', 'image' => ''],
     ];
 
 $stats = [

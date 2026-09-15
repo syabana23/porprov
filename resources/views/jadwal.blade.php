@@ -351,8 +351,8 @@
                 </tr>
                 <tr>
                     <td class="no">9</td>
-                    <td class="sport" data-sport="Bola Tangan Indoor" data-venue="PPSDMAP Kemenhub Kemang Kab-Bogor">Bola Tangan Indoor</td>
-                    <td class="venue" data-sport="Bola Tangan Indoor" data-venue="PPSDMAP Kemenhub Kemang Kab-Bogor">PPSDMAP Kemenhub Kemang Kab-Bogor</td>
+                    <td class="sport" data-sport="Bola Tangan Indoor" data-venue="Sport Center IPB Dramaga Kab-Bogor">Bola Tangan Indoor</td>
+                    <td class="venue" data-sport="Bola Tangan Indoor" data-venue="Sport Center IPB Dramaga Kab-Bogor">Sport Center IPB Dramaga Kab-Bogor</td>
                     <td class="durasi">7</td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
@@ -1273,46 +1273,6 @@
                 mapUrl: 'https://www.google.com/maps/search/?api=1&query=Apotek+Kimia+Farma+Cisarua'
             }]
         },
-        'PPSDMAP Kemenhub Kemang': {
-            hotel: [{
-                name: 'Salak Sunset Hotel',
-                address: 'Jl. Raya Kemang Parung No. 12, Kemang',
-                distance: '2.1 km',
-                rating: '4.0',
-                mapUrl: 'https://www.google.com/maps/search/?api=1&query=Salak+Sunset+Hotel+Kemang'
-            }],
-            hospital: [{
-                    name: 'RS Sentosa Bogor',
-                    address: 'Jl. Raya Kemang No. 18, Kemang, Kab. Bogor',
-                    distance: '1.3 km',
-                    mapUrl: 'https://www.google.com/maps/search/?api=1&query=RS+Sentosa+Bogor'
-                },
-                {
-                    name: 'Puskesmas Kemang',
-                    address: 'Jl. Raya Kemang No. 5, Kemang, Kab. Bogor',
-                    distance: '1.1 km',
-                    mapUrl: 'https://www.google.com/maps/search/?api=1&query=Puskesmas+Kemang'
-                }
-            ],
-            restaurant: [{
-                name: 'RM Ayam Goreng Bakar Sayati',
-                address: 'Jl. Raya Parung - Bogor, Semplak Barat, Kemang',
-                distance: '450 m',
-                mapUrl: 'https://www.google.com/maps/search/?api=1&query=RM+Ayam+Goreng+Bakar+Sayati+Kemang'
-            }],
-            police: [{
-                name: 'Polsek Kemang',
-                address: 'Jl. Raya Kemang Parung No. 10, Kemang, Kab. Bogor',
-                distance: '1.5 km',
-                mapUrl: 'https://www.google.com/maps/search/?api=1&query=Polsek+Kemang'
-            }],
-            pharmacy: [{
-                name: 'Apotek Kimia Farma Kemang',
-                address: 'Jl. Raya Parung-Bogor, Kemang, Kab. Bogor',
-                distance: '800 m',
-                mapUrl: 'https://www.google.com/maps/search/?api=1&query=Apotek+Kimia+Farma+Kemang'
-            }]
-        },
         'GOR Pajajaran Indoor A': {
             hotel: [{
                     name: 'Zest Hotel Bogor',
@@ -1745,7 +1705,7 @@
         'Indoor A GOR Pajajaran': 'GOR Pajajaran Indoor A',
         'Indoor B GOR Pajajaran': 'GOR Pajajaran Indoor B',
         'Lapangan Tembak Cisangkan': 'Cisangkan',
-        'PPSDMAP Kemenhub Kemang Kab-Bogor': 'PPSDMAP Kemenhub Kemang',
+        'Sport Center IPB Dramaga Kab-Bogor': 'Sport Center IPB Dramaga',
         'Stadion Pajajaran': 'Stadion Pajajaran',
         'Green Forest Hotel': 'Green Forest Hotel',
         'Gunung Mas': 'Gunung Mas',

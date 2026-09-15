@@ -45,7 +45,7 @@
                 <option value="gor yasmin">GOR Yasmin</option>
                 <option value="stadion pajajaran">Stadion Pajajaran</option>
                 <option value="green forest hotel">Green Forest Hotel</option>
-                <option value="ppsdmap kemenhub kemang">PPSDMAP Kemenhub Kemang</option>
+                <option value="sport center ipb dramaga">Sport Center IPB Dramaga</option>
                 <option value="padepokan voli sentul">Padepokan Voli Sentul</option>
                 <option value="gunung mas">Gunung Mas</option>
                 <option value="cisangkan">Cisangkan</option>
@@ -58,20 +58,20 @@
         <div class="filter-box-full-width">
             <select class="filter-select-styled" id="cabor">
                 <option value="">Pilih Cabang Olahraga</option>
-                <option value="aerosport">Aerosport - Gantolle</option>
-                <option value="aerosport">Aerosport - Paralayang</option>
+                <option value="aerosport-gantolle">Aerosport - Gantolle</option>
+                <option value="aerosport-paralayang">Aerosport - Paralayang</option>
                 <option value="anggar">Anggar</option>
                 <option value="dansa">Dansa</option>
                 <option value="angkat berat">Angkat Berat</option>
                 <option value="angkat besi">Angkat Besi</option>
                 <option value="arung jeram">Arung Jeram</option>
                 <option value="binaraga">Binaraga</option>
-                <option value="bola tangan">Bola Tangan Indoor</option>
-                <option value="bola tangan">Bola Tangan Pasir</option>
+                <option value="bola-tangan-indoor">Bola Tangan Indoor</option>
+                <option value="bola-tangan-pasir">Bola Tangan Pasir</option>
                 <option value="drumband">Drumband</option>
-                <option value="gimnastik">Gimnastik Aerobik</option>
-                <option value="gimnastik">Gimnastik Artistik</option>
-                <option value="gimnastik">Gimnastik Ritmik</option>
+                <option value="gimnastik-aerobik">Gimnastik Aerobik</option>
+                <option value="gimnastik-artistik">Gimnastik Artistik</option>
+                <option value="gimnastik-ritmik">Gimnastik Ritmik</option>
                 <option value="judo">Judo</option>
                 <option value="kurash">Kurash</option>
                 <option value="menembak">Menembak</option>
@@ -439,12 +439,12 @@
         },
         {
             id: 7,
-            name: "PPSDMAP Kemenhub Kemang",
-            lat: -6.498024311495613,
-            lng: 106.74365521534482,
-            address: "Kemang, Bogor, Jawa Barat",
+            name: "Sport Center IPB Dramaga",
+            lat: -6.5858263,
+            lng: 106.7317778,
+            address: "Sport Center, Jl. Raya Dramaga, Babakan, Kec. Dramaga, Kabupaten Bogor, Jawa Barat",
             cabor: "Bola Tangan Indoor",
-            gmaps_url: "https://maps.app.goo.gl/Ma2cC3WY3DaWJYQ19"
+            gmaps_url: "https://www.google.com/maps/place/Sport+Center/@-6.5858263,106.7317778,17z/data=!3m1!4b1!4m6!3m5!1s0x2e69c4d6e6893129:0x102008023a172318!8m2!3d-6.5858263!4d106.7317778!16s%2Fg%2F11bzv48r3t"
         },
         {
             id: 8,
@@ -776,6 +776,11 @@
             address: "Jl. Cilibende, Babakan, Kec. Bogor Tengah",
             distance: "250 m",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=Toko%20Adelways%20Jl.%20Cilibende%20Babakan%20Bogor%20Tengah"
+        }, {
+            name: "Teras Om Frend",
+            address: "CR65+HMX Il, Jl. Lodaya, RT.003/RW.002, Babakan, Kec. Bogor Tengah, Kota Bogor, Jawa Barat 16128",
+            distance: "150 m",
+            mapUrl: "https://www.google.com/maps/place/CR65%2BHMX+Teras+Om+Frend,+Il,+Jl.+Lodaya,+RT.003%2FRW.002,+Babakan,+Kecamatan+Bogor+Tengah,+Kota+Bogor,+Jawa+Barat+16128/@-6.588509,106.8092212,16z/data=!3m1!1e3!4m6!3m5!1s0x2e69c5001ab40295:0xf34d26c1bef53a78!8m2!3d-6.588509!4d106.8092212!16s%2Fg%2F11ntswsj17?g_ep=Eg1tbF8yMDI2MDkwMV8wIOC7DCoASAJQAg%3D%3D"
         }],
         rekreasi: [...rekreasiFacilities, {
             name: "Kebun Raya Bogor",
@@ -891,40 +896,6 @@
             address: "Jl. KH. R. Abdullah Bin Nuh, RT.05/RW.04, Cibadak, Tanah Sareal, Kota Bogor, Jawa Barat 16166",
             distance: "1.1 km",
             mapUrl: "https://maps.app.goo.gl/BbmsiFRYf9hPwSsi8"
-        }]
-    };
-
-    const kemangFacilities = {
-        hotel: [{
-            name: "Swiss-Belcourt Bogor",
-            address: "Jl. Sholeh Iskandar Jl. Bukit Cimanggu City Raya No.1, RT.01/RW.13, Cibadak, Tanah Sareal, Kota Bogor, Jawa Barat 16168",
-            distance: "4.2 km",
-            mapUrl: "https://maps.app.goo.gl/2VQeXZGysaj5Fjg36"
-        }],
-        hospital: [{
-                name: "RS Sentosa Bogor",
-                address: "Jl. Raya Kemang No. 18, Kemang, Kab. Bogor",
-                distance: "1.3 km",
-                mapUrl: "https://www.google.com/maps/search/?api=1&query=RS+Sentosa+Bogor+Jl.+Raya+Kemang+No.+18+Kemang+Kab.+Bogor"
-            },
-            {
-                name: "RS Islam Bogor",
-                address: "Jl. Perdana Raya No.22, RT.01/RW.10, Kedungbadak, Tanah Sareal, Kota Bogor, Jawa Barat 16710",
-                distance: "3.8 km",
-                mapUrl: "https://maps.app.goo.gl/aLXpeMRB5RkzAg2c9"
-            }
-        ],
-        police: [{
-            name: "Polsek Kemang",
-            address: "Jl. Raya Kemang Parung No. 10, Kemang, Kab. Bogor",
-            distance: "1.5 km",
-            mapUrl: "https://www.google.com/maps/search/?api=1&query=Polsek+Kemang+Jl.+Raya+Kemang+Parung+No.+10+Kemang+Kab.+Bogor"
-        }],
-        rekreasi: [{
-            name: "Marcopolo Water Adventure",
-            address: "Jl. Bukit Cimanggu City Raya Jl. Sholeh Iskandar, RT.01/RW.11, Cibadak, Tanah Sareal, Kota Bogor, Jawa Barat 16168",
-            distance: "4.4 km",
-            mapUrl: "https://maps.app.goo.gl/gnAWSfJ5eQWq9PBy5"
         }]
     };
 
@@ -1223,7 +1194,6 @@
         "Green Forest Hotel": greenForestFacilities,
         "GOR Vokasi IPB": vokasiFacilities,
         "GOR Yasmin": yasminFacilities,
-        "PPSDMAP Kemenhub Kemang": kemangFacilities,
         "Padepokan Voli Sentul": sentulFacilities,
         "Gunung Mas": gunungMasFacilities,
         "Cisangkan": cisangkanFacilities,
@@ -1232,105 +1202,10 @@
         "Majalengka": majalengkaFacilities,
     };
 
-    // Daftar fasilitas RUTE per venue (urutan prioritas). Fasilitas yang tercantum
-    // di sini menjadi titik jalur rute biru; sisanya (tidak terdaftar) tetap tampil
-    // sebagai MARKER di peta. Venue yang tidak tercantum memakai pemilihan
-    // terdekat-otomatis (1 per kategori, ≤ ROUTE_STOPS_MAX).
-    const routeSets = {
-        "Green Forest Hotel": [
-            "ASTON Bogor Hotel & Resort",
-            "RS VANIA",
-            "RS Melania Bogor",
-            "RS UMMI",
-            "Polsek Bogor Selatan",
-            "The Jungle Water Park",
-            "Mall BTM",
-            "Resto Kampoeng Konsep",
-            "Apotek Kimia Farma Pahlawan"
-        ],
-        "GOR Pajajaran Indoor A": [
-            "The Sahira Hotel",
-            "Key Inn Hotel",
-            "RS Mulia Pajajaran Bogor",
-            "RSIA Pasutri Bogor",
-            "RS Azra",
-            "Polsek Bogor Utara",
-            "Mall Jambu Dua",
-            "Rumah Makan Ampera Pemuda",
-            "Apotek Kimia Farma Juanda"
-        ],
-        "GOR Pajajaran Indoor B": [
-            "The Sahira Hotel",
-            "Key Inn Hotel",
-            "RS Mulia Pajajaran Bogor",
-            "RSIA Pasutri Bogor",
-            "RS Azra",
-            "Polsek Bogor Utara",
-            "Mall Jambu Dua",
-            "Rumah Makan Ampera Pemuda",
-            "Apotek Kimia Farma Juanda"
-        ],
-        "Stadion Pajajaran": [
-            "The Sahira Hotel",
-            "Key Inn Hotel",
-            "RS Mulia Pajajaran Bogor",
-            "RSIA Pasutri Bogor",
-            "RS Azra",
-            "Polsek Bogor Utara",
-            "Mall Jambu Dua",
-            "Rumah Makan Ampera Pemuda",
-            "Apotek Kimia Farma Juanda"
-        ],
-        "GOR Vokasi IPB": [
-            "Swiss-Belhotel Bogor",
-            "RS Azra",
-            "RS Siloam Bogor",
-            "RS PMI Bogor",
-            "Polsek Bogor Utara",
-            "Mall Botani Square Bogor",
-            "Lapangan Sempur Bogor",
-            "Kebun Raya Bogor",
-            "Toko Adelways (Kantin IPB Cilibende)",
-            "Apotek Kimia Farma Pajajaran"
-        ],
-        "GOR Yasmin": [
-            "Bogor Icon Hotel",
-            "RS Hermina Bogor",
-            "RS Graha Medika Bogor",
-            "RSUD Kota Bogor",
-            "Polsek Bogor Barat",
-            "Yasmin Waterpark",
-            "Marcopolo Water Adventure",
-            "Kawasan Wisata Situ Gede",
-            "Bogor Trade Mall",
-            "Rumah Makan Ampera Yasmin",
-            "Apotek Kimia Farma Yasmin"
-        ],
-        "PPSDMAP Kemenhub Kemang": [
-            "Swiss-Belcourt Bogor",
-            "RS Islam Bogor",
-            "RS Sentosa Bogor",
-            "Polsek Kemang",
-            "Marcopolo Water Adventure"
-        ],
-        "Padepokan Voli Sentul": [
-            "Hotel Green Wattana Sentul",
-            "RS EMC Sentul",
-            "Polsek Babakan Madang",
-            "Mall AEON Sentul Bogor",
-            "JungleLand Adventure Theme Park",
-            "Curug Bidadari Sentul",
-            "Bukit Pelangi",
-            "Restoran Lorin Sentul",
-            "Apotek Kimia Farma Sentul City"
-        ],
-        "Gunung Mas": [
-            "The Grand Hill Hotel",
-            "RSP Goenawan Partowidigdo",
-            "Polsek Cisarua",
-            "Resto Agrowisata Gunung Mas",
-            "Apotek Kimia Farma Cisarua"
-        ]
+    // Fasilitas yang WAJIB ikut jalur rute venue tertentu (sisanya tetap
+    // pemilihan otomatis terdekat, total ≤ ROUTE_STOPS_MAX).
+    const routePinnedFacilities = {
+        "GOR Vokasi IPB": ["Teras Om Frend"]
     };
 
     // Koordinat fasilitas hasil geocoding (Nominatim/Photon), di-bake agar
@@ -1438,6 +1313,7 @@
         "The Jungle Water Park": [-6.6344256, 106.7954514],
         "The Mirah Hotel Bogor": [-6.5907329, 106.8036028],
         "The Sahira Hotel": [-6.5750492, 106.8001943],
+        "Teras Om Frend": [-6.5885, 106.8092],
         "Toko Adelways (Kantin IPB Cilibende)": [-6.5954187, 106.7882974],
         "WHIZ Prime Hotel Bogor Yasmin": [-6.5668, 106.7705],
         "Yasmin Waterpark": [-6.5617285, 106.7651193],
@@ -1654,12 +1530,16 @@
         });
     }
 
+    function norm(s) {
+        return (s || '').toString().toLowerCase().replace(/[\s-]+/g, '');
+    }
+
     // Fungsi Render Marker Venue
-    function renderVenues(venuesData, filterCabor) {
+    function renderVenues(venuesData, filterCabors) {
         venuesData.forEach(venue => {
             const caborList = venue.cabor.split(',').map(c => c.trim());
             caborList.forEach((cabor, index) => {
-                if (filterCabor && cabor.toLowerCase() !== filterCabor.toLowerCase()) return;
+                if (filterCabors && filterCabors.length && !filterCabors.includes(norm(cabor))) return;
                 const offset = getOffset(index, caborList.length);
                 const icon = createSportIcon(cabor);
                 const marker = L.marker([venue.lat + offset.lat, venue.lng + offset.lng], {
@@ -1673,6 +1553,10 @@
                     const v = venue.name.toLowerCase();
                     if (Array.from(vs.options).some(o => o.value === v)) vs.value = v;
                     if (window.filterCaborByVenue) window.filterCaborByVenue();
+                    if (window.applyFasilitasFilter) {
+                        const f = document.getElementById('fasilitas');
+                        window.applyFasilitasFilter(f ? f.value : '');
+                    }
                 });
                 markers.push(marker);
             });
@@ -1699,32 +1583,75 @@
 
         function filterCaborByVenue() {
             const venueVal = venueSelect.value.toLowerCase();
+            const currentCabor = caborSelect.value;
             caborSelect.innerHTML = '';
             caborSelect.add(new Option(allCaborOptions[0].text, ''));
 
-            if (!venueVal) {
-                allCaborOptions.slice(1).forEach(o => caborSelect.add(new Option(o.text, o.value)));
-                caborSelect.value = '';
-                return;
-            }
-
-            const venue = venueData.find(v => v.name.toLowerCase().includes(venueVal));
-            if (!venue) {
-                allCaborOptions.slice(1).forEach(o => caborSelect.add(new Option(o.text, o.value)));
-                caborSelect.value = '';
-                return;
-            }
-
-            const venueCabors = venue.cabor.split(',').map(c => c.trim().toLowerCase());
-            allCaborOptions.slice(1).forEach(o => {
-                if (venueCabors.includes(o.text.trim().toLowerCase())) {
-                    caborSelect.add(new Option(o.text, o.value));
+            if (venueVal) {
+                const venue = venueData.find(v => norm(v.name).includes(norm(venueVal)));
+                if (venue) {
+                    const venueCabors = venue.cabor.split(',').map(c => norm(c));
+                    allCaborOptions.slice(1).forEach(o => {
+                        if (venueCabors.includes(norm(o.text))) {
+                            caborSelect.add(new Option(o.text, o.value));
+                        }
+                    });
+                } else {
+                    allCaborOptions.slice(1).forEach(o => caborSelect.add(new Option(o.text, o.value)));
                 }
-            });
-            caborSelect.value = '';
+            } else {
+                allCaborOptions.slice(1).forEach(o => caborSelect.add(new Option(o.text, o.value)));
+            }
+
+            caborSelect.value = Array.from(caborSelect.options).some(o => o.value === currentCabor) ? currentCabor : '';
         }
 
         window.filterCaborByVenue = filterCaborByVenue;
+
+        function applyFasilitasFilter(fasilitasVal) {
+            const filterToCategory = {
+                'hotel': 'cat-hotel',
+                'rumah-sakit': 'cat-rs',
+                'apotek': 'cat-apotek',
+                'rumah-makan': 'cat-resto',
+                'polisi': 'cat-police',
+                'transport': 'cat-transport',
+                'rekreasi': 'cat-rekreasi',
+                'mall': 'cat-mall',
+            };
+            const targetCat = filterToCategory[fasilitasVal];
+            const placeholder = document.getElementById('facilities-placeholder');
+
+            document.querySelectorAll('.facility-filter-btn').forEach(btn => btn.classList.remove('active'));
+
+            if (!currentVenue) {
+                if (placeholder) placeholder.style.display = 'block';
+                document.querySelectorAll('.facility-category').forEach(cat => cat.style.display = 'none');
+                document.querySelectorAll('.facility-filter-btn').forEach(btn => {
+                    if (btn.dataset.filter === 'all') btn.classList.add('active');
+                });
+                return;
+            }
+
+            if (!targetCat) {
+                if (placeholder) placeholder.style.display = 'none';
+                document.querySelectorAll('.facility-category').forEach(cat => cat.style.display = 'block');
+                document.querySelectorAll('.facility-filter-btn').forEach(btn => {
+                    if (btn.dataset.filter === 'all') btn.classList.add('active');
+                });
+                return;
+            }
+
+            if (placeholder) placeholder.style.display = 'none';
+            document.querySelectorAll('.facility-category').forEach(cat => {
+                cat.style.display = cat.id === targetCat ? 'block' : 'none';
+            });
+            document.querySelectorAll('.facility-filter-btn').forEach(btn => {
+                if (btn.dataset.filter === targetCat) btn.classList.add('active');
+            });
+        }
+
+        window.applyFasilitasFilter = applyFasilitasFilter;
 
         if (venueSelect) {
             venueSelect.addEventListener('change', function() {
@@ -1755,7 +1682,6 @@
             clearRoute(); // Bersihkan rute sebelumnya
             document.getElementById('floating-gor-card').style.display = 'none';
 
-            let isVenueFound = false;
             const bounds = L.latLngBounds();
 
             // 1. Proses Filter Cabor & Venue
@@ -1763,78 +1689,40 @@
                 let matchCabor = true;
                 let matchVenue = true;
 
-                if (caborVal) matchCabor = v.cabor.toLowerCase().includes(caborVal);
-                if (venueVal) matchVenue = v.name.toLowerCase().includes(venueVal);
+                if (caborVal) matchCabor = norm(v.cabor).includes(norm(caborVal));
+                if (venueVal) matchVenue = norm(v.name).includes(norm(venueVal));
 
                 return matchCabor && matchVenue;
             });
 
-            let filterCabor = null;
+            let filterCabors = [];
             if (caborVal) {
-                const matched = Object.keys(caborIcons).find(k => k.toLowerCase().includes(caborVal));
-                if (matched) filterCabor = matched;
+                filterCabors = Object.keys(caborIcons)
+                    .filter(k => norm(k).includes(norm(caborVal)))
+                    .map(k => norm(k));
             }
 
             if (filteredVenues.length > 0) {
-                renderVenues(filteredVenues, filterCabor);
+                renderVenues(filteredVenues, filterCabors);
                 filteredVenues.forEach(v => bounds.extend([v.lat, v.lng]));
-                isVenueFound = true;
-            }
-
-            // 2. Proses Cari Fasilitas dari data hardcoded PDF
-            if (fasilitasVal) {
-                if (isVenueFound) {
-                    const v = filteredVenues[0];
-                    currentVenue = v;
-                    smoothFlyTo([v.lat, v.lng], 16);
-                    showVenueDetails(v);
-
-                    const filterToCategory = {
-                        'hotel': 'cat-hotel',
-                        'rumah-sakit': 'cat-rs',
-                        'apotek': 'cat-apotek',
-                        'rumah-makan': 'cat-resto',
-                        'polisi': 'cat-police',
-                        'transport': 'cat-transport',
-                        'rekreasi': 'cat-rekreasi',
-                        'mall': 'cat-mall',
-                    };
-                    const targetCat = filterToCategory[fasilitasVal];
-
-                    const placeholder = document.getElementById('facilities-placeholder');
-                    if (placeholder) placeholder.style.display = 'none';
-
-                    document.querySelectorAll('.facility-category').forEach(cat => {
-                        cat.style.display = cat.id === targetCat ? 'block' : 'none';
-                    });
-
-                    document.querySelectorAll('.facility-filter-btn').forEach(btn => {
-                        btn.classList.remove('active');
-                        if (btn.dataset.filter === targetCat) btn.classList.add('active');
-                    });
+                if (filteredVenues.length === 1) {
+                    const singleVenue = filteredVenues[0];
+                    currentVenue = singleVenue;
+                    smoothFlyTo([singleVenue.lat, singleVenue.lng], 16);
+                    showVenueDetails(singleVenue);
                 } else {
-                    alert('Venue tidak ditemukan dengan kriteria tersebut.');
+                    smoothFlyToBounds(bounds, {
+                        padding: [50, 50],
+                        maxZoom: 15
+                    });
                 }
             } else {
-                if (isVenueFound) {
-                    if (filteredVenues.length === 1) {
-                        smoothFlyTo([filteredVenues[0].lat, filteredVenues[0].lng], 16);
-                    } else {
-                        smoothFlyToBounds(bounds, {
-                            padding: [50, 50],
-                            maxZoom: 15
-                        });
-                    }
-
-                    // Auto-fetch facilities untuk venue pertama yang ditemukan
-                    const v = filteredVenues[0];
-                    currentVenue = v;
-                    showVenueDetails(v);
-                } else {
-                    alert('Venue tidak ditemukan dengan kriteria tersebut.');
-                    resetVenueBounds();
-                }
+                alert('Venue tidak ditemukan dengan kriteria tersebut.');
+                resetVenueBounds();
             }
+
+            // 2. Proses Fasilitas — ikuti venue terakhir dipilih
+            applyFasilitasFilter(fasilitasVal);
         });
 
         // Saat form di-reset
@@ -2025,12 +1913,13 @@
     // Routing:   OSRM Route Service (urutan greedy → satu LineString mengikuti jalan)
     // ═══════════════════════════════════════════════════════════════
 
-    // Rute biru tunggal: lokasi pengguna → ≤5 fasilitas VALID → venue
-    // (tanpa lokasi: venue → ≤5 fasilitas VALID terdekat). Fasilitas tanpa
-    // koordinat valid DILEWATI (pakai berikutnya), tanpa koordinat palsu/
-    // estimasi. GEOCODE_LIMIT membatasi request geocode runtime.
-    const ROUTE_STOPS_MAX = 5;      // maks fasilitas yang masuk jalur rute (3–5)
-    const ROUTE_GEOCODE_LIMIT = 80; // maks fasilitas yang dicoba di-geocode runtime
+    // Rute biru tunggal: lokasi pengguna → ≤6 fasilitas VALID → venue
+    // (tanpa lokasi: venue → ≤6 fasilitas VALID terdekat). Marker & jalur rute
+    // memakai satu set yang sama (≤6). Fasilitas tanpa koordinat valid DILEWATI
+    // (pakai berikutnya), tanpa koordinat palsu/estimasi. GEOCODE_LIMIT
+    // membatasi request geocode runtime.
+    const ROUTE_STOPS_MAX = 6;      // maks fasilitas yang masuk marker & jalur rute (3–6)
+    const ROUTE_GEOCODE_LIMIT = 16; // maks fasilitas yang dicoba di-geocode runtime
     const NOMINATIM_DELAY_MS = 1100; // rate limit Nominatim (>= 1 detik/request)
 
     function createFacilityStopIcon(color) {
@@ -2250,12 +2139,12 @@
 
     // Ambil fasilitas terdekat (sesuai daftar per venue) dari venue;
     // utk masing-masing dapatkan koordinat: baked → URL map → geocoding runtime.
-    // Return { markers, routeStops }: markers = semua fasilitas ber-koordinat
-    // valid (ditampilkan di peta); routeStops = subset jalur rute.
-    // realOnly=true: routeStops dibatasi routeSet (daftar prioritas venue) atau
-    // ROUTE_STOPS_MAX; fasilitas tanpa koordinat valid DILEWATI (tanpa estimasi/
-    // palsu). Geocode: nama pendek dulu (hit-rate tinggi), fallback nama+kota.
-    // Filter: hasil geocode harus ≤ 40 km dari venue (buang false positive).
+    // Return: array fasilitas ber-koordinat valid yang terpakai sebagai marker
+    // DAN jalur rute (satu set yang sama). realOnly=true: hasil dipotong ke
+    // ≤ ROUTE_STOPS_MAX fasilitas terdekat; fasilitas tanpa koordinat valid
+    // DILEWATI (tanpa estimasi/palsu). Geocode: nama pendek dulu (hit-rate
+    // tinggi), fallback nama+kota. Filter: hasil geocode harus ≤ 40 km dari
+    // venue (buang false positive).
     async function collectNearestFacilities(venue, opts) {
         const venueFacilities = facilitiesData[venue.name];
         if (!venueFacilities) return [];
@@ -2264,7 +2153,7 @@
         const MAX_DIST_KM = 40; // toleransi jarak maks dari venue
         const venueCity = extractCityFromAddress(venue.address);
 
-        const priorityOrder = ['hospital', 'hotel', 'pharmacy', 'restaurant', 'police', 'transport', 'rekreasi', 'lodging', 'mall'];
+        const priorityOrder = ['hospital', 'hotel', 'pharmacy', 'restaurant', 'police', 'transport', 'rekreasi', 'lodging'];
         const categoryLabels = {
             hotel: 'Hotel', lodging: 'Hotel', hospital: 'Rumah Sakit',
             pharmacy: 'Apotek', restaurant: 'Restoran', police: 'Polisi',
@@ -2363,48 +2252,27 @@
             });
         }
 
-        // urutkan marker berdasarkan jarak ke venue (tampilan peta).
+        // urutkan fasilitas berdasarkan jarak ke venue (terdekat → terjauh).
         resolved.sort((a, b) => a.distToVenue - b.distToVenue);
 
-        // Rute = subset fasilitas. realOnly=true: rute dipakai untuk jalur biru.
-        //  - Jika venue punya routeSet (daftar prioritas user) → rute hanya
-        //    fasilitas yang terdaftar, diurutkan sesuai urutan routeSet.
-        //  - Selain itu → pemilihan otomatis: satu terdekat per kategori dulu,
-        //    lalu isi sisa slot dengan fasilitas terdekat yang tersisa.
-        // Marker = SEMUA fasilitas ber-koordinat valid (daftar ekstra tetap tampil).
-        let routeStops;
+        // realOnly=true: marker & jalur rute memakai satu set fasilitas terdekat
+        // (≤ ROUTE_STOPS_MAX). Fasilitas tanpa koordinat valid sudah DILEWATI
+        // saat pengumpulan kandidat (tanpa estimasi/palsu). Fasilitas yang
+        // ter-pin (routePinnedFacilities) WAJIB ikut rute; sisanya terdekat.
         if (opts.realOnly) {
-            const routeSet = (opts.routeSet && opts.routeSet.length) ? opts.routeSet : null;
-            if (routeSet) {
-                const rank = {};
-                routeSet.forEach((name, idx) => { rank[name] = idx; });
-                routeStops = resolved.filter(f => rank[f.name] !== undefined)
-                    .sort((a, b) => rank[a.name] - rank[b.name]);
+            const capStops = (venue && venue.maxStops) ? venue.maxStops : ROUTE_STOPS_MAX;
+            const pinnedList = (routePinnedFacilities && routePinnedFacilities[venue.name]) || [];
+            if (pinnedList.length > 0) {
+                const pinned = resolved.filter(f => pinnedList.indexOf(f.name) !== -1);
+                const rest = resolved.filter(f => pinnedList.indexOf(f.name) === -1);
+                resolved = pinned.concat(rest).slice(0, capStops);
+                resolved.sort((a, b) => a.distToVenue - b.distToVenue);
             } else {
-                const capStops = (venue && venue.maxStops) ? venue.maxStops : ROUTE_STOPS_MAX;
-                const picked = [];
-                const pickedType = {};
-                resolved.forEach(f => {
-                    if (picked.length >= capStops) return;
-                    if (f.type && !pickedType[f.type]) {
-                        picked.push(f);
-                        pickedType[f.type] = true;
-                    }
-                });
-                resolved.forEach(f => {
-                    if (picked.length >= capStops) return;
-                    if (!picked.includes(f)) {
-                        picked.push(f);
-                        pickedType[f.type] = true;
-                    }
-                });
-                routeStops = picked;
+                resolved = resolved.slice(0, capStops);
             }
-        } else {
-            routeStops = resolved;
         }
 
-        return { markers: resolved, routeStops: routeStops };
+        return resolved;
     }
 
     // Susun urutan kunjungan secara logis (greedy nearest-neighbor):
@@ -2486,7 +2354,7 @@
 
     // Orchestrator utama: tombol "Tampilkan Rute" → lokasi pengguna →
     // fasilitas terdekat (koordinat valid saja) → OSRM buat SATU jalur
-    // biru: lokasi pengguna → ≤4 fasilitas → venue.
+    // biru: lokasi pengguna → ≤6 fasilitas → venue.
     async function startAutoRoute() {
         if (!currentVenue || !map) return;
 
@@ -2517,27 +2385,24 @@
             userLocationMarker.bindTooltip('Lokasi Anda');
         }
 
-        // 2. Fasilitas terdekat dengan koordinat VALID (baked/URL/geocode).
+        // 2. Fasilitas terdekat dengan koordinat VALID (baked/URL/geocode), satu
+        //    set yang sama untuk marker & jalur rute (≤ ROUTE_STOPS_MAX).
         //    Tanpa koordinat valid → dilewati, pakai fasilitas berikutnya.
-        //    markers = semua fasilitas valid; routeStops = daftar prioritas rute.
-        let facilityCoords = { markers: [], routeStops: [] };
+        let facilityCoords = [];
         try {
-            facilityCoords = await collectNearestFacilities(currentVenue, {
-                realOnly: true,
-                routeSet: (routeSets && routeSets[currentVenue.name]) ? routeSets[currentVenue.name] : null
-            });
+            facilityCoords = await collectNearestFacilities(currentVenue, { realOnly: true });
         } catch (e) {
-            facilityCoords = { markers: [], routeStops: [] };
+            facilityCoords = [];
         }
 
-        // 3. Marker SEMUA fasilitas valid di peta (warna per kategori).
+        // 3. Marker fasilitas terdekat di peta (warna per kategori).
         const stopColors = {
             hospital: '#dc2626', hotel: '#d97706', lodging: '#d97706',
             pharmacy: '#9333ea', restaurant: '#16a34a', police: '#4f46e5',
             transport: '#0284c7', rekreasi: '#0d9488', venue: '#2563eb'
         };
         facilityLayerMarkers = [];
-        facilityCoords.markers.forEach(f => {
+        facilityCoords.forEach(f => {
             const color = stopColors[f.type] || '#6b7280';
             const m = L.marker([f.lat, f.lng], {
                 icon: createFacilityStopIcon(color),
@@ -2547,8 +2412,8 @@
             facilityLayerMarkers.push(m);
         });
 
-        // 4. Waypoint: (lokasi user →) fasilitas rute (routeStops) → venue.
-        const venuePts = facilityCoords.routeStops.map(f => ({
+        // 4. Waypoint: (lokasi user →) ≤ROUTE_STOPS_MAX fasilitas terdekat → venue.
+        const venuePts = facilityCoords.map(f => ({
             lat: f.lat, lng: f.lng,
             name: f.name, type: f.type, label: f.label,
             address: f.address, estimated: f.estimated

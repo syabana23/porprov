@@ -6,7 +6,7 @@ const rows = [
   { no: 5, sport: 'Angkat Besi', venue: 'Green Forest Hotel', durasi: 7, c: [5,6], r: [7,8,9,10], p: [11] },
   { no: 6, sport: 'Arung Jeram', venue: 'Green Forest Hotel', durasi: 12, c: [8,9], r: [10,11,12,13,14,15,16,17,18], p: [19] },
   { no: 7, sport: 'Binaraga', venue: 'Green Forest Hotel', durasi: 5, c: [16,17], r: [18,19], p: [20] },
-  { no: 8, sport: 'Bola Tangan Indoor', venue: 'PPSDMAP Kemenhub Kemang', durasi: 9, c: [8,9], r: [10,11,12,13,14,15], p: [16] },
+  { no: 8, sport: 'Bola Tangan Indoor', venue: 'Sport Center IPB Dramaga Kab-Bogor', durasi: 9, c: [8,9], r: [10,11,12,13,14,15], p: [16] },
   { no: 9, sport: 'Bola Tangan Pasir', venue: 'Padepokan Voli Sentul', durasi: 7, c: [], r: [14,15,16,17,18,19], p: [20] },
   { no: 10, sport: 'Dansa', venue: 'Brajamustika Hotel', durasi: 6, c: [10,11], r: [12,13,14], p: [15] },
   { no: 11, sport: 'Drumband', venue: 'Indoor A GOR Pajajaran', durasi: 10, c: [7,8], r: [9,10,11,12,13,14,15], p: [16] },

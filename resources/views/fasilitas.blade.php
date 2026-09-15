@@ -183,7 +183,6 @@
                     <option value="Green Forest Hotel">Green Forest Hotel</option>
                     <option value="Gymnasium Sekolah Vokasi IPB">Gymnasium Sekolah Vokasi IPB</option>
                     <option value="GOR Yasmin Bulutangkis">GOR Yasmin Bulutangkis</option>
-                    <option value="PPSDMAP Kemenhub Kemang Kab-Bogor">PPSDMAP Kemenhub Kemang</option>
                     <option value="Padepokan Voli Sentul">Padepokan Voli Sentul</option>
                     <option value="Gunung Mas (Cisarua)">Gunung Mas (Cisarua)</option>
                     <option value="Lapangan Tembak Cisangkan">Lapangan Tembak Cisangkan</option>
