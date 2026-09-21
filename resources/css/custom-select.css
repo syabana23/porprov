@@ -277,6 +277,17 @@
   border-color: #e2e8f0;
 }
 
+/* Ensure open dropdown floats above sibling content (tabs, scroll list) in filter panel */
+.filter-form-clean .custom-select-wrapper.cs-open {
+  z-index: 60;
+}
+
+/* Raise the wrapping section above stat cards (z-index: 10) while a dropdown is open */
+.section-wrap.cs-dropdown-open {
+  position: relative;
+  z-index: 20;
+}
+
 /* Dark Mode support */
 html.dark .cs-trigger {
   background-color: #1e293b;
@@ -390,11 +401,20 @@ html.dark .jadwal-filter {
 }
 
 .filter-form-clean .custom-select-wrapper .cs-trigger {
-  height: var(--filter-height);
+  height: auto;
   min-height: var(--filter-height);
-  max-height: var(--filter-height);
+  max-height: none;
   padding: 0 0.625rem;
   box-sizing: border-box;
+}
+
+.filter-form-clean .cs-dropdown {
+  min-width: 0;
+}
+
+.filter-form-clean .cs-option .cs-option-text {
+  white-space: normal;
+  line-height: 1.3;
 }
 
 .filter-form-clean .custom-select-wrapper .cs-icon-wrap {
@@ -403,10 +423,18 @@ html.dark .jadwal-filter {
 
 .filter-form-clean .custom-select-wrapper .cs-label {
   font-size: 0.875rem;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+  line-height: 1.35;
 }
 
 .filter-form-clean .custom-select-wrapper .cs-chevron {
   margin-left: 4px;
+}
+
+.filter-form-clean .cs-options-list {
+  max-height: 160px;
 }
 
 .filter-box,

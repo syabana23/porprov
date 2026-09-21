@@ -429,11 +429,14 @@ export class CustomSelect {
     this.wrapper.classList.add('cs-open');
     this.wrapper.__customSelect = this;
     this.trigger.setAttribute('aria-expanded', 'true');
+    const sdWrap = this.wrapper.closest('.section-wrap');
+    if (sdWrap) sdWrap.classList.add('cs-dropdown-open');
 
     // Position check (viewport overflow)
     const rect = this.wrapper.getBoundingClientRect();
+    const needed = Math.max(this.dropdown.offsetHeight, 280) + 12;
     const spaceBelow = window.innerHeight - rect.bottom;
-    if (spaceBelow < 280 && rect.top > 280) {
+    if (spaceBelow < needed && rect.top > needed) {
       this.wrapper.classList.add('cs-drop-up');
     } else {
       this.wrapper.classList.remove('cs-drop-up');
@@ -463,6 +466,8 @@ export class CustomSelect {
     this.wrapper.classList.remove('cs-open', 'cs-drop-up');
     this.trigger.setAttribute('aria-expanded', 'false');
     this.highlightIndex = -1;
+    const sdWrap = this.wrapper.closest('.section-wrap');
+    if (sdWrap) sdWrap.classList.remove('cs-dropdown-open');
   }
 
   observeNativeSelect() {

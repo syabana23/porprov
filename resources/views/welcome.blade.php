@@ -316,13 +316,6 @@ $bg4 = asset('images/venue4.jpeg');
                     <!-- Route Controls (otomatis, tanpa pilihan fasilitas manual) -->
                     <div class="route-controls" id="route-controls" style="display:none;">
                         <div class="route-divider"></div>
-                        <button class="btn-route" id="btn-show-route" type="button">
-                            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l5.447 2.724A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
-                            </svg>
-                            Tampilkan Rute
-                        </button>
                         <div class="route-loading" id="route-loading" style="display:none;">
                             <span class="route-spinner"></span>
                             <span>Mencari fasilitas terdekat & menghitung rute...</span>
@@ -370,7 +363,7 @@ $bg4 = asset('images/venue4.jpeg');
 
                 <div>
                     <select class="filter-select-styled" id="cabor">
-                        <option value="">Pilih Cabang Olahraga</option>
+                        <option value="">Pilih Cabor</option>
                         <option value="aerosport-gantolle">Aerosport - Gantolle</option>
                         <option value="aerosport-paralayang">Aerosport - Paralayang</option>
                         <option value="anggar">Anggar</option>
@@ -1339,8 +1332,7 @@ $bg4 = asset('images/venue4.jpeg');
             address: "Kawasan Agrowisata Gunung Mas, Tugu Selatan, Cisarua",
             distance: "200 m",
             mapUrl: "https://www.google.com/maps/search/?api=1&query=Resto%20Agrowisata%20Gunung%20Mas%20Kawasan%20Agrowisata%20Gunung%20Mas%20Tugu%20Selatan%20Cisarua"
-        }],
-        transport: transportFacilities
+        }]
     };
 
     const cisangkanFacilities = {
@@ -1881,6 +1873,12 @@ $bg4 = asset('images/venue4.jpeg');
                 const placeholder = document.getElementById('facilities-placeholder');
                 if (placeholder) placeholder.style.display = 'block';
                 document.querySelectorAll('.facility-category').forEach(cat => cat.style.display = 'none');
+                // Pulihkan daftar Cabor penuh (tidak terikat venue sebelumnya)
+                const venueSel = document.getElementById('venue');
+                const caborSel = document.getElementById('cabor');
+                if (venueSel) venueSel.value = '';
+                if (caborSel) filterCaborByVenue();
+                currentVenue = null;
             }, 100);
         });
     }
@@ -1974,6 +1972,11 @@ $bg4 = asset('images/venue4.jpeg');
                 behavior: 'smooth',
                 block: 'nearest'
             });
+        }
+
+        // Rute tampil otomatis setiap venue dipilih/dibuka
+        if (map && currentVenue) {
+            setTimeout(() => { startAutoRoute(); }, 60);
         }
     }
 
@@ -2115,6 +2118,7 @@ $bg4 = asset('images/venue4.jpeg');
 
     const facilityCoordsMap = {
         "ASTON Bogor Hotel & Resort": [-6.6039181, 106.8386862],
+        "Apotek Kimia Farma Cisarua": [-6.6795, 106.9400],
         "Apotek Kimia Farma KBP": [-6.8683426, 107.4672913],
         "Bobocabin Gunung Mas": [-6.7062251, 106.9688804],
         "Bogor Great Mall": [-6.5560457, 106.7755713],
@@ -2124,6 +2128,7 @@ $bg4 = asset('images/venue4.jpeg');
         "Curug Bidadari Sentul": [-6.5882587, 106.9849449],
         "Fitra Hotel Majalengka": [-6.8361704, 108.2322636],
         "Grand Cordela Hotel Bandung": [-6.9370389, 107.687952],
+        "Grand Diara Hotel Puncak": [-6.6885, 106.9560],
         "Harris Hotel Sentul City": [-6.5595269, 106.8506102],
         "IPB Hotel & Convention Centre": [-6.6021771, 106.8066276],
         "JungleLand Adventure Theme Park": [-6.5728839, 106.8947001],
@@ -2143,6 +2148,7 @@ $bg4 = asset('images/venue4.jpeg');
         "Polsek Bogor Barat": [-6.65764, 106.8492406],
         "Polsek Bogor Selatan": [-6.6422893, 106.8076973],
         "Polsek Bogor Utara": [-6.5792052, 106.8067405],
+        "Polsek Cisarua": [-6.6926, 106.9458],
         "Polsek Kemang": [-6.4787686, 106.7234857],
         "Polsek Padalarang": [-6.8422655, 107.4969093],
         "Polsek Tanah Sareal": [-6.5425753, 106.7841037],
@@ -2177,6 +2183,7 @@ $bg4 = asset('images/venue4.jpeg');
         "RSUD Kota Bogor": [-6.5804103, 106.7784481],
         "RSUD Majalengka": [-6.7608967, 108.1955299],
         "Restoran Lorin Sentul": [-6.5315604, 106.85655],
+        "Resto Agrowisata Gunung Mas": [-6.7034, 106.9713],
         "Rumah Makan Ampera Pemuda": [-6.5789558, 106.7964602],
         "Swiss-Belhotel Bogor": [-6.5886646, 106.8042799],
         "The Grand Hill Hotel": [-6.6894345, 106.9610658],
@@ -2638,7 +2645,7 @@ $bg4 = asset('images/venue4.jpeg');
         const infoTitle = document.getElementById('route-info-title');
 
         // state loading
-        btn.style.display = 'none';
+        if (btn) btn.style.display = 'none';
         loading.style.display = 'flex';
 
         // 1. Lokasi pengguna = titik awal rute (OPSIONAL). Jika diizinkan →
@@ -2706,7 +2713,7 @@ $bg4 = asset('images/venue4.jpeg');
         const result = await fetchConnectedRoute(orderedPoints);
 
         loading.style.display = 'none';
-        btn.style.display = 'flex';
+        if (btn) btn.style.display = 'flex';
 
         if (!result) {
             error.textContent = 'Rute tidak dapat ditemukan.';

@@ -147,13 +147,6 @@
                 <!-- Route Controls (otomatis, tanpa pilihan fasilitas manual) -->
                 <div class="route-controls" id="route-controls" style="display:none;">
                     <div class="route-divider"></div>
-                    <button class="btn-route" id="btn-show-route" type="button">
-                        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l5.447 2.724A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"/>
-                        </svg>
-                        Tampilkan Rute
-                    </button>
                     <div class="route-loading" id="route-loading" style="display:none;">
                         <span class="route-spinner"></span>
                         <span>Mencari fasilitas terdekat & menghitung rute...</span>
@@ -1744,6 +1737,12 @@
                     btn.classList.remove('active');
                     if (btn.dataset.filter === 'all') btn.classList.add('active');
                 });
+                // Pulihkan daftar Cabor penuh (tidak terikat venue sebelumnya)
+                const venueSel = document.getElementById('venue');
+                const caborSel = document.getElementById('cabor');
+                if (venueSel) venueSel.value = '';
+                if (caborSel) filterCaborByVenue();
+                currentVenue = null;
             }, 100);
         });
     }
@@ -1828,6 +1827,11 @@
                 behavior: 'smooth',
                 block: 'nearest'
             });
+        }
+
+        // Rute tampil otomatis setiap venue dipilih/dibuka
+        if (map && currentVenue) {
+            setTimeout(() => { startAutoRoute(); }, 60);
         }
     }
 
@@ -2369,7 +2373,7 @@
         const infoTitle = document.getElementById('route-info-title');
 
         // state loading
-        btn.style.display = 'none';
+        if (btn) btn.style.display = 'none';
         loading.style.display = 'flex';
 
         // 1. Lokasi pengguna = titik awal rute (OPSIONAL). Jika diizinkan →
@@ -2438,7 +2442,7 @@
         const result = await fetchConnectedRoute(orderedPoints);
 
         loading.style.display = 'none';
-        btn.style.display = 'flex';
+        if (btn) btn.style.display = 'flex';
 
         if (!result) {
             error.textContent = 'Rute tidak dapat ditemukan.';
