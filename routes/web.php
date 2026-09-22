@@ -385,6 +385,7 @@ $venues = [
         'address' => 'Jl. Lodaya II, RT.03/RW.05, Cilibende, Babakan, Kec. Bogor Tengah, Kota Bogor, Jawa Barat 16128',
         'cabor' => 'Shorinji Kempo, Tarung Derajat',
         'gmaps_url' => 'https://maps.app.goo.gl/ekjekDk57iBAQcTVA',
+        'maxStops' => 9,
     ],
     [
         'id' => 4,
@@ -403,6 +404,7 @@ $venues = [
         'address' => 'Jl. Raya Puncak KM 87, Tugu Selatan, Cisarua, Kab. Bogor',
         'cabor' => 'Aerosport - Paralayang',
         'gmaps_url' => 'https://www.google.com/maps/search/?api=1&query=Agrowisata+Gunung+Mas+Cisarua',
+        'maxStops' => 3,
     ],
     [
         'id' => 6,
@@ -412,6 +414,7 @@ $venues = [
         'address' => 'Bogor, Jawa Barat',
         'cabor' => 'Anggar, Angkat Besi, Angkat Berat, Arung Jeram, Binaraga, Petanque, Dansa',
         'gmaps_url' => 'https://maps.app.goo.gl/dgb7WBjKovkcfyLo9',
+        'maxStops' => 7,
     ],
     [
         'id' => 7,
@@ -430,6 +433,7 @@ $venues = [
         'address' => 'Sentul, Bogor, Jawa Barat',
         'cabor' => 'Bola Tangan Pasir',
         'gmaps_url' => 'https://maps.app.goo.gl/cXPfu5acX62py9QY9',
+        'maxStops' => 7,
     ],
     [
         'id' => 9,
@@ -475,6 +479,7 @@ $venues = [
         'address' => 'Bogor, Jawa Barat',
         'cabor' => 'Tenis Meja',
         'gmaps_url' => 'https://maps.app.goo.gl/Fqw4Yn97RyvkSeg27',
+        'maxStops' => 9,
     ],
 ];
 

@@ -1174,6 +1174,11 @@ $bg4 = asset('images/venue4.jpeg');
             address: "CQ9G+V9J, Jl. DR. Sumeru No.89, RT.01/RW.10, Menteng, Kec. Bogor Barat, Kota Bogor, Jawa Barat 16111",
             distance: "2.1 km",
             mapUrl: "https://maps.app.goo.gl/B8HtTPSJUEYy1k6f7"
+        }, {
+            name: "Polsek Bogor Utara",
+            address: "Jl. Raya Pajajaran No.26, RT.05/RW.10, Bantarjati, Kec. Bogor Utara, Kota Bogor, Jawa Barat 16153",
+            distance: "1.1 km",
+            mapUrl: "https://www.google.com/maps/dir/Gor+pajajaran,+CQFX%2B99C,+RT.04%2FRW.01,+Tanah+Sareal,+Kota+Bogor,+Jawa+Barat+16161/Polsek+Bogor+Utara,+Jl.+Raya+Pajajaran+No.26,+RT.05%2FRW.10,+Bantarjati,+Kec.+Bogor+Utara,+Kota+Bogor,+Jawa+Barat+16153/@-6.5845962,106.7915827,15z/data=!4m13!4m12!1m5!1m1!1s0x2e69c5000cee40ab:0xa412bd10cefea370!2m2!1d106.7983925!2d-6.5765742!1m5!1m1!1s0x2e69c5e2ccc27bef:0x95860988a497f417!2m2!1d106.8068179!2d-6.579187?entry=ttu&g_ep=EgoyMDI2MDgzMS4wIKXMDSoASAFQAw%3D%3D"
         }],
         restaurant: [{
             name: "Rumah Makan Ampera Yasmin",
@@ -1499,6 +1504,38 @@ $bg4 = asset('images/venue4.jpeg');
         transport: transportFacilities
     };
 
+    const dramagaFacilities = {
+        hotel: [{
+            name: "Sienna Residence Bogor",
+            address: "Jl. Letjen Ibrahim Adjie No.8, Ciherang, Kec. Dramaga, Kabupaten Bogor, Jawa Barat 16680",
+            distance: "2.5 km",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=Sienna+Residence+Bogor+Jl.+Letjen+Ibrahim+Adjie+No.+8+Ciherang+Dramaga"
+        }],
+        hospital: [{
+            name: "RS Karya Bhakti Pratiwi",
+            address: "Jl. Raya Dramaga KM.7, Dramaga, Kec. Dramaga, Kabupaten Bogor, Jawa Barat 16880",
+            distance: "2.0 km",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=RS+Karya+Bhakti+Pratiwi+Jl.+Raya+Dramaga+KM.+7+Dramaga+Bogor"
+        }, {
+            name: "RS Medika Dramaga",
+            address: "Jl. Raya Dramaga No.KM 7,3, RT.01/RW.06, Margajaya, Kec. Bogor Barat, Kota Bogor, Jawa Barat 16680",
+            distance: "1.8 km",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=RS+Medika+Dramaga+Jl.+Raya+Dramaga+No.+KM+7.3+Margajaya+Bogor"
+        }],
+        police: [{
+            name: "Polsek Dramaga",
+            address: "Jl. Raya Dramaga, Margajaya, Kec. Bogor Barat, Kota Bogor, Jawa Barat 16680",
+            distance: "2.7 km",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=Polsek+Dramaga+Jl.+Raya+Dramaga+Margajaya+Bogor"
+        }],
+        rekreasi: [{
+            name: "Kawasan Wisata Situ Gede",
+            address: "Jl. Cilubang Nagrak No.RT 02/04, RT.03/RW.06, Situgede, Kec. Bogor Barat, Kota Bogor, Jawa Barat 16115",
+            distance: "4.1 km",
+            mapUrl: "https://www.google.com/maps/search/?api=1&query=Kawasan+Wisata+Situ+Gede+Bogor"
+        }]
+    };
+
     const facilitiesData = {
         "GOR Pajajaran Indoor A": pajajaranFacilities,
         "GOR Pajajaran Indoor B": pajajaranFacilities,
@@ -1513,12 +1550,65 @@ $bg4 = asset('images/venue4.jpeg');
         "Arcamanik": arcamanikFacilities,
         "Kota Baru Parahyangan": kotaBaruFacilities,
         "Majalengka": majalengkaFacilities,
+        "Sport Center IPB Dramaga": dramagaFacilities,
     };
 
     // Fasilitas yang WAJIB ikut jalur rute venue tertentu (sisanya tetap
     // pemilihan otomatis terdekat, total ≤ ROUTE_STOPS_MAX).
     const routePinnedFacilities = {
-        "GOR Vokasi IPB": ["Teras Om Frend"]
+        "GOR Vokasi IPB": [
+            "Swiss-Belhotel Bogor",
+            "RS PMI Bogor",
+            "RS Siloam Bogor",
+            "RS Azra Bogor",
+            "Polsek Bogor Utara",
+            "Mall Botani Square Bogor",
+            "Lapangan Sempur Bogor",
+            "Kebun Raya Bogor",
+            "Teras Om Frend"
+        ],
+        "GOR Pajajaran Indoor B": ["Mall Jambu Dua"],
+        "Green Forest Hotel": [
+            "ASTON Bogor Hotel & Resort",
+            "RS UMMI",
+            "RS VANIA",
+            "RS Melania Bogor",
+            "Polsek Bogor Selatan",
+            "The Jungle Water Park",
+            "Mall BTM"
+        ],
+        "GOR Yasmin": [
+            "Bogor Icon Hotel",
+            "RS Hermina Bogor",
+            "RS Graha Medika Bogor",
+            "RSUD Kota Bogor",
+            "Polsek Bogor Barat",
+            "Bogor Great Mall",
+            "Yasmin Waterpark",
+            "Marcopolo Water Adventure",
+            "Kawasan Wisata Situ Gede"
+        ],
+        "Sport Center IPB Dramaga": [
+            "Sienna Residence Bogor",
+            "RS Karya Bhakti Pratiwi",
+            "RS Medika Dramaga",
+            "Polsek Dramaga",
+            "Kawasan Wisata Situ Gede"
+        ],
+        "Gunung Mas": [
+            "The Grand Hill Hotel",
+            "RSP Goenawan Partowidigdo",
+            "Polsek Cisarua"
+        ],
+        "Padepokan Voli Sentul": [
+            "Hotel Green Wattana Sentul",
+            "RS EMC Sentul",
+            "Polsek Babakan Madang",
+            "Mall AEON Sentul Bogor",
+            "JungleLand Adventure Theme Park",
+            "Curug Bidadari Sentul",
+            "Bukit Pelangi"
+        ]
     };
 
     let map;
@@ -1823,6 +1913,7 @@ $bg4 = asset('images/venue4.jpeg');
             const venueVal = document.getElementById('venue').value.toLowerCase();
 
             clearMarkers();
+            clearRoute();
             const floatingCard = document.getElementById('floating-gor-card');
             if (floatingCard) floatingCard.style.display = 'none';
 
@@ -1866,6 +1957,7 @@ $bg4 = asset('images/venue4.jpeg');
         filterForm.addEventListener('reset', function() {
             setTimeout(() => {
                 clearMarkers();
+                clearRoute();
                 renderVenues(venueData);
                 smoothFlyTo([-6.587, 106.803], 13);
                 const floatingCard = document.getElementById('floating-gor-card');
@@ -2117,7 +2209,7 @@ $bg4 = asset('images/venue4.jpeg');
     // tanpa lokasi: venue → fasilitas. Fasilitas tanpa koordinat valid dilewati.
 
     const facilityCoordsMap = {
-        "ASTON Bogor Hotel & Resort": [-6.6039181, 106.8386862],
+        "ASTON Bogor Hotel & Resort": [-6.6364, 106.7962],
         "Apotek Kimia Farma Cisarua": [-6.6795, 106.9400],
         "Apotek Kimia Farma KBP": [-6.8683426, 107.4672913],
         "Bobocabin Gunung Mas": [-6.7062251, 106.9688804],
@@ -2125,14 +2217,20 @@ $bg4 = asset('images/venue4.jpeg');
         "Bogor Icon Hotel": [-6.5561334, 106.7827129],
         "Bukit Pelangi": [-6.618203, 106.8808525],
         "Bumi Aki Kota Baru Parahyangan": [-6.866775, 107.4648551],
-        "Curug Bidadari Sentul": [-6.5882587, 106.9849449],
+        "Curug Bidadari Sentul": [-6.6140625, 106.9084375],
         "Fitra Hotel Majalengka": [-6.8361704, 108.2322636],
         "Grand Cordela Hotel Bandung": [-6.9370389, 107.687952],
         "Grand Diara Hotel Puncak": [-6.6885, 106.9560],
         "Harris Hotel Sentul City": [-6.5595269, 106.8506102],
+        "Hotel Green Wattana Sentul": [-6.5590, 106.8580],
         "IPB Hotel & Convention Centre": [-6.6021771, 106.8066276],
         "JungleLand Adventure Theme Park": [-6.5728839, 106.8947001],
         "Kebun Raya Bogor": [-6.5983048, 106.7994229],
+        "Kawasan Wisata Situ Gede": [-6.5580, 106.7560],
+        "Polsek Dramaga": [-6.5628768, 106.7244512],
+        "RS Karya Bhakti Pratiwi": [-6.5694373, 106.7382634],
+        "RS Medika Dramaga": [-6.5718338, 106.7394547],
+        "Sienna Residence Bogor": [-6.5741302, 106.7508281],
         "Key Inn Hotel": [-6.5976712, 106.80908],
         "Lapangan Sempur Bogor": [-6.5916349, 106.8007857],
         "Lorin Sentul Hotel": [-6.5315604, 106.85655],
@@ -2196,12 +2294,12 @@ $bg4 = asset('images/venue4.jpeg');
         "Zest Hotel Bogor": [-6.5933754, 106.8051007],
     };
 
-    // Rute biru tunggal: lokasi pengguna → ≤6 fasilitas VALID → venue
-    // (tanpa lokasi: venue → ≤6 fasilitas VALID terdekat). Fasilitas tanpa
+    // Rute biru tunggal: lokasi pengguna → ≤7 fasilitas VALID → venue
+    // (tanpa lokasi: venue → ≤7 fasilitas VALID terdekat). Fasilitas tanpa
     // koordinat valid DILEWATI (pakai berikutnya), tanpa koordinat palsu/
     // estimasi. GEOCODE_LIMIT membatasi request geocode runtime.
-    const ROUTE_STOPS_MAX = 6;      // maks fasilitas yang masuk marker & jalur rute (3–6)
-    const ROUTE_GEOCODE_LIMIT = 16; // maks fasilitas yang dicoba di-geocode runtime
+    const ROUTE_STOPS_MAX = 7;      // maks fasilitas yang masuk marker & jalur rute (3–7)
+    const ROUTE_GEOCODE_LIMIT = 24; // maks fasilitas yang dicoba di-geocode runtime
     const NOMINATIM_DELAY_MS = 1100; // rate limit Nominatim (>= 1 detik/request)
 
     function createFacilityStopIcon(color) {
@@ -2433,11 +2531,11 @@ $bg4 = asset('images/venue4.jpeg');
         const MAX_DIST_KM = 40; // toleransi jarak maks dari venue
         const venueCity = extractCityFromAddress(venue.address);
 
-        const priorityOrder = ['hospital', 'hotel', 'pharmacy', 'restaurant', 'police', 'transport', 'rekreasi', 'lodging'];
+        const priorityOrder = ['hospital', 'hotel', 'pharmacy', 'restaurant', 'police', 'transport', 'rekreasi', 'mall', 'lodging'];
         const categoryLabels = {
             hotel: 'Hotel', lodging: 'Hotel', hospital: 'Rumah Sakit',
             pharmacy: 'Apotek', restaurant: 'Restoran', police: 'Polisi',
-            transport: 'Transport', rekreasi: 'Rekreasi'
+            transport: 'Transport', rekreasi: 'Rekreasi', mall: 'Mall'
         };
 
         // Kumpulkan semua kandidat fasilitas (kategori prioritas didahulukan)
@@ -2674,7 +2772,7 @@ $bg4 = asset('images/venue4.jpeg');
         const stopColors = {
             hospital: '#dc2626', hotel: '#d97706', lodging: '#d97706',
             pharmacy: '#9333ea', restaurant: '#16a34a', police: '#4f46e5',
-            transport: '#0284c7', rekreasi: '#0d9488', venue: '#2563eb'
+            transport: '#0284c7', rekreasi: '#0d9488', mall: '#0ea5e9', venue: '#2563eb'
         };
         facilityLayerMarkers = [];
         facilityCoords.forEach(f => {
