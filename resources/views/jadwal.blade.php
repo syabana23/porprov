@@ -1013,7 +1013,7 @@
 </div>
 
 @push('scripts')
-<script>
+<script nonce="{{ $cspNonce }}">
     /* ================================================================
        FILTERING LOGIC — Filter by search and date picker
        ================================================================ */

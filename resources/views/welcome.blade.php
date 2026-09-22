@@ -802,9 +802,9 @@ $bg4 = asset('images/venue4.jpeg');
 @endpush
 
 @push('scripts')
-<script src="{{ asset('vendor/leaflet/leaflet.js') }}"></script>
+<script src="{{ asset('vendor/leaflet/leaflet.js') }}" nonce="{{ $cspNonce }}"></script>
 
-<script>
+<script nonce="{{ $cspNonce }}">
     const venueData = @json($venues);
 
     /* ── Data Fasilitas Hardcoded dari PDF ── */

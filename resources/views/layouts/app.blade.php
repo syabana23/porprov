@@ -161,7 +161,7 @@
 
     @include('partials.footer')
 
-    <script>
+    <script nonce="{{ $cspNonce }}">
         // Logika Hamburger Menu Mobile
         const hamburger = document.getElementById('hamburger-btn');
         const mobileNav = document.getElementById('mobile-nav');

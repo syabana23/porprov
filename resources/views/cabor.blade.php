@@ -115,10 +115,10 @@
 @endsection
 
 @push('scripts')
-<script>
+<script nonce="{{ $cspNonce }}">
     window.CABORS = @json($cabors);
 </script>
-<script>
+<script nonce="{{ $cspNonce }}">
     const CABOR_IMG = "{{ asset('images/cabor') }}";
     const caborModal = document.getElementById('caborModal');
     const caborCloseBtn = document.getElementById('caborModalClose');

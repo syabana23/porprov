@@ -372,9 +372,9 @@
 @endpush
 
 @push('scripts')
-<script src="{{ asset('vendor/leaflet/leaflet.js') }}"></script>
+<script src="{{ asset('vendor/leaflet/leaflet.js') }}" nonce="{{ $cspNonce }}"></script>
 
-<script>
+<script nonce="{{ $cspNonce }}">
     // 1. DATABASE DATA STRUKTUR (Dari welcome.blade.php agar seragam)
     const venueData = [{
             id: 1,
