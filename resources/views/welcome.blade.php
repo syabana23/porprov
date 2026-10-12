@@ -2156,7 +2156,7 @@ $bg4 = asset('images/venue4.jpeg');
         }, 5000);
     })();
 
-    // ── Hero Countdown Timer (Countdown to 31 October) ──
+    // ── Hero Countdown Timer (Countdown ke 3 November 2026) ──
     (function initHeroCountdown() {
         const daysEls = document.querySelectorAll('.cd-days-val, .fc-days-val');
         const hoursEls = document.querySelectorAll('.cd-hours-val, .fc-hours-val');
@@ -2165,17 +2165,13 @@ $bg4 = asset('images/venue4.jpeg');
 
         if (!daysEls.length) return;
 
-        function updateCountdown() {
-            const now = new Date();
-            let target = new Date('2026-10-31T00:00:00+07:00');
-            if (now > target) {
-                target = new Date(now.getFullYear(), 9, 31, 0, 0, 0);
-                if (now > target) {
-                    target = new Date(now.getFullYear() + 1, 9, 31, 0, 0, 0);
-                }
-            }
+        // Target tetap 3 Nov 2026 00:00 WIB (tampil 21 hari)
+        const targetTime = new Date('2026-11-03T00:00:00+07:00').getTime();
 
-            const diff = target.getTime() - now.getTime();
+        function updateCountdown() {
+            const now = Date.now();
+
+            const diff = targetTime - now;
             if (diff <= 0) {
                 daysEls.forEach(el => el.textContent = '00');
                 hoursEls.forEach(el => el.textContent = '00');

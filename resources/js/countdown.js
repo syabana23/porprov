@@ -24,15 +24,17 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // ── Target tetap: 3 November 2026 00:00 WIB (tampil 21 hari) ──
+    const target = new Date('2026-11-03T00:00:00+07:00');
+
+    // Tampilkan tanggal target (fallback statis bila locale gagal)
+    const subEl = wrap.querySelector('.pcd-sub');
+    if (subEl) {
+        subEl.textContent = '3 November 2026';
+    }
+
     function tick() {
         const now = new Date();
-        let target = new Date('2026-10-31T00:00:00+07:00');
-        if (now > target) {
-            target = new Date(now.getFullYear(), 9, 31, 0, 0, 0);
-            if (now > target) {
-                target = new Date(now.getFullYear() + 1, 9, 31, 0, 0, 0);
-            }
-        }
 
         const diff = target.getTime() - now.getTime();
         if (diff <= 0) {
