@@ -24,19 +24,44 @@
     RewriteRule ^ index.php [L]
 </IfModule>
 
-# Security Headers (Apache fallback — Laravel middleware is primary)
-<IfModule mod_headers.c>
-    Header always set X-Frame-Options "DENY"
-    Header always set X-Content-Type-Options "nosniff"
-    Header always set Referrer-Policy "strict-origin-when-cross-origin"
-    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
-    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+# Paksa HTTPS di level Apache. Tanpa ini respons HTTP -> HTTPS telanjang
+# (scanner membaca respons pertama, bukan hanya halaman tujuan). Header
+# keamanan tetap dipasang oleh mod_headers di bawah, dengan expr=-z agar
+# tidak dobel ketika respons sudah membawa header dari middleware Laravel.
+<IfModule mod_rewrite.c>
+    RewriteCond %{HTTPS} !=on
+    RewriteCond %{HTTP:X-Forwarded-Proto} !https
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+</IfModule>
 
-    # [TAMBAHAN] Memenuhi rekomendasi audit (Tanpa Unsafe-Inline & Unsafe-Eval)
-    Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self';"
-    
-    # [TAMBAHAN] Proteksi XSS bawaan browser
-    Header always set X-XSS-Protection "1; mode=block"
+# Security Headers — Apache fallback KHUSUS file statis (images/vendor/build).
+# Middleware App\Http\Middleware\SecurityHeaders adalah sumber utama untuk
+# respons Laravel. Setiap baris di bawah memakai "expr=-z %{resp:...}" agar
+# TIDAK menimpa/menggandakan header yang sudah dipasang middleware
+# (header ganda yang digabung koma membuat securityheaders.com gagal parse).
+# Kurangi fingerprint server untuk file statis yang dilayani Apache.
+# (Untuk respons Laravel, X-Powered-By/Server sudah dihapus middleware.)
+# Catatan: ServerTokens TIDAK boleh di .htaccess (konteksnya server config;
+# di .htaccess memicu error "Invalid command" + HTTP 500). Atur di VirtualHost
+# saat deploy bila perlu.
+ServerSignature Off
+
+<IfModule mod_headers.c>
+    Header always unset X-Powered-By
+    Header always unset Server
+    Header always set X-Frame-Options "DENY" "expr=-z %{resp:X-Frame-Options}"
+    Header always set X-Content-Type-Options "nosniff" "expr=-z %{resp:X-Content-Type-Options}"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin" "expr=-z %{resp:Referrer-Policy}"
+    Header always set Permissions-Policy "accelerometer=(), ambient-light-sensor=(), autoplay=(), battery=(), camera=(), cross-origin-isolated=(), display-capture=(), document-domain=(), encrypted-media=(), execution-while-not-rendered=(), execution-while-out-of-viewport=(), fullscreen=(self \"https://www.youtube.com\" \"https://www.youtube-nocookie.com\"), gamepad=(), geolocation=(), gyroscope=(), hid=(), idle-detection=(), local-fonts=(), magnetometer=(), microphone=(), midi=(), payment=(), picture-in-picture=(self \"https://www.youtube.com\" \"https://www.youtube-nocookie.com\"), publickey-credentials-get=(), screen-wake-lock=(), serial=(), usb=(), web-share=(), xr-spatial-tracking=()" "expr=-z %{resp:Permissions-Policy}"
+    Header always set Cross-Origin-Opener-Policy "same-origin" "expr=-z %{resp:Cross-Origin-Opener-Policy}"
+    Header always set Cross-Origin-Resource-Policy "same-origin" "expr=-z %{resp:Cross-Origin-Resource-Policy}"
+    Header always set X-Permitted-Cross-Domain-Policies "none" "expr=-z %{resp:X-Permitted-Cross-Domain-Policies}"
+    Header always set Origin-Agent-Cluster "?1" "expr=-z %{resp:Origin-Agent-Cluster}"
+    Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains" "expr=%{HTTPS} == 'on' && -z %{resp:Strict-Transport-Security}"
+
+    # [SENGAJA NONAKTIF] CSP dikelola oleh middleware SecurityHeaders (bawa nonce
+    # per-request). Header ganda akan menonaktifkan nonce dan memblokir script sah.
+    # Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self';"
 
     # Block access to sensitive files
     <FilesMatch "\.(env|log|sql|bak|sh|git)$">

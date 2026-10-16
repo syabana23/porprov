@@ -42,7 +42,7 @@
                 src="https://www.youtube.com/embed/{{ $liveStream['video_id'] }}"
                 title="Live Streaming PORPROV XV Kota Bogor 2026"
                 frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; fullscreen; gyroscope; picture-in-picture; web-share"
                 allowfullscreen>
             </iframe>
         </div>
