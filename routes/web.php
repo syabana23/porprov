@@ -775,8 +775,11 @@ Route::get('/kontingen', function () use ($kontingens) {
     return view('kontingen', compact('kontingens'));
 });
 
-Route::get('/klasemen-medali', function () {
-    abort(404);
+Route::get('/klasemen-medali', function () use ($klasemen) {
+    usort($klasemen, function ($a, $b) {
+        return [$b['emas'], $b['perak'], $b['perunggu']] <=> [$a['emas'], $a['perak'], $a['perunggu']];
+    });
+    return view('klasemen-medali', compact('klasemen'));
 });
 
 Route::get('/atlet', function () {

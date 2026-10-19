@@ -44,7 +44,7 @@
             <nav class="header-nav">
                 <a href="{{ url('/') }}" class="{{ request()->is('/') ? 'active' : '' }}">BERANDA</a>
                 <div class="nav-item has-dropdown">
-                    <a href="#" class="nav-link {{ (request()->is('jadwal') || request()->is('cabor*') || request()->is('kontingen')) ? 'active' : '' }}" data-nav-trigger aria-haspopup="true" aria-expanded="false">
+                    <a href="#" class="nav-link {{ (request()->is('jadwal') || request()->is('cabor*') || request()->is('kontingen') || request()->is('klasemen-medali')) ? 'active' : '' }}" data-nav-trigger aria-haspopup="true" aria-expanded="false">
                         PERTANDINGAN
                         <svg class="nav-caret" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6" />
@@ -54,6 +54,7 @@
                         <a href="{{ url('/jadwal') }}" class="{{ request()->is('jadwal') ? 'active' : '' }}">JADWAL</a>
                         <a href="{{ url('/cabor') }}" class="{{ request()->is('cabor*') ? 'active' : '' }}">CABOR</a>
                         <a href="{{ url('/kontingen') }}" class="{{ request()->is('kontingen') ? 'active' : '' }}">KONTINGEN</a>
+                        <a href="{{ url('/klasemen-medali') }}" class="{{ request()->is('klasemen-medali') ? 'active' : '' }}">KLASEMEN MEDALI</a>
                     </div>
                 </div>
                 <a href="{{ url('/peta-venue') }}" class="{{ request()->is('peta-venue') ? 'active' : '' }}">PETA VENUE</a>
@@ -90,6 +91,7 @@
                 <a href="{{ url('/jadwal') }}" class="{{ request()->is('jadwal') ? 'active' : '' }}">JADWAL</a>
                 <a href="{{ url('/cabor') }}" class="{{ request()->is('cabor*') ? 'active' : '' }}">CABOR</a>
                 <a href="{{ url('/kontingen') }}" class="{{ request()->is('kontingen') ? 'active' : '' }}">KONTINGEN</a>
+                <a href="{{ url('/klasemen-medali') }}" class="{{ request()->is('klasemen-medali') ? 'active' : '' }}">KLASEMEN MEDALI</a>
             </div>
         </div>
         <a href="{{ url('/peta-venue') }}" class="{{ request()->is('peta-venue') ? 'active' : '' }}">PETA VENUE</a>

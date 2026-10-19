@@ -50,7 +50,7 @@
                     <a href="{{ url('/') }}">Beranda</a>
                     <a href="{{ url('/peta-venue') }}">Peta Venue</a>
                     <a href="{{ url('/fasilitas') }}">Fasilitas</a>
-
+                    <a href="{{ url('/klasemen-medali') }}">Klasemen Medali</a>
                 </div>
 
                 <!-- Kolom 4: Informasi -->

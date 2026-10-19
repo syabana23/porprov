@@ -2156,7 +2156,7 @@ $bg4 = asset('images/venue4.jpeg');
         }, 5000);
     })();
 
-    // ── Hero Countdown Timer (Countdown ke 3 November 2026) ──
+    // ── Hero Countdown Timer (Countdown ke 2 November 2026) ──
     (function initHeroCountdown() {
         const daysEls = document.querySelectorAll('.cd-days-val, .fc-days-val');
         const hoursEls = document.querySelectorAll('.cd-hours-val, .fc-hours-val');
@@ -2165,8 +2165,8 @@ $bg4 = asset('images/venue4.jpeg');
 
         if (!daysEls.length) return;
 
-        // Target tetap 3 Nov 2026 00:00 WIB (tampil 21 hari)
-        const targetTime = new Date('2026-11-03T00:00:00+07:00').getTime();
+        // Target tetap 2 Nov 2026 00:00 WIB (mulai PORPROV 2–19 Nov)
+        const targetTime = new Date('2026-11-02T00:00:00+07:00').getTime();
 
         function updateCountdown() {
             const now = Date.now();
