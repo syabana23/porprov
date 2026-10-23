@@ -395,7 +395,7 @@
                     <td class="day-cell"><span class="day-exec"></span></td>
                     <td class="day-cell"><span class="day-exec"></span></td>
                     <td class="day-cell"><span class="day-exec"></span></td>
-                    <td class="day-cell"><span class="day-final"></span></td>
+                    <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
@@ -444,17 +444,17 @@
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
-                    <td class="day-cell"><span class="day-empty"></span></td>
-                    <td class="day-cell"><span class="day-empty"></span></td>
-                    <td class="day-cell"><span class="day-empty"></span></td>
-                    <td class="day-cell"><span class="day-empty"></span></td>
-                    <td class="day-cell"><span class="day-empty"></span></td>
-                    <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-prep"></span></td>
                     <td class="day-cell"><span class="day-prep"></span></td>
                     <td class="day-cell"><span class="day-exec"></span></td>
                     <td class="day-cell"><span class="day-exec"></span></td>
                     <td class="day-cell"><span class="day-final"></span></td>
+                    <td class="day-cell"><span class="day-empty"></span></td>
+                    <td class="day-cell"><span class="day-empty"></span></td>
+                    <td class="day-cell"><span class="day-empty"></span></td>
+                    <td class="day-cell"><span class="day-empty"></span></td>
+                    <td class="day-cell"><span class="day-empty"></span></td>
+                    <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                 </tr>
                 <tr>
@@ -471,17 +471,17 @@
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
+                    <td class="day-cell"><span class="day-empty"></span></td>
+                    <td class="day-cell"><span class="day-empty"></span></td>
+                    <td class="day-cell"><span class="day-empty"></span></td>
+                    <td class="day-cell"><span class="day-empty"></span></td>
+                    <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-prep"></span></td>
                     <td class="day-cell"><span class="day-prep"></span></td>
                     <td class="day-cell"><span class="day-exec"></span></td>
                     <td class="day-cell"><span class="day-exec"></span></td>
                     <td class="day-cell"><span class="day-exec"></span></td>
                     <td class="day-cell"><span class="day-final"></span></td>
-                    <td class="day-cell"><span class="day-empty"></span></td>
-                    <td class="day-cell"><span class="day-empty"></span></td>
-                    <td class="day-cell"><span class="day-empty"></span></td>
-                    <td class="day-cell"><span class="day-empty"></span></td>
-                    <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                 </tr>
                 <tr>
@@ -500,13 +500,13 @@
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
-                    <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-prep"></span></td>
                     <td class="day-cell"><span class="day-prep"></span></td>
                     <td class="day-cell"><span class="day-exec"></span></td>
                     <td class="day-cell"><span class="day-exec"></span></td>
                     <td class="day-cell"><span class="day-exec"></span></td>
                     <td class="day-cell"><span class="day-final"></span></td>
+                    <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
                     <td class="day-cell"><span class="day-empty"></span></td>
