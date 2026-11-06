@@ -131,17 +131,17 @@
         /* Isolate stacking context so Leaflet layers can't escape above siblings */
         isolation: isolate;
         position: relative;
-        z-index: 1;
+        z-index: 2;
     }
 
     .map-container-wrap {
         position: relative;
         width: 100%;
-        height: min(60vh, 400px);
-        min-height: 300px;
+        height: min(75vh, 580px);
+        min-height: 480px;
         background: #e8ecf1;
         overflow: hidden;
-        border-radius: 16px 16px 0 0;
+        border-radius: 16px;
         /* Create new stacking context to contain all Leaflet internal z-indexes */
         isolation: isolate;
     }
@@ -173,14 +173,17 @@
         position: absolute;
         top: 20px;
         right: 20px;
-        width: 280px;
+        bottom: 20px;
+        width: 290px;
+        max-height: calc(100% - 40px);
         background: #fff;
         border-radius: 14px;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
-        border: 1px solid rgba(0, 0, 0, 0.05);
-        z-index: 999;
+        box-shadow: 0 10px 32px rgba(0, 0, 0, 0.16);
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        z-index: 1000;
         overflow: hidden;
         display: none;
+        flex-direction: column;
     }
 
     .gor-card-header {
@@ -193,6 +196,7 @@
         font-size: 15px;
         font-weight: 800;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        flex-shrink: 0;
     }
 
     .gor-card-header svg {
@@ -201,6 +205,21 @@
 
     .gor-card-body {
         padding: 16px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        flex: 1 1 auto;
+        min-height: 0;
+        scrollbar-width: thin;
+        scrollbar-color: #cbd5e1 transparent;
+    }
+
+    .gor-card-body::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    .gor-card-body::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 4px;
     }
 
     .gor-card-body .addr {
@@ -209,7 +228,7 @@
         display: flex;
         align-items: flex-start;
         gap: 8px;
-        margin-bottom: 16px;
+        margin-bottom: 14px;
         line-height: 1.5;
     }
 
@@ -221,16 +240,16 @@
         font-size: 11px;
         font-weight: 800;
         color: #013469;
-        margin-bottom: 12px;
+        margin-bottom: 10px;
         text-transform: uppercase;
         letter-spacing: 0.04em;
     }
 
     .cabor-grid {
         display: flex;
-        gap: 10px;
+        gap: 8px;
         flex-wrap: wrap;
-        margin-bottom: 20px;
+        margin-bottom: 16px;
     }
 
     .cabor-item {
@@ -297,7 +316,7 @@
         display: flex;
         flex-direction: column;
         position: relative;
-        z-index: 2;
+        z-index: 1;
     }
 
     .facilities-side-header {
@@ -554,8 +573,8 @@
 
     @media (max-width: 992px) {
         .map-container-wrap {
-            height: min(45vh, 340px);
-            min-height: 260px;
+            height: min(65vh, 480px);
+            min-height: 380px;
         }
     }
 
@@ -612,20 +631,28 @@
         }
 
         .map-container-wrap {
-            height: min(40vh, 300px);
-            min-height: 240px;
+            height: min(45vh, 320px);
+            min-height: 260px;
+            border-radius: 16px 16px 0 0;
         }
 
         .gor-card {
             position: relative;
             top: 0;
             right: 0;
+            bottom: auto;
             width: 100%;
+            max-height: none;
             box-shadow: none;
-            border-radius: 0;
+            border-radius: 0 0 16px 16px;
             border: none;
             border-top: 1px solid #e2e8f0;
             margin-top: 0;
+        }
+
+        .gor-card-body {
+            overflow-y: visible;
+            max-height: none;
         }
     }
 
@@ -715,6 +742,14 @@
     html.dark .cabor-icon {
         background: linear-gradient(135deg, #0f172a, #1e293b);
         color: #60a5fa;
+    }
+
+    html.dark .gor-card-body {
+        scrollbar-color: #475569 transparent;
+    }
+
+    html.dark .gor-card-body::-webkit-scrollbar-thumb {
+        background: #475569;
     }
 
     /* ═══════════════════════════════════════════════════════════════
@@ -885,15 +920,17 @@
 
     .route-info {
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
-        gap: 8px;
+        gap: 6px;
         padding: 8px 12px;
         background: #eff6ff;
         border: 1px solid #bfdbfe;
         border-radius: 8px;
         color: #1e40af;
-        font-size: 13px;
+        font-size: 12.5px;
         font-weight: 600;
+        line-height: 1.4;
     }
 
     .route-info svg {

@@ -1850,7 +1850,7 @@
         currentVenue = venue;
         clearRoute();
         const floatingCard = document.getElementById('floating-gor-card');
-        floatingCard.style.display = 'block';
+        floatingCard.style.display = 'flex';
         floatingCard.style.zIndex = '1000';
 
         document.getElementById('card-gor-name').innerText = venue.name;

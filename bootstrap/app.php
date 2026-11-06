@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\CheckRole;
 use App\Http\Middleware\SecurityHeaders;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
@@ -33,6 +34,10 @@ return Application::configure(basePath: dirname(__DIR__))
         if ($trustedHosts !== []) {
             $middleware->trustHosts(at: $trustedHosts);
         }
+
+        $middleware->alias([
+            'check.role' => CheckRole::class,
+        ]);
 
         $middleware->web(append: [
             SecurityHeaders::class,

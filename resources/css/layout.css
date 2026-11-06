@@ -14,7 +14,7 @@
             scroll-behavior: smooth;
         }
 
-        main {
+        body:not(.admin-body) main {
             margin-top: -60px;
             overflow-x: hidden;
             animation: pageIn 0.4s ease-out;
@@ -32,10 +32,10 @@
 
         /* Header */
         .site-header {
-            background: rgba(255, 255, 255, 0.06);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border-bottom: none;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
             position: sticky;
             top: 0;
             z-index: 9999;
@@ -47,7 +47,10 @@
         }
 
         .site-header.scrolled {
-            background: #fff;
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
         }
 
         .site-header.has-hero .header-nav a {
@@ -350,7 +353,7 @@
                 border-radius: 0 0 14px 14px;
             }
 
-            main {
+            body:not(.admin-body) main {
                 margin-top: -56px;
             }
 

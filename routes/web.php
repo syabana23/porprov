@@ -787,13 +787,59 @@ Route::get('/cabor', function () use ($cabors) {
 });
 
 Route::get('/kontingen', function () use ($kontingens) {
+    $dbKontingens = \App\Models\Contingent::where('is_active', true)
+        ->orderBy('sort_order')
+        ->orderBy('name')
+        ->get();
+
+    if ($dbKontingens->count() > 0) {
+        $kontingens = $dbKontingens->map(function ($k) {
+            return [
+                'id' => $k->id,
+                'slug' => $k->slug,
+                'nama' => $k->name,
+                'logo' => $k->logo,
+                'logo_url' => $k->logo_url,
+                'type' => $k->type,
+                'atlet' => $k->athlete_count,
+                'official' => $k->official_count,
+            ];
+        })->toArray();
+    }
+
     return view('kontingen', compact('kontingens'));
 });
 
 Route::get('/klasemen-medali', function () use ($klasemen) {
-    usort($klasemen, function ($a, $b) {
-        return [$b['emas'], $b['perak'], $b['perunggu']] <=> [$a['emas'], $a['perak'], $a['perunggu']];
-    });
+    $dbStandings = \App\Models\Standing::with('contingent')
+        ->join('contingents', 'standings.contingent_id', '=', 'contingents.id')
+        ->where('contingents.is_active', true)
+        ->orderByDesc('standings.gold')
+        ->orderByDesc('standings.silver')
+        ->orderByDesc('standings.bronze')
+        ->select('standings.*')
+        ->get();
+
+    if ($dbStandings->count() > 0) {
+        $klasemen = $dbStandings->map(function ($s) {
+            return [
+                'slug' => $s->contingent->slug ?? '',
+                'nama' => $s->contingent->name ?? '-',
+                'logo' => $s->contingent->logo ? (str_starts_with($s->contingent->logo, 'images/') ? str_replace('images/', '', $s->contingent->logo) : $s->contingent->logo) : 'logo.png',
+                'logo_url' => $s->contingent->logo_url ?? asset('images/logo.png'),
+                'emas' => $s->gold,
+                'perak' => $s->silver,
+                'perunggu' => $s->bronze,
+                'total' => $s->total,
+                'rank' => $s->rank,
+            ];
+        })->toArray();
+    } else {
+        usort($klasemen, function ($a, $b) {
+            return [$b['emas'], $b['perak'], $b['perunggu']] <=> [$a['emas'], $a['perak'], $a['perunggu']];
+        });
+    }
+
     return view('klasemen-medali', compact('klasemen'));
 });
 
@@ -941,24 +987,147 @@ $stats = [
 ];
 
 Route::get('/fasilitas', function () use ($facilities, $stats) {
+    $dbFacilities = \App\Models\Facility::where('is_active', true)
+        ->orderBy('sort_order')
+        ->orderBy('name')
+        ->get();
+
+    if ($dbFacilities->count() > 0) {
+        $facilities = $dbFacilities->map(function ($f) {
+            $venueRel = $f->venue_relation;
+            if ($venueRel && str_contains($venueRel, ',')) {
+                $venueRel = array_map('trim', explode(',', $venueRel));
+            }
+
+            return [
+                'id' => $f->id,
+                'nama' => $f->name,
+                'tipe' => $f->type,
+                'tipe_label' => $f->type_label ?? ucfirst($f->type),
+                'alamat' => $f->address ?? '-',
+                'venue' => $venueRel ?: '-',
+                'jarak' => $f->distance ?? '-',
+                'gmaps' => $f->gmaps_url ?? '',
+                'telepon' => $f->phone ?? '-',
+                'layanan' => $f->services ?? '-',
+                'website' => $f->website ?? '',
+                'image' => $f->image ? (str_starts_with($f->image, 'http') ? $f->image : asset('storage/' . $f->image)) : '',
+            ];
+        })->toArray();
+
+        $stats = [
+            'total' => count($facilities),
+            'rs' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'rs')),
+            'puskesmas' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'puskesmas')),
+            'apotek' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'apotek')),
+            'hotel' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'hotel')),
+            'polsek' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'polsek')),
+            'restoran' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'restoran')),
+            'transport' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'transport')),
+            'rekreasi' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'rekreasi')),
+            'mall' => count(array_filter($facilities, fn($f) => $f['tipe'] === 'mall')),
+        ];
+    }
+
     return view('fasilitas', compact('facilities', 'stats'));
 });
 
 Route::get('/', function () use ($venues, $cabors, $kontingens, $facilities) {
+    $dbVenues = \App\Models\Venue::getActiveVenueMapData();
+    if (!empty($dbVenues)) {
+        $venues = $dbVenues;
+    }
+
     $stats = [
-        'venues' => count($venues),
-        'cabors' => count($cabors),
-        'kontingens' => count($kontingens),
-        'fasilitas' => count($facilities),
+        'venues' => \App\Models\Venue::where('is_active', true)->count() ?: count($venues),
+        'cabors' => \App\Models\Sport::where('is_active', true)->count() ?: count($cabors),
+        'kontingens' => \App\Models\Contingent::where('is_active', true)->count() ?: count($kontingens),
+        'fasilitas' => \App\Models\Facility::where('is_active', true)->count() ?: count($facilities),
     ];
 
     return view('welcome', compact('stats', 'venues'));
 });
 
 Route::get('/galeri', function () {
-    return view('galeri');
+    $galleries = \App\Models\Gallery::where('is_published', true)
+        ->orderBy('sort_order')
+        ->orderByDesc('published_at')
+        ->orderByDesc('id')
+        ->get();
+
+    $categories = \App\Models\Gallery::where('is_published', true)
+        ->whereNotNull('category')
+        ->where('category', '!=', '')
+        ->distinct()
+        ->pluck('category');
+
+    return view('galeri', compact('galleries', 'categories'));
 });
 
 Route::get('/kebijakan-privasi', function () {
     return view('privasi');
+});
+
+Route::get('/login', [\App\Http\Controllers\Auth\LoginController::class, 'create'])->name('login');
+Route::post('/login', [\App\Http\Controllers\Auth\LoginController::class, 'store'])->name('login.post');
+Route::post('/logout', [\App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
+
+Route::middleware(['auth', 'check.role'])->prefix('admin')->name('admin.')->group(function () {
+    Route::get('/', [\App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
+
+    Route::get('/schedules', [\App\Http\Controllers\Admin\ScheduleController::class, 'index'])->name('schedules.index');
+    Route::get('/schedules/create', [\App\Http\Controllers\Admin\ScheduleController::class, 'create'])->name('schedules.create');
+    Route::post('/schedules', [\App\Http\Controllers\Admin\ScheduleController::class, 'store'])->name('schedules.store');
+    Route::get('/schedules/{schedule}/edit', [\App\Http\Controllers\Admin\ScheduleController::class, 'edit'])->name('schedules.edit');
+    Route::put('/schedules/{schedule}', [\App\Http\Controllers\Admin\ScheduleController::class, 'update'])->name('schedules.update');
+    Route::delete('/schedules/{schedule}', [\App\Http\Controllers\Admin\ScheduleController::class, 'destroy'])->name('schedules.destroy');
+
+    Route::get('/venues', [\App\Http\Controllers\Admin\VenueController::class, 'index'])->name('venues.index');
+    Route::get('/venues/create', [\App\Http\Controllers\Admin\VenueController::class, 'create'])->name('venues.create');
+    Route::post('/venues', [\App\Http\Controllers\Admin\VenueController::class, 'store'])->name('venues.store');
+    Route::get('/venues/{venue}/edit', [\App\Http\Controllers\Admin\VenueController::class, 'edit'])->name('venues.edit');
+    Route::put('/venues/{venue}', [\App\Http\Controllers\Admin\VenueController::class, 'update'])->name('venues.update');
+    Route::delete('/venues/{venue}', [\App\Http\Controllers\Admin\VenueController::class, 'destroy'])->name('venues.destroy');
+
+    Route::get('/sports', [\App\Http\Controllers\Admin\SportController::class, 'index'])->name('sports.index');
+    Route::get('/sports/create', [\App\Http\Controllers\Admin\SportController::class, 'create'])->name('sports.create');
+    Route::post('/sports', [\App\Http\Controllers\Admin\SportController::class, 'store'])->name('sports.store');
+    Route::get('/sports/{sport}/edit', [\App\Http\Controllers\Admin\SportController::class, 'edit'])->name('sports.edit');
+    Route::put('/sports/{sport}', [\App\Http\Controllers\Admin\SportController::class, 'update'])->name('sports.update');
+    Route::delete('/sports/{sport}', [\App\Http\Controllers\Admin\SportController::class, 'destroy'])->name('sports.destroy');
+
+    Route::get('/contingents', [\App\Http\Controllers\Admin\ContingentController::class, 'index'])->name('contingents.index');
+    Route::get('/contingents/create', [\App\Http\Controllers\Admin\ContingentController::class, 'create'])->name('contingents.create');
+    Route::post('/contingents', [\App\Http\Controllers\Admin\ContingentController::class, 'store'])->name('contingents.store');
+    Route::get('/contingents/{contingent}/edit', [\App\Http\Controllers\Admin\ContingentController::class, 'edit'])->name('contingents.edit');
+    Route::put('/contingents/{contingent}', [\App\Http\Controllers\Admin\ContingentController::class, 'update'])->name('contingents.update');
+    Route::delete('/contingents/{contingent}', [\App\Http\Controllers\Admin\ContingentController::class, 'destroy'])->name('contingents.destroy');
+
+    Route::get('/facilities', [\App\Http\Controllers\Admin\FacilityController::class, 'index'])->name('facilities.index');
+    Route::get('/facilities/create', [\App\Http\Controllers\Admin\FacilityController::class, 'create'])->name('facilities.create');
+    Route::post('/facilities', [\App\Http\Controllers\Admin\FacilityController::class, 'store'])->name('facilities.store');
+    Route::get('/facilities/{facility}/edit', [\App\Http\Controllers\Admin\FacilityController::class, 'edit'])->name('facilities.edit');
+    Route::put('/facilities/{facility}', [\App\Http\Controllers\Admin\FacilityController::class, 'update'])->name('facilities.update');
+    Route::delete('/facilities/{facility}', [\App\Http\Controllers\Admin\FacilityController::class, 'destroy'])->name('facilities.destroy');
+
+    Route::get('/galleries', [\App\Http\Controllers\Admin\GalleryController::class, 'index'])->name('galleries.index');
+    Route::get('/galleries/create', [\App\Http\Controllers\Admin\GalleryController::class, 'create'])->name('galleries.create');
+    Route::post('/galleries', [\App\Http\Controllers\Admin\GalleryController::class, 'store'])->name('galleries.store');
+    Route::get('/galleries/{gallery}/edit', [\App\Http\Controllers\Admin\GalleryController::class, 'edit'])->name('galleries.edit');
+    Route::put('/galleries/{gallery}', [\App\Http\Controllers\Admin\GalleryController::class, 'update'])->name('galleries.update');
+    Route::delete('/galleries/{gallery}', [\App\Http\Controllers\Admin\GalleryController::class, 'destroy'])->name('galleries.destroy');
+
+    Route::get('/standings', [\App\Http\Controllers\Admin\StandingController::class, 'index'])->name('standings.index');
+    Route::get('/standings/create', [\App\Http\Controllers\Admin\StandingController::class, 'create'])->name('standings.create');
+    Route::post('/standings', [\App\Http\Controllers\Admin\StandingController::class, 'store'])->name('standings.store');
+    Route::put('/standings/{standing}', [\App\Http\Controllers\Admin\StandingController::class, 'update'])->name('standings.update');
+    Route::get('/standings/{standing}/edit', [\App\Http\Controllers\Admin\StandingController::class, 'edit'])->name('standings.edit');
+    Route::delete('/standings/{standing}', [\App\Http\Controllers\Admin\StandingController::class, 'destroy'])->name('standings.destroy');
+
+    Route::get('/users', [\App\Http\Controllers\Admin\UserController::class, 'index'])->name('users.index');
+    Route::get('/users/create', [\App\Http\Controllers\Admin\UserController::class, 'create'])->name('users.create');
+    Route::post('/users', [\App\Http\Controllers\Admin\UserController::class, 'store'])->name('users.store');
+    Route::get('/users/{user}/edit', [\App\Http\Controllers\Admin\UserController::class, 'edit'])->name('users.edit');
+    Route::put('/users/{user}', [\App\Http\Controllers\Admin\UserController::class, 'update'])->name('users.update');
+    Route::delete('/users/{user}', [\App\Http\Controllers\Admin\UserController::class, 'destroy'])->name('users.destroy');
 });

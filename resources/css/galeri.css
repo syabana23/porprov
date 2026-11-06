@@ -124,3 +124,116 @@
         font-size: 12px;
     }
 }
+
+/* ── Filter Buttons ── */
+.filter-btn {
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+}
+.filter-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+.filter-btn.active {
+    background: #013469 !important;
+    color: #fff !important;
+    box-shadow: 0 2px 8px rgba(1, 52, 105, 0.25);
+}
+
+/* ── Lightbox Modal ── */
+.gallery-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(6px);
+    z-index: 99999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.gallery-modal-overlay.active {
+    display: flex;
+}
+.gallery-modal-content {
+    background: #fff;
+    border-radius: 16px;
+    max-width: 720px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+    animation: galleryModalIn 0.25s ease-out;
+}
+@keyframes galleryModalIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+.gallery-modal-img-wrap {
+    width: 100%;
+    max-height: 420px;
+    background: #0f172a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.gallery-modal-img {
+    width: 100%;
+    height: 100%;
+    max-height: 420px;
+    object-fit: cover;
+}
+.gallery-modal-body {
+    padding: 20px 24px;
+}
+.gallery-modal-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 8px;
+}
+.gallery-modal-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    font-size: 12px;
+    color: #64748b;
+}
+.gallery-modal-meta .badge {
+    background: #e0f2fe;
+    color: #0369a1;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 9999px;
+}
+.gallery-modal-caption {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #475569;
+    margin: 0;
+}
+.gallery-modal-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    line-height: 1;
+    z-index: 10;
+    transition: background 0.2s, transform 0.2s;
+}
+.gallery-modal-close:hover {
+    background: rgba(0, 0, 0, 0.9);
+    transform: scale(1.08);
+}

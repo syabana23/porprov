@@ -36,9 +36,9 @@
                 <img src="{{ asset('images/logo_baru.PNG') }}" alt="Logo PORPROV XV">
                 <span class="logo-divider" aria-hidden="true"></span>
                 <span class="city-logo-row">
+                    <img src="{{ asset('images/footer/kota_bekasi.png') }}" alt="Logo Kota Bekasi">
+                    <img src="{{ asset('images/footer/kota_depok.png') }}" alt="Logo Kota Depok">
                     <img src="{{ asset('images/logobarukotabogor-.png') }}" alt="Logo Kota Bogor">
-                    <img src="{{ asset('images/kota-bekasi.png') }}" alt="Logo Kota Bekasi">
-                    <img src="{{ asset('images/kota-depok.png') }}" alt="Logo Kota Depok">
                 </span>
             </a>
             <nav class="header-nav">
@@ -63,7 +63,7 @@
                 <a href="{{ url('/kebijakan-privasi') }}" class="{{ request()->is('kebijakan-privasi') ? 'active' : '' }}">PRIVASI</a>
             </nav>
             <div class="header-actions">
-                <!-- <a href="#" class="btn-login">Login</a> -->
+                <!-- Tombol admin di navbar publik dihilangkan sesuai permintaan -->
             </div>
             <button class="hamburger" id="hamburger-btn" aria-label="Menu">
                 <svg class="menu-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">

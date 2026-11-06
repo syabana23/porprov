@@ -153,7 +153,7 @@ class SecurityHeaders
      */
     private function contentSecurityPolicy(string $nonce): string
     {
-        $scriptSrc = "'self' 'nonce-{$nonce}' https://nominatim.openstreetmap.org";
+        $scriptSrc = "'self' 'nonce-{$nonce}' https://nominatim.openstreetmap.org https://cdn.tailwindcss.com";
         $styleSrc = "'self' 'unsafe-inline' https://fonts.googleapis.com";
         $connectSrc = "'self' https://nominatim.openstreetmap.org https://router.project-osrm.org";
         $imgSrc = "'self' data: blob: https://*.tile.openstreetmap.org https://tile.openstreetmap.org";
