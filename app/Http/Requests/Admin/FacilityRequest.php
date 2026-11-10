@@ -44,9 +44,26 @@ class FacilityRequest extends FormRequest
 
     protected function prepareForValidation(): void
     {
-        $this->merge([
-            'is_active' => $this->has('is_active') ? true : false,
-            'sort_order' => $this->input('sort_order') === '' ? 0 : $this->input('sort_order'),
-        ]);
+        $merge = [];
+
+        if ($this->has('is_active')) {
+            $merge['is_active'] = filter_var($this->input('is_active'), FILTER_VALIDATE_BOOLEAN);
+        }
+
+        if ($this->filled('gmaps_url')) {
+            $url = trim($this->input('gmaps_url'));
+            if (!preg_match('~^(?:f|ht)tps?://~i', $url)) {
+                $url = 'https://' . $url;
+            }
+            $merge['gmaps_url'] = $url;
+        }
+
+        if ($this->has('sort_order') && $this->input('sort_order') !== null && $this->input('sort_order') !== '') {
+            $merge['sort_order'] = (int) $this->input('sort_order');
+        }
+
+        if (!empty($merge)) {
+            $this->merge($merge);
+        }
     }
 }

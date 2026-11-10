@@ -53,10 +53,18 @@ class ContingentRequest extends FormRequest
             }
         }
 
-        $this->merge([
+        $merge = [
             'type' => $type,
-            'is_active' => $this->has('is_active') ? (bool)$this->input('is_active') : true,
-            'sort_order' => $this->input('sort_order') === '' || is_null($this->input('sort_order')) ? 0 : $this->input('sort_order'),
-        ]);
+        ];
+
+        if ($this->has('is_active')) {
+            $merge['is_active'] = filter_var($this->input('is_active'), FILTER_VALIDATE_BOOLEAN);
+        }
+
+        if ($this->has('sort_order') && $this->input('sort_order') !== null && $this->input('sort_order') !== '') {
+            $merge['sort_order'] = (int) $this->input('sort_order');
+        }
+
+        $this->merge($merge);
     }
 }

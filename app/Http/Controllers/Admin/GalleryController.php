@@ -47,6 +47,10 @@ class GalleryController extends Controller
         $this->authorizeAction();
         $data = $request->validated();
 
+        if (!isset($data['sort_order']) || $data['sort_order'] === null) {
+            $data['sort_order'] = 0;
+        }
+
         if (empty($data['slug']) && !empty($data['title'])) {
             $data['slug'] = $this->generateUniqueSlug($data['title']);
         }
@@ -79,6 +83,10 @@ class GalleryController extends Controller
     {
         $this->authorizeAction();
         $data = $request->validated();
+
+        if (array_key_exists('sort_order', $data) && $data['sort_order'] === null) {
+            unset($data['sort_order']);
+        }
 
         if (empty($data['slug']) && !empty($data['title'])) {
             $data['slug'] = $this->generateUniqueSlug($data['title'], $gallery->id);

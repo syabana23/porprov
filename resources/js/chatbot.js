@@ -21,8 +21,15 @@
     const badge        = document.getElementById('chat-badge');
 
     const BOT_NAME     = 'RAJA PORPROV';
-    const STORAGE_KEY  = 'porprov_chat_v3';
+    const STORAGE_KEY  = 'porprov_chat_v4';
     const CSRF         = document.querySelector('meta[name="csrf-token"]')?.content ?? '';
+
+    // Clear legacy storage keys with raw unescaped strings
+    try {
+        localStorage.removeItem('porprov_chat');
+        localStorage.removeItem('porprov_chat_v2');
+        localStorage.removeItem('porprov_chat_v3');
+    } catch (e) {}
 
     // ----------------------------------------------------------------
     // Open / Close
@@ -93,34 +100,108 @@
     // ----------------------------------------------------------------
     function htmlToText(html) {
         const tmp = document.createElement('div');
-        tmp.innerHTML = html;
+        tmp.innerHTML = sanitizeAndRenderBotHtml(html);
         return tmp.textContent || tmp.innerText || '';
     }
 
     // ----------------------------------------------------------------
-    // Lightweight Markdown & HTML Renderer
+    // Safe HTML & Markdown Sanitizer and Renderer
     // ----------------------------------------------------------------
-    function renderMarkdown(text) {
+    function sanitizeAndRenderBotHtml(text) {
         if (!text) return '';
-        // Step 1: Escape raw HTML FIRST — prevents XSS from server/API responses
-        let html = text
-            .replace(/&/g, '&amp;')
-            .replace(/</g, '&lt;')
-            .replace(/>/g, '&gt;')
-            .replace(/"/g, '&quot;');
-        // Step 2: Apply safe markdown transforms (only known-safe tags injected)
-        // Bold: **text** or __text__
-        html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-        html = html.replace(/__(.*?)__/g, '<strong>$1</strong>');
-        // Italic: *text* or _text_
-        html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
-        // Inline Code: `code`
-        html = html.replace(/`([^`]+)`/g, '<code style="background:rgba(0,0,0,0.06);padding:2px 4px;border-radius:4px;font-family:monospace;font-size:12px;">$1</code>');
-        // Line breaks (if not already containing <br>)
-        if (!html.includes('<br>') && !html.includes('<p>')) {
-            html = html.replace(/\n/g, '<br>');
+        let str = String(text);
+
+        // Markdown Bold: **text** or __text__
+        str = str.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+        str = str.replace(/__(.*?)__/g, '<strong>$1</strong>');
+
+        // Markdown Italic: *text* (don't match bullets) or _text_
+        str = str.replace(/(^|[^\*])\*([^\*\n]+)\*([^\*]|$)/g, '$1<em>$2</em>$3');
+        str = str.replace(/(^|[^_])_([^_\n]+)_([^_]|$)/g, '$1<em>$2</em>$3');
+
+        // Markdown Inline Code: `code`
+        str = str.replace(/`([^`]+)`/g, '<code style="background:rgba(1,52,105,0.08);padding:2px 4px;border-radius:4px;font-family:monospace;font-size:12px;">$1</code>');
+
+        // Markdown Links: [text](url)
+        str = str.replace(/\[([^\]]+)\]\((https?:\/\/[^\s\)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>');
+
+        // Line breaks (if not already containing <br> or <p>)
+        if (!str.includes('<br>') && !str.includes('<p>') && str.includes('\n')) {
+            str = str.replace(/\n/g, '<br>');
         }
-        return html;
+
+        // Parse through DOMParser to sanitize tags and strip unsafe attributes/scripts
+        try {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(str, 'text/html');
+
+            const allowedTags = new Set([
+                'STRONG', 'B', 'EM', 'I', 'U', 'BR', 'P', 'SPAN', 'A', 'CODE', 'UL', 'OL', 'LI', 'BLOCKQUOTE'
+            ]);
+
+            const allowedAttrs = {
+                'A': ['href', 'target', 'rel', 'class', 'style'],
+                'SPAN': ['class', 'style'],
+                'CODE': ['class', 'style'],
+                'P': ['class', 'style'],
+                'LI': ['class', 'style'],
+                'STRONG': ['class'],
+                'EM': ['class'],
+                'B': ['class'],
+                'I': ['class']
+            };
+
+            function clean(node) {
+                const children = Array.from(node.childNodes);
+                for (const child of children) {
+                    if (child.nodeType === Node.ELEMENT_NODE) {
+                        const tag = child.tagName.toUpperCase();
+
+                        if (!allowedTags.has(tag)) {
+                            if (['SCRIPT', 'STYLE', 'IFRAME', 'OBJECT', 'EMBED', 'FORM', 'INPUT', 'BUTTON', 'SVG', 'IMG'].includes(tag)) {
+                                child.remove();
+                            } else {
+                                const textNode = doc.createTextNode(child.textContent);
+                                node.replaceChild(textNode, child);
+                            }
+                            continue;
+                        }
+
+                        const allowed = allowedAttrs[tag] || [];
+                        const attrs = Array.from(child.attributes);
+                        for (const attr of attrs) {
+                            const name = attr.name.toLowerCase();
+                            if (!allowed.includes(name) || name.startsWith('on')) {
+                                child.removeAttribute(attr.name);
+                            } else if (name === 'href') {
+                                const val = attr.value.trim().toLowerCase();
+                                if (val.startsWith('javascript:') || val.startsWith('data:') || val.startsWith('vbscript:')) {
+                                    child.removeAttribute('href');
+                                } else {
+                                    child.setAttribute('rel', 'noopener noreferrer');
+                                    child.setAttribute('target', '_blank');
+                                }
+                            }
+                        }
+
+                        clean(child);
+                    }
+                }
+            }
+
+            clean(doc.body);
+            return doc.body.innerHTML;
+        } catch (e) {
+            return str;
+        }
+    }
+
+    function renderMessageContent(content, sender) {
+        if (!content) return '';
+        if (sender === 'user') {
+            return escapeHtml(content).replace(/\n/g, '<br>');
+        }
+        return sanitizeAndRenderBotHtml(content);
     }
 
     // ----------------------------------------------------------------
@@ -186,7 +267,7 @@
 
         const bubble = document.createElement('div');
         bubble.className = `msg-bubble ${sender}-bubble`;
-        bubble.innerHTML = renderMarkdown(htmlContent);
+        bubble.innerHTML = renderMessageContent(htmlContent, sender);
         // Store raw content for JSON persistence (safe text, not rendered HTML)
         bubble.dataset.rawContent = htmlContent;
 
@@ -307,7 +388,7 @@
         const suggEl = document.getElementById('chat-suggestions');
         if (suggEl) suggEl.style.display = 'none';
 
-        addMessage(escapeHtml(message), 'user');
+        addMessage(message, 'user');
 
         const typingRow = showTyping();
 

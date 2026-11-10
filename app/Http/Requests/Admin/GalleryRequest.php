@@ -41,9 +41,18 @@ class GalleryRequest extends FormRequest
 
     protected function prepareForValidation(): void
     {
-        $this->merge([
-            'is_published' => $this->has('is_published') ? true : false,
-            'sort_order' => $this->input('sort_order') === '' ? 0 : $this->input('sort_order'),
-        ]);
+        $merge = [];
+
+        if ($this->has('is_published')) {
+            $merge['is_published'] = filter_var($this->input('is_published'), FILTER_VALIDATE_BOOLEAN);
+        }
+
+        if ($this->has('sort_order') && $this->input('sort_order') !== null && $this->input('sort_order') !== '') {
+            $merge['sort_order'] = (int) $this->input('sort_order');
+        }
+
+        if (!empty($merge)) {
+            $this->merge($merge);
+        }
     }
 }

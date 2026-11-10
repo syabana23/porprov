@@ -42,9 +42,12 @@
     {{-- Status (Sesuai Canva Image 2) --}}
     <div>
         <label class="block text-xs font-semibold text-gray-700 uppercase tracking-wider mb-1.5">Status <span class="text-red-500">*</span></label>
+        @php
+            $currentIsActive = old('is_active', isset($venue) ? ($venue->is_active ? '1' : '0') : '1');
+        @endphp
         <select name="is_active" class="w-full px-3.5 py-2.5 border border-gray-300 rounded-xl text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent transition">
-            <option value="1" {{ old('is_active', $venue->is_active ?? true) ? 'selected' : '' }}>Aktif</option>
-            <option value="0" {{ old('is_active', $venue->is_active ?? true) ? '' : 'selected' }}>Nonaktif</option>
+            <option value="1" {{ (string)$currentIsActive === '1' ? 'selected' : '' }}>Aktif</option>
+            <option value="0" {{ (string)$currentIsActive === '0' ? 'selected' : '' }}>Nonaktif</option>
         </select>
         @error('is_active')<p class="text-red-500 text-xs mt-1">{{ $message }}</p>@enderror
     </div>

@@ -56,6 +56,10 @@ class ContingentController extends Controller
         $this->authorizeAction();
         $data = $request->validated();
 
+        if (!isset($data['sort_order']) || $data['sort_order'] === null) {
+            $data['sort_order'] = 0;
+        }
+
         if (empty($data['slug']) && !empty($data['name'])) {
             $data['slug'] = $this->generateUniqueSlug($data['name']);
         }
@@ -92,6 +96,10 @@ class ContingentController extends Controller
     {
         $this->authorizeAction();
         $data = $request->validated();
+
+        if (array_key_exists('sort_order', $data) && $data['sort_order'] === null) {
+            unset($data['sort_order']);
+        }
 
         if (empty($data['slug']) && !empty($data['name'])) {
             $data['slug'] = $this->generateUniqueSlug($data['name'], $contingent->id);

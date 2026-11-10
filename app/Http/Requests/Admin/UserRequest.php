@@ -44,8 +44,10 @@ class UserRequest extends FormRequest
 
     protected function prepareForValidation(): void
     {
-        $this->merge([
-            'is_active' => $this->has('is_active') ? true : false,
-        ]);
+        if ($this->has('is_active')) {
+            $this->merge([
+                'is_active' => filter_var($this->input('is_active'), FILTER_VALIDATE_BOOLEAN),
+            ]);
+        }
     }
 }

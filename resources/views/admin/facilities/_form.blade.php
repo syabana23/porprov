@@ -71,10 +71,13 @@
     {{-- Status --}}
     <div>
         <label class="block text-sm font-semibold text-gray-800 mb-2">Status</label>
+        @php
+            $currentIsActive = old('is_active', isset($facility) ? ($facility->is_active ? '1' : '0') : '1');
+        @endphp
         <div class="relative">
             <select name="is_active" class="w-full px-3 py-2.5 border border-gray-300 rounded-lg text-sm focus:ring-2 focus:ring-blue-500 focus:border-transparent transition appearance-none pr-9">
-                <option value="1" {{ old('is_active', $facility->is_active ?? true) ? 'selected' : '' }}>Aktif</option>
-                <option value="0" {{ !old('is_active', $facility->is_active ?? true) ? 'selected' : '' }}>Tidak Aktif</option>
+                <option value="1" {{ (string)$currentIsActive === '1' ? 'selected' : '' }}>Aktif</option>
+                <option value="0" {{ (string)$currentIsActive === '0' ? 'selected' : '' }}>Tidak Aktif</option>
             </select>
             <svg class="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
         </div>

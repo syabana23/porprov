@@ -62,6 +62,10 @@ class FacilityController extends Controller
         $this->authorizeAction();
         $data = $request->validated();
 
+        if (!isset($data['sort_order']) || $data['sort_order'] === null) {
+            $data['sort_order'] = 0;
+        }
+
         if ($request->hasFile('image')) {
             $data['image'] = $request->file('image')->store('facilities', 'public');
         }
@@ -86,6 +90,10 @@ class FacilityController extends Controller
     {
         $this->authorizeAction();
         $data = $request->validated();
+
+        if (array_key_exists('sort_order', $data) && $data['sort_order'] === null) {
+            unset($data['sort_order']);
+        }
 
         if ($request->hasFile('image')) {
             if ($facility->image && Storage::disk('public')->exists($facility->image)) {
